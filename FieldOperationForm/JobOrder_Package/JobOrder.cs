@@ -10,21 +10,13 @@ using System.Windows.Forms;
 
 namespace FieldOperationForm
 {
-    public partial class End : Form
+    public partial class JobOrder : Form
     {
-        public End()
+        Main_P main;
+        public JobOrder(Main_P main1)
         {
             InitializeComponent();
-        }
-
-        private void btn_OK_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btn_Cancle_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            main = main1;
         }
     }
 }

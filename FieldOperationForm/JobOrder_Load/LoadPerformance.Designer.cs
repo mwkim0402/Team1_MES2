@@ -1,6 +1,6 @@
 ﻿namespace FieldOperationForm
 {
-    partial class ProcessCondition
+    partial class LoadPerformance
     {
         /// <summary>
         /// Required designer variable.
@@ -42,16 +42,20 @@
             this.txt_WorkNum = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_MeasuredValue = new System.Windows.Forms.TextBox();
+            this.btn_Search = new System.Windows.Forms.Button();
+            this.txt_SearchTruck = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btn_Write = new System.Windows.Forms.Button();
-            this.btn_Delete = new System.Windows.Forms.Button();
+            this.txt_MoveNum = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btn_Search2 = new System.Windows.Forms.Button();
+            this.txt_SearchTruck2 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btn_Move = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btn_Empty = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -69,10 +73,10 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txt_WorkNum);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 7);
+            this.groupBox2.Location = new System.Drawing.Point(12, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1519, 119);
-            this.groupBox2.TabIndex = 7;
+            this.groupBox2.Size = new System.Drawing.Size(1521, 119);
+            this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             // 
             // txt_unit
@@ -212,106 +216,176 @@
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 150);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 205);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(765, 466);
-            this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.Size = new System.Drawing.Size(498, 411);
+            this.dataGridView1.TabIndex = 32;
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Search.BackColor = System.Drawing.Color.Ivory;
+            this.btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Search.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_Search.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Search.Location = new System.Drawing.Point(427, 149);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(83, 41);
+            this.btn_Search.TabIndex = 31;
+            this.btn_Search.Text = "찾기";
+            this.btn_Search.UseVisualStyleBackColor = false;
+            // 
+            // txt_SearchTruck
+            // 
+            this.txt_SearchTruck.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_SearchTruck.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txt_SearchTruck.Location = new System.Drawing.Point(153, 149);
+            this.txt_SearchTruck.Multiline = true;
+            this.txt_SearchTruck.Name = "txt_SearchTruck";
+            this.txt_SearchTruck.Size = new System.Drawing.Size(268, 41);
+            this.txt_SearchTruck.TabIndex = 29;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.ForeColor = System.Drawing.Color.Ivory;
+            this.label7.Location = new System.Drawing.Point(12, 155);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 28);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "대차 검색";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_MoveNum
+            // 
+            this.txt_MoveNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_MoveNum.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txt_MoveNum.Location = new System.Drawing.Point(721, 245);
+            this.txt_MoveNum.Multiline = true;
+            this.txt_MoveNum.Name = "txt_MoveNum";
+            this.txt_MoveNum.Size = new System.Drawing.Size(155, 41);
+            this.txt_MoveNum.TabIndex = 40;
             // 
             // dataGridView2
             // 
             this.dataGridView2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(802, 150);
+            this.dataGridView2.Location = new System.Drawing.Point(897, 205);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(729, 312);
-            this.dataGridView2.TabIndex = 9;
+            this.dataGridView2.Size = new System.Drawing.Size(636, 411);
+            this.dataGridView2.TabIndex = 39;
             // 
-            // groupBox1
+            // btn_Search2
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.txt_MeasuredValue);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(802, 468);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(729, 70);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
+            this.btn_Search2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Search2.BackColor = System.Drawing.Color.Ivory;
+            this.btn_Search2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Search2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_Search2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Search2.Location = new System.Drawing.Point(1411, 149);
+            this.btn_Search2.Name = "btn_Search2";
+            this.btn_Search2.Size = new System.Drawing.Size(122, 41);
+            this.btn_Search2.TabIndex = 38;
+            this.btn_Search2.Text = "찾기";
+            this.btn_Search2.UseVisualStyleBackColor = false;
             // 
-            // txt_MeasuredValue
+            // txt_SearchTruck2
             // 
-            this.txt_MeasuredValue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_MeasuredValue.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_MeasuredValue.Location = new System.Drawing.Point(218, 18);
-            this.txt_MeasuredValue.Multiline = true;
-            this.txt_MeasuredValue.Name = "txt_MeasuredValue";
-            this.txt_MeasuredValue.Size = new System.Drawing.Size(475, 41);
-            this.txt_MeasuredValue.TabIndex = 1;
+            this.txt_SearchTruck2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_SearchTruck2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txt_SearchTruck2.Location = new System.Drawing.Point(1037, 149);
+            this.txt_SearchTruck2.Multiline = true;
+            this.txt_SearchTruck2.Name = "txt_SearchTruck2";
+            this.txt_SearchTruck2.Size = new System.Drawing.Size(368, 41);
+            this.txt_SearchTruck2.TabIndex = 36;
             // 
-            // label7
+            // label8
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.ForeColor = System.Drawing.Color.Ivory;
-            this.label7.Location = new System.Drawing.Point(18, 19);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(194, 38);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "측정값";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.ForeColor = System.Drawing.Color.Ivory;
+            this.label8.Location = new System.Drawing.Point(897, 155);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(111, 28);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "대차 검색";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btn_Write
+            // btn_Move
             // 
-            this.btn_Write.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Write.BackColor = System.Drawing.Color.Ivory;
-            this.btn_Write.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Write.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_Write.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Write.Location = new System.Drawing.Point(802, 544);
-            this.btn_Write.Name = "btn_Write";
-            this.btn_Write.Size = new System.Drawing.Size(447, 72);
-            this.btn_Write.TabIndex = 11;
-            this.btn_Write.Text = "입력";
-            this.btn_Write.UseVisualStyleBackColor = false;
+            this.btn_Move.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Move.BackColor = System.Drawing.Color.Ivory;
+            this.btn_Move.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Move.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_Move.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Move.Location = new System.Drawing.Point(531, 292);
+            this.btn_Move.Name = "btn_Move";
+            this.btn_Move.Size = new System.Drawing.Size(345, 171);
+            this.btn_Move.TabIndex = 35;
+            this.btn_Move.Text = "옮겨타기";
+            this.btn_Move.UseVisualStyleBackColor = false;
             // 
-            // btn_Delete
+            // label9
             // 
-            this.btn_Delete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Delete.BackColor = System.Drawing.Color.Ivory;
-            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Delete.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_Delete.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Delete.Location = new System.Drawing.Point(1269, 544);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(262, 72);
-            this.btn_Delete.TabIndex = 12;
-            this.btn_Delete.Text = "삭제";
-            this.btn_Delete.UseVisualStyleBackColor = false;
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.ForeColor = System.Drawing.Color.Ivory;
+            this.label9.Location = new System.Drawing.Point(526, 251);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(157, 28);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "옮겨타기 수량";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ProcessCondition
+            // btn_Empty
+            // 
+            this.btn_Empty.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Empty.BackColor = System.Drawing.Color.Ivory;
+            this.btn_Empty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Empty.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_Empty.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Empty.Location = new System.Drawing.Point(531, 469);
+            this.btn_Empty.Name = "btn_Empty";
+            this.btn_Empty.Size = new System.Drawing.Size(345, 147);
+            this.btn_Empty.TabIndex = 42;
+            this.btn_Empty.Text = "건초대차 비우기";
+            this.btn_Empty.UseVisualStyleBackColor = false;
+            // 
+            // LoadPerformance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1538, 628);
-            this.Controls.Add(this.btn_Delete);
-            this.Controls.Add(this.btn_Write);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btn_Empty);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txt_MoveNum);
             this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.btn_Search2);
+            this.Controls.Add(this.txt_SearchTruck2);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.btn_Move);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btn_Search);
+            this.Controls.Add(this.txt_SearchTruck);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ProcessCondition";
-            this.Text = "ProcessCondition";
+            this.Name = "LoadPerformance";
+            this.Text = "LoadPerformance";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -331,11 +405,16 @@
         private System.Windows.Forms.TextBox txt_WorkNum;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txt_MeasuredValue;
+        private System.Windows.Forms.Button btn_Search;
+        private System.Windows.Forms.TextBox txt_SearchTruck;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btn_Write;
-        private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.TextBox txt_MoveNum;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button btn_Search2;
+        private System.Windows.Forms.TextBox txt_SearchTruck2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btn_Move;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btn_Empty;
     }
 }

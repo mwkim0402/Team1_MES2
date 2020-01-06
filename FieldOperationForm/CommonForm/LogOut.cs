@@ -10,21 +10,28 @@ using System.Windows.Forms;
 
 namespace FieldOperationForm
 {
-    public partial class End : Form
+    public partial class LogOut : Form
     {
-        public End()
+        Main_P main;
+ 
+        public LogOut(Main_P main1)
         {
             InitializeComponent();
+            main = main1;
         }
 
         private void btn_OK_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void btn_Cancle_Click(object sender, EventArgs e)
-        {
             this.Close();
+            Login frm = new Login(main);
+            
+           frm.MdiParent = main;
+           frm.BringToFront();
+
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+            main.lblChange.Text = "로그인";
+            
         }
     }
 }

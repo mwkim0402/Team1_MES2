@@ -1,6 +1,6 @@
 ﻿namespace FieldOperationForm
 {
-    partial class ProcessCondition
+    partial class QualityMeasurement
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_Delete = new System.Windows.Forms.Button();
             this.txt_unit = new System.Windows.Forms.TextBox();
             this.txt_ResultNum = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -37,43 +37,36 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txt_Item = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txt_MeasuredValue = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.txt_WorkDate = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_WorkNum = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_MeasuredValue = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.btn_Write = new System.Windows.Forms.Button();
-            this.btn_Delete = new System.Windows.Forms.Button();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox2
+            // btn_Delete
             // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox2.Controls.Add(this.txt_unit);
-            this.groupBox2.Controls.Add(this.txt_ResultNum);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txt_WorkPlace);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.txt_Item);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txt_WorkDate);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txt_WorkNum);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 7);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1519, 119);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
+            this.btn_Delete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Delete.BackColor = System.Drawing.Color.Ivory;
+            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Delete.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_Delete.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Delete.Location = new System.Drawing.Point(1269, 544);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(264, 72);
+            this.btn_Delete.TabIndex = 18;
+            this.btn_Delete.Text = "삭제";
+            this.btn_Delete.UseVisualStyleBackColor = false;
             // 
             // txt_unit
             // 
@@ -163,6 +156,50 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "품목";
             // 
+            // txt_MeasuredValue
+            // 
+            this.txt_MeasuredValue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_MeasuredValue.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txt_MeasuredValue.Location = new System.Drawing.Point(218, 18);
+            this.txt_MeasuredValue.Multiline = true;
+            this.txt_MeasuredValue.Name = "txt_MeasuredValue";
+            this.txt_MeasuredValue.Size = new System.Drawing.Size(475, 41);
+            this.txt_MeasuredValue.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.ForeColor = System.Drawing.Color.Ivory;
+            this.label7.Location = new System.Drawing.Point(18, 19);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(194, 38);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "측정값";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.txt_MeasuredValue);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Location = new System.Drawing.Point(802, 468);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(731, 70);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(802, 148);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 23;
+            this.dataGridView2.Size = new System.Drawing.Size(731, 314);
+            this.dataGridView2.TabIndex = 15;
+            // 
             // txt_WorkDate
             // 
             this.txt_WorkDate.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -207,61 +244,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "작업 지시번호";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 150);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(765, 466);
-            this.dataGridView1.TabIndex = 8;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(802, 150);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(729, 312);
-            this.dataGridView2.TabIndex = 9;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.txt_MeasuredValue);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(802, 468);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(729, 70);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            // 
-            // txt_MeasuredValue
-            // 
-            this.txt_MeasuredValue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_MeasuredValue.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_MeasuredValue.Location = new System.Drawing.Point(218, 18);
-            this.txt_MeasuredValue.Multiline = true;
-            this.txt_MeasuredValue.Name = "txt_MeasuredValue";
-            this.txt_MeasuredValue.Size = new System.Drawing.Size(475, 41);
-            this.txt_MeasuredValue.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.ForeColor = System.Drawing.Color.Ivory;
-            this.label7.Location = new System.Drawing.Point(18, 19);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(194, 38);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "측정값";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // btn_Write
             // 
             this.btn_Write.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -272,52 +254,70 @@
             this.btn_Write.Location = new System.Drawing.Point(802, 544);
             this.btn_Write.Name = "btn_Write";
             this.btn_Write.Size = new System.Drawing.Size(447, 72);
-            this.btn_Write.TabIndex = 11;
+            this.btn_Write.TabIndex = 17;
             this.btn_Write.Text = "입력";
             this.btn_Write.UseVisualStyleBackColor = false;
             // 
-            // btn_Delete
+            // dataGridView1
             // 
-            this.btn_Delete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Delete.BackColor = System.Drawing.Color.Ivory;
-            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Delete.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_Delete.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Delete.Location = new System.Drawing.Point(1269, 544);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(262, 72);
-            this.btn_Delete.TabIndex = 12;
-            this.btn_Delete.Text = "삭제";
-            this.btn_Delete.UseVisualStyleBackColor = false;
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 148);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(765, 468);
+            this.dataGridView1.TabIndex = 14;
             // 
-            // ProcessCondition
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Controls.Add(this.txt_unit);
+            this.groupBox2.Controls.Add(this.txt_ResultNum);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txt_WorkPlace);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.txt_Item);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txt_WorkDate);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txt_WorkNum);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Location = new System.Drawing.Point(12, 8);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1521, 119);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            // 
+            // QualityMeasurement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1538, 628);
             this.Controls.Add(this.btn_Delete);
-            this.Controls.Add(this.btn_Write);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.btn_Write);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ProcessCondition";
-            this.Text = "ProcessCondition";
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.Name = "QualityMeasurement";
+            this.Text = "QualityMeasurement";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.TextBox txt_unit;
         private System.Windows.Forms.TextBox txt_ResultNum;
         private System.Windows.Forms.Label label5;
@@ -326,16 +326,16 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_Item;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_MeasuredValue;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox txt_WorkDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_WorkNum;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txt_MeasuredValue;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_Write;
-        private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

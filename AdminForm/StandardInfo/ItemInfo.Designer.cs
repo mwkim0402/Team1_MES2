@@ -941,7 +941,12 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.dgvSearchResult);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ItemInfo";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "ItemInfo";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

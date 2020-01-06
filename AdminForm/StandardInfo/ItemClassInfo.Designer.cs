@@ -225,13 +225,18 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "그룹명";
             // 
-            // ItemClassiInfo
+            // ItemClassInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 604);
             this.Controls.Add(this.panel1);
-            this.Name = "ItemClassiInfo";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "ItemClassInfo";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "ItemClassiInfo";
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);

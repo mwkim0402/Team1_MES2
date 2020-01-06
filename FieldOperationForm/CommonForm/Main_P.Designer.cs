@@ -165,7 +165,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.IsMdiContainer = true;
             this.Name = "Main_P";
-            this.Text = "FieldmanagementP";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.FieldmanagementP_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

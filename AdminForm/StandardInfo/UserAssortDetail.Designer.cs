@@ -63,13 +63,18 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "사용자 정의 대분류 :";
             // 
-            // UserDetailAssort
+            // UserAssortDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 604);
             this.Controls.Add(this.panel2);
-            this.Name = "UserDetailAssort";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "UserAssortDetail";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "UserDetailAssort";
             this.Controls.SetChildIndex(this.tabControl1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);

@@ -95,12 +95,17 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "품목";
             // 
-            // QulitySizeSet
+            // QualitySizeSet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1156, 604);
             this.Controls.Add(this.panel2);
-            this.Name = "QulitySizeSet";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "QualitySizeSet";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Controls.SetChildIndex(this.tabControl1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);

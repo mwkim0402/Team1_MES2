@@ -12,8 +12,8 @@ namespace AdminForm
 {
     public partial class MainForm : Form
     {
-        private Point _imageLocation = new Point(15, 5);
-        private Point _imgHitArea = new Point(13, 2);
+        private Point _imageLocation = new Point(25, 5);
+        private Point _imgHitArea = new Point(23, 2);
         int CheckBtnIndex = 100;
         bool open = false;
         List<MenuTreeVo> menuList;
@@ -168,12 +168,12 @@ namespace AdminForm
                 Rectangle r = e.Bounds;
                 r = this.tabControl2.GetTabRect(e.Index);
                 r.Offset(2, 2);
-
+                
                 Brush TitleBrush = new SolidBrush(Color.Black);
                 Font f = this.Font;
 
                 string title = this.tabControl2.TabPages[e.Index].Text;
-
+                this.tabControl2.SizeMode = TabSizeMode.Fixed;
                 e.Graphics.DrawString(title, f, TitleBrush, new PointF(r.X, r.Y));
                 e.Graphics.DrawImage(img, new Point(r.X + (this.tabControl2.GetTabRect(e.Index).Width - _imageLocation.X - 2), _imageLocation.Y - 3));
             }
@@ -219,7 +219,7 @@ namespace AdminForm
                         return;
                     }
                 }
-                newForm(selectMenu.Form_Name, selectMenu.Screen_Code);
+                newForm(selectMenu.Form_Name, selectMenu.Screen_Code.Trim());
             }
         }
         /// <summary>

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AdminForm
 {
-    public partial class EtherIOInfo : AdminForm.dgvOneWithInput
+    public partial class EtherIOInfo : dgvOneWithInput
     {
         public EtherIOInfo()
         {

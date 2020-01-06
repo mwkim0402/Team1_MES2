@@ -8,13 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FieldOperationForm.CommonForm
+namespace FieldOperationForm
 {
     public partial class End : Form
     {
         public End()
         {
             InitializeComponent();
+        }
+
+        private void btn_OK_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_Cancle_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

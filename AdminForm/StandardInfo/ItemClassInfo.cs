@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AdminForm
 {
-    public partial class ItemClassInfo : AdminForm.dgvOne
+    public partial class ItemClassInfo : dgvOne
     {
         public ItemClassInfo()
         {

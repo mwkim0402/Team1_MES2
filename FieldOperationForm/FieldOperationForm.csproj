@@ -53,11 +53,29 @@
     <Compile Include="CommonForm\End.Designer.cs">
       <DependentUpon>End.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommonForm\LogOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\LogOut.Designer.cs">
+      <DependentUpon>LogOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\NonOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\NonOperation.Designer.cs">
+      <DependentUpon>NonOperation.cs</DependentUpon>
+    </Compile>
     <Compile Include="CommonForm\ProcessCondition.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CommonForm\ProcessCondition.Designer.cs">
       <DependentUpon>ProcessCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\QualityMeasurement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\QualityMeasurement.Designer.cs">
+      <DependentUpon>QualityMeasurement.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonForm\workerAllocation .cs">
       <SubType>Form</SubType>
@@ -65,11 +83,17 @@
     <Compile Include="CommonForm\workerAllocation .Designer.cs">
       <DependentUpon>workerAllocation .cs</DependentUpon>
     </Compile>
-    <Compile Include="Fieldmanagement .cs">
+    <Compile Include="JobOrder_Load\EmptyTruck.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fieldmanagement .Designer.cs">
-      <DependentUpon>Fieldmanagement .cs</DependentUpon>
+    <Compile Include="JobOrder_Load\EmptyTruck.Designer.cs">
+      <DependentUpon>EmptyTruck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Load\Frame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Load\Frame.Designer.cs">
+      <DependentUpon>Frame.cs</DependentUpon>
     </Compile>
     <Compile Include="JobOrder_Load\JobOrderStatus_Load .cs">
       <SubType>Form</SubType>
@@ -77,11 +101,47 @@
     <Compile Include="JobOrder_Load\JobOrderStatus_Load .Designer.cs">
       <DependentUpon>JobOrderStatus_Load .cs</DependentUpon>
     </Compile>
+    <Compile Include="JobOrder_Load\LoadJobOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Load\LoadJobOrder.Designer.cs">
+      <DependentUpon>LoadJobOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Load\LoadPerformance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Load\LoadPerformance.Designer.cs">
+      <DependentUpon>LoadPerformance.cs</DependentUpon>
+    </Compile>
     <Compile Include="JobOrder_Molding\JobOrderStatus .cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="JobOrder_Molding\JobOrderStatus .Designer.cs">
       <DependentUpon>JobOrderStatus .cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Molding\Mold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Molding\Mold.Designer.cs">
+      <DependentUpon>Mold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Molding\Truck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Molding\Truck.Designer.cs">
+      <DependentUpon>Truck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Package\CreatePalette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Package\CreatePalette.Designer.cs">
+      <DependentUpon>CreatePalette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Package\JobOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Package\JobOrder.Designer.cs">
+      <DependentUpon>JobOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="JobOrder_Package\JobOrderStatus_Package .cs">
       <SubType>Form</SubType>
@@ -101,25 +161,73 @@
     <Compile Include="CommonForm\Main_P.Designer.cs">
       <DependentUpon>Main_P.cs</DependentUpon>
     </Compile>
+    <Compile Include="JobOrder_Package\PaletteBarCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Package\PaletteBarCode.Designer.cs">
+      <DependentUpon>PaletteBarCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Package\Unloading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Package\Unloading.Designer.cs">
+      <DependentUpon>Unloading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Package\warehousing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Package\warehousing.Designer.cs">
+      <DependentUpon>warehousing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CommonForm\End.resx">
       <DependentUpon>End.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm\LogOut.resx">
+      <DependentUpon>LogOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm\NonOperation.resx">
+      <DependentUpon>NonOperation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CommonForm\ProcessCondition.resx">
       <DependentUpon>ProcessCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm\QualityMeasurement.resx">
+      <DependentUpon>QualityMeasurement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CommonForm\workerAllocation .resx">
       <DependentUpon>workerAllocation .cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Fieldmanagement .resx">
-      <DependentUpon>Fieldmanagement .cs</DependentUpon>
+    <EmbeddedResource Include="JobOrder_Load\EmptyTruck.resx">
+      <DependentUpon>EmptyTruck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Load\Frame.resx">
+      <DependentUpon>Frame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JobOrder_Load\JobOrderStatus_Load .resx">
       <DependentUpon>JobOrderStatus_Load .cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Load\LoadJobOrder.resx">
+      <DependentUpon>LoadJobOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Load\LoadPerformance.resx">
+      <DependentUpon>LoadPerformance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="JobOrder_Molding\JobOrderStatus .resx">
       <DependentUpon>JobOrderStatus .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Molding\Mold.resx">
+      <DependentUpon>Mold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Molding\Truck.resx">
+      <DependentUpon>Truck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Package\CreatePalette.resx">
+      <DependentUpon>CreatePalette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Package\JobOrder.resx">
+      <DependentUpon>JobOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JobOrder_Package\JobOrderStatus_Package .resx">
       <DependentUpon>JobOrderStatus_Package .cs</DependentUpon>
@@ -129,6 +237,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CommonForm\Main_P.resx">
       <DependentUpon>Main_P.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Package\PaletteBarCode.resx">
+      <DependentUpon>PaletteBarCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Package\Unloading.resx">
+      <DependentUpon>Unloading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Package\warehousing.resx">
+      <DependentUpon>warehousing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\dgvOne.resx">
       <DependentUpon>dgvOne.cs</DependentUpon>
@@ -156,6 +273,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -169,6 +287,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\캡처.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\홈.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\종료.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\종료1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\로그아웃.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

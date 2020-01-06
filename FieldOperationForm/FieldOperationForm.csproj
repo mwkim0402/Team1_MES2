@@ -297,5 +297,9 @@
   <ItemGroup>
     <None Include="Resources\로그아웃.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\종료.PNG" />
+    <Content Include="Resources\캡처.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

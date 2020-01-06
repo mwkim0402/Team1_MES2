@@ -289,13 +289,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\캡처.PNG" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\홈.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\종료.PNG" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\종료1.PNG" />

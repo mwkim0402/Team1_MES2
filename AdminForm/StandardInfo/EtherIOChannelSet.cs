@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AdminForm
 {
-    public partial class EtherIOChannelSet : AdminForm.dgvTwoWithInput
+    public partial class EtherIOChannelSet : dgvTwoWithInput
     {
         public EtherIOChannelSet()
         {

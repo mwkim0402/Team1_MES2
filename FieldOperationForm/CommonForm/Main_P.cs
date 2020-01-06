@@ -12,6 +12,7 @@ namespace FieldOperationForm
 {
     public partial class Main_P : Form
     {
+     
         public Main_P()
         {
             InitializeComponent();
@@ -29,21 +30,49 @@ namespace FieldOperationForm
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Login frm = new Login(this);
-            frm.MdiParent = this;
-            frm.BringToFront();
 
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-            lblChange.Text = "로그인";
-        }
 
         private void btn_FormClose_Click(object sender, EventArgs e)
         {
-            
-            Application.Exit();
+
+            End frm = new End();
+            frm.Show();
+        }
+
+        private void btn_NonOperation_Click(object sender, EventArgs e)
+        {
+            NonOperation frm = new NonOperation(this);
+            frm.MdiParent = this;
+            frm.BringToFront();
+           
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+           lblChange.Text = "비가동 등록";
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //JobOrderStatus_Package frm = new JobOrderStatus_Package(this);
+            // JobOrderStatus frm = new JobOrderStatus(this);
+            JobOrderStatus_Load frm = new JobOrderStatus_Load(this);
+            frm.BringToFront();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+         
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            LogOut frm = new LogOut(this);
+            frm.Show();
+            //Login frm = new Login(this);
+            //frm.MdiParent = this;
+            //frm.BringToFront();
+
+            //frm.Dock = DockStyle.Fill;
+            //frm.Show();
+            //lblChange.Text = "로그인";
         }
     }
 }

@@ -10,21 +10,13 @@ using System.Windows.Forms;
 
 namespace FieldOperationForm
 {
-    public partial class Fieldmanagement : Form
+    public partial class NonOperation : Form
     {
-        public Fieldmanagement()
+        Main_P main;
+        public NonOperation(Main_P main1)
         {
             InitializeComponent();
-        }
-
-        private void 포장입고등록ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void 작업지시현황ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
+            main = main1;
         }
     }
 }

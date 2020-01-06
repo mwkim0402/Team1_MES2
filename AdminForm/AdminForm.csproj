@@ -1,0 +1,660 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D8E1122F-97E5-44FA-906A-6B5DB6DFE816}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AdminForm</RootNamespace>
+    <AssemblyName>AdminForm</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CategorySearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategorySearch.Designer.cs">
+      <DependentUpon>CategorySearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FIndCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FIndCategory.Designer.cs">
+      <DependentUpon>FIndCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder\Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder\Order.designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mold\MoldInformationRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mold\MoldInformationRegister.designer.cs">
+      <DependentUpon>MoldInformationRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForm\dgvTwoWithInput .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForm\dgvTwoWithInput .Designer.cs">
+      <DependentUpon>dgvTwoWithInput .cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForm\dgvOneWithInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForm\dgvOneWithInput.Designer.cs">
+      <DependentUpon>dgvOneWithInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForm\dgvTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForm\dgvTwo.Designer.cs">
+      <DependentUpon>dgvTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForm\dgvOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForm\dgvOne.Designer.cs">
+      <DependentUpon>dgvOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Journal\FiringWorkReport .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Journal\FiringWorkReport .Designer.cs">
+      <DependentUpon>FiringWorkReport .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Journal\SelectionPackingWorkReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Journal\SelectionPackingWorkReport.Designer.cs">
+      <DependentUpon>SelectionPackingWorkReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Journal\PackingWorkReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Journal\PackingWorkReport.Designer.cs">
+      <DependentUpon>PackingWorkReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Journal\WorkReportParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Journal\WorkReportParent.Designer.cs">
+      <DependentUpon>WorkReportParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Journal\MoldingWorkReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Journal\MoldingWorkReport.Designer.cs">
+      <DependentUpon>MoldingWorkReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Journal\LoadWorkReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Journal\LoadWorkReport.Designer.cs">
+      <DependentUpon>LoadWorkReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mold\MoldUseStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mold\MoldUseStatus.designer.cs">
+      <DependentUpon>MoldUseStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerformManagement\EndPallet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerformManagement\EndPallet.Designer.cs">
+      <DependentUpon>EndPallet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerformManagement\GASUsingRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerformManagement\GASUsingRegister.Designer.cs">
+      <DependentUpon>GASUsingRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerformManagement\GVLookup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerformManagement\GVLookup.Designer.cs">
+      <DependentUpon>GVLookup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerformManagement\GVStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerformManagement\GVStatus.Designer.cs">
+      <DependentUpon>GVStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerformManagement\NonOperationRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerformManagement\NonOperationRegister.Designer.cs">
+      <DependentUpon>NonOperationRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerformManagement\PerformSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerformManagement\PerformSearch.Designer.cs">
+      <DependentUpon>PerformSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerformManagement\ProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerformManagement\ProductList.Designer.cs">
+      <DependentUpon>ProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerformManagement\UpdateDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerformManagement\UpdateDetail.Designer.cs">
+      <DependentUpon>UpdateDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerformManagement\WorkdiligenceLookup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerformManagement\WorkdiligenceLookup.Designer.cs">
+      <DependentUpon>WorkdiligenceLookup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerformManagement\WorkdiligenceStatusanalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerformManagement\WorkdiligenceStatusanalysis.Designer.cs">
+      <DependentUpon>WorkdiligenceStatusanalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder\PerformTimeLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder\PerformTimeLine.Designer.cs">
+      <DependentUpon>PerformTimeLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder\JobOrderCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder\JobOrderCreation.Designer.cs">
+      <DependentUpon>JobOrderCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder\MoldingOrderCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder\MoldingOrderCreation.designer.cs">
+      <DependentUpon>MoldingOrderCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="qulityManagement\MaterialManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qulityManagement\MaterialManagement.Designer.cs">
+      <DependentUpon>MaterialManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="qulityManagement\ProcessInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qulityManagement\ProcessInquiry.Designer.cs">
+      <DependentUpon>ProcessInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="qulityManagement\QualityInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qulityManagement\QualityInquiry.Designer.cs">
+      <DependentUpon>QualityInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="qulityManagement\RegProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qulityManagement\RegProcess.Designer.cs">
+      <DependentUpon>RegProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="qulityManagement\RegFaultyImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qulityManagement\RegFaultyImage.Designer.cs">
+      <DependentUpon>RegFaultyImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="qulityManagement\RegQuality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qulityManagement\RegQuality.Designer.cs">
+      <DependentUpon>RegQuality.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardInfo\EtherIOChannelSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandardInfo\EtherIOChannelSet.Designer.cs">
+      <DependentUpon>EtherIOChannelSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardInfo\EtherIOInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandardInfo\EtherIOInfo.Designer.cs">
+      <DependentUpon>EtherIOInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardInfo\FactoryInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandardInfo\FactoryInfo.Designer.cs">
+      <DependentUpon>FactoryInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardInfo\Faulty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandardInfo\Faulty.Designer.cs">
+      <DependentUpon>Faulty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardInfo\FaultyDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandardInfo\FaultyDetail.Designer.cs">
+      <DependentUpon>FaultyDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardInfo\GvInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandardInfo\GvInformation.Designer.cs">
+      <DependentUpon>GvInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardInfo\IPCInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandardInfo\IPCInfo.Designer.cs">
+      <DependentUpon>IPCInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardInfo\ItemClassInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandardInfo\ItemClassInfo.Designer.cs">
+      <DependentUpon>ItemClassInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardInfo\ItemInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandardInfo\ItemInfo.Designer.cs">
+      <DependentUpon>ItemInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardInfo\NonOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandardInfo\NonOperation.Designer.cs">
+      <DependentUpon>NonOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardInfo\NonOperationDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandardInfo\NonOperationDetail.Designer.cs">
+      <DependentUpon>NonOperationDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardInfo\PackGradeDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandardInfo\PackGradeDetail.Designer.cs">
+      <DependentUpon>PackGradeDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardInfo\ProcessConditionSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandardInfo\ProcessConditionSet.Designer.cs">
+      <DependentUpon>ProcessConditionSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardInfo\ProcessInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandardInfo\ProcessInfo.Designer.cs">
+      <DependentUpon>ProcessInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardInfo\QualitySizeSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandardInfo\QualitySizeSet.Designer.cs">
+      <DependentUpon>QualitySizeSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardInfo\UserAssort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandardInfo\UserAssort.Designer.cs">
+      <DependentUpon>UserAssort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandardInfo\UserAssortDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandardInfo\UserAssortDetail.Designer.cs">
+      <DependentUpon>UserAssortDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\IPAddressManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\IPAddressManager.Designer.cs">
+      <DependentUpon>IPAddressManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\ERPInterfaceLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\ERPInterfaceLog.Designer.cs">
+      <DependentUpon>ERPInterfaceLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\MenuManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\MenuManagement.Designer.cs">
+      <DependentUpon>MenuManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\NoticeRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\NoticeRegister.Designer.cs">
+      <DependentUpon>NoticeRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\MonitorManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\MonitorManager.Designer.cs">
+      <DependentUpon>MonitorManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\ModuleManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\ModuleManager.Designer.cs">
+      <DependentUpon>ModuleManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\LoginLogInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\LoginLogInfo.Designer.cs">
+      <DependentUpon>LoginLogInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\SystemCodeCategoryDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\SystemCodeCategoryDetail.Designer.cs">
+      <DependentUpon>SystemCodeCategoryDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\SystemCodeCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\SystemCodeCategory.Designer.cs">
+      <DependentUpon>SystemCodeCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\UserManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\UserManager.Designer.cs">
+      <DependentUpon>UserManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\UserGroupManger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\UserGroupManger.Designer.cs">
+      <DependentUpon>UserGroupManger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\UserGroupPowerSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\UserGroupPowerSetting.Designer.cs">
+      <DependentUpon>UserGroupPowerSetting.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CategorySearch.resx">
+      <DependentUpon>CategorySearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FIndCategory.resx">
+      <DependentUpon>FIndCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder\Order.resx">
+      <DependentUpon>Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mold\MoldInformationRegister.resx">
+      <DependentUpon>MoldInformationRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForm\dgvTwoWithInput .resx">
+      <DependentUpon>dgvTwoWithInput .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForm\dgvOneWithInput.resx">
+      <DependentUpon>dgvOneWithInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForm\dgvTwo.resx">
+      <DependentUpon>dgvTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForm\dgvOne.resx">
+      <DependentUpon>dgvOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Journal\FiringWorkReport .resx">
+      <DependentUpon>FiringWorkReport .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Journal\SelectionPackingWorkReport.resx">
+      <DependentUpon>SelectionPackingWorkReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Journal\PackingWorkReport.resx">
+      <DependentUpon>PackingWorkReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Journal\WorkReportParent.resx">
+      <DependentUpon>WorkReportParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Journal\MoldingWorkReport.resx">
+      <DependentUpon>MoldingWorkReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Journal\LoadWorkReport.resx">
+      <DependentUpon>LoadWorkReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mold\MoldUseStatus.resx">
+      <DependentUpon>MoldUseStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerformManagement\EndPallet.resx">
+      <DependentUpon>EndPallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerformManagement\GASUsingRegister.resx">
+      <DependentUpon>GASUsingRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerformManagement\GVLookup.resx">
+      <DependentUpon>GVLookup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerformManagement\GVStatus.resx">
+      <DependentUpon>GVStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerformManagement\NonOperationRegister.resx">
+      <DependentUpon>NonOperationRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerformManagement\PerformSearch.resx">
+      <DependentUpon>PerformSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerformManagement\ProductList.resx">
+      <DependentUpon>ProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerformManagement\UpdateDetail.resx">
+      <DependentUpon>UpdateDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerformManagement\WorkdiligenceLookup.resx">
+      <DependentUpon>WorkdiligenceLookup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerformManagement\WorkdiligenceStatusanalysis.resx">
+      <DependentUpon>WorkdiligenceStatusanalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder\PerformTimeLine.resx">
+      <DependentUpon>PerformTimeLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder\JobOrderCreation.resx">
+      <DependentUpon>JobOrderCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder\MoldingOrderCreation.resx">
+      <DependentUpon>MoldingOrderCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="qulityManagement\MaterialManagement.resx">
+      <DependentUpon>MaterialManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qulityManagement\ProcessInquiry.resx">
+      <DependentUpon>ProcessInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qulityManagement\QualityInquiry.resx">
+      <DependentUpon>QualityInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qulityManagement\RegProcess.resx">
+      <DependentUpon>RegProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qulityManagement\RegFaultyImage.resx">
+      <DependentUpon>RegFaultyImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qulityManagement\RegQuality.resx">
+      <DependentUpon>RegQuality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardInfo\EtherIOChannelSet.resx">
+      <DependentUpon>EtherIOChannelSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardInfo\EtherIOInfo.resx">
+      <DependentUpon>EtherIOInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardInfo\FactoryInfo.resx">
+      <DependentUpon>FactoryInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardInfo\Faulty.resx">
+      <DependentUpon>Faulty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardInfo\FaultyDetail.resx">
+      <DependentUpon>FaultyDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardInfo\GvInformation.resx">
+      <DependentUpon>GvInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardInfo\IPCInfo.resx">
+      <DependentUpon>IPCInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardInfo\ItemClassInfo.resx">
+      <DependentUpon>ItemClassInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardInfo\ItemInfo.resx">
+      <DependentUpon>ItemInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardInfo\NonOperation.resx">
+      <DependentUpon>NonOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardInfo\NonOperationDetail.resx">
+      <DependentUpon>NonOperationDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardInfo\PackGradeDetail.resx">
+      <DependentUpon>PackGradeDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardInfo\ProcessConditionSet.resx">
+      <DependentUpon>ProcessConditionSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardInfo\ProcessInfo.resx">
+      <DependentUpon>ProcessInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardInfo\QualitySizeSet.resx">
+      <DependentUpon>QualitySizeSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardInfo\UserAssort.resx">
+      <DependentUpon>UserAssort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandardInfo\UserAssortDetail.resx">
+      <DependentUpon>UserAssortDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\IPAddressManager.resx">
+      <DependentUpon>IPAddressManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\ERPInterfaceLog.resx">
+      <DependentUpon>ERPInterfaceLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\MenuManagement.resx">
+      <DependentUpon>MenuManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\NoticeRegister.resx">
+      <DependentUpon>NoticeRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\MonitorManager.resx">
+      <DependentUpon>MonitorManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\ModuleManager.resx">
+      <DependentUpon>ModuleManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\LoginLogInfo.resx">
+      <DependentUpon>LoginLogInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\SystemCodeCategoryDetail.resx">
+      <DependentUpon>SystemCodeCategoryDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\SystemCodeCategory.resx">
+      <DependentUpon>SystemCodeCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\UserManager.resx">
+      <DependentUpon>UserManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\UserGroupManger.resx">
+      <DependentUpon>UserGroupManger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\UserGroupPowerSetting.resx">
+      <DependentUpon>UserGroupPowerSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MES_DB\MES_DB.csproj">
+      <Project>{c8436adf-2d7b-403d-ab76-b7d56f6b5a07}</Project>
+      <Name>MES_DB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

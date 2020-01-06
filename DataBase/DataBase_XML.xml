@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+  <add key ="MyDB"><![CDATA[Data Source=whyfi8888.ddns.net,11433;Initial Catalog=TEAM1;User ID=team1;Password=1234]]></add>
+</settings>

@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{845F5B3F-2317-4332-A594-1EB7001BBD01}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FieldOperationForm</RootNamespace>
+    <AssemblyName>FieldOperationForm</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonForm\End.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\End.Designer.cs">
+      <DependentUpon>End.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\ProcessCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\ProcessCondition.Designer.cs">
+      <DependentUpon>ProcessCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\workerAllocation .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\workerAllocation .Designer.cs">
+      <DependentUpon>workerAllocation .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fieldmanagement .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fieldmanagement .Designer.cs">
+      <DependentUpon>Fieldmanagement .cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Load\JobOrderStatus_Load .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Load\JobOrderStatus_Load .Designer.cs">
+      <DependentUpon>JobOrderStatus_Load .cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Molding\JobOrderStatus .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Molding\JobOrderStatus .Designer.cs">
+      <DependentUpon>JobOrderStatus .cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Package\JobOrderStatus_Package .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Package\JobOrderStatus_Package .Designer.cs">
+      <DependentUpon>JobOrderStatus_Package .cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\Main_P.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\Main_P.Designer.cs">
+      <DependentUpon>Main_P.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CommonForm\End.resx">
+      <DependentUpon>End.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm\ProcessCondition.resx">
+      <DependentUpon>ProcessCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm\workerAllocation .resx">
+      <DependentUpon>workerAllocation .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fieldmanagement .resx">
+      <DependentUpon>Fieldmanagement .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Load\JobOrderStatus_Load .resx">
+      <DependentUpon>JobOrderStatus_Load .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Molding\JobOrderStatus .resx">
+      <DependentUpon>JobOrderStatus .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Package\JobOrderStatus_Package .resx">
+      <DependentUpon>JobOrderStatus_Package .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm\Main_P.resx">
+      <DependentUpon>Main_P.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\dgvOne.resx">
+      <DependentUpon>dgvOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\dgvTwo.resx">
+      <DependentUpon>dgvTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\dgvOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\dgvOne.Designer.cs">
+      <DependentUpon>dgvOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\dgvTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\dgvTwo.Designer.cs">
+      <DependentUpon>dgvTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

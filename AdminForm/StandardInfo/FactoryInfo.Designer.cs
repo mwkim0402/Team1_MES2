@@ -103,7 +103,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -332,7 +331,6 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tabControl1.Location = new System.Drawing.Point(12, 87);
             this.tabControl1.Name = "tabControl1";
@@ -908,13 +906,22 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.dgvSearchResult);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FactoryInfo";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "FactoryInfo";
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.dgvSearchResult, 0);
+            this.Controls.SetChildIndex(this.tabControl1, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.tabControl2, 0);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

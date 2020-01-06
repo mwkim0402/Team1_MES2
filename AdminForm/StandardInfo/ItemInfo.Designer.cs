@@ -187,8 +187,6 @@
             this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "품목명";
-
-
             // 
             // nuOutputPerCount
             // 
@@ -587,7 +585,6 @@
             this.label10.Size = new System.Drawing.Size(72, 16);
             this.label10.TabIndex = 101;
             this.label10.Text = "품목코드";
-           
             // 
             // txtProdEngName
             // 
@@ -608,13 +605,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 604);
-           
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ItemInfo";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "ItemInfo";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-
             ((System.ComponentModel.ISupportInitialize)(this.nuOutputPerCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuTheoryOutput)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuFiringCount)).EndInit();

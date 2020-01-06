@@ -11,5 +11,6 @@ namespace MES_DB
         public string Parent_Screen_Code { get; set; } 
         public string Screen_Code { get; set; } 
         public int Sort_index { get; set; }
+        public string Form_Name { get; set; }
     }
 }

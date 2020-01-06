@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtFaultCatCodeName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFaultCatCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -41,21 +41,21 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txtFaultCatCodeName);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtFaultCatCode);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1132, 67);
             this.panel2.TabIndex = 15;
             // 
-            // textBox2
+            // txtFaultCatCodeName
             // 
-            this.textBox2.Location = new System.Drawing.Point(646, 27);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(159, 21);
-            this.textBox2.TabIndex = 9;
+            this.txtFaultCatCodeName.Location = new System.Drawing.Point(646, 27);
+            this.txtFaultCatCodeName.Name = "txtFaultCatCodeName";
+            this.txtFaultCatCodeName.Size = new System.Drawing.Size(159, 21);
+            this.txtFaultCatCodeName.TabIndex = 9;
             // 
             // label2
             // 
@@ -67,12 +67,12 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "불량현상 대분류 코드명";
             // 
-            // textBox1
+            // txtFaultCatCode
             // 
-            this.textBox1.Location = new System.Drawing.Point(202, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 21);
-            this.textBox1.TabIndex = 9;
+            this.txtFaultCatCode.Location = new System.Drawing.Point(202, 27);
+            this.txtFaultCatCode.Name = "txtFaultCatCode";
+            this.txtFaultCatCode.Size = new System.Drawing.Size(159, 21);
+            this.txtFaultCatCode.TabIndex = 9;
             // 
             // label1
             // 
@@ -112,9 +112,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtFaultCatCodeName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFaultCatCode;
         private System.Windows.Forms.Label label1;
     }
 }

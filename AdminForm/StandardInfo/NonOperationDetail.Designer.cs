@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.fIndCategory1 = new AdminForm.FIndCategory();
+            this.fcNonOpCat = new AdminForm.FIndCategory();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -39,19 +39,19 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Controls.Add(this.fIndCategory1);
+            this.panel2.Controls.Add(this.fcNonOpCat);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1132, 67);
             this.panel2.TabIndex = 14;
             // 
-            // fIndCategory1
+            // fcNonOpCat
             // 
-            this.fIndCategory1.Location = new System.Drawing.Point(154, 23);
-            this.fIndCategory1.Name = "fIndCategory1";
-            this.fIndCategory1.Size = new System.Drawing.Size(190, 27);
-            this.fIndCategory1.TabIndex = 9;
+            this.fcNonOpCat.Location = new System.Drawing.Point(154, 23);
+            this.fcNonOpCat.Name = "fcNonOpCat";
+            this.fcNonOpCat.Size = new System.Drawing.Size(190, 27);
+            this.fcNonOpCat.TabIndex = 9;
             // 
             // label1
             // 
@@ -91,7 +91,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private FIndCategory fIndCategory1;
+        private FIndCategory fcNonOpCat;
         private System.Windows.Forms.Label label1;
     }
 }

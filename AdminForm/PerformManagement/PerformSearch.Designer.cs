@@ -29,64 +29,64 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.fIndCategory2 = new AdminForm.FIndCategory();
+            this.btnDivide = new System.Windows.Forms.Button();
+            this.btnBalance = new System.Windows.Forms.Button();
+            this.fcWork = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.fIndCategory1 = new AdminForm.FIndCategory();
+            this.fcFactory = new AdminForm.FIndCategory();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.fIndCategory2);
+            this.panel1.Controls.Add(this.btnDivide);
+            this.panel1.Controls.Add(this.btnBalance);
+            this.panel1.Controls.Add(this.fcWork);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.fIndCategory1);
+            this.panel1.Controls.Add(this.fcFactory);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dtpEnd);
+            this.panel1.Controls.Add(this.dtpStart);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 21);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1132, 55);
             this.panel1.TabIndex = 0;
             // 
-            // button2
+            // btnDivide
             // 
-            this.button2.Location = new System.Drawing.Point(1035, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "실적 분할";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDivide.Location = new System.Drawing.Point(1035, 19);
+            this.btnDivide.Name = "btnDivide";
+            this.btnDivide.Size = new System.Drawing.Size(82, 23);
+            this.btnDivide.TabIndex = 1;
+            this.btnDivide.Text = "실적 분할";
+            this.btnDivide.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnBalance
             // 
-            this.button1.Location = new System.Drawing.Point(930, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "실적 보정";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBalance.Location = new System.Drawing.Point(930, 19);
+            this.btnBalance.Name = "btnBalance";
+            this.btnBalance.Size = new System.Drawing.Size(82, 23);
+            this.btnBalance.TabIndex = 1;
+            this.btnBalance.Text = "실적 보정";
+            this.btnBalance.UseVisualStyleBackColor = true;
             // 
-            // fIndCategory2
+            // fcWork
             // 
-            this.fIndCategory2.Location = new System.Drawing.Point(718, 19);
-            this.fIndCategory2.Name = "fIndCategory2";
-            this.fIndCategory2.Size = new System.Drawing.Size(190, 27);
-            this.fIndCategory2.TabIndex = 5;
+            this.fcWork.Location = new System.Drawing.Point(718, 19);
+            this.fcWork.Name = "fcWork";
+            this.fcWork.Size = new System.Drawing.Size(190, 27);
+            this.fcWork.TabIndex = 5;
             // 
             // label4
             // 
@@ -108,12 +108,12 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "공정 :";
             // 
-            // fIndCategory1
+            // fcFactory
             // 
-            this.fIndCategory1.Location = new System.Drawing.Point(443, 19);
-            this.fIndCategory1.Name = "fIndCategory1";
-            this.fIndCategory1.Size = new System.Drawing.Size(190, 27);
-            this.fIndCategory1.TabIndex = 1;
+            this.fcFactory.Location = new System.Drawing.Point(443, 19);
+            this.fcFactory.Name = "fcFactory";
+            this.fcFactory.Size = new System.Drawing.Size(190, 27);
+            this.fcFactory.TabIndex = 1;
             // 
             // label2
             // 
@@ -124,21 +124,21 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "~";
             // 
-            // dateTimePicker2
+            // dtpEnd
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(262, 22);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(109, 21);
-            this.dateTimePicker2.TabIndex = 2;
+            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEnd.Location = new System.Drawing.Point(262, 22);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(109, 21);
+            this.dtpEnd.TabIndex = 2;
             // 
-            // dateTimePicker1
+            // dtpStart
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(111, 21);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(109, 21);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStart.Location = new System.Drawing.Point(111, 21);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(109, 21);
+            this.dtpStart.TabIndex = 2;
             // 
             // label1
             // 
@@ -175,13 +175,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private FIndCategory fIndCategory2;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.DateTimePicker dtpStart;
+        private System.Windows.Forms.Button btnDivide;
+        private System.Windows.Forms.Button btnBalance;
+        private FIndCategory fcWork;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private FIndCategory fIndCategory1;
+        private FIndCategory fcFactory;
     }
 }

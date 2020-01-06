@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbUsable = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIPC = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -41,22 +41,22 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cmbUsable);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtIPC);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1132, 67);
             this.panel2.TabIndex = 18;
             // 
-            // comboBox1
+            // cmbUsable
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(378, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 11;
+            this.cmbUsable.FormattingEnabled = true;
+            this.cmbUsable.Location = new System.Drawing.Point(378, 28);
+            this.cmbUsable.Name = "cmbUsable";
+            this.cmbUsable.Size = new System.Drawing.Size(121, 20);
+            this.cmbUsable.TabIndex = 11;
             // 
             // label3
             // 
@@ -68,12 +68,12 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "사용유무";
             // 
-            // textBox1
+            // txtIPC
             // 
-            this.textBox1.Location = new System.Drawing.Point(78, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 21);
-            this.textBox1.TabIndex = 9;
+            this.txtIPC.Location = new System.Drawing.Point(78, 26);
+            this.txtIPC.Name = "txtIPC";
+            this.txtIPC.Size = new System.Drawing.Size(159, 21);
+            this.txtIPC.TabIndex = 9;
             // 
             // label1
             // 
@@ -111,9 +111,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbUsable;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtIPC;
         private System.Windows.Forms.Label label1;
     }
 }

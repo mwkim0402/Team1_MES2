@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnChange = new System.Windows.Forms.Button();
+            this.btnEndPallet = new System.Windows.Forms.Button();
+            this.btnEndWork = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -45,45 +45,45 @@
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnChange);
+            this.panel1.Controls.Add(this.btnEndPallet);
+            this.panel1.Controls.Add(this.btnEndWork);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dtpEnd);
+            this.panel1.Controls.Add(this.dtpStart);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 22);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1132, 55);
             this.panel1.TabIndex = 1;
             // 
-            // button2
+            // btnChange
             // 
-            this.button2.Location = new System.Drawing.Point(996, 15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 32);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "등급상세 수정";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnChange.Location = new System.Drawing.Point(996, 15);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(116, 32);
+            this.btnChange.TabIndex = 1;
+            this.btnChange.Text = "등급상세 수정";
+            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnEndPallet
             // 
-            this.button3.Location = new System.Drawing.Point(860, 15);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(116, 32);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "팔레트 마감";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEndPallet.Location = new System.Drawing.Point(860, 15);
+            this.btnEndPallet.Name = "btnEndPallet";
+            this.btnEndPallet.Size = new System.Drawing.Size(116, 32);
+            this.btnEndPallet.TabIndex = 1;
+            this.btnEndPallet.Text = "팔레트 마감";
+            this.btnEndPallet.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnEndWork
             // 
-            this.button1.Location = new System.Drawing.Point(721, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 32);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "작업지시 마감";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEndWork.Location = new System.Drawing.Point(721, 15);
+            this.btnEndWork.Name = "btnEndWork";
+            this.btnEndWork.Size = new System.Drawing.Size(116, 32);
+            this.btnEndWork.TabIndex = 1;
+            this.btnEndWork.Text = "작업지시 마감";
+            this.btnEndWork.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -94,21 +94,21 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "~";
             // 
-            // dateTimePicker2
+            // dtpEnd
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(274, 21);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(109, 21);
-            this.dateTimePicker2.TabIndex = 2;
+            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEnd.Location = new System.Drawing.Point(274, 21);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(109, 21);
+            this.dtpEnd.TabIndex = 2;
             // 
-            // dateTimePicker1
+            // dtpStart
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(123, 20);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(109, 21);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStart.Location = new System.Drawing.Point(123, 20);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(109, 21);
+            this.dtpStart.TabIndex = 2;
             // 
             // label1
             // 
@@ -143,12 +143,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnChange;
+        private System.Windows.Forms.Button btnEndPallet;
+        private System.Windows.Forms.Button btnEndWork;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.Label label1;
     }
 }

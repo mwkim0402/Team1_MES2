@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.fIndCategory1 = new AdminForm.FIndCategory();
+            this.fc = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
-            this.fcFactory = new AdminForm.FIndCategory();
+            this.fcCategory = new AdminForm.FIndCategory();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
@@ -43,9 +43,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Controls.Add(this.fIndCategory1);
+            this.panel1.Controls.Add(this.fc);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.fcFactory);
+            this.panel1.Controls.Add(this.fcCategory);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dtpEnd);
@@ -56,12 +56,12 @@
             this.panel1.Size = new System.Drawing.Size(1128, 67);
             this.panel1.TabIndex = 4;
             // 
-            // fIndCategory1
+            // fc
             // 
-            this.fIndCategory1.Location = new System.Drawing.Point(662, 22);
-            this.fIndCategory1.Name = "fIndCategory1";
-            this.fIndCategory1.Size = new System.Drawing.Size(190, 27);
-            this.fIndCategory1.TabIndex = 7;
+            this.fc.Location = new System.Drawing.Point(662, 22);
+            this.fc.Name = "fc";
+            this.fc.Size = new System.Drawing.Size(190, 27);
+            this.fc.TabIndex = 7;
             // 
             // label4
             // 
@@ -73,12 +73,12 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "대차";
             // 
-            // fcFactory
+            // fcCategory
             // 
-            this.fcFactory.Location = new System.Drawing.Point(403, 22);
-            this.fcFactory.Name = "fcFactory";
-            this.fcFactory.Size = new System.Drawing.Size(190, 27);
-            this.fcFactory.TabIndex = 5;
+            this.fcCategory.Location = new System.Drawing.Point(403, 22);
+            this.fcCategory.Name = "fcCategory";
+            this.fcCategory.Size = new System.Drawing.Size(190, 27);
+            this.fcCategory.TabIndex = 5;
             // 
             // label3
             // 
@@ -153,8 +153,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private FIndCategory fcFactory;
-        private FIndCategory fIndCategory1;
+        private FIndCategory fcCategory;
+        private FIndCategory fc;
         private System.Windows.Forms.Label label4;
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.fIndCategory1 = new AdminForm.FIndCategory();
+            this.fcWork = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
             this.fcFactory = new AdminForm.FIndCategory();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Controls.Add(this.fIndCategory1);
+            this.panel1.Controls.Add(this.fcWork);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.fcFactory);
             this.panel1.Controls.Add(this.label3);
@@ -56,12 +56,12 @@
             this.panel1.Size = new System.Drawing.Size(1128, 67);
             this.panel1.TabIndex = 4;
             // 
-            // fIndCategory1
+            // fcWork
             // 
-            this.fIndCategory1.Location = new System.Drawing.Point(678, 24);
-            this.fIndCategory1.Name = "fIndCategory1";
-            this.fIndCategory1.Size = new System.Drawing.Size(190, 27);
-            this.fIndCategory1.TabIndex = 7;
+            this.fcWork.Location = new System.Drawing.Point(678, 24);
+            this.fcWork.Name = "fcWork";
+            this.fcWork.Size = new System.Drawing.Size(190, 27);
+            this.fcWork.TabIndex = 7;
             // 
             // label4
             // 
@@ -154,7 +154,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private FIndCategory fcFactory;
-        private FIndCategory fIndCategory1;
+        private FIndCategory fcWork;
         private System.Windows.Forms.Label label4;
     }
 }

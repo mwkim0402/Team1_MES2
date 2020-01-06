@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDown = new System.Windows.Forms.Button();
-            this.fcFactory = new AdminForm.FIndCategory();
+            this.fcWorker = new AdminForm.FIndCategory();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
@@ -43,7 +43,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.Controls.Add(this.btnDown);
-            this.panel1.Controls.Add(this.fcFactory);
+            this.panel1.Controls.Add(this.fcWorker);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dtpEnd);
@@ -63,12 +63,12 @@
             this.btnDown.Text = "ERP Interface";
             this.btnDown.UseVisualStyleBackColor = true;
             // 
-            // fcFactory
+            // fcWorker
             // 
-            this.fcFactory.Location = new System.Drawing.Point(419, 21);
-            this.fcFactory.Name = "fcFactory";
-            this.fcFactory.Size = new System.Drawing.Size(190, 27);
-            this.fcFactory.TabIndex = 5;
+            this.fcWorker.Location = new System.Drawing.Point(419, 21);
+            this.fcWorker.Name = "fcWorker";
+            this.fcWorker.Size = new System.Drawing.Size(190, 27);
+            this.fcWorker.TabIndex = 5;
             // 
             // label3
             // 
@@ -143,7 +143,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private FIndCategory fcFactory;
+        private FIndCategory fcWorker;
         private System.Windows.Forms.Button btnDown;
     }
 }

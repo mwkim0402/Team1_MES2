@@ -29,23 +29,20 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.cmbMoldGroupSearch = new System.Windows.Forms.ComboBox();
+            this.txtMoldNameSearch = new System.Windows.Forms.TextBox();
+            this.txtMoldCodeSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.btnSave = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.txtWarrentNum = new System.Windows.Forms.TextBox();
+            this.txtPS = new System.Windows.Forms.TextBox();
+            this.txtMoldGroupInput = new System.Windows.Forms.TextBox();
+            this.txtMoldNameInput = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtMoldCodeInput = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -54,44 +51,46 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpLastEquipDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpInputdate = new System.Windows.Forms.DateTimePicker();
+            this.gbUsable = new System.Windows.Forms.GroupBox();
+            this.rbUse = new System.Windows.Forms.RadioButton();
+            this.rbNoUse = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.gbUsable.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.gbUsable);
+            this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.label23);
-            this.panel1.Controls.Add(this.radioButton3);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.radioButton4);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dtpInputdate);
+            this.panel1.Controls.Add(this.dtpLastEquipDate);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label22);
-            this.panel1.Controls.Add(this.textBox9);
+            this.panel1.Controls.Add(this.txtWarrentNum);
             this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.textBox10);
+            this.panel1.Controls.Add(this.txtPS);
             this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.textBox11);
+            this.panel1.Controls.Add(this.txtMoldGroupInput);
             this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.textBox12);
+            this.panel1.Controls.Add(this.txtMoldNameInput);
             this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.textBox13);
+            this.panel1.Controls.Add(this.txtPrice);
             this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.textBox14);
+            this.panel1.Controls.Add(this.txtMoldCodeInput);
             this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.label15);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.textBox8);
-            this.panel2.Controls.Add(this.textBox7);
+            this.panel2.Controls.Add(this.cmbMoldGroupSearch);
+            this.panel2.Controls.Add(this.txtMoldNameSearch);
+            this.panel2.Controls.Add(this.txtMoldCodeSearch);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label14);
@@ -100,27 +99,27 @@
             this.panel2.Size = new System.Drawing.Size(1128, 67);
             this.panel2.TabIndex = 10;
             // 
-            // comboBox1
+            // cmbMoldGroupSearch
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(625, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 13;
+            this.cmbMoldGroupSearch.FormattingEnabled = true;
+            this.cmbMoldGroupSearch.Location = new System.Drawing.Point(625, 25);
+            this.cmbMoldGroupSearch.Name = "cmbMoldGroupSearch";
+            this.cmbMoldGroupSearch.Size = new System.Drawing.Size(121, 20);
+            this.cmbMoldGroupSearch.TabIndex = 13;
             // 
-            // textBox8
+            // txtMoldNameSearch
             // 
-            this.textBox8.Location = new System.Drawing.Point(355, 25);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(128, 21);
-            this.textBox8.TabIndex = 12;
+            this.txtMoldNameSearch.Location = new System.Drawing.Point(355, 25);
+            this.txtMoldNameSearch.Name = "txtMoldNameSearch";
+            this.txtMoldNameSearch.Size = new System.Drawing.Size(128, 21);
+            this.txtMoldNameSearch.TabIndex = 12;
             // 
-            // textBox7
+            // txtMoldCodeSearch
             // 
-            this.textBox7.Location = new System.Drawing.Point(96, 25);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(128, 21);
-            this.textBox7.TabIndex = 11;
+            this.txtMoldCodeSearch.Location = new System.Drawing.Point(96, 25);
+            this.txtMoldCodeSearch.Name = "txtMoldCodeSearch";
+            this.txtMoldCodeSearch.Size = new System.Drawing.Size(128, 21);
+            this.txtMoldCodeSearch.TabIndex = 11;
             // 
             // label2
             // 
@@ -152,110 +151,75 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "금형코드";
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(1034, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 48);
-            this.button1.TabIndex = 48;
-            this.button1.Text = "저장";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton3.Location = new System.Drawing.Point(982, 52);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(35, 16);
-            this.radioButton3.TabIndex = 47;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "무";
-            this.radioButton3.UseVisualStyleBackColor = false;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton4.Location = new System.Drawing.Point(982, 18);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(35, 16);
-            this.radioButton4.TabIndex = 46;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "유";
-            this.radioButton4.UseVisualStyleBackColor = false;
+            this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSave.Location = new System.Drawing.Point(1034, 18);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(82, 48);
+            this.btnSave.TabIndex = 48;
+            this.btnSave.Text = "저장";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label13.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label13.Location = new System.Drawing.Point(806, 21);
+            this.label13.Location = new System.Drawing.Point(790, 21);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(56, 13);
             this.label13.TabIndex = 45;
             this.label13.Text = "(시간당)";
             // 
-            // textBox9
+            // txtWarrentNum
             // 
-            this.textBox9.Location = new System.Drawing.Point(700, 16);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 21);
-            this.textBox9.TabIndex = 44;
+            this.txtWarrentNum.Location = new System.Drawing.Point(684, 16);
+            this.txtWarrentNum.Name = "txtWarrentNum";
+            this.txtWarrentNum.Size = new System.Drawing.Size(100, 21);
+            this.txtWarrentNum.TabIndex = 44;
             // 
-            // textBox10
+            // txtPS
             // 
-            this.textBox10.Location = new System.Drawing.Point(700, 47);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(191, 21);
-            this.textBox10.TabIndex = 43;
+            this.txtPS.Location = new System.Drawing.Point(684, 47);
+            this.txtPS.Name = "txtPS";
+            this.txtPS.Size = new System.Drawing.Size(152, 21);
+            this.txtPS.TabIndex = 43;
             // 
-            // textBox11
+            // txtMoldGroupInput
             // 
-            this.textBox11.Location = new System.Drawing.Point(503, 16);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 21);
-            this.textBox11.TabIndex = 42;
+            this.txtMoldGroupInput.Location = new System.Drawing.Point(498, 16);
+            this.txtMoldGroupInput.Name = "txtMoldGroupInput";
+            this.txtMoldGroupInput.Size = new System.Drawing.Size(100, 21);
+            this.txtMoldGroupInput.TabIndex = 42;
             // 
-            // textBox12
+            // txtMoldNameInput
             // 
-            this.textBox12.Location = new System.Drawing.Point(288, 16);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 21);
-            this.textBox12.TabIndex = 41;
+            this.txtMoldNameInput.Location = new System.Drawing.Point(283, 16);
+            this.txtMoldNameInput.Name = "txtMoldNameInput";
+            this.txtMoldNameInput.Size = new System.Drawing.Size(100, 21);
+            this.txtMoldNameInput.TabIndex = 41;
             // 
-            // textBox13
+            // txtPrice
             // 
-            this.textBox13.Location = new System.Drawing.Point(96, 47);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 21);
-            this.textBox13.TabIndex = 40;
+            this.txtPrice.Location = new System.Drawing.Point(96, 47);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(100, 21);
+            this.txtPrice.TabIndex = 40;
             // 
-            // textBox14
+            // txtMoldCodeInput
             // 
-            this.textBox14.Location = new System.Drawing.Point(96, 16);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 21);
-            this.textBox14.TabIndex = 39;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label15.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label15.Location = new System.Drawing.Point(899, 18);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(72, 16);
-            this.label15.TabIndex = 38;
-            this.label15.Text = "사용유무";
+            this.txtMoldCodeInput.Location = new System.Drawing.Point(96, 16);
+            this.txtMoldCodeInput.Name = "txtMoldCodeInput";
+            this.txtMoldCodeInput.Size = new System.Drawing.Size(100, 21);
+            this.txtMoldCodeInput.TabIndex = 39;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label16.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label16.Location = new System.Drawing.Point(654, 49);
+            this.label16.Location = new System.Drawing.Point(638, 49);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(40, 16);
             this.label16.TabIndex = 37;
@@ -266,7 +230,7 @@
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label17.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label17.Location = new System.Drawing.Point(395, 49);
+            this.label17.Location = new System.Drawing.Point(390, 49);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(104, 16);
             this.label17.TabIndex = 36;
@@ -299,7 +263,7 @@
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label20.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label20.Location = new System.Drawing.Point(622, 18);
+            this.label20.Location = new System.Drawing.Point(606, 18);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(72, 16);
             this.label20.TabIndex = 33;
@@ -321,7 +285,7 @@
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label22.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label22.Location = new System.Drawing.Point(427, 18);
+            this.label22.Location = new System.Drawing.Point(422, 18);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(72, 16);
             this.label22.TabIndex = 31;
@@ -338,21 +302,57 @@
             this.label23.TabIndex = 30;
             this.label23.Text = "금형코드";
             // 
-            // dateTimePicker1
+            // dtpLastEquipDate
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(505, 47);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(98, 21);
-            this.dateTimePicker1.TabIndex = 29;
+            this.dtpLastEquipDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpLastEquipDate.Location = new System.Drawing.Point(500, 47);
+            this.dtpLastEquipDate.Name = "dtpLastEquipDate";
+            this.dtpLastEquipDate.Size = new System.Drawing.Size(98, 21);
+            this.dtpLastEquipDate.TabIndex = 29;
             // 
-            // dateTimePicker2
+            // dtpInputdate
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(290, 47);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(98, 21);
-            this.dateTimePicker2.TabIndex = 28;
+            this.dtpInputdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpInputdate.Location = new System.Drawing.Point(285, 47);
+            this.dtpInputdate.Name = "dtpInputdate";
+            this.dtpInputdate.Size = new System.Drawing.Size(98, 21);
+            this.dtpInputdate.TabIndex = 28;
+            // 
+            // gbUsable
+            // 
+            this.gbUsable.Controls.Add(this.rbUse);
+            this.gbUsable.Controls.Add(this.rbNoUse);
+            this.gbUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.gbUsable.Location = new System.Drawing.Point(866, 11);
+            this.gbUsable.Name = "gbUsable";
+            this.gbUsable.Size = new System.Drawing.Size(150, 64);
+            this.gbUsable.TabIndex = 97;
+            this.gbUsable.TabStop = false;
+            this.gbUsable.Text = "사용여부";
+            // 
+            // rbUse
+            // 
+            this.rbUse.AutoSize = true;
+            this.rbUse.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse.Location = new System.Drawing.Point(22, 28);
+            this.rbUse.Name = "rbUse";
+            this.rbUse.Size = new System.Drawing.Size(42, 20);
+            this.rbUse.TabIndex = 77;
+            this.rbUse.TabStop = true;
+            this.rbUse.Text = "유";
+            this.rbUse.UseVisualStyleBackColor = false;
+            // 
+            // rbNoUse
+            // 
+            this.rbNoUse.AutoSize = true;
+            this.rbNoUse.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse.Location = new System.Drawing.Point(90, 28);
+            this.rbNoUse.Name = "rbNoUse";
+            this.rbNoUse.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse.TabIndex = 79;
+            this.rbNoUse.TabStop = true;
+            this.rbNoUse.Text = "무";
+            this.rbNoUse.UseVisualStyleBackColor = false;
             // 
             // MoldInformationRegister
             // 
@@ -363,8 +363,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MoldInformationRegister";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.Controls.SetChildIndex(this.tabControl1, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
@@ -375,6 +373,8 @@
             this.tabControl2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.gbUsable.ResumeLayout(false);
+            this.gbUsable.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -385,20 +385,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.ComboBox cmbMoldGroupSearch;
+        private System.Windows.Forms.TextBox txtMoldNameSearch;
+        private System.Windows.Forms.TextBox txtMoldCodeSearch;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtWarrentNum;
+        private System.Windows.Forms.TextBox txtPS;
+        private System.Windows.Forms.TextBox txtMoldGroupInput;
+        private System.Windows.Forms.TextBox txtMoldNameInput;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtMoldCodeInput;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
@@ -407,7 +404,10 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpLastEquipDate;
+        private System.Windows.Forms.DateTimePicker dtpInputdate;
+        private System.Windows.Forms.GroupBox gbUsable;
+        private System.Windows.Forms.RadioButton rbUse;
+        private System.Windows.Forms.RadioButton rbNoUse;
     }
 }

@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AdminForm.qulityManagement
+namespace AdminForm
 {
-    public partial class ProcessInquiry : AdminForm.dgvOne
+    public partial class ProcessInquiry : dgvOne
     {
         public ProcessInquiry()
         {

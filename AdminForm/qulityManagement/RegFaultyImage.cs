@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AdminForm.qulityManagement
+namespace AdminForm
 {
     public partial class RegFaultyImage : AdminForm.dgvTwo
     {

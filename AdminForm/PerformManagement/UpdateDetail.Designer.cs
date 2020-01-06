@@ -1,4 +1,4 @@
-﻿namespace AdminForm.PerformManagement
+﻿namespace AdminForm
 {
     partial class UpdateDetail
     {

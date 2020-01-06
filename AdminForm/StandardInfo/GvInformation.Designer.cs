@@ -1,4 +1,4 @@
-﻿namespace AdminForm.StandardInfo
+﻿namespace AdminForm
 {
     partial class GvInformation
     {

@@ -194,7 +194,7 @@
             this.trvMenu.Name = "trvMenu";
             this.trvMenu.Size = new System.Drawing.Size(190, 391);
             this.trvMenu.TabIndex = 2;
-            this.trvMenu.DoubleClick += new System.EventHandler(this.trvMenu_DoubleClick);
+            this.trvMenu.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TvMenu_AfterSelect);
             // 
             // button4
             // 

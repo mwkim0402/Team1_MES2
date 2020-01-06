@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AdminForm.StandardInfo
+namespace AdminForm
 {
     public partial class Faulty : dgvOneWithInput
     {

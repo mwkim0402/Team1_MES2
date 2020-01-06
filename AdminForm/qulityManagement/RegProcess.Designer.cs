@@ -1,4 +1,4 @@
-﻿namespace AdminForm.qulityManagement
+﻿namespace AdminForm
 {
     partial class RegProcess
     {

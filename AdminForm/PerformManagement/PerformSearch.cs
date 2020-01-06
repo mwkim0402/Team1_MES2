@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AdminForm.PerformManagement
+namespace AdminForm
 {
     public partial class PerformSearch : dgvOne
     {

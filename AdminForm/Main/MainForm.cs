@@ -156,40 +156,7 @@ namespace AdminForm
 
         private void trvMenu_DoubleClick(object sender, EventArgs e)
         {
-            if (trvMenu.SelectedNode.Text == "사용자그룹관리")
-            {
-                LoadWorkReport frm = new LoadWorkReport();
-                //frm.MdiParent = this;
-                //frm.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left;
-                //frm.Dock = DockStyle.Fill;
-                //frm.Show();
 
-                //CreateTabMenu("사용자그룹관리");
-                frm.TopLevel = false;
-                tabControl2.TabPages.Add("사용자그룹관리");
-                tabControl2.TabPages[tabControl2.TabPages.Count - 1].Controls.Add(frm);
-                tabControl2.SelectedTab = tabControl2.TabPages[tabControl2.TabPages.Count - 1];
-                frm.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left;
-                frm.Dock = DockStyle.Fill;
-                frm.Show();
-            }
-            else if (trvMenu.SelectedNode.Text == "사용자그룹별 권한 설정")
-            {
-                UserGroupManger frm = new UserGroupManger();
-                //frm.MdiParent = this;
-                //frm.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left;
-                //frm.Dock = DockStyle.Fill;
-                //frm.Show();
-
-                //CreateTabMenu("사용자그룹관리");
-                frm.TopLevel = false;
-                tabControl2.TabPages.Add("사용자그룹별 권한 설정");
-                tabControl2.TabPages[tabControl2.TabPages.Count - 1].Controls.Add(frm);
-                tabControl2.SelectedTab = tabControl2.TabPages[tabControl2.TabPages.Count - 1];
-                frm.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left;
-                frm.Dock = DockStyle.Fill;
-                frm.Show();
-            }
         }
 
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)

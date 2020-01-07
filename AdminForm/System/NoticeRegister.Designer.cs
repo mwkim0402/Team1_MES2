@@ -29,51 +29,51 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.cmbUsable = new System.Windows.Forms.ComboBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
             this.label21 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.txtContent = new System.Windows.Forms.TextBox();
+            this.dtpNotidateEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpNotiDate = new System.Windows.Forms.DateTimePicker();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.gbUsable = new System.Windows.Forms.GroupBox();
+            this.rbUse_Use = new System.Windows.Forms.RadioButton();
+            this.rbNoUse_Use = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbUsable.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.gbUsable);
+            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.dtpNotiDate);
+            this.panel1.Controls.Add(this.dtpNotidateEnd);
             this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.textBox12);
+            this.panel1.Controls.Add(this.txtContent);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox14);
+            this.panel1.Controls.Add(this.txtTitle);
             this.panel1.Controls.Add(this.label19);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.cmbUsable);
+            this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.dtpEnd);
@@ -85,20 +85,20 @@
             this.panel2.Size = new System.Drawing.Size(1128, 67);
             this.panel2.TabIndex = 4;
             // 
-            // comboBox1
+            // cmbUsable
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(729, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 17;
+            this.cmbUsable.FormattingEnabled = true;
+            this.cmbUsable.Location = new System.Drawing.Point(729, 28);
+            this.cmbUsable.Name = "cmbUsable";
+            this.cmbUsable.Size = new System.Drawing.Size(121, 20);
+            this.cmbUsable.TabIndex = 17;
             // 
-            // textBox3
+            // txtSearch
             // 
-            this.textBox3.Location = new System.Drawing.Point(456, 26);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(141, 21);
-            this.textBox3.TabIndex = 16;
+            this.txtSearch.Location = new System.Drawing.Point(456, 26);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(141, 21);
+            this.txtSearch.TabIndex = 16;
             // 
             // label5
             // 
@@ -156,42 +156,6 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "공지일자";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButton9);
-            this.groupBox1.Controls.Add(this.radioButton10);
-            this.groupBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox1.Location = new System.Drawing.Point(832, 10);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 64);
-            this.groupBox1.TabIndex = 96;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "사용여부";
-            // 
-            // radioButton9
-            // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton9.Location = new System.Drawing.Point(43, 28);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(42, 20);
-            this.radioButton9.TabIndex = 77;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "유";
-            this.radioButton9.UseVisualStyleBackColor = false;
-            // 
-            // radioButton10
-            // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton10.Location = new System.Drawing.Point(111, 28);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(42, 20);
-            this.radioButton10.TabIndex = 79;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "무";
-            this.radioButton10.UseVisualStyleBackColor = false;
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -236,45 +200,81 @@
             this.label19.TabIndex = 91;
             this.label19.Text = "공지일자";
             // 
-            // textBox14
+            // txtTitle
             // 
-            this.textBox14.Location = new System.Drawing.Point(176, 19);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(152, 21);
-            this.textBox14.TabIndex = 92;
+            this.txtTitle.Location = new System.Drawing.Point(176, 19);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(152, 21);
+            this.txtTitle.TabIndex = 92;
             // 
-            // textBox12
+            // txtContent
             // 
-            this.textBox12.Location = new System.Drawing.Point(475, 19);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(337, 21);
-            this.textBox12.TabIndex = 94;
+            this.txtContent.Location = new System.Drawing.Point(475, 19);
+            this.txtContent.Name = "txtContent";
+            this.txtContent.Size = new System.Drawing.Size(337, 21);
+            this.txtContent.TabIndex = 94;
             // 
-            // dateTimePicker1
+            // dtpNotidateEnd
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(475, 53);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(152, 21);
-            this.dateTimePicker1.TabIndex = 97;
+            this.dtpNotidateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNotidateEnd.Location = new System.Drawing.Point(475, 53);
+            this.dtpNotidateEnd.Name = "dtpNotidateEnd";
+            this.dtpNotidateEnd.Size = new System.Drawing.Size(152, 21);
+            this.dtpNotidateEnd.TabIndex = 97;
             // 
-            // dateTimePicker2
+            // dtpNotiDate
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(176, 53);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(152, 21);
-            this.dateTimePicker2.TabIndex = 98;
+            this.dtpNotiDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNotiDate.Location = new System.Drawing.Point(176, 53);
+            this.dtpNotiDate.Name = "dtpNotiDate";
+            this.dtpNotiDate.Size = new System.Drawing.Size(152, 21);
+            this.dtpNotiDate.TabIndex = 98;
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(1038, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 48);
-            this.button1.TabIndex = 99;
-            this.button1.Text = "저장";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSave.Location = new System.Drawing.Point(1038, 19);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(82, 48);
+            this.btnSave.TabIndex = 99;
+            this.btnSave.Text = "저장";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // gbUsable
+            // 
+            this.gbUsable.Controls.Add(this.rbUse_Use);
+            this.gbUsable.Controls.Add(this.rbNoUse_Use);
+            this.gbUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.gbUsable.Location = new System.Drawing.Point(825, 12);
+            this.gbUsable.Name = "gbUsable";
+            this.gbUsable.Size = new System.Drawing.Size(200, 64);
+            this.gbUsable.TabIndex = 100;
+            this.gbUsable.TabStop = false;
+            this.gbUsable.Text = "사용여부";
+            // 
+            // rbUse_Use
+            // 
+            this.rbUse_Use.AutoSize = true;
+            this.rbUse_Use.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_Use.Location = new System.Drawing.Point(43, 28);
+            this.rbUse_Use.Name = "rbUse_Use";
+            this.rbUse_Use.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_Use.TabIndex = 77;
+            this.rbUse_Use.TabStop = true;
+            this.rbUse_Use.Text = "유";
+            this.rbUse_Use.UseVisualStyleBackColor = false;
+            // 
+            // rbNoUse_Use
+            // 
+            this.rbNoUse_Use.AutoSize = true;
+            this.rbNoUse_Use.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse_Use.Location = new System.Drawing.Point(111, 28);
+            this.rbNoUse_Use.Name = "rbNoUse_Use";
+            this.rbNoUse_Use.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse_Use.TabIndex = 79;
+            this.rbNoUse_Use.TabStop = true;
+            this.rbNoUse_Use.Text = "무";
+            this.rbNoUse_Use.UseVisualStyleBackColor = false;
             // 
             // NoticeRegister
             // 
@@ -299,8 +299,8 @@
             this.tabControl2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbUsable.ResumeLayout(false);
+            this.gbUsable.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -308,24 +308,24 @@
         #endregion
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.ComboBox cmbUsable;
+        private System.Windows.Forms.DateTimePicker dtpNotiDate;
+        private System.Windows.Forms.DateTimePicker dtpNotidateEnd;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtContent;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.GroupBox gbUsable;
+        private System.Windows.Forms.RadioButton rbUse_Use;
+        private System.Windows.Forms.RadioButton rbNoUse_Use;
     }
 }

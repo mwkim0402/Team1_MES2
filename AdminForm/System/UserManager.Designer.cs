@@ -28,58 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtStandFac = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtUserGroup = new System.Windows.Forms.TextBox();
+            this.txtUserIDInput = new System.Windows.Forms.TextBox();
+            this.txtUserNameInput = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cmbOrderState = new System.Windows.Forms.ComboBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtUserID = new System.Windows.Forms.TextBox();
+            this.cmbUsable = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.fcWorkPlace = new AdminForm.FIndCategory();
+            this.fcPermiGroup = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.gbIP = new System.Windows.Forms.GroupBox();
+            this.rbUse_IP = new System.Windows.Forms.RadioButton();
+            this.rbNoUse_IP = new System.Windows.Forms.RadioButton();
+            this.gbUsable = new System.Windows.Forms.GroupBox();
+            this.rbUse_Use = new System.Windows.Forms.RadioButton();
+            this.rbNoUse_Use = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbIP.SuspendLayout();
+            this.gbUsable.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.gbIP);
+            this.panel1.Controls.Add(this.txtStandFac);
+            this.panel1.Controls.Add(this.gbUsable);
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.textBox14);
+            this.panel1.Controls.Add(this.txtUserNameInput);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox13);
-            this.panel1.Controls.Add(this.textBox12);
+            this.panel1.Controls.Add(this.txtUserIDInput);
+            this.panel1.Controls.Add(this.txtUserGroup);
             // 
-            // textBox3
+            // txtStandFac
             // 
-            this.textBox3.Location = new System.Drawing.Point(418, 48);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(152, 21);
-            this.textBox3.TabIndex = 86;
+            this.txtStandFac.Location = new System.Drawing.Point(418, 48);
+            this.txtStandFac.Name = "txtStandFac";
+            this.txtStandFac.Size = new System.Drawing.Size(152, 21);
+            this.txtStandFac.TabIndex = 86;
             // 
             // label6
             // 
@@ -102,26 +102,26 @@
             this.button1.Text = "저장";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // textBox12
+            // txtUserGroup
             // 
-            this.textBox12.Location = new System.Drawing.Point(418, 16);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(152, 21);
-            this.textBox12.TabIndex = 76;
+            this.txtUserGroup.Location = new System.Drawing.Point(418, 16);
+            this.txtUserGroup.Name = "txtUserGroup";
+            this.txtUserGroup.Size = new System.Drawing.Size(152, 21);
+            this.txtUserGroup.TabIndex = 76;
             // 
-            // textBox13
+            // txtUserIDInput
             // 
-            this.textBox13.Location = new System.Drawing.Point(119, 47);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(152, 21);
-            this.textBox13.TabIndex = 75;
+            this.txtUserIDInput.Location = new System.Drawing.Point(119, 47);
+            this.txtUserIDInput.Name = "txtUserIDInput";
+            this.txtUserIDInput.Size = new System.Drawing.Size(152, 21);
+            this.txtUserIDInput.TabIndex = 75;
             // 
-            // textBox14
+            // txtUserNameInput
             // 
-            this.textBox14.Location = new System.Drawing.Point(119, 16);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(152, 21);
-            this.textBox14.TabIndex = 74;
+            this.txtUserNameInput.Location = new System.Drawing.Point(119, 16);
+            this.txtUserNameInput.Name = "txtUserNameInput";
+            this.txtUserNameInput.Size = new System.Drawing.Size(152, 21);
+            this.txtUserNameInput.TabIndex = 74;
             // 
             // label19
             // 
@@ -159,11 +159,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.cmbOrderState);
+            this.panel2.Controls.Add(this.txtUserName);
+            this.panel2.Controls.Add(this.txtUserID);
+            this.panel2.Controls.Add(this.cmbUsable);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.fcWorkPlace);
+            this.panel2.Controls.Add(this.fcPermiGroup);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label7);
@@ -172,27 +172,27 @@
             this.panel2.Size = new System.Drawing.Size(1128, 67);
             this.panel2.TabIndex = 10;
             // 
-            // textBox2
+            // txtUserName
             // 
-            this.textBox2.Location = new System.Drawing.Point(702, 25);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(129, 21);
-            this.textBox2.TabIndex = 11;
+            this.txtUserName.Location = new System.Drawing.Point(702, 25);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(129, 21);
+            this.txtUserName.TabIndex = 11;
             // 
-            // textBox1
+            // txtUserID
             // 
-            this.textBox1.Location = new System.Drawing.Point(431, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 21);
-            this.textBox1.TabIndex = 10;
+            this.txtUserID.Location = new System.Drawing.Point(431, 25);
+            this.txtUserID.Name = "txtUserID";
+            this.txtUserID.Size = new System.Drawing.Size(129, 21);
+            this.txtUserID.TabIndex = 10;
             // 
-            // cmbOrderState
+            // cmbUsable
             // 
-            this.cmbOrderState.FormattingEnabled = true;
-            this.cmbOrderState.Location = new System.Drawing.Point(971, 26);
-            this.cmbOrderState.Name = "cmbOrderState";
-            this.cmbOrderState.Size = new System.Drawing.Size(121, 20);
-            this.cmbOrderState.TabIndex = 9;
+            this.cmbUsable.FormattingEnabled = true;
+            this.cmbUsable.Location = new System.Drawing.Point(971, 26);
+            this.cmbUsable.Name = "cmbUsable";
+            this.cmbUsable.Size = new System.Drawing.Size(121, 20);
+            this.cmbUsable.TabIndex = 9;
             // 
             // label5
             // 
@@ -204,12 +204,12 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "사용여부";
             // 
-            // fcWorkPlace
+            // fcPermiGroup
             // 
-            this.fcWorkPlace.Location = new System.Drawing.Point(102, 22);
-            this.fcWorkPlace.Name = "fcWorkPlace";
-            this.fcWorkPlace.Size = new System.Drawing.Size(190, 27);
-            this.fcWorkPlace.TabIndex = 7;
+            this.fcPermiGroup.Location = new System.Drawing.Point(102, 22);
+            this.fcPermiGroup.Name = "fcPermiGroup";
+            this.fcPermiGroup.Size = new System.Drawing.Size(190, 27);
+            this.fcPermiGroup.TabIndex = 7;
             // 
             // label4
             // 
@@ -241,77 +241,77 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "권한 그룹";
             // 
-            // groupBox2
+            // gbIP
             // 
-            this.groupBox2.Controls.Add(this.radioButton7);
-            this.groupBox2.Controls.Add(this.radioButton8);
-            this.groupBox2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox2.Location = new System.Drawing.Point(824, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 64);
-            this.groupBox2.TabIndex = 91;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "IP보안 적용유무";
+            this.gbIP.Controls.Add(this.rbUse_IP);
+            this.gbIP.Controls.Add(this.rbNoUse_IP);
+            this.gbIP.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.gbIP.Location = new System.Drawing.Point(820, 11);
+            this.gbIP.Name = "gbIP";
+            this.gbIP.Size = new System.Drawing.Size(200, 64);
+            this.gbIP.TabIndex = 89;
+            this.gbIP.TabStop = false;
+            this.gbIP.Text = "IP보안 적용유무";
             // 
-            // radioButton7
+            // rbUse_IP
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton7.Location = new System.Drawing.Point(43, 28);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(42, 20);
-            this.radioButton7.TabIndex = 77;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "유";
-            this.radioButton7.UseVisualStyleBackColor = false;
+            this.rbUse_IP.AutoSize = true;
+            this.rbUse_IP.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_IP.Location = new System.Drawing.Point(43, 28);
+            this.rbUse_IP.Name = "rbUse_IP";
+            this.rbUse_IP.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_IP.TabIndex = 77;
+            this.rbUse_IP.TabStop = true;
+            this.rbUse_IP.Text = "유";
+            this.rbUse_IP.UseVisualStyleBackColor = false;
             // 
-            // radioButton8
+            // rbNoUse_IP
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton8.Location = new System.Drawing.Point(111, 28);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(42, 20);
-            this.radioButton8.TabIndex = 79;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "무";
-            this.radioButton8.UseVisualStyleBackColor = false;
+            this.rbNoUse_IP.AutoSize = true;
+            this.rbNoUse_IP.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse_IP.Location = new System.Drawing.Point(111, 28);
+            this.rbNoUse_IP.Name = "rbNoUse_IP";
+            this.rbNoUse_IP.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse_IP.TabIndex = 79;
+            this.rbNoUse_IP.TabStop = true;
+            this.rbNoUse_IP.Text = "무";
+            this.rbNoUse_IP.UseVisualStyleBackColor = false;
             // 
-            // groupBox1
+            // gbUsable
             // 
-            this.groupBox1.Controls.Add(this.radioButton9);
-            this.groupBox1.Controls.Add(this.radioButton10);
-            this.groupBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox1.Location = new System.Drawing.Point(601, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 64);
-            this.groupBox1.TabIndex = 90;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "사용여부";
+            this.gbUsable.Controls.Add(this.rbUse_Use);
+            this.gbUsable.Controls.Add(this.rbNoUse_Use);
+            this.gbUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.gbUsable.Location = new System.Drawing.Point(597, 11);
+            this.gbUsable.Name = "gbUsable";
+            this.gbUsable.Size = new System.Drawing.Size(200, 64);
+            this.gbUsable.TabIndex = 88;
+            this.gbUsable.TabStop = false;
+            this.gbUsable.Text = "사용여부";
             // 
-            // radioButton9
+            // rbUse_Use
             // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton9.Location = new System.Drawing.Point(43, 28);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(42, 20);
-            this.radioButton9.TabIndex = 77;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "유";
-            this.radioButton9.UseVisualStyleBackColor = false;
+            this.rbUse_Use.AutoSize = true;
+            this.rbUse_Use.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_Use.Location = new System.Drawing.Point(43, 28);
+            this.rbUse_Use.Name = "rbUse_Use";
+            this.rbUse_Use.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_Use.TabIndex = 77;
+            this.rbUse_Use.TabStop = true;
+            this.rbUse_Use.Text = "유";
+            this.rbUse_Use.UseVisualStyleBackColor = false;
             // 
-            // radioButton10
+            // rbNoUse_Use
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton10.Location = new System.Drawing.Point(111, 28);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(42, 20);
-            this.radioButton10.TabIndex = 79;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "무";
-            this.radioButton10.UseVisualStyleBackColor = false;
+            this.rbNoUse_Use.AutoSize = true;
+            this.rbNoUse_Use.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse_Use.Location = new System.Drawing.Point(111, 28);
+            this.rbNoUse_Use.Name = "rbNoUse_Use";
+            this.rbNoUse_Use.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse_Use.TabIndex = 79;
+            this.rbNoUse_Use.TabStop = true;
+            this.rbNoUse_Use.Text = "무";
+            this.rbNoUse_Use.UseVisualStyleBackColor = false;
             // 
             // UserManager
             // 
@@ -336,38 +336,38 @@
             this.tabControl2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbIP.ResumeLayout(false);
+            this.gbIP.PerformLayout();
+            this.gbUsable.ResumeLayout(false);
+            this.gbUsable.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtStandFac;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtUserNameInput;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtUserIDInput;
+        private System.Windows.Forms.TextBox txtUserGroup;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox cmbOrderState;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtUserID;
+        private System.Windows.Forms.ComboBox cmbUsable;
         private System.Windows.Forms.Label label5;
-        private FIndCategory fcWorkPlace;
+        private FIndCategory fcPermiGroup;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.GroupBox gbIP;
+        private System.Windows.Forms.RadioButton rbUse_IP;
+        private System.Windows.Forms.RadioButton rbNoUse_IP;
+        private System.Windows.Forms.GroupBox gbUsable;
+        private System.Windows.Forms.RadioButton rbUse_Use;
+        private System.Windows.Forms.RadioButton rbNoUse_Use;
     }
 }

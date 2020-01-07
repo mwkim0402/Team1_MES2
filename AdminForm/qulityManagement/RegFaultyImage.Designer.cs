@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,7 +38,6 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +49,7 @@
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.fcWorkPlace = new AdminForm.FIndCategory();
+            this.fcWork = new AdminForm.FIndCategory();
             this.fcFactory = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,14 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tabControl2
-            // 
-            this.tabControl2.Location = new System.Drawing.Point(26, 80);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1103, 252);
-            this.tabControl2.TabIndex = 5;
             // 
             // tabPage2
             // 
@@ -142,14 +132,6 @@
             // 
             this.Column14.HeaderText = "불량이미지 등록건수";
             this.Column14.Name = "Column14";
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Location = new System.Drawing.Point(26, 330);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1103, 252);
-            this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
             // 
@@ -226,7 +208,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Controls.Add(this.fcWorkPlace);
+            this.panel1.Controls.Add(this.fcWork);
             this.panel1.Controls.Add(this.fcFactory);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -239,12 +221,12 @@
             this.panel1.Size = new System.Drawing.Size(1105, 55);
             this.panel1.TabIndex = 3;
             // 
-            // fcWorkPlace
+            // fcWork
             // 
-            this.fcWorkPlace.Location = new System.Drawing.Point(764, 18);
-            this.fcWorkPlace.Name = "fcWorkPlace";
-            this.fcWorkPlace.Size = new System.Drawing.Size(190, 27);
-            this.fcWorkPlace.TabIndex = 5;
+            this.fcWork.Location = new System.Drawing.Point(764, 18);
+            this.fcWork.Name = "fcWork";
+            this.fcWork.Size = new System.Drawing.Size(190, 27);
+            this.fcWork.TabIndex = 5;
             // 
             // fcFactory
             // 
@@ -313,8 +295,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 604);
-            this.Controls.Add(this.tabControl2);
-            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -324,8 +304,6 @@
             this.ShowInTaskbar = false;
             this.Text = "RegFaultyImage";
             this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.tabControl1, 0);
-            this.Controls.SetChildIndex(this.tabControl2, 0);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage1.ResumeLayout(false);
@@ -337,8 +315,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -349,7 +325,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
@@ -361,7 +336,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.Panel panel1;
-        private FIndCategory fcWorkPlace;
+        private FIndCategory fcWork;
         private FIndCategory fcFactory;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

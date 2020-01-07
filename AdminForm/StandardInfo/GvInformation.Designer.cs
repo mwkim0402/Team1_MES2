@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTruckCode = new System.Windows.Forms.TextBox();
+            this.txtTruckName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTruckCodeInput = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -44,15 +44,15 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtTruckCodeInput);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnSave);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.txtTruckCode);
+            this.panel2.Controls.Add(this.txtTruckName);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(12, 12);
@@ -60,19 +60,19 @@
             this.panel2.Size = new System.Drawing.Size(1132, 67);
             this.panel2.TabIndex = 10;
             // 
-            // textBox1
+            // txtTruckCode
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 21);
-            this.textBox1.TabIndex = 18;
+            this.txtTruckCode.Location = new System.Drawing.Point(108, 26);
+            this.txtTruckCode.Name = "txtTruckCode";
+            this.txtTruckCode.Size = new System.Drawing.Size(141, 21);
+            this.txtTruckCode.TabIndex = 18;
             // 
-            // textBox3
+            // txtTruckName
             // 
-            this.textBox3.Location = new System.Drawing.Point(349, 27);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(141, 21);
-            this.textBox3.TabIndex = 16;
+            this.txtTruckName.Location = new System.Drawing.Point(349, 27);
+            this.txtTruckName.Name = "txtTruckName";
+            this.txtTruckName.Size = new System.Drawing.Size(141, 21);
+            this.txtTruckName.TabIndex = 16;
             // 
             // label5
             // 
@@ -94,15 +94,15 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "대차 코드";
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(1031, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 48);
-            this.button1.TabIndex = 100;
-            this.button1.Text = "저장";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSave.Location = new System.Drawing.Point(1031, 18);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(82, 48);
+            this.btnSave.TabIndex = 100;
+            this.btnSave.Text = "저장";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -113,12 +113,12 @@
             this.label2.TabIndex = 101;
             this.label2.Text = "대차코드 :";
             // 
-            // textBox2
+            // txtTruckCodeInput
             // 
-            this.textBox2.Location = new System.Drawing.Point(99, 15);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 102;
+            this.txtTruckCodeInput.Location = new System.Drawing.Point(99, 15);
+            this.txtTruckCodeInput.Name = "txtTruckCodeInput";
+            this.txtTruckCodeInput.Size = new System.Drawing.Size(100, 21);
+            this.txtTruckCodeInput.TabIndex = 102;
             // 
             // GvInformation
             // 
@@ -150,12 +150,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTruckCode;
+        private System.Windows.Forms.TextBox txtTruckName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTruckCodeInput;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSave;
     }
 }

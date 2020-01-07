@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.fIndCategory1 = new AdminForm.FIndCategory();
+            this.cmbUsable = new System.Windows.Forms.ComboBox();
+            this.fcPackLevel = new AdminForm.FIndCategory();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
@@ -41,8 +41,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.fIndCategory1);
+            this.panel2.Controls.Add(this.cmbUsable);
+            this.panel2.Controls.Add(this.fcPackLevel);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(16, 12);
@@ -50,20 +50,20 @@
             this.panel2.Size = new System.Drawing.Size(1128, 67);
             this.panel2.TabIndex = 12;
             // 
-            // comboBox1
+            // cmbUsable
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(433, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 18;
+            this.cmbUsable.FormattingEnabled = true;
+            this.cmbUsable.Location = new System.Drawing.Point(433, 25);
+            this.cmbUsable.Name = "cmbUsable";
+            this.cmbUsable.Size = new System.Drawing.Size(121, 20);
+            this.cmbUsable.TabIndex = 18;
             // 
-            // fIndCategory1
+            // fcPackLevel
             // 
-            this.fIndCategory1.Location = new System.Drawing.Point(121, 20);
-            this.fIndCategory1.Name = "fIndCategory1";
-            this.fIndCategory1.Size = new System.Drawing.Size(190, 27);
-            this.fIndCategory1.TabIndex = 17;
+            this.fcPackLevel.Location = new System.Drawing.Point(121, 20);
+            this.fcPackLevel.Name = "fcPackLevel";
+            this.fcPackLevel.Size = new System.Drawing.Size(190, 27);
+            this.fcPackLevel.TabIndex = 17;
             // 
             // label5
             // 
@@ -113,8 +113,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private FIndCategory fIndCategory1;
+        private System.Windows.Forms.ComboBox cmbUsable;
+        private FIndCategory fcPackLevel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
     }

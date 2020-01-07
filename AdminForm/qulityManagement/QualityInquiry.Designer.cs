@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.fcWorkPlace = new AdminForm.FIndCategory();
+            this.fcWork = new AdminForm.FIndCategory();
             this.fcFactory = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Controls.Add(this.fcWorkPlace);
+            this.panel1.Controls.Add(this.fcWork);
             this.panel1.Controls.Add(this.fcFactory);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -59,12 +59,12 @@
             this.panel1.Size = new System.Drawing.Size(1128, 54);
             this.panel1.TabIndex = 9;
             // 
-            // fcWorkPlace
+            // fcWork
             // 
-            this.fcWorkPlace.Location = new System.Drawing.Point(781, 13);
-            this.fcWorkPlace.Name = "fcWorkPlace";
-            this.fcWorkPlace.Size = new System.Drawing.Size(190, 27);
-            this.fcWorkPlace.TabIndex = 5;
+            this.fcWork.Location = new System.Drawing.Point(781, 13);
+            this.fcWork.Name = "fcWork";
+            this.fcWork.Size = new System.Drawing.Size(190, 27);
+            this.fcWork.TabIndex = 5;
             // 
             // fcFactory
             // 
@@ -151,7 +151,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private FIndCategory fcWorkPlace;
+        private FIndCategory fcWork;
         private FIndCategory fcFactory;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

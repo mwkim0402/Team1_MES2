@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.fIndCategory1 = new AdminForm.FIndCategory();
+            this.fcCategory = new AdminForm.FIndCategory();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCatName = new System.Windows.Forms.TextBox();
+            this.txtCatCode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtCatNameInput = new System.Windows.Forms.TextBox();
+            this.txtCatCodeInput = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtPS = new System.Windows.Forms.TextBox();
+            this.cmbSort = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -51,22 +51,22 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cmbSort);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.txtPS);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.textBox14);
-            this.panel1.Controls.Add(this.textBox12);
+            this.panel1.Controls.Add(this.txtCatCodeInput);
+            this.panel1.Controls.Add(this.txtCatNameInput);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel3.Controls.Add(this.fIndCategory1);
+            this.panel3.Controls.Add(this.fcCategory);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.txtCatName);
+            this.panel3.Controls.Add(this.txtCatCode);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(16, 12);
@@ -74,12 +74,12 @@
             this.panel3.Size = new System.Drawing.Size(1128, 67);
             this.panel3.TabIndex = 4;
             // 
-            // fIndCategory1
+            // fcCategory
             // 
-            this.fIndCategory1.Location = new System.Drawing.Point(169, 22);
-            this.fIndCategory1.Name = "fIndCategory1";
-            this.fIndCategory1.Size = new System.Drawing.Size(190, 27);
-            this.fIndCategory1.TabIndex = 8;
+            this.fcCategory.Location = new System.Drawing.Point(165, 22);
+            this.fcCategory.Name = "fcCategory";
+            this.fcCategory.Size = new System.Drawing.Size(190, 27);
+            this.fcCategory.TabIndex = 8;
             // 
             // label5
             // 
@@ -91,19 +91,19 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "시스템 대분류";
             // 
-            // textBox2
+            // txtCatName
             // 
-            this.textBox2.Location = new System.Drawing.Point(932, 25);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(152, 21);
-            this.textBox2.TabIndex = 6;
+            this.txtCatName.Location = new System.Drawing.Point(932, 25);
+            this.txtCatName.Name = "txtCatName";
+            this.txtCatName.Size = new System.Drawing.Size(152, 21);
+            this.txtCatName.TabIndex = 6;
             // 
-            // textBox1
+            // txtCatCode
             // 
-            this.textBox1.Location = new System.Drawing.Point(589, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 21);
-            this.textBox1.TabIndex = 5;
+            this.txtCatCode.Location = new System.Drawing.Point(589, 25);
+            this.txtCatCode.Name = "txtCatCode";
+            this.txtCatCode.Size = new System.Drawing.Size(152, 21);
+            this.txtCatCode.TabIndex = 5;
             // 
             // label3
             // 
@@ -125,19 +125,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "시스템 상세분류 코드";
             // 
-            // textBox12
+            // txtCatNameInput
             // 
-            this.textBox12.Location = new System.Drawing.Point(477, 18);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(126, 21);
-            this.textBox12.TabIndex = 53;
+            this.txtCatNameInput.Location = new System.Drawing.Point(477, 18);
+            this.txtCatNameInput.Name = "txtCatNameInput";
+            this.txtCatNameInput.Size = new System.Drawing.Size(126, 21);
+            this.txtCatNameInput.TabIndex = 53;
             // 
-            // textBox14
+            // txtCatCodeInput
             // 
-            this.textBox14.Location = new System.Drawing.Point(182, 18);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(126, 21);
-            this.textBox14.TabIndex = 52;
+            this.txtCatCodeInput.Location = new System.Drawing.Point(182, 18);
+            this.txtCatCodeInput.Name = "txtCatCodeInput";
+            this.txtCatCodeInput.Size = new System.Drawing.Size(126, 21);
+            this.txtCatCodeInput.TabIndex = 52;
             // 
             // label21
             // 
@@ -155,7 +155,7 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label23.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label23.Location = new System.Drawing.Point(19, 20);
+            this.label23.Location = new System.Drawing.Point(15, 20);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(162, 16);
             this.label23.TabIndex = 49;
@@ -166,7 +166,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(109, 53);
+            this.label2.Location = new System.Drawing.Point(104, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 54;
@@ -183,20 +183,20 @@
             this.label4.TabIndex = 56;
             this.label4.Text = "비고";
             // 
-            // textBox4
+            // txtPS
             // 
-            this.textBox4.Location = new System.Drawing.Point(477, 51);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(126, 21);
-            this.textBox4.TabIndex = 57;
+            this.txtPS.Location = new System.Drawing.Point(477, 51);
+            this.txtPS.Name = "txtPS";
+            this.txtPS.Size = new System.Drawing.Size(126, 21);
+            this.txtPS.TabIndex = 57;
             // 
-            // comboBox1
+            // cmbSort
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(187, 51);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 12;
+            this.cmbSort.FormattingEnabled = true;
+            this.cmbSort.Location = new System.Drawing.Point(181, 51);
+            this.cmbSort.Name = "cmbSort";
+            this.cmbSort.Size = new System.Drawing.Size(127, 20);
+            this.cmbSort.TabIndex = 12;
             // 
             // SystemCodeCategoryDetail
             // 
@@ -229,17 +229,17 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtCatName;
+        private System.Windows.Forms.TextBox txtCatCode;
+        private System.Windows.Forms.TextBox txtCatNameInput;
+        private System.Windows.Forms.TextBox txtCatCodeInput;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtPS;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private FIndCategory fIndCategory1;
+        private System.Windows.Forms.ComboBox cmbSort;
+        private FIndCategory fcCategory;
         private System.Windows.Forms.Label label5;
     }
 }

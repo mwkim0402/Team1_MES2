@@ -28,54 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtContentDll = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.txtLocate = new System.Windows.Forms.TextBox();
+            this.txtMoniNameInput = new System.Windows.Forms.TextBox();
+            this.txtMoniCodeInput = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMoniName = new System.Windows.Forms.TextBox();
+            this.txtMoniCode = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.gbMonitor = new System.Windows.Forms.GroupBox();
+            this.rbUse_Mon = new System.Windows.Forms.RadioButton();
+            this.rbNoUse_Mon = new System.Windows.Forms.RadioButton();
+            this.gbUsable = new System.Windows.Forms.GroupBox();
+            this.rbUse_Use = new System.Windows.Forms.RadioButton();
+            this.rbNoUse_Use = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbMonitor.SuspendLayout();
+            this.gbUsable.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.gbMonitor);
+            this.panel1.Controls.Add(this.gbUsable);
+            this.panel1.Controls.Add(this.txtContentDll);
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.textBox14);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox13);
-            this.panel1.Controls.Add(this.textBox12);
+            this.panel1.Controls.Add(this.txtMoniCodeInput);
+            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.txtMoniNameInput);
+            this.panel1.Controls.Add(this.txtLocate);
             // 
-            // textBox3
+            // txtContentDll
             // 
-            this.textBox3.Location = new System.Drawing.Point(418, 48);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(152, 21);
-            this.textBox3.TabIndex = 86;
+            this.txtContentDll.Location = new System.Drawing.Point(418, 48);
+            this.txtContentDll.Name = "txtContentDll";
+            this.txtContentDll.Size = new System.Drawing.Size(152, 21);
+            this.txtContentDll.TabIndex = 86;
             // 
             // label6
             // 
@@ -88,36 +88,36 @@
             this.label6.TabIndex = 85;
             this.label6.Text = "ContentDLL";
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(1036, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 48);
-            this.button1.TabIndex = 81;
-            this.button1.Text = "저장";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSave.Location = new System.Drawing.Point(1036, 18);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(82, 48);
+            this.btnSave.TabIndex = 81;
+            this.btnSave.Text = "저장";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // textBox12
+            // txtLocate
             // 
-            this.textBox12.Location = new System.Drawing.Point(418, 16);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(152, 21);
-            this.textBox12.TabIndex = 76;
+            this.txtLocate.Location = new System.Drawing.Point(418, 16);
+            this.txtLocate.Name = "txtLocate";
+            this.txtLocate.Size = new System.Drawing.Size(152, 21);
+            this.txtLocate.TabIndex = 76;
             // 
-            // textBox13
+            // txtMoniNameInput
             // 
-            this.textBox13.Location = new System.Drawing.Point(119, 47);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(152, 21);
-            this.textBox13.TabIndex = 75;
+            this.txtMoniNameInput.Location = new System.Drawing.Point(119, 47);
+            this.txtMoniNameInput.Name = "txtMoniNameInput";
+            this.txtMoniNameInput.Size = new System.Drawing.Size(152, 21);
+            this.txtMoniNameInput.TabIndex = 75;
             // 
-            // textBox14
+            // txtMoniCodeInput
             // 
-            this.textBox14.Location = new System.Drawing.Point(119, 16);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(152, 21);
-            this.textBox14.TabIndex = 74;
+            this.txtMoniCodeInput.Location = new System.Drawing.Point(119, 16);
+            this.txtMoniCodeInput.Name = "txtMoniCodeInput";
+            this.txtMoniCodeInput.Size = new System.Drawing.Size(152, 21);
+            this.txtMoniCodeInput.TabIndex = 74;
             // 
             // label19
             // 
@@ -155,8 +155,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtMoniName);
+            this.panel2.Controls.Add(this.txtMoniCode);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(12, 12);
@@ -164,19 +164,19 @@
             this.panel2.Size = new System.Drawing.Size(1128, 67);
             this.panel2.TabIndex = 10;
             // 
-            // textBox2
+            // txtMoniName
             // 
-            this.textBox2.Location = new System.Drawing.Point(365, 25);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(129, 21);
-            this.textBox2.TabIndex = 11;
+            this.txtMoniName.Location = new System.Drawing.Point(365, 25);
+            this.txtMoniName.Name = "txtMoniName";
+            this.txtMoniName.Size = new System.Drawing.Size(129, 21);
+            this.txtMoniName.TabIndex = 11;
             // 
-            // textBox1
+            // txtMoniCode
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 21);
-            this.textBox1.TabIndex = 10;
+            this.txtMoniCode.Location = new System.Drawing.Point(103, 25);
+            this.txtMoniCode.Name = "txtMoniCode";
+            this.txtMoniCode.Size = new System.Drawing.Size(129, 21);
+            this.txtMoniCode.TabIndex = 10;
             // 
             // label4
             // 
@@ -198,77 +198,77 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "화면 코드";
             // 
-            // groupBox2
+            // gbMonitor
             // 
-            this.groupBox2.Controls.Add(this.radioButton7);
-            this.groupBox2.Controls.Add(this.radioButton8);
-            this.groupBox2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox2.Location = new System.Drawing.Point(827, 11);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 64);
-            this.groupBox2.TabIndex = 89;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "모니터링 화면여부";
+            this.gbMonitor.Controls.Add(this.rbUse_Mon);
+            this.gbMonitor.Controls.Add(this.rbNoUse_Mon);
+            this.gbMonitor.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.gbMonitor.Location = new System.Drawing.Point(827, 11);
+            this.gbMonitor.Name = "gbMonitor";
+            this.gbMonitor.Size = new System.Drawing.Size(200, 64);
+            this.gbMonitor.TabIndex = 88;
+            this.gbMonitor.TabStop = false;
+            this.gbMonitor.Text = "모니터링 화면여부";
             // 
-            // radioButton7
+            // rbUse_Mon
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton7.Location = new System.Drawing.Point(43, 28);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(42, 20);
-            this.radioButton7.TabIndex = 77;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "유";
-            this.radioButton7.UseVisualStyleBackColor = false;
+            this.rbUse_Mon.AutoSize = true;
+            this.rbUse_Mon.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_Mon.Location = new System.Drawing.Point(43, 28);
+            this.rbUse_Mon.Name = "rbUse_Mon";
+            this.rbUse_Mon.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_Mon.TabIndex = 77;
+            this.rbUse_Mon.TabStop = true;
+            this.rbUse_Mon.Text = "유";
+            this.rbUse_Mon.UseVisualStyleBackColor = false;
             // 
-            // radioButton8
+            // rbNoUse_Mon
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton8.Location = new System.Drawing.Point(111, 28);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(42, 20);
-            this.radioButton8.TabIndex = 79;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "무";
-            this.radioButton8.UseVisualStyleBackColor = false;
+            this.rbNoUse_Mon.AutoSize = true;
+            this.rbNoUse_Mon.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse_Mon.Location = new System.Drawing.Point(111, 28);
+            this.rbNoUse_Mon.Name = "rbNoUse_Mon";
+            this.rbNoUse_Mon.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse_Mon.TabIndex = 79;
+            this.rbNoUse_Mon.TabStop = true;
+            this.rbNoUse_Mon.Text = "무";
+            this.rbNoUse_Mon.UseVisualStyleBackColor = false;
             // 
-            // groupBox1
+            // gbUsable
             // 
-            this.groupBox1.Controls.Add(this.radioButton9);
-            this.groupBox1.Controls.Add(this.radioButton10);
-            this.groupBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox1.Location = new System.Drawing.Point(604, 11);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 64);
-            this.groupBox1.TabIndex = 88;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "사용여부";
+            this.gbUsable.Controls.Add(this.rbUse_Use);
+            this.gbUsable.Controls.Add(this.rbNoUse_Use);
+            this.gbUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.gbUsable.Location = new System.Drawing.Point(585, 11);
+            this.gbUsable.Name = "gbUsable";
+            this.gbUsable.Size = new System.Drawing.Size(200, 64);
+            this.gbUsable.TabIndex = 87;
+            this.gbUsable.TabStop = false;
+            this.gbUsable.Text = "사용여부";
             // 
-            // radioButton9
+            // rbUse_Use
             // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton9.Location = new System.Drawing.Point(43, 28);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(42, 20);
-            this.radioButton9.TabIndex = 77;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "유";
-            this.radioButton9.UseVisualStyleBackColor = false;
+            this.rbUse_Use.AutoSize = true;
+            this.rbUse_Use.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_Use.Location = new System.Drawing.Point(43, 28);
+            this.rbUse_Use.Name = "rbUse_Use";
+            this.rbUse_Use.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_Use.TabIndex = 77;
+            this.rbUse_Use.TabStop = true;
+            this.rbUse_Use.Text = "유";
+            this.rbUse_Use.UseVisualStyleBackColor = false;
             // 
-            // radioButton10
+            // rbNoUse_Use
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton10.Location = new System.Drawing.Point(111, 28);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(42, 20);
-            this.radioButton10.TabIndex = 79;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "무";
-            this.radioButton10.UseVisualStyleBackColor = false;
+            this.rbNoUse_Use.AutoSize = true;
+            this.rbNoUse_Use.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse_Use.Location = new System.Drawing.Point(111, 28);
+            this.rbNoUse_Use.Name = "rbNoUse_Use";
+            this.rbNoUse_Use.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse_Use.TabIndex = 79;
+            this.rbNoUse_Use.TabStop = true;
+            this.rbNoUse_Use.Text = "무";
+            this.rbNoUse_Use.UseVisualStyleBackColor = false;
             // 
             // MonitorManager
             // 
@@ -293,34 +293,34 @@
             this.tabControl2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbMonitor.ResumeLayout(false);
+            this.gbMonitor.PerformLayout();
+            this.gbUsable.ResumeLayout(false);
+            this.gbUsable.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtContentDll;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtMoniCodeInput;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox txtMoniNameInput;
+        private System.Windows.Forms.TextBox txtLocate;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMoniName;
+        private System.Windows.Forms.TextBox txtMoniCode;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.GroupBox gbMonitor;
+        private System.Windows.Forms.RadioButton rbUse_Mon;
+        private System.Windows.Forms.RadioButton rbNoUse_Mon;
+        private System.Windows.Forms.GroupBox gbUsable;
+        private System.Windows.Forms.RadioButton rbUse_Use;
+        private System.Windows.Forms.RadioButton rbNoUse_Use;
     }
 }

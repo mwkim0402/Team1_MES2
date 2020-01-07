@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
@@ -37,15 +37,15 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.fIndCategory2 = new AdminForm.FIndCategory();
+            this.fcWork = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.fIndCategory1 = new AdminForm.FIndCategory();
+            this.fcFactory = new AdminForm.FIndCategory();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,14 +67,14 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
+            // btnRemove
             // 
-            this.button2.Location = new System.Drawing.Point(145, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "측정회차 제거";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRemove.Location = new System.Drawing.Point(145, 7);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(113, 23);
+            this.btnRemove.TabIndex = 1;
+            this.btnRemove.Text = "측정회차 제거";
+            this.btnRemove.UseVisualStyleBackColor = true;
             // 
             // dataGridView3
             // 
@@ -158,14 +158,14 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(15, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "측정회차 추가";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(15, 7);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(113, 23);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.Text = "측정회차 추가";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
@@ -178,28 +178,28 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.button2);
-            this.splitContainer1.Panel2.Controls.Add(this.button1);
+            this.splitContainer1.Panel2.Controls.Add(this.btnRemove);
+            this.splitContainer1.Panel2.Controls.Add(this.btnAdd);
             this.splitContainer1.Panel2.Controls.Add(this.tabControl3);
             this.splitContainer1.Size = new System.Drawing.Size(775, 491);
             this.splitContainer1.SplitterDistance = 258;
             this.splitContainer1.TabIndex = 1;
             // 
-            // dateTimePicker2
+            // dtpEnd
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(308, 22);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(109, 21);
-            this.dateTimePicker2.TabIndex = 2;
+            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEnd.Location = new System.Drawing.Point(308, 22);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(109, 21);
+            this.dtpEnd.TabIndex = 2;
             // 
-            // dateTimePicker1
+            // dtpStart
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(157, 21);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(109, 21);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStart.Location = new System.Drawing.Point(157, 21);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(109, 21);
+            this.dtpStart.TabIndex = 2;
             // 
             // tabControl1
             // 
@@ -210,12 +210,12 @@
             this.tabControl1.Size = new System.Drawing.Size(358, 494);
             this.tabControl1.TabIndex = 0;
             // 
-            // fIndCategory2
+            // fcWork
             // 
-            this.fIndCategory2.Location = new System.Drawing.Point(764, 19);
-            this.fIndCategory2.Name = "fIndCategory2";
-            this.fIndCategory2.Size = new System.Drawing.Size(190, 27);
-            this.fIndCategory2.TabIndex = 5;
+            this.fcWork.Location = new System.Drawing.Point(764, 19);
+            this.fcWork.Name = "fcWork";
+            this.fcWork.Size = new System.Drawing.Size(190, 27);
+            this.fcWork.TabIndex = 5;
             // 
             // label4
             // 
@@ -237,12 +237,12 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "공정 :";
             // 
-            // fIndCategory1
+            // fcFactory
             // 
-            this.fIndCategory1.Location = new System.Drawing.Point(489, 19);
-            this.fIndCategory1.Name = "fIndCategory1";
-            this.fIndCategory1.Size = new System.Drawing.Size(190, 27);
-            this.fIndCategory1.TabIndex = 1;
+            this.fcFactory.Location = new System.Drawing.Point(489, 19);
+            this.fcFactory.Name = "fcFactory";
+            this.fcFactory.Size = new System.Drawing.Size(190, 27);
+            this.fcFactory.TabIndex = 1;
             // 
             // label2
             // 
@@ -255,17 +255,17 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Controls.Add(this.fIndCategory2);
+            this.panel2.Controls.Add(this.fcWork);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.fIndCategory1);
+            this.panel2.Controls.Add(this.fcFactory);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.dateTimePicker2);
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.dtpEnd);
+            this.panel2.Controls.Add(this.dtpStart);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(12, 17);
             this.panel2.Name = "panel2";
@@ -327,7 +327,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabControl tabControl3;
@@ -336,15 +336,15 @@
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.TabControl tabControl1;
-        private FIndCategory fIndCategory2;
+        private FIndCategory fcWork;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private FIndCategory fIndCategory1;
+        private FIndCategory fcFactory;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;

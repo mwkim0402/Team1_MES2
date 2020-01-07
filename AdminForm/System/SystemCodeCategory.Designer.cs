@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCatName = new System.Windows.Forms.TextBox();
+            this.txtCatCode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.txtCatNameInput = new System.Windows.Forms.TextBox();
+            this.txtCatCodeInput = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPS = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -49,18 +49,18 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.txtPS);
             this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.textBox14);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox12);
+            this.panel1.Controls.Add(this.txtCatCodeInput);
+            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.txtCatNameInput);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtCatName);
+            this.panel2.Controls.Add(this.txtCatCode);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(16, 12);
@@ -68,19 +68,19 @@
             this.panel2.Size = new System.Drawing.Size(1128, 67);
             this.panel2.TabIndex = 4;
             // 
-            // textBox2
+            // txtCatName
             // 
-            this.textBox2.Location = new System.Drawing.Point(521, 25);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(152, 21);
-            this.textBox2.TabIndex = 6;
+            this.txtCatName.Location = new System.Drawing.Point(521, 25);
+            this.txtCatName.Name = "txtCatName";
+            this.txtCatName.Size = new System.Drawing.Size(152, 21);
+            this.txtCatName.TabIndex = 6;
             // 
-            // textBox1
+            // txtCatCode
             // 
-            this.textBox1.Location = new System.Drawing.Point(178, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 21);
-            this.textBox1.TabIndex = 5;
+            this.txtCatCode.Location = new System.Drawing.Point(178, 25);
+            this.txtCatCode.Name = "txtCatCode";
+            this.txtCatCode.Size = new System.Drawing.Size(152, 21);
+            this.txtCatCode.TabIndex = 5;
             // 
             // label3
             // 
@@ -102,36 +102,36 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "시스템 대분류 코드";
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(1035, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 48);
-            this.button1.TabIndex = 56;
-            this.button1.Text = "저장";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSave.Location = new System.Drawing.Point(1035, 20);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(82, 48);
+            this.btnSave.TabIndex = 56;
+            this.btnSave.Text = "저장";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // textBox12
+            // txtCatNameInput
             // 
-            this.textBox12.Location = new System.Drawing.Point(461, 18);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(126, 21);
-            this.textBox12.TabIndex = 53;
+            this.txtCatNameInput.Location = new System.Drawing.Point(470, 18);
+            this.txtCatNameInput.Name = "txtCatNameInput";
+            this.txtCatNameInput.Size = new System.Drawing.Size(126, 21);
+            this.txtCatNameInput.TabIndex = 53;
             // 
-            // textBox14
+            // txtCatCodeInput
             // 
-            this.textBox14.Location = new System.Drawing.Point(182, 18);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(126, 21);
-            this.textBox14.TabIndex = 52;
+            this.txtCatCodeInput.Location = new System.Drawing.Point(182, 18);
+            this.txtCatCodeInput.Name = "txtCatCodeInput";
+            this.txtCatCodeInput.Size = new System.Drawing.Size(126, 21);
+            this.txtCatCodeInput.TabIndex = 52;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label21.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label21.Location = new System.Drawing.Point(325, 20);
+            this.label21.Location = new System.Drawing.Point(334, 20);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(130, 16);
             this.label21.TabIndex = 50;
@@ -153,18 +153,18 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(656, 22);
+            this.label2.Location = new System.Drawing.Point(617, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 16);
             this.label2.TabIndex = 57;
             this.label2.Text = "비고";
             // 
-            // textBox3
+            // txtPS
             // 
-            this.textBox3.Location = new System.Drawing.Point(716, 20);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(208, 21);
-            this.textBox3.TabIndex = 58;
+            this.txtPS.Location = new System.Drawing.Point(677, 20);
+            this.txtPS.Name = "txtPS";
+            this.txtPS.Size = new System.Drawing.Size(319, 21);
+            this.txtPS.TabIndex = 58;
             // 
             // SystemCodeCategory
             // 
@@ -197,14 +197,14 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtCatName;
+        private System.Windows.Forms.TextBox txtCatCode;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox txtCatNameInput;
+        private System.Windows.Forms.TextBox txtCatCodeInput;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPS;
     }
 }

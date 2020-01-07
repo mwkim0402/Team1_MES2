@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.fc = new AdminForm.FIndCategory();
+            this.fcTruck = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
             this.fcCategory = new AdminForm.FIndCategory();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Controls.Add(this.fc);
+            this.panel1.Controls.Add(this.fcTruck);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.fcCategory);
             this.panel1.Controls.Add(this.label3);
@@ -56,12 +56,12 @@
             this.panel1.Size = new System.Drawing.Size(1128, 67);
             this.panel1.TabIndex = 4;
             // 
-            // fc
+            // fcTruck
             // 
-            this.fc.Location = new System.Drawing.Point(662, 22);
-            this.fc.Name = "fc";
-            this.fc.Size = new System.Drawing.Size(190, 27);
-            this.fc.TabIndex = 7;
+            this.fcTruck.Location = new System.Drawing.Point(662, 22);
+            this.fcTruck.Name = "fcTruck";
+            this.fcTruck.Size = new System.Drawing.Size(190, 27);
+            this.fcTruck.TabIndex = 7;
             // 
             // label4
             // 
@@ -154,7 +154,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private FIndCategory fcCategory;
-        private FIndCategory fc;
+        private FIndCategory fcTruck;
         private System.Windows.Forms.Label label4;
     }
 }

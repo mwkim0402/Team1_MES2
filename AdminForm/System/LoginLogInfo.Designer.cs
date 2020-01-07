@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtMonName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUserID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,11 +45,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.txtMonName);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtUserID);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtUserName);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dtpEnd);
             this.panel1.Controls.Add(this.label3);
@@ -60,12 +60,12 @@
             this.panel1.Size = new System.Drawing.Size(1128, 67);
             this.panel1.TabIndex = 4;
             // 
-            // textBox3
+            // txtMonName
             // 
-            this.textBox3.Location = new System.Drawing.Point(456, 26);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(141, 21);
-            this.textBox3.TabIndex = 16;
+            this.txtMonName.Location = new System.Drawing.Point(456, 26);
+            this.txtMonName.Name = "txtMonName";
+            this.txtMonName.Size = new System.Drawing.Size(141, 21);
+            this.txtMonName.TabIndex = 16;
             // 
             // label5
             // 
@@ -77,12 +77,12 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "화면 명";
             // 
-            // textBox2
+            // txtUserID
             // 
-            this.textBox2.Location = new System.Drawing.Point(709, 26);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(141, 21);
-            this.textBox2.TabIndex = 14;
+            this.txtUserID.Location = new System.Drawing.Point(709, 26);
+            this.txtUserID.Name = "txtUserID";
+            this.txtUserID.Size = new System.Drawing.Size(141, 21);
+            this.txtUserID.TabIndex = 14;
             // 
             // label4
             // 
@@ -94,12 +94,12 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "사용자ID";
             // 
-            // textBox1
+            // txtUserName
             // 
-            this.textBox1.Location = new System.Drawing.Point(950, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 21);
-            this.textBox1.TabIndex = 12;
+            this.txtUserName.Location = new System.Drawing.Point(950, 25);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(141, 21);
+            this.txtUserName.TabIndex = 12;
             // 
             // label2
             // 
@@ -170,11 +170,11 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtMonName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUserID;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.DateTimePicker dtpStart;

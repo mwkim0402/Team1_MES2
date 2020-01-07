@@ -74,5 +74,17 @@ namespace FieldOperationForm
             //frm.Show();
             //lblChange.Text = "로그인";
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (lbl_Notice.Left < this.Width)
+            {
+                lbl_Notice.Left = lbl_Notice.Left + 5;
+            }
+            else
+            {
+                lbl_Notice.Left = 0;
+            }
+        }
     }
 }

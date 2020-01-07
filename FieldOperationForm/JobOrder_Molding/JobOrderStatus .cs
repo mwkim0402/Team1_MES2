@@ -22,7 +22,9 @@ namespace FieldOperationForm
 
         private void JobOrderStatus_Load(object sender, EventArgs e)
         {
+            main.lbl_Job.Text = "성형";
             main.lblChange.Text = "작업지시 현황";
+
         }
         private void btn_Process_Click(object sender, EventArgs e)
         {

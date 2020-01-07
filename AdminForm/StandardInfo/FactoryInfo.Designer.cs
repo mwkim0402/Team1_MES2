@@ -31,7 +31,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.fcFactory = new AdminForm.FIndCategory();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
             this.txtWPCode = new System.Windows.Forms.TextBox();
             this.cmbUsable = new System.Windows.Forms.ComboBox();
             this.txtWPName = new System.Windows.Forms.TextBox();
@@ -61,11 +61,11 @@
             this.cmbPerformUnit = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.gbMoldEquip = new System.Windows.Forms.GroupBox();
-            this.radioButton15 = new System.Windows.Forms.RadioButton();
-            this.radioButton16 = new System.Windows.Forms.RadioButton();
+            this.rbUse_MoldEq = new System.Windows.Forms.RadioButton();
+            this.rbNoUse_MoldEq = new System.Windows.Forms.RadioButton();
             this.gbAutoProcess = new System.Windows.Forms.GroupBox();
-            this.radioButton17 = new System.Windows.Forms.RadioButton();
-            this.radioButton18 = new System.Windows.Forms.RadioButton();
+            this.rbUse_Process = new System.Windows.Forms.RadioButton();
+            this.rbNoUse_Process = new System.Windows.Forms.RadioButton();
             this.txtPS = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.cmbPerformCat = new System.Windows.Forms.ComboBox();
@@ -81,25 +81,25 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.gbUsable = new System.Windows.Forms.GroupBox();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
+            this.rbUse_Use = new System.Windows.Forms.RadioButton();
+            this.rbNoUse_Use = new System.Windows.Forms.RadioButton();
             this.gbPalletCreate = new System.Windows.Forms.GroupBox();
-            this.radioButton13 = new System.Windows.Forms.RadioButton();
-            this.radioButton14 = new System.Windows.Forms.RadioButton();
+            this.rbUse_Pallet = new System.Windows.Forms.RadioButton();
+            this.rbNoUse_Pallet = new System.Windows.Forms.RadioButton();
             this.gbAutoNonOp = new System.Windows.Forms.GroupBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.rbUse_NonOp = new System.Windows.Forms.RadioButton();
+            this.rbNoUse_NonOp = new System.Windows.Forms.RadioButton();
             this.gbAutoStart = new System.Windows.Forms.GroupBox();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.rbUse_OrderStart = new System.Windows.Forms.RadioButton();
+            this.rbNoUse_OrderStart = new System.Windows.Forms.RadioButton();
             this.gbGasUsable = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.rbUse_Gas = new System.Windows.Forms.RadioButton();
+            this.rbNoUse_Gas = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.gbAutoCreate = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbUse_OrderCreate = new System.Windows.Forms.RadioButton();
+            this.rbNoUse_OrderCreate = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -121,7 +121,7 @@
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel2.Controls.Add(this.fcFactory);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.btnDown);
             this.panel2.Controls.Add(this.txtWPCode);
             this.panel2.Controls.Add(this.cmbUsable);
             this.panel2.Controls.Add(this.txtWPName);
@@ -150,14 +150,14 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "공정";
             // 
-            // button2
+            // btnDown
             // 
-            this.button2.Location = new System.Drawing.Point(970, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 30);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "ERP Download";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDown.Location = new System.Drawing.Point(970, 19);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(139, 30);
+            this.btnDown.TabIndex = 19;
+            this.btnDown.Text = "ERP Download";
+            this.btnDown.UseVisualStyleBackColor = true;
             // 
             // txtWPCode
             // 
@@ -454,8 +454,8 @@
             // 
             // gbMoldEquip
             // 
-            this.gbMoldEquip.Controls.Add(this.radioButton15);
-            this.gbMoldEquip.Controls.Add(this.radioButton16);
+            this.gbMoldEquip.Controls.Add(this.rbUse_MoldEq);
+            this.gbMoldEquip.Controls.Add(this.rbNoUse_MoldEq);
             this.gbMoldEquip.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.gbMoldEquip.Location = new System.Drawing.Point(619, 183);
             this.gbMoldEquip.Name = "gbMoldEquip";
@@ -464,34 +464,34 @@
             this.gbMoldEquip.TabStop = false;
             this.gbMoldEquip.Text = "금형 장착 여부";
             // 
-            // radioButton15
+            // rbUse_MoldEq
             // 
-            this.radioButton15.AutoSize = true;
-            this.radioButton15.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton15.Location = new System.Drawing.Point(48, 20);
-            this.radioButton15.Name = "radioButton15";
-            this.radioButton15.Size = new System.Drawing.Size(42, 20);
-            this.radioButton15.TabIndex = 77;
-            this.radioButton15.TabStop = true;
-            this.radioButton15.Text = "유";
-            this.radioButton15.UseVisualStyleBackColor = false;
+            this.rbUse_MoldEq.AutoSize = true;
+            this.rbUse_MoldEq.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_MoldEq.Location = new System.Drawing.Point(48, 20);
+            this.rbUse_MoldEq.Name = "rbUse_MoldEq";
+            this.rbUse_MoldEq.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_MoldEq.TabIndex = 77;
+            this.rbUse_MoldEq.TabStop = true;
+            this.rbUse_MoldEq.Text = "유";
+            this.rbUse_MoldEq.UseVisualStyleBackColor = false;
             // 
-            // radioButton16
+            // rbNoUse_MoldEq
             // 
-            this.radioButton16.AutoSize = true;
-            this.radioButton16.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton16.Location = new System.Drawing.Point(116, 20);
-            this.radioButton16.Name = "radioButton16";
-            this.radioButton16.Size = new System.Drawing.Size(42, 20);
-            this.radioButton16.TabIndex = 79;
-            this.radioButton16.TabStop = true;
-            this.radioButton16.Text = "무";
-            this.radioButton16.UseVisualStyleBackColor = false;
+            this.rbNoUse_MoldEq.AutoSize = true;
+            this.rbNoUse_MoldEq.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse_MoldEq.Location = new System.Drawing.Point(116, 20);
+            this.rbNoUse_MoldEq.Name = "rbNoUse_MoldEq";
+            this.rbNoUse_MoldEq.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse_MoldEq.TabIndex = 79;
+            this.rbNoUse_MoldEq.TabStop = true;
+            this.rbNoUse_MoldEq.Text = "무";
+            this.rbNoUse_MoldEq.UseVisualStyleBackColor = false;
             // 
             // gbAutoProcess
             // 
-            this.gbAutoProcess.Controls.Add(this.radioButton17);
-            this.gbAutoProcess.Controls.Add(this.radioButton18);
+            this.gbAutoProcess.Controls.Add(this.rbUse_Process);
+            this.gbAutoProcess.Controls.Add(this.rbNoUse_Process);
             this.gbAutoProcess.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.gbAutoProcess.Location = new System.Drawing.Point(835, 181);
             this.gbAutoProcess.Name = "gbAutoProcess";
@@ -500,29 +500,29 @@
             this.gbAutoProcess.TabStop = false;
             this.gbAutoProcess.Text = "투입수량 자동처리 유무";
             // 
-            // radioButton17
+            // rbUse_Process
             // 
-            this.radioButton17.AutoSize = true;
-            this.radioButton17.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton17.Location = new System.Drawing.Point(48, 20);
-            this.radioButton17.Name = "radioButton17";
-            this.radioButton17.Size = new System.Drawing.Size(42, 20);
-            this.radioButton17.TabIndex = 77;
-            this.radioButton17.TabStop = true;
-            this.radioButton17.Text = "유";
-            this.radioButton17.UseVisualStyleBackColor = false;
+            this.rbUse_Process.AutoSize = true;
+            this.rbUse_Process.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_Process.Location = new System.Drawing.Point(48, 20);
+            this.rbUse_Process.Name = "rbUse_Process";
+            this.rbUse_Process.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_Process.TabIndex = 77;
+            this.rbUse_Process.TabStop = true;
+            this.rbUse_Process.Text = "유";
+            this.rbUse_Process.UseVisualStyleBackColor = false;
             // 
-            // radioButton18
+            // rbNoUse_Process
             // 
-            this.radioButton18.AutoSize = true;
-            this.radioButton18.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton18.Location = new System.Drawing.Point(116, 20);
-            this.radioButton18.Name = "radioButton18";
-            this.radioButton18.Size = new System.Drawing.Size(42, 20);
-            this.radioButton18.TabIndex = 79;
-            this.radioButton18.TabStop = true;
-            this.radioButton18.Text = "무";
-            this.radioButton18.UseVisualStyleBackColor = false;
+            this.rbNoUse_Process.AutoSize = true;
+            this.rbNoUse_Process.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse_Process.Location = new System.Drawing.Point(116, 20);
+            this.rbNoUse_Process.Name = "rbNoUse_Process";
+            this.rbNoUse_Process.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse_Process.TabIndex = 79;
+            this.rbNoUse_Process.TabStop = true;
+            this.rbNoUse_Process.Text = "무";
+            this.rbNoUse_Process.UseVisualStyleBackColor = false;
             // 
             // txtPS
             // 
@@ -649,8 +649,8 @@
             // 
             // gbUsable
             // 
-            this.gbUsable.Controls.Add(this.radioButton11);
-            this.gbUsable.Controls.Add(this.radioButton12);
+            this.gbUsable.Controls.Add(this.rbUse_Use);
+            this.gbUsable.Controls.Add(this.rbNoUse_Use);
             this.gbUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.gbUsable.Location = new System.Drawing.Point(619, 15);
             this.gbUsable.Name = "gbUsable";
@@ -659,34 +659,34 @@
             this.gbUsable.TabStop = false;
             this.gbUsable.Text = "사용여부";
             // 
-            // radioButton11
+            // rbUse_Use
             // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton11.Location = new System.Drawing.Point(48, 20);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(42, 20);
-            this.radioButton11.TabIndex = 77;
-            this.radioButton11.TabStop = true;
-            this.radioButton11.Text = "유";
-            this.radioButton11.UseVisualStyleBackColor = false;
+            this.rbUse_Use.AutoSize = true;
+            this.rbUse_Use.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_Use.Location = new System.Drawing.Point(48, 20);
+            this.rbUse_Use.Name = "rbUse_Use";
+            this.rbUse_Use.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_Use.TabIndex = 77;
+            this.rbUse_Use.TabStop = true;
+            this.rbUse_Use.Text = "유";
+            this.rbUse_Use.UseVisualStyleBackColor = false;
             // 
-            // radioButton12
+            // rbNoUse_Use
             // 
-            this.radioButton12.AutoSize = true;
-            this.radioButton12.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton12.Location = new System.Drawing.Point(116, 20);
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(42, 20);
-            this.radioButton12.TabIndex = 79;
-            this.radioButton12.TabStop = true;
-            this.radioButton12.Text = "무";
-            this.radioButton12.UseVisualStyleBackColor = false;
+            this.rbNoUse_Use.AutoSize = true;
+            this.rbNoUse_Use.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse_Use.Location = new System.Drawing.Point(116, 20);
+            this.rbNoUse_Use.Name = "rbNoUse_Use";
+            this.rbNoUse_Use.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse_Use.TabIndex = 79;
+            this.rbNoUse_Use.TabStop = true;
+            this.rbNoUse_Use.Text = "무";
+            this.rbNoUse_Use.UseVisualStyleBackColor = false;
             // 
             // gbPalletCreate
             // 
-            this.gbPalletCreate.Controls.Add(this.radioButton13);
-            this.gbPalletCreate.Controls.Add(this.radioButton14);
+            this.gbPalletCreate.Controls.Add(this.rbUse_Pallet);
+            this.gbPalletCreate.Controls.Add(this.rbNoUse_Pallet);
             this.gbPalletCreate.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.gbPalletCreate.Location = new System.Drawing.Point(619, 70);
             this.gbPalletCreate.Name = "gbPalletCreate";
@@ -695,34 +695,34 @@
             this.gbPalletCreate.TabStop = false;
             this.gbPalletCreate.Text = "팔레트 생성 유무";
             // 
-            // radioButton13
+            // rbUse_Pallet
             // 
-            this.radioButton13.AutoSize = true;
-            this.radioButton13.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton13.Location = new System.Drawing.Point(48, 20);
-            this.radioButton13.Name = "radioButton13";
-            this.radioButton13.Size = new System.Drawing.Size(42, 20);
-            this.radioButton13.TabIndex = 77;
-            this.radioButton13.TabStop = true;
-            this.radioButton13.Text = "유";
-            this.radioButton13.UseVisualStyleBackColor = false;
+            this.rbUse_Pallet.AutoSize = true;
+            this.rbUse_Pallet.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_Pallet.Location = new System.Drawing.Point(48, 20);
+            this.rbUse_Pallet.Name = "rbUse_Pallet";
+            this.rbUse_Pallet.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_Pallet.TabIndex = 77;
+            this.rbUse_Pallet.TabStop = true;
+            this.rbUse_Pallet.Text = "유";
+            this.rbUse_Pallet.UseVisualStyleBackColor = false;
             // 
-            // radioButton14
+            // rbNoUse_Pallet
             // 
-            this.radioButton14.AutoSize = true;
-            this.radioButton14.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton14.Location = new System.Drawing.Point(116, 20);
-            this.radioButton14.Name = "radioButton14";
-            this.radioButton14.Size = new System.Drawing.Size(42, 20);
-            this.radioButton14.TabIndex = 79;
-            this.radioButton14.TabStop = true;
-            this.radioButton14.Text = "무";
-            this.radioButton14.UseVisualStyleBackColor = false;
+            this.rbNoUse_Pallet.AutoSize = true;
+            this.rbNoUse_Pallet.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse_Pallet.Location = new System.Drawing.Point(116, 20);
+            this.rbNoUse_Pallet.Name = "rbNoUse_Pallet";
+            this.rbNoUse_Pallet.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse_Pallet.TabIndex = 79;
+            this.rbNoUse_Pallet.TabStop = true;
+            this.rbNoUse_Pallet.Text = "무";
+            this.rbNoUse_Pallet.UseVisualStyleBackColor = false;
             // 
             // gbAutoNonOp
             // 
-            this.gbAutoNonOp.Controls.Add(this.radioButton5);
-            this.gbAutoNonOp.Controls.Add(this.radioButton6);
+            this.gbAutoNonOp.Controls.Add(this.rbUse_NonOp);
+            this.gbAutoNonOp.Controls.Add(this.rbNoUse_NonOp);
             this.gbAutoNonOp.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.gbAutoNonOp.Location = new System.Drawing.Point(619, 127);
             this.gbAutoNonOp.Name = "gbAutoNonOp";
@@ -731,34 +731,34 @@
             this.gbAutoNonOp.TabStop = false;
             this.gbAutoNonOp.Text = "자동 비가동 여부";
             // 
-            // radioButton5
+            // rbUse_NonOp
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton5.Location = new System.Drawing.Point(48, 20);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(42, 20);
-            this.radioButton5.TabIndex = 77;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "유";
-            this.radioButton5.UseVisualStyleBackColor = false;
+            this.rbUse_NonOp.AutoSize = true;
+            this.rbUse_NonOp.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_NonOp.Location = new System.Drawing.Point(48, 20);
+            this.rbUse_NonOp.Name = "rbUse_NonOp";
+            this.rbUse_NonOp.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_NonOp.TabIndex = 77;
+            this.rbUse_NonOp.TabStop = true;
+            this.rbUse_NonOp.Text = "유";
+            this.rbUse_NonOp.UseVisualStyleBackColor = false;
             // 
-            // radioButton6
+            // rbNoUse_NonOp
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton6.Location = new System.Drawing.Point(116, 20);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(42, 20);
-            this.radioButton6.TabIndex = 79;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "무";
-            this.radioButton6.UseVisualStyleBackColor = false;
+            this.rbNoUse_NonOp.AutoSize = true;
+            this.rbNoUse_NonOp.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse_NonOp.Location = new System.Drawing.Point(116, 20);
+            this.rbNoUse_NonOp.Name = "rbNoUse_NonOp";
+            this.rbNoUse_NonOp.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse_NonOp.TabIndex = 79;
+            this.rbNoUse_NonOp.TabStop = true;
+            this.rbNoUse_NonOp.Text = "무";
+            this.rbNoUse_NonOp.UseVisualStyleBackColor = false;
             // 
             // gbAutoStart
             // 
-            this.gbAutoStart.Controls.Add(this.radioButton7);
-            this.gbAutoStart.Controls.Add(this.radioButton8);
+            this.gbAutoStart.Controls.Add(this.rbUse_OrderStart);
+            this.gbAutoStart.Controls.Add(this.rbNoUse_OrderStart);
             this.gbAutoStart.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.gbAutoStart.Location = new System.Drawing.Point(835, 70);
             this.gbAutoStart.Name = "gbAutoStart";
@@ -767,34 +767,34 @@
             this.gbAutoStart.TabStop = false;
             this.gbAutoStart.Text = "작업지시 자동시작 여부";
             // 
-            // radioButton7
+            // rbUse_OrderStart
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton7.Location = new System.Drawing.Point(48, 20);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(42, 20);
-            this.radioButton7.TabIndex = 77;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "유";
-            this.radioButton7.UseVisualStyleBackColor = false;
+            this.rbUse_OrderStart.AutoSize = true;
+            this.rbUse_OrderStart.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_OrderStart.Location = new System.Drawing.Point(48, 20);
+            this.rbUse_OrderStart.Name = "rbUse_OrderStart";
+            this.rbUse_OrderStart.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_OrderStart.TabIndex = 77;
+            this.rbUse_OrderStart.TabStop = true;
+            this.rbUse_OrderStart.Text = "유";
+            this.rbUse_OrderStart.UseVisualStyleBackColor = false;
             // 
-            // radioButton8
+            // rbNoUse_OrderStart
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton8.Location = new System.Drawing.Point(116, 20);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(42, 20);
-            this.radioButton8.TabIndex = 79;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "무";
-            this.radioButton8.UseVisualStyleBackColor = false;
+            this.rbNoUse_OrderStart.AutoSize = true;
+            this.rbNoUse_OrderStart.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse_OrderStart.Location = new System.Drawing.Point(116, 20);
+            this.rbNoUse_OrderStart.Name = "rbNoUse_OrderStart";
+            this.rbNoUse_OrderStart.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse_OrderStart.TabIndex = 79;
+            this.rbNoUse_OrderStart.TabStop = true;
+            this.rbNoUse_OrderStart.Text = "무";
+            this.rbNoUse_OrderStart.UseVisualStyleBackColor = false;
             // 
             // gbGasUsable
             // 
-            this.gbGasUsable.Controls.Add(this.radioButton3);
-            this.gbGasUsable.Controls.Add(this.radioButton4);
+            this.gbGasUsable.Controls.Add(this.rbUse_Gas);
+            this.gbGasUsable.Controls.Add(this.rbNoUse_Gas);
             this.gbGasUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.gbGasUsable.Location = new System.Drawing.Point(835, 15);
             this.gbGasUsable.Name = "gbGasUsable";
@@ -803,29 +803,29 @@
             this.gbGasUsable.TabStop = false;
             this.gbGasUsable.Text = "GAS 사용공정 유무";
             // 
-            // radioButton3
+            // rbUse_Gas
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton3.Location = new System.Drawing.Point(48, 20);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(42, 20);
-            this.radioButton3.TabIndex = 77;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "유";
-            this.radioButton3.UseVisualStyleBackColor = false;
+            this.rbUse_Gas.AutoSize = true;
+            this.rbUse_Gas.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_Gas.Location = new System.Drawing.Point(48, 20);
+            this.rbUse_Gas.Name = "rbUse_Gas";
+            this.rbUse_Gas.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_Gas.TabIndex = 77;
+            this.rbUse_Gas.TabStop = true;
+            this.rbUse_Gas.Text = "유";
+            this.rbUse_Gas.UseVisualStyleBackColor = false;
             // 
-            // radioButton4
+            // rbNoUse_Gas
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton4.Location = new System.Drawing.Point(116, 20);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(42, 20);
-            this.radioButton4.TabIndex = 79;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "무";
-            this.radioButton4.UseVisualStyleBackColor = false;
+            this.rbNoUse_Gas.AutoSize = true;
+            this.rbNoUse_Gas.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse_Gas.Location = new System.Drawing.Point(116, 20);
+            this.rbNoUse_Gas.Name = "rbNoUse_Gas";
+            this.rbNoUse_Gas.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse_Gas.TabIndex = 79;
+            this.rbNoUse_Gas.TabStop = true;
+            this.rbNoUse_Gas.Text = "무";
+            this.rbNoUse_Gas.UseVisualStyleBackColor = false;
             // 
             // label11
             // 
@@ -851,8 +851,8 @@
             // 
             // gbAutoCreate
             // 
-            this.gbAutoCreate.Controls.Add(this.radioButton1);
-            this.gbAutoCreate.Controls.Add(this.radioButton2);
+            this.gbAutoCreate.Controls.Add(this.rbUse_OrderCreate);
+            this.gbAutoCreate.Controls.Add(this.rbNoUse_OrderCreate);
             this.gbAutoCreate.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.gbAutoCreate.Location = new System.Drawing.Point(835, 125);
             this.gbAutoCreate.Name = "gbAutoCreate";
@@ -861,29 +861,29 @@
             this.gbAutoCreate.TabStop = false;
             this.gbAutoCreate.Text = "작업지시 자동생성 유무";
             // 
-            // radioButton1
+            // rbUse_OrderCreate
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton1.Location = new System.Drawing.Point(48, 20);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(42, 20);
-            this.radioButton1.TabIndex = 77;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "유";
-            this.radioButton1.UseVisualStyleBackColor = false;
+            this.rbUse_OrderCreate.AutoSize = true;
+            this.rbUse_OrderCreate.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_OrderCreate.Location = new System.Drawing.Point(48, 20);
+            this.rbUse_OrderCreate.Name = "rbUse_OrderCreate";
+            this.rbUse_OrderCreate.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_OrderCreate.TabIndex = 77;
+            this.rbUse_OrderCreate.TabStop = true;
+            this.rbUse_OrderCreate.Text = "유";
+            this.rbUse_OrderCreate.UseVisualStyleBackColor = false;
             // 
-            // radioButton2
+            // rbNoUse_OrderCreate
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton2.Location = new System.Drawing.Point(116, 20);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(42, 20);
-            this.radioButton2.TabIndex = 79;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "무";
-            this.radioButton2.UseVisualStyleBackColor = false;
+            this.rbNoUse_OrderCreate.AutoSize = true;
+            this.rbNoUse_OrderCreate.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse_OrderCreate.Location = new System.Drawing.Point(116, 20);
+            this.rbNoUse_OrderCreate.Name = "rbNoUse_OrderCreate";
+            this.rbNoUse_OrderCreate.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse_OrderCreate.TabIndex = 79;
+            this.rbNoUse_OrderCreate.TabStop = true;
+            this.rbNoUse_OrderCreate.Text = "무";
+            this.rbNoUse_OrderCreate.UseVisualStyleBackColor = false;
             // 
             // label10
             // 
@@ -974,28 +974,28 @@
         protected System.Windows.Forms.Panel panel1;
         private FIndCategory fcFactory;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox gbUsable;
-        private System.Windows.Forms.RadioButton radioButton11;
-        private System.Windows.Forms.RadioButton radioButton12;
+        private System.Windows.Forms.RadioButton rbUse_Use;
+        private System.Windows.Forms.RadioButton rbNoUse_Use;
         private System.Windows.Forms.GroupBox gbPalletCreate;
-        private System.Windows.Forms.RadioButton radioButton13;
-        private System.Windows.Forms.RadioButton radioButton14;
+        private System.Windows.Forms.RadioButton rbUse_Pallet;
+        private System.Windows.Forms.RadioButton rbNoUse_Pallet;
         private System.Windows.Forms.GroupBox gbAutoNonOp;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton rbUse_NonOp;
+        private System.Windows.Forms.RadioButton rbNoUse_NonOp;
         private System.Windows.Forms.GroupBox gbAutoStart;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton8;
+        private System.Windows.Forms.RadioButton rbUse_OrderStart;
+        private System.Windows.Forms.RadioButton rbNoUse_OrderStart;
         private System.Windows.Forms.GroupBox gbGasUsable;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rbUse_Gas;
+        private System.Windows.Forms.RadioButton rbNoUse_Gas;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox gbAutoCreate;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbUse_OrderCreate;
+        private System.Windows.Forms.RadioButton rbNoUse_OrderCreate;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbWPCategory;
         private System.Windows.Forms.TextBox txtFactoryCodeInput;
@@ -1007,11 +1007,11 @@
         private System.Windows.Forms.ComboBox cmbPerformUnit;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox gbMoldEquip;
-        private System.Windows.Forms.RadioButton radioButton15;
-        private System.Windows.Forms.RadioButton radioButton16;
+        private System.Windows.Forms.RadioButton rbUse_MoldEq;
+        private System.Windows.Forms.RadioButton rbNoUse_MoldEq;
         private System.Windows.Forms.GroupBox gbAutoProcess;
-        private System.Windows.Forms.RadioButton radioButton17;
-        private System.Windows.Forms.RadioButton radioButton18;
+        private System.Windows.Forms.RadioButton rbUse_Process;
+        private System.Windows.Forms.RadioButton rbNoUse_Process;
         private System.Windows.Forms.TextBox txtPS;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cmbPerformCat;

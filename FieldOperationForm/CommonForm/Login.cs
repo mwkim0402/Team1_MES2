@@ -30,7 +30,9 @@ namespace FieldOperationForm
             frm.Dock = DockStyle.Fill;
             frm.Show();
             this.Hide();
-
+   
+            main.lbl_name.Text = "김지은";
+            main.label3.Text = "님";
 
         }
 
@@ -42,8 +44,8 @@ namespace FieldOperationForm
             frm.Dock = DockStyle.Fill;
             frm.Show();
             this.Hide();
+   
 
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -64,6 +66,13 @@ namespace FieldOperationForm
             frm.Dock = DockStyle.Fill;
             frm.Show();
             this.Hide();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            main.lbl_Job.Text = "";
+            main.lbl_name.Text = "";
+            main.label3.Text = "";
         }
     }
 }

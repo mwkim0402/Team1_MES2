@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.fcFactory = new AdminForm.FIndCategory();
+            this.fcUserGroup = new AdminForm.FIndCategory();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -37,19 +37,19 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Controls.Add(this.fcFactory);
+            this.panel1.Controls.Add(this.fcUserGroup);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(16, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1128, 67);
             this.panel1.TabIndex = 4;
             // 
-            // fcFactory
+            // fcUserGroup
             // 
-            this.fcFactory.Location = new System.Drawing.Point(135, 22);
-            this.fcFactory.Name = "fcFactory";
-            this.fcFactory.Size = new System.Drawing.Size(190, 27);
-            this.fcFactory.TabIndex = 5;
+            this.fcUserGroup.Location = new System.Drawing.Point(135, 22);
+            this.fcUserGroup.Name = "fcUserGroup";
+            this.fcUserGroup.Size = new System.Drawing.Size(190, 27);
+            this.fcUserGroup.TabIndex = 5;
             // 
             // label3
             // 
@@ -84,6 +84,6 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private FIndCategory fcFactory;
+        private FIndCategory fcUserGroup;
     }
 }

@@ -33,5 +33,10 @@ namespace FieldOperationForm
             main.lblChange.Text = "로그인";
             
         }
+
+        private void btn_Cancle_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

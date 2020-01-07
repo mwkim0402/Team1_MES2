@@ -37,6 +37,8 @@ namespace AdminForm
             menuList = service.GetAllMenu();
             CreateMenuTree("시스템관리");
             trvMenu.Visible = false;
+            trvBookMark.Visible = false;
+            trvBookMark.Location = new Point(0, 0);
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -63,8 +65,6 @@ namespace AdminForm
                 trvMenu.Visible = false;
                 return;
             }
-
-
             // 열려있는 트리뷰가 존재
             // 현재 열려있는버튼과 누르는 버튼이 다를 경우 
             if (open)
@@ -96,6 +96,7 @@ namespace AdminForm
                         }
                     }
                 }
+
             }
             // 열려있는 트리뷰가 존재하지 않고
             // 현재 열려있는버튼과 누르는 버튼이 다를 경우 
@@ -144,6 +145,8 @@ namespace AdminForm
             btnSave.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Action_Save_New_32x32.png");
             btnEdit.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Edit_32x32.png");
             btnDelete.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\DeleteList_32x32.png");
+            btnSearch.Image = new Bitmap(Application.StartupPath + @"\image\searchBtn.png");
+            pictureBox1.Image = new Bitmap(Application.StartupPath + @"\image\mark.jpg");
             foreach (var item in pnlMenu.Controls)
             {
                 if (item is Button)
@@ -153,12 +156,6 @@ namespace AdminForm
                 }
             }
         }
-
-        private void trvMenu_DoubleClick(object sender, EventArgs e)
-        {
-
-        }
-
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
             try
@@ -195,6 +192,7 @@ namespace AdminForm
                 TabPage TabP = (TabPage)tc.TabPages[tc.SelectedIndex];
                 tc.TabPages.Remove(TabP);
             }
+       
             // Form tempChild = this.ActiveMdiChild;
             // tempChild.Close();
         }
@@ -205,10 +203,15 @@ namespace AdminForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TvMenu_AfterSelect(object sender, TreeViewEventArgs e)
+        private void trvBookMark_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            MenuTreeVo selectMenu = menuList.Find(x => x.Screen_Code.Contains(trvMenu.SelectedNode.Text));
-            if (selectMenu != null)
+            TreeView trv = (TreeView)sender;
+            if (trv.SelectedNode == null)
+            {
+                return;
+            }
+            MenuTreeVo selectMenu = menuList.Find(x => x.Screen_Code.Contains(trv.SelectedNode.Text));
+            if (selectMenu.Parent_Screen_Code != null)
             {
                 // 중복된 페이지를 여는 것을 막는다.
                 foreach (TabPage page in tabControl2.TabPages)
@@ -220,7 +223,9 @@ namespace AdminForm
                     }
                 }
                 newForm(selectMenu.Form_Name, selectMenu.Screen_Code.Trim());
+                lblLocation.Text = "위치 정보 : " + selectMenu.Parent_Screen_Code.Trim() + " > " + selectMenu.Screen_Code.Trim();
             }
+            
         }
         /// <summary>
         /// 새로운 폼 생성
@@ -246,10 +251,54 @@ namespace AdminForm
             }
             catch (Exception err)
             {
-
                 MessageBox.Show(err.ToString());
             }
             #endregion
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if(btn.Name == "btnMenu")
+            {
+                setVisiblMenu(true);
+                if (!open)
+                {
+                    trvMenu.Location = new Point(0, 218);
+                    trvMenu.Visible = false;
+                }
+            }
+            else
+            {
+                trvBookMark.Nodes.Clear();
+                setVisiblMenu(false);
+                trvBookMark.Nodes.Add("사용자그룹관리");
+            }
+        }
+
+        private void setVisiblMenu(bool bVisible)
+        {
+            button1.Visible = bVisible;
+            button2.Visible = bVisible;
+            button3.Visible = bVisible;
+            button4.Visible = bVisible;
+            button5.Visible = bVisible;
+            button6.Visible = bVisible;
+            button7.Visible = bVisible;
+            trvMenu.Visible = bVisible;
+            trvBookMark.Visible = !bVisible;
+        }
+
+        private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TabControl tc = (TabControl)sender;
+            if(tc.SelectedTab == null)
+            {
+                lblLocation.Text = "";
+                return;
+            }
+            MenuTreeVo selectMenu = menuList.Find(x => x.Screen_Code.Contains(tc.SelectedTab.Text));
+            lblLocation.Text = "위치 정보 : " + selectMenu.Parent_Screen_Code.Trim() + " > " + selectMenu.Screen_Code.Trim();
         }
     }
 }

@@ -22,6 +22,7 @@ namespace FieldOperationForm
 
         private void JobOrderStatus_Load_Load(object sender, EventArgs e)
         {
+            main.lbl_Job.Text = "적재";
             main.lblChange.Text = "작업지시 현황";
         }
 

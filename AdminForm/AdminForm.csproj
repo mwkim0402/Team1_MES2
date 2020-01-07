@@ -163,6 +163,12 @@
     <Compile Include="PerformManagement\GVLookup.Designer.cs">
       <DependentUpon>GVLookup.cs</DependentUpon>
     </Compile>
+    <Compile Include="PerformManagement\GvMonitoring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerformManagement\GvMonitoring.Designer.cs">
+      <DependentUpon>GvMonitoring.cs</DependentUpon>
+    </Compile>
     <Compile Include="PerformManagement\GVStatus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,22 +231,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="qulityManagement\MaterialManagement.cs">
+    <Compile Include="PerformManagement\MaterialManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="qulityManagement\MaterialManagement.Designer.cs">
+    <Compile Include="PerformManagement\MaterialManagement.Designer.cs">
       <DependentUpon>MaterialManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="qulityManagement\ProcessInquiry.cs">
+    <Compile Include="PerformManagement\ProcessInquiry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="qulityManagement\ProcessInquiry.Designer.cs">
+    <Compile Include="PerformManagement\ProcessInquiry.Designer.cs">
       <DependentUpon>ProcessInquiry.cs</DependentUpon>
     </Compile>
-    <Compile Include="qulityManagement\QualityInquiry.cs">
+    <Compile Include="PerformManagement\QualityInquiry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="qulityManagement\QualityInquiry.Designer.cs">
+    <Compile Include="PerformManagement\QualityInquiry.Designer.cs">
       <DependentUpon>QualityInquiry.cs</DependentUpon>
     </Compile>
     <Compile Include="qulityManagement\RegProcess.cs">
@@ -348,7 +354,7 @@
     <Compile Include="StandardInfo\QualitySizeSet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StandardInfo\QualitySizeSet.Designer.cs">
+    <Compile Include="StandardInfo\QualitySizeSet.designer.cs">
       <DependentUpon>QualitySizeSet.cs</DependentUpon>
     </Compile>
     <Compile Include="StandardInfo\UserAssort.cs">
@@ -492,6 +498,9 @@
     <EmbeddedResource Include="PerformManagement\GVLookup.resx">
       <DependentUpon>GVLookup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PerformManagement\GvMonitoring.resx">
+      <DependentUpon>GvMonitoring.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PerformManagement\GVStatus.resx">
       <DependentUpon>GVStatus.cs</DependentUpon>
     </EmbeddedResource>
@@ -531,13 +540,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="qulityManagement\MaterialManagement.resx">
+    <EmbeddedResource Include="PerformManagement\MaterialManagement.resx">
       <DependentUpon>MaterialManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="qulityManagement\ProcessInquiry.resx">
+    <EmbeddedResource Include="PerformManagement\ProcessInquiry.resx">
       <DependentUpon>ProcessInquiry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="qulityManagement\QualityInquiry.resx">
+    <EmbeddedResource Include="PerformManagement\QualityInquiry.resx">
       <DependentUpon>QualityInquiry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="qulityManagement\RegProcess.resx">

@@ -664,6 +664,20 @@
       <Name>MES_DB</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="image\Action_Save_New_32x32.png" />
+    <Content Include="image\bookmark.png" />
+    <Content Include="image\btn.png" />
+    <Content Include="image\buttonImage.png" />
+    <Content Include="image\DeleteList_32x32.png" />
+    <Content Include="image\doc_icon.png" />
+    <Content Include="image\Edit_32x32.png" />
+    <Content Include="image\mark.jpg" />
+    <Content Include="image\Remove_16x16.png" />
+    <Content Include="image\Report2_32x32.png" />
+    <Content Include="image\searchBtn.png" />
+    <Content Include="image\teamlogo.png" />
+    <Content Include="image\구디로고.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

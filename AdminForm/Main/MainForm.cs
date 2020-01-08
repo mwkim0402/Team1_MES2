@@ -24,9 +24,8 @@ namespace AdminForm
             this.tabControl2.DrawMode = TabDrawMode.OwnerDrawFixed;
 
 
-            this.tabControl2.ItemSize = new Size(120, 20);
-            this.tabControl2.SizeMode = TabSizeMode.Fixed;
-
+            this.tabControl2.ItemSize = new Size(150, 20);
+         
             // Add the Handler to draw the Image on Tab Pages
             tabControl2.DrawItem += tabControl1_DrawItem;
         }
@@ -35,10 +34,11 @@ namespace AdminForm
             SetButtonImage();
             MenuTreeService service = new MenuTreeService();
             menuList = service.GetAllMenu();
-            CreateMenuTree("시스템관리");
+
             trvMenu.Visible = false;
             trvBookMark.Visible = false;
-            trvBookMark.Location = new Point(0, 0);
+            trvBookMark.Location = new Point(0, 10);
+            btnMenu.BackColor = SystemColors.ActiveCaptionText;
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -133,7 +133,7 @@ namespace AdminForm
             trvMenu.Nodes.Add(ParentMenu);
             foreach (MenuTreeVo item in childMenu)
             {
-                trvMenu.Nodes[0].Nodes.Add(item.Screen_Code);
+                trvMenu.Nodes[0].Nodes.Add(item.Screen_Code.Trim());
             }
             trvMenu.ExpandAll();
         }
@@ -147,6 +147,14 @@ namespace AdminForm
             btnDelete.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\DeleteList_32x32.png");
             btnSearch.Image = new Bitmap(Application.StartupPath + @"\image\searchBtn.png");
             pictureBox1.Image = new Bitmap(Application.StartupPath + @"\image\mark.jpg");
+            ImageList imgList = new ImageList();
+            imgList.Images.Add(new Bitmap(Application.StartupPath +@"\image\doc_icon.png"));
+            trvMenu.ImageList = imgList;
+
+            ImageList bookImgList = new ImageList();
+            bookImgList.Images.Add(new Bitmap(Application.StartupPath + @"\image\bookmark.png"));
+            trvBookMark.ImageList = bookImgList;
+
             foreach (var item in pnlMenu.Controls)
             {
                 if (item is Button)
@@ -172,7 +180,7 @@ namespace AdminForm
                 string title = this.tabControl2.TabPages[e.Index].Text;
                 this.tabControl2.SizeMode = TabSizeMode.Fixed;
                 e.Graphics.DrawString(title, f, TitleBrush, new PointF(r.X, r.Y));
-                e.Graphics.DrawImage(img, new Point(r.X + (this.tabControl2.GetTabRect(e.Index).Width - _imageLocation.X - 2), _imageLocation.Y - 3));
+                e.Graphics.DrawImage(img, new Point(r.X + (this.tabControl2.GetTabRect(e.Index).Width - _imageLocation.X+8), _imageLocation.Y - 3));
             }
             catch (Exception err) { System.Windows.Forms.MessageBox.Show(err.Message); }
         }
@@ -216,7 +224,7 @@ namespace AdminForm
                 // 중복된 페이지를 여는 것을 막는다.
                 foreach (TabPage page in tabControl2.TabPages)
                 {
-                    if (page.Text == selectMenu.Screen_Code)
+                    if (page.Text.Trim() == selectMenu.Screen_Code.Trim())
                     {
                         tabControl2.SelectedTab = page;
                         return;
@@ -258,6 +266,10 @@ namespace AdminForm
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
+            foreach (Button item in pnlMainButton.Controls)
+            {
+                item.BackColor = SystemColors.AppWorkspace;
+            }
             Button btn = (Button)sender;
             if(btn.Name == "btnMenu")
             {
@@ -274,6 +286,7 @@ namespace AdminForm
                 setVisiblMenu(false);
                 trvBookMark.Nodes.Add("사용자그룹관리");
             }
+            btn.BackColor = SystemColors.ActiveCaptionText;
         }
 
         private void setVisiblMenu(bool bVisible)
@@ -299,6 +312,21 @@ namespace AdminForm
             }
             MenuTreeVo selectMenu = menuList.Find(x => x.Screen_Code.Contains(tc.SelectedTab.Text));
             lblLocation.Text = "위치 정보 : " + selectMenu.Parent_Screen_Code.Trim() + " > " + selectMenu.Screen_Code.Trim();
+        }
+
+        private void 전체종료ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl2.TabPages.Clear();
+            lblLocation.Text = "";
+        }
+
+        private void 이창을제외한창모두닫기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (TabPage tabPage in tabControl2.TabPages)
+            {
+                if (tabPage.Text.Trim() != tabControl2.SelectedTab.Text.Trim())
+                    tabControl2.TabPages.Remove(tabPage);
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace AdminForm
 {
-    partial class NonOperationDetail
+    partial class NonOperationDetail : dgvTwoWithInput
     {
         /// <summary>
         /// Required designer variable.
@@ -58,6 +58,8 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel2.Controls.Add(this.fcNonOpCat);
             this.panel2.Controls.Add(this.label1);
@@ -168,9 +170,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "NonOperationDetail";
-            this.Controls.SetChildIndex(this.tabControl1, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.tabControl2, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.tabControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

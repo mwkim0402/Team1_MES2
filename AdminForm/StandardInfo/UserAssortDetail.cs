@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AdminForm
 {
-    public partial class UserAssortDetail : AdminForm.dgvTwoWithInput
+    public partial class UserAssortDetail : dgvTwoWithInput
     {
         public UserAssortDetail()
         {

@@ -49,6 +49,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.이창을제외한창모두닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.전체종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
@@ -63,11 +66,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.전체종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.이창을제외한창모두닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.pnlMenu.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.pnlMainButton.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -75,7 +76,6 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -94,7 +94,7 @@
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1280, 116);
+            this.toolStrip1.Size = new System.Drawing.Size(1334, 116);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -179,7 +179,7 @@
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMenu.Location = new System.Drawing.Point(0, 33);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(190, 520);
+            this.pnlMenu.Size = new System.Drawing.Size(190, 712);
             this.pnlMenu.TabIndex = 2;
             // 
             // trvBookMark
@@ -291,10 +291,33 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1090, 520);
+            this.tabControl2.Size = new System.Drawing.Size(1144, 712);
             this.tabControl2.TabIndex = 6;
             this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
             this.tabControl2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("나눔고딕", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.이창을제외한창모두닫기ToolStripMenuItem,
+            this.전체종료ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(134, 48);
+            // 
+            // 이창을제외한창모두닫기ToolStripMenuItem
+            // 
+            this.이창을제외한창모두닫기ToolStripMenuItem.Name = "이창을제외한창모두닫기ToolStripMenuItem";
+            this.이창을제외한창모두닫기ToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.이창을제외한창모두닫기ToolStripMenuItem.Text = "다른 탭 닫기";
+            this.이창을제외한창모두닫기ToolStripMenuItem.Click += new System.EventHandler(this.이창을제외한창모두닫기ToolStripMenuItem_Click);
+            // 
+            // 전체종료ToolStripMenuItem
+            // 
+            this.전체종료ToolStripMenuItem.Name = "전체종료ToolStripMenuItem";
+            this.전체종료ToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.전체종료ToolStripMenuItem.Text = "전체 종료";
+            this.전체종료ToolStripMenuItem.Click += new System.EventHandler(this.전체종료ToolStripMenuItem_Click);
             // 
             // textBox1
             // 
@@ -358,7 +381,7 @@
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMain.Location = new System.Drawing.Point(0, 116);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(190, 553);
+            this.pnlMain.Size = new System.Drawing.Size(190, 745);
             this.pnlMain.TabIndex = 101;
             // 
             // panel1
@@ -368,7 +391,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(190, 116);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1090, 553);
+            this.panel1.Size = new System.Drawing.Size(1144, 745);
             this.panel1.TabIndex = 102;
             // 
             // pnlTab
@@ -377,7 +400,7 @@
             this.pnlTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTab.Location = new System.Drawing.Point(0, 33);
             this.pnlTab.Name = "pnlTab";
-            this.pnlTab.Size = new System.Drawing.Size(1090, 520);
+            this.pnlTab.Size = new System.Drawing.Size(1144, 712);
             this.pnlTab.TabIndex = 8;
             // 
             // panel3
@@ -387,7 +410,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1090, 33);
+            this.panel3.Size = new System.Drawing.Size(1144, 33);
             this.panel3.TabIndex = 7;
             // 
             // lblLocation
@@ -412,7 +435,7 @@
             this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.btnSearch);
-            this.panel2.Location = new System.Drawing.Point(854, 42);
+            this.panel2.Location = new System.Drawing.Point(908, 42);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(426, 68);
             this.panel2.TabIndex = 103;
@@ -435,35 +458,12 @@
             this.button8.Text = "로그인";
             this.button8.UseVisualStyleBackColor = true;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Font = new System.Drawing.Font("나눔고딕", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.이창을제외한창모두닫기ToolStripMenuItem,
-            this.전체종료ToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
-            // 
-            // 전체종료ToolStripMenuItem
-            // 
-            this.전체종료ToolStripMenuItem.Name = "전체종료ToolStripMenuItem";
-            this.전체종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.전체종료ToolStripMenuItem.Text = "전체 종료";
-            this.전체종료ToolStripMenuItem.Click += new System.EventHandler(this.전체종료ToolStripMenuItem_Click);
-            // 
-            // 이창을제외한창모두닫기ToolStripMenuItem
-            // 
-            this.이창을제외한창모두닫기ToolStripMenuItem.Name = "이창을제외한창모두닫기ToolStripMenuItem";
-            this.이창을제외한창모두닫기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.이창을제외한창모두닫기ToolStripMenuItem.Text = "다른 탭 닫기";
-            this.이창을제외한창모두닫기ToolStripMenuItem.Click += new System.EventHandler(this.이창을제외한창모두닫기ToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1280, 669);
+            this.ClientSize = new System.Drawing.Size(1334, 861);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlMain);
@@ -477,6 +477,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.pnlMenu.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.pnlMainButton.ResumeLayout(false);
             this.pnlMain.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -485,7 +486,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

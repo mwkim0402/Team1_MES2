@@ -1,6 +1,6 @@
 ﻿namespace AdminForm
 {
-    partial class QualitySizeSet
+    partial class QualitySizeSet : dgvTwoWithInput
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -75,8 +75,8 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtDataDESC);
             this.panel1.Controls.Add(this.label25);
-            this.panel1.Location = new System.Drawing.Point(519, 501);
-            this.panel1.Size = new System.Drawing.Size(625, 91);
+            this.panel1.Location = new System.Drawing.Point(0, 397);
+            this.panel1.Size = new System.Drawing.Size(744, 91);
             // 
             // tabControl2
             // 
@@ -84,6 +84,8 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel2.Controls.Add(this.btnCopy);
             this.panel2.Controls.Add(this.fcFac);
@@ -320,9 +322,6 @@
             this.Name = "QualitySizeSet";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Controls.SetChildIndex(this.tabControl1, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.tabControl2, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.tabControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

@@ -62,6 +62,8 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel3.Controls.Add(this.fcCategory);
             this.panel3.Controls.Add(this.label5);
@@ -211,10 +213,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "SystemCodeCategoryDetail";
-            this.Controls.SetChildIndex(this.tabControl1, 0);
-            this.Controls.SetChildIndex(this.tabControl2, 0);
             this.Controls.SetChildIndex(this.panel3, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
             this.tabControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

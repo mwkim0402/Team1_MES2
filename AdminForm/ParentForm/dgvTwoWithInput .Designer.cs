@@ -76,7 +76,7 @@
             this.dgvSearchResult.Location = new System.Drawing.Point(2, 32);
             this.dgvSearchResult.Name = "dgvSearchResult";
             this.dgvSearchResult.RowTemplate.Height = 23;
-            this.dgvSearchResult.Size = new System.Drawing.Size(739, 359);
+            this.dgvSearchResult.Size = new System.Drawing.Size(739, 337);
             this.dgvSearchResult.TabIndex = 6;
             // 
             // panel1
@@ -92,7 +92,7 @@
             // 
             this.tabControl2.Controls.Add(this.tabPage2);
             this.tabControl2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl2.Location = new System.Drawing.Point(3, 423);
+            this.tabControl2.Location = new System.Drawing.Point(3, 375);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(94, 28);

@@ -85,6 +85,27 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.label44 = new System.Windows.Forms.Label();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.label43 = new System.Windows.Forms.Label();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.cmbLv6 = new System.Windows.Forms.ComboBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.cmbLv5 = new System.Windows.Forms.ComboBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.cmbLv4 = new System.Windows.Forms.ComboBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.cmbLv3 = new System.Windows.Forms.ComboBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.cmbLv2 = new System.Windows.Forms.ComboBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.cmbLv1 = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label34 = new System.Windows.Forms.Label();
@@ -111,27 +132,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvSearchResult = new System.Windows.Forms.DataGridView();
-            this.label35 = new System.Windows.Forms.Label();
-            this.cmbLv1 = new System.Windows.Forms.ComboBox();
-            this.cmbLv2 = new System.Windows.Forms.ComboBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.cmbLv3 = new System.Windows.Forms.ComboBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.cmbLv4 = new System.Windows.Forms.ComboBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.cmbLv5 = new System.Windows.Forms.ComboBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.cmbLv6 = new System.Windows.Forms.ComboBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.label43 = new System.Windows.Forms.Label();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.label44 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuOutputPerCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuTheoryOutput)).BeginInit();
@@ -142,19 +142,21 @@
             this.gbUsable.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel2.Controls.Add(this.btnERPDown);
             this.panel2.Controls.Add(this.cmbUsable);
@@ -731,6 +733,202 @@
             this.panel1.Size = new System.Drawing.Size(1132, 219);
             this.panel1.TabIndex = 12;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Location = new System.Drawing.Point(1027, 106);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 78);
+            this.button1.TabIndex = 143;
+            this.button1.Text = "저장";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown6
+            // 
+            this.numericUpDown6.Location = new System.Drawing.Point(1074, 49);
+            this.numericUpDown6.Name = "numericUpDown6";
+            this.numericUpDown6.Size = new System.Drawing.Size(52, 21);
+            this.numericUpDown6.TabIndex = 142;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label44.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label44.Location = new System.Drawing.Point(929, 53);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(141, 16);
+            this.label44.TabIndex = 141;
+            this.label44.Text = "소성대차 기본수량";
+            // 
+            // numericUpDown5
+            // 
+            this.numericUpDown5.Location = new System.Drawing.Point(1074, 18);
+            this.numericUpDown5.Name = "numericUpDown5";
+            this.numericUpDown5.Size = new System.Drawing.Size(52, 21);
+            this.numericUpDown5.TabIndex = 140;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label43.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label43.Location = new System.Drawing.Point(929, 22);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(141, 16);
+            this.label43.TabIndex = 139;
+            this.label43.Text = "건조대차 기본수량";
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(861, 52);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(52, 21);
+            this.numericUpDown3.TabIndex = 138;
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Location = new System.Drawing.Point(861, 20);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(52, 21);
+            this.numericUpDown4.TabIndex = 137;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label41.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label41.Location = new System.Drawing.Point(716, 56);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(108, 16);
+            this.label41.TabIndex = 136;
+            this.label41.Text = "한줄당 PCS수";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label42.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label42.Location = new System.Drawing.Point(716, 22);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(126, 16);
+            this.label42.TabIndex = 135;
+            this.label42.Text = "한Shot당 PCS수";
+            // 
+            // cmbLv6
+            // 
+            this.cmbLv6.FormattingEnabled = true;
+            this.cmbLv6.Location = new System.Drawing.Point(597, 189);
+            this.cmbLv6.Name = "cmbLv6";
+            this.cmbLv6.Size = new System.Drawing.Size(99, 20);
+            this.cmbLv6.TabIndex = 134;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label40.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label40.Location = new System.Drawing.Point(514, 191);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(59, 16);
+            this.label40.TabIndex = 133;
+            this.label40.Text = "Level 6";
+            // 
+            // cmbLv5
+            // 
+            this.cmbLv5.FormattingEnabled = true;
+            this.cmbLv5.Location = new System.Drawing.Point(597, 156);
+            this.cmbLv5.Name = "cmbLv5";
+            this.cmbLv5.Size = new System.Drawing.Size(99, 20);
+            this.cmbLv5.TabIndex = 132;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label39.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label39.Location = new System.Drawing.Point(514, 158);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(59, 16);
+            this.label39.TabIndex = 131;
+            this.label39.Text = "Level 5";
+            // 
+            // cmbLv4
+            // 
+            this.cmbLv4.FormattingEnabled = true;
+            this.cmbLv4.Location = new System.Drawing.Point(597, 123);
+            this.cmbLv4.Name = "cmbLv4";
+            this.cmbLv4.Size = new System.Drawing.Size(99, 20);
+            this.cmbLv4.TabIndex = 130;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label38.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label38.Location = new System.Drawing.Point(514, 125);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(60, 16);
+            this.label38.TabIndex = 129;
+            this.label38.Text = "Level 4";
+            // 
+            // cmbLv3
+            // 
+            this.cmbLv3.FormattingEnabled = true;
+            this.cmbLv3.Location = new System.Drawing.Point(597, 87);
+            this.cmbLv3.Name = "cmbLv3";
+            this.cmbLv3.Size = new System.Drawing.Size(99, 20);
+            this.cmbLv3.TabIndex = 128;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label37.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label37.Location = new System.Drawing.Point(514, 91);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(59, 16);
+            this.label37.TabIndex = 127;
+            this.label37.Text = "Level 3";
+            // 
+            // cmbLv2
+            // 
+            this.cmbLv2.FormattingEnabled = true;
+            this.cmbLv2.Location = new System.Drawing.Point(597, 51);
+            this.cmbLv2.Name = "cmbLv2";
+            this.cmbLv2.Size = new System.Drawing.Size(99, 20);
+            this.cmbLv2.TabIndex = 126;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label36.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label36.Location = new System.Drawing.Point(514, 55);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(59, 16);
+            this.label36.TabIndex = 125;
+            this.label36.Text = "Level 2";
+            // 
+            // cmbLv1
+            // 
+            this.cmbLv1.FormattingEnabled = true;
+            this.cmbLv1.Location = new System.Drawing.Point(597, 17);
+            this.cmbLv1.Name = "cmbLv1";
+            this.cmbLv1.Size = new System.Drawing.Size(99, 20);
+            this.cmbLv1.TabIndex = 124;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label35.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label35.Location = new System.Drawing.Point(514, 19);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(59, 16);
+            this.label35.TabIndex = 123;
+            this.label35.Text = "Level 1";
+            // 
             // numericUpDown2
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(392, 157);
@@ -977,202 +1175,6 @@
             this.dgvSearchResult.Size = new System.Drawing.Size(1132, 216);
             this.dgvSearchResult.TabIndex = 10;
             // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label35.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label35.Location = new System.Drawing.Point(514, 19);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(59, 16);
-            this.label35.TabIndex = 123;
-            this.label35.Text = "Level 1";
-            // 
-            // cmbLv1
-            // 
-            this.cmbLv1.FormattingEnabled = true;
-            this.cmbLv1.Location = new System.Drawing.Point(597, 17);
-            this.cmbLv1.Name = "cmbLv1";
-            this.cmbLv1.Size = new System.Drawing.Size(99, 20);
-            this.cmbLv1.TabIndex = 124;
-            // 
-            // cmbLv2
-            // 
-            this.cmbLv2.FormattingEnabled = true;
-            this.cmbLv2.Location = new System.Drawing.Point(597, 51);
-            this.cmbLv2.Name = "cmbLv2";
-            this.cmbLv2.Size = new System.Drawing.Size(99, 20);
-            this.cmbLv2.TabIndex = 126;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label36.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label36.Location = new System.Drawing.Point(514, 55);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(59, 16);
-            this.label36.TabIndex = 125;
-            this.label36.Text = "Level 2";
-            // 
-            // cmbLv3
-            // 
-            this.cmbLv3.FormattingEnabled = true;
-            this.cmbLv3.Location = new System.Drawing.Point(597, 87);
-            this.cmbLv3.Name = "cmbLv3";
-            this.cmbLv3.Size = new System.Drawing.Size(99, 20);
-            this.cmbLv3.TabIndex = 128;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label37.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label37.Location = new System.Drawing.Point(514, 91);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(59, 16);
-            this.label37.TabIndex = 127;
-            this.label37.Text = "Level 3";
-            // 
-            // cmbLv4
-            // 
-            this.cmbLv4.FormattingEnabled = true;
-            this.cmbLv4.Location = new System.Drawing.Point(597, 123);
-            this.cmbLv4.Name = "cmbLv4";
-            this.cmbLv4.Size = new System.Drawing.Size(99, 20);
-            this.cmbLv4.TabIndex = 130;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label38.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label38.Location = new System.Drawing.Point(514, 125);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(60, 16);
-            this.label38.TabIndex = 129;
-            this.label38.Text = "Level 4";
-            // 
-            // cmbLv5
-            // 
-            this.cmbLv5.FormattingEnabled = true;
-            this.cmbLv5.Location = new System.Drawing.Point(597, 156);
-            this.cmbLv5.Name = "cmbLv5";
-            this.cmbLv5.Size = new System.Drawing.Size(99, 20);
-            this.cmbLv5.TabIndex = 132;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label39.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label39.Location = new System.Drawing.Point(514, 158);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(59, 16);
-            this.label39.TabIndex = 131;
-            this.label39.Text = "Level 5";
-            // 
-            // cmbLv6
-            // 
-            this.cmbLv6.FormattingEnabled = true;
-            this.cmbLv6.Location = new System.Drawing.Point(597, 189);
-            this.cmbLv6.Name = "cmbLv6";
-            this.cmbLv6.Size = new System.Drawing.Size(99, 20);
-            this.cmbLv6.TabIndex = 134;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label40.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label40.Location = new System.Drawing.Point(514, 191);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(59, 16);
-            this.label40.TabIndex = 133;
-            this.label40.Text = "Level 6";
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Location = new System.Drawing.Point(861, 52);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(52, 21);
-            this.numericUpDown3.TabIndex = 138;
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.Location = new System.Drawing.Point(861, 20);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(52, 21);
-            this.numericUpDown4.TabIndex = 137;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label41.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label41.Location = new System.Drawing.Point(716, 56);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(108, 16);
-            this.label41.TabIndex = 136;
-            this.label41.Text = "한줄당 PCS수";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label42.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label42.Location = new System.Drawing.Point(716, 22);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(126, 16);
-            this.label42.TabIndex = 135;
-            this.label42.Text = "한Shot당 PCS수";
-            // 
-            // numericUpDown5
-            // 
-            this.numericUpDown5.Location = new System.Drawing.Point(1074, 18);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(52, 21);
-            this.numericUpDown5.TabIndex = 140;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label43.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label43.Location = new System.Drawing.Point(929, 22);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(141, 16);
-            this.label43.TabIndex = 139;
-            this.label43.Text = "건조대차 기본수량";
-            // 
-            // numericUpDown6
-            // 
-            this.numericUpDown6.Location = new System.Drawing.Point(1074, 49);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(52, 21);
-            this.numericUpDown6.TabIndex = 142;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label44.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label44.Location = new System.Drawing.Point(929, 53);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(141, 16);
-            this.label44.TabIndex = 141;
-            this.label44.Text = "소성대차 기본수량";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(1027, 106);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 78);
-            this.button1.TabIndex = 143;
-            this.button1.Text = "저장";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // ItemInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1203,16 +1205,16 @@
             this.tabControl2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
             this.ResumeLayout(false);
 
         }

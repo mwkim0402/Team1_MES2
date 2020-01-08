@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AdminForm
 {
-    public partial class ProcessConditionSet : AdminForm.dgvTwoWithInput
+    public partial class ProcessConditionSet : dgvTwoWithInput
     {
         public ProcessConditionSet()
         {

@@ -42,8 +42,7 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.Controls.Add(this.fcWork);
@@ -56,12 +55,12 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(16, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1128, 55);
+            this.panel1.Size = new System.Drawing.Size(1128, 67);
             this.panel1.TabIndex = 10;
             // 
             // fcWork
             // 
-            this.fcWork.Location = new System.Drawing.Point(794, 16);
+            this.fcWork.Location = new System.Drawing.Point(794, 18);
             this.fcWork.Name = "fcWork";
             this.fcWork.Size = new System.Drawing.Size(190, 27);
             this.fcWork.TabIndex = 5;

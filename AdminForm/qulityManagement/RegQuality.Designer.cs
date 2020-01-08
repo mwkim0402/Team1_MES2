@@ -217,9 +217,9 @@
             this.panel2.Controls.Add(this.dtpEnd);
             this.panel2.Controls.Add(this.dtpStart);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(12, 22);
+            this.panel2.Location = new System.Drawing.Point(16, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1132, 55);
+            this.panel2.Size = new System.Drawing.Size(1128, 67);
             this.panel2.TabIndex = 12;
             // 
             // fcWorker

@@ -1,6 +1,6 @@
 ﻿namespace AdminForm
 {
-    partial class FaultyDetail
+    partial class FaultyDetail : dgvTwoWithInput
     {
         /// <summary>
         /// Required designer variable.
@@ -55,8 +55,8 @@
             this.panel1.Controls.Add(this.label25);
             this.panel1.Controls.Add(this.txtNote);
             this.panel1.Controls.Add(this.txtNumber);
-            this.panel1.Location = new System.Drawing.Point(519, 501);
-            this.panel1.Size = new System.Drawing.Size(625, 91);
+            this.panel1.Location = new System.Drawing.Point(0, 397);
+            this.panel1.Size = new System.Drawing.Size(744, 91);
             // 
             // tabControl2
             // 
@@ -64,6 +64,8 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel2.Controls.Add(this.fcFault);
             this.panel2.Controls.Add(this.label1);
@@ -174,9 +176,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "FaultyDetail";
-            this.Controls.SetChildIndex(this.tabControl1, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.tabControl2, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.tabControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

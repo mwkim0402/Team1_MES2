@@ -44,8 +44,7 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.Controls.Add(this.btnDivide);
@@ -58,16 +57,16 @@
             this.panel1.Controls.Add(this.dtpEnd);
             this.panel1.Controls.Add(this.dtpStart);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 21);
+            this.panel1.Location = new System.Drawing.Point(16, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1132, 55);
+            this.panel1.Size = new System.Drawing.Size(1128, 67);
             this.panel1.TabIndex = 0;
             // 
             // btnDivide
             // 
             this.btnDivide.Location = new System.Drawing.Point(1035, 19);
             this.btnDivide.Name = "btnDivide";
-            this.btnDivide.Size = new System.Drawing.Size(82, 23);
+            this.btnDivide.Size = new System.Drawing.Size(82, 34);
             this.btnDivide.TabIndex = 1;
             this.btnDivide.Text = "실적 분할";
             this.btnDivide.UseVisualStyleBackColor = true;
@@ -76,7 +75,7 @@
             // 
             this.btnBalance.Location = new System.Drawing.Point(930, 19);
             this.btnBalance.Name = "btnBalance";
-            this.btnBalance.Size = new System.Drawing.Size(82, 23);
+            this.btnBalance.Size = new System.Drawing.Size(82, 34);
             this.btnBalance.TabIndex = 1;
             this.btnBalance.Text = "실적 보정";
             this.btnBalance.UseVisualStyleBackColor = true;

@@ -1,6 +1,6 @@
 ﻿namespace AdminForm
 {
-    partial class EtherIOChannelSet
+    partial class EtherIOChannelSet : dgvTwoWithInput
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -74,12 +74,12 @@
             this.panel1.Controls.Add(this.txtchannelSet);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.gbUsable);
-            this.panel1.Location = new System.Drawing.Point(519, 501);
-            this.panel1.Size = new System.Drawing.Size(625, 91);
+            this.panel1.Location = new System.Drawing.Point(0, 397);
+            this.panel1.Size = new System.Drawing.Size(744, 91);
             // 
             // tabControl2
             // 
-            this.tabControl2.Location = new System.Drawing.Point(519, 473);
+            this.tabControl2.Location = new System.Drawing.Point(1, 369);
             // 
             // panel2
             // 
@@ -309,9 +309,6 @@
             this.Name = "EtherIOChannelSet";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Controls.SetChildIndex(this.tabControl1, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.tabControl2, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.tabControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

@@ -123,11 +123,11 @@
 
         #endregion
 
-        protected System.Windows.Forms.TabControl tabControl1;
-        protected System.Windows.Forms.TabPage tabPage1;
-        protected System.Windows.Forms.DataGridView dgvSearchResult;
-        protected System.Windows.Forms.Panel panel1;
-        protected System.Windows.Forms.TabControl tabControl2;
-        protected System.Windows.Forms.TabPage tabPage2;
+        public System.Windows.Forms.TabControl tabControl1;
+        public System.Windows.Forms.TabPage tabPage1;
+        public System.Windows.Forms.DataGridView dgvSearchResult;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.TabControl tabControl2;
+        public System.Windows.Forms.TabPage tabPage2;
     }
 }

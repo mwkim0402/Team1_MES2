@@ -61,7 +61,7 @@ namespace AdminForm
             AddNewColumnToDataGridView(dgvSearchResult, "생산의뢰 번호", "Wo_Req_No", true, 130);
             AddNewColumnToDataGridView(dgvSearchResult, "생산의뢰 순번", "Req_Seq", true, 130);
             AddNewColumnToDataGridView(dgvSearchResult, "프로젝트명", "Remark", true, 150);
-
+            RoadList();
             dgvSearchResult.DataSource = List;
 
             dgvSearchResult.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

@@ -64,6 +64,7 @@
             // 
             // txtProjectNum
             // 
+            this.txtProjectNum.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtProjectNum.Location = new System.Drawing.Point(718, 25);
             this.txtProjectNum.Name = "txtProjectNum";
             this.txtProjectNum.Size = new System.Drawing.Size(100, 21);
@@ -71,6 +72,7 @@
             // 
             // txtOrderCreationNum
             // 
+            this.txtOrderCreationNum.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtOrderCreationNum.Location = new System.Drawing.Point(472, 25);
             this.txtOrderCreationNum.Name = "txtOrderCreationNum";
             this.txtOrderCreationNum.Size = new System.Drawing.Size(100, 21);
@@ -98,6 +100,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(603, 27);
@@ -108,6 +111,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(357, 27);
@@ -165,6 +169,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "MoldingOrderCreation";
+            this.Load += new System.EventHandler(this.MoldingOrderCreation_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

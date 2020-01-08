@@ -14,5 +14,16 @@ namespace MES_DB
             JobOrderDac dac = new JobOrderDac();
             return dac.JobOrderCreation();
         }
+
+        public List<JobOrderCreateVo> MoldingOrderCreation_Req()
+        {
+            JobOrderDac dac = new JobOrderDac();
+            return dac.MoldingOrderCreation_Req();
+        }
+        public List<JobOrderCreateVo> MoldingOrderCreation_WO()
+        {
+            JobOrderDac dac = new JobOrderDac();
+            return dac.MoldingOrderCreation_WO();
+        }
     }
 }

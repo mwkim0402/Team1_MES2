@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MES_DB;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -8,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace FieldOperationForm
 {
-   public class User_Dac
+   public class User_Dac: ConnectionAccess
     {
-        public string ConnectionString { get; private set; }
+       
 
         public List<User_Vo> GetCustomerCode()
         {

@@ -83,7 +83,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 454);
+            this.panel1.Location = new System.Drawing.Point(0, 404);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(744, 84);
             this.panel1.TabIndex = 8;
@@ -136,7 +136,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 32);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(374, 506);
+            this.dataGridView1.Size = new System.Drawing.Size(374, 456);
             this.dataGridView1.TabIndex = 10;
             // 
             // splitContainer1
@@ -144,7 +144,7 @@
             this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.Location = new System.Drawing.Point(20, 43);
+            this.splitContainer1.Location = new System.Drawing.Point(20, 93);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -158,7 +158,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.dgvSearchResult);
             this.splitContainer1.Panel2.Controls.Add(this.tabControl2);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1122, 538);
+            this.splitContainer1.Size = new System.Drawing.Size(1122, 488);
             this.splitContainer1.SplitterDistance = 374;
             this.splitContainer1.TabIndex = 12;
             // 

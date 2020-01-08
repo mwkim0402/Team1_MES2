@@ -79,6 +79,8 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel2.Controls.Add(this.btnDeadline);
             this.panel2.Controls.Add(this.btnDeadlineCancel);
@@ -98,6 +100,7 @@
             // 
             // btnDeadline
             // 
+            this.btnDeadline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeadline.Location = new System.Drawing.Point(954, 20);
             this.btnDeadline.Name = "btnDeadline";
             this.btnDeadline.Size = new System.Drawing.Size(73, 33);
@@ -107,6 +110,7 @@
             // 
             // btnDeadlineCancel
             // 
+            this.btnDeadlineCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeadlineCancel.Location = new System.Drawing.Point(1033, 20);
             this.btnDeadlineCancel.Name = "btnDeadlineCancel";
             this.btnDeadlineCancel.Size = new System.Drawing.Size(73, 33);
@@ -116,6 +120,7 @@
             // 
             // btnChange
             // 
+            this.btnChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChange.Location = new System.Drawing.Point(875, 20);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(73, 33);
@@ -125,6 +130,7 @@
             // 
             // fcWorkPlace
             // 
+            this.fcWorkPlace.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.fcWorkPlace.Location = new System.Drawing.Point(665, 22);
             this.fcWorkPlace.Name = "fcWorkPlace";
             this.fcWorkPlace.Size = new System.Drawing.Size(190, 27);
@@ -132,6 +138,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(603, 27);
@@ -142,6 +149,7 @@
             // 
             // fcFactory
             // 
+            this.fcFactory.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.fcFactory.Location = new System.Drawing.Point(403, 22);
             this.fcFactory.Name = "fcFactory";
             this.fcFactory.Size = new System.Drawing.Size(190, 27);
@@ -149,6 +157,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(357, 27);

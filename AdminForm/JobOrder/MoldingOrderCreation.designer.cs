@@ -44,6 +44,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.Controls.Add(this.txtProjectNum);
             this.panel1.Controls.Add(this.txtOrderCreationNum);
@@ -76,6 +78,7 @@
             // 
             // btnOrderCreationDeadline
             // 
+            this.btnOrderCreationDeadline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOrderCreationDeadline.Location = new System.Drawing.Point(989, 20);
             this.btnOrderCreationDeadline.Name = "btnOrderCreationDeadline";
             this.btnOrderCreationDeadline.Size = new System.Drawing.Size(122, 33);
@@ -85,6 +88,7 @@
             // 
             // btnOrderCreationDown
             // 
+            this.btnOrderCreationDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOrderCreationDown.Location = new System.Drawing.Point(861, 20);
             this.btnOrderCreationDown.Name = "btnOrderCreationDown";
             this.btnOrderCreationDown.Size = new System.Drawing.Size(122, 33);

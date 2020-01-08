@@ -65,7 +65,7 @@
             this.dgvSearchResult.Location = new System.Drawing.Point(12, 114);
             this.dgvSearchResult.Name = "dgvSearchResult";
             this.dgvSearchResult.RowTemplate.Height = 23;
-            this.dgvSearchResult.Size = new System.Drawing.Size(1132, 478);
+            this.dgvSearchResult.Size = new System.Drawing.Size(1132, 471);
             this.dgvSearchResult.TabIndex = 6;
             // 
             // dgvOne

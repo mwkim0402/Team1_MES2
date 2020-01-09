@@ -294,7 +294,7 @@
             this.tabControl2.Size = new System.Drawing.Size(1144, 712);
             this.tabControl2.TabIndex = 6;
             this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
-            this.tabControl2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseClick);
+            this.tabControl2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabControl4_MouseClick);
             // 
             // contextMenuStrip1
             // 

@@ -14,5 +14,10 @@ namespace AdminForm
         {
             InitializeComponent();
         }
+
+        private void RegFaultyImage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

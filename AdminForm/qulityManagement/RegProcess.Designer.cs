@@ -35,11 +35,11 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControl4 = new System.Windows.Forms.TabControl();
             this.fcWork = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,12 +58,12 @@
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabControl4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -146,16 +146,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(344, 462);
             this.dataGridView1.TabIndex = 0;
             // 
-            // tabPage1
+            // tabPage4
             // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(350, 468);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage4.Controls.Add(this.dataGridView1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(350, 468);
+            this.tabPage4.TabIndex = 0;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
@@ -193,16 +193,16 @@
             this.dtpStart.Size = new System.Drawing.Size(109, 21);
             this.dtpStart.TabIndex = 2;
             // 
-            // tabControl1
+            // tabControl4
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabControl4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(358, 494);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl4.Controls.Add(this.tabPage4);
+            this.tabControl4.Location = new System.Drawing.Point(0, 0);
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedIndex = 0;
+            this.tabControl4.Size = new System.Drawing.Size(358, 494);
+            this.tabControl4.TabIndex = 0;
             // 
             // fcWork
             // 
@@ -280,7 +280,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.splitContainer1);
-            this.panel1.Controls.Add(this.tabControl1);
+            this.panel1.Controls.Add(this.tabControl4);
             this.panel1.Location = new System.Drawing.Point(12, 93);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1132, 494);
@@ -335,12 +335,12 @@
             this.tabPage2.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage1.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -357,11 +357,11 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.DateTimePicker dtpStart;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControl4;
         private FIndCategory fcWork;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

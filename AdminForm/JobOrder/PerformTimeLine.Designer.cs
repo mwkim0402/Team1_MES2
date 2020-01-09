@@ -32,8 +32,8 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dgvSearchResult = new System.Windows.Forms.DataGridView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbOrderState = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -67,25 +67,25 @@
             this.dgvSearchResult.Size = new System.Drawing.Size(1132, 222);
             this.dgvSearchResult.TabIndex = 0;
             // 
-            // tabControl1
+            // tabControl4
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 85);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(147, 28);
-            this.tabControl1.TabIndex = 3;
+            this.tabControl4.Controls.Add(this.tabPage4);
+            this.tabControl4.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tabControl4.Location = new System.Drawing.Point(12, 85);
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedIndex = 0;
+            this.tabControl4.Size = new System.Drawing.Size(147, 28);
+            this.tabControl4.TabIndex = 3;
             // 
-            // tabPage1
+            // tabPage4
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(139, 0);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "작업지시목록";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(139, 0);
+            this.tabPage4.TabIndex = 0;
+            this.tabPage4.Text = "작업지시목록";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -241,7 +241,7 @@
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl4);
             this.Controls.Add(this.dgvSearchResult);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -251,7 +251,7 @@
             this.ShowInTaskbar = false;
             this.Text = "PerformTimeLine";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl2.ResumeLayout(false);
@@ -263,8 +263,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvSearchResult;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tabControl4;
+        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.DateTimePicker dtpStart;

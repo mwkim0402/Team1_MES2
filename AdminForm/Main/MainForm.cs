@@ -27,7 +27,7 @@ namespace AdminForm
             this.tabControl2.ItemSize = new Size(150, 20);
          
             // Add the Handler to draw the Image on Tab Pages
-            tabControl2.DrawItem += tabControl1_DrawItem;
+            tabControl2.DrawItem += tabControl4_DrawItem;
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -164,7 +164,7 @@ namespace AdminForm
                 }
             }
         }
-        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        private void tabControl4_DrawItem(object sender, DrawItemEventArgs e)
         {
             try
             {
@@ -185,7 +185,7 @@ namespace AdminForm
             catch (Exception err) { System.Windows.Forms.MessageBox.Show(err.Message); }
         }
 
-        private void tabControl1_MouseClick(object sender, MouseEventArgs e)
+        private void tabControl4_MouseClick(object sender, MouseEventArgs e)
         {
             TabControl tc = (TabControl)sender;
             Point p = e.Location;

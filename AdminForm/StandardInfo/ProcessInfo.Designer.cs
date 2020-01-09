@@ -47,7 +47,7 @@
             this.txtFacNameInput = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtFacGroupInput = new System.Windows.Forms.TextBox();
-            this.tabControl1.SuspendLayout();
+            this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -267,10 +267,10 @@
             this.ShowInTaskbar = false;
             this.Text = "ProcessInfo";
             this.Controls.SetChildIndex(this.panel2, 0);
-            this.Controls.SetChildIndex(this.tabControl1, 0);
+            this.Controls.SetChildIndex(this.tabControl4, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl2.ResumeLayout(false);

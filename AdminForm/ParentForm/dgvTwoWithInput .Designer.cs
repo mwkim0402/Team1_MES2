@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dgvSearchResult = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -38,7 +38,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tabControl1.SuspendLayout();
+            this.tabControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabControl3.SuspendLayout();
@@ -49,25 +49,25 @@
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControl4
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(2, 3);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(94, 28);
-            this.tabControl1.TabIndex = 7;
+            this.tabControl4.Controls.Add(this.tabPage4);
+            this.tabControl4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl4.Location = new System.Drawing.Point(2, 3);
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedIndex = 0;
+            this.tabControl4.Size = new System.Drawing.Size(94, 28);
+            this.tabControl4.TabIndex = 7;
             // 
-            // tabPage1
+            // tabPage4
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 32);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(86, 0);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "조회내역";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage4.Location = new System.Drawing.Point(4, 32);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(86, 0);
+            this.tabPage4.TabIndex = 0;
+            this.tabPage4.Text = "조회내역";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // dgvSearchResult
             // 
@@ -154,7 +154,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
+            this.splitContainer1.Panel2.Controls.Add(this.tabControl4);
             this.splitContainer1.Panel2.Controls.Add(this.dgvSearchResult);
             this.splitContainer1.Panel2.Controls.Add(this.tabControl2);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
@@ -170,7 +170,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "dgvTwoWithInput";
             this.Text = "dgvTwoWithInput";
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
@@ -185,8 +185,8 @@
 
         #endregion
 
-        public System.Windows.Forms.TabControl tabControl1;
-        public System.Windows.Forms.TabPage tabPage1;
+        public System.Windows.Forms.TabControl tabControl4;
+        public System.Windows.Forms.TabPage tabPage4;
         public System.Windows.Forms.DataGridView dgvSearchResult;
         public System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.TabControl tabControl2;

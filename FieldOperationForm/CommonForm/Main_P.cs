@@ -86,5 +86,11 @@ namespace FieldOperationForm
                 lbl_Notice.Left = 0;
             }
         }
+
+        private void lbl_Notice_Click(object sender, EventArgs e)
+        {
+            Notice frm = new Notice();
+            frm.Show();
+        }
     }
 }

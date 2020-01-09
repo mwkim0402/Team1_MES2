@@ -31,12 +31,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgv_Notice = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txt_Title = new System.Windows.Forms.TextBox();
             this.txt_Des = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_Name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.txt_date = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Notice)).BeginInit();
@@ -54,12 +54,16 @@
             // 
             // dgv_Notice
             // 
+            this.dgv_Notice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_Notice.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_Notice.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_Notice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Notice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_Notice.EnableHeadersVisualStyles = false;
             this.dgv_Notice.Location = new System.Drawing.Point(21, 54);
+            this.dgv_Notice.MultiSelect = false;
             this.dgv_Notice.Name = "dgv_Notice";
             this.dgv_Notice.RowHeadersVisible = false;
+            this.dgv_Notice.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_Notice.RowTemplate.Height = 23;
             this.dgv_Notice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Notice.Size = new System.Drawing.Size(653, 528);
@@ -79,6 +83,18 @@
             this.groupBox1.Size = new System.Drawing.Size(696, 601);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label3.Location = new System.Drawing.Point(15, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 31);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "공지 목록";
             // 
             // txt_Title
             // 
@@ -129,18 +145,6 @@
             this.label2.Size = new System.Drawing.Size(54, 19);
             this.label2.TabIndex = 12;
             this.label2.Text = "등록일";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(15, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 31);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "공지 목록";
             // 
             // txt_date
             // 

@@ -37,9 +37,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbOrderState = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.fcWorkPlace = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
-            this.fcFactory = new AdminForm.FIndCategory();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
@@ -48,6 +46,8 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.fcWorkPlace = new AdminForm.FIndCategory();
+            this.fcFactory = new AdminForm.FIndCategory();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
             this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -57,14 +57,15 @@
             // 
             // dgvSearchResult
             // 
-            this.dgvSearchResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvSearchResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSearchResult.BackgroundColor = System.Drawing.Color.White;
             this.dgvSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSearchResult.Location = new System.Drawing.Point(12, 114);
             this.dgvSearchResult.Name = "dgvSearchResult";
             this.dgvSearchResult.RowTemplate.Height = 23;
-            this.dgvSearchResult.Size = new System.Drawing.Size(1132, 222);
+            this.dgvSearchResult.Size = new System.Drawing.Size(1132, 196);
             this.dgvSearchResult.TabIndex = 0;
             // 
             // tabControl4
@@ -125,13 +126,6 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "작업지시상태";
             // 
-            // fcWorkPlace
-            // 
-            this.fcWorkPlace.Location = new System.Drawing.Point(665, 22);
-            this.fcWorkPlace.Name = "fcWorkPlace";
-            this.fcWorkPlace.Size = new System.Drawing.Size(190, 27);
-            this.fcWorkPlace.TabIndex = 7;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -141,13 +135,6 @@
             this.label4.Size = new System.Drawing.Size(56, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "작업장";
-            // 
-            // fcFactory
-            // 
-            this.fcFactory.Location = new System.Drawing.Point(403, 22);
-            this.fcFactory.Name = "fcFactory";
-            this.fcFactory.Size = new System.Drawing.Size(190, 27);
-            this.fcFactory.TabIndex = 5;
             // 
             // label3
             // 
@@ -197,9 +184,11 @@
             // 
             // tabControl2
             // 
+            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl2.Controls.Add(this.tabPage2);
             this.tabControl2.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tabControl2.Location = new System.Drawing.Point(12, 342);
+            this.tabControl2.Location = new System.Drawing.Point(12, 366);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(147, 28);
@@ -223,15 +212,29 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(12, 369);
+            this.chart1.Location = new System.Drawing.Point(12, 395);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(1132, 206);
+            this.chart1.Size = new System.Drawing.Size(1132, 180);
             this.chart1.TabIndex = 7;
             this.chart1.Text = "chart1";
+            // 
+            // fcWorkPlace
+            // 
+            this.fcWorkPlace.Location = new System.Drawing.Point(665, 22);
+            this.fcWorkPlace.Name = "fcWorkPlace";
+            this.fcWorkPlace.Size = new System.Drawing.Size(190, 27);
+            this.fcWorkPlace.TabIndex = 7;
+            // 
+            // fcFactory
+            // 
+            this.fcFactory.Location = new System.Drawing.Point(403, 22);
+            this.fcFactory.Name = "fcFactory";
+            this.fcFactory.Size = new System.Drawing.Size(190, 27);
+            this.fcFactory.TabIndex = 5;
             // 
             // PerformTimeLine
             // 
@@ -250,6 +253,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "PerformTimeLine";
+            this.Load += new System.EventHandler(this.PerformTimeLine_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).EndInit();
             this.tabControl4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

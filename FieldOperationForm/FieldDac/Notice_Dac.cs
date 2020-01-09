@@ -30,20 +30,35 @@ namespace FieldOperationForm
                 return list;
             }
         }
-        public bool GetNotice (Notice_Vo item)
+        public Notice_Vo GetNotice (string title)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = "GetNotice";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Title", item.Title);
+                cmd.Parameters.AddWithValue("@Title",title );
 
                 cmd.Connection.Open();
-                var rowsAffected = cmd.ExecuteNonQuery();
+              
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<Notice_Vo> list = Helper.DataReaderMapToList<Notice_Vo>(reader);
                 cmd.Connection.Close();
-                return rowsAffected > 0;
+
+                if (list == null)
+                {
+                    return null;
+                }
+                else if (list.Count > 0)
+                {
+                    return list[0];
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
+
     }
 }

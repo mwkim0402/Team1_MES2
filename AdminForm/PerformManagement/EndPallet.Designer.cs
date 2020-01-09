@@ -51,7 +51,7 @@
             this.panel1.Controls.Add(this.dtpEnd);
             this.panel1.Controls.Add(this.dtpStart);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(16, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1132, 55);
             this.panel1.TabIndex = 1;

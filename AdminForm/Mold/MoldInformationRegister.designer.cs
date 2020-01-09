@@ -365,6 +365,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MoldInformationRegister";
+            this.Load += new System.EventHandler(this.MoldInformationRegister_Load);
             this.Controls.SetChildIndex(this.tabControl1, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);
             this.Controls.SetChildIndex(this.panel1, 0);

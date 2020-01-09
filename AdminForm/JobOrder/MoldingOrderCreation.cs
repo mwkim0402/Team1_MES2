@@ -13,7 +13,9 @@ namespace AdminForm
 {
     public partial class MoldingOrderCreation : dgvTwo
     {
-        List<JobOrderCreateVo> List = null;
+        List<MoldingOrderCreation_ReqVo> ListReq = null;
+        List<MoldingOrderCreation_WoVo> ListWo = null;
+
         public MoldingOrderCreation()
         {
             InitializeComponent();
@@ -22,12 +24,12 @@ namespace AdminForm
         private void ProdReqList()
         {
             JobOrderService service = new JobOrderService();
-            List = service.MoldingOrderCreation_Req();
+            ListReq = service.MoldingOrderCreation_Req();
         }
         private void WorkOrderList()
         {
             JobOrderService service = new JobOrderService();
-            List = service.MoldingOrderCreation_WO();
+            ListWo = service.MoldingOrderCreation_WO();
         }
         private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
          int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
@@ -67,11 +69,11 @@ namespace AdminForm
             AddNewColumnToDataGridView(dgvProductRequset, "거래처명", "Cust_Name", true, 100);
             AddNewColumnToDataGridView(dgvProductRequset, "영업담당", "Sale_Emp", true, 130);
             AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰 상태", "Req_Status", true, 130);
-            AddNewColumnToDataGridView(dgvProductRequset, "생성된 작업 지시 수", "Out_Qty_Unit", true, 150);
-            AddNewColumnToDataGridView(dgvProductRequset, "작업지시 생산수량", "Prd_Unit", true, 150);
+            AddNewColumnToDataGridView(dgvProductRequset, "생성된 작업 지시 수", "Out_Qty_Main", true, 150);
+            AddNewColumnToDataGridView(dgvProductRequset, "작업지시 생산수량", "Prd_Qty", true, 150);
             AddNewColumnToDataGridView(dgvProductRequset, "작업지시 계획수량", "Plan_Qty", true, 150);
             ProdReqList();
-            dgvProductRequset.DataSource = List;
+            dgvProductRequset.DataSource = ListReq;
 
             dgvProductRequset.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
@@ -94,7 +96,7 @@ namespace AdminForm
             AddNewColumnToDataGridView(dgvJobOrder, "생산수량", "Prd_Qty", true, 130);
             AddNewColumnToDataGridView(dgvJobOrder, "전달사항", "Remark", true, 130);
             WorkOrderList();
-            dgvJobOrder.DataSource = List;
+            dgvJobOrder.DataSource = ListWo;
 
             dgvJobOrder.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 

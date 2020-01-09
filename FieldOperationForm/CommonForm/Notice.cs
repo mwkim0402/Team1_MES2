@@ -102,21 +102,21 @@ namespace FieldOperationForm
 
         private void dgv_Notice_SelectionChanged(object sender, EventArgs e)
         {
-            Notice_Service service = new Notice_Service();
+            //Notice_Service service = new Notice_Service();
             
-            Notice_Vo notice = service.GetNotice();
+            //Notice_Vo notice = service.GetNotice();
 
-                txt_Title.Text = notice.Title;
-                txt_Name.Text = notice.Ins_Emp;
-                txt_date.Text = notice.Notice_Date;
-                txt_Des.Text = notice.Description;
-            }
+                //txt_Title.Text = notice.Title;
+                //txt_Name.Text = notice.Ins_Emp;
+                //txt_date.Text = notice.Notice_Date;
+                //txt_Des.Text = notice.Description;
+        }
 
         
            
        
 
          
-        }
+        
     }
 }

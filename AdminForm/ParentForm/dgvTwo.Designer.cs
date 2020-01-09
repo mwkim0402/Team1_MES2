@@ -45,7 +45,7 @@
             this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tabControl2.Controls.Add(this.tabPage2);
             this.tabControl2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl2.Location = new System.Drawing.Point(12, 340);
+            this.tabControl2.Location = new System.Drawing.Point(12, 327);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(94, 28);
@@ -67,10 +67,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvJobOrder.BackgroundColor = System.Drawing.Color.White;
             this.dgvJobOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJobOrder.Location = new System.Drawing.Point(12, 369);
+            this.dgvJobOrder.Location = new System.Drawing.Point(12, 356);
             this.dgvJobOrder.Name = "dgvJobOrder";
             this.dgvJobOrder.RowTemplate.Height = 23;
-            this.dgvJobOrder.Size = new System.Drawing.Size(1132, 207);
+            this.dgvJobOrder.Size = new System.Drawing.Size(1132, 220);
             this.dgvJobOrder.TabIndex = 9;
             // 
             // tabControl1

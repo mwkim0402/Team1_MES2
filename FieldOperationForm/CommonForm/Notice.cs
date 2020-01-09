@@ -84,39 +84,41 @@ namespace FieldOperationForm
 
         private void dgv_Notice_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-    
-            Notice_Vo notice = new Notice_Vo();
-            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            try
             {
-                notice.Title = dgv_Notice.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txt_Name.Text = notice.Ins_Emp ;
-               txt_date.Text = notice.Notice_Date;
-              txt_Des.Text = notice.Description;
+
+
+                Notice_Service service = new Notice_Service();
+
+                txt_Title.Text = dgv_Notice.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txt_Name.Text = dgv_Notice.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txt_date.Text = dgv_Notice.Rows[e.RowIndex].Cells[2].Value.ToString();
+                //Notice_Vo vo = service.GetNotice(txt_Title.Text);
+
+                ////vo.Title =                      txt_Title.Text;
+                ////vo.Ins_Emp =                 txt_Name.Text;
+                ////vo.Notice_Date =             txt_Name.Text;
+                ////vo.Description =             txt_Des.Text;
+
+
+                //  txt_Name.Text = vo.Ins_Emp;
+                //   txt_Name.Text = vo.Notice_Date;
+                //  txt_Des.Text = vo.Description;
+            }
+            catch
+            {
+
             }
 
-
-            Notice_Service service = new Notice_Service();
-
-            service.GetNotice(notice);
         }
 
         private void dgv_Notice_SelectionChanged(object sender, EventArgs e)
         {
-            Notice_Service service = new Notice_Service();
             
-            Notice_Vo notice = service.GetNotice();
-
-                txt_Title.Text = notice.Title;
-                txt_Name.Text = notice.Ins_Emp;
-                txt_date.Text = notice.Notice_Date;
-                txt_Des.Text = notice.Description;
             }
 
-        
-           
-       
-
+   
          
         }
     }
-}
+

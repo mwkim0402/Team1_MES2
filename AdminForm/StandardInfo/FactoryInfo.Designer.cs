@@ -101,6 +101,7 @@
             this.rbUse_OrderCreate = new System.Windows.Forms.RadioButton();
             this.rbNoUse_OrderCreate = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
+            this.tabControl1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
@@ -915,11 +916,14 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "FactoryInfo";
+            this.Load += new System.EventHandler(this.FactoryInfo_Load);
+            this.Controls.SetChildIndex(this.tabControl1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.dgvSearchResult, 0);
             this.Controls.SetChildIndex(this.tabControl3, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);
+            this.tabControl1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1022,5 +1026,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtFactoryNameInput;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dgvSearchResult;
     }
 }

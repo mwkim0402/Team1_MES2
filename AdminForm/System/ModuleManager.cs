@@ -16,5 +16,17 @@ namespace AdminForm
         {
             InitializeComponent();
         }
+
+        private void ModuleManager_Load(object sender, EventArgs e)
+        {
+            ShowDgv();
+        }
+
+        private void ShowDgv()
+        {
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "모듈 코드", "1", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "모듈 명", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "1", true, 120);
+        }
     }
 }

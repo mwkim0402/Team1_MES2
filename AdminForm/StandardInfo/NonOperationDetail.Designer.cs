@@ -170,6 +170,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "NonOperationDetail";
+            this.Load += new System.EventHandler(this.NonOperationDetail_Load);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.tabControl4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

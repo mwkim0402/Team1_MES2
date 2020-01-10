@@ -51,6 +51,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.cmbSort);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtPS);
@@ -59,6 +61,11 @@
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.txtCatCodeInput);
             this.panel1.Controls.Add(this.txtCatNameInput);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.None;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // panel3
             // 
@@ -213,6 +220,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "SystemCodeCategoryDetail";
+            this.Load += new System.EventHandler(this.SystemCodeCategoryDetail_Load);
             this.Controls.SetChildIndex(this.panel3, 0);
             this.tabControl4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

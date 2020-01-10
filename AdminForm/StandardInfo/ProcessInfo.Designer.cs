@@ -266,6 +266,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "ProcessInfo";
+            this.Load += new System.EventHandler(this.ProcessInfo_Load);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.tabControl4, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);

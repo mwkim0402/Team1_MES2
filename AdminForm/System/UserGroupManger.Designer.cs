@@ -50,9 +50,6 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.gbUsable);
             this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.label21);
@@ -159,7 +156,7 @@
             this.gbUsable.Controls.Add(this.rbUse_Use);
             this.gbUsable.Controls.Add(this.rbNoUse_Use);
             this.gbUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.gbUsable.Location = new System.Drawing.Point(578, 11);
+            this.gbUsable.Location = new System.Drawing.Point(801, 10);
             this.gbUsable.Name = "gbUsable";
             this.gbUsable.Size = new System.Drawing.Size(200, 64);
             this.gbUsable.TabIndex = 89;
@@ -203,6 +200,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "UserGroupManger";
+            this.Load += new System.EventHandler(this.UserGroupManger_Load);
             this.Controls.SetChildIndex(this.tabControl4, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);
             this.Controls.SetChildIndex(this.panel2, 0);

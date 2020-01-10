@@ -265,6 +265,7 @@
             this.Name = "IPCInfo";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.Load += new System.EventHandler(this.IPCInfo_Load);
             this.Controls.SetChildIndex(this.tabControl4, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);

@@ -46,6 +46,7 @@
             // 
             // tabControl2
             // 
+            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tabControl2.Controls.Add(this.tabPage2);
             this.tabControl2.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tabControl2.Location = new System.Drawing.Point(12, 265);
@@ -66,6 +67,7 @@
             // 
             // dgvJobOrder
             // 
+            this.dgvJobOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvJobOrder.BackgroundColor = System.Drawing.Color.White;
             this.dgvJobOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvJobOrder.Location = new System.Drawing.Point(12, 294);
@@ -96,6 +98,8 @@
             // 
             // dgvProductRequset
             // 
+            this.dgvProductRequset.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvProductRequset.BackgroundColor = System.Drawing.Color.White;
             this.dgvProductRequset.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductRequset.Location = new System.Drawing.Point(12, 41);
@@ -126,6 +130,9 @@
             // 
             // treeView1
             // 
+            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.treeView1.Location = new System.Drawing.Point(523, 41);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(621, 551);
@@ -149,6 +156,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "MenuManagement";
+            this.Load += new System.EventHandler(this.MenuManagement_Load);
             this.tabControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobOrder)).EndInit();
             this.tabControl4.ResumeLayout(false);

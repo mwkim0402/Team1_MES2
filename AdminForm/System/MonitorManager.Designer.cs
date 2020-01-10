@@ -285,6 +285,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "MonitorManager";
+            this.Load += new System.EventHandler(this.MonitorManager_Load);
             this.Controls.SetChildIndex(this.tabControl4, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);
             this.Controls.SetChildIndex(this.panel1, 0);

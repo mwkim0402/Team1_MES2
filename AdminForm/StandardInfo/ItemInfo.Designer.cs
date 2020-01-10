@@ -1192,6 +1192,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "ItemInfo";
+            this.Load += new System.EventHandler(this.ItemInfo_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuOutputPerCount)).EndInit();

@@ -181,6 +181,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "SystemCodeCategory";
+            this.Load += new System.EventHandler(this.SystemCodeCategory_Load);
             this.Controls.SetChildIndex(this.tabControl4, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);
             this.Controls.SetChildIndex(this.panel2, 0);

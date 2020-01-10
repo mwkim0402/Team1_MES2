@@ -50,6 +50,7 @@
     <Compile Include="Service\MoldingService.cs" />
     <Compile Include="Service\JobOrderService.cs" />
     <Compile Include="Service\MenuTreeService.cs" />
+    <Compile Include="Vo\MoldUseHistory.cs" />
     <Compile Include="Vo\MoldingInfoVo.cs" />
     <Compile Include="Vo\MoldingOrderCreation_WoVo.cs" />
     <Compile Include="Vo\MoldingOrderCreation_ReqVo.cs" />

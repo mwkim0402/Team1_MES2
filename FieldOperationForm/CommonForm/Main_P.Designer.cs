@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btn_home1 = new System.Windows.Forms.Button();
-        
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Home = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_Job = new System.Windows.Forms.Label();
@@ -43,34 +42,18 @@
             this.lbl_Notice = new System.Windows.Forms.Label();
             this.btn_NonOperation = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-           // btn_home1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btn_home1
-            // 
-          this.btn_home1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-          this.btn_home1.BackColor = System.Drawing.Color.DarkSlateGray;
-          this.btn_home1.BackgroundImage = global::FieldOperationForm.Properties.Resources.홈;
-          this.  btn_home1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-          this.  btn_home1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-          this.  btn_home1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-          this.  btn_home1.Location = new System.Drawing.Point(1080, 12);
-          this.  btn_home1.Name = "btn_home1";
-          this.  btn_home1.Size = new System.Drawing.Size(80, 68);
-          this.  btn_home1.TabIndex = 12;
-          this.  btn_home1.UseVisualStyleBackColor = false;
-          this.  btn_home1.Click += new System.EventHandler(this.btn_home_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Ivory;
+            this.panel1.Controls.Add(this.btn_Home);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lbl_name);
             this.panel1.Controls.Add(this.lbl_Job);
-            this.panel1.Controls.Add(this.btn_home1);
             this.panel1.Controls.Add(this.btn_FormClose);
             this.panel1.Controls.Add(this.btn_logout);
             this.panel1.Controls.Add(this.lblChange);
@@ -80,12 +63,27 @@
             this.panel1.Size = new System.Drawing.Size(1330, 95);
             this.panel1.TabIndex = 9;
             // 
+            // btn_Home
+            // 
+            this.btn_Home.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Home.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Home.BackgroundImage = global::FieldOperationForm.Properties.Resources.홈;
+            this.btn_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Home.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_Home.Location = new System.Drawing.Point(1087, 12);
+            this.btn_Home.Name = "btn_Home";
+            this.btn_Home.Size = new System.Drawing.Size(73, 68);
+            this.btn_Home.TabIndex = 13;
+            this.btn_Home.UseVisualStyleBackColor = false;
+            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
+            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.BackColor = System.Drawing.Color.Ivory;
             this.label3.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.ForeColor = System.Drawing.Color.DarkSeaGreen;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(177, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 43);
@@ -98,7 +96,7 @@
             this.lbl_name.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_name.BackColor = System.Drawing.Color.Ivory;
             this.lbl_name.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_name.ForeColor = System.Drawing.Color.DarkSeaGreen;
+            this.lbl_name.ForeColor = System.Drawing.Color.Black;
             this.lbl_name.Location = new System.Drawing.Point(2, 49);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(270, 43);
@@ -111,7 +109,7 @@
             this.lbl_Job.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_Job.BackColor = System.Drawing.Color.Ivory;
             this.lbl_Job.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl_Job.ForeColor = System.Drawing.Color.DarkSeaGreen;
+            this.lbl_Job.ForeColor = System.Drawing.Color.Black;
             this.lbl_Job.Location = new System.Drawing.Point(4, 3);
             this.lbl_Job.Name = "lbl_Job";
             this.lbl_Job.Size = new System.Drawing.Size(270, 43);
@@ -254,6 +252,6 @@
         public System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel3;
-        public System.Windows.Forms.Button btn_home1;
+        public System.Windows.Forms.Button btn_Home;
     }
 }

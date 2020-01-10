@@ -55,7 +55,7 @@ namespace FieldOperationForm
                 main.label3.Text = "님";
                 main.btn_NonOperation.Enabled = true;
                 main.btn_logout.Enabled = true;
-                main.btn_home1.Enabled = true;
+                main.btn_Home.Enabled = true;
             }
 
             else if (service.GetUserType(txt_UserID.Text.Trim(), txt_UserPwd.Text.Trim()) == "성형")
@@ -70,7 +70,7 @@ namespace FieldOperationForm
                 main.label3.Text = "님";
                 main.btn_NonOperation.Enabled = true;
                 main. btn_logout.Enabled = true;
-                main.btn_home1.Enabled = true;
+                main.btn_Home.Enabled = true;
             }
 
             else
@@ -85,7 +85,7 @@ namespace FieldOperationForm
                 main.label3.Text = "님";
                 main.btn_NonOperation.Enabled = true;
                 main.btn_logout.Enabled = true;
-                main.btn_home1.Enabled = true;
+                main.btn_Home.Enabled = true;
             }
 
 

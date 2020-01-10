@@ -30,7 +30,7 @@ namespace FieldOperationForm
                 return list;
             }
         }
-        public Notice_Vo GetNotice (string title)
+        public List<Notice_Vo> GetNotice (string title)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -40,23 +40,13 @@ namespace FieldOperationForm
                 cmd.Parameters.AddWithValue("@Title",title );
 
                 cmd.Connection.Open();
-              
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<Notice_Vo> list = Helper.DataReaderMapToList<Notice_Vo>(reader);
                 cmd.Connection.Close();
 
-                if (list == null)
-                {
-                    return null;
-                }
-                else if (list.Count > 0)
-                {
-                    return list[0];
-                }
-                else
-                {
-                    return null;
-                }
+                return list;
+
+            
             }
         }
 

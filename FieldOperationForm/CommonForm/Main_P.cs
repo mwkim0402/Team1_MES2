@@ -28,6 +28,9 @@ namespace FieldOperationForm
             frm.Show();
             lblChange.Text = "로그인";
 
+            btn_NonOperation.Enabled = false;
+            btn_logout.Enabled = false;
+            btn_home1.Enabled = false;
         }
 
 
@@ -50,17 +53,6 @@ namespace FieldOperationForm
            lblChange.Text = "비가동 등록";
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            //JobOrderStatus_Package frm = new JobOrderStatus_Package(this);
-            // JobOrderStatus frm = new JobOrderStatus(this);
-            JobOrderStatus_Load frm = new JobOrderStatus_Load(this);
-            frm.BringToFront();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-         
-        }
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
@@ -91,6 +83,38 @@ namespace FieldOperationForm
         {
             Notice frm = new Notice();
             frm.Show();
+        }
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            JobOrderStatus_Load frm; //적재
+            JobOrderStatus frm1;//성형
+            JobOrderStatus_Package frm2; // 포장
+
+            if (lbl_Job.Text == "적재")
+            {
+                frm = new JobOrderStatus_Load(this);
+                frm.BringToFront();
+                frm.MdiParent = this;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
+            else if (lbl_Job.Text == "성형")
+            {
+                frm1 = new JobOrderStatus(this);
+                frm1.BringToFront();
+                frm1.MdiParent = this;
+                frm1.Dock = DockStyle.Fill;
+                frm1.Show();
+            }
+            else
+            {
+                frm2 = new JobOrderStatus_Package(this);
+                frm2.BringToFront();
+                frm2.MdiParent = this;
+                frm2.Dock = DockStyle.Fill;
+                frm2.Show();
+            }
         }
     }
 }

@@ -23,7 +23,7 @@ namespace FieldOperationForm
 
         // DataGridView 컬럼 설정
         private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
-           int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleCenter)
+           int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
         {
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.HeaderText = headerText;
@@ -36,7 +36,7 @@ namespace FieldOperationForm
             dgv.Columns.Add(col);
 
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.Honeydew;
-        //    dgv.RowsDefaultCellStyle.BackColor = Color.Ivory;
+            //    dgv.RowsDefaultCellStyle.BackColor = Color.Ivory;
 
 
             dgv.EnableHeadersVisualStyles = false;
@@ -47,13 +47,14 @@ namespace FieldOperationForm
 
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
             dgv.DefaultCellStyle.SelectionBackColor = Color.DarkSlateGray;
+
         }
         private void Setdgv()
         {
 
-            AddNewColumnToDataGridView(dgv_Notice, "제목", "Title", true, 420);
-            AddNewColumnToDataGridView(dgv_Notice, "작성자", "Ins_Emp", true, 100);
+            AddNewColumnToDataGridView(dgv_Notice, "제목", "Title", true, 440);
             AddNewColumnToDataGridView(dgv_Notice, "등록일", "Notice_Date", true, 130);
+            AddNewColumnToDataGridView(dgv_Notice, "작성자", "Ins_Emp", true, 100);
            AddNewColumnToDataGridView(dgv_Notice, "등록일", "Description", false, 150);
 
 
@@ -93,8 +94,9 @@ namespace FieldOperationForm
                 txt_Title.Text = dgv_Notice.Rows[e.RowIndex].Cells[0].Value.ToString();
                 txt_Name.Text = dgv_Notice.Rows[e.RowIndex].Cells[1].Value.ToString();
                 txt_date.Text = dgv_Notice.Rows[e.RowIndex].Cells[2].Value.ToString();
-                //Notice_Vo vo = service.GetNotice(txt_Title.Text);
+                List< Notice_Vo> vo = service.GetNotice( txt_Title.Text);
 
+                txt_Des.Text = vo[0].Description.ToString();
                 ////vo.Title =                      txt_Title.Text;
                 ////vo.Ins_Emp =                 txt_Name.Text;
                 ////vo.Notice_Date =             txt_Name.Text;

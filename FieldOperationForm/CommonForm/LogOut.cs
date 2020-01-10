@@ -33,7 +33,7 @@ namespace FieldOperationForm
             main.lblChange.Text = "로그인";
             main.btn_NonOperation.Enabled = false;
             main.btn_logout.Enabled = false;
-            main.btn_home1.Enabled = false;
+            main.btn_Home.Enabled = false;
 
         }
 

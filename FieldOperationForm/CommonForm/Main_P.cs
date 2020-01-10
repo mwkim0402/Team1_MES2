@@ -30,7 +30,7 @@ namespace FieldOperationForm
 
             btn_NonOperation.Enabled = false;
             btn_logout.Enabled = false;
-            btn_home1.Enabled = false;
+            btn_Home.Enabled = false;
         }
 
 
@@ -85,7 +85,7 @@ namespace FieldOperationForm
             frm.Show();
         }
 
-        private void btn_home_Click(object sender, EventArgs e)
+        private void btn_Home_Click(object sender, EventArgs e)
         {
             JobOrderStatus_Load frm; //적재
             JobOrderStatus frm1;//성형

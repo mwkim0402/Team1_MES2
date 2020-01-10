@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace AdminForm
 {
     public partial class EndPallet : dgvTwo
@@ -15,6 +16,29 @@ namespace AdminForm
         public EndPallet()
         {
             InitializeComponent();
+        }
+        private void EndPallet_Load(object sender, EventArgs e)
+        {
+            ShowDgv();
+        }
+
+        private void ShowDgv()
+        {
+            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "작업상태", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "작업지시번호", "2", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "품목코드", "3", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "품목명", "4", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "작업장", "5", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "투입수량", "6", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "산출수량", "7", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "생산수량", "8", true, 100);
+
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "팔렛트번호", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "등급", "1", true, 70);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "등급상세 코드", "1", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "등급상세 명", "1", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "수량", "1", true, 70);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "ERP 업로드 여부", "1", true, 150);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -25,5 +49,7 @@ namespace AdminForm
 
             }
         }
+
+        
     }
 }

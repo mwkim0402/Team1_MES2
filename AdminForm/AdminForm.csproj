@@ -55,6 +55,7 @@
     <Compile Include="CategorySearch.Designer.cs">
       <DependentUpon>CategorySearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Common\CommonClass.cs" />
     <Compile Include="FIndCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>

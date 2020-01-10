@@ -25,6 +25,21 @@ namespace MES_DB
                 return list;
             }
         }
-       
+        public List<MoldUseHistory> MoldUseHistory()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "MoldUseHistory";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<MoldUseHistory> list = Helper.DataReaderMapToList<MoldUseHistory>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
     }
 }

@@ -58,18 +58,18 @@ namespace AdminForm
         private void MoldingOrderCreation_Load(object sender, EventArgs e)
         {
             // 생산의뢰 dgv 컬럼 추가
-            AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰번호", "Wo_Req_No", true, 120);
-            AddNewColumnToDataGridView(dgvProductRequset, "의뢰순번", "Req_Seq", true, 255);
-            AddNewColumnToDataGridView(dgvProductRequset, "품목코드", "Item_Code", true, 130);
-            AddNewColumnToDataGridView(dgvProductRequset, "품목명", "Item_Name", true, 140);
-            AddNewColumnToDataGridView(dgvProductRequset, "의뢰수량", "Req_Qty", true, 150);
-            AddNewColumnToDataGridView(dgvProductRequset, "의뢰단위", "Prd_Unit", true, 150);
-            AddNewColumnToDataGridView(dgvProductRequset, "생산완료 요청일", "Prd_Plan_Date", true, 100);
-            AddNewColumnToDataGridView(dgvProductRequset, "프로젝트명", "Remark", true, 100);
+            AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰번호", "Wo_Req_No", true, 110);
+            AddNewColumnToDataGridView(dgvProductRequset, "의뢰순번", "Req_Seq", true, 80);
+            AddNewColumnToDataGridView(dgvProductRequset, "품목코드", "Item_Code", true, 80);
+            AddNewColumnToDataGridView(dgvProductRequset, "품목명", "Item_Name", true, 174);
+            AddNewColumnToDataGridView(dgvProductRequset, "의뢰수량", "Req_Qty", true, 80);
+            AddNewColumnToDataGridView(dgvProductRequset, "의뢰단위", "Prd_Unit", true, 80);
+            AddNewColumnToDataGridView(dgvProductRequset, "생산완료 요청일", "Prd_Plan_Date", true, 140);
+            AddNewColumnToDataGridView(dgvProductRequset, "프로젝트명", "Remark", true, 110);
             AddNewColumnToDataGridView(dgvProductRequset, "거래처명", "Cust_Name", true, 100);
-            AddNewColumnToDataGridView(dgvProductRequset, "영업담당", "Sale_Emp", true, 130);
-            AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰 상태", "Req_Status", true, 130);
-            AddNewColumnToDataGridView(dgvProductRequset, "생성된 작업 지시 수", "Out_Qty_Main", true, 150);
+            AddNewColumnToDataGridView(dgvProductRequset, "영업담당", "Sale_Emp", true, 100);
+            AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰 상태", "Req_Status", true, 120);
+            AddNewColumnToDataGridView(dgvProductRequset, "생성된 작업 지시 수", "Out_Qty_Main", true, 180);
             AddNewColumnToDataGridView(dgvProductRequset, "작업지시 생산수량", "Prd_Qty", true, 150);
             AddNewColumnToDataGridView(dgvProductRequset, "작업지시 계획수량", "Plan_Qty", true, 150);
             ProdReqList();
@@ -84,17 +84,17 @@ namespace AdminForm
 
 
             // 작업지시 dgv 컬럼 추가
-            AddNewColumnToDataGridView(dgvJobOrder, "작업상태", "Wo_Status", true, 120);
-            AddNewColumnToDataGridView(dgvJobOrder, "작업지시번호", "Workorderno", true, 255);
-            AddNewColumnToDataGridView(dgvJobOrder, "작업지시일", "Prd_Date", true, 130);
-            AddNewColumnToDataGridView(dgvJobOrder, "품목코드", "Item_Code", true, 140);
-            AddNewColumnToDataGridView(dgvJobOrder, "품목명", "Item_Name", true, 150);
-            AddNewColumnToDataGridView(dgvJobOrder, "작업장", "Wc_Name", true, 150);
-            AddNewColumnToDataGridView(dgvJobOrder, "계획수량", "Plan_Qty", true, 100);
-            AddNewColumnToDataGridView(dgvJobOrder, "투입수량", "In_Qty_Main", true, 100);
-            AddNewColumnToDataGridView(dgvJobOrder, "산출수량", "Out_Qty_Main", true, 100);
-            AddNewColumnToDataGridView(dgvJobOrder, "생산수량", "Prd_Qty", true, 130);
-            AddNewColumnToDataGridView(dgvJobOrder, "전달사항", "Remark", true, 130);
+            AddNewColumnToDataGridView(dgvJobOrder, "작업상태", "Wo_Status", true, 110);
+            AddNewColumnToDataGridView(dgvJobOrder, "작업지시번호", "Workorderno", true, 150);
+            AddNewColumnToDataGridView(dgvJobOrder, "작업지시일", "Prd_Date", true, 150);
+            AddNewColumnToDataGridView(dgvJobOrder, "품목코드", "Item_Code", true, 110);
+            AddNewColumnToDataGridView(dgvJobOrder, "품목명", "Item_Name", true, 220);
+            AddNewColumnToDataGridView(dgvJobOrder, "작업장", "Wc_Name", true, 140);
+            AddNewColumnToDataGridView(dgvJobOrder, "계획수량", "Plan_Qty", true,140);
+            AddNewColumnToDataGridView(dgvJobOrder, "투입수량", "In_Qty_Main", true,140);
+            AddNewColumnToDataGridView(dgvJobOrder, "산출수량", "Out_Qty_Main", true,140);
+            AddNewColumnToDataGridView(dgvJobOrder, "생산수량", "Prd_Qty", true,140);
+            AddNewColumnToDataGridView(dgvJobOrder, "전달사항", "Remark", true, 208);
             WorkOrderList();
             dgvJobOrder.DataSource = ListWo;
 

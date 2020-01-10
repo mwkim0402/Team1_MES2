@@ -29,5 +29,51 @@ namespace FieldOperationForm
             }
         }
 
+        public int UserLogin(string User_ID, string User_PW)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "UserLogin";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@User_ID", User_ID);
+                cmd.Parameters.AddWithValue("@User_PW", User_PW);
+                cmd.Connection.Open();
+                int checkCnt = Convert.ToInt32(cmd.ExecuteScalar());
+                return checkCnt;
+            }
+        }
+        public string GetUserType(string User_ID, string User_PW)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "GetUserType";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@User_ID", User_ID);
+                cmd.Parameters.AddWithValue("@User_PW", User_PW);
+                cmd.Connection.Open();
+                string checkType = cmd.ExecuteScalar().ToString();
+                return checkType;
+            }
+        }
+
+        public string GetUserName(string User_ID, string User_PW)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "GetUserName";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@User_ID", User_ID);
+                cmd.Parameters.AddWithValue("@User_PW", User_PW);
+                cmd.Connection.Open();
+                string checkName = cmd.ExecuteScalar().ToString();
+                return checkName;
+            }
+        }
+
+
+
     }
 }

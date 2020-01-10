@@ -14,5 +14,11 @@ namespace MES_DB
             MoldingDac dac = new MoldingDac();
             return dac.GetMoldingInfo();
         }
+
+        public List<MoldUseHistory> MoldUseHistory()
+        {
+            MoldingDac dac = new MoldingDac();
+            return dac.MoldUseHistory();
+        }
     }
 }

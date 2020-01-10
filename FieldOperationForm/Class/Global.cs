@@ -8,6 +8,8 @@ namespace FieldOperationForm
 {
     public static class Global
     {
-        public static string UserName;
+        public static string User_Name;
+        public static string User_ID;
+        
     }
 }

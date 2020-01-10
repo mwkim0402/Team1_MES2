@@ -48,6 +48,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1514, 427);
             this.dataGridView1.TabIndex = 0;
@@ -65,7 +66,6 @@
             this.btn_StartEnd.TabIndex = 1;
             this.btn_StartEnd.Text = "작업시작/ \r\n종료";
             this.btn_StartEnd.UseVisualStyleBackColor = false;
-            this.btn_StartEnd.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_FieldClose
             // 

@@ -59,6 +59,7 @@
             this.dgv_Notice.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Notice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_Notice.EnableHeadersVisualStyles = false;
+            this.dgv_Notice.GridColor = System.Drawing.Color.DarkSlateGray;
             this.dgv_Notice.Location = new System.Drawing.Point(21, 54);
             this.dgv_Notice.MultiSelect = false;
             this.dgv_Notice.Name = "dgv_Notice";
@@ -66,7 +67,7 @@
             this.dgv_Notice.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_Notice.RowTemplate.Height = 23;
             this.dgv_Notice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Notice.Size = new System.Drawing.Size(653, 528);
+            this.dgv_Notice.Size = new System.Drawing.Size(673, 528);
             this.dgv_Notice.TabIndex = 4;
             this.dgv_Notice.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Notice_CellClick);
             this.dgv_Notice.SelectionChanged += new System.EventHandler(this.dgv_Notice_SelectionChanged);
@@ -80,7 +81,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(25, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(696, 601);
+            this.groupBox1.Size = new System.Drawing.Size(715, 601);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 

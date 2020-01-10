@@ -28,19 +28,19 @@ namespace AdminForm
         }
         private void MoldInformationRegister_Load(object sender, EventArgs e)
         {
-            AddNewColumnToDataGridView(dgvSearchResult, "금형코드", "Mold_Code", true, 120);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형명", "Mold_Name", true, 255);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형그룹", "Mold_Group", true, 130);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형상태", "Mold_Status", true, 140);
+            AddNewColumnToDataGridView(dgvSearchResult, "금형코드", "Mold_Code", true, 100);
+            AddNewColumnToDataGridView(dgvSearchResult, "금형명", "Mold_Name", true, 200);
+            AddNewColumnToDataGridView(dgvSearchResult, "금형그룹", "Mold_Group", true, 150);
+            AddNewColumnToDataGridView(dgvSearchResult, "금형상태", "Mold_Status", true, 100);
             AddNewColumnToDataGridView(dgvSearchResult, "금형누적타수", "Cum_Shot_Cnt", true, 150);
             AddNewColumnToDataGridView(dgvSearchResult, "금형누적생산량", "Cum_Prd_Qty", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형누적사용시간", "Cum_Time", true, 100);
+            AddNewColumnToDataGridView(dgvSearchResult, "금형누적사용시간", "Cum_Time", true, 180);
             AddNewColumnToDataGridView(dgvSearchResult, "보장타수", "Guar_Shot_Cnt", true, 100);
             AddNewColumnToDataGridView(dgvSearchResult, "구입금액", "Purchase_Amt", true, 100);
-            AddNewColumnToDataGridView(dgvSearchResult, "입고일자", "In_Date", true, 130);
-            AddNewColumnToDataGridView(dgvSearchResult, "최종장착일시", "Last_Setup_Time", true, 130);
-            AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 150);
+            AddNewColumnToDataGridView(dgvSearchResult, "입고일자", "In_Date", true, 150);
+            AddNewColumnToDataGridView(dgvSearchResult, "최종장착일시", "Last_Setup_Time", true, 150);
+            AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 80);
+            AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 80);
             LoadList();
             dgvSearchResult.DataSource = List;
 

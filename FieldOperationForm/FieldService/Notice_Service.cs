@@ -13,7 +13,7 @@ namespace FieldOperationForm
             Notice_Dac dac = new Notice_Dac();
             return dac.NoticeList();
         }
-        public Notice_Vo GetNotice(string title)
+        public List<Notice_Vo> GetNotice(string title)
         {
             Notice_Dac dac = new Notice_Dac();
             return dac.GetNotice(title);

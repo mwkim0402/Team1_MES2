@@ -29,24 +29,40 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Button button1;
+            this.btn_home1 = new System.Windows.Forms.Button();
+        
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_Job = new System.Windows.Forms.Label();
+            this.btn_FormClose = new System.Windows.Forms.Button();
+            this.btn_logout = new System.Windows.Forms.Button();
             this.lblChange = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbl_Notice = new System.Windows.Forms.Label();
             this.btn_NonOperation = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btn_FormClose = new System.Windows.Forms.Button();
-            this.btn_logout = new System.Windows.Forms.Button();
-            button1 = new System.Windows.Forms.Button();
+           // btn_home1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btn_home1
+            // 
+          this.btn_home1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+          this.btn_home1.BackColor = System.Drawing.Color.DarkSlateGray;
+          this.btn_home1.BackgroundImage = global::FieldOperationForm.Properties.Resources.홈;
+          this.  btn_home1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+          this.  btn_home1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+          this.  btn_home1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+          this.  btn_home1.Location = new System.Drawing.Point(1080, 12);
+          this.  btn_home1.Name = "btn_home1";
+          this.  btn_home1.Size = new System.Drawing.Size(80, 68);
+          this.  btn_home1.TabIndex = 12;
+          this.  btn_home1.UseVisualStyleBackColor = false;
+          this.  btn_home1.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // panel1
             // 
@@ -54,7 +70,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lbl_name);
             this.panel1.Controls.Add(this.lbl_Job);
-            this.panel1.Controls.Add(button1);
+            this.panel1.Controls.Add(this.btn_home1);
             this.panel1.Controls.Add(this.btn_FormClose);
             this.panel1.Controls.Add(this.btn_logout);
             this.panel1.Controls.Add(this.lblChange);
@@ -70,7 +86,7 @@
             this.label3.BackColor = System.Drawing.Color.Ivory;
             this.label3.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.Color.DarkSeaGreen;
-            this.label3.Location = new System.Drawing.Point(185, 49);
+            this.label3.Location = new System.Drawing.Point(177, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 43);
             this.label3.TabIndex = 13;
@@ -83,11 +99,11 @@
             this.lbl_name.BackColor = System.Drawing.Color.Ivory;
             this.lbl_name.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_name.ForeColor = System.Drawing.Color.DarkSeaGreen;
-            this.lbl_name.Location = new System.Drawing.Point(4, 49);
+            this.lbl_name.Location = new System.Drawing.Point(2, 49);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(270, 43);
             this.lbl_name.TabIndex = 13;
-            this.lbl_name.Text = "김지은";
+            this.lbl_name.Text = "ㄹ옹로";
             this.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Job
@@ -100,8 +116,38 @@
             this.lbl_Job.Name = "lbl_Job";
             this.lbl_Job.Size = new System.Drawing.Size(270, 43);
             this.lbl_Job.TabIndex = 12;
-            this.lbl_Job.Text = "적재";
+            this.lbl_Job.Text = "ㄶㄶ";
             this.lbl_Job.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btn_FormClose
+            // 
+            this.btn_FormClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_FormClose.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_FormClose.BackgroundImage = global::FieldOperationForm.Properties.Resources.종료1;
+            this.btn_FormClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_FormClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_FormClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_FormClose.Location = new System.Drawing.Point(1245, 12);
+            this.btn_FormClose.Name = "btn_FormClose";
+            this.btn_FormClose.Size = new System.Drawing.Size(73, 68);
+            this.btn_FormClose.TabIndex = 12;
+            this.btn_FormClose.UseVisualStyleBackColor = false;
+            this.btn_FormClose.Click += new System.EventHandler(this.btn_FormClose_Click);
+            // 
+            // btn_logout
+            // 
+            this.btn_logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_logout.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_logout.BackgroundImage = global::FieldOperationForm.Properties.Resources.로그아웃;
+            this.btn_logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_logout.Location = new System.Drawing.Point(1166, 12);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(73, 68);
+            this.btn_logout.TabIndex = 11;
+            this.btn_logout.UseVisualStyleBackColor = false;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // lblChange
             // 
@@ -173,51 +219,6 @@
             this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button1
-            // 
-            button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            button1.BackColor = System.Drawing.Color.DarkSlateGray;
-            button1.BackgroundImage = global::FieldOperationForm.Properties.Resources.홈;
-            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            button1.Location = new System.Drawing.Point(1080, 12);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(80, 68);
-            button1.TabIndex = 12;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btn_FormClose
-            // 
-            this.btn_FormClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_FormClose.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_FormClose.BackgroundImage = global::FieldOperationForm.Properties.Resources.종료1;
-            this.btn_FormClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_FormClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_FormClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_FormClose.Location = new System.Drawing.Point(1245, 12);
-            this.btn_FormClose.Name = "btn_FormClose";
-            this.btn_FormClose.Size = new System.Drawing.Size(73, 68);
-            this.btn_FormClose.TabIndex = 12;
-            this.btn_FormClose.UseVisualStyleBackColor = false;
-            this.btn_FormClose.Click += new System.EventHandler(this.btn_FormClose_Click);
-            // 
-            // btn_logout
-            // 
-            this.btn_logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_logout.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_logout.BackgroundImage = global::FieldOperationForm.Properties.Resources.로그아웃;
-            this.btn_logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_logout.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_logout.Location = new System.Drawing.Point(1166, 12);
-            this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(73, 68);
-            this.btn_logout.TabIndex = 11;
-            this.btn_logout.UseVisualStyleBackColor = false;
-            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
-            // 
             // Main_P
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,14 +245,15 @@
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label lblChange;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btn_logout;
+        public System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Button btn_FormClose;
-        private System.Windows.Forms.Button btn_NonOperation;
+        public System.Windows.Forms.Button btn_NonOperation;
         private System.Windows.Forms.Label lbl_Notice;
         public System.Windows.Forms.Label lbl_name;
         public System.Windows.Forms.Label lbl_Job;
         public System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Button btn_home1;
     }
 }

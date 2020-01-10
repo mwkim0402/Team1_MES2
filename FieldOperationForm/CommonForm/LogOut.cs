@@ -31,7 +31,10 @@ namespace FieldOperationForm
             frm.Dock = DockStyle.Fill;
             frm.Show();
             main.lblChange.Text = "로그인";
-            
+            main.btn_NonOperation.Enabled = false;
+            main.btn_logout.Enabled = false;
+            main.btn_home1.Enabled = false;
+
         }
 
         private void btn_Cancle_Click(object sender, EventArgs e)

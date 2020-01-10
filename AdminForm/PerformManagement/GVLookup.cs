@@ -16,5 +16,19 @@ namespace AdminForm
         {
             InitializeComponent();
         }
+
+        private void GVLookup_Load(object sender, EventArgs e)
+        {
+            ShowDgv();
+        }
+
+        private void ShowDgv()
+        {
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "기준일자", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업장", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "GAS사용량", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "기숙사GAS사용량", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "1", true, 100);
+        }
     }
 }

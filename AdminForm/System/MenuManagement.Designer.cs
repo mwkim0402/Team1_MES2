@@ -31,15 +31,15 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvJobOrder = new System.Windows.Forms.DataGridView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dgvProductRequset = new System.Windows.Forms.DataGridView();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.tabControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobOrder)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.tabControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductRequset)).BeginInit();
             this.tabControl3.SuspendLayout();
             this.SuspendLayout();
@@ -74,25 +74,25 @@
             this.dgvJobOrder.Size = new System.Drawing.Size(505, 298);
             this.dgvJobOrder.TabIndex = 13;
             // 
-            // tabControl1
+            // tabControl4
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(94, 28);
-            this.tabControl1.TabIndex = 12;
+            this.tabControl4.Controls.Add(this.tabPage4);
+            this.tabControl4.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tabControl4.Location = new System.Drawing.Point(12, 12);
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedIndex = 0;
+            this.tabControl4.Size = new System.Drawing.Size(94, 28);
+            this.tabControl4.TabIndex = 12;
             // 
-            // tabPage1
+            // tabPage4
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(86, 0);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "모듈목록";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(86, 0);
+            this.tabPage4.TabIndex = 0;
+            this.tabPage4.Text = "모듈목록";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // dgvProductRequset
             // 
@@ -140,7 +140,7 @@
             this.Controls.Add(this.tabControl3);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.dgvJobOrder);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl4);
             this.Controls.Add(this.dgvProductRequset);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -151,7 +151,7 @@
             this.Text = "MenuManagement";
             this.tabControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvJobOrder)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductRequset)).EndInit();
             this.tabControl3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -163,8 +163,8 @@
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dgvJobOrder;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tabControl4;
+        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dgvProductRequset;
         private System.Windows.Forms.TabControl tabControl3;
         private System.Windows.Forms.TabPage tabPage3;

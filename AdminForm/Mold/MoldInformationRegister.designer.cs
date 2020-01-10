@@ -56,7 +56,7 @@
             this.gbUsable = new System.Windows.Forms.GroupBox();
             this.rbUse = new System.Windows.Forms.RadioButton();
             this.rbNoUse = new System.Windows.Forms.RadioButton();
-            this.tabControl1.SuspendLayout();
+            this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -103,31 +103,34 @@
             // 
             // cmbMoldGroupSearch
             // 
+            this.cmbMoldGroupSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbMoldGroupSearch.FormattingEnabled = true;
-            this.cmbMoldGroupSearch.Location = new System.Drawing.Point(625, 25);
+            this.cmbMoldGroupSearch.Location = new System.Drawing.Point(756, 24);
             this.cmbMoldGroupSearch.Name = "cmbMoldGroupSearch";
             this.cmbMoldGroupSearch.Size = new System.Drawing.Size(121, 20);
             this.cmbMoldGroupSearch.TabIndex = 13;
             // 
             // txtMoldNameSearch
             // 
-            this.txtMoldNameSearch.Location = new System.Drawing.Point(355, 25);
+            this.txtMoldNameSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtMoldNameSearch.Location = new System.Drawing.Point(481, 24);
             this.txtMoldNameSearch.Name = "txtMoldNameSearch";
             this.txtMoldNameSearch.Size = new System.Drawing.Size(128, 21);
             this.txtMoldNameSearch.TabIndex = 12;
             // 
             // txtMoldCodeSearch
             // 
-            this.txtMoldCodeSearch.Location = new System.Drawing.Point(96, 25);
+            this.txtMoldCodeSearch.Location = new System.Drawing.Point(171, 25);
             this.txtMoldCodeSearch.Name = "txtMoldCodeSearch";
             this.txtMoldCodeSearch.Size = new System.Drawing.Size(128, 21);
             this.txtMoldCodeSearch.TabIndex = 11;
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(550, 27);
+            this.label2.Location = new System.Drawing.Point(681, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 10;
@@ -135,9 +138,10 @@
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label12.Location = new System.Drawing.Point(296, 27);
+            this.label12.Location = new System.Drawing.Point(422, 26);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(56, 16);
             this.label12.TabIndex = 8;
@@ -147,7 +151,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label14.Location = new System.Drawing.Point(18, 26);
+            this.label14.Location = new System.Drawing.Point(93, 26);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(72, 16);
             this.label14.TabIndex = 0;
@@ -155,6 +159,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSave.Location = new System.Drawing.Point(1034, 18);
             this.btnSave.Name = "btnSave";
@@ -165,6 +170,7 @@
             // 
             // label13
             // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label13.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -176,6 +182,7 @@
             // 
             // txtWarrentNum
             // 
+            this.txtWarrentNum.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtWarrentNum.Location = new System.Drawing.Point(684, 16);
             this.txtWarrentNum.Name = "txtWarrentNum";
             this.txtWarrentNum.Size = new System.Drawing.Size(100, 21);
@@ -183,6 +190,7 @@
             // 
             // txtPS
             // 
+            this.txtPS.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPS.Location = new System.Drawing.Point(684, 47);
             this.txtPS.Name = "txtPS";
             this.txtPS.Size = new System.Drawing.Size(152, 21);
@@ -190,6 +198,7 @@
             // 
             // txtMoldGroupInput
             // 
+            this.txtMoldGroupInput.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtMoldGroupInput.Location = new System.Drawing.Point(498, 16);
             this.txtMoldGroupInput.Name = "txtMoldGroupInput";
             this.txtMoldGroupInput.Size = new System.Drawing.Size(100, 21);
@@ -218,6 +227,7 @@
             // 
             // label16
             // 
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label16.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -229,6 +239,7 @@
             // 
             // label17
             // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label17.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -262,6 +273,7 @@
             // 
             // label20
             // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label20.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -284,6 +296,7 @@
             // 
             // label22
             // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label22.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -306,6 +319,7 @@
             // 
             // dtpLastEquipDate
             // 
+            this.dtpLastEquipDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpLastEquipDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpLastEquipDate.Location = new System.Drawing.Point(500, 47);
             this.dtpLastEquipDate.Name = "dtpLastEquipDate";
@@ -322,6 +336,7 @@
             // 
             // gbUsable
             // 
+            this.gbUsable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gbUsable.Controls.Add(this.rbUse);
             this.gbUsable.Controls.Add(this.rbNoUse);
             this.gbUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -365,11 +380,12 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MoldInformationRegister";
-            this.Controls.SetChildIndex(this.tabControl1, 0);
+            this.Load += new System.EventHandler(this.MoldInformationRegister_Load);
+            this.Controls.SetChildIndex(this.tabControl4, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl2.ResumeLayout(false);

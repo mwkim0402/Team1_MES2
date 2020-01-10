@@ -34,7 +34,7 @@
             this.fcProd = new AdminForm.FIndCategory();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.tabControl4.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -109,7 +109,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Controls.SetChildIndex(this.panel2, 0);
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

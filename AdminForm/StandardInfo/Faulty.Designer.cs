@@ -43,7 +43,7 @@
             this.gbUsable = new System.Windows.Forms.GroupBox();
             this.rbY = new System.Windows.Forms.RadioButton();
             this.rbN = new System.Windows.Forms.RadioButton();
-            this.tabControl1.SuspendLayout();
+            this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -222,11 +222,11 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Faulty";
-            this.Controls.SetChildIndex(this.tabControl1, 0);
+            this.Controls.SetChildIndex(this.tabControl4, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl2.ResumeLayout(false);

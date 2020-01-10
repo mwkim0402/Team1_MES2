@@ -15,12 +15,12 @@ namespace MES_DB
             return dac.JobOrderCreation();
         }
 
-        public List<JobOrderCreateVo> MoldingOrderCreation_Req()
+        public List<MoldingOrderCreation_ReqVo> MoldingOrderCreation_Req()
         {
             JobOrderDac dac = new JobOrderDac();
             return dac.MoldingOrderCreation_Req();
         }
-        public List<JobOrderCreateVo> MoldingOrderCreation_WO()
+        public List<MoldingOrderCreation_WoVo> MoldingOrderCreation_WO()
         {
             JobOrderDac dac = new JobOrderDac();
             return dac.MoldingOrderCreation_WO();

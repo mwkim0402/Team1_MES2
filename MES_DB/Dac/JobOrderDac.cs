@@ -25,22 +25,22 @@ namespace MES_DB
                 return list;
             }
         }
-        public List<JobOrderCreateVo> MoldingOrderCreation_Req()
+        public List<MoldingOrderCreation_ReqVo> MoldingOrderCreation_Req()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "JobOrderCreation";
+                cmd.CommandText = "MoldingOrderCreation_Req";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<JobOrderCreateVo> list = Helper.DataReaderMapToList<JobOrderCreateVo>(reader);
+                List<MoldingOrderCreation_ReqVo> list = Helper.DataReaderMapToList<MoldingOrderCreation_ReqVo>(reader);
                 cmd.Connection.Close();
                 return list;
             }
         }
-        public List<JobOrderCreateVo> MoldingOrderCreation_WO()
+        public List<MoldingOrderCreation_WoVo> MoldingOrderCreation_WO()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -50,7 +50,7 @@ namespace MES_DB
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<JobOrderCreateVo> list = Helper.DataReaderMapToList<JobOrderCreateVo>(reader);
+                List<MoldingOrderCreation_WoVo> list = Helper.DataReaderMapToList<MoldingOrderCreation_WoVo>(reader);
                 cmd.Connection.Close();
                 return list;
             }

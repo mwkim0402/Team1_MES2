@@ -129,8 +129,8 @@
             this.label26 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dgvSearchResult = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuOutputPerCount)).BeginInit();
@@ -149,7 +149,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1145,25 +1145,25 @@
             this.textBox14.Size = new System.Drawing.Size(103, 21);
             this.textBox14.TabIndex = 102;
             // 
-            // tabControl1
+            // tabControl4
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(16, 85);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(94, 28);
-            this.tabControl1.TabIndex = 11;
+            this.tabControl4.Controls.Add(this.tabPage4);
+            this.tabControl4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl4.Location = new System.Drawing.Point(16, 85);
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedIndex = 0;
+            this.tabControl4.Size = new System.Drawing.Size(94, 28);
+            this.tabControl4.TabIndex = 11;
             // 
-            // tabPage1
+            // tabPage4
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 32);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(86, 0);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "조회내역";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage4.Location = new System.Drawing.Point(4, 32);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(86, 0);
+            this.tabPage4.TabIndex = 0;
+            this.tabPage4.Text = "조회내역";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // dgvSearchResult
             // 
@@ -1182,7 +1182,7 @@
             this.ClientSize = new System.Drawing.Size(1156, 604);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl4);
             this.Controls.Add(this.dgvSearchResult);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1213,7 +1213,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).EndInit();
             this.ResumeLayout(false);
 
@@ -1277,8 +1277,8 @@
         protected System.Windows.Forms.TabControl tabControl2;
         protected System.Windows.Forms.TabPage tabPage2;
         protected System.Windows.Forms.Panel panel1;
-        protected System.Windows.Forms.TabControl tabControl1;
-        protected System.Windows.Forms.TabPage tabPage1;
+        protected System.Windows.Forms.TabControl tabControl4;
+        protected System.Windows.Forms.TabPage tabPage4;
         protected System.Windows.Forms.DataGridView dgvSearchResult;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;

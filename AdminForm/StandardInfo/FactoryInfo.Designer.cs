@@ -50,8 +50,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgvSearchResult = new System.Windows.Forms.DataGridView();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -331,24 +331,24 @@
             this.textBox4.Size = new System.Drawing.Size(152, 21);
             this.textBox4.TabIndex = 103;
             // 
-            // tabControl1
+            // tabControl3
             // 
-            this.tabControl1.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 87);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(94, 28);
-            this.tabControl1.TabIndex = 9;
+            this.tabControl3.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tabControl3.Location = new System.Drawing.Point(12, 87);
+            this.tabControl3.Name = "tabControl3";
+            this.tabControl3.SelectedIndex = 0;
+            this.tabControl3.Size = new System.Drawing.Size(94, 28);
+            this.tabControl3.TabIndex = 9;
             // 
-            // tabPage1
+            // tabPage3
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(86, 0);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "조회내역";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(86, 0);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "조회내역";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // dgvSearchResult
             // 
@@ -905,7 +905,7 @@
             this.ClientSize = new System.Drawing.Size(1156, 604);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl3);
             this.Controls.Add(this.dgvSearchResult);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -917,7 +917,7 @@
             this.Text = "FactoryInfo";
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.dgvSearchResult, 0);
-            this.Controls.SetChildIndex(this.tabControl1, 0);
+            this.Controls.SetChildIndex(this.tabControl3, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);
             this.panel2.ResumeLayout(false);
@@ -968,9 +968,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox txtWPCode;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dgvSearchResult;
+        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabPage tabPage3;
+        //private System.Windows.Forms.DataGridView dgvSearchResult1;
         protected System.Windows.Forms.TabControl tabControl2;
         protected System.Windows.Forms.TabPage tabPage2;
         protected System.Windows.Forms.Panel panel1;

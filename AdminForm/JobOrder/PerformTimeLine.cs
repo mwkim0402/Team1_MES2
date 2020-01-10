@@ -53,15 +53,15 @@ namespace AdminForm
 
         private void PerformTimeLine_Load(object sender, EventArgs e)
         {
-            AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 120);
-            AddNewColumnToDataGridView(dgvSearchResult, "품목명", "Item_Name", true, 255);
-            AddNewColumnToDataGridView(dgvSearchResult, "작업장", "Wc_Name", true, 130);
-            AddNewColumnToDataGridView(dgvSearchResult, "생산일자", "Prd_Date", true, 140);
-            AddNewColumnToDataGridView(dgvSearchResult, "생산시작시각", "Prd_Starttime", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "생산종료시간", "Prd_Endtime", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "투입수량", "In_Qty_Main", true, 100);
-            AddNewColumnToDataGridView(dgvSearchResult, "산출수량", "Out_Qty_Main", true, 100);
-            AddNewColumnToDataGridView(dgvSearchResult, "생산수량", "Prd_Qty", true, 100);
+            AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 140);
+            AddNewColumnToDataGridView(dgvSearchResult, "품목명", "Item_Name", true, 253);
+            AddNewColumnToDataGridView(dgvSearchResult, "작업장", "Wc_Name", true, 180);
+            AddNewColumnToDataGridView(dgvSearchResult, "생산일자", "Prd_Date", true, 200);
+            AddNewColumnToDataGridView(dgvSearchResult, "생산시작시각", "Prd_Starttime", true, 215);
+            AddNewColumnToDataGridView(dgvSearchResult, "생산종료시간", "Prd_Endtime", true, 215);
+            AddNewColumnToDataGridView(dgvSearchResult, "투입수량", "In_Qty_Main", true, 150);
+            AddNewColumnToDataGridView(dgvSearchResult, "산출수량", "Out_Qty_Main", true, 150);
+            AddNewColumnToDataGridView(dgvSearchResult, "생산수량", "Prd_Qty", true, 150);
             AddNewColumnToDataGridView(dgvSearchResult, "생산의뢰 번호", "Wo_Req_No", false, 130);
             AddNewColumnToDataGridView(dgvSearchResult, "생산의뢰 순번", "Req_Seq", false, 130);
             AddNewColumnToDataGridView(dgvSearchResult, "프로젝트명", "Remark", false, 150);

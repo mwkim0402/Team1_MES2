@@ -36,6 +36,8 @@
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabControl2.SuspendLayout();
+            this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,7 +134,12 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "EndPallet";
+            this.Load += new System.EventHandler(this.EndPallet_Load);
+            this.Controls.SetChildIndex(this.tabControl4, 0);
+            this.Controls.SetChildIndex(this.tabControl2, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
+            this.tabControl2.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

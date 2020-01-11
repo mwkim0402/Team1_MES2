@@ -24,6 +24,8 @@ namespace AdminForm
 
         private void ShowDgv()
         {
+            tabPage3.Text = "";
+            tabPage4.Text = "";
             CommonClass.AddNewColumnToDataGridView(dgvSelect, "포장 등급", "1", true, 100);
 
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "포장등급 상세코드", "1", true, 100);

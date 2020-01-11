@@ -24,6 +24,8 @@ namespace AdminForm
 
         private void ShowDgv()
         {
+            tabPage2.Text = "";
+            tabPage4.Text = "";
             CommonClass.AddNewColumnToDataGridView(dgvSelect, "시스템 대분류 코드", "1", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvSelect, "시스템 대분류 명", "1", true, 180);
             CommonClass.AddNewColumnToDataGridView(dgvSelect, "비고", "1", true, 230);

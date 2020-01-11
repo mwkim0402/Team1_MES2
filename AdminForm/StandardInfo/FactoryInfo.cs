@@ -22,6 +22,10 @@ namespace AdminForm
 
         private void ShowDgv()
         {
+            dgvSearchResult.Size = new System.Drawing.Size(1132, 190);
+            this.dgvSearchResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업장 코드", "1", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업장 명", "1", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업장 유형", "1", true, 100);

@@ -24,6 +24,8 @@ namespace AdminForm
 
         private void ShowDgv()
         {
+            tabPage4.Text = "";
+            tabPage2.Text = "팔레트";
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "작업상태", "1", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "작업지시번호", "2", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "품목코드", "3", true, 100);

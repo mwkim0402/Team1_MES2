@@ -22,6 +22,9 @@ namespace AdminForm
 
         private void ShowDgv()
         {
+            tabPage3.Text = "";
+            tabPage4.Text = "";
+            
             CommonClass.AddNewColumnToDataGridView(dgvSelect, "EtherIO 코드", "1", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSelect, "EtherIO 명", "1", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSelect, "EtherIO IP", "1", true, 100);

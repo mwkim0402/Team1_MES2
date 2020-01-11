@@ -210,7 +210,7 @@
         public System.Windows.Forms.TabControl tabControl2;
         public System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabControl tabControl3;
-        private System.Windows.Forms.TabPage tabPage3;
+        public System.Windows.Forms.TabPage tabPage3;
         public System.Windows.Forms.DataGridView dgvSelect;
         private System.Windows.Forms.SplitContainer splitContainer1;
     }

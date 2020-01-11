@@ -24,8 +24,10 @@ namespace AdminForm
 
         private void ShowDgv()
         {
+            
+            dgvProductRequset.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "작업자", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "근무일", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "근무일", "1", true, 150);
 
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업지시번호", "1", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업장코드", "1", true, 100);

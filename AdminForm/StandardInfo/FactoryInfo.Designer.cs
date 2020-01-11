@@ -52,9 +52,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dgvSearchResult = new System.Windows.Forms.DataGridView();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtJobOrderInit = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -101,11 +98,11 @@
             this.rbUse_OrderCreate = new System.Windows.Forms.RadioButton();
             this.rbNoUse_OrderCreate = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabControl1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
-            this.tabControl2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.gbMoldEquip.SuspendLayout();
             this.gbAutoProcess.SuspendLayout();
@@ -115,14 +112,13 @@
             this.gbAutoStart.SuspendLayout();
             this.gbGasUsable.SuspendLayout();
             this.gbAutoCreate.SuspendLayout();
+            this.tabControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 38);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tabPage1.Size = new System.Drawing.Size(99, 0);
             // 
             // panel2
             // 
@@ -366,42 +362,6 @@
             this.tabPage3.Text = "조회내역";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // dgvSearchResult
-            // 
-            this.dgvSearchResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvSearchResult.BackgroundColor = System.Drawing.Color.White;
-            this.dgvSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSearchResult.Location = new System.Drawing.Point(14, 144);
-            this.dgvSearchResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvSearchResult.Name = "dgvSearchResult";
-            this.dgvSearchResult.RowHeadersWidth = 51;
-            this.dgvSearchResult.RowTemplate.Height = 23;
-            this.dgvSearchResult.Size = new System.Drawing.Size(1294, 251);
-            this.dgvSearchResult.TabIndex = 8;
-            // 
-            // tabControl2
-            // 
-            this.tabControl2.Controls.Add(this.tabPage2);
-            this.tabControl2.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tabControl2.Location = new System.Drawing.Point(14, 400);
-            this.tabControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(107, 35);
-            this.tabControl2.TabIndex = 11;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Size = new System.Drawing.Size(99, 0);
-            this.tabPage2.TabIndex = 0;
-            this.tabPage2.Text = "입력정보";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -436,7 +396,7 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.gbAutoCreate);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Location = new System.Drawing.Point(14, 435);
+            this.panel1.Location = new System.Drawing.Point(15, 444);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1294, 305);
@@ -967,6 +927,28 @@
             this.label10.TabIndex = 101;
             this.label10.Text = "작업장코드";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Size = new System.Drawing.Size(99, 0);
+            this.tabPage2.TabIndex = 0;
+            this.tabPage2.Text = "입력정보";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage2);
+            this.tabControl2.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tabControl2.Location = new System.Drawing.Point(15, 409);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(107, 35);
+            this.tabControl2.TabIndex = 11;
+            // 
             // FactoryInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -975,7 +957,6 @@
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl3);
-            this.Controls.Add(this.dgvSearchResult);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -986,19 +967,16 @@
             this.ShowInTaskbar = false;
             this.Text = "FactoryInfo";
             this.Load += new System.EventHandler(this.FactoryInfo_Load);
-            this.Controls.SetChildIndex(this.tabControl1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
-            this.Controls.SetChildIndex(this.dgvSearchResult, 0);
             this.Controls.SetChildIndex(this.tabControl3, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);
+            this.Controls.SetChildIndex(this.tabControl1, 0);
             this.tabControl1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).EndInit();
-            this.tabControl2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.gbMoldEquip.ResumeLayout(false);
@@ -1017,6 +995,7 @@
             this.gbGasUsable.PerformLayout();
             this.gbAutoCreate.ResumeLayout(false);
             this.gbAutoCreate.PerformLayout();
+            this.tabControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1043,9 +1022,6 @@
         private System.Windows.Forms.TextBox txtWPCode;
         private System.Windows.Forms.TabControl tabControl3;
         private System.Windows.Forms.TabPage tabPage3;
-        //private System.Windows.Forms.DataGridView dgvSearchResult1;
-        protected System.Windows.Forms.TabControl tabControl2;
-        protected System.Windows.Forms.TabPage tabPage2;
         protected System.Windows.Forms.Panel panel1;
         private FIndCategory fcFactory;
         private System.Windows.Forms.Label label6;
@@ -1095,6 +1071,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtFactoryNameInput;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dgvSearchResult;
+        //private System.Windows.Forms.DataGridView dgvSearchResult;
+        protected System.Windows.Forms.TabPage tabPage2;
+        protected System.Windows.Forms.TabControl tabControl2;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace AdminForm.PerformManagement
 {
-    partial class GvMonitoring
+    partial class GVMonitoring
     {
         /// <summary>
         /// Required designer variable.

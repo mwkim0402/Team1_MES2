@@ -50,6 +50,13 @@
             this.gbUsable.SuspendLayout();
             this.SuspendLayout();
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 38);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tabPage4.Size = new System.Drawing.Size(99, 0);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label4);
@@ -61,6 +68,13 @@
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.gbUsable);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 38);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tabPage2.Size = new System.Drawing.Size(99, 0);
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -70,42 +84,45 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtFaultCatCode);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Location = new System.Drawing.Point(14, 15);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1132, 67);
+            this.panel2.Size = new System.Drawing.Size(1294, 84);
             this.panel2.TabIndex = 15;
             // 
             // txtFaultCatCodeName
             // 
-            this.txtFaultCatCodeName.Location = new System.Drawing.Point(646, 27);
+            this.txtFaultCatCodeName.Location = new System.Drawing.Point(738, 34);
+            this.txtFaultCatCodeName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFaultCatCodeName.Name = "txtFaultCatCodeName";
-            this.txtFaultCatCodeName.Size = new System.Drawing.Size(159, 21);
+            this.txtFaultCatCodeName.Size = new System.Drawing.Size(181, 25);
             this.txtFaultCatCodeName.TabIndex = 9;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(448, 29);
+            this.label2.Location = new System.Drawing.Point(512, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 16);
+            this.label2.Size = new System.Drawing.Size(223, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "불량현상 대분류 코드명";
             // 
             // txtFaultCatCode
             // 
-            this.txtFaultCatCode.Location = new System.Drawing.Point(202, 27);
+            this.txtFaultCatCode.Location = new System.Drawing.Point(231, 34);
+            this.txtFaultCatCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFaultCatCode.Name = "txtFaultCatCode";
-            this.txtFaultCatCode.Size = new System.Drawing.Size(159, 21);
+            this.txtFaultCatCode.Size = new System.Drawing.Size(181, 25);
             this.txtFaultCatCode.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(22, 28);
+            this.label1.Location = new System.Drawing.Point(25, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 16);
+            this.label1.Size = new System.Drawing.Size(203, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "불량현상 대분류 코드";
             // 
@@ -114,9 +131,9 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(377, 16);
+            this.label4.Location = new System.Drawing.Point(431, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 16);
+            this.label4.Size = new System.Drawing.Size(49, 20);
             this.label4.TabIndex = 118;
             this.label4.Text = "비고";
             // 
@@ -125,9 +142,9 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label5.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(27, 48);
+            this.label5.Location = new System.Drawing.Point(31, 60);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 16);
+            this.label5.Size = new System.Drawing.Size(183, 20);
             this.label5.TabIndex = 119;
             this.label5.Text = "불량현상 대분류 명";
             // 
@@ -136,39 +153,44 @@
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label25.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label25.Location = new System.Drawing.Point(27, 16);
+            this.label25.Location = new System.Drawing.Point(31, 20);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(162, 16);
+            this.label25.Size = new System.Drawing.Size(203, 20);
             this.label25.TabIndex = 120;
             this.label25.Text = "불량현상 대분류 코드";
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(437, 14);
+            this.txtNote.Location = new System.Drawing.Point(499, 18);
+            this.txtNote.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(171, 21);
+            this.txtNote.Size = new System.Drawing.Size(195, 25);
             this.txtNote.TabIndex = 121;
             // 
             // txtFaultCatName
             // 
-            this.txtFaultCatName.Location = new System.Drawing.Point(226, 46);
+            this.txtFaultCatName.Location = new System.Drawing.Point(258, 58);
+            this.txtFaultCatName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFaultCatName.Name = "txtFaultCatName";
-            this.txtFaultCatName.Size = new System.Drawing.Size(103, 21);
+            this.txtFaultCatName.Size = new System.Drawing.Size(117, 25);
             this.txtFaultCatName.TabIndex = 122;
             // 
             // txtFaultCatCodeInput
             // 
-            this.txtFaultCatCodeInput.Location = new System.Drawing.Point(226, 14);
+            this.txtFaultCatCodeInput.Location = new System.Drawing.Point(258, 18);
+            this.txtFaultCatCodeInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFaultCatCodeInput.Name = "txtFaultCatCodeInput";
-            this.txtFaultCatCodeInput.Size = new System.Drawing.Size(103, 21);
+            this.txtFaultCatCodeInput.Size = new System.Drawing.Size(117, 25);
             this.txtFaultCatCodeInput.TabIndex = 123;
             // 
             // btnSave
             // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(1024, 18);
+            this.btnSave.Location = new System.Drawing.Point(1170, 22);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(82, 48);
+            this.btnSave.Size = new System.Drawing.Size(94, 60);
             this.btnSave.TabIndex = 117;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -178,9 +200,11 @@
             this.gbUsable.Controls.Add(this.rbY);
             this.gbUsable.Controls.Add(this.rbN);
             this.gbUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.gbUsable.Location = new System.Drawing.Point(769, 10);
+            this.gbUsable.Location = new System.Drawing.Point(879, 12);
+            this.gbUsable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gbUsable.Name = "gbUsable";
-            this.gbUsable.Size = new System.Drawing.Size(200, 64);
+            this.gbUsable.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbUsable.Size = new System.Drawing.Size(229, 80);
             this.gbUsable.TabIndex = 116;
             this.gbUsable.TabStop = false;
             this.gbUsable.Text = "사용여부";
@@ -189,9 +213,10 @@
             // 
             this.rbY.AutoSize = true;
             this.rbY.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.rbY.Location = new System.Drawing.Point(43, 28);
+            this.rbY.Location = new System.Drawing.Point(49, 35);
+            this.rbY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbY.Name = "rbY";
-            this.rbY.Size = new System.Drawing.Size(42, 20);
+            this.rbY.Size = new System.Drawing.Size(50, 24);
             this.rbY.TabIndex = 77;
             this.rbY.TabStop = true;
             this.rbY.Text = "유";
@@ -201,9 +226,10 @@
             // 
             this.rbN.AutoSize = true;
             this.rbN.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.rbN.Location = new System.Drawing.Point(111, 28);
+            this.rbN.Location = new System.Drawing.Point(127, 35);
+            this.rbN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbN.Name = "rbN";
-            this.rbN.Size = new System.Drawing.Size(42, 20);
+            this.rbN.Size = new System.Drawing.Size(50, 24);
             this.rbN.TabIndex = 79;
             this.rbN.TabStop = true;
             this.rbN.Text = "무";
@@ -211,11 +237,12 @@
             // 
             // Faulty
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 604);
+            this.ClientSize = new System.Drawing.Size(1321, 755);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Faulty";

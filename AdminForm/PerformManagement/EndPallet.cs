@@ -50,6 +50,10 @@ namespace AdminForm
             }
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FindPallet frm = new FindPallet();
+            frm.ShowDialog();
+        }
     }
 }

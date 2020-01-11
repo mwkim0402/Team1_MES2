@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AdminForm.PerformManagement
 {
-    public partial class GvMonitoring : Form
+    public partial class GVMonitoring : Form
     {
-        public GvMonitoring()
+        public GVMonitoring()
         {
             InitializeComponent();
         }

@@ -24,7 +24,6 @@ namespace AdminForm
 
         private void ShowDgv()
         {
-            dgvSearchResult.Size = new System.Drawing.Size(1000, 700);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산일자", "1", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "1", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목명", "1", true, 100);

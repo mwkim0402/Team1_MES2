@@ -217,7 +217,7 @@
             this.btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Search.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Search.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Search.Location = new System.Drawing.Point(445, 149);
+            this.btn_Search.Location = new System.Drawing.Point(403, 149);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(83, 41);
             this.btn_Search.TabIndex = 27;
@@ -231,7 +231,7 @@
             this.txt_SearchTruck.Location = new System.Drawing.Point(153, 149);
             this.txt_SearchTruck.Multiline = true;
             this.txt_SearchTruck.Name = "txt_SearchTruck";
-            this.txt_SearchTruck.Size = new System.Drawing.Size(286, 41);
+            this.txt_SearchTruck.Size = new System.Drawing.Size(244, 41);
             this.txt_SearchTruck.TabIndex = 25;
             // 
             // label7
@@ -254,8 +254,9 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 205);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(516, 411);
+            this.dataGridView1.Size = new System.Drawing.Size(474, 411);
             this.dataGridView1.TabIndex = 28;
             // 
             // btn_Loading
@@ -265,7 +266,7 @@
             this.btn_Loading.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Loading.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Loading.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Loading.Location = new System.Drawing.Point(551, 349);
+            this.btn_Loading.Location = new System.Drawing.Point(506, 349);
             this.btn_Loading.Name = "btn_Loading";
             this.btn_Loading.Size = new System.Drawing.Size(345, 267);
             this.btn_Loading.TabIndex = 29;
@@ -277,10 +278,11 @@
             this.dataGridView2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(918, 205);
+            this.dataGridView2.Location = new System.Drawing.Point(872, 205);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(615, 411);
+            this.dataGridView2.Size = new System.Drawing.Size(661, 411);
             this.dataGridView2.TabIndex = 33;
             // 
             // btn_Search2
@@ -301,10 +303,10 @@
             // 
             this.txt_SearchTruck2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_SearchTruck2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_SearchTruck2.Location = new System.Drawing.Point(1069, 149);
+            this.txt_SearchTruck2.Location = new System.Drawing.Point(1009, 149);
             this.txt_SearchTruck2.Multiline = true;
             this.txt_SearchTruck2.Name = "txt_SearchTruck2";
-            this.txt_SearchTruck2.Size = new System.Drawing.Size(336, 41);
+            this.txt_SearchTruck2.Size = new System.Drawing.Size(395, 41);
             this.txt_SearchTruck2.TabIndex = 30;
             // 
             // label8
@@ -313,7 +315,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.ForeColor = System.Drawing.Color.Ivory;
-            this.label8.Location = new System.Drawing.Point(918, 155);
+            this.label8.Location = new System.Drawing.Point(867, 155);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(111, 28);
             this.label8.TabIndex = 31;
@@ -324,7 +326,7 @@
             // 
             this.txt_Loading.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_Loading.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_Loading.Location = new System.Drawing.Point(681, 290);
+            this.txt_Loading.Location = new System.Drawing.Point(636, 290);
             this.txt_Loading.Multiline = true;
             this.txt_Loading.Name = "txt_Loading";
             this.txt_Loading.Size = new System.Drawing.Size(215, 41);
@@ -336,7 +338,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.ForeColor = System.Drawing.Color.Ivory;
-            this.label9.Location = new System.Drawing.Point(551, 296);
+            this.label9.Location = new System.Drawing.Point(506, 296);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(111, 28);
             this.label9.TabIndex = 35;

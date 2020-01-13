@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkReportParent));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtpProduction = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +67,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "생산일자";
             // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // WorkReportParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -77,7 +90,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "WorkReportParent";
-            this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -88,5 +100,7 @@
         public System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.DateTimePicker dtpProduction;
         public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

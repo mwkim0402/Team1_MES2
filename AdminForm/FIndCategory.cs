@@ -16,10 +16,11 @@ namespace AdminForm
         {
             InitializeComponent();
         }
+        public string CategoryTable{get;set;}
 
         private void BtnFind_Click(object sender, EventArgs e)
         {
-            CategorySearch frm = new CategorySearch();
+            CategorySearch frm = new CategorySearch(CategoryTable);
             frm.ShowDialog();
             txtCatCode.Text = frm.CatCode;
             txtCatName.Text = frm.CatName;

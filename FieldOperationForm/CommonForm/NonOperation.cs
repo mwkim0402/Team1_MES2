@@ -72,5 +72,10 @@ namespace FieldOperationForm
         {
             Setdgv();
         }
+
+        private void NonOperation_Shown(object sender, EventArgs e)
+        {
+            dgv_NonOperation.CurrentCell = null;
+        }
     }
 }

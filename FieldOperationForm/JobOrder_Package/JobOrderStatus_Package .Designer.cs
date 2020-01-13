@@ -208,6 +208,7 @@
             this.Name = "JobOrderStatus_Package";
             this.Text = "JoboOderStatus";
             this.Load += new System.EventHandler(this.JobOrderStatus_Package_Load);
+            this.Shown += new System.EventHandler(this.JobOrderStatus_Package_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

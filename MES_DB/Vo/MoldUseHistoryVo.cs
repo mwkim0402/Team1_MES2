@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MES_DB
 {
-    public class MoldUseHistory
+    public class MoldUseHistoryVo
     {
          public string  Mold_Code      {get;set;}
          public string  Mold_Name      {get;set;}

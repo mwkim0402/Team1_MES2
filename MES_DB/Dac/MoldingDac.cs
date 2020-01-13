@@ -25,7 +25,7 @@ namespace MES_DB
                 return list;
             }
         }
-        public List<MoldUseHistory> MoldUseHistory()
+        public List<MoldUseHistoryVo> MoldUseHistory()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -35,7 +35,7 @@ namespace MES_DB
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<MoldUseHistory> list = Helper.DataReaderMapToList<MoldUseHistory>(reader);
+                List<MoldUseHistoryVo> list = Helper.DataReaderMapToList<MoldUseHistoryVo>(reader);
                 cmd.Connection.Close();
                 return list;
             }

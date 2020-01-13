@@ -174,6 +174,7 @@
             this.Name = "JobOrderStatus";
             this.Text = "JoboOderStatus";
             this.Load += new System.EventHandler(this.JobOrderStatus_Load);
+            this.Shown += new System.EventHandler(this.JobOrderStatus_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

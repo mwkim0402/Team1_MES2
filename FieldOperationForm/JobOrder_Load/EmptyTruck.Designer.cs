@@ -80,6 +80,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 68);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1272, 548);
             this.dataGridView1.TabIndex = 34;
@@ -91,9 +92,9 @@
             this.btn_Empty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Empty.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Empty.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Empty.Location = new System.Drawing.Point(1290, 68);
+            this.btn_Empty.Location = new System.Drawing.Point(1305, 68);
             this.btn_Empty.Name = "btn_Empty";
-            this.btn_Empty.Size = new System.Drawing.Size(243, 548);
+            this.btn_Empty.Size = new System.Drawing.Size(228, 548);
             this.btn_Empty.TabIndex = 35;
             this.btn_Empty.Text = "대차 비우기";
             this.btn_Empty.UseVisualStyleBackColor = false;

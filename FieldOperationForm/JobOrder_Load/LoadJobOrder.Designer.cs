@@ -200,7 +200,7 @@
             this.btn_Search.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btn_Search.Location = new System.Drawing.Point(781, 12);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(122, 41);
+            this.btn_Search.Size = new System.Drawing.Size(113, 41);
             this.btn_Search.TabIndex = 28;
             this.btn_Search.Text = "찾기";
             this.btn_Search.UseVisualStyleBackColor = false;
@@ -212,18 +212,19 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 68);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(892, 548);
+            this.dataGridView1.Size = new System.Drawing.Size(883, 548);
             this.dataGridView1.TabIndex = 27;
             // 
             // txt_SearchTruck
             // 
             this.txt_SearchTruck.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_SearchTruck.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_SearchTruck.Location = new System.Drawing.Point(229, 12);
+            this.txt_SearchTruck.Location = new System.Drawing.Point(183, 13);
             this.txt_SearchTruck.Multiline = true;
             this.txt_SearchTruck.Name = "txt_SearchTruck";
-            this.txt_SearchTruck.Size = new System.Drawing.Size(546, 41);
+            this.txt_SearchTruck.Size = new System.Drawing.Size(582, 41);
             this.txt_SearchTruck.TabIndex = 25;
             // 
             // label7

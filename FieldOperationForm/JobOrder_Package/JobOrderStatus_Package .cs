@@ -51,16 +51,16 @@ namespace FieldOperationForm
         private void Setdgv()
         {
 
-            AddNewColumnToDataGridView(dataGridView1, "상태", "Title", true, 100);
-            AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "Notice_Date", true, 200);
-            AddNewColumnToDataGridView(dataGridView1, "할당작업자", "Notice_Date", true, 200);
-            AddNewColumnToDataGridView(dataGridView1, "품목코드 / 품목명", "Notice_Date", true, 300);
+            AddNewColumnToDataGridView(dataGridView1, "상태", "Title", true, 80);
+            AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "Notice_Date", true, 180);
+            AddNewColumnToDataGridView(dataGridView1, "할당작업자", "Notice_Date", true, 175);
+            AddNewColumnToDataGridView(dataGridView1, "품목코드 / 품목명", "Notice_Date", true, 280);
             AddNewColumnToDataGridView(dataGridView1, "단위", "Notice_Date", true, 100);
-            AddNewColumnToDataGridView(dataGridView1, "실적수량", "Notice_Date", true, 150);
-            AddNewColumnToDataGridView(dataGridView1, "생산시작시간", "Notice_Date", true, 200);
-            AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Ins_Emp", true, 200);
-            this.dataGridView1.Font = new Font("나눔고딕", 18, FontStyle.Bold);
-            this.dataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 18, FontStyle.Regular);
+            AddNewColumnToDataGridView(dataGridView1, "실적수량", "Notice_Date", true, 130);
+            AddNewColumnToDataGridView(dataGridView1, "생산시작시간", "Notice_Date", true, 175);
+            AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Ins_Emp", true, 175);
+            this.dataGridView1.Font = new Font("나눔고딕", 17, FontStyle.Bold);
+            this.dataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 17, FontStyle.Regular);
 
 
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -147,6 +147,11 @@ namespace FieldOperationForm
             frm.Dock = DockStyle.Fill;
             frm.Show();
             main.lblChange.Text = "포장 언로딩";
+        }
+
+        private void JobOrderStatus_Package_Shown(object sender, EventArgs e)
+        {
+            dataGridView1.CurrentCell = null;
         }
     }
 }

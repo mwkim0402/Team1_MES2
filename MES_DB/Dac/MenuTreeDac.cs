@@ -31,7 +31,7 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "select code,cName from VW_CatCode";
+                cmd.CommandText = "select code Code,cName CodeName from VW_CatCode";
                 cmd.CommandType = CommandType.Text;
 
                 cmd.Connection.Open();

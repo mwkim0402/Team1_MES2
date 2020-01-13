@@ -1,7 +1,9 @@
-﻿using System;
+﻿using MES_DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,13 +16,21 @@ namespace AdminForm
     {
         string catCode;
         string catName;
-
+        string catTable;
         public string CatCode { get => catCode; set => catCode = value; }
         public string CatName { get => catName; set => catName = value; }
+        List<FindCategoryVo> List = null;
 
-        public CategorySearch()
+        private void RoadList()
+        {
+            FindCategoryService service = new FindCategoryService();
+            List = service.GetCategory();
+        }
+
+        public CategorySearch(string searchTable)
         {
             InitializeComponent();
+            catTable = searchTable;
         }
 
         private void BtnSubmit_Click(object sender, EventArgs e)
@@ -33,6 +43,19 @@ namespace AdminForm
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             //cmb와 txtsearch명으로 데이터를 검색해 dgv에 출력
+        }
+
+        private void CategorySearch_Load(object sender, EventArgs e)
+        {
+            CommonClass.AddNewColumnToDataGridView(dgvList, "코드번호", "Code", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvList, "코드명", "CodeName", true, 130);
+            RoadList();
+            dgvList.DataSource = List;
+
+            dgvList.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dgvList.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvList.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
     }
 }

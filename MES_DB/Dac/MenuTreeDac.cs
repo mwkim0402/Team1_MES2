@@ -25,5 +25,21 @@ namespace MES_DB
                 return list;
             }
         }
+
+        public List<FindCategoryVo> GetCategory()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "select code,cName from VW_CatCode";
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<FindCategoryVo> list = Helper.DataReaderMapToList<FindCategoryVo>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
     }
 }

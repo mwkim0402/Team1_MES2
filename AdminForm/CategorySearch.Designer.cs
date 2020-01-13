@@ -66,8 +66,10 @@
             this.dgvList.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.Location = new System.Drawing.Point(12, 51);
+            this.dgvList.MultiSelect = false;
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
+            this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(319, 339);
             this.dgvList.TabIndex = 3;
             // 
@@ -94,6 +96,7 @@
             this.Controls.Add(this.txtSearch);
             this.Name = "CategorySearch";
             this.Text = "CategorySearch";
+            this.Load += new System.EventHandler(this.CategorySearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

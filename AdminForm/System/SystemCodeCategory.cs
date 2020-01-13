@@ -16,5 +16,17 @@ namespace AdminForm
         {
             InitializeComponent();
         }
+
+        private void SystemCodeCategory_Load(object sender, EventArgs e)
+        {
+            ShowDgv();
+        }
+
+        private void ShowDgv()
+        {
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "시스템 대분류 코드", "1", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "시스템 대분류 명", "1", true, 180);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "1", true, 200);
+        }
     }
 }

@@ -146,6 +146,12 @@
     <Compile Include="PerformManagement\EndPallet.Designer.cs">
       <DependentUpon>EndPallet.cs</DependentUpon>
     </Compile>
+    <Compile Include="PerformManagement\FindPallet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerformManagement\FindPallet.Designer.cs">
+      <DependentUpon>FindPallet.cs</DependentUpon>
+    </Compile>
     <Compile Include="PerformManagement\GASUsingRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,11 +164,11 @@
     <Compile Include="PerformManagement\GVLookup.Designer.cs">
       <DependentUpon>GVLookup.cs</DependentUpon>
     </Compile>
-    <Compile Include="PerformManagement\GvMonitoring.cs">
+    <Compile Include="PerformManagement\GVMonitoring.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PerformManagement\GvMonitoring.Designer.cs">
-      <DependentUpon>GvMonitoring.cs</DependentUpon>
+    <Compile Include="PerformManagement\GVMonitoring.Designer.cs">
+      <DependentUpon>GVMonitoring.cs</DependentUpon>
     </Compile>
     <Compile Include="PerformManagement\GVStatus.cs">
       <SubType>Form</SubType>
@@ -226,22 +232,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PerformManagement\MaterialManagement.cs">
+    <Compile Include="qulityManagement\MaterialManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PerformManagement\MaterialManagement.Designer.cs">
+    <Compile Include="qulityManagement\MaterialManagement.Designer.cs">
       <DependentUpon>MaterialManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="PerformManagement\ProcessInquiry.cs">
+    <Compile Include="qulityManagement\ProcessInquiry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PerformManagement\ProcessInquiry.Designer.cs">
+    <Compile Include="qulityManagement\ProcessInquiry.Designer.cs">
       <DependentUpon>ProcessInquiry.cs</DependentUpon>
     </Compile>
-    <Compile Include="PerformManagement\QualityInquiry.cs">
+    <Compile Include="qulityManagement\QualityInquiry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PerformManagement\QualityInquiry.Designer.cs">
+    <Compile Include="qulityManagement\QualityInquiry.Designer.cs">
       <DependentUpon>QualityInquiry.cs</DependentUpon>
     </Compile>
     <Compile Include="qulityManagement\RegProcess.cs">
@@ -484,14 +490,17 @@
     <EmbeddedResource Include="PerformManagement\EndPallet.resx">
       <DependentUpon>EndPallet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PerformManagement\FindPallet.resx">
+      <DependentUpon>FindPallet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PerformManagement\GASUsingRegister.resx">
       <DependentUpon>GASUsingRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PerformManagement\GVLookup.resx">
       <DependentUpon>GVLookup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PerformManagement\GvMonitoring.resx">
-      <DependentUpon>GvMonitoring.cs</DependentUpon>
+    <EmbeddedResource Include="PerformManagement\GVMonitoring.resx">
+      <DependentUpon>GVMonitoring.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PerformManagement\GVStatus.resx">
       <DependentUpon>GVStatus.cs</DependentUpon>
@@ -532,13 +541,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="PerformManagement\MaterialManagement.resx">
+    <EmbeddedResource Include="qulityManagement\MaterialManagement.resx">
       <DependentUpon>MaterialManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PerformManagement\ProcessInquiry.resx">
+    <EmbeddedResource Include="qulityManagement\ProcessInquiry.resx">
       <DependentUpon>ProcessInquiry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PerformManagement\QualityInquiry.resx">
+    <EmbeddedResource Include="qulityManagement\QualityInquiry.resx">
       <DependentUpon>QualityInquiry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="qulityManagement\RegProcess.resx">

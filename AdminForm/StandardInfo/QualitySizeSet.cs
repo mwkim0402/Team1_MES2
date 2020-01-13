@@ -14,5 +14,30 @@ namespace AdminForm
         {
             InitializeComponent();
         }
+
+        private void QualitySizeSet_Load(object sender, EventArgs e)
+        {
+            ShowDgv();
+        }
+
+        private void ShowDgv()
+        {
+            tabPage3.Text = "";
+            tabPage4.Text = "";
+            CommonClass.AddNewColumnToDataGridView(dgvSelect, "품목 코드", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSelect, "품목 명", "1", true, 100);
+
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "검사항목", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격구분", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "SPEC", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "기준값", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "샘플크기", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "검사기기", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격구분", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정여부", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "1", true, 100);
+        }
     }
 }

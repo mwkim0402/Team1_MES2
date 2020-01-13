@@ -46,6 +46,13 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 38);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tabPage4.Size = new System.Drawing.Size(99, 0);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label2);
@@ -56,6 +63,13 @@
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.txtCatNameInput);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 38);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tabPage2.Size = new System.Drawing.Size(99, 0);
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -65,32 +79,35 @@
             this.panel2.Controls.Add(this.txtCatCode);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(16, 12);
+            this.panel2.Location = new System.Drawing.Point(18, 15);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1128, 67);
+            this.panel2.Size = new System.Drawing.Size(1289, 84);
             this.panel2.TabIndex = 4;
             // 
             // txtCatName
             // 
-            this.txtCatName.Location = new System.Drawing.Point(521, 25);
+            this.txtCatName.Location = new System.Drawing.Point(595, 31);
+            this.txtCatName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCatName.Name = "txtCatName";
-            this.txtCatName.Size = new System.Drawing.Size(152, 21);
+            this.txtCatName.Size = new System.Drawing.Size(173, 25);
             this.txtCatName.TabIndex = 6;
             // 
             // txtCatCode
             // 
-            this.txtCatCode.Location = new System.Drawing.Point(178, 25);
+            this.txtCatCode.Location = new System.Drawing.Point(203, 31);
+            this.txtCatCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCatCode.Name = "txtCatCode";
-            this.txtCatCode.Size = new System.Drawing.Size(152, 21);
+            this.txtCatCode.Size = new System.Drawing.Size(173, 25);
             this.txtCatCode.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(373, 27);
+            this.label3.Location = new System.Drawing.Point(426, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 16);
+            this.label3.Size = new System.Drawing.Size(163, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "시스템 대분류 명";
             // 
@@ -98,34 +115,38 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(29, 26);
+            this.label1.Location = new System.Drawing.Point(33, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 16);
+            this.label1.Size = new System.Drawing.Size(183, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "시스템 대분류 코드";
             // 
             // btnSave
             // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(1035, 20);
+            this.btnSave.Location = new System.Drawing.Point(1183, 25);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(82, 48);
+            this.btnSave.Size = new System.Drawing.Size(94, 60);
             this.btnSave.TabIndex = 56;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
             // txtCatNameInput
             // 
-            this.txtCatNameInput.Location = new System.Drawing.Point(470, 18);
+            this.txtCatNameInput.Location = new System.Drawing.Point(537, 22);
+            this.txtCatNameInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCatNameInput.Name = "txtCatNameInput";
-            this.txtCatNameInput.Size = new System.Drawing.Size(126, 21);
+            this.txtCatNameInput.Size = new System.Drawing.Size(143, 25);
             this.txtCatNameInput.TabIndex = 53;
             // 
             // txtCatCodeInput
             // 
-            this.txtCatCodeInput.Location = new System.Drawing.Point(182, 18);
+            this.txtCatCodeInput.Location = new System.Drawing.Point(208, 22);
+            this.txtCatCodeInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCatCodeInput.Name = "txtCatCodeInput";
-            this.txtCatCodeInput.Size = new System.Drawing.Size(126, 21);
+            this.txtCatCodeInput.Size = new System.Drawing.Size(143, 25);
             this.txtCatCodeInput.TabIndex = 52;
             // 
             // label21
@@ -133,9 +154,9 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label21.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label21.Location = new System.Drawing.Point(334, 20);
+            this.label21.Location = new System.Drawing.Point(382, 25);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(130, 16);
+            this.label21.Size = new System.Drawing.Size(163, 20);
             this.label21.TabIndex = 50;
             this.label21.Text = "시스템 대분류 명";
             // 
@@ -144,9 +165,9 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label23.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label23.Location = new System.Drawing.Point(19, 20);
+            this.label23.Location = new System.Drawing.Point(22, 25);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(146, 16);
+            this.label23.Size = new System.Drawing.Size(183, 20);
             this.label23.TabIndex = 49;
             this.label23.Text = "시스템 대분류 코드";
             // 
@@ -155,32 +176,35 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(617, 22);
+            this.label2.Location = new System.Drawing.Point(705, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 16);
+            this.label2.Size = new System.Drawing.Size(49, 20);
             this.label2.TabIndex = 57;
             this.label2.Text = "비고";
             // 
             // txtPS
             // 
-            this.txtPS.Location = new System.Drawing.Point(677, 20);
+            this.txtPS.Location = new System.Drawing.Point(774, 25);
+            this.txtPS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPS.Name = "txtPS";
-            this.txtPS.Size = new System.Drawing.Size(319, 21);
+            this.txtPS.Size = new System.Drawing.Size(364, 25);
             this.txtPS.TabIndex = 58;
             // 
             // SystemCodeCategory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 604);
+            this.ClientSize = new System.Drawing.Size(1321, 755);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SystemCodeCategory";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "SystemCodeCategory";
+            this.Load += new System.EventHandler(this.SystemCodeCategory_Load);
             this.Controls.SetChildIndex(this.tabControl4, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);
             this.Controls.SetChildIndex(this.panel2, 0);

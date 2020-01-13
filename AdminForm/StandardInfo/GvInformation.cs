@@ -16,5 +16,19 @@ namespace AdminForm
         {
             InitializeComponent();
         }
+
+        private void GvInformation_Load(object sender, EventArgs e)
+        {
+            ShowDgv();
+        }
+
+        private void ShowDgv()
+        {
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "대차코드", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "대차명", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "대차그룹", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "대차상태", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "1", true, 100);
+        }
     }
 }

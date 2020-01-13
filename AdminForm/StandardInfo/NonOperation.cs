@@ -16,5 +16,18 @@ namespace AdminForm
         {
             InitializeComponent();
         }
+
+        private void NonOperation_Load(object sender, EventArgs e)
+        {
+            ShowDgv();
+        }
+
+        private void ShowDgv()
+        {
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비가동 대분류 코드", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비가동 대분류 명", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "1", true, 100);
+        }
     }
 }

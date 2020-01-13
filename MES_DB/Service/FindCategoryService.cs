@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace MES_DB
 {
-    public class MenuTreeService
+    public class FindCategoryService
     {
-        public List<MenuTreeVo> GetAllMenu()
+        public List<FindCategoryVo> GetCategory()
         {
             MenuTreeDac dac = new MenuTreeDac();
-            return dac.GetAllMenu();
+            return dac.GetCategory();
         }
-
-
     }
 }

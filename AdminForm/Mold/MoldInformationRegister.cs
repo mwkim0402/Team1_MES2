@@ -34,7 +34,7 @@ namespace AdminForm
             AddNewColumnToDataGridView(dgvSearchResult, "금형상태", "Mold_Status", true, 100);
             AddNewColumnToDataGridView(dgvSearchResult, "금형누적타수", "Cum_Shot_Cnt", true, 150);
             AddNewColumnToDataGridView(dgvSearchResult, "금형누적생산량", "Cum_Prd_Qty", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형누적사용시간", "Cum_Time", true, 180);
+            AddNewColumnToDataGridView(dgvSearchResult, "금형누적사용시간", "Cum_Time", true, 145);
             AddNewColumnToDataGridView(dgvSearchResult, "보장타수", "Guar_Shot_Cnt", true, 100);
             AddNewColumnToDataGridView(dgvSearchResult, "구입금액", "Purchase_Amt", true, 100);
             AddNewColumnToDataGridView(dgvSearchResult, "입고일자", "In_Date", true, 150);

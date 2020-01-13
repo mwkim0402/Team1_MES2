@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AdminForm.PerformManagement
+namespace AdminForm
 {
-    public partial class GvMonitoring : Form
+    public partial class GVMonitoring : Form
     {
-        public GvMonitoring()
+        public GVMonitoring()
         {
             InitializeComponent();
         }

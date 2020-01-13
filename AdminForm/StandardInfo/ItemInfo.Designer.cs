@@ -167,16 +167,19 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtProdNameSearch);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(16, 12);
+            this.panel2.Location = new System.Drawing.Point(18, 15);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1128, 67);
+            this.panel2.Size = new System.Drawing.Size(1289, 84);
             this.panel2.TabIndex = 4;
             // 
             // btnERPDown
             // 
-            this.btnERPDown.Location = new System.Drawing.Point(970, 20);
+            this.btnERPDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnERPDown.Location = new System.Drawing.Point(1109, 25);
+            this.btnERPDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnERPDown.Name = "btnERPDown";
-            this.btnERPDown.Size = new System.Drawing.Size(139, 30);
+            this.btnERPDown.Size = new System.Drawing.Size(159, 38);
             this.btnERPDown.TabIndex = 27;
             this.btnERPDown.Text = "ERP Download";
             this.btnERPDown.UseVisualStyleBackColor = true;
@@ -184,70 +187,74 @@
             // cmbUsable
             // 
             this.cmbUsable.FormattingEnabled = true;
-            this.cmbUsable.Location = new System.Drawing.Point(799, 25);
+            this.cmbUsable.Location = new System.Drawing.Point(913, 31);
+            this.cmbUsable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbUsable.Name = "cmbUsable";
-            this.cmbUsable.Size = new System.Drawing.Size(119, 20);
+            this.cmbUsable.Size = new System.Drawing.Size(135, 23);
             this.cmbUsable.TabIndex = 22;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(721, 26);
+            this.label6.Location = new System.Drawing.Point(824, 32);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 16);
+            this.label6.Size = new System.Drawing.Size(89, 20);
             this.label6.TabIndex = 21;
             this.label6.Text = "사용유무";
             // 
             // cmbProdCat
             // 
             this.cmbProdCat.FormattingEnabled = true;
-            this.cmbProdCat.Location = new System.Drawing.Point(577, 24);
+            this.cmbProdCat.Location = new System.Drawing.Point(659, 30);
+            this.cmbProdCat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbProdCat.Name = "cmbProdCat";
-            this.cmbProdCat.Size = new System.Drawing.Size(119, 20);
+            this.cmbProdCat.Size = new System.Drawing.Size(135, 23);
             this.cmbProdCat.TabIndex = 16;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(499, 25);
+            this.label1.Location = new System.Drawing.Point(570, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 16);
+            this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 15;
             this.label1.Text = "품목유형";
             // 
             // txtProdCodeSearch
             // 
-            this.txtProdCodeSearch.Location = new System.Drawing.Point(93, 23);
+            this.txtProdCodeSearch.Location = new System.Drawing.Point(106, 29);
+            this.txtProdCodeSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProdCodeSearch.Name = "txtProdCodeSearch";
-            this.txtProdCodeSearch.Size = new System.Drawing.Size(141, 21);
+            this.txtProdCodeSearch.Size = new System.Drawing.Size(161, 25);
             this.txtProdCodeSearch.TabIndex = 14;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(18, 25);
+            this.label4.Location = new System.Drawing.Point(21, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 16);
+            this.label4.Size = new System.Drawing.Size(89, 20);
             this.label4.TabIndex = 13;
             this.label4.Text = "품목코드";
             // 
             // txtProdNameSearch
             // 
-            this.txtProdNameSearch.Location = new System.Drawing.Point(325, 24);
+            this.txtProdNameSearch.Location = new System.Drawing.Point(371, 30);
+            this.txtProdNameSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProdNameSearch.Name = "txtProdNameSearch";
-            this.txtProdNameSearch.Size = new System.Drawing.Size(141, 21);
+            this.txtProdNameSearch.Size = new System.Drawing.Size(161, 25);
             this.txtProdNameSearch.TabIndex = 12;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(263, 25);
+            this.label3.Location = new System.Drawing.Point(301, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 16);
+            this.label3.Size = new System.Drawing.Size(69, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "품목명";
             // 
@@ -255,21 +262,21 @@
             // 
             this.nuOutputPerCount.Location = new System.Drawing.Point(428, 134);
             this.nuOutputPerCount.Name = "nuOutputPerCount";
-            this.nuOutputPerCount.Size = new System.Drawing.Size(155, 21);
+            this.nuOutputPerCount.Size = new System.Drawing.Size(155, 25);
             this.nuOutputPerCount.TabIndex = 151;
             // 
             // nuTheoryOutput
             // 
             this.nuTheoryOutput.Location = new System.Drawing.Point(429, 96);
             this.nuTheoryOutput.Name = "nuTheoryOutput";
-            this.nuTheoryOutput.Size = new System.Drawing.Size(154, 21);
+            this.nuTheoryOutput.Size = new System.Drawing.Size(154, 25);
             this.nuTheoryOutput.TabIndex = 150;
             // 
             // nuFiringCount
             // 
             this.nuFiringCount.Location = new System.Drawing.Point(963, 133);
             this.nuFiringCount.Name = "nuFiringCount";
-            this.nuFiringCount.Size = new System.Drawing.Size(74, 21);
+            this.nuFiringCount.Size = new System.Drawing.Size(74, 25);
             this.nuFiringCount.TabIndex = 149;
             // 
             // label24
@@ -287,7 +294,7 @@
             // 
             this.nuDrycartCount.Location = new System.Drawing.Point(963, 96);
             this.nuDrycartCount.Name = "nuDrycartCount";
-            this.nuDrycartCount.Size = new System.Drawing.Size(74, 21);
+            this.nuDrycartCount.Size = new System.Drawing.Size(74, 25);
             this.nuDrycartCount.TabIndex = 147;
             // 
             // label23
@@ -305,7 +312,7 @@
             // 
             this.nuPCSPerShot.Location = new System.Drawing.Point(963, 60);
             this.nuPCSPerShot.Name = "nuPCSPerShot";
-            this.nuPCSPerShot.Size = new System.Drawing.Size(74, 21);
+            this.nuPCSPerShot.Size = new System.Drawing.Size(74, 25);
             this.nuPCSPerShot.TabIndex = 145;
             // 
             // label22
@@ -323,7 +330,7 @@
             // 
             this.nuPCSPerLine.Location = new System.Drawing.Point(963, 21);
             this.nuPCSPerLine.Name = "nuPCSPerLine";
-            this.nuPCSPerLine.Size = new System.Drawing.Size(74, 21);
+            this.nuPCSPerLine.Size = new System.Drawing.Size(74, 25);
             this.nuPCSPerLine.TabIndex = 143;
             // 
             // label21
@@ -342,7 +349,7 @@
             this.cbLv6.FormattingEnabled = true;
             this.cbLv6.Location = new System.Drawing.Point(669, 207);
             this.cbLv6.Name = "cbLv6";
-            this.cbLv6.Size = new System.Drawing.Size(108, 20);
+            this.cbLv6.Size = new System.Drawing.Size(108, 23);
             this.cbLv6.TabIndex = 140;
             // 
             // label19
@@ -361,7 +368,7 @@
             this.cbLv5.FormattingEnabled = true;
             this.cbLv5.Location = new System.Drawing.Point(669, 170);
             this.cbLv5.Name = "cbLv5";
-            this.cbLv5.Size = new System.Drawing.Size(108, 20);
+            this.cbLv5.Size = new System.Drawing.Size(108, 23);
             this.cbLv5.TabIndex = 138;
             // 
             // label20
@@ -380,7 +387,7 @@
             this.cbLv4.FormattingEnabled = true;
             this.cbLv4.Location = new System.Drawing.Point(669, 133);
             this.cbLv4.Name = "cbLv4";
-            this.cbLv4.Size = new System.Drawing.Size(108, 20);
+            this.cbLv4.Size = new System.Drawing.Size(108, 23);
             this.cbLv4.TabIndex = 136;
             // 
             // label12
@@ -399,7 +406,7 @@
             this.cbLv3.FormattingEnabled = true;
             this.cbLv3.Location = new System.Drawing.Point(669, 95);
             this.cbLv3.Name = "cbLv3";
-            this.cbLv3.Size = new System.Drawing.Size(108, 20);
+            this.cbLv3.Size = new System.Drawing.Size(108, 23);
             this.cbLv3.TabIndex = 134;
             // 
             // label18
@@ -418,7 +425,7 @@
             this.cbLv2.FormattingEnabled = true;
             this.cbLv2.Location = new System.Drawing.Point(669, 58);
             this.cbLv2.Name = "cbLv2";
-            this.cbLv2.Size = new System.Drawing.Size(108, 20);
+            this.cbLv2.Size = new System.Drawing.Size(108, 23);
             this.cbLv2.TabIndex = 132;
             // 
             // label5
@@ -437,7 +444,7 @@
             this.cbLv1.FormattingEnabled = true;
             this.cbLv1.Location = new System.Drawing.Point(669, 19);
             this.cbLv1.Name = "cbLv1";
-            this.cbLv1.Size = new System.Drawing.Size(108, 20);
+            this.cbLv1.Size = new System.Drawing.Size(108, 23);
             this.cbLv1.TabIndex = 130;
             // 
             // label2
@@ -469,7 +476,7 @@
             this.rbUse.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.rbUse.Location = new System.Drawing.Point(43, 28);
             this.rbUse.Name = "rbUse";
-            this.rbUse.Size = new System.Drawing.Size(42, 20);
+            this.rbUse.Size = new System.Drawing.Size(50, 24);
             this.rbUse.TabIndex = 77;
             this.rbUse.TabStop = true;
             this.rbUse.Text = "유";
@@ -481,7 +488,7 @@
             this.rbNoUse.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.rbNoUse.Location = new System.Drawing.Point(111, 28);
             this.rbNoUse.Name = "rbNoUse";
-            this.rbNoUse.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse.Size = new System.Drawing.Size(50, 24);
             this.rbNoUse.TabIndex = 79;
             this.rbNoUse.TabStop = true;
             this.rbNoUse.Text = "무";
@@ -513,7 +520,7 @@
             // 
             this.txtPS.Location = new System.Drawing.Point(107, 207);
             this.txtPS.Name = "txtPS";
-            this.txtPS.Size = new System.Drawing.Size(476, 21);
+            this.txtPS.Size = new System.Drawing.Size(476, 25);
             this.txtPS.TabIndex = 123;
             // 
             // label15
@@ -542,7 +549,7 @@
             // 
             this.txtCavity.Location = new System.Drawing.Point(107, 170);
             this.txtCavity.Name = "txtCavity";
-            this.txtCavity.Size = new System.Drawing.Size(154, 21);
+            this.txtCavity.Size = new System.Drawing.Size(154, 25);
             this.txtCavity.TabIndex = 119;
             // 
             // label13
@@ -560,7 +567,7 @@
             // 
             this.txtStandard.Location = new System.Drawing.Point(107, 129);
             this.txtStandard.Name = "txtStandard";
-            this.txtStandard.Size = new System.Drawing.Size(154, 21);
+            this.txtStandard.Size = new System.Drawing.Size(154, 25);
             this.txtStandard.TabIndex = 117;
             // 
             // label8
@@ -578,21 +585,21 @@
             // 
             this.txtProdCat.Location = new System.Drawing.Point(429, 22);
             this.txtProdCat.Name = "txtProdCat";
-            this.txtProdCat.Size = new System.Drawing.Size(154, 21);
+            this.txtProdCat.Size = new System.Drawing.Size(154, 25);
             this.txtProdCat.TabIndex = 113;
             // 
             // txtProNameInput
             // 
             this.txtProNameInput.Location = new System.Drawing.Point(107, 55);
             this.txtProNameInput.Name = "txtProNameInput";
-            this.txtProNameInput.Size = new System.Drawing.Size(154, 21);
+            this.txtProNameInput.Size = new System.Drawing.Size(154, 25);
             this.txtProNameInput.TabIndex = 112;
             // 
             // txtProdCodeInput
             // 
             this.txtProdCodeInput.Location = new System.Drawing.Point(107, 19);
             this.txtProdCodeInput.Name = "txtProdCodeInput";
-            this.txtProdCodeInput.Size = new System.Drawing.Size(154, 21);
+            this.txtProdCodeInput.Size = new System.Drawing.Size(154, 25);
             this.txtProdCodeInput.TabIndex = 111;
             // 
             // btnSave
@@ -653,38 +660,42 @@
             // 
             this.txtProdEngName.Location = new System.Drawing.Point(107, 91);
             this.txtProdEngName.Name = "txtProdEngName";
-            this.txtProdEngName.Size = new System.Drawing.Size(154, 21);
+            this.txtProdEngName.Size = new System.Drawing.Size(154, 25);
             this.txtProdEngName.TabIndex = 152;
             // 
             // txtProdEngInit
             // 
             this.txtProdEngInit.Location = new System.Drawing.Point(429, 57);
             this.txtProdEngInit.Name = "txtProdEngInit";
-            this.txtProdEngInit.Size = new System.Drawing.Size(154, 21);
+            this.txtProdEngInit.Size = new System.Drawing.Size(154, 25);
             this.txtProdEngInit.TabIndex = 153;
             // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage2);
             this.tabControl2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl2.Location = new System.Drawing.Point(16, 336);
+            this.tabControl2.Location = new System.Drawing.Point(18, 420);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(94, 28);
+            this.tabControl2.Size = new System.Drawing.Size(107, 35);
             this.tabControl2.TabIndex = 13;
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 32);
+            this.tabPage2.Location = new System.Drawing.Point(4, 38);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(86, 0);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Size = new System.Drawing.Size(99, 0);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "입력정보";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.numericUpDown6);
@@ -728,26 +739,30 @@
             this.panel1.Controls.Add(this.label26);
             this.panel1.Controls.Add(this.textBox12);
             this.panel1.Controls.Add(this.textBox14);
-            this.panel1.Location = new System.Drawing.Point(16, 364);
+            this.panel1.Location = new System.Drawing.Point(18, 455);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1132, 219);
+            this.panel1.Size = new System.Drawing.Size(1294, 274);
             this.panel1.TabIndex = 12;
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(1027, 106);
+            this.button1.Location = new System.Drawing.Point(1174, 28);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 78);
+            this.button1.Size = new System.Drawing.Size(94, 217);
             this.button1.TabIndex = 143;
             this.button1.Text = "저장";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // numericUpDown6
             // 
-            this.numericUpDown6.Location = new System.Drawing.Point(1074, 49);
+            this.numericUpDown6.Location = new System.Drawing.Point(1227, 61);
+            this.numericUpDown6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(52, 21);
+            this.numericUpDown6.Size = new System.Drawing.Size(59, 25);
             this.numericUpDown6.TabIndex = 142;
             // 
             // label44
@@ -755,17 +770,18 @@
             this.label44.AutoSize = true;
             this.label44.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label44.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label44.Location = new System.Drawing.Point(929, 53);
+            this.label44.Location = new System.Drawing.Point(1062, 66);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(141, 16);
+            this.label44.Size = new System.Drawing.Size(176, 20);
             this.label44.TabIndex = 141;
             this.label44.Text = "소성대차 기본수량";
             // 
             // numericUpDown5
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(1074, 18);
+            this.numericUpDown5.Location = new System.Drawing.Point(1227, 22);
+            this.numericUpDown5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(52, 21);
+            this.numericUpDown5.Size = new System.Drawing.Size(59, 25);
             this.numericUpDown5.TabIndex = 140;
             // 
             // label43
@@ -773,24 +789,26 @@
             this.label43.AutoSize = true;
             this.label43.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label43.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label43.Location = new System.Drawing.Point(929, 22);
+            this.label43.Location = new System.Drawing.Point(1062, 28);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(141, 16);
+            this.label43.Size = new System.Drawing.Size(176, 20);
             this.label43.TabIndex = 139;
             this.label43.Text = "건조대차 기본수량";
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(861, 52);
+            this.numericUpDown3.Location = new System.Drawing.Point(984, 65);
+            this.numericUpDown3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(52, 21);
+            this.numericUpDown3.Size = new System.Drawing.Size(59, 25);
             this.numericUpDown3.TabIndex = 138;
             // 
             // numericUpDown4
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(861, 20);
+            this.numericUpDown4.Location = new System.Drawing.Point(984, 25);
+            this.numericUpDown4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(52, 21);
+            this.numericUpDown4.Size = new System.Drawing.Size(59, 25);
             this.numericUpDown4.TabIndex = 137;
             // 
             // label41
@@ -798,9 +816,9 @@
             this.label41.AutoSize = true;
             this.label41.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label41.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label41.Location = new System.Drawing.Point(716, 56);
+            this.label41.Location = new System.Drawing.Point(818, 70);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(108, 16);
+            this.label41.Size = new System.Drawing.Size(134, 20);
             this.label41.TabIndex = 136;
             this.label41.Text = "한줄당 PCS수";
             // 
@@ -809,18 +827,19 @@
             this.label42.AutoSize = true;
             this.label42.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label42.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label42.Location = new System.Drawing.Point(716, 22);
+            this.label42.Location = new System.Drawing.Point(818, 28);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(126, 16);
+            this.label42.Size = new System.Drawing.Size(154, 20);
             this.label42.TabIndex = 135;
             this.label42.Text = "한Shot당 PCS수";
             // 
             // cmbLv6
             // 
             this.cmbLv6.FormattingEnabled = true;
-            this.cmbLv6.Location = new System.Drawing.Point(597, 189);
+            this.cmbLv6.Location = new System.Drawing.Point(682, 236);
+            this.cmbLv6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbLv6.Name = "cmbLv6";
-            this.cmbLv6.Size = new System.Drawing.Size(99, 20);
+            this.cmbLv6.Size = new System.Drawing.Size(113, 23);
             this.cmbLv6.TabIndex = 134;
             // 
             // label40
@@ -828,18 +847,19 @@
             this.label40.AutoSize = true;
             this.label40.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label40.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label40.Location = new System.Drawing.Point(514, 191);
+            this.label40.Location = new System.Drawing.Point(587, 239);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(59, 16);
+            this.label40.Size = new System.Drawing.Size(73, 20);
             this.label40.TabIndex = 133;
             this.label40.Text = "Level 6";
             // 
             // cmbLv5
             // 
             this.cmbLv5.FormattingEnabled = true;
-            this.cmbLv5.Location = new System.Drawing.Point(597, 156);
+            this.cmbLv5.Location = new System.Drawing.Point(682, 195);
+            this.cmbLv5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbLv5.Name = "cmbLv5";
-            this.cmbLv5.Size = new System.Drawing.Size(99, 20);
+            this.cmbLv5.Size = new System.Drawing.Size(113, 23);
             this.cmbLv5.TabIndex = 132;
             // 
             // label39
@@ -847,18 +867,19 @@
             this.label39.AutoSize = true;
             this.label39.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label39.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label39.Location = new System.Drawing.Point(514, 158);
+            this.label39.Location = new System.Drawing.Point(587, 198);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(59, 16);
+            this.label39.Size = new System.Drawing.Size(73, 20);
             this.label39.TabIndex = 131;
             this.label39.Text = "Level 5";
             // 
             // cmbLv4
             // 
             this.cmbLv4.FormattingEnabled = true;
-            this.cmbLv4.Location = new System.Drawing.Point(597, 123);
+            this.cmbLv4.Location = new System.Drawing.Point(682, 154);
+            this.cmbLv4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbLv4.Name = "cmbLv4";
-            this.cmbLv4.Size = new System.Drawing.Size(99, 20);
+            this.cmbLv4.Size = new System.Drawing.Size(113, 23);
             this.cmbLv4.TabIndex = 130;
             // 
             // label38
@@ -866,18 +887,19 @@
             this.label38.AutoSize = true;
             this.label38.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label38.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label38.Location = new System.Drawing.Point(514, 125);
+            this.label38.Location = new System.Drawing.Point(587, 156);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(60, 16);
+            this.label38.Size = new System.Drawing.Size(73, 20);
             this.label38.TabIndex = 129;
             this.label38.Text = "Level 4";
             // 
             // cmbLv3
             // 
             this.cmbLv3.FormattingEnabled = true;
-            this.cmbLv3.Location = new System.Drawing.Point(597, 87);
+            this.cmbLv3.Location = new System.Drawing.Point(682, 109);
+            this.cmbLv3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbLv3.Name = "cmbLv3";
-            this.cmbLv3.Size = new System.Drawing.Size(99, 20);
+            this.cmbLv3.Size = new System.Drawing.Size(113, 23);
             this.cmbLv3.TabIndex = 128;
             // 
             // label37
@@ -885,18 +907,19 @@
             this.label37.AutoSize = true;
             this.label37.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label37.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label37.Location = new System.Drawing.Point(514, 91);
+            this.label37.Location = new System.Drawing.Point(587, 114);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(59, 16);
+            this.label37.Size = new System.Drawing.Size(73, 20);
             this.label37.TabIndex = 127;
             this.label37.Text = "Level 3";
             // 
             // cmbLv2
             // 
             this.cmbLv2.FormattingEnabled = true;
-            this.cmbLv2.Location = new System.Drawing.Point(597, 51);
+            this.cmbLv2.Location = new System.Drawing.Point(682, 64);
+            this.cmbLv2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbLv2.Name = "cmbLv2";
-            this.cmbLv2.Size = new System.Drawing.Size(99, 20);
+            this.cmbLv2.Size = new System.Drawing.Size(113, 23);
             this.cmbLv2.TabIndex = 126;
             // 
             // label36
@@ -904,18 +927,19 @@
             this.label36.AutoSize = true;
             this.label36.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label36.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label36.Location = new System.Drawing.Point(514, 55);
+            this.label36.Location = new System.Drawing.Point(587, 69);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(59, 16);
+            this.label36.Size = new System.Drawing.Size(73, 20);
             this.label36.TabIndex = 125;
             this.label36.Text = "Level 2";
             // 
             // cmbLv1
             // 
             this.cmbLv1.FormattingEnabled = true;
-            this.cmbLv1.Location = new System.Drawing.Point(597, 17);
+            this.cmbLv1.Location = new System.Drawing.Point(682, 21);
+            this.cmbLv1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbLv1.Name = "cmbLv1";
-            this.cmbLv1.Size = new System.Drawing.Size(99, 20);
+            this.cmbLv1.Size = new System.Drawing.Size(113, 23);
             this.cmbLv1.TabIndex = 124;
             // 
             // label35
@@ -923,24 +947,26 @@
             this.label35.AutoSize = true;
             this.label35.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label35.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label35.Location = new System.Drawing.Point(514, 19);
+            this.label35.Location = new System.Drawing.Point(587, 24);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(59, 16);
+            this.label35.Size = new System.Drawing.Size(73, 20);
             this.label35.TabIndex = 123;
             this.label35.Text = "Level 1";
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(392, 157);
+            this.numericUpDown2.Location = new System.Drawing.Point(448, 196);
+            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(103, 21);
+            this.numericUpDown2.Size = new System.Drawing.Size(118, 25);
             this.numericUpDown2.TabIndex = 122;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(392, 125);
+            this.numericUpDown1.Location = new System.Drawing.Point(448, 156);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(103, 21);
+            this.numericUpDown1.Size = new System.Drawing.Size(118, 25);
             this.numericUpDown1.TabIndex = 121;
             // 
             // label34
@@ -948,9 +974,9 @@
             this.label34.AutoSize = true;
             this.label34.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label34.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label34.Location = new System.Drawing.Point(243, 161);
+            this.label34.Location = new System.Drawing.Point(278, 201);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(109, 16);
+            this.label34.Size = new System.Drawing.Size(136, 20);
             this.label34.TabIndex = 120;
             this.label34.Text = "횟수당 생산량";
             // 
@@ -959,9 +985,9 @@
             this.label33.AutoSize = true;
             this.label33.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label33.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label33.Location = new System.Drawing.Point(243, 127);
+            this.label33.Location = new System.Drawing.Point(278, 159);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(93, 16);
+            this.label33.Size = new System.Drawing.Size(116, 20);
             this.label33.TabIndex = 118;
             this.label33.Text = "이론 생산량";
             // 
@@ -970,17 +996,18 @@
             this.label32.AutoSize = true;
             this.label32.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label32.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label32.Location = new System.Drawing.Point(18, 91);
+            this.label32.Location = new System.Drawing.Point(21, 114);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(40, 16);
+            this.label32.Size = new System.Drawing.Size(49, 20);
             this.label32.TabIndex = 116;
             this.label32.Text = "규격";
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(126, 89);
+            this.textBox6.Location = new System.Drawing.Point(144, 111);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(103, 21);
+            this.textBox6.Size = new System.Drawing.Size(117, 25);
             this.textBox6.TabIndex = 117;
             // 
             // label31
@@ -988,17 +1015,18 @@
             this.label31.AutoSize = true;
             this.label31.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label31.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label31.Location = new System.Drawing.Point(18, 127);
+            this.label31.Location = new System.Drawing.Point(21, 159);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(56, 16);
+            this.label31.Size = new System.Drawing.Size(69, 20);
             this.label31.TabIndex = 114;
             this.label31.Text = "캐비티";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(126, 125);
+            this.textBox5.Location = new System.Drawing.Point(144, 156);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(103, 21);
+            this.textBox5.Size = new System.Drawing.Size(117, 25);
             this.textBox5.TabIndex = 115;
             // 
             // label30
@@ -1006,17 +1034,18 @@
             this.label30.AutoSize = true;
             this.label30.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label30.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label30.Location = new System.Drawing.Point(243, 19);
+            this.label30.Location = new System.Drawing.Point(278, 24);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(77, 16);
+            this.label30.Size = new System.Drawing.Size(96, 20);
             this.label30.TabIndex = 112;
             this.label30.Text = "품목 유형";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(392, 17);
+            this.textBox4.Location = new System.Drawing.Point(448, 21);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(103, 21);
+            this.textBox4.Size = new System.Drawing.Size(117, 25);
             this.textBox4.TabIndex = 113;
             // 
             // label29
@@ -1024,17 +1053,18 @@
             this.label29.AutoSize = true;
             this.label29.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label29.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label29.Location = new System.Drawing.Point(243, 91);
+            this.label29.Location = new System.Drawing.Point(278, 114);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(130, 16);
+            this.label29.Size = new System.Drawing.Size(163, 20);
             this.label29.TabIndex = 110;
             this.label29.Text = "품목 영문명 약어";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(392, 89);
+            this.textBox3.Location = new System.Drawing.Point(448, 111);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(103, 21);
+            this.textBox3.Size = new System.Drawing.Size(117, 25);
             this.textBox3.TabIndex = 111;
             // 
             // label28
@@ -1042,17 +1072,18 @@
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label28.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label28.Location = new System.Drawing.Point(243, 55);
+            this.label28.Location = new System.Drawing.Point(278, 69);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(93, 16);
+            this.label28.Size = new System.Drawing.Size(116, 20);
             this.label28.TabIndex = 108;
             this.label28.Text = "품목 영문명";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(392, 53);
+            this.textBox2.Location = new System.Drawing.Point(448, 66);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(103, 21);
+            this.textBox2.Size = new System.Drawing.Size(117, 25);
             this.textBox2.TabIndex = 109;
             // 
             // label27
@@ -1060,17 +1091,18 @@
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label27.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label27.Location = new System.Drawing.Point(18, 55);
+            this.label27.Location = new System.Drawing.Point(21, 69);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(56, 16);
+            this.label27.Size = new System.Drawing.Size(69, 20);
             this.label27.TabIndex = 106;
             this.label27.Text = "품목명";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(126, 53);
+            this.textBox1.Location = new System.Drawing.Point(144, 66);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(103, 21);
+            this.textBox1.Size = new System.Drawing.Size(117, 25);
             this.textBox1.TabIndex = 107;
             // 
             // groupBox1
@@ -1078,9 +1110,11 @@
             this.groupBox1.Controls.Add(this.radioButton9);
             this.groupBox1.Controls.Add(this.radioButton10);
             this.groupBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox1.Location = new System.Drawing.Point(745, 110);
+            this.groupBox1.Location = new System.Drawing.Point(851, 138);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(239, 64);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(273, 80);
             this.groupBox1.TabIndex = 105;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "사용여부";
@@ -1089,9 +1123,10 @@
             // 
             this.radioButton9.AutoSize = true;
             this.radioButton9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton9.Location = new System.Drawing.Point(74, 25);
+            this.radioButton9.Location = new System.Drawing.Point(85, 31);
+            this.radioButton9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(42, 20);
+            this.radioButton9.Size = new System.Drawing.Size(50, 24);
             this.radioButton9.TabIndex = 77;
             this.radioButton9.TabStop = true;
             this.radioButton9.Text = "유";
@@ -1101,9 +1136,10 @@
             // 
             this.radioButton10.AutoSize = true;
             this.radioButton10.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton10.Location = new System.Drawing.Point(142, 25);
+            this.radioButton10.Location = new System.Drawing.Point(162, 31);
+            this.radioButton10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(42, 20);
+            this.radioButton10.Size = new System.Drawing.Size(50, 24);
             this.radioButton10.TabIndex = 79;
             this.radioButton10.TabStop = true;
             this.radioButton10.Text = "무";
@@ -1114,9 +1150,9 @@
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label25.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label25.Location = new System.Drawing.Point(18, 19);
+            this.label25.Location = new System.Drawing.Point(21, 24);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(72, 16);
+            this.label25.Size = new System.Drawing.Size(89, 20);
             this.label25.TabIndex = 99;
             this.label25.Text = "품목코드";
             // 
@@ -1125,73 +1161,83 @@
             this.label26.AutoSize = true;
             this.label26.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label26.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label26.Location = new System.Drawing.Point(18, 188);
+            this.label26.Location = new System.Drawing.Point(21, 235);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(40, 16);
+            this.label26.Size = new System.Drawing.Size(49, 20);
             this.label26.TabIndex = 100;
             this.label26.Text = "비고";
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(126, 190);
+            this.textBox12.Location = new System.Drawing.Point(144, 238);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(369, 21);
+            this.textBox12.Size = new System.Drawing.Size(421, 25);
             this.textBox12.TabIndex = 103;
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(126, 17);
+            this.textBox14.Location = new System.Drawing.Point(144, 21);
+            this.textBox14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(103, 21);
+            this.textBox14.Size = new System.Drawing.Size(117, 25);
             this.textBox14.TabIndex = 102;
             // 
             // tabControl4
             // 
             this.tabControl4.Controls.Add(this.tabPage4);
             this.tabControl4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl4.Location = new System.Drawing.Point(16, 85);
+            this.tabControl4.Location = new System.Drawing.Point(18, 106);
+            this.tabControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(94, 28);
+            this.tabControl4.Size = new System.Drawing.Size(107, 35);
             this.tabControl4.TabIndex = 11;
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 32);
+            this.tabPage4.Location = new System.Drawing.Point(4, 38);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(86, 0);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage4.Size = new System.Drawing.Size(99, 0);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "조회내역";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // dgvSearchResult
             // 
+            this.dgvSearchResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSearchResult.BackgroundColor = System.Drawing.Color.White;
             this.dgvSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSearchResult.Location = new System.Drawing.Point(16, 114);
+            this.dgvSearchResult.Location = new System.Drawing.Point(18, 142);
+            this.dgvSearchResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvSearchResult.Name = "dgvSearchResult";
+            this.dgvSearchResult.RowHeadersWidth = 51;
             this.dgvSearchResult.RowTemplate.Height = 23;
-            this.dgvSearchResult.Size = new System.Drawing.Size(1132, 216);
+            this.dgvSearchResult.Size = new System.Drawing.Size(1294, 270);
             this.dgvSearchResult.TabIndex = 10;
             // 
             // ItemInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 604);
+            this.ClientSize = new System.Drawing.Size(1321, 755);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl4);
             this.Controls.Add(this.dgvSearchResult);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ItemInfo";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "ItemInfo";
+            this.Load += new System.EventHandler(this.ItemInfo_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuOutputPerCount)).EndInit();

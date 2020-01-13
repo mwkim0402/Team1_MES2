@@ -250,7 +250,7 @@ namespace AdminForm
                 Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", nameSpace, formName));
 
                 frm.TopLevel = false;
-                tabControl2.TabPages.Add(Form_Code);
+                tabControl2.TabPages.Add(Form_Code);                
                 tabControl2.TabPages[tabControl2.TabPages.Count - 1].Controls.Add(frm);
                 tabControl2.SelectedTab = tabControl2.TabPages[tabControl2.TabPages.Count - 1];
                 frm.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left;

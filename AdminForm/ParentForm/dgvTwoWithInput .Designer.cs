@@ -80,7 +80,7 @@
             this.dgvSearchResult.Name = "dgvSearchResult";
             this.dgvSearchResult.RowHeadersWidth = 51;
             this.dgvSearchResult.RowTemplate.Height = 23;
-            this.dgvSearchResult.Size = new System.Drawing.Size(739, 376);
+            this.dgvSearchResult.Size = new System.Drawing.Size(739, 327);
             this.dgvSearchResult.TabIndex = 6;
             // 
             // panel1
@@ -88,7 +88,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Location = new System.Drawing.Point(0, 443);
+            this.panel1.Location = new System.Drawing.Point(0, 394);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(744, 84);
             this.panel1.TabIndex = 8;
@@ -98,7 +98,7 @@
             this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tabControl2.Controls.Add(this.tabPage2);
             this.tabControl2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl2.Location = new System.Drawing.Point(8, 414);
+            this.tabControl2.Location = new System.Drawing.Point(8, 365);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(94, 28);
@@ -145,7 +145,7 @@
             this.dgvSelect.Name = "dgvSelect";
             this.dgvSelect.RowHeadersWidth = 51;
             this.dgvSelect.RowTemplate.Height = 23;
-            this.dgvSelect.Size = new System.Drawing.Size(371, 495);
+            this.dgvSelect.Size = new System.Drawing.Size(371, 448);
             this.dgvSelect.TabIndex = 10;
             // 
             // splitContainer1
@@ -167,7 +167,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.dgvSearchResult);
             this.splitContainer1.Panel2.Controls.Add(this.tabControl2);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1122, 527);
+            this.splitContainer1.Size = new System.Drawing.Size(1122, 480);
             this.splitContainer1.SplitterDistance = 373;
             this.splitContainer1.TabIndex = 12;
             // 

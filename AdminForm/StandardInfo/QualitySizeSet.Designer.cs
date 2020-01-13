@@ -92,13 +92,13 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtDataDESC);
             this.panel1.Controls.Add(this.label25);
-            this.panel1.Location = new System.Drawing.Point(0, 474);
+            this.panel1.Location = new System.Drawing.Point(0, 386);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Size = new System.Drawing.Size(837, 91);
+            this.panel1.Size = new System.Drawing.Size(742, 91);
             // 
             // tabControl2
             // 
-            this.tabControl2.Location = new System.Drawing.Point(2, 445);
+            this.tabControl2.Location = new System.Drawing.Point(2, 357);
             this.tabControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             // 
             // tabPage2
@@ -301,7 +301,7 @@
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(760, 15);
+            this.btnSave.Location = new System.Drawing.Point(665, 15);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(61, 60);
             this.btnSave.TabIndex = 125;
@@ -314,7 +314,7 @@
             this.gbUsable.Controls.Add(this.rbY);
             this.gbUsable.Controls.Add(this.rbN);
             this.gbUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.gbUsable.Location = new System.Drawing.Point(653, 9);
+            this.gbUsable.Location = new System.Drawing.Point(558, 9);
             this.gbUsable.Name = "gbUsable";
             this.gbUsable.Size = new System.Drawing.Size(94, 74);
             this.gbUsable.TabIndex = 124;

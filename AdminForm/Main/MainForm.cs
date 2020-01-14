@@ -227,7 +227,7 @@ namespace AdminForm
             {
                 return;
             }
-            MenuTreeVo selectMenu = menuList.Find(x => x.Screen_Code == trv.SelectedNode.Text);
+            MenuTreeVo selectMenu = menuList.Find(x => x.Screen_Code.Trim() == trv.SelectedNode.Text);
             if (selectMenu.Parent_Screen_Code != null)
             {
                 // 중복된 페이지를 여는 것을 막는다.

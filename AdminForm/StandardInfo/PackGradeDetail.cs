@@ -28,9 +28,9 @@ namespace AdminForm
             tabPage4.Text = "";
             CommonClass.AddNewColumnToDataGridView(dgvSelect, "포장 등급", "1", true, 100);
 
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "포장등급 상세코드", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "포장등급 상세 명", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "상세명 수동 입력 여부", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "포장등급 상세코드", "1", true, 160);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "포장등급 상세 명", "1", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "상세명 수동 입력 여부", "1", true, 160);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "1", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "1", true, 100);
         }

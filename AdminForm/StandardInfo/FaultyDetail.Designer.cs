@@ -62,13 +62,13 @@
             this.panel1.Controls.Add(this.label25);
             this.panel1.Controls.Add(this.txtNote);
             this.panel1.Controls.Add(this.txtNumber);
-            this.panel1.Location = new System.Drawing.Point(3, 418);
+            this.panel1.Location = new System.Drawing.Point(3, 397);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Size = new System.Drawing.Size(743, 81);
+            this.panel1.Size = new System.Drawing.Size(742, 81);
             // 
             // tabControl2
             // 
-            this.tabControl2.Location = new System.Drawing.Point(4, 473);
+            this.tabControl2.Location = new System.Drawing.Point(4, 366);
             this.tabControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl2.Size = new System.Drawing.Size(187, 28);
             // 
@@ -97,6 +97,7 @@
             // 
             // fcFault
             // 
+            this.fcFault.CategoryTable = null;
             this.fcFault.Location = new System.Drawing.Point(169, 23);
             this.fcFault.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fcFault.Name = "fcFault";
@@ -189,7 +190,7 @@
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(646, 22);
+            this.btnSave.Location = new System.Drawing.Point(645, 22);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(82, 48);
             this.btnSave.TabIndex = 130;

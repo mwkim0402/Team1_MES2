@@ -82,6 +82,8 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel2.Controls.Add(this.fcUserAssortCat);
             this.panel2.Controls.Add(this.label1);
@@ -92,6 +94,7 @@
             // 
             // fcUserAssortCat
             // 
+            this.fcUserAssortCat.CategoryTable = null;
             this.fcUserAssortCat.Location = new System.Drawing.Point(197, 22);
             this.fcUserAssortCat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fcUserAssortCat.Name = "fcUserAssortCat";

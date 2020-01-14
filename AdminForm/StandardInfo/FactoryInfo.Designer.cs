@@ -50,7 +50,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtJobOrderInit = new System.Windows.Forms.TextBox();
@@ -98,9 +97,11 @@
             this.rbUse_OrderCreate = new System.Windows.Forms.RadioButton();
             this.rbNoUse_OrderCreate = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabControl1.SuspendLayout();
+            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -112,15 +113,10 @@
             this.gbAutoStart.SuspendLayout();
             this.gbGasUsable.SuspendLayout();
             this.gbAutoCreate.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            this.tabControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 32);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Size = new System.Drawing.Size(86, 0);
             // 
             // panel2
             // 
@@ -143,6 +139,7 @@
             // 
             // fcFactory
             // 
+            this.fcFactory.Category = AdminForm.CategoryMode.Process;
             this.fcFactory.Location = new System.Drawing.Point(62, 23);
             this.fcFactory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fcFactory.Name = "fcFactory";
@@ -339,15 +336,6 @@
             this.textBox4.Size = new System.Drawing.Size(152, 21);
             this.textBox4.TabIndex = 103;
             // 
-            // tabControl3
-            // 
-            this.tabControl3.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tabControl3.Location = new System.Drawing.Point(12, 87);
-            this.tabControl3.Name = "tabControl3";
-            this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(94, 28);
-            this.tabControl3.TabIndex = 9;
-            // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
@@ -392,9 +380,9 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.gbAutoCreate);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Location = new System.Drawing.Point(13, 355);
+            this.panel1.Location = new System.Drawing.Point(13, 359);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1132, 244);
+            this.panel1.Size = new System.Drawing.Size(1132, 240);
             this.panel1.TabIndex = 10;
             // 
             // txtJobOrderInit
@@ -610,9 +598,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(1022, 55);
+            this.btnSave.Location = new System.Drawing.Point(1045, 55);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(82, 132);
             this.btnSave.TabIndex = 110;
@@ -879,35 +867,69 @@
             this.label10.TabIndex = 101;
             this.label10.Text = "작업장코드";
             // 
-            // tabPage2
+            // tabControl4
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(86, 0);
-            this.tabPage2.TabIndex = 0;
-            this.tabPage2.Text = "입력정보";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabControl4.Controls.Add(this.tabPage4);
+            this.tabControl4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl4.Location = new System.Drawing.Point(16, 85);
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedIndex = 0;
+            this.tabControl4.Size = new System.Drawing.Size(94, 28);
+            this.tabControl4.TabIndex = 13;
             // 
-            // tabControl2
+            // tabPage4
             // 
-            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tabControl2.Controls.Add(this.tabPage2);
-            this.tabControl2.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tabControl2.Location = new System.Drawing.Point(13, 327);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(94, 28);
-            this.tabControl2.TabIndex = 11;
+            this.tabPage4.Location = new System.Drawing.Point(4, 32);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(86, 0);
+            this.tabPage4.TabIndex = 0;
+            this.tabPage4.Text = "조회내역";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(15, 113);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(1132, 216);
+            this.dataGridView1.TabIndex = 12;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(16, 330);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(94, 28);
+            this.tabControl1.TabIndex = 14;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(86, 0);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "입력정보";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // FactoryInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 604);
-            this.Controls.Add(this.tabControl2);
+            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl4);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tabControl3);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -918,12 +940,6 @@
             this.ShowInTaskbar = false;
             this.Text = "FactoryInfo";
             this.Load += new System.EventHandler(this.FactoryInfo_Load);
-            this.Controls.SetChildIndex(this.panel2, 0);
-            this.Controls.SetChildIndex(this.tabControl3, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.tabControl2, 0);
-            this.Controls.SetChildIndex(this.tabControl1, 0);
-            this.tabControl1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -946,7 +962,9 @@
             this.gbGasUsable.PerformLayout();
             this.gbAutoCreate.ResumeLayout(false);
             this.gbAutoCreate.PerformLayout();
-            this.tabControl2.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -971,7 +989,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox txtWPCode;
-        private System.Windows.Forms.TabControl tabControl3;
         private System.Windows.Forms.TabPage tabPage3;
         protected System.Windows.Forms.Panel panel1;
         private FIndCategory fcFactory;
@@ -1022,7 +1039,10 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtFactoryNameInput;
         private System.Windows.Forms.Label label8;
-        protected System.Windows.Forms.TabPage tabPage2;
-        protected System.Windows.Forms.TabControl tabControl2;
+        protected System.Windows.Forms.TabControl tabControl4;
+        protected System.Windows.Forms.TabPage tabPage4;
+        protected System.Windows.Forms.DataGridView dataGridView1;
+        protected System.Windows.Forms.TabControl tabControl1;
+        protected System.Windows.Forms.TabPage tabPage1;
     }
 }

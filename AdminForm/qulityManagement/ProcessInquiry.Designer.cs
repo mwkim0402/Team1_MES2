@@ -41,6 +41,11 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Size = new System.Drawing.Size(86, 0);
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -61,6 +66,7 @@
             // 
             // fcWork
             // 
+            this.fcWork.Category = AdminForm.CategoryMode.WorkCenter;
             this.fcWork.Location = new System.Drawing.Point(794, 18);
             this.fcWork.Name = "fcWork";
             this.fcWork.Size = new System.Drawing.Size(190, 27);
@@ -68,6 +74,7 @@
             // 
             // fcFactory
             // 
+            this.fcFactory.Category = AdminForm.CategoryMode.Process;
             this.fcFactory.Location = new System.Drawing.Point(491, 16);
             this.fcFactory.Name = "fcFactory";
             this.fcFactory.Size = new System.Drawing.Size(190, 27);

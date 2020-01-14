@@ -35,6 +35,11 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Size = new System.Drawing.Size(86, 0);
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -49,6 +54,7 @@
             // 
             // fcUserGroup
             // 
+            this.fcUserGroup.Category = AdminForm.CategoryMode.ScreenItem;
             this.fcUserGroup.Location = new System.Drawing.Point(135, 22);
             this.fcUserGroup.Name = "fcUserGroup";
             this.fcUserGroup.Size = new System.Drawing.Size(190, 27);

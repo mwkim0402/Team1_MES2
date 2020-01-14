@@ -58,6 +58,7 @@
             // 
             // fcWorker
             // 
+            this.fcWorker.Category = AdminForm.CategoryMode.Employees;
             this.fcWorker.Location = new System.Drawing.Point(419, 21);
             this.fcWorker.Name = "fcWorker";
             this.fcWorker.Size = new System.Drawing.Size(190, 27);

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AdminForm
 {
-    public partial class FactoryInfo : AdminForm.dgvOne
+    public partial class FactoryInfo : Form
     {
         public FactoryInfo()
         {
@@ -22,26 +22,29 @@ namespace AdminForm
 
         private void ShowDgv()
         {
-            dgvSearchResult.Size = new System.Drawing.Size(1130, 190);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업장 코드", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업장 명", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업장 유형", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시 자동시작 여부", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정 코드", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정 명", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시 자동 생성 유무", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "자동 비가동 여부", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "자동 비가동 시간", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "마지막 실적 시각", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "Gas 사용 여부", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "실적등록유형", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "실적단위", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "팔레트생성유무", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형장착여부", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "투입수량자동처리여부", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시이니셜", "1", true, 100);
+            dataGridView1.Size = new System.Drawing.Size(1132, 190);
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업장 코드", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업장 명", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업장 유형", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업지시 자동시작 여부", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "공정 코드", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "공정 명", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업지시 자동 생성 유무", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "자동 비가동 여부", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "자동 비가동 시간", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "마지막 실적 시각", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "Gas 사용 여부", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "실적등록유형", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "실적단위", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "팔레트생성유무", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "비고", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "금형장착여부", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "투입수량자동처리여부", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업지시이니셜", "1", true, 100);
         }
     }
 }

@@ -37,7 +37,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbOrderState = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.fcWorkPlace = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
+            this.fcFactory = new AdminForm.FIndCategory();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
@@ -46,8 +48,6 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.fcWorkPlace = new AdminForm.FIndCategory();
-            this.fcFactory = new AdminForm.FIndCategory();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
             this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -126,6 +126,14 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "작업지시상태";
             // 
+            // fcWorkPlace
+            // 
+            this.fcWorkPlace.Category = AdminForm.CategoryMode.WorkCenter;
+            this.fcWorkPlace.Location = new System.Drawing.Point(665, 22);
+            this.fcWorkPlace.Name = "fcWorkPlace";
+            this.fcWorkPlace.Size = new System.Drawing.Size(190, 27);
+            this.fcWorkPlace.TabIndex = 7;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -135,6 +143,14 @@
             this.label4.Size = new System.Drawing.Size(56, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "작업장";
+            // 
+            // fcFactory
+            // 
+            this.fcFactory.Category = AdminForm.CategoryMode.Process;
+            this.fcFactory.Location = new System.Drawing.Point(403, 22);
+            this.fcFactory.Name = "fcFactory";
+            this.fcFactory.Size = new System.Drawing.Size(190, 27);
+            this.fcFactory.TabIndex = 5;
             // 
             // label3
             // 
@@ -221,20 +237,6 @@
             this.chart1.Size = new System.Drawing.Size(1132, 180);
             this.chart1.TabIndex = 7;
             this.chart1.Text = "chart1";
-            // 
-            // fcWorkPlace
-            // 
-            this.fcWorkPlace.Location = new System.Drawing.Point(665, 22);
-            this.fcWorkPlace.Name = "fcWorkPlace";
-            this.fcWorkPlace.Size = new System.Drawing.Size(190, 27);
-            this.fcWorkPlace.TabIndex = 7;
-            // 
-            // fcFactory
-            // 
-            this.fcFactory.Location = new System.Drawing.Point(403, 22);
-            this.fcFactory.Name = "fcFactory";
-            this.fcFactory.Size = new System.Drawing.Size(190, 27);
-            this.fcFactory.TabIndex = 5;
             // 
             // PerformTimeLine
             // 

@@ -49,8 +49,15 @@
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 32);
+            this.tabPage4.Size = new System.Drawing.Size(86, 0);
+            // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.cmbSort);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtPS);
@@ -59,10 +66,21 @@
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.txtCatCodeInput);
             this.panel1.Controls.Add(this.txtCatNameInput);
+            this.panel1.Size = new System.Drawing.Size(850, 84);
             // 
             // tabControl2
             // 
-            this.tabControl2.Location = new System.Drawing.Point(5, 364);
+            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 32);
+            this.tabPage2.Size = new System.Drawing.Size(86, 0);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 32);
+            this.tabPage3.Size = new System.Drawing.Size(76, 0);
             // 
             // panel3
             // 
@@ -82,7 +100,7 @@
             // 
             // fcCategory
             // 
-            this.fcCategory.CategoryTable = null;
+            this.fcCategory.Category = AdminForm.CategoryMode.System;
             this.fcCategory.Location = new System.Drawing.Point(165, 22);
             this.fcCategory.Name = "fcCategory";
             this.fcCategory.Size = new System.Drawing.Size(190, 27);

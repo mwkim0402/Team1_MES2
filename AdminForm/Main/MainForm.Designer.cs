@@ -31,12 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.btnS = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.btnCreate = new System.Windows.Forms.ToolStripButton();
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.trvBookMark = new System.Windows.Forms.TreeView();
             this.button7 = new System.Windows.Forms.Button();
@@ -65,7 +66,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.btnS = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -99,6 +99,27 @@
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.AutoSize = false;
+            this.toolStripLabel1.Image = global::AdminForm.Properties.Resources.teamlogo;
+            this.toolStripLabel1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripLabel1.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(230, 200);
+            // 
+            // btnS
+            // 
+            this.btnS.AutoSize = false;
+            this.btnS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnS.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnS.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
+            this.btnS.Name = "btnS";
+            this.btnS.Size = new System.Drawing.Size(40, 50);
+            this.btnS.Text = "조회";
+            this.btnS.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
             // btnSave
             // 
             this.btnSave.AutoSize = false;
@@ -107,7 +128,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(40, 50);
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "저장";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -119,7 +140,7 @@
             this.btnCreate.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(40, 50);
-            this.btnCreate.Text = "Create";
+            this.btnCreate.Text = "생성";
             this.btnCreate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCreate.ToolTipText = "작성";
@@ -132,7 +153,7 @@
             this.btnEdit.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(40, 50);
-            this.btnEdit.Text = "Edit";
+            this.btnEdit.Text = "수정";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEdit.ToolTipText = "수정";
@@ -145,7 +166,7 @@
             this.btnDelete.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(40, 50);
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "삭제";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDelete.ToolTipText = "삭제";
@@ -155,15 +176,6 @@
             this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 81);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.AutoSize = false;
-            this.toolStripLabel1.Image = global::AdminForm.Properties.Resources.teamlogo;
-            this.toolStripLabel1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripLabel1.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(200, 200);
             // 
             // pnlMenu
             // 
@@ -186,7 +198,8 @@
             // 
             this.trvBookMark.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.trvBookMark.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.trvBookMark.Indent = 20;
+            this.trvBookMark.Indent = 30;
+            this.trvBookMark.ItemHeight = 30;
             this.trvBookMark.Location = new System.Drawing.Point(0, 218);
             this.trvBookMark.Name = "trvBookMark";
             this.trvBookMark.ShowLines = false;
@@ -457,18 +470,6 @@
             this.button8.TabIndex = 12;
             this.button8.Text = "로그인";
             this.button8.UseVisualStyleBackColor = true;
-            // 
-            // btnS
-            // 
-            this.btnS.AutoSize = false;
-            this.btnS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnS.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnS.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
-            this.btnS.Name = "btnS";
-            this.btnS.Size = new System.Drawing.Size(40, 50);
-            this.btnS.Text = "Search";
-            this.btnS.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // MainForm
             // 

@@ -25,7 +25,7 @@ namespace AdminForm
 
 
             this.tabControl2.ItemSize = new Size(150, 20);
-         
+
             // Add the Handler to draw the Image on Tab Pages
             tabControl2.DrawItem += tabControl4_DrawItem;
         }
@@ -123,24 +123,31 @@ namespace AdminForm
         }
 
         private void CreateMenuTree(string ParentMenu)
-        {
+        {         
             trvMenu.Nodes.Clear();
             trvMenu.ItemHeight = 25;
             List<MenuTreeVo> childMenu = (from item in menuList
                                           where item.Parent_Screen_Code == ParentMenu
                                           orderby item.Sort_index
                                           select item).ToList();
+
             trvMenu.Nodes.Add(ParentMenu);
+            trvMenu.Nodes[0].ImageIndex = 0;
             foreach (MenuTreeVo item in childMenu)
+            {                                
+                trvMenu.Nodes[0].Nodes.Add(item.Screen_Code.Trim());            
+            }
+            for(int i =0; i<trvMenu.Nodes[0].Nodes.Count; i++)
             {
-                trvMenu.Nodes[0].Nodes.Add(item.Screen_Code.Trim());
+                trvMenu.Nodes[0].Nodes[i].ImageIndex = 1;
+                trvMenu.Nodes[0].Nodes[i].SelectedImageIndex = 1;
             }
             trvMenu.ExpandAll();
         }
 
         private void SetButtonImage()
         {
-            btnS.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\조회 32x32.jpg");           
+            btnS.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\조회 32x32.jpg");
             btnCreate.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Report2_32x32.png");
             btnSave.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Action_Save_New_32x32.png");
             btnEdit.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Edit_32x32.png");
@@ -148,10 +155,12 @@ namespace AdminForm
             btnSearch.Image = new Bitmap(Application.StartupPath + @"\image\searchBtn.png");
             pictureBox1.Image = new Bitmap(Application.StartupPath + @"\image\mark.jpg");
             ImageList imgList = new ImageList();
-            imgList.Images.Add(new Bitmap(Application.StartupPath +@"\image\doc_icon.png"));
+            imgList.Images.Add(new Bitmap(Application.StartupPath + @"\image\doc_icon.png"));
+            imgList.Images.Add(new Bitmap(Application.StartupPath + @"\image\Notes_16x16.png"));
             trvMenu.ImageList = imgList;
 
             ImageList bookImgList = new ImageList();
+            bookImgList.Images.Add(new Bitmap(Application.StartupPath + @"\image\star_16x16.png"));
             bookImgList.Images.Add(new Bitmap(Application.StartupPath + @"\image\bookmark.png"));
             trvBookMark.ImageList = bookImgList;
 
@@ -173,14 +182,14 @@ namespace AdminForm
                 Rectangle r = e.Bounds;
                 r = this.tabControl2.GetTabRect(e.Index);
                 r.Offset(2, 2);
-                
+
                 Brush TitleBrush = new SolidBrush(Color.Black);
                 Font f = this.Font;
 
                 string title = this.tabControl2.TabPages[e.Index].Text;
                 this.tabControl2.SizeMode = TabSizeMode.Fixed;
                 e.Graphics.DrawString(title, f, TitleBrush, new PointF(r.X, r.Y));
-                e.Graphics.DrawImage(img, new Point(r.X + (this.tabControl2.GetTabRect(e.Index).Width - _imageLocation.X+8), _imageLocation.Y - 3));
+                e.Graphics.DrawImage(img, new Point(r.X + (this.tabControl2.GetTabRect(e.Index).Width - _imageLocation.X + 8), _imageLocation.Y - 3));
             }
             catch (Exception err) { System.Windows.Forms.MessageBox.Show(err.Message); }
         }
@@ -200,7 +209,7 @@ namespace AdminForm
                 TabPage TabP = (TabPage)tc.TabPages[tc.SelectedIndex];
                 tc.TabPages.Remove(TabP);
             }
-       
+
             // Form tempChild = this.ActiveMdiChild;
             // tempChild.Close();
         }
@@ -214,11 +223,11 @@ namespace AdminForm
         private void trvBookMark_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             TreeView trv = (TreeView)sender;
-            if (trv.SelectedNode == null)
+            if (trv.SelectedNode == null || trv.SelectedNode.Text=="즐겨찾기")
             {
                 return;
             }
-            MenuTreeVo selectMenu = menuList.Find(x => x.Screen_Code.Contains(trv.SelectedNode.Text));
+            MenuTreeVo selectMenu = menuList.Find(x => x.Screen_Code == trv.SelectedNode.Text);
             if (selectMenu.Parent_Screen_Code != null)
             {
                 // 중복된 페이지를 여는 것을 막는다.
@@ -233,7 +242,7 @@ namespace AdminForm
                 newForm(selectMenu.Form_Name, selectMenu.Screen_Code.Trim());
                 lblLocation.Text = "위치 정보 : " + selectMenu.Parent_Screen_Code.Trim() + " > " + selectMenu.Screen_Code.Trim();
             }
-            
+
         }
         /// <summary>
         /// 새로운 폼 생성
@@ -250,7 +259,7 @@ namespace AdminForm
                 Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", nameSpace, formName));
 
                 frm.TopLevel = false;
-                tabControl2.TabPages.Add(Form_Code);                
+                tabControl2.TabPages.Add(Form_Code);
                 tabControl2.TabPages[tabControl2.TabPages.Count - 1].Controls.Add(frm);
                 tabControl2.SelectedTab = tabControl2.TabPages[tabControl2.TabPages.Count - 1];
                 frm.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left;
@@ -271,7 +280,7 @@ namespace AdminForm
                 item.BackColor = SystemColors.AppWorkspace;
             }
             Button btn = (Button)sender;
-            if(btn.Name == "btnMenu")
+            if (btn.Name == "btnMenu")
             {
                 setVisiblMenu(true);
                 if (!open)
@@ -284,7 +293,22 @@ namespace AdminForm
             {
                 trvBookMark.Nodes.Clear();
                 setVisiblMenu(false);
-                trvBookMark.Nodes.Add("사용자그룹관리");
+                trvBookMark.Nodes.Add("즐겨찾기");
+                trvBookMark.Nodes[0].ImageIndex = 0;
+
+                trvBookMark.Nodes[0].Nodes.Add("사용자그룹관리");
+                trvBookMark.Nodes[0].Nodes.Add("불량현상 상세분류");
+                trvBookMark.Nodes[0].Nodes.Add("품질측정값 조회");
+                trvBookMark.Nodes[0].Nodes.Add("소성작업일지");
+                trvBookMark.Nodes[0].Nodes.Add("완제품 입고리스트");
+
+                for(int i=0; i<trvBookMark.Nodes[0].Nodes.Count; i++)
+                {
+                    trvBookMark.Nodes[0].Nodes[i].ImageIndex = 1;
+                    trvBookMark.Nodes[0].Nodes[i].SelectedImageIndex = 1;
+                }
+
+                trvBookMark.ExpandAll();
             }
             btn.BackColor = SystemColors.ActiveCaptionText;
         }
@@ -305,7 +329,7 @@ namespace AdminForm
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
         {
             TabControl tc = (TabControl)sender;
-            if(tc.SelectedTab == null)
+            if (tc.SelectedTab == null)
             {
                 lblLocation.Text = "";
                 return;

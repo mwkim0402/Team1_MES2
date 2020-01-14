@@ -224,6 +224,7 @@
             // 
             // fcWork
             // 
+            this.fcWork.Category = AdminForm.CategoryMode.WorkCenter;
             this.fcWork.Location = new System.Drawing.Point(764, 18);
             this.fcWork.Name = "fcWork";
             this.fcWork.Size = new System.Drawing.Size(190, 27);
@@ -231,6 +232,7 @@
             // 
             // fcFactory
             // 
+            this.fcFactory.Category = AdminForm.CategoryMode.Process;
             this.fcFactory.Location = new System.Drawing.Point(485, 18);
             this.fcFactory.Name = "fcFactory";
             this.fcFactory.Size = new System.Drawing.Size(190, 27);

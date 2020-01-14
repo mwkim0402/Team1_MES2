@@ -116,10 +116,10 @@
     <Compile Include="Journal\PackingWorkReport.Designer.cs">
       <DependentUpon>PackingWorkReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Journal\WorkReportParent.cs">
+    <Compile Include="ParentForm\WorkReportParent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Journal\WorkReportParent.Designer.cs">
+    <Compile Include="ParentForm\WorkReportParent.Designer.cs">
       <DependentUpon>WorkReportParent.cs</DependentUpon>
     </Compile>
     <Compile Include="Journal\MoldingWorkReport.cs">
@@ -475,7 +475,7 @@
     <EmbeddedResource Include="Journal\PackingWorkReport.resx">
       <DependentUpon>PackingWorkReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Journal\WorkReportParent.resx">
+    <EmbeddedResource Include="ParentForm\WorkReportParent.resx">
       <DependentUpon>WorkReportParent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Journal\MoldingWorkReport.resx">

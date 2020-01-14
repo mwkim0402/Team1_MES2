@@ -37,6 +37,11 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Size = new System.Drawing.Size(86, 0);
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -53,6 +58,7 @@
             // 
             // fcTruckGroup
             // 
+            this.fcTruckGroup.Category = AdminForm.CategoryMode.GV;
             this.fcTruckGroup.Location = new System.Drawing.Point(114, 22);
             this.fcTruckGroup.Name = "fcTruckGroup";
             this.fcTruckGroup.Size = new System.Drawing.Size(190, 27);
@@ -70,6 +76,7 @@
             // 
             // fcCategory
             // 
+            this.fcCategory.Category = AdminForm.CategoryMode.Item;
             this.fcCategory.Location = new System.Drawing.Point(364, 22);
             this.fcCategory.Name = "fcCategory";
             this.fcCategory.Size = new System.Drawing.Size(190, 27);

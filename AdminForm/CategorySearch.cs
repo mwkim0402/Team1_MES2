@@ -24,7 +24,7 @@ namespace AdminForm
         private void RoadList()
         {
             FindCategoryService service = new FindCategoryService();
-            List = service.GetCategory();
+            List = service.GetCategory(catTable);
         }
 
         public CategorySearch(string searchTable)
@@ -48,14 +48,15 @@ namespace AdminForm
         private void CategorySearch_Load(object sender, EventArgs e)
         {
             CommonClass.AddNewColumnToDataGridView(dgvList, "코드번호", "Code", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvList, "코드명", "CodeName", true, 130);
+            CommonClass.AddNewColumnToDataGridView(dgvList, "코드명", "CodeName", true, 176);
             RoadList();
             dgvList.DataSource = List;
-
             dgvList.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
             dgvList.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvList.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+
+            cmbCat.Text = catTable;
         }
     }
 }

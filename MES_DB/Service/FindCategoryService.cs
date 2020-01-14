@@ -8,10 +8,10 @@ namespace MES_DB
 {
     public class FindCategoryService
     {
-        public List<FindCategoryVo> GetCategory()
+        public List<FindCategoryVo> GetCategory(string catTable)
         {
             MenuTreeDac dac = new MenuTreeDac();
-            return dac.GetCategory();
+            return dac.GetCategory(catTable);
         }
     }
 }

@@ -131,6 +131,7 @@
             // fcWorkPlace
             // 
             this.fcWorkPlace.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.fcWorkPlace.Category = AdminForm.CategoryMode.WorkCenter;
             this.fcWorkPlace.Location = new System.Drawing.Point(665, 22);
             this.fcWorkPlace.Name = "fcWorkPlace";
             this.fcWorkPlace.Size = new System.Drawing.Size(190, 27);
@@ -150,6 +151,7 @@
             // fcFactory
             // 
             this.fcFactory.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.fcFactory.Category = AdminForm.CategoryMode.Process;
             this.fcFactory.Location = new System.Drawing.Point(403, 22);
             this.fcFactory.Name = "fcFactory";
             this.fcFactory.Size = new System.Drawing.Size(190, 27);

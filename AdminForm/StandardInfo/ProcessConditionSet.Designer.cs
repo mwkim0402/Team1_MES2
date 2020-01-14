@@ -41,22 +41,35 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tabPage4.Location = new System.Drawing.Point(4, 32);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage4.Size = new System.Drawing.Size(86, 0);
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(0, 498);
-            this.panel1.Size = new System.Drawing.Size(850, 112);
+            this.panel1.Location = new System.Drawing.Point(0, 398);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Size = new System.Drawing.Size(837, 90);
             // 
             // tabControl2
             // 
-            this.tabControl2.Location = new System.Drawing.Point(2, 461);
+            this.tabControl2.Location = new System.Drawing.Point(2, 369);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // tabPage2
             // 
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tabPage2.Location = new System.Drawing.Point(4, 32);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Size = new System.Drawing.Size(86, 0);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 32);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage3.Size = new System.Drawing.Size(76, 0);
             // 
             // panel2
             // 
@@ -68,46 +81,46 @@
             this.panel2.Controls.Add(this.fcProd);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(14, 15);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1294, 84);
+            this.panel2.Size = new System.Drawing.Size(1132, 67);
             this.panel2.TabIndex = 16;
             // 
             // btnCopy
             // 
             this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCopy.Location = new System.Drawing.Point(1016, 28);
-            this.btnCopy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCopy.Location = new System.Drawing.Point(889, 22);
             this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(221, 34);
+            this.btnCopy.Size = new System.Drawing.Size(193, 27);
             this.btnCopy.TabIndex = 10;
             this.btnCopy.Text = "공정조건 복사";
             this.btnCopy.UseVisualStyleBackColor = true;
             // 
             // fcEquip
             // 
-            this.fcEquip.Location = new System.Drawing.Point(437, 28);
-            this.fcEquip.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.fcEquip.Category = AdminForm.CategoryMode.Inspect;
+            this.fcEquip.Location = new System.Drawing.Point(382, 22);
+            this.fcEquip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fcEquip.Name = "fcEquip";
-            this.fcEquip.Size = new System.Drawing.Size(217, 34);
+            this.fcEquip.Size = new System.Drawing.Size(190, 27);
             this.fcEquip.TabIndex = 9;
             // 
             // fcProd
             // 
-            this.fcProd.Location = new System.Drawing.Point(101, 28);
-            this.fcProd.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.fcProd.Category = AdminForm.CategoryMode.Item;
+            this.fcProd.Location = new System.Drawing.Point(88, 22);
+            this.fcProd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fcProd.Name = "fcProd";
-            this.fcProd.Size = new System.Drawing.Size(217, 34);
+            this.fcProd.Size = new System.Drawing.Size(190, 27);
             this.fcProd.TabIndex = 9;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(362, 35);
+            this.label2.Location = new System.Drawing.Point(317, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 20);
+            this.label2.Size = new System.Drawing.Size(40, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "설비";
             // 
@@ -115,19 +128,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(25, 35);
+            this.label1.Location = new System.Drawing.Point(22, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 20);
+            this.label1.Size = new System.Drawing.Size(40, 16);
             this.label1.TabIndex = 8;
             this.label1.Text = "품목";
             // 
             // ProcessConditionSet
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
-            this.ClientSize = new System.Drawing.Size(1321, 755);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.ClientSize = new System.Drawing.Size(1156, 604);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ProcessConditionSet";

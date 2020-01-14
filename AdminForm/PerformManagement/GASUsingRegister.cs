@@ -24,16 +24,11 @@ namespace AdminForm
 
         private void ShowDgv()
         {
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산일자", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목명", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "팔레트번호", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "입고수량", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "마감시각", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "취소시각", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "ERP 업로드여부", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시번호", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시상태", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "기준일자", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업장", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "GAS사용량", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "기숙사GAS사용량", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "1", true, 100);
         }
     }
 }

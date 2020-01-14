@@ -74,6 +74,12 @@
     <Compile Include="Mold\MoldInformationRegister.designer.cs">
       <DependentUpon>MoldInformationRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParentForm\dgvTwoInputCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForm\dgvTwoInputCategory.Designer.cs">
+      <DependentUpon>dgvTwoInputCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParentForm\dgvTwoWithInput .cs">
       <SubType>Form</SubType>
     </Compile>

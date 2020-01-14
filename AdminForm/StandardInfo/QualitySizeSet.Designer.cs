@@ -94,7 +94,7 @@
             this.panel1.Controls.Add(this.label25);
             this.panel1.Location = new System.Drawing.Point(0, 386);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Size = new System.Drawing.Size(742, 91);
+            this.panel1.Size = new System.Drawing.Size(741, 91);
             // 
             // tabControl2
             // 
@@ -123,13 +123,13 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1132, 67);
+            this.panel2.Size = new System.Drawing.Size(1130, 67);
             this.panel2.TabIndex = 17;
             // 
             // btnCopy
             // 
             this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCopy.Location = new System.Drawing.Point(889, 22);
+            this.btnCopy.Location = new System.Drawing.Point(887, 22);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(193, 27);
             this.btnCopy.TabIndex = 10;
@@ -138,6 +138,7 @@
             // 
             // fcFac
             // 
+            this.fcFac.CategoryTable = null;
             this.fcFac.Location = new System.Drawing.Point(382, 22);
             this.fcFac.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fcFac.Name = "fcFac";
@@ -146,6 +147,7 @@
             // 
             // fcProd
             // 
+            this.fcProd.CategoryTable = null;
             this.fcProd.Location = new System.Drawing.Point(88, 22);
             this.fcProd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fcProd.Name = "fcProd";
@@ -301,7 +303,7 @@
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(665, 15);
+            this.btnSave.Location = new System.Drawing.Point(664, 15);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(61, 60);
             this.btnSave.TabIndex = 125;
@@ -314,7 +316,7 @@
             this.gbUsable.Controls.Add(this.rbY);
             this.gbUsable.Controls.Add(this.rbN);
             this.gbUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.gbUsable.Location = new System.Drawing.Point(558, 9);
+            this.gbUsable.Location = new System.Drawing.Point(557, 9);
             this.gbUsable.Name = "gbUsable";
             this.gbUsable.Size = new System.Drawing.Size(94, 74);
             this.gbUsable.TabIndex = 124;
@@ -402,7 +404,7 @@
             // QualitySizeSet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1156, 583);
+            this.ClientSize = new System.Drawing.Size(1154, 583);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

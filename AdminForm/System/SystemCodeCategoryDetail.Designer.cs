@@ -62,7 +62,6 @@
             // 
             // tabControl2
             // 
-            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.tabControl2.Location = new System.Drawing.Point(5, 364);
             // 
             // panel3

@@ -540,6 +540,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="qulityManagement\MaterialManagement.resx">
       <DependentUpon>MaterialManagement.cs</DependentUpon>
@@ -666,6 +667,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\image\teamlogo.png" />
     <Content Include="image\Action_Save_New_32x32.png" />
     <Content Include="image\bookmark.png" />
     <Content Include="image\btn.png" />

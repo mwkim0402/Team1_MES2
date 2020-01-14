@@ -140,7 +140,7 @@ namespace AdminForm
 
         private void SetButtonImage()
         {
-            btnLogo.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\teamlogo.png");
+            btnS.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\조회 32x32.jpg");           
             btnCreate.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Report2_32x32.png");
             btnSave.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Action_Save_New_32x32.png");
             btnEdit.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Edit_32x32.png");
@@ -312,6 +312,7 @@ namespace AdminForm
             }
             MenuTreeVo selectMenu = menuList.Find(x => x.Screen_Code.Contains(tc.SelectedTab.Text));
             lblLocation.Text = "위치 정보 : " + selectMenu.Parent_Screen_Code.Trim() + " > " + selectMenu.Screen_Code.Trim();
+            //tc.SelectedTab.BackColor = SystemColors.Window;
         }
 
         private void 전체종료ToolStripMenuItem_Click(object sender, EventArgs e)

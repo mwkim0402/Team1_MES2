@@ -101,6 +101,7 @@
             this.Name = "NonOperation";
             this.Text = "NonOperation";
             this.Load += new System.EventHandler(this.NonOperation_Load);
+            this.Shown += new System.EventHandler(this.NonOperation_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NonOperation)).EndInit();
             this.ResumeLayout(false);
 

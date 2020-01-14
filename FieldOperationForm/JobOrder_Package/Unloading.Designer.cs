@@ -208,7 +208,7 @@
             // 
             this.txt_SearchTruck.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_SearchTruck.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_SearchTruck.Location = new System.Drawing.Point(218, 144);
+            this.txt_SearchTruck.Location = new System.Drawing.Point(218, 146);
             this.txt_SearchTruck.Multiline = true;
             this.txt_SearchTruck.Name = "txt_SearchTruck";
             this.txt_SearchTruck.Size = new System.Drawing.Size(546, 41);
@@ -217,11 +217,12 @@
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.Ivory;
-            this.label7.Location = new System.Drawing.Point(12, 144);
+            this.label7.Location = new System.Drawing.Point(30, 152);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(175, 41);
+            this.label7.Size = new System.Drawing.Size(111, 28);
             this.label7.TabIndex = 17;
             this.label7.Text = "대차 검색";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -233,8 +234,9 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 198);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(880, 418);
+            this.dataGridView1.Size = new System.Drawing.Size(1031, 418);
             this.dataGridView1.TabIndex = 18;
             // 
             // btn_Search
@@ -244,7 +246,7 @@
             this.btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Search.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Search.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Search.Location = new System.Drawing.Point(770, 144);
+            this.btn_Search.Location = new System.Drawing.Point(770, 146);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(122, 41);
             this.btn_Search.TabIndex = 24;
@@ -258,9 +260,9 @@
             this.btn_Unloading.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Unloading.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Unloading.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Unloading.Location = new System.Drawing.Point(907, 198);
+            this.btn_Unloading.Location = new System.Drawing.Point(1062, 198);
             this.btn_Unloading.Name = "btn_Unloading";
-            this.btn_Unloading.Size = new System.Drawing.Size(624, 217);
+            this.btn_Unloading.Size = new System.Drawing.Size(469, 217);
             this.btn_Unloading.TabIndex = 25;
             this.btn_Unloading.Text = "언로딩";
             this.btn_Unloading.UseVisualStyleBackColor = false;
@@ -272,9 +274,9 @@
             this.btn_Empty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Empty.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Empty.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Empty.Location = new System.Drawing.Point(907, 421);
+            this.btn_Empty.Location = new System.Drawing.Point(1062, 421);
             this.btn_Empty.Name = "btn_Empty";
-            this.btn_Empty.Size = new System.Drawing.Size(624, 195);
+            this.btn_Empty.Size = new System.Drawing.Size(469, 195);
             this.btn_Empty.TabIndex = 26;
             this.btn_Empty.Text = "대차 비우기";
             this.btn_Empty.UseVisualStyleBackColor = false;

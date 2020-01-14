@@ -214,8 +214,9 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 150);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(765, 466);
+            this.dataGridView1.Size = new System.Drawing.Size(805, 466);
             this.dataGridView1.TabIndex = 8;
             // 
             // dataGridView2
@@ -223,10 +224,11 @@
             this.dataGridView2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(792, 150);
+            this.dataGridView2.Location = new System.Drawing.Point(837, 150);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(739, 312);
+            this.dataGridView2.Size = new System.Drawing.Size(694, 312);
             this.dataGridView2.TabIndex = 9;
             // 
             // groupBox1
@@ -234,9 +236,9 @@
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.txt_MeasuredValue);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(792, 468);
+            this.groupBox1.Location = new System.Drawing.Point(837, 468);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(739, 70);
+            this.groupBox1.Size = new System.Drawing.Size(694, 70);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
@@ -244,7 +246,7 @@
             // 
             this.txt_MeasuredValue.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_MeasuredValue.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_MeasuredValue.Location = new System.Drawing.Point(223, 18);
+            this.txt_MeasuredValue.Location = new System.Drawing.Point(201, 18);
             this.txt_MeasuredValue.Multiline = true;
             this.txt_MeasuredValue.Name = "txt_MeasuredValue";
             this.txt_MeasuredValue.Size = new System.Drawing.Size(475, 41);
@@ -255,7 +257,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.Ivory;
-            this.label7.Location = new System.Drawing.Point(23, 19);
+            this.label7.Location = new System.Drawing.Point(1, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(194, 38);
             this.label7.TabIndex = 2;
@@ -269,9 +271,9 @@
             this.btn_Write.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Write.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Write.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Write.Location = new System.Drawing.Point(792, 544);
+            this.btn_Write.Location = new System.Drawing.Point(837, 544);
             this.btn_Write.Name = "btn_Write";
-            this.btn_Write.Size = new System.Drawing.Size(457, 72);
+            this.btn_Write.Size = new System.Drawing.Size(412, 72);
             this.btn_Write.TabIndex = 11;
             this.btn_Write.Text = "입력";
             this.btn_Write.UseVisualStyleBackColor = false;

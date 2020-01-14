@@ -218,8 +218,9 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 205);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(498, 411);
+            this.dataGridView1.Size = new System.Drawing.Size(474, 411);
             this.dataGridView1.TabIndex = 32;
             // 
             // btn_Search
@@ -229,7 +230,7 @@
             this.btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Search.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Search.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Search.Location = new System.Drawing.Point(427, 149);
+            this.btn_Search.Location = new System.Drawing.Point(403, 149);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(83, 41);
             this.btn_Search.TabIndex = 31;
@@ -243,7 +244,7 @@
             this.txt_SearchTruck.Location = new System.Drawing.Point(153, 149);
             this.txt_SearchTruck.Multiline = true;
             this.txt_SearchTruck.Name = "txt_SearchTruck";
-            this.txt_SearchTruck.Size = new System.Drawing.Size(268, 41);
+            this.txt_SearchTruck.Size = new System.Drawing.Size(244, 41);
             this.txt_SearchTruck.TabIndex = 29;
             // 
             // label7
@@ -263,7 +264,7 @@
             // 
             this.txt_MoveNum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_MoveNum.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_MoveNum.Location = new System.Drawing.Point(721, 245);
+            this.txt_MoveNum.Location = new System.Drawing.Point(696, 245);
             this.txt_MoveNum.Multiline = true;
             this.txt_MoveNum.Name = "txt_MoveNum";
             this.txt_MoveNum.Size = new System.Drawing.Size(155, 41);
@@ -274,10 +275,11 @@
             this.dataGridView2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(897, 205);
+            this.dataGridView2.Location = new System.Drawing.Point(870, 205);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(636, 411);
+            this.dataGridView2.Size = new System.Drawing.Size(663, 411);
             this.dataGridView2.TabIndex = 39;
             // 
             // btn_Search2
@@ -298,10 +300,10 @@
             // 
             this.txt_SearchTruck2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_SearchTruck2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_SearchTruck2.Location = new System.Drawing.Point(1037, 149);
+            this.txt_SearchTruck2.Location = new System.Drawing.Point(1010, 149);
             this.txt_SearchTruck2.Multiline = true;
             this.txt_SearchTruck2.Name = "txt_SearchTruck2";
-            this.txt_SearchTruck2.Size = new System.Drawing.Size(368, 41);
+            this.txt_SearchTruck2.Size = new System.Drawing.Size(395, 41);
             this.txt_SearchTruck2.TabIndex = 36;
             // 
             // label8
@@ -310,7 +312,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.ForeColor = System.Drawing.Color.Ivory;
-            this.label8.Location = new System.Drawing.Point(897, 155);
+            this.label8.Location = new System.Drawing.Point(865, 155);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(111, 28);
             this.label8.TabIndex = 37;
@@ -324,7 +326,7 @@
             this.btn_Move.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Move.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Move.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Move.Location = new System.Drawing.Point(531, 292);
+            this.btn_Move.Location = new System.Drawing.Point(506, 292);
             this.btn_Move.Name = "btn_Move";
             this.btn_Move.Size = new System.Drawing.Size(345, 171);
             this.btn_Move.TabIndex = 35;
@@ -337,7 +339,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.ForeColor = System.Drawing.Color.Ivory;
-            this.label9.Location = new System.Drawing.Point(526, 251);
+            this.label9.Location = new System.Drawing.Point(501, 251);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(157, 28);
             this.label9.TabIndex = 41;
@@ -351,7 +353,7 @@
             this.btn_Empty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Empty.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Empty.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Empty.Location = new System.Drawing.Point(531, 469);
+            this.btn_Empty.Location = new System.Drawing.Point(506, 469);
             this.btn_Empty.Name = "btn_Empty";
             this.btn_Empty.Size = new System.Drawing.Size(345, 147);
             this.btn_Empty.TabIndex = 42;

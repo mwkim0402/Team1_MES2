@@ -44,8 +44,9 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 68);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1272, 548);
+            this.dataGridView1.Size = new System.Drawing.Size(1303, 548);
             this.dataGridView1.TabIndex = 31;
             // 
             // btn_input
@@ -55,9 +56,9 @@
             this.btn_input.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_input.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_input.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_input.Location = new System.Drawing.Point(1290, 68);
+            this.btn_input.Location = new System.Drawing.Point(1333, 68);
             this.btn_input.Name = "btn_input";
-            this.btn_input.Size = new System.Drawing.Size(243, 262);
+            this.btn_input.Size = new System.Drawing.Size(200, 265);
             this.btn_input.TabIndex = 32;
             this.btn_input.Text = "요입";
             this.btn_input.UseVisualStyleBackColor = false;
@@ -69,9 +70,9 @@
             this.btn_extract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_extract.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_extract.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_extract.Location = new System.Drawing.Point(1290, 336);
+            this.btn_extract.Location = new System.Drawing.Point(1333, 351);
             this.btn_extract.Name = "btn_extract";
-            this.btn_extract.Size = new System.Drawing.Size(243, 280);
+            this.btn_extract.Size = new System.Drawing.Size(200, 265);
             this.btn_extract.TabIndex = 33;
             this.btn_extract.Text = "요출";
             this.btn_extract.UseVisualStyleBackColor = false;

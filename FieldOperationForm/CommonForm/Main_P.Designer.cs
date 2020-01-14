@@ -231,6 +231,7 @@
             this.IsMdiContainer = true;
             this.Name = "Main_P";
             this.Text = " ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FieldmanagementP_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

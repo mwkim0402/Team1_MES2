@@ -74,6 +74,12 @@
     <Compile Include="Mold\MoldInformationRegister.designer.cs">
       <DependentUpon>MoldInformationRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParentForm\dgvTwoInputCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForm\dgvTwoInputCategory.Designer.cs">
+      <DependentUpon>dgvTwoInputCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParentForm\dgvTwoWithInput .cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,10 +122,10 @@
     <Compile Include="Journal\PackingWorkReport.Designer.cs">
       <DependentUpon>PackingWorkReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Journal\WorkReportParent.cs">
+    <Compile Include="ParentForm\WorkReportParent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Journal\WorkReportParent.Designer.cs">
+    <Compile Include="ParentForm\WorkReportParent.Designer.cs">
       <DependentUpon>WorkReportParent.cs</DependentUpon>
     </Compile>
     <Compile Include="Journal\MoldingWorkReport.cs">
@@ -475,7 +481,7 @@
     <EmbeddedResource Include="Journal\PackingWorkReport.resx">
       <DependentUpon>PackingWorkReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Journal\WorkReportParent.resx">
+    <EmbeddedResource Include="ParentForm\WorkReportParent.resx">
       <DependentUpon>WorkReportParent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Journal\MoldingWorkReport.resx">
@@ -540,6 +546,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="qulityManagement\MaterialManagement.resx">
       <DependentUpon>MaterialManagement.cs</DependentUpon>
@@ -666,6 +673,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\image\teamlogo.png" />
     <Content Include="image\Action_Save_New_32x32.png" />
     <Content Include="image\bookmark.png" />
     <Content Include="image\btn.png" />

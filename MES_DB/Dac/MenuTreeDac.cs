@@ -26,13 +26,15 @@ namespace MES_DB
             }
         }
 
-        public List<FindCategoryVo> GetCategory()
+        public List<FindCategoryVo> GetCategory(string catTable)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "select code Code,cName CodeName from VW_CatCode";
+                cmd.CommandText = "select code Code,cName CodeName from VW_CatCode where CodeType = @CodeType";
                 cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@CodeType", catTable);
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();

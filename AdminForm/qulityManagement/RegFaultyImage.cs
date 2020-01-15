@@ -23,7 +23,8 @@ namespace AdminForm
         private void ShowDgv()
         {
             
-            tabPage4.Text = "작업지시목록";
+            tabPage4.Text = "작업지시";
+            //tabPage4.Size = new System.Drawing.Size(200, 0);
             tabPage2.Text = "상세내역";
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "작업지시상태", "1", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "작업지시번호", "1", true, 100);

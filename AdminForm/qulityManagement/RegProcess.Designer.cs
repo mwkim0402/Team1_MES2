@@ -34,6 +34,7 @@
             this.dgvJob = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dgvList2 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -44,11 +45,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvList2 = new System.Windows.Forms.DataGridView();
             this.fcWork = new AdminForm.FIndCategory();
             this.fcFactory = new AdminForm.FIndCategory();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -58,11 +58,11 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList2)).BeginInit();
             this.panel3.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList2)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvList
@@ -143,6 +143,16 @@
             this.splitContainer1.Size = new System.Drawing.Size(775, 499);
             this.splitContainer1.SplitterDistance = 258;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // dgvList2
+            // 
+            this.dgvList2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvList2.Location = new System.Drawing.Point(0, 34);
+            this.dgvList2.Name = "dgvList2";
+            this.dgvList2.RowTemplate.Height = 23;
+            this.dgvList2.Size = new System.Drawing.Size(513, 465);
+            this.dgvList2.TabIndex = 4;
             // 
             // panel3
             // 
@@ -247,6 +257,22 @@
             this.panel2.Size = new System.Drawing.Size(1132, 55);
             this.panel2.TabIndex = 14;
             // 
+            // fcWork
+            // 
+            this.fcWork.Category = AdminForm.CategoryMode.WorkCenter;
+            this.fcWork.Location = new System.Drawing.Point(764, 19);
+            this.fcWork.Name = "fcWork";
+            this.fcWork.Size = new System.Drawing.Size(190, 27);
+            this.fcWork.TabIndex = 5;
+            // 
+            // fcFactory
+            // 
+            this.fcFactory.Category = AdminForm.CategoryMode.Process;
+            this.fcFactory.Location = new System.Drawing.Point(489, 19);
+            this.fcFactory.Name = "fcFactory";
+            this.fcFactory.Size = new System.Drawing.Size(190, 27);
+            this.fcFactory.TabIndex = 1;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -268,30 +294,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1132, 502);
             this.panel1.TabIndex = 13;
-            // 
-            // dgvList2
-            // 
-            this.dgvList2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvList2.Location = new System.Drawing.Point(0, 34);
-            this.dgvList2.Name = "dgvList2";
-            this.dgvList2.RowTemplate.Height = 23;
-            this.dgvList2.Size = new System.Drawing.Size(513, 465);
-            this.dgvList2.TabIndex = 4;
-            // 
-            // fcWork
-            // 
-            this.fcWork.Location = new System.Drawing.Point(764, 19);
-            this.fcWork.Name = "fcWork";
-            this.fcWork.Size = new System.Drawing.Size(190, 27);
-            this.fcWork.TabIndex = 5;
-            // 
-            // fcFactory
-            // 
-            this.fcFactory.Location = new System.Drawing.Point(489, 19);
-            this.fcFactory.Name = "fcFactory";
-            this.fcFactory.Size = new System.Drawing.Size(190, 27);
-            this.fcFactory.TabIndex = 1;
             // 
             // RegProcess
             // 
@@ -317,12 +319,12 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList2)).EndInit();
             this.ResumeLayout(false);
 
         }

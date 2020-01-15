@@ -38,17 +38,18 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(107, 22);
+            this.txtSearch.Location = new System.Drawing.Point(138, 22);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(160, 21);
+            this.txtSearch.Size = new System.Drawing.Size(129, 21);
             this.txtSearch.TabIndex = 0;
             // 
             // cmbCat
             // 
+            this.cmbCat.Enabled = false;
             this.cmbCat.FormattingEnabled = true;
             this.cmbCat.Location = new System.Drawing.Point(12, 22);
             this.cmbCat.Name = "cmbCat";
-            this.cmbCat.Size = new System.Drawing.Size(89, 20);
+            this.cmbCat.Size = new System.Drawing.Size(120, 20);
             this.cmbCat.TabIndex = 1;
             // 
             // btnSearch

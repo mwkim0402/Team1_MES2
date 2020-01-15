@@ -325,9 +325,17 @@
     <Content Include="Resources\캡처.PNG" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MES_API\MES_API.csproj">
+      <Project>{d6db38a5-69c8-4604-9d39-4f6168113965}</Project>
+      <Name>MES_API</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MES_DB\MES_DB.csproj">
-      <Project>{C8436ADF-2D7B-403D-AB76-B7D56F6B5A07}</Project>
+      <Project>{c5a0dac0-fd93-4179-9471-da3fa7b21737}</Project>
       <Name>MES_DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MES_DTO\MES_DTO.csproj">
+      <Project>{92324320-e0a8-43d3-803e-73e445f281c3}</Project>
+      <Name>MES_DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

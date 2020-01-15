@@ -80,10 +80,10 @@
             this.btn_NonOperation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_NonOperation.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_NonOperation.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_NonOperation.Location = new System.Drawing.Point(1323, 11);
+            this.btn_NonOperation.Location = new System.Drawing.Point(1335, 11);
             this.btn_NonOperation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_NonOperation.Name = "btn_NonOperation";
-            this.btn_NonOperation.Size = new System.Drawing.Size(208, 606);
+            this.btn_NonOperation.Size = new System.Drawing.Size(196, 606);
             this.btn_NonOperation.TabIndex = 18;
             this.btn_NonOperation.Text = "비가동\r\n사유변경";
             this.btn_NonOperation.UseVisualStyleBackColor = false;

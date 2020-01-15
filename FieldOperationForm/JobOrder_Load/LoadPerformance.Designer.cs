@@ -357,7 +357,7 @@
             this.btn_Empty.Name = "btn_Empty";
             this.btn_Empty.Size = new System.Drawing.Size(345, 147);
             this.btn_Empty.TabIndex = 42;
-            this.btn_Empty.Text = "건초대차 비우기";
+            this.btn_Empty.Text = "건조대차 비우기";
             this.btn_Empty.UseVisualStyleBackColor = false;
             // 
             // LoadPerformance

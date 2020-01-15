@@ -294,6 +294,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "warehousing";
             this.Text = "ReceivingRegistration";
+            this.Shown += new System.EventHandler(this.warehousing_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

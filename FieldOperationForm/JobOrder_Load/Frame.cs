@@ -72,5 +72,10 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
           
 
         }
+
+        private void Frame_Shown(object sender, EventArgs e)
+        {
+            dataGridView1.CurrentCell = null;
+        }
     }
 }

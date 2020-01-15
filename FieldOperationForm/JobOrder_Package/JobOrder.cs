@@ -68,5 +68,10 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
 
 
         }
+
+        private void JobOrder_Shown(object sender, EventArgs e)
+        {
+            dataGridView1.CurrentCell = null;
+        }
     }
 }

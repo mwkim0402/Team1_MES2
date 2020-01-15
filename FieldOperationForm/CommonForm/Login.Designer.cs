@@ -67,6 +67,7 @@
             this.txt_UserPwd.Location = new System.Drawing.Point(411, 214);
             this.txt_UserPwd.Multiline = true;
             this.txt_UserPwd.Name = "txt_UserPwd";
+            this.txt_UserPwd.PasswordChar = '*';
             this.txt_UserPwd.Size = new System.Drawing.Size(650, 76);
             this.txt_UserPwd.TabIndex = 2;
             // 

@@ -46,7 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_Reissue = new System.Windows.Forms.Button();
-            this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -262,24 +261,10 @@
             this.btn_Reissue.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btn_Reissue.Location = new System.Drawing.Point(903, 448);
             this.btn_Reissue.Name = "btn_Reissue";
-            this.btn_Reissue.Size = new System.Drawing.Size(337, 168);
+            this.btn_Reissue.Size = new System.Drawing.Size(362, 168);
             this.btn_Reissue.TabIndex = 20;
             this.btn_Reissue.Text = "재발행";
             this.btn_Reissue.UseVisualStyleBackColor = false;
-            // 
-            // btn_Update
-            // 
-            this.btn_Update.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Update.BackColor = System.Drawing.Color.Ivory;
-            this.btn_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Update.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_Update.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Update.Location = new System.Drawing.Point(1247, 448);
-            this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(138, 168);
-            this.btn_Update.TabIndex = 21;
-            this.btn_Update.Text = "수정";
-            this.btn_Update.UseVisualStyleBackColor = false;
             // 
             // btn_Delete
             // 
@@ -288,9 +273,9 @@
             this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Delete.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Delete.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Delete.Location = new System.Drawing.Point(1392, 448);
+            this.btn_Delete.Location = new System.Drawing.Point(1284, 448);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(138, 168);
+            this.btn_Delete.Size = new System.Drawing.Size(246, 168);
             this.btn_Delete.TabIndex = 22;
             this.btn_Delete.Text = "삭제";
             this.btn_Delete.UseVisualStyleBackColor = false;
@@ -302,7 +287,6 @@
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1538, 628);
             this.Controls.Add(this.btn_Delete);
-            this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.btn_Reissue);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
@@ -339,7 +323,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_Reissue;
-        private System.Windows.Forms.Button btn_Update;
         private System.Windows.Forms.Button btn_Delete;
     }
 }

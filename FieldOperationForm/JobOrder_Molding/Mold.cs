@@ -76,9 +76,15 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
 
 
 
-            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //dgv_NonOperation.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+        }
+
+        private void Mold_Shown(object sender, EventArgs e)
+        {
+            dataGridView1.CurrentCell = null;
+            dataGridView2.CurrentCell = null;
         }
     }
 }

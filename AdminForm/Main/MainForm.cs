@@ -16,7 +16,6 @@ namespace AdminForm
         private Point _imgHitArea = new Point(23, 2);
         int CheckBtnIndex = 100;
         bool open = false;
-        List<MenuTreeVo> testList;
         List<MenuTreeVo> menuList;
 
         public MainForm()
@@ -34,7 +33,7 @@ namespace AdminForm
         {
             SetButtonImage();
             MenuService service = new MenuService();
-            menuList = await service.GetListAsync("GetAllMenu", testList);
+            menuList = await service.GetListAsync("GetAllMenu", new List<MenuTreeVo>());
             
             trvMenu.Visible = false;
             trvBookMark.Visible = false;

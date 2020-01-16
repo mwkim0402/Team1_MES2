@@ -193,7 +193,7 @@
             this.lbl_Notice.Name = "lbl_Notice";
             this.lbl_Notice.Size = new System.Drawing.Size(1170, 41);
             this.lbl_Notice.TabIndex = 12;
-            this.lbl_Notice.Text = "~공지사항~ qefsghfhdhd";
+            this.lbl_Notice.Text = "~공지사항~ ";
             this.lbl_Notice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_Notice.Click += new System.EventHandler(this.lbl_Notice_Click);
             // 
@@ -231,7 +231,6 @@
             this.IsMdiContainer = true;
             this.Name = "Main_P";
             this.Text = " ";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FieldmanagementP_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

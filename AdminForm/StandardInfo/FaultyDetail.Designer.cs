@@ -97,7 +97,7 @@
             // 
             // fcFault
             // 
-            this.fcFault.CategoryTable = null;
+            //this.fcFault.CategoryTable = null;
             this.fcFault.Location = new System.Drawing.Point(169, 23);
             this.fcFault.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fcFault.Name = "fcFault";

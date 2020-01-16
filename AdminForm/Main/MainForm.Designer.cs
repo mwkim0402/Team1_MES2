@@ -299,7 +299,6 @@
             // 
             // tabControl2
             // 
-            this.tabControl2.ContextMenuStrip = this.contextMenuStrip1;
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
@@ -308,6 +307,7 @@
             this.tabControl2.TabIndex = 6;
             this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
             this.tabControl2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabControl4_MouseClick);
+            this.tabControl2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tabControl2_MouseUp);
             // 
             // contextMenuStrip1
             // 

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="JobOrder\JobOrderCreateVo.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="Molding\MoldingInfoVo.cs" />
     <Compile Include="Molding\MoldingOrderCreation_ReqVo.cs" />
     <Compile Include="Molding\MoldingOrderCreation_WoVo.cs" />

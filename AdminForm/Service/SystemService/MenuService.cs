@@ -9,23 +9,14 @@ using System.Net.Http.Headers;
 using MES_DTO;
 using Newtonsoft.Json;
 
-// Service 예제
-/* 윈폼에서 불러오는 예제
-     private async void button1_Click(object sender, EventArgs e)
-        {
-            List<UserVO> list = null;
-            UserService service = new UserService();
-            dataGridView1.DataSource = await service.GetAsync("GetAllUser",list);
-        }
- */
 namespace AdminForm
 {
-    public class UserService
+    public class MenuService
     {
         HttpClient client = new HttpClient();
-        public UserService()
+        public MenuService()
         {
-            string url = $"{ConfigurationManager.AppSettings["ApiAddress"]}api/User/";
+            string url = $"{ConfigurationManager.AppSettings["ApiAddress"]}api/Menu/";
             client.BaseAddress = new Uri(url);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));

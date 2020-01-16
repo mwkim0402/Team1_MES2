@@ -16,6 +16,7 @@ namespace AdminForm
         private Point _imgHitArea = new Point(23, 2);
         int CheckBtnIndex = 100;
         bool open = false;
+        List<MenuTreeVo> testList;
         List<MenuTreeVo> menuList;
 
         public MainForm()
@@ -29,12 +30,12 @@ namespace AdminForm
             // Add the Handler to draw the Image on Tab Pages
             tabControl2.DrawItem += tabControl4_DrawItem;
         }
-        private void MainForm_Load(object sender, EventArgs e)
+        private async void MainForm_Load(object sender, EventArgs e)
         {
             SetButtonImage();
-            MenuTreeService service = new MenuTreeService();
-            menuList = service.GetAllMenu();
-
+            MenuService service = new MenuService();
+            menuList = await service.GetListAsync("GetAllMenu", testList);
+            
             trvMenu.Visible = false;
             trvBookMark.Visible = false;
             trvBookMark.Location = new Point(0, 10);
@@ -351,6 +352,23 @@ namespace AdminForm
             {
                 if (tabPage.Text.Trim() != tabControl2.SelectedTab.Text.Trim())
                     tabControl2.TabPages.Remove(tabPage);
+            }
+        }
+
+        // 탭컨트롤 헤드내에서만 ContextMenuStrip 사용가능
+        private void tabControl2_MouseUp(object sender, MouseEventArgs e)
+        {
+            if(e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                for (int i = 0; i < tabControl2.TabCount; i++)
+                {
+                    Rectangle r = tabControl2.GetTabRect(i);
+                    if (r.Contains(e.Location))
+                    {
+                        contextMenuStrip1.Show(tabControl2, e.Location);
+                        break;
+                    }
+                }
             }
         }
     }

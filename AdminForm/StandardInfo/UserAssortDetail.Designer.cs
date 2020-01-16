@@ -94,7 +94,7 @@
             // 
             // fcUserAssortCat
             // 
-            this.fcUserAssortCat.CategoryTable = null;
+           // this.fcUserAssortCat.CategoryTable = null;
             this.fcUserAssortCat.Location = new System.Drawing.Point(197, 22);
             this.fcUserAssortCat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fcUserAssortCat.Name = "fcUserAssortCat";

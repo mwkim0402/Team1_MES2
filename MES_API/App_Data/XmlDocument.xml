@@ -481,5 +481,11 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="M:MES_API.Controllers.MenuController.GetAllMenu">
+            <summary>
+            메뉴트리에 넣을 메뉴 목록을 가지고온다.
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>

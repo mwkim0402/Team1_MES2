@@ -39,6 +39,8 @@
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabControl2.SuspendLayout();
+            this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +89,7 @@
             this.btnOrderCreationDeadline.TabIndex = 10;
             this.btnOrderCreationDeadline.Text = "생산의뢰 마감";
             this.btnOrderCreationDeadline.UseVisualStyleBackColor = true;
+            this.btnOrderCreationDeadline.Click += new System.EventHandler(this.BtnOrderCreationDeadline_Click);
             // 
             // btnOrderCreationDown
             // 
@@ -170,7 +173,11 @@
             this.ShowInTaskbar = false;
             this.Text = "MoldingOrderCreation";
             this.Load += new System.EventHandler(this.MoldingOrderCreation_Load);
+            this.Controls.SetChildIndex(this.tabControl4, 0);
+            this.Controls.SetChildIndex(this.tabControl2, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
+            this.tabControl2.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

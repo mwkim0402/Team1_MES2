@@ -679,7 +679,7 @@
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(86, 0);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "입력정보";
@@ -741,7 +741,7 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(1027, 22);
+            this.button1.Location = new System.Drawing.Point(1027, 20);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 174);
             this.button1.TabIndex = 143;
@@ -750,7 +750,7 @@
             // 
             // numericUpDown6
             // 
-            this.numericUpDown6.Location = new System.Drawing.Point(1074, 49);
+            this.numericUpDown6.Location = new System.Drawing.Point(861, 113);
             this.numericUpDown6.Name = "numericUpDown6";
             this.numericUpDown6.Size = new System.Drawing.Size(52, 21);
             this.numericUpDown6.TabIndex = 142;
@@ -760,7 +760,7 @@
             this.label44.AutoSize = true;
             this.label44.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label44.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label44.Location = new System.Drawing.Point(929, 53);
+            this.label44.Location = new System.Drawing.Point(716, 117);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(141, 16);
             this.label44.TabIndex = 141;
@@ -768,7 +768,7 @@
             // 
             // numericUpDown5
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(1074, 18);
+            this.numericUpDown5.Location = new System.Drawing.Point(861, 82);
             this.numericUpDown5.Name = "numericUpDown5";
             this.numericUpDown5.Size = new System.Drawing.Size(52, 21);
             this.numericUpDown5.TabIndex = 140;
@@ -778,7 +778,7 @@
             this.label43.AutoSize = true;
             this.label43.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label43.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label43.Location = new System.Drawing.Point(929, 22);
+            this.label43.Location = new System.Drawing.Point(716, 86);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(141, 16);
             this.label43.TabIndex = 139;
@@ -1083,7 +1083,7 @@
             this.groupBox1.Controls.Add(this.radioButton9);
             this.groupBox1.Controls.Add(this.radioButton10);
             this.groupBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox1.Location = new System.Drawing.Point(745, 110);
+            this.groupBox1.Location = new System.Drawing.Point(719, 147);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(239, 64);
             this.groupBox1.TabIndex = 105;
@@ -1164,7 +1164,7 @@
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 32);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(86, 0);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "조회내역";

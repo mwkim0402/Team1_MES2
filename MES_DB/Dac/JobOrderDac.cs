@@ -40,17 +40,58 @@ namespace MES_DB
                 return list;
             }
         }
-        public List<MoldingOrderCreation_WoVo> MoldingOrderCreation_WO()
+        public List<MoldingOrderCreation_WoVo> MoldingOrderCreation_WO(string Wo_Req_No)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "JobOrderCreation";
+                cmd.CommandText = "JobOrderDetail";
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Wo_Req_No", Wo_Req_No);
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<MoldingOrderCreation_WoVo> list = Helper.DataReaderMapToList<MoldingOrderCreation_WoVo>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
+        public int FinishMoldReq(string wo_Req_No,int req_seq)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "FinishMoldReq";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Wo_Req_No", wo_Req_No);
+                cmd.Parameters.AddWithValue("@Req_Seq", req_seq);
+
+
+                cmd.Connection.Open();
+                int result = cmd.ExecuteNonQuery();
+                return result;
+            }
+        }
+
+        
+            public List<MoldingOrderCreation_ReqVo> SearchMoldReq_date(DateTime start, DateTime end)
+        {
+            string strStart = start.ToString().Substring(0, 10);
+            string strEnd = end.ToString().Substring(0, 10);
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "SearchMoldReq_date";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Wo_Req_No", strStart);
+                cmd.Parameters.AddWithValue("@Req_Seq", strEnd);
+
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<MoldingOrderCreation_ReqVo> list = Helper.DataReaderMapToList<MoldingOrderCreation_ReqVo>(reader);
                 cmd.Connection.Close();
                 return list;
             }

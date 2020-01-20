@@ -20,10 +20,21 @@ namespace MES_DB
             JobOrderDac dac = new JobOrderDac();
             return dac.MoldingOrderCreation_Req();
         }
-        public List<MoldingOrderCreation_WoVo> MoldingOrderCreation_WO()
+        public List<MoldingOrderCreation_WoVo> MoldingOrderCreation_WO(string Wo_Req_No)
         {
             JobOrderDac dac = new JobOrderDac();
-            return dac.MoldingOrderCreation_WO();
+            return dac.MoldingOrderCreation_WO(Wo_Req_No);
+        }
+
+        public int FinishMoldReq(string wo_Req_No, int req_seq)
+        {
+            JobOrderDac dac = new JobOrderDac();
+            return dac.FinishMoldReq(wo_Req_No,req_seq);
+        }
+        public List<MoldingOrderCreation_ReqVo> SearchMoldReq_date(DateTime start, DateTime end)
+        {
+            JobOrderDac dac = new JobOrderDac();
+            return dac.SearchMoldReq_date(start, end);
         }
     }
 }

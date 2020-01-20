@@ -119,6 +119,7 @@
             this.btnS.Text = "조회";
             this.btnS.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnS.Click += new System.EventHandler(this.btnS_Click);
             // 
             // btnSave
             // 
@@ -299,11 +300,11 @@
             // 
             // tabControl2
             // 
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1112, 747);
+            this.tabControl2.Size = new System.Drawing.Size(1112, 24);
             this.tabControl2.TabIndex = 6;
             this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
             this.tabControl2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabControl4_MouseClick);
@@ -401,19 +402,19 @@
             // 
             this.panel1.Controls.Add(this.pnlTab);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(222, 81);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1112, 780);
+            this.panel1.Size = new System.Drawing.Size(1112, 56);
             this.panel1.TabIndex = 102;
             // 
             // pnlTab
             // 
             this.pnlTab.Controls.Add(this.tabControl2);
-            this.pnlTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTab.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTab.Location = new System.Drawing.Point(0, 33);
             this.pnlTab.Name = "pnlTab";
-            this.pnlTab.Size = new System.Drawing.Size(1112, 747);
+            this.pnlTab.Size = new System.Drawing.Size(1112, 22);
             this.pnlTab.TabIndex = 8;
             // 
             // panel3

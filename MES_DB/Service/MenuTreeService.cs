@@ -13,7 +13,5 @@ namespace MES_DB
             MenuTreeDac dac = new MenuTreeDac();
             return dac.GetAllMenu();
         }
-
-
     }
 }

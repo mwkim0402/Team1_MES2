@@ -12,6 +12,7 @@ namespace AdminForm
 {
     public partial class MainForm : Form
     {
+        public event EventHandler Search_Click;
         private Point _imageLocation = new Point(25, 5);
         private Point _imgHitArea = new Point(23, 2);
         int CheckBtnIndex = 100;
@@ -34,6 +35,7 @@ namespace AdminForm
             SetButtonImage();
             MenuService service = new MenuService();
             menuList = await service.GetListAsync("GetAllMenu", new List<MenuTreeVo>());
+            
             
             trvMenu.Visible = false;
             trvBookMark.Visible = false;
@@ -210,8 +212,8 @@ namespace AdminForm
                 tc.TabPages.Remove(TabP);
             }
 
-            // Form tempChild = this.ActiveMdiChild;
-            // tempChild.Close();
+            //Form tempChild = this.ActiveMdiChild;
+            //tempChild.Close();
         }
 
         #region 폼동적생성
@@ -255,14 +257,16 @@ namespace AdminForm
                 string nameSpace = "AdminForm"; //네임스페이스 명
                 Assembly cuasm = Assembly.GetExecutingAssembly();
                 //string Format 의 따옴표와 마침표 주의!!
-
+                
                 Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", nameSpace, formName));
-
-                frm.TopLevel = false;
+               // frm.TopLevel = false;
                 tabControl2.TabPages.Add(Form_Code);
-                tabControl2.TabPages[tabControl2.TabPages.Count - 1].Controls.Add(frm);
+                //tabControl2.TabPages[tabControl2.TabPages.Count - 1].Controls.Add(frm);
                 tabControl2.SelectedTab = tabControl2.TabPages[tabControl2.TabPages.Count - 1];
-                frm.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left;
+                frm.MdiParent = this;
+               // frm.WindowState = FormWindowState.Maximized;
+                //frm.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left;
+                // frm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
                 frm.Dock = DockStyle.Fill;
                 frm.Show();
             }
@@ -328,13 +332,20 @@ namespace AdminForm
 
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TabControl tc = (TabControl)sender;
+            TabControl tc = (TabControl)sender;            
             if (tc.SelectedTab == null)
             {
                 lblLocation.Text = "";
                 return;
-            }
+            }            
             MenuTreeVo selectMenu = menuList.Find(x => x.Screen_Code.Contains(tc.SelectedTab.Text));
+            foreach(Form frm in this.MdiChildren)
+            {
+                if (frm.Name == selectMenu.Form_Name)
+                {                  
+                    frm.Activate();
+                }
+            }
             lblLocation.Text = "위치 정보 : " + selectMenu.Parent_Screen_Code.Trim() + " > " + selectMenu.Screen_Code.Trim();
             //tc.SelectedTab.BackColor = SystemColors.Window;
         }
@@ -369,6 +380,12 @@ namespace AdminForm
                     }
                 }
             }
+        }
+
+        private void btnS_Click(object sender, EventArgs e)
+        {
+            if (this.Search_Click != null)
+                Search_Click(this, null);
         }
     }
 }

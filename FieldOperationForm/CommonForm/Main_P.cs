@@ -12,16 +12,21 @@ namespace FieldOperationForm
 {
     public partial class Main_P : Form
     {
-     
+
+        bool TagMove;
+        int MValX, MValY;
         public Main_P()
         {
             InitializeComponent();
+          
         }
 
         private void FieldmanagementP_Load(object sender, EventArgs e)
         {
+            
             Login frm = new Login(this);
             frm.MdiParent = this;
+            
             frm.BringToFront();
           
             frm.Dock = DockStyle.Fill;
@@ -115,6 +120,37 @@ namespace FieldOperationForm
                 frm2.Dock = DockStyle.Fill;
                 frm2.Show();
             }
+        }
+
+        private void panel10_MouseDown(object sender, MouseEventArgs e)
+        {
+            TagMove = true;
+            MValX = e.X;
+               MValY = e.Y;
+        }
+
+        private void panel10_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(TagMove == true)
+            {
+                this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
+            }
+        }
+
+        private void btn_Max_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void btn_Min_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+
+        }
+
+        private void panel10_MouseUp(object sender, MouseEventArgs e)
+        {
+            TagMove = false;
         }
     }
 }

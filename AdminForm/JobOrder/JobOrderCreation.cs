@@ -13,6 +13,9 @@ namespace AdminForm
 {
     public partial class JobOrderCreation : dgvOneWithInput
     {
+
+        string selectedWoReq; //생산의뢰번호
+        int req_Seq; //의뢰순번
         List<JobOrderCreateVo> List = null;
         public JobOrderCreation()
         {
@@ -49,6 +52,10 @@ namespace AdminForm
 
         private void JobOrderCreation_Load(object sender, EventArgs e)
         {
+            DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+            checkBoxColumn.HeaderText = "체크";
+            checkBoxColumn.Name = "check";
+            dgvSearchResult.Columns.Add(checkBoxColumn);
             AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 120);
             AddNewColumnToDataGridView(dgvSearchResult, "품목명", "Item_Name", true, 255);
             AddNewColumnToDataGridView(dgvSearchResult, "작업장", "Wc_Name", true, 130);
@@ -70,9 +77,80 @@ namespace AdminForm
             dgvSearchResult.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvSearchResult.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvSearchResult.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            this.dgvSearchResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductRequset_CellClick);
+            dgvSearchResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+        private void FinishMoldReq(string wo_Req_No, int req_seq)
+        {
+            JobOrderService service = new JobOrderService();
+            if (service.FinishMoldReq(wo_Req_No, req_seq) >= 1)
+            {
+                MessageBox.Show("생간의뢰가 마감되었습니다.");
+            }
+            else
+            {
+                MessageBox.Show("생산의뢰를 체크해주세요.");
+            }
+
         }
 
+        private void DgvProductRequset_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                selectedWoReq = dgvSearchResult.SelectedRows[0].Cells[1].Value.ToString();
+                req_Seq = int.Parse(dgvSearchResult.SelectedRows[0].Cells[2].Value.ToString());
+                if (dgvSearchResult.Rows[e.RowIndex].Cells[0].Value == null)
+                {
+                    dgvSearchResult.SelectedRows[0].Cells[0].Value = CheckState.Checked;
+                }
+                else if (dgvSearchResult.Rows[e.RowIndex].Cells[0].Value.ToString() == "True")
+                {
+                    dgvSearchResult.SelectedRows[0].Cells[0].Value = CheckState.Unchecked;
+                }
+                else
+                {
+                    dgvSearchResult.SelectedRows[0].Cells[0].Value = CheckState.Checked;
+                }
+            }
+        }
+        private void BtnDeadline_Click(object sender, EventArgs e)
+        {
+            //체크표시한 모든 or 선택한 생산의뢰의 Wo_Status 를 '마감'으로 변경한다.
+            for (int i = 0; i < dgvSearchResult.Rows.Count; i++)
+            {
+                if (dgvSearchResult.Rows[i].Cells[0].Value.ToString() == "True")
+                {
+                    FinishMoldReq(selectedWoReq, req_Seq);
 
+                }
+            }
+
+            //생산의뢰dgv 새로고침
+            RefreshList();
+            //작업지시dgv null
+            List = null;
+            dgvSearchResult.DataSource = List;
+
+        }
+        private void RefreshList()
+        {
+            JobOrderService service = new JobOrderService();
+            List = service.JobOrderCreation();
+            dgvSearchResult.DataSource = List;
+        }
+
+        // 저장
+        private void Save()
+        {
+            //txtJobOrderCodeInput.Text;
+            //txtPlanAmount.Text;
+            //txtItemCode.Text;
+            //txtItemName.Text;
+            //cmbWorkPlace.Items.ToString();
+            //nuPlanAmount.Value.ToString();
+        }
     }
 
 

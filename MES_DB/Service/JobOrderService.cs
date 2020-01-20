@@ -31,5 +31,10 @@ namespace MES_DB
             JobOrderDac dac = new JobOrderDac();
             return dac.FinishMoldReq(wo_Req_No,req_seq);
         }
+        public List<MoldingOrderCreation_ReqVo> SearchMoldReq_date(DateTime start, DateTime end)
+        {
+            JobOrderDac dac = new JobOrderDac();
+            return dac.SearchMoldReq_date(start, end);
+        }
     }
 }

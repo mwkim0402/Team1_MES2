@@ -63,6 +63,16 @@ namespace FieldOperationForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap f {
+            get {
+                object obj = ResourceManager.GetObject("f", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap 로그아웃 {
             get {
                 object obj = ResourceManager.GetObject("로그아웃", resourceCulture);
@@ -86,6 +96,26 @@ namespace FieldOperationForm.Properties {
         internal static System.Drawing.Bitmap 종료1 {
             get {
                 object obj = ResourceManager.GetObject("종료1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 최대화 {
+            get {
+                object obj = ResourceManager.GetObject("최대화", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 최소화 {
+            get {
+                object obj = ResourceManager.GetObject("최소화", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

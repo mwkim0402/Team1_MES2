@@ -34,48 +34,49 @@
             this.btnChange = new System.Windows.Forms.Button();
             this.fcWorkPlace = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
-            this.fcFactory = new AdminForm.FIndCategory();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.dtpInputdate = new System.Windows.Forms.DateTimePicker();
+            this.dtpPlanDate = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.txtMoldGroupInput = new System.Windows.Forms.TextBox();
+            this.txtItemCode = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.txtMoldCodeInput = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtPlanAmount = new System.Windows.Forms.TextBox();
+            this.txtJobOrderCodeInput = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txtItemName = new System.Windows.Forms.TextBox();
+            this.cmbWorkPlace = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.cbPlanAmount = new AdminForm.FIndCategory();
+            this.nuPlanAmount = new System.Windows.Forms.NumericUpDown();
             this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuPlanAmount)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.cmbWorkPlace);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.txtItemName);
+            this.panel1.Controls.Add(this.nuPlanAmount);
             this.panel1.Controls.Add(this.label23);
-            this.panel1.Controls.Add(this.dtpInputdate);
+            this.panel1.Controls.Add(this.dtpPlanDate);
             this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.txtMoldGroupInput);
+            this.panel1.Controls.Add(this.txtItemCode);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.txtPrice);
-            this.panel1.Controls.Add(this.txtMoldCodeInput);
+            this.panel1.Controls.Add(this.txtPlanAmount);
+            this.panel1.Controls.Add(this.txtJobOrderCodeInput);
             // 
             // panel2
             // 
@@ -87,7 +88,7 @@
             this.panel2.Controls.Add(this.btnChange);
             this.panel2.Controls.Add(this.fcWorkPlace);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.fcFactory);
+            this.panel2.Controls.Add(this.cbPlanAmount);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.dtpEnd);
@@ -107,6 +108,7 @@
             this.btnDeadline.TabIndex = 11;
             this.btnDeadline.Text = "작업지시 마감";
             this.btnDeadline.UseVisualStyleBackColor = true;
+            this.btnDeadline.Click += new System.EventHandler(this.BtnDeadline_Click);
             // 
             // btnDeadlineCancel
             // 
@@ -147,15 +149,6 @@
             this.label4.Size = new System.Drawing.Size(56, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "작업장";
-            // 
-            // fcFactory
-            // 
-            this.fcFactory.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.fcFactory.Category = AdminForm.CategoryMode.Process;
-            this.fcFactory.Location = new System.Drawing.Point(403, 22);
-            this.fcFactory.Name = "fcFactory";
-            this.fcFactory.Size = new System.Drawing.Size(190, 27);
-            this.fcFactory.TabIndex = 5;
             // 
             // label3
             // 
@@ -215,13 +208,13 @@
             this.label23.TabIndex = 45;
             this.label23.Text = "작업지시번호";
             // 
-            // dtpInputdate
+            // dtpPlanDate
             // 
-            this.dtpInputdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpInputdate.Location = new System.Drawing.Point(369, 46);
-            this.dtpInputdate.Name = "dtpInputdate";
-            this.dtpInputdate.Size = new System.Drawing.Size(98, 21);
-            this.dtpInputdate.TabIndex = 43;
+            this.dtpPlanDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpPlanDate.Location = new System.Drawing.Point(369, 46);
+            this.dtpPlanDate.Name = "dtpPlanDate";
+            this.dtpPlanDate.Size = new System.Drawing.Size(98, 21);
+            this.dtpPlanDate.TabIndex = 43;
             // 
             // label22
             // 
@@ -245,12 +238,12 @@
             this.label21.TabIndex = 47;
             this.label21.Text = "계획수량단위";
             // 
-            // txtMoldGroupInput
+            // txtItemCode
             // 
-            this.txtMoldGroupInput.Location = new System.Drawing.Point(586, 15);
-            this.txtMoldGroupInput.Name = "txtMoldGroupInput";
-            this.txtMoldGroupInput.Size = new System.Drawing.Size(100, 21);
-            this.txtMoldGroupInput.TabIndex = 54;
+            this.txtItemCode.Location = new System.Drawing.Point(586, 15);
+            this.txtItemCode.Name = "txtItemCode";
+            this.txtItemCode.Size = new System.Drawing.Size(100, 21);
+            this.txtItemCode.TabIndex = 54;
             // 
             // label19
             // 
@@ -274,27 +267,19 @@
             this.label18.TabIndex = 49;
             this.label18.Text = "계획일자";
             // 
-            // txtPrice
+            // txtPlanAmount
             // 
-            this.txtPrice.Location = new System.Drawing.Point(146, 46);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(100, 21);
-            this.txtPrice.TabIndex = 52;
+            this.txtPlanAmount.Location = new System.Drawing.Point(146, 46);
+            this.txtPlanAmount.Name = "txtPlanAmount";
+            this.txtPlanAmount.Size = new System.Drawing.Size(100, 21);
+            this.txtPlanAmount.TabIndex = 52;
             // 
-            // txtMoldCodeInput
+            // txtJobOrderCodeInput
             // 
-            this.txtMoldCodeInput.Location = new System.Drawing.Point(146, 15);
-            this.txtMoldCodeInput.Name = "txtMoldCodeInput";
-            this.txtMoldCodeInput.Size = new System.Drawing.Size(100, 21);
-            this.txtMoldCodeInput.TabIndex = 51;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(369, 15);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(98, 20);
-            this.comboBox1.TabIndex = 55;
+            this.txtJobOrderCodeInput.Location = new System.Drawing.Point(146, 15);
+            this.txtJobOrderCodeInput.Name = "txtJobOrderCodeInput";
+            this.txtJobOrderCodeInput.Size = new System.Drawing.Size(100, 21);
+            this.txtJobOrderCodeInput.TabIndex = 51;
             // 
             // label5
             // 
@@ -307,20 +292,20 @@
             this.label5.TabIndex = 56;
             this.label5.Text = "품목명";
             // 
-            // textBox1
+            // txtItemName
             // 
-            this.textBox1.Location = new System.Drawing.Point(586, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 57;
+            this.txtItemName.Location = new System.Drawing.Point(586, 46);
+            this.txtItemName.Name = "txtItemName";
+            this.txtItemName.Size = new System.Drawing.Size(100, 21);
+            this.txtItemName.TabIndex = 57;
             // 
-            // comboBox2
+            // cmbWorkPlace
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(791, 15);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(131, 20);
-            this.comboBox2.TabIndex = 59;
+            this.cmbWorkPlace.FormattingEnabled = true;
+            this.cmbWorkPlace.Location = new System.Drawing.Point(791, 15);
+            this.cmbWorkPlace.Name = "cmbWorkPlace";
+            this.cmbWorkPlace.Size = new System.Drawing.Size(131, 20);
+            this.cmbWorkPlace.TabIndex = 59;
             // 
             // label6
             // 
@@ -332,6 +317,22 @@
             this.label6.Size = new System.Drawing.Size(56, 16);
             this.label6.TabIndex = 58;
             this.label6.Text = "작업장";
+            // 
+            // cbPlanAmount
+            // 
+            this.cbPlanAmount.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbPlanAmount.Category = AdminForm.CategoryMode.Process;
+            this.cbPlanAmount.Location = new System.Drawing.Point(403, 22);
+            this.cbPlanAmount.Name = "cbPlanAmount";
+            this.cbPlanAmount.Size = new System.Drawing.Size(190, 27);
+            this.cbPlanAmount.TabIndex = 5;
+            // 
+            // nuPlanAmount
+            // 
+            this.nuPlanAmount.Location = new System.Drawing.Point(369, 14);
+            this.nuPlanAmount.Name = "nuPlanAmount";
+            this.nuPlanAmount.Size = new System.Drawing.Size(98, 21);
+            this.nuPlanAmount.TabIndex = 10;
             // 
             // JobOrderCreation
             // 
@@ -357,6 +358,7 @@
             this.tabControl2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuPlanAmount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -370,23 +372,23 @@
         private System.Windows.Forms.Label label2;
         private FIndCategory fcWorkPlace;
         private System.Windows.Forms.Label label4;
-        private FIndCategory fcFactory;
         private System.Windows.Forms.Button btnDeadlineCancel;
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Button btnDeadline;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtItemName;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DateTimePicker dtpInputdate;
+        private System.Windows.Forms.DateTimePicker dtpPlanDate;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox txtMoldGroupInput;
+        private System.Windows.Forms.TextBox txtItemCode;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.TextBox txtMoldCodeInput;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox txtPlanAmount;
+        private System.Windows.Forms.TextBox txtJobOrderCodeInput;
+        private System.Windows.Forms.ComboBox cmbWorkPlace;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown nuPlanAmount;
+        private FIndCategory cbPlanAmount;
     }
 }

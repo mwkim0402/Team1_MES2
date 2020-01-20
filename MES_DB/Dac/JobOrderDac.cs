@@ -45,7 +45,7 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "JobOrderCreation";
+                cmd.CommandText = "JobOrderDetail";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Wo_Req_No", Wo_Req_No);
 
@@ -71,6 +71,29 @@ namespace MES_DB
                 cmd.Connection.Open();
                 int result = cmd.ExecuteNonQuery();
                 return result;
+            }
+        }
+
+        
+            public List<MoldingOrderCreation_ReqVo> SearchMoldReq_date(DateTime start, DateTime end)
+        {
+            string strStart = start.ToString().Substring(0, 10);
+            string strEnd = end.ToString().Substring(0, 10);
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "SearchMoldReq_date";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Wo_Req_No", strStart);
+                cmd.Parameters.AddWithValue("@Req_Seq", strEnd);
+
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<MoldingOrderCreation_ReqVo> list = Helper.DataReaderMapToList<MoldingOrderCreation_ReqVo>(reader);
+                cmd.Connection.Close();
+                return list;
             }
         }
     }

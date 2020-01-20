@@ -13,6 +13,7 @@ namespace AdminForm
 {
     public partial class MoldingOrderCreation : dgvTwo
     {
+
         List<MoldingOrderCreation_ReqVo> ListReq = null;
         List<MoldingOrderCreation_WoVo> ListWo = null;
         string selectedWoReq; //생산의뢰번호
@@ -99,7 +100,6 @@ namespace AdminForm
             ProdReqList();
 
             dgvProductRequset.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
             dgvProductRequset.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvProductRequset.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvProductRequset.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -131,9 +131,33 @@ namespace AdminForm
 
             //이벤트추가
             this.dgvProductRequset.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductRequset_CellDoubleClick);
+            this.dgvProductRequset.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductRequset_CellClick);
             dgvProductRequset.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvJobOrder.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            
         }
+
+        private void DgvProductRequset_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0 )
+            {
+                selectedWoReq = dgvProductRequset.SelectedRows[0].Cells[1].Value.ToString();
+                req_Seq = int.Parse(dgvProductRequset.SelectedRows[0].Cells[2].Value.ToString());
+                if (dgvProductRequset.Rows[e.RowIndex].Cells[0].Value ==null)
+                {
+                    dgvProductRequset.SelectedRows[0].Cells[0].Value = CheckState.Checked;
+                }
+                else if (dgvProductRequset.Rows[e.RowIndex].Cells[0].Value.ToString() == "True")
+                {
+                    dgvProductRequset.SelectedRows[0].Cells[0].Value = CheckState.Unchecked;
+                }
+                else
+                {
+                    dgvProductRequset.SelectedRows[0].Cells[0].Value = CheckState.Checked;
+                }
+            }
+        }
+
         private void DgvProductRequset_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //생산의뢰에 해당되는 작업지시를 작업지시dgv에 띄운다.
@@ -146,8 +170,16 @@ namespace AdminForm
 
         private void BtnOrderCreationDeadline_Click(object sender, EventArgs e)
         {
+
             //체크표시한 모든 or 선택한 생산의뢰의 Wo_Status 를 '마감'으로 변경한다.
-            FinishMoldReq(selectedWoReq,req_Seq);
+            for (int i = 0; i < dgvProductRequset.Rows.Count; i++)
+            {
+                if(dgvProductRequset.Rows[i].Cells[0].Value.ToString() == "True")
+                {
+                    FinishMoldReq(selectedWoReq, req_Seq);
+
+                }
+            }
 
             //생산의뢰dgv 새로고침
             ProdReqList();
@@ -157,5 +189,15 @@ namespace AdminForm
 
 
         }
+
+        //검색-생산의뢰날짜
+        private void Search_date(object sender, EventArgs e)
+        {
+            JobOrderService ser = new JobOrderService();
+            ListReq = ser.SearchMoldReq_date(dtpStart.Value, dtpEnd.Value);
+            dgvProductRequset.DataSource = ListReq;
+
+        }
+
     }
 }

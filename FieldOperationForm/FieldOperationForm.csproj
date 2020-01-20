@@ -92,17 +92,19 @@
     <Compile Include="CommonForm\QualityMeasurement.Designer.cs">
       <DependentUpon>QualityMeasurement.cs</DependentUpon>
     </Compile>
-    <Compile Include="CommonForm\workerAllocation .cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="CommonForm\workerAllocation .cs" />
     <Compile Include="CommonForm\workerAllocation .Designer.cs">
       <DependentUpon>workerAllocation .cs</DependentUpon>
     </Compile>
     <Compile Include="FieldDac\Notice_Dac.cs" />
     <Compile Include="FieldDac\User_Dac.cs" />
+    <Compile Include="FieldDac\WorkAllocation_Dac.cs" />
     <Compile Include="FieldService\Notice_Service.cs" />
+    <Compile Include="FieldService\WorkAllocation_Service.cs" />
     <Compile Include="FieldVo\Notice_Vo.cs" />
     <Compile Include="FieldVo\User_Vo.cs" />
+    <Compile Include="FieldVo\WorkAllocation_Vo.cs" />
+    <Compile Include="FieldVo\WorkCenter_Vo.cs" />
     <Compile Include="JobOrder_Load\EmptyTruck.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,7 +330,10 @@
     <Content Include="Class\DataBase_XML.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\f.PNG" />
     <Content Include="Resources\종료.PNG" />
+    <None Include="Resources\최대화.PNG" />
+    <None Include="Resources\최소화.PNG" />
     <Content Include="Resources\캡처.PNG" />
   </ItemGroup>
   <ItemGroup>

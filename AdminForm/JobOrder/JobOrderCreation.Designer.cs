@@ -91,7 +91,7 @@
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(1124, 98);
+            //this.panel1.Size = new System.Drawing.Size(1124, 98);
             // 
             // panel2
             // 

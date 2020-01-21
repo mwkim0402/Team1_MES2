@@ -1,4 +1,4 @@
-﻿using MES_DB.Dac;
+﻿
 using MES_DB.Vo;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MES_DB.Service
+namespace MES_DB
 {
     public class PerformService
     {
@@ -14,6 +14,11 @@ namespace MES_DB.Service
         {
             PerformDAC dac = new PerformDAC();
             return dac.AllWorkStatuseList();
+        }
+        public List<PerformSearchVO> GetAllPerformSearch()
+        {
+            PerformDAC dac = new PerformDAC();
+            return dac.GetAllPerformSearch();
         }
     }
 }

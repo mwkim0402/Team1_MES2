@@ -64,6 +64,7 @@
     <Compile Include="Vo\MoldingOrderCreation_ReqVo.cs" />
     <Compile Include="Vo\JobOrderCreateVo.cs" />
     <Compile Include="Vo\MenuTreeVo.cs" />
+    <Compile Include="Vo\PerformSearchVO.cs" />
     <Compile Include="Vo\WorkdiligenceStatusanalysisVO.cs" />
     <Compile Include="Vo\WorkdiligenceStatusanalysisVOgridview1.cs" />
   </ItemGroup>

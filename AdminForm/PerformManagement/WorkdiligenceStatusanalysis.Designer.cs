@@ -92,6 +92,7 @@
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(98, 21);
             this.dtpEnd.TabIndex = 2;
+            this.dtpEnd.ValueChanged += new System.EventHandler(this.dtpEnd_ValueChanged);
             // 
             // dtpStart
             // 
@@ -100,6 +101,7 @@
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(98, 21);
             this.dtpStart.TabIndex = 1;
+            this.dtpStart.ValueChanged += new System.EventHandler(this.dtpStart_ValueChanged);
             // 
             // label1
             // 

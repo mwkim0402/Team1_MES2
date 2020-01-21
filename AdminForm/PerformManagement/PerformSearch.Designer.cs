@@ -96,6 +96,8 @@
             this.fcWork.Location = new System.Drawing.Point(718, 19);
             this.fcWork.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fcWork.Name = "fcWork";
+            this.fcWork.SendCode = null;
+            this.fcWork.SendName = null;
             this.fcWork.Size = new System.Drawing.Size(190, 27);
             this.fcWork.TabIndex = 5;
             // 
@@ -125,6 +127,8 @@
             this.fcFactory.Location = new System.Drawing.Point(443, 19);
             this.fcFactory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fcFactory.Name = "fcFactory";
+            this.fcFactory.SendCode = null;
+            this.fcFactory.SendName = null;
             this.fcFactory.Size = new System.Drawing.Size(190, 27);
             this.fcFactory.TabIndex = 1;
             // 
@@ -177,6 +181,8 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "  ";
+            this.Activated += new System.EventHandler(this.PerformSearch_Activated);
+            this.Deactivate += new System.EventHandler(this.PerformSearch_Deactivate);
             this.Load += new System.EventHandler(this.PerformSearch_Load);
             this.Controls.SetChildIndex(this.tabControl1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);

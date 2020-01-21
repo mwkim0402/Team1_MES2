@@ -13,6 +13,8 @@ namespace AdminForm
     public partial class MainForm : Form
     {
         public event EventHandler Search_Click;
+        public event EventHandler Insert_Click;
+        public event EventHandler Delete_Click;
         private Point _imageLocation = new Point(25, 5);
         private Point _imgHitArea = new Point(23, 2);
         int CheckBtnIndex = 100;
@@ -388,6 +390,18 @@ namespace AdminForm
         {
             if (this.Search_Click != null)
                 Search_Click(this, null);
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            if (this.Insert_Click != null)
+                Insert_Click(this, null);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.Delete_Click != null)
+                Delete_Click(this, null);
         }
     }
 }

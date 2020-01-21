@@ -14,14 +14,15 @@ namespace AdminForm
         MainForm frm;
         public ItemClassInfo()
         {
-            frm = (MainForm)this.MdiParent;
+           
             InitializeComponent();
         }
 
         private void ItemClassInfo_Load(object sender, EventArgs e)
         {
-           //  frm.Search_Click += new System.EventHandler(this.Search_Click);
-           // ItemService service = new ItemService();;
+            //  frm.Search_Click += new System.EventHandler(this.Search_Click);
+            // ItemService service = new ItemService();;
+            frm = (MainForm)this.MdiParent;
             ShowDgv();
            // dgvSearchResult.DataSource = service.GetAllItem();
         }

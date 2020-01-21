@@ -14,7 +14,7 @@ namespace AdminForm
         MainForm frm;
         public ItemClassInfo()
         {
-            frm = (MainForm)ActiveForm;
+            frm = (MainForm)this.MdiParent;
             InitializeComponent();
         }
 

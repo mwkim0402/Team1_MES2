@@ -382,6 +382,8 @@ namespace AdminForm
             }
         }
 
+
+        // 메인 메뉴 조회 공통 버튼
         private void btnS_Click(object sender, EventArgs e)
         {
             if (this.Search_Click != null)

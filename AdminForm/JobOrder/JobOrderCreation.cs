@@ -158,14 +158,10 @@ namespace AdminForm
 
        
 
-        private void JobOrderCreation_Leave(object sender, EventArgs e)
-        {
-
-        }
-
         private void JobOrderCreation_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += new System.EventHandler(Search_Click);
+           
         }
 
         private void JobOrderCreation_Deactivate(object sender, EventArgs e)

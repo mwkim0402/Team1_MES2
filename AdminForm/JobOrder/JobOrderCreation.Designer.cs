@@ -54,29 +54,29 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cbPlanAmount = new AdminForm.FIndCategory();
             this.nuPlanAmount = new System.Windows.Forms.NumericUpDown();
-            this.tabControl4.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            this.tcParent1.SuspendLayout();
+            this.pnlParent1.SuspendLayout();
+            this.tcParent2.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuPlanAmount)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.cmbWorkPlace);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txtItemName);
-            this.panel1.Controls.Add(this.nuPlanAmount);
-            this.panel1.Controls.Add(this.label23);
-            this.panel1.Controls.Add(this.dtpPlanDate);
-            this.panel1.Controls.Add(this.label22);
-            this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.txtItemCode);
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.txtPlanAmount);
-            this.panel1.Controls.Add(this.txtJobOrderCodeInput);
+            this.pnlParent1.Controls.Add(this.cmbWorkPlace);
+            this.pnlParent1.Controls.Add(this.label6);
+            this.pnlParent1.Controls.Add(this.label5);
+            this.pnlParent1.Controls.Add(this.txtItemName);
+            this.pnlParent1.Controls.Add(this.nuPlanAmount);
+            this.pnlParent1.Controls.Add(this.label23);
+            this.pnlParent1.Controls.Add(this.dtpPlanDate);
+            this.pnlParent1.Controls.Add(this.label22);
+            this.pnlParent1.Controls.Add(this.label21);
+            this.pnlParent1.Controls.Add(this.txtItemCode);
+            this.pnlParent1.Controls.Add(this.label19);
+            this.pnlParent1.Controls.Add(this.label18);
+            this.pnlParent1.Controls.Add(this.txtPlanAmount);
+            this.pnlParent1.Controls.Add(this.txtJobOrderCodeInput);
             // 
             // panel2
             // 
@@ -349,13 +349,13 @@
             this.Text = "JobOrderCreation";
             this.Load += new System.EventHandler(this.JobOrderCreation_Load);
             this.Controls.SetChildIndex(this.panel2, 0);
-            this.Controls.SetChildIndex(this.tabControl4, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.tabControl2, 0);
-            this.tabControl4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.tabControl2.ResumeLayout(false);
+            this.Controls.SetChildIndex(this.tcParent1, 0);
+            //this.Controls.SetChildIndex(this.pnlParent1, 0);
+            this.Controls.SetChildIndex(this.tcParent2, 0);
+            this.tcParent1.ResumeLayout(false);
+            this.pnlParent1.ResumeLayout(false);
+            this.pnlParent1.PerformLayout();
+            this.tcParent2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuPlanAmount)).EndInit();

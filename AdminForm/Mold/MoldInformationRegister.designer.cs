@@ -56,34 +56,34 @@
             this.gbUsable = new System.Windows.Forms.GroupBox();
             this.rbUse = new System.Windows.Forms.RadioButton();
             this.rbNoUse = new System.Windows.Forms.RadioButton();
-            this.tabControl4.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            this.tcParent1.SuspendLayout();
+            this.pnlParent1.SuspendLayout();
+            this.tcParent2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbUsable.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.gbUsable);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.label23);
-            this.panel1.Controls.Add(this.dtpInputdate);
-            this.panel1.Controls.Add(this.dtpLastEquipDate);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label22);
-            this.panel1.Controls.Add(this.txtWarrentNum);
-            this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.txtPS);
-            this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.txtMoldGroupInput);
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.txtMoldNameInput);
-            this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.txtPrice);
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.txtMoldCodeInput);
-            this.panel1.Controls.Add(this.label16);
+            this.pnlParent1.Controls.Add(this.gbUsable);
+            this.pnlParent1.Controls.Add(this.btnSave);
+            this.pnlParent1.Controls.Add(this.label23);
+            this.pnlParent1.Controls.Add(this.dtpInputdate);
+            this.pnlParent1.Controls.Add(this.dtpLastEquipDate);
+            this.pnlParent1.Controls.Add(this.label13);
+            this.pnlParent1.Controls.Add(this.label22);
+            this.pnlParent1.Controls.Add(this.txtWarrentNum);
+            this.pnlParent1.Controls.Add(this.label21);
+            this.pnlParent1.Controls.Add(this.txtPS);
+            this.pnlParent1.Controls.Add(this.label20);
+            this.pnlParent1.Controls.Add(this.txtMoldGroupInput);
+            this.pnlParent1.Controls.Add(this.label19);
+            this.pnlParent1.Controls.Add(this.txtMoldNameInput);
+            this.pnlParent1.Controls.Add(this.label18);
+            this.pnlParent1.Controls.Add(this.txtPrice);
+            this.pnlParent1.Controls.Add(this.label17);
+            this.pnlParent1.Controls.Add(this.txtMoldCodeInput);
+            this.pnlParent1.Controls.Add(this.label16);
             // 
             // panel2
             // 
@@ -381,14 +381,14 @@
             this.MinimizeBox = false;
             this.Name = "MoldInformationRegister";
             this.Load += new System.EventHandler(this.MoldInformationRegister_Load);
-            this.Controls.SetChildIndex(this.tabControl4, 0);
-            this.Controls.SetChildIndex(this.tabControl2, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.tcParent1, 0);
+            this.Controls.SetChildIndex(this.tcParent2, 0);
+            //this.Controls.SetChildIndex(this.pnlParent1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
-            this.tabControl4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.tabControl2.ResumeLayout(false);
+            this.tcParent1.ResumeLayout(false);
+            this.pnlParent1.ResumeLayout(false);
+            this.pnlParent1.PerformLayout();
+            this.tcParent2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.gbUsable.ResumeLayout(false);

@@ -47,9 +47,9 @@
             this.txtFacNameInput = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtFacGroupInput = new System.Windows.Forms.TextBox();
-            this.tabControl4.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            this.tcParent1.SuspendLayout();
+            this.pnlParent1.SuspendLayout();
+            this.tcParent2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbUsable.SuspendLayout();
             this.SuspendLayout();
@@ -63,16 +63,16 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtFacGroupInput);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtFacNameInput);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.gbUsable);
-            this.panel1.Controls.Add(this.label23);
-            this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.txtPS);
-            this.panel1.Controls.Add(this.txtFacCodeInput);
+            this.pnlParent1.Controls.Add(this.label4);
+            this.pnlParent1.Controls.Add(this.txtFacGroupInput);
+            this.pnlParent1.Controls.Add(this.label2);
+            this.pnlParent1.Controls.Add(this.txtFacNameInput);
+            this.pnlParent1.Controls.Add(this.btnSave);
+            this.pnlParent1.Controls.Add(this.gbUsable);
+            this.pnlParent1.Controls.Add(this.label23);
+            this.pnlParent1.Controls.Add(this.label21);
+            this.pnlParent1.Controls.Add(this.txtPS);
+            this.pnlParent1.Controls.Add(this.txtFacCodeInput);
             // 
             // tabPage2
             // 
@@ -297,13 +297,13 @@
             this.Text = "ProcessInfo";
             this.Load += new System.EventHandler(this.ProcessInfo_Load);
             this.Controls.SetChildIndex(this.panel2, 0);
-            this.Controls.SetChildIndex(this.tabControl4, 0);
-            this.Controls.SetChildIndex(this.tabControl2, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.tabControl4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.tabControl2.ResumeLayout(false);
+            this.Controls.SetChildIndex(this.tcParent1, 0);
+            this.Controls.SetChildIndex(this.tcParent2, 0);
+            //this.Controls.SetChildIndex(this.pnlParent1, 0);
+            this.tcParent1.ResumeLayout(false);
+            this.pnlParent1.ResumeLayout(false);
+            this.pnlParent1.PerformLayout();
+            this.tcParent2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.gbUsable.ResumeLayout(false);

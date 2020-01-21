@@ -48,9 +48,9 @@
             this.gbUsable = new System.Windows.Forms.GroupBox();
             this.rbUse_Use = new System.Windows.Forms.RadioButton();
             this.rbNoUse_Use = new System.Windows.Forms.RadioButton();
-            this.tabControl4.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            this.tcParent1.SuspendLayout();
+            this.pnlParent1.SuspendLayout();
+            this.tcParent2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbMonitor.SuspendLayout();
             this.gbUsable.SuspendLayout();
@@ -65,17 +65,17 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.gbMonitor);
-            this.panel1.Controls.Add(this.gbUsable);
-            this.panel1.Controls.Add(this.txtContentDll);
-            this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label23);
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.txtMoniCodeInput);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.txtMoniNameInput);
-            this.panel1.Controls.Add(this.txtLocate);
+            this.pnlParent1.Controls.Add(this.gbMonitor);
+            this.pnlParent1.Controls.Add(this.gbUsable);
+            this.pnlParent1.Controls.Add(this.txtContentDll);
+            this.pnlParent1.Controls.Add(this.label21);
+            this.pnlParent1.Controls.Add(this.label6);
+            this.pnlParent1.Controls.Add(this.label23);
+            this.pnlParent1.Controls.Add(this.label19);
+            this.pnlParent1.Controls.Add(this.txtMoniCodeInput);
+            this.pnlParent1.Controls.Add(this.btnSave);
+            this.pnlParent1.Controls.Add(this.txtMoniNameInput);
+            this.pnlParent1.Controls.Add(this.txtLocate);
             // 
             // tabPage2
             // 
@@ -318,14 +318,14 @@
             this.ShowInTaskbar = false;
             this.Text = "MonitorManager";
             this.Load += new System.EventHandler(this.MonitorManager_Load);
-            this.Controls.SetChildIndex(this.tabControl4, 0);
-            this.Controls.SetChildIndex(this.tabControl2, 0);
+            this.Controls.SetChildIndex(this.tcParent1, 0);
+            this.Controls.SetChildIndex(this.tcParent2, 0);
             //this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
-            this.tabControl4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.tabControl2.ResumeLayout(false);
+            this.tcParent1.ResumeLayout(false);
+            this.pnlParent1.ResumeLayout(false);
+            this.pnlParent1.PerformLayout();
+            this.tcParent2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.gbMonitor.ResumeLayout(false);

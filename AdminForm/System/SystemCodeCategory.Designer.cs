@@ -40,9 +40,9 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPS = new System.Windows.Forms.TextBox();
-            this.tabControl4.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            this.tcParent1.SuspendLayout();
+            this.pnlParent1.SuspendLayout();
+            this.tcParent2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,13 +55,13 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtPS);
-            this.panel1.Controls.Add(this.label23);
-            this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.txtCatCodeInput);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.txtCatNameInput);
+            this.pnlParent1.Controls.Add(this.label2);
+            this.pnlParent1.Controls.Add(this.txtPS);
+            this.pnlParent1.Controls.Add(this.label23);
+            this.pnlParent1.Controls.Add(this.label21);
+            this.pnlParent1.Controls.Add(this.txtCatCodeInput);
+            this.pnlParent1.Controls.Add(this.btnSave);
+            this.pnlParent1.Controls.Add(this.txtCatNameInput);
             // 
             // tabPage2
             // 
@@ -205,14 +205,14 @@
             this.ShowInTaskbar = false;
             this.Text = "SystemCodeCategory";
             this.Load += new System.EventHandler(this.SystemCodeCategory_Load);
-            this.Controls.SetChildIndex(this.tabControl4, 0);
-            this.Controls.SetChildIndex(this.tabControl2, 0);
+            this.Controls.SetChildIndex(this.tcParent1, 0);
+            this.Controls.SetChildIndex(this.tcParent2, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.tabControl4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.tabControl2.ResumeLayout(false);
+            //this.Controls.SetChildIndex(this.pnlParent1, 0);
+            this.tcParent1.ResumeLayout(false);
+            this.pnlParent1.ResumeLayout(false);
+            this.pnlParent1.PerformLayout();
+            this.tcParent2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);

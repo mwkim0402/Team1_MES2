@@ -47,10 +47,10 @@
             this.rbY = new System.Windows.Forms.RadioButton();
             this.rbN = new System.Windows.Forms.RadioButton();
             this.btnSave = new System.Windows.Forms.Button();
-            this.tabControl4.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            this.tcParent1.SuspendLayout();
+            this.tcParent2.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlParent1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbUsable.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +62,7 @@
             // 
             // tabControl2
             // 
-            this.tabControl2.Location = new System.Drawing.Point(12, 453);
+            this.tcParent2.Location = new System.Drawing.Point(12, 453);
             // 
             // tabPage2
             // 
@@ -71,20 +71,20 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.gbUsable);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label25);
-            this.panel1.Controls.Add(this.txtProcess);
-            this.panel1.Controls.Add(this.txtSPEC);
-            this.panel1.Controls.Add(this.txtIP);
-            this.panel1.Controls.Add(this.txtIPCInput);
-            this.panel1.Controls.Add(this.txtIPCcode);
-            this.panel1.Location = new System.Drawing.Point(3, 4);
-            this.panel1.Size = new System.Drawing.Size(1118, 91);
+            this.pnlParent1.Controls.Add(this.btnSave);
+            this.pnlParent1.Controls.Add(this.gbUsable);
+            this.pnlParent1.Controls.Add(this.label6);
+            this.pnlParent1.Controls.Add(this.label5);
+            this.pnlParent1.Controls.Add(this.label4);
+            this.pnlParent1.Controls.Add(this.label2);
+            this.pnlParent1.Controls.Add(this.label25);
+            this.pnlParent1.Controls.Add(this.txtProcess);
+            this.pnlParent1.Controls.Add(this.txtSPEC);
+            this.pnlParent1.Controls.Add(this.txtIP);
+            this.pnlParent1.Controls.Add(this.txtIPCInput);
+            this.pnlParent1.Controls.Add(this.txtIPCcode);
+            this.pnlParent1.Location = new System.Drawing.Point(3, 4);
+            this.pnlParent1.Size = new System.Drawing.Size(1118, 91);
             // 
             // panel2
             // 
@@ -285,14 +285,14 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.IPCInfo_Load);
-            this.Controls.SetChildIndex(this.tabControl4, 0);
-            this.Controls.SetChildIndex(this.tabControl2, 0);
+            this.Controls.SetChildIndex(this.tcParent1, 0);
+            this.Controls.SetChildIndex(this.tcParent2, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
-            this.tabControl4.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
+            this.tcParent1.ResumeLayout(false);
+            this.tcParent2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlParent1.ResumeLayout(false);
+            this.pnlParent1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.gbUsable.ResumeLayout(false);

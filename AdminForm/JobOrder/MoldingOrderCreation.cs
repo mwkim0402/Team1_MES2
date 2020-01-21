@@ -39,9 +39,9 @@ namespace AdminForm
         private void FinishMoldReq(string wo_Req_No, int req_seq)
         {
             JobOrderService service = new JobOrderService();
-            if(service.FinishMoldReq(wo_Req_No, req_seq) >= 1)
+            int result = service.FinishMoldReq(wo_Req_No, req_seq);
+            if (result >= 1)
             {
-                MessageBox.Show("생간의뢰가 마감되었습니다.");
             }
             else
             {
@@ -174,10 +174,12 @@ namespace AdminForm
             //체크표시한 모든 or 선택한 생산의뢰의 Wo_Status 를 '작업지시마감'으로 변경한다.
             for (int i = 0; i < dgvProductRequset.Rows.Count; i++)
             {
-                if(dgvProductRequset.Rows[i].Cells[0].Value.ToString() == "True")
+                if(dgvProductRequset.Rows[i].Cells[0].Value == null)
+                {
+                }
+                else
                 {
                     FinishMoldReq(selectedWoReq, req_Seq);
-
                 }
             }
 

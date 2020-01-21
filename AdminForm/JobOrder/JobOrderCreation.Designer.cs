@@ -34,6 +34,7 @@
             this.btnChange = new System.Windows.Forms.Button();
             this.fcWorkPlace = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
+            this.cbPlanAmount = new AdminForm.FIndCategory();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
@@ -52,8 +53,8 @@
             this.txtItemName = new System.Windows.Forms.TextBox();
             this.cmbWorkPlace = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbPlanAmount = new AdminForm.FIndCategory();
             this.nuPlanAmount = new System.Windows.Forms.NumericUpDown();
+            this.btnSave = new System.Windows.Forms.Button();
             this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.cmbWorkPlace);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -149,6 +151,15 @@
             this.label4.Size = new System.Drawing.Size(56, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "작업장";
+            // 
+            // cbPlanAmount
+            // 
+            this.cbPlanAmount.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbPlanAmount.Category = AdminForm.CategoryMode.Process;
+            this.cbPlanAmount.Location = new System.Drawing.Point(403, 22);
+            this.cbPlanAmount.Name = "cbPlanAmount";
+            this.cbPlanAmount.Size = new System.Drawing.Size(190, 27);
+            this.cbPlanAmount.TabIndex = 5;
             // 
             // label3
             // 
@@ -276,6 +287,7 @@
             // 
             // txtJobOrderCodeInput
             // 
+            this.txtJobOrderCodeInput.Enabled = false;
             this.txtJobOrderCodeInput.Location = new System.Drawing.Point(146, 15);
             this.txtJobOrderCodeInput.Name = "txtJobOrderCodeInput";
             this.txtJobOrderCodeInput.Size = new System.Drawing.Size(100, 21);
@@ -318,21 +330,24 @@
             this.label6.TabIndex = 58;
             this.label6.Text = "작업장";
             // 
-            // cbPlanAmount
-            // 
-            this.cbPlanAmount.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbPlanAmount.Category = AdminForm.CategoryMode.Process;
-            this.cbPlanAmount.Location = new System.Drawing.Point(403, 22);
-            this.cbPlanAmount.Name = "cbPlanAmount";
-            this.cbPlanAmount.Size = new System.Drawing.Size(190, 27);
-            this.cbPlanAmount.TabIndex = 5;
-            // 
             // nuPlanAmount
             // 
             this.nuPlanAmount.Location = new System.Drawing.Point(369, 14);
             this.nuPlanAmount.Name = "nuPlanAmount";
             this.nuPlanAmount.Size = new System.Drawing.Size(98, 21);
             this.nuPlanAmount.TabIndex = 10;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(1018, 17);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(92, 50);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "저장";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // JobOrderCreation
             // 
@@ -347,7 +362,10 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "JobOrderCreation";
+            this.Activated += new System.EventHandler(this.JobOrderCreation_Activated);
+            this.Deactivate += new System.EventHandler(this.JobOrderCreation_Deactivate);
             this.Load += new System.EventHandler(this.JobOrderCreation_Load);
+            this.Leave += new System.EventHandler(this.JobOrderCreation_Leave);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.tabControl4, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
@@ -390,5 +408,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown nuPlanAmount;
         private FIndCategory cbPlanAmount;
+        private System.Windows.Forms.Button btnSave;
     }
 }

@@ -13,12 +13,13 @@ namespace AdminForm
 {
     public partial class JobOrderCreation : dgvOneWithInput
     {
-
+        MainForm frm;
         string selectedWoReq; //생산의뢰번호
         int req_Seq; //의뢰순번
         List<JobOrderCreateVo> List = null;
         public JobOrderCreation()
         {
+            frm = (MainForm)ActiveForm;
             InitializeComponent();
         }
         private void RoadList()
@@ -141,6 +142,13 @@ namespace AdminForm
             dgvSearchResult.DataSource = List;
         }
 
+        public void Search_Click(object sender, EventArgs e)
+        {
+            JobOrderService service = new JobOrderService();
+            List = service.JobOrderCreation();
+            dgvSearchResult.DataSource = List;
+        }
+
         // 저장
         private void Save()
         {
@@ -150,6 +158,29 @@ namespace AdminForm
             //txtItemName.Text;
             //cmbWorkPlace.Items.ToString();
             //nuPlanAmount.Value.ToString();
+        }
+
+        private void JobOrderCreation_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void JobOrderCreation_Activated(object sender, EventArgs e)
+        {
+            frm.Search_Click += new System.EventHandler(Search_Click);
+        }
+
+        private void JobOrderCreation_Deactivate(object sender, EventArgs e)
+        {
+            frm.Search_Click -= new System.EventHandler(Search_Click);
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            int plan_qty = (int)nuPlanAmount.Value;
+            string plan_unit = txtPlanAmount.Text;
+            string plan_date = dtpPlanDate.Value.ToString().Substring(0, 10);
+            string item_code;
         }
     }
 

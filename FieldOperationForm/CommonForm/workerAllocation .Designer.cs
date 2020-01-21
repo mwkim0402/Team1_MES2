@@ -1,6 +1,6 @@
 ﻿namespace FieldOperationForm
 {
-    partial class workerAllocation
+    partial class workerAllocation 
     {
         /// <summary>
         /// Required designer variable.

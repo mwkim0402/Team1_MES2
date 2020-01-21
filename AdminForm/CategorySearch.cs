@@ -37,6 +37,7 @@ namespace AdminForm
         {
             // dgv 중 선택된 코드를 catCode에 입력
             // dgv 중 선택된 카테고리명을 catName에 입력
+            
 
         }
 
@@ -57,6 +58,12 @@ namespace AdminForm
 
 
             cmbCat.Text = catTable;
+        }
+
+        private void dgvList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            catCode = dgvList.Rows[e.RowIndex].Cells[0].Value.ToString();
+            catName = dgvList.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
     }
 }

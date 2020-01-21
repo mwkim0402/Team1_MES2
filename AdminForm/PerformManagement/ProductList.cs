@@ -35,7 +35,8 @@ namespace AdminForm
         private async Task GetValue()
         {
             PerformService service = new PerformService();
-
+            FIndCategory fnd = new FIndCategory();
+            
 
             // AllList 에서 조회해서 데이터 그리드뷰에 넣는 부분
             List<ProductListVO> list2 = (from item in list

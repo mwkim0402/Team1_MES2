@@ -129,7 +129,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(40, 50);
-            this.btnSave.Text = "저장";
+            this.btnSave.Text = "조건";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -141,10 +141,11 @@
             this.btnCreate.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(40, 50);
-            this.btnCreate.Text = "생성";
+            this.btnCreate.Text = "삭제";
             this.btnCreate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCreate.ToolTipText = "작성";
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnEdit
             // 
@@ -154,7 +155,7 @@
             this.btnEdit.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(40, 50);
-            this.btnEdit.Text = "수정";
+            this.btnEdit.Text = "새로고침";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEdit.ToolTipText = "수정";
@@ -171,6 +172,7 @@
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDelete.ToolTipText = "삭제";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // toolStripSeparator1
             // 

@@ -7,14 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using System.Windows.Controls;
 
 namespace AdminForm
 {
     public enum CategoryMode { Process, WorkCenter, Employees, ScreenItem, Permission, System, Item, Inspect, Default, NonOper, Userdefine, Boxing, GV }
-public partial class FIndCategory : UserControl
+    
+    public partial class FIndCategory : UserControl
     {
         private CategoryMode category;
         private string catTable;
+
+        public string SendName { get; set; }
+
+        //public new delegate void  TextChanged(object sender, string a);
+
+        //public TextChanged txtChange;
+
         public CategoryMode Category
         {
             get { return category; }
@@ -49,18 +58,21 @@ public partial class FIndCategory : UserControl
                     catTable = "GV";
             }
         }
-
+        
         public FIndCategory()
         {
             InitializeComponent();
         }
-
+        
         private void BtnFind_Click(object sender, EventArgs e)
         {
             CategorySearch frm = new CategorySearch(catTable);
-            frm.ShowDialog();
-            txtCatCode.Text = frm.CatCode;
-            txtCatName.Text = frm.CatName;
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                txtCatCode.Text = frm.CatCode;
+                txtCatName.Text = frm.CatName;
+                SendName = txtCatName.Text;
+            }
 
         }
     }

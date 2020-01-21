@@ -51,5 +51,8 @@
     <Compile Include="System\FindCategoryVo.cs" />
     <Compile Include="System\MenuTreeVo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Perform\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

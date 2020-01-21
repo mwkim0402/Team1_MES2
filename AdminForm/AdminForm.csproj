@@ -153,47 +153,11 @@
     <Compile Include="Mold\MoldUseStatus.designer.cs">
       <DependentUpon>MoldUseStatus.cs</DependentUpon>
     </Compile>
-    <Compile Include="PerformManagement\EndPallet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PerformManagement\EndPallet.Designer.cs">
-      <DependentUpon>EndPallet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PerformManagement\FindPallet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PerformManagement\FindPallet.Designer.cs">
-      <DependentUpon>FindPallet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PerformManagement\GASUsingRegister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PerformManagement\GASUsingRegister.Designer.cs">
-      <DependentUpon>GASUsingRegister.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PerformManagement\GVLookup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PerformManagement\GVLookup.Designer.cs">
-      <DependentUpon>GVLookup.cs</DependentUpon>
-    </Compile>
     <Compile Include="PerformManagement\GVMonitoring.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PerformManagement\GVMonitoring.Designer.cs">
       <DependentUpon>GVMonitoring.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PerformManagement\GVStatus.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PerformManagement\GVStatus.Designer.cs">
-      <DependentUpon>GVStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PerformManagement\NonOperationRegister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PerformManagement\NonOperationRegister.Designer.cs">
-      <DependentUpon>NonOperationRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="PerformManagement\PerformSearch.cs">
       <SubType>Form</SubType>
@@ -207,23 +171,11 @@
     <Compile Include="PerformManagement\ProductList.Designer.cs">
       <DependentUpon>ProductList.cs</DependentUpon>
     </Compile>
-    <Compile Include="PerformManagement\UpdateDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PerformManagement\UpdateDetail.Designer.cs">
-      <DependentUpon>UpdateDetail.cs</DependentUpon>
-    </Compile>
     <Compile Include="PerformManagement\WorkdiligenceLookup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PerformManagement\WorkdiligenceLookup.Designer.cs">
       <DependentUpon>WorkdiligenceLookup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PerformManagement\WorkdiligenceStatusanalysis.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PerformManagement\WorkdiligenceStatusanalysis.Designer.cs">
-      <DependentUpon>WorkdiligenceStatusanalysis.cs</DependentUpon>
     </Compile>
     <Compile Include="JobOrder\PerformTimeLine.cs">
       <SubType>Form</SubType>
@@ -242,6 +194,12 @@
     </Compile>
     <Compile Include="JobOrder\MoldingOrderCreation.designer.cs">
       <DependentUpon>MoldingOrderCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerformManagement\WorkdiligenceStatusanalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerformManagement\WorkdiligenceStatusanalysis.Designer.cs">
+      <DependentUpon>WorkdiligenceStatusanalysis.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -281,6 +239,7 @@
     <Compile Include="qulityManagement\RegQuality.Designer.cs">
       <DependentUpon>RegQuality.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service\PerformService\PerformService.cs" />
     <Compile Include="Service\SystemService\MenuService.cs" />
     <Compile Include="Service\TestService.cs" />
     <Compile Include="StandardInfo\EtherIOChannelSet.cs">
@@ -502,26 +461,8 @@
     <EmbeddedResource Include="Mold\MoldUseStatus.resx">
       <DependentUpon>MoldUseStatus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PerformManagement\EndPallet.resx">
-      <DependentUpon>EndPallet.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PerformManagement\FindPallet.resx">
-      <DependentUpon>FindPallet.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PerformManagement\GASUsingRegister.resx">
-      <DependentUpon>GASUsingRegister.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PerformManagement\GVLookup.resx">
-      <DependentUpon>GVLookup.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PerformManagement\GVMonitoring.resx">
       <DependentUpon>GVMonitoring.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PerformManagement\GVStatus.resx">
-      <DependentUpon>GVStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PerformManagement\NonOperationRegister.resx">
-      <DependentUpon>NonOperationRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PerformManagement\PerformSearch.resx">
       <DependentUpon>PerformSearch.cs</DependentUpon>
@@ -529,14 +470,8 @@
     <EmbeddedResource Include="PerformManagement\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PerformManagement\UpdateDetail.resx">
-      <DependentUpon>UpdateDetail.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PerformManagement\WorkdiligenceLookup.resx">
       <DependentUpon>WorkdiligenceLookup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PerformManagement\WorkdiligenceStatusanalysis.resx">
-      <DependentUpon>WorkdiligenceStatusanalysis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JobOrder\PerformTimeLine.resx">
       <DependentUpon>PerformTimeLine.cs</DependentUpon>
@@ -546,6 +481,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="JobOrder\MoldingOrderCreation.resx">
       <DependentUpon>MoldingOrderCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerformManagement\WorkdiligenceStatusanalysis.resx">
+      <DependentUpon>WorkdiligenceStatusanalysis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

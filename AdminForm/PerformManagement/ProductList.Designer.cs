@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.fcCategory = new AdminForm.FIndCategory();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.fcCategory);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -60,11 +62,21 @@
             this.panel1.Size = new System.Drawing.Size(1128, 67);
             this.panel1.TabIndex = 2;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(995, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "조회";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // fcCategory
             // 
             this.fcCategory.Category = AdminForm.CategoryMode.Item;
             this.fcCategory.Location = new System.Drawing.Point(482, 16);
             this.fcCategory.Name = "fcCategory";
+            this.fcCategory.SendName = null;
             this.fcCategory.Size = new System.Drawing.Size(190, 27);
             this.fcCategory.TabIndex = 5;
             // 
@@ -94,6 +106,7 @@
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(109, 21);
             this.dtpEnd.TabIndex = 2;
+            this.dtpEnd.ValueChanged += new System.EventHandler(this.dtpEnd_ValueChanged);
             // 
             // dtpStart
             // 
@@ -102,6 +115,7 @@
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(109, 21);
             this.dtpStart.TabIndex = 2;
+            this.dtpStart.ValueChanged += new System.EventHandler(this.dtpStart_ValueChanged);
             // 
             // label1
             // 
@@ -126,9 +140,11 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "ProductList";
+            this.Activated += new System.EventHandler(this.ProductList_Activated);
+            this.Deactivate += new System.EventHandler(this.ProductList_Deactivate);
             this.Load += new System.EventHandler(this.ProductList_Load);
-            this.Controls.SetChildIndex(this.tabControl1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.tabControl1, 0);
             this.tabControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -145,5 +161,6 @@
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

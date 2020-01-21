@@ -345,7 +345,7 @@
             this.Load += new System.EventHandler(this.UserManager_Load);
             this.Controls.SetChildIndex(this.tabControl4, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
+            //this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.tabControl4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

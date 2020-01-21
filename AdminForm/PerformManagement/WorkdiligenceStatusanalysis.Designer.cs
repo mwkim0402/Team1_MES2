@@ -61,6 +61,7 @@
             this.fcWorker.Category = AdminForm.CategoryMode.Employees;
             this.fcWorker.Location = new System.Drawing.Point(419, 21);
             this.fcWorker.Name = "fcWorker";
+            this.fcWorker.SendName = null;
             this.fcWorker.Size = new System.Drawing.Size(190, 27);
             this.fcWorker.TabIndex = 5;
             // 
@@ -123,6 +124,8 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "WorkdiligenceStatusanalysis";
+            this.Activated += new System.EventHandler(this.WorkdiligenceStatusanalysis_Activated);
+            this.Deactivate += new System.EventHandler(this.WorkdiligenceStatusanalysis_Deactivate);
             this.Load += new System.EventHandler(this.WorkdiligenceStatusanalysis_Load);
             this.Controls.SetChildIndex(this.tabControl4, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);

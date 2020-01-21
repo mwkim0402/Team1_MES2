@@ -12,6 +12,11 @@ namespace MES_DB
         {
             ItemDAC dac = new ItemDAC();
             return dac.GetAllItemGroup();
-        }        
+        } 
+        public List<ItemVo> GetAllItemInfo()
+        {
+            ItemDAC dac = new ItemDAC();
+            return dac.GetAllItemIfno();
+        }
     }
 }

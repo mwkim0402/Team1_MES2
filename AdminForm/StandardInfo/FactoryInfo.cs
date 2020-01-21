@@ -46,5 +46,10 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "투입수량자동처리여부", "1", true, 100);
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업지시이니셜", "1", true, 100);
         }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -83,6 +83,7 @@ namespace AdminForm
             dgvSearchResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
+        //수정으로 탭페이지 전환
         private void DgvProductRequset_DoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             tcParent2.SelectedIndex = 1;
@@ -125,7 +126,7 @@ namespace AdminForm
         private void BtnDeadline_Click(object sender, EventArgs e)
         {
             //체크표시한 모든 or 선택한 작업지시의 Wo_Status 를 '작업지시마감'으로 변경한다.
-            for (int i = 0; i < dgvSearchResult.Rows.Count; i++)
+            for (int i = 0; i < dgvSearchResult.Rows.Count + 1; i++)
             {
                 if (dgvSearchResult.Rows[i].Cells[0].Value.ToString() == "True")
                 {

@@ -62,6 +62,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.nuPlanAmount)).BeginInit();
             this.SuspendLayout();
             // 
+            // tcParent2
+            // 
+            this.tcParent2.Size = new System.Drawing.Size(1132, 134);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Size = new System.Drawing.Size(1124, 98);
+            // 
             // pnlParent1
             // 
             this.pnlParent1.Controls.Add(this.btnSave);
@@ -79,6 +87,11 @@
             this.pnlParent1.Controls.Add(this.label18);
             this.pnlParent1.Controls.Add(this.txtPlanAmount);
             this.pnlParent1.Controls.Add(this.txtJobOrderCodeInput);
+            this.pnlParent1.Size = new System.Drawing.Size(1118, 92);
+            // 
+            // panel1
+            // 
+            this.panel1.Size = new System.Drawing.Size(1124, 98);
             // 
             // panel2
             // 
@@ -342,7 +355,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Location = new System.Drawing.Point(997, 18);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(105, 58);
+            this.btnSave.Size = new System.Drawing.Size(105, 57);
             this.btnSave.TabIndex = 60;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = true;

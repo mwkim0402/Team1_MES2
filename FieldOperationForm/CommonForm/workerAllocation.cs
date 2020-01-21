@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace FieldOperationForm
 {
-    public partial class workerAllocation : ConnectionAccess
+    public partial class workerAllocation : Form
     {
 
         List<WorkAllocation_Vo> WList = null;
@@ -85,13 +85,9 @@ namespace FieldOperationForm
 
         private void Set()
         {
-            using (SqlConnection conn = new SqlConnection(this.ConnectionString))
-            {
-                string sql = string.Format("select Wc_Name from WorkCenter_Master where Wc_Name = '{1}", main.lbl_Job.Text);
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                conn.Open();
+           
                 
-            }
+
            
         
         }

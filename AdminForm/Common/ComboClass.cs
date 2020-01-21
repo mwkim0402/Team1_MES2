@@ -9,18 +9,25 @@ namespace AdminForm
 {
     public class ComboClass
     {
-        public void ComboBind(List<ComboItem> t, ComboBox combo)
+
+        // 콤보에 선택된 데이터 key값
+        //string value = comboBox1.SelectedValue.ToString();
+        //string value = ((KeyValuePair<string, string>)comboBox1.SelectedItem).Value;
+        public static void ComboBind(List<ComboItem> comboItem, ComboBox combo)
         {
-            Dictionary<string, string> comboList = new Dictionary<string, string>();
-            foreach (var list in t)
-            {
-                comboList.Add(list.comboText, list.comboValue);
-            }
-            combo.DataSource = new BindingSource(comboList, null);
-            combo.DisplayMember = "Value";
-            combo.ValueMember = "Key";                  
+            combo.DataSource = new BindingSource(comboItem, null);
+            combo.DisplayMember = "comboText";
+            combo.ValueMember = "comboValue";
+            //combo.SelectedIndex = 1;
         }
 
+        public static void DictionaryToComboBind(List<ComboItem> comboItem, ComboBox combo)
+        {
+            Dictionary<string, string> list = comboItem.ToDictionary(item => item.comboValue.ToString(), item => item.comboText);
+            combo.DisplayMember = "Value";
+            combo.ValueMember = "Key";
+            combo.DataSource = new BindingSource(list, null);
+        }
     }
 
     public class ComboItem

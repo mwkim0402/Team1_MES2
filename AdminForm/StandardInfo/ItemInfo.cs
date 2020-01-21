@@ -6,12 +6,16 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
+ 
 
 namespace AdminForm
 {
     public partial class ItemInfo : Form
     {
         MainForm frm;
+        List<ItemGroupCombo> ItemGroupList = null;
+
         public ItemInfo()
         {
             InitializeComponent();
@@ -21,8 +25,26 @@ namespace AdminForm
         {
             ShowDgv();
             frm = (MainForm)this.MdiParent;
-        }
 
+            ItemService service = new ItemService();
+            ItemGroupList = service.GetItemGroupCombo();
+            ItemGroupComboBind();
+        }
+        private void ItemGroupComboBind()
+        {
+            ComboBox[] comboArr= { cmbLv1, cmbLv2, cmbLv3, cmbLv4, cmbLv5 };
+            for(int i =0; i<5; i++)
+            {
+                List<ComboItem> comboList = (from value in ItemGroupList
+                                             where value.Level == "Level"+(i+1)
+                                             select new ComboItem
+                                             {
+                                                 comboText = value.Level_Code,
+                                                 comboValue = value.Level_Name
+                                             }).ToList();
+                ComboClass.ComboBind(comboList, comboArr[i]);
+            }
+        }
         private void ShowDgv()
         {
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 100);
@@ -61,21 +83,6 @@ namespace AdminForm
         private void ItemInfo_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= new System.EventHandler(this.Search_Click);
-        }
-
-        private void label30_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

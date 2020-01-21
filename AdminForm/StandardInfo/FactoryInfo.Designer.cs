@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.fcFactory = new AdminForm.FIndCategory();
             this.label6 = new System.Windows.Forms.Label();
             this.btnDown = new System.Windows.Forms.Button();
             this.txtWPCode = new System.Windows.Forms.TextBox();
@@ -52,9 +51,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtJobOrderInit = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.cmbPerformUnit = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.gbMoldEquip = new System.Windows.Forms.GroupBox();
             this.rbUse_MoldEq = new System.Windows.Forms.RadioButton();
@@ -62,20 +58,7 @@
             this.gbAutoProcess = new System.Windows.Forms.GroupBox();
             this.rbUse_Process = new System.Windows.Forms.RadioButton();
             this.rbNoUse_Process = new System.Windows.Forms.RadioButton();
-            this.txtPS = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.cmbPerformCat = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtAutoTime = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtFactoryNameInput = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cmbWPCategory = new System.Windows.Forms.ComboBox();
-            this.txtFactoryCodeInput = new System.Windows.Forms.TextBox();
-            this.txtWPNameInput = new System.Windows.Forms.TextBox();
-            this.txtWPCodeInput = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.gbUsable = new System.Windows.Forms.GroupBox();
             this.rbUse_Use = new System.Windows.Forms.RadioButton();
             this.rbNoUse_Use = new System.Windows.Forms.RadioButton();
@@ -102,6 +85,26 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtFactoryCodeInput = new System.Windows.Forms.TextBox();
+            this.cmbPerformCat = new System.Windows.Forms.ComboBox();
+            this.txtJobOrderInit = new System.Windows.Forms.TextBox();
+            this.txtFactoryNameInput = new System.Windows.Forms.TextBox();
+            this.txtAutoTime = new System.Windows.Forms.TextBox();
+            this.txtWPCodeInput = new System.Windows.Forms.TextBox();
+            this.txtPS = new System.Windows.Forms.TextBox();
+            this.cmbPerformUnit = new System.Windows.Forms.ComboBox();
+            this.txtWPNameInput = new System.Windows.Forms.TextBox();
+            this.cmbWPCategory = new System.Windows.Forms.ComboBox();
+            this.fcFactory = new AdminForm.FIndCategory();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -116,6 +119,9 @@
             this.tabControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -134,17 +140,8 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(16, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1128, 67);
+            this.panel2.Size = new System.Drawing.Size(1194, 67);
             this.panel2.TabIndex = 4;
-            // 
-            // fcFactory
-            // 
-            this.fcFactory.Category = AdminForm.CategoryMode.Process;
-            this.fcFactory.Location = new System.Drawing.Point(62, 23);
-            this.fcFactory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.fcFactory.Name = "fcFactory";
-            this.fcFactory.Size = new System.Drawing.Size(190, 27);
-            this.fcFactory.TabIndex = 21;
             // 
             // label6
             // 
@@ -159,7 +156,7 @@
             // btnDown
             // 
             this.btnDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDown.Location = new System.Drawing.Point(970, 19);
+            this.btnDown.Location = new System.Drawing.Point(1036, 19);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(139, 30);
             this.btnDown.TabIndex = 19;
@@ -351,72 +348,20 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Controls.Add(this.txtJobOrderInit);
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.cmbPerformUnit);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.gbMoldEquip);
-            this.panel1.Controls.Add(this.gbAutoProcess);
-            this.panel1.Controls.Add(this.txtPS);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.cmbPerformCat);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.txtAutoTime);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.txtFactoryNameInput);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.cmbWPCategory);
-            this.panel1.Controls.Add(this.txtFactoryCodeInput);
-            this.panel1.Controls.Add(this.txtWPNameInput);
-            this.panel1.Controls.Add(this.txtWPCodeInput);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.gbUsable);
-            this.panel1.Controls.Add(this.gbPalletCreate);
-            this.panel1.Controls.Add(this.gbAutoNonOp);
-            this.panel1.Controls.Add(this.gbAutoStart);
-            this.panel1.Controls.Add(this.gbGasUsable);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.gbAutoCreate);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Location = new System.Drawing.Point(13, 359);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Location = new System.Drawing.Point(13, 422);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1132, 240);
+            this.panel1.Size = new System.Drawing.Size(1198, 240);
             this.panel1.TabIndex = 10;
-            // 
-            // txtJobOrderInit
-            // 
-            this.txtJobOrderInit.Location = new System.Drawing.Point(429, 170);
-            this.txtJobOrderInit.Name = "txtJobOrderInit";
-            this.txtJobOrderInit.Size = new System.Drawing.Size(154, 21);
-            this.txtJobOrderInit.TabIndex = 127;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label17.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label17.Location = new System.Drawing.Point(293, 172);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(125, 16);
-            this.label17.TabIndex = 126;
-            this.label17.Text = "작업지시 이니셜";
-            // 
-            // cmbPerformUnit
-            // 
-            this.cmbPerformUnit.FormattingEnabled = true;
-            this.cmbPerformUnit.Location = new System.Drawing.Point(107, 132);
-            this.cmbPerformUnit.Name = "cmbPerformUnit";
-            this.cmbPerformUnit.Size = new System.Drawing.Size(154, 20);
-            this.cmbPerformUnit.TabIndex = 125;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label16.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label16.Location = new System.Drawing.Point(24, 134);
+            this.label16.Location = new System.Drawing.Point(31, 153);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(77, 16);
             this.label16.TabIndex = 124;
@@ -427,9 +372,9 @@
             this.gbMoldEquip.Controls.Add(this.rbUse_MoldEq);
             this.gbMoldEquip.Controls.Add(this.rbNoUse_MoldEq);
             this.gbMoldEquip.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.gbMoldEquip.Location = new System.Drawing.Point(619, 183);
+            this.gbMoldEquip.Location = new System.Drawing.Point(231, 172);
             this.gbMoldEquip.Name = "gbMoldEquip";
-            this.gbMoldEquip.Size = new System.Drawing.Size(207, 47);
+            this.gbMoldEquip.Size = new System.Drawing.Size(207, 49);
             this.gbMoldEquip.TabIndex = 107;
             this.gbMoldEquip.TabStop = false;
             this.gbMoldEquip.Text = "금형 장착 여부";
@@ -463,7 +408,7 @@
             this.gbAutoProcess.Controls.Add(this.rbUse_Process);
             this.gbAutoProcess.Controls.Add(this.rbNoUse_Process);
             this.gbAutoProcess.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.gbAutoProcess.Location = new System.Drawing.Point(835, 181);
+            this.gbAutoProcess.Location = new System.Drawing.Point(18, 172);
             this.gbAutoProcess.Name = "gbAutoProcess";
             this.gbAutoProcess.Size = new System.Drawing.Size(207, 49);
             this.gbAutoProcess.TabIndex = 106;
@@ -494,136 +439,22 @@
             this.rbNoUse_Process.Text = "무";
             this.rbNoUse_Process.UseVisualStyleBackColor = false;
             // 
-            // txtPS
-            // 
-            this.txtPS.Location = new System.Drawing.Point(107, 207);
-            this.txtPS.Name = "txtPS";
-            this.txtPS.Size = new System.Drawing.Size(476, 21);
-            this.txtPS.TabIndex = 123;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label15.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label15.Location = new System.Drawing.Point(61, 209);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(40, 16);
-            this.label15.TabIndex = 122;
-            this.label15.Text = "비고";
-            // 
-            // cmbPerformCat
-            // 
-            this.cmbPerformCat.FormattingEnabled = true;
-            this.cmbPerformCat.Location = new System.Drawing.Point(429, 130);
-            this.cmbPerformCat.Name = "cmbPerformCat";
-            this.cmbPerformCat.Size = new System.Drawing.Size(154, 20);
-            this.cmbPerformCat.TabIndex = 121;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label14.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label14.Location = new System.Drawing.Point(314, 131);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(109, 16);
-            this.label14.TabIndex = 120;
-            this.label14.Text = "실적등록 유형";
-            // 
-            // txtAutoTime
-            // 
-            this.txtAutoTime.Location = new System.Drawing.Point(429, 94);
-            this.txtAutoTime.Name = "txtAutoTime";
-            this.txtAutoTime.Size = new System.Drawing.Size(154, 21);
-            this.txtAutoTime.TabIndex = 119;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label13.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label13.Location = new System.Drawing.Point(293, 94);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(130, 16);
-            this.label13.TabIndex = 118;
-            this.label13.Text = "자동 비가동 시간";
-            // 
-            // txtFactoryNameInput
-            // 
-            this.txtFactoryNameInput.Location = new System.Drawing.Point(429, 57);
-            this.txtFactoryNameInput.Name = "txtFactoryNameInput";
-            this.txtFactoryNameInput.Size = new System.Drawing.Size(154, 21);
-            this.txtFactoryNameInput.TabIndex = 117;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label8.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(367, 59);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 16);
-            this.label8.TabIndex = 116;
-            this.label8.Text = "공정명";
-            // 
-            // cmbWPCategory
-            // 
-            this.cmbWPCategory.FormattingEnabled = true;
-            this.cmbWPCategory.Location = new System.Drawing.Point(107, 92);
-            this.cmbWPCategory.Name = "cmbWPCategory";
-            this.cmbWPCategory.Size = new System.Drawing.Size(154, 20);
-            this.cmbWPCategory.TabIndex = 115;
-            // 
-            // txtFactoryCodeInput
-            // 
-            this.txtFactoryCodeInput.Location = new System.Drawing.Point(429, 22);
-            this.txtFactoryCodeInput.Name = "txtFactoryCodeInput";
-            this.txtFactoryCodeInput.Size = new System.Drawing.Size(154, 21);
-            this.txtFactoryCodeInput.TabIndex = 113;
-            // 
-            // txtWPNameInput
-            // 
-            this.txtWPNameInput.Location = new System.Drawing.Point(107, 55);
-            this.txtWPNameInput.Name = "txtWPNameInput";
-            this.txtWPNameInput.Size = new System.Drawing.Size(154, 21);
-            this.txtWPNameInput.TabIndex = 112;
-            // 
-            // txtWPCodeInput
-            // 
-            this.txtWPCodeInput.Location = new System.Drawing.Point(107, 19);
-            this.txtWPCodeInput.Name = "txtWPCodeInput";
-            this.txtWPCodeInput.Size = new System.Drawing.Size(154, 21);
-            this.txtWPCodeInput.TabIndex = 111;
-            // 
             // btnSave
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(1045, 55);
+            this.btnSave.Location = new System.Drawing.Point(10, 5);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(82, 132);
+            this.btnSave.Size = new System.Drawing.Size(53, 223);
             this.btnSave.TabIndex = 110;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label7.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(346, 23);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 16);
-            this.label7.TabIndex = 109;
-            this.label7.Text = "공정 코드";
             // 
             // gbUsable
             // 
             this.gbUsable.Controls.Add(this.rbUse_Use);
             this.gbUsable.Controls.Add(this.rbNoUse_Use);
             this.gbUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.gbUsable.Location = new System.Drawing.Point(619, 15);
+            this.gbUsable.Location = new System.Drawing.Point(18, 13);
             this.gbUsable.Name = "gbUsable";
             this.gbUsable.Size = new System.Drawing.Size(207, 47);
             this.gbUsable.TabIndex = 107;
@@ -659,9 +490,9 @@
             this.gbPalletCreate.Controls.Add(this.rbUse_Pallet);
             this.gbPalletCreate.Controls.Add(this.rbNoUse_Pallet);
             this.gbPalletCreate.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.gbPalletCreate.Location = new System.Drawing.Point(619, 70);
+            this.gbPalletCreate.Location = new System.Drawing.Point(231, 119);
             this.gbPalletCreate.Name = "gbPalletCreate";
-            this.gbPalletCreate.Size = new System.Drawing.Size(207, 49);
+            this.gbPalletCreate.Size = new System.Drawing.Size(207, 47);
             this.gbPalletCreate.TabIndex = 106;
             this.gbPalletCreate.TabStop = false;
             this.gbPalletCreate.Text = "팔레트 생성 유무";
@@ -695,7 +526,7 @@
             this.gbAutoNonOp.Controls.Add(this.rbUse_NonOp);
             this.gbAutoNonOp.Controls.Add(this.rbNoUse_NonOp);
             this.gbAutoNonOp.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.gbAutoNonOp.Location = new System.Drawing.Point(619, 127);
+            this.gbAutoNonOp.Location = new System.Drawing.Point(18, 119);
             this.gbAutoNonOp.Name = "gbAutoNonOp";
             this.gbAutoNonOp.Size = new System.Drawing.Size(207, 47);
             this.gbAutoNonOp.TabIndex = 105;
@@ -731,9 +562,9 @@
             this.gbAutoStart.Controls.Add(this.rbUse_OrderStart);
             this.gbAutoStart.Controls.Add(this.rbNoUse_OrderStart);
             this.gbAutoStart.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.gbAutoStart.Location = new System.Drawing.Point(835, 70);
+            this.gbAutoStart.Location = new System.Drawing.Point(231, 66);
             this.gbAutoStart.Name = "gbAutoStart";
-            this.gbAutoStart.Size = new System.Drawing.Size(207, 49);
+            this.gbAutoStart.Size = new System.Drawing.Size(207, 47);
             this.gbAutoStart.TabIndex = 104;
             this.gbAutoStart.TabStop = false;
             this.gbAutoStart.Text = "작업지시 자동시작 여부";
@@ -767,7 +598,7 @@
             this.gbGasUsable.Controls.Add(this.rbUse_Gas);
             this.gbGasUsable.Controls.Add(this.rbNoUse_Gas);
             this.gbGasUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.gbGasUsable.Location = new System.Drawing.Point(835, 15);
+            this.gbGasUsable.Location = new System.Drawing.Point(18, 66);
             this.gbGasUsable.Name = "gbGasUsable";
             this.gbGasUsable.Size = new System.Drawing.Size(207, 47);
             this.gbGasUsable.TabIndex = 103;
@@ -803,7 +634,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label11.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.Location = new System.Drawing.Point(8, 93);
+            this.label11.Location = new System.Drawing.Point(15, 112);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(93, 16);
             this.label11.TabIndex = 104;
@@ -814,7 +645,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label9.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(29, 56);
+            this.label9.Location = new System.Drawing.Point(36, 75);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 16);
             this.label9.TabIndex = 103;
@@ -825,9 +656,9 @@
             this.gbAutoCreate.Controls.Add(this.rbUse_OrderCreate);
             this.gbAutoCreate.Controls.Add(this.rbNoUse_OrderCreate);
             this.gbAutoCreate.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.gbAutoCreate.Location = new System.Drawing.Point(835, 125);
+            this.gbAutoCreate.Location = new System.Drawing.Point(231, 13);
             this.gbAutoCreate.Name = "gbAutoCreate";
-            this.gbAutoCreate.Size = new System.Drawing.Size(207, 49);
+            this.gbAutoCreate.Size = new System.Drawing.Size(207, 47);
             this.gbAutoCreate.TabIndex = 102;
             this.gbAutoCreate.TabStop = false;
             this.gbAutoCreate.Text = "작업지시 자동생성 유무";
@@ -861,7 +692,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label10.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(13, 20);
+            this.label10.Location = new System.Drawing.Point(20, 39);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(88, 16);
             this.label10.TabIndex = 101;
@@ -889,7 +720,8 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -897,7 +729,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1132, 216);
+            this.dataGridView1.Size = new System.Drawing.Size(1195, 274);
             this.dataGridView1.TabIndex = 12;
             // 
             // tabControl1
@@ -905,7 +737,7 @@
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(16, 330);
+            this.tabControl1.Location = new System.Drawing.Point(16, 393);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(94, 28);
@@ -921,16 +753,224 @@
             this.tabPage1.Text = "입력정보";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnSave);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(1132, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(66, 240);
+            this.panel4.TabIndex = 16;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.gbUsable);
+            this.panel5.Controls.Add(this.gbAutoCreate);
+            this.panel5.Controls.Add(this.gbMoldEquip);
+            this.panel5.Controls.Add(this.gbGasUsable);
+            this.panel5.Controls.Add(this.gbAutoProcess);
+            this.panel5.Controls.Add(this.gbAutoStart);
+            this.panel5.Controls.Add(this.gbPalletCreate);
+            this.panel5.Controls.Add(this.gbAutoNonOp);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(682, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(450, 240);
+            this.panel5.TabIndex = 16;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label15.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label15.Location = new System.Drawing.Point(66, 184);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(40, 16);
+            this.label15.TabIndex = 126;
+            this.label15.Text = "비고";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.txtWPCodeInput);
+            this.panel3.Controls.Add(this.txtPS);
+            this.panel3.Controls.Add(this.cmbPerformUnit);
+            this.panel3.Controls.Add(this.txtWPNameInput);
+            this.panel3.Controls.Add(this.cmbWPCategory);
+            this.panel3.Controls.Add(this.txtFactoryCodeInput);
+            this.panel3.Controls.Add(this.cmbPerformCat);
+            this.panel3.Controls.Add(this.txtJobOrderInit);
+            this.panel3.Controls.Add(this.txtFactoryNameInput);
+            this.panel3.Controls.Add(this.txtAutoTime);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.label13);
+            this.panel3.Controls.Add(this.label17);
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(682, 240);
+            this.panel3.TabIndex = 129;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label7.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Location = new System.Drawing.Point(360, 39);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 16);
+            this.label7.TabIndex = 129;
+            this.label7.Text = "공정 코드";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label8.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Location = new System.Drawing.Point(381, 75);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(56, 16);
+            this.label8.TabIndex = 130;
+            this.label8.Text = "공정명";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label14.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label14.Location = new System.Drawing.Point(328, 147);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(109, 16);
+            this.label14.TabIndex = 132;
+            this.label14.Text = "실적등록 유형";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label13.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label13.Location = new System.Drawing.Point(307, 110);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(130, 16);
+            this.label13.TabIndex = 131;
+            this.label13.Text = "자동 비가동 시간";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label17.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label17.Location = new System.Drawing.Point(307, 188);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(125, 16);
+            this.label17.TabIndex = 133;
+            this.label17.Text = "작업지시 이니셜";
+            // 
+            // txtFactoryCodeInput
+            // 
+            this.txtFactoryCodeInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFactoryCodeInput.Location = new System.Drawing.Point(454, 39);
+            this.txtFactoryCodeInput.Name = "txtFactoryCodeInput";
+            this.txtFactoryCodeInput.Size = new System.Drawing.Size(203, 21);
+            this.txtFactoryCodeInput.TabIndex = 134;
+            // 
+            // cmbPerformCat
+            // 
+            this.cmbPerformCat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbPerformCat.FormattingEnabled = true;
+            this.cmbPerformCat.Location = new System.Drawing.Point(454, 147);
+            this.cmbPerformCat.Name = "cmbPerformCat";
+            this.cmbPerformCat.Size = new System.Drawing.Size(203, 20);
+            this.cmbPerformCat.TabIndex = 137;
+            // 
+            // txtJobOrderInit
+            // 
+            this.txtJobOrderInit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtJobOrderInit.Location = new System.Drawing.Point(454, 187);
+            this.txtJobOrderInit.Name = "txtJobOrderInit";
+            this.txtJobOrderInit.Size = new System.Drawing.Size(203, 21);
+            this.txtJobOrderInit.TabIndex = 138;
+            // 
+            // txtFactoryNameInput
+            // 
+            this.txtFactoryNameInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFactoryNameInput.Location = new System.Drawing.Point(454, 74);
+            this.txtFactoryNameInput.Name = "txtFactoryNameInput";
+            this.txtFactoryNameInput.Size = new System.Drawing.Size(203, 21);
+            this.txtFactoryNameInput.TabIndex = 135;
+            // 
+            // txtAutoTime
+            // 
+            this.txtAutoTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAutoTime.Location = new System.Drawing.Point(454, 111);
+            this.txtAutoTime.Name = "txtAutoTime";
+            this.txtAutoTime.Size = new System.Drawing.Size(203, 21);
+            this.txtAutoTime.TabIndex = 136;
+            // 
+            // txtWPCodeInput
+            // 
+            this.txtWPCodeInput.Location = new System.Drawing.Point(125, 39);
+            this.txtWPCodeInput.Name = "txtWPCodeInput";
+            this.txtWPCodeInput.Size = new System.Drawing.Size(154, 21);
+            this.txtWPCodeInput.TabIndex = 139;
+            // 
+            // txtPS
+            // 
+            this.txtPS.Location = new System.Drawing.Point(125, 183);
+            this.txtPS.Name = "txtPS";
+            this.txtPS.Size = new System.Drawing.Size(154, 21);
+            this.txtPS.TabIndex = 143;
+            // 
+            // cmbPerformUnit
+            // 
+            this.cmbPerformUnit.FormattingEnabled = true;
+            this.cmbPerformUnit.Location = new System.Drawing.Point(125, 152);
+            this.cmbPerformUnit.Name = "cmbPerformUnit";
+            this.cmbPerformUnit.Size = new System.Drawing.Size(154, 20);
+            this.cmbPerformUnit.TabIndex = 142;
+            // 
+            // txtWPNameInput
+            // 
+            this.txtWPNameInput.Location = new System.Drawing.Point(125, 75);
+            this.txtWPNameInput.Name = "txtWPNameInput";
+            this.txtWPNameInput.Size = new System.Drawing.Size(154, 21);
+            this.txtWPNameInput.TabIndex = 140;
+            // 
+            // cmbWPCategory
+            // 
+            this.cmbWPCategory.FormattingEnabled = true;
+            this.cmbWPCategory.Location = new System.Drawing.Point(125, 112);
+            this.cmbWPCategory.Name = "cmbWPCategory";
+            this.cmbWPCategory.Size = new System.Drawing.Size(154, 20);
+            this.cmbWPCategory.TabIndex = 141;
+            // 
+            // fcFactory
+            // 
+            this.fcFactory.Category = AdminForm.CategoryMode.Process;
+            this.fcFactory.Location = new System.Drawing.Point(62, 23);
+            this.fcFactory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.fcFactory.Name = "fcFactory";
+            this.fcFactory.SendName = null;
+            this.fcFactory.Size = new System.Drawing.Size(190, 27);
+            this.fcFactory.TabIndex = 21;
+            // 
             // FactoryInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 604);
+            this.ClientSize = new System.Drawing.Size(1222, 667);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.tabControl4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
@@ -945,7 +985,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.gbMoldEquip.ResumeLayout(false);
             this.gbMoldEquip.PerformLayout();
             this.gbAutoProcess.ResumeLayout(false);
@@ -965,6 +1004,10 @@
             this.tabControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -994,7 +1037,6 @@
         private FIndCategory fcFactory;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnDown;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox gbUsable;
         private System.Windows.Forms.RadioButton rbUse_Use;
         private System.Windows.Forms.RadioButton rbNoUse_Use;
@@ -1016,14 +1058,7 @@
         private System.Windows.Forms.RadioButton rbUse_OrderCreate;
         private System.Windows.Forms.RadioButton rbNoUse_OrderCreate;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cmbWPCategory;
-        private System.Windows.Forms.TextBox txtFactoryCodeInput;
-        private System.Windows.Forms.TextBox txtWPNameInput;
-        private System.Windows.Forms.TextBox txtWPCodeInput;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox txtJobOrderInit;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox cmbPerformUnit;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox gbMoldEquip;
         private System.Windows.Forms.RadioButton rbUse_MoldEq;
@@ -1031,18 +1066,29 @@
         private System.Windows.Forms.GroupBox gbAutoProcess;
         private System.Windows.Forms.RadioButton rbUse_Process;
         private System.Windows.Forms.RadioButton rbNoUse_Process;
-        private System.Windows.Forms.TextBox txtPS;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox cmbPerformCat;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtAutoTime;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtFactoryNameInput;
-        private System.Windows.Forms.Label label8;
         protected System.Windows.Forms.TabControl tabControl4;
         protected System.Windows.Forms.TabPage tabPage4;
         protected System.Windows.Forms.DataGridView dataGridView1;
         protected System.Windows.Forms.TabControl tabControl1;
         protected System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox txtWPCodeInput;
+        private System.Windows.Forms.TextBox txtPS;
+        private System.Windows.Forms.ComboBox cmbPerformUnit;
+        private System.Windows.Forms.TextBox txtWPNameInput;
+        private System.Windows.Forms.ComboBox cmbWPCategory;
+        private System.Windows.Forms.TextBox txtFactoryCodeInput;
+        private System.Windows.Forms.ComboBox cmbPerformCat;
+        private System.Windows.Forms.TextBox txtJobOrderInit;
+        private System.Windows.Forms.TextBox txtFactoryNameInput;
+        private System.Windows.Forms.TextBox txtAutoTime;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label17;
     }
 }

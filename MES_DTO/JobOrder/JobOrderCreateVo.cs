@@ -17,4 +17,6 @@ namespace MES_DTO
         public int Req_Seq{ get; set; }
         public string Remark{ get; set; }
     }
+
+
 }

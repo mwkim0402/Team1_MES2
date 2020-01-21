@@ -171,12 +171,6 @@
     <Compile Include="PerformManagement\ProductList.Designer.cs">
       <DependentUpon>ProductList.cs</DependentUpon>
     </Compile>
-    <Compile Include="PerformManagement\WorkdiligenceLookup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PerformManagement\WorkdiligenceLookup.Designer.cs">
-      <DependentUpon>WorkdiligenceLookup.cs</DependentUpon>
-    </Compile>
     <Compile Include="JobOrder\PerformTimeLine.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -469,9 +463,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PerformManagement\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PerformManagement\WorkdiligenceLookup.resx">
-      <DependentUpon>WorkdiligenceLookup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JobOrder\PerformTimeLine.resx">
       <DependentUpon>PerformTimeLine.cs</DependentUpon>

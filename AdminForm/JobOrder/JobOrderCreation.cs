@@ -14,8 +14,7 @@ namespace AdminForm
     public partial class JobOrderCreation : dgvOneWithInput
     {
         MainForm frm;
-        string selectedWoReq; //생산의뢰번호
-        int req_Seq; //의뢰순번
+        string selectedWorkOrderNo; //작업지시번호
         List<JobOrderCreateVo> List = null;
         public JobOrderCreation()
         {
@@ -80,18 +79,26 @@ namespace AdminForm
             dgvSearchResult.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             this.dgvSearchResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductRequset_CellClick);
+            this.dgvSearchResult.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductRequset_DoubleClick);
             dgvSearchResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
-        private void FinishMoldReq(string wo_Req_No, int req_seq)
+
+        private void DgvProductRequset_DoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tcParent2.SelectedIndex = 1;
+            btnSave.Text = "수정";
+        }
+
+        private void FinishJobOrder(string Workorderno)
         {
             JobOrderService service = new JobOrderService();
-            if (service.FinishMoldReq(wo_Req_No, req_seq) >= 1)
+            if (service.FinishJobOrder(Workorderno) >= 1)
             {
-                MessageBox.Show("생간의뢰가 마감되었습니다.");
+                MessageBox.Show("작업지시가 마감되었습니다.");
             }
             else
             {
-                MessageBox.Show("생산의뢰를 체크해주세요.");
+                MessageBox.Show("작업지시를 체크해주세요.");
             }
 
         }
@@ -100,8 +107,7 @@ namespace AdminForm
         {
             if (e.ColumnIndex == 0)
             {
-                selectedWoReq = dgvSearchResult.SelectedRows[0].Cells[1].Value.ToString();
-                req_Seq = int.Parse(dgvSearchResult.SelectedRows[0].Cells[2].Value.ToString());
+                selectedWorkOrderNo = dgvSearchResult.SelectedRows[0].Cells[1].Value.ToString();
                 if (dgvSearchResult.Rows[e.RowIndex].Cells[0].Value == null)
                 {
                     dgvSearchResult.SelectedRows[0].Cells[0].Value = CheckState.Checked;
@@ -118,17 +124,17 @@ namespace AdminForm
         }
         private void BtnDeadline_Click(object sender, EventArgs e)
         {
-            //체크표시한 모든 or 선택한 생산의뢰의 Wo_Status 를 '마감'으로 변경한다.
+            //체크표시한 모든 or 선택한 작업지시의 Wo_Status 를 '작업지시마감'으로 변경한다.
             for (int i = 0; i < dgvSearchResult.Rows.Count; i++)
             {
                 if (dgvSearchResult.Rows[i].Cells[0].Value.ToString() == "True")
                 {
-                    FinishMoldReq(selectedWoReq, req_Seq);
+                    FinishJobOrder(selectedWorkOrderNo);
 
                 }
             }
 
-            //생산의뢰dgv 새로고침
+            //작업지시dgv 새로고침
             RefreshList();
             //작업지시dgv null
             List = null;
@@ -149,16 +155,7 @@ namespace AdminForm
             dgvSearchResult.DataSource = List;
         }
 
-        // 저장
-        private void Save()
-        {
-            //txtJobOrderCodeInput.Text;
-            //txtPlanAmount.Text;
-            //txtItemCode.Text;
-            //txtItemName.Text;
-            //cmbWorkPlace.Items.ToString();
-            //nuPlanAmount.Value.ToString();
-        }
+       
 
         private void JobOrderCreation_Leave(object sender, EventArgs e)
         {
@@ -177,10 +174,65 @@ namespace AdminForm
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            int plan_qty = (int)nuPlanAmount.Value;
-            string plan_unit = txtPlanAmount.Text;
-            string plan_date = dtpPlanDate.Value.ToString().Substring(0, 10);
-            string item_code;
+            if(btnSave.Text == "저장") //저장
+            {
+                JobOrderCreateVo_Insert ins = new JobOrderCreateVo_Insert();
+                ins.workorderno = txtJobOrderCodeInput.Text;
+                ins.plan_qty = (int)nuPlanAmount.Value;
+                ins.plan_unit = txtPlanAmount.Text;
+                ins.plan_date = dtpPlanDate.Value.ToString().Substring(0, 10);
+                ins.item_code = txtItemCode.Text;
+                ins.wc_name = cmbWorkPlace.Text;
+
+                JobOrderService ser = new JobOrderService();
+                ser.InsertJobOrder(ins);
+            }
+            else // 수정
+            {
+                JobOrderCreateVo_Insert ins = new JobOrderCreateVo_Insert();
+                ins.workorderno = txtJobOrderCodeInput.Text;
+                ins.plan_qty = (int)nuPlanAmount.Value;
+                ins.plan_unit = txtPlanAmount.Text;
+                ins.plan_date = dtpPlanDate.Value.ToString().Substring(0, 10);
+                ins.item_code = txtItemCode.Text;
+                ins.wc_name = cmbWorkPlace.Text;
+
+                JobOrderService ser = new JobOrderService();
+                ser.UpdateJobOrder(ins);
+            }
+           
+        }
+
+        private void BtnDeadlineCancel_Click(object sender, EventArgs e)
+        {
+            //체크표시한 모든 or 선택한 작업지시의 Wo_Status 를 '작업지시마감'으로 변경한다.
+            for (int i = 0; i < dgvSearchResult.Rows.Count; i++)
+            {
+                if (dgvSearchResult.Rows[i].Cells[0].Value.ToString() == "True")
+                {
+                    RerollMoldReq(selectedWorkOrderNo);
+
+                }
+            }
+
+            //작업지시dgv 새로고침
+            RefreshList();
+            //작업지시dgv null
+            List = null;
+            dgvSearchResult.DataSource = List;
+        }
+
+        private void RerollMoldReq(string Workorderno)
+        {
+            JobOrderService service = new JobOrderService();
+            if (service.UndoJobOrder(Workorderno) >= 1)
+            {
+                MessageBox.Show("작업지시가 마감취소되었습니다.");
+            }
+            else
+            {
+                MessageBox.Show("작업지시를 체크해주세요.");
+            }
         }
     }
 

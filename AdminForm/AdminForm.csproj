@@ -171,12 +171,6 @@
     <Compile Include="PerformManagement\ProductList.Designer.cs">
       <DependentUpon>ProductList.cs</DependentUpon>
     </Compile>
-    <Compile Include="JobOrder\PerformTimeLine.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="JobOrder\PerformTimeLine.Designer.cs">
-      <DependentUpon>PerformTimeLine.cs</DependentUpon>
-    </Compile>
     <Compile Include="JobOrder\JobOrderCreation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -463,9 +457,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PerformManagement\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="JobOrder\PerformTimeLine.resx">
-      <DependentUpon>PerformTimeLine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JobOrder\JobOrderCreation.resx">
       <DependentUpon>JobOrderCreation.cs</DependentUpon>

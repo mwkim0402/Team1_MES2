@@ -171,7 +171,7 @@ namespace AdminForm
         private void BtnOrderCreationDeadline_Click(object sender, EventArgs e)
         {
 
-            //체크표시한 모든 or 선택한 생산의뢰의 Wo_Status 를 '마감'으로 변경한다.
+            //체크표시한 모든 or 선택한 생산의뢰의 Wo_Status 를 '작업지시마감'으로 변경한다.
             for (int i = 0; i < dgvProductRequset.Rows.Count; i++)
             {
                 if(dgvProductRequset.Rows[i].Cells[0].Value.ToString() == "True")

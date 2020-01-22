@@ -23,5 +23,11 @@ namespace MES_DB
             ItemDAC dac = new ItemDAC();
             return dac.GetItemGroupCB();
         }
+
+        public bool InsertItemInfo(ItemVo vo)
+        {
+            ItemDAC dac = new ItemDAC();
+            return dac.InsertItemIfno(vo);
+        }
     }
 }

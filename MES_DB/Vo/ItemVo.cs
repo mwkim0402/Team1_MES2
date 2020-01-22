@@ -44,5 +44,6 @@ namespace MES_DB
         public int Shot_Per_Qty { get; set; }
         public int Dry_GV_Qty { get; set; }
         public int Heat_GV_Qty { get; set; }
+        public string Remark { get; set; }
     }
 }

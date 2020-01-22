@@ -42,8 +42,26 @@ namespace AdminForm
                                                  comboText = value.Level_Code,
                                                  comboValue = value.Level_Name
                                              }).ToList();
-                ComboClass.ComboBind(comboList, comboArr[i]);
+                ComboClass.ComboBind(comboList, comboArr[i], true);
             }
+            List<ComboItem> cmbItem = new List<ComboItem>();
+            cmbItem.Add(new ComboItem
+            {
+                comboText = "완제품",
+                comboValue = "완제품"
+            });
+            cmbItem.Add(new ComboItem
+            {
+                comboText = "자재",
+                comboValue = "자재"
+            });
+            cmbItem.Add(new ComboItem
+            {
+                comboText = "반제품",
+                comboValue = "반제품"
+            });
+            ComboClass.ComboBind(cmbItem, cmbInType, false) ;
+
         }
         private void ShowDgv()
         {
@@ -68,6 +86,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "한Shot당 PCS수", "Shot_Per_Qty", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "건조대차 기본 수량 ", "Dry_GV_Qty", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "소성대차 기본 수량 ", "Heat_GV_Qty", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 100);
         }
         private void Search_Click(object sender, EventArgs e)
         {
@@ -83,6 +102,45 @@ namespace AdminForm
         private void ItemInfo_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= new System.EventHandler(this.Search_Click);
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            ItemVo item = new ItemVo
+            {
+                Item_Code = txtInCode.Text,
+                Item_Name = txtInName.Text,
+                Item_Name_Eng = txtUpEngName.Text,
+                Item_Name_Eng_Alias = txtEngAli.Text,
+                Item_Type = cmbInType.Text,
+                Item_Spec = txtInSpec.Text,
+                Item_Unit = txtInUnit.Text,
+                Level_1 = cmbLv1.Text,
+                Level_2 = cmbLv2.Text,
+                Level_3 = cmbLv3.Text,
+                Level_4 = cmbLv4.Text,
+                Level_5 = cmbLv5.Text,
+                Item_Stock = Convert.ToDecimal(0),
+                LotSize = Convert.ToDecimal(10),
+                PrdQty_Per_Hour = Convert.ToDecimal(10),
+                PrdQTy_Per_Batch = Convert.ToDecimal(10),
+                Cavity = int.Parse(txtInCavity.Text),
+                Line_Per_Qty = Convert.ToInt32(nuLinePCS.Value),
+                Shot_Per_Qty = Convert.ToInt32(nuInShotPcs.Value),
+                Dry_GV_Qty = Convert.ToInt32(nuInGVQty.Value),
+                Heat_GV_Qty = Convert.ToInt32(nuInGVQty.Value),
+                Remark = txtInremark.Text
+            };
+            ItemService service = new ItemService();
+            if(service.InsertItemInfo(item))
+            {
+                MessageBox.Show("아이템 정보를 입력하였습니다");
+            }
+            else
+            {
+                MessageBox.Show("입력 실패다");
+            }
+
         }
     }
 }

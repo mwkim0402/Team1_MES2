@@ -61,6 +61,44 @@ namespace MES_DB
             }
         }
 
+        public bool InsertItemIfno(ItemVo item)
+        {
+            using(SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "InsertItemInfo";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection.Open();
+                cmd.Parameters.AddWithValue("@Item_Code", item.Item_Code);
+                cmd.Parameters.AddWithValue("@Item_Name", item.Item_Name);
+                cmd.Parameters.AddWithValue("@Item_Name_Eng", item.Item_Name_Eng);
+                cmd.Parameters.AddWithValue("@Item_Name_Eng_Alias", item.Item_Name_Eng_Alias);
+                cmd.Parameters.AddWithValue("@Item_Type", item.Item_Type);
+                cmd.Parameters.AddWithValue("@Item_Spec", item.Item_Spec);
+                cmd.Parameters.AddWithValue("@Item_Unit", item.Item_Unit);
+                cmd.Parameters.AddWithValue("@Level_1", item.Level_1);
+                cmd.Parameters.AddWithValue("@Level_2", item.Level_2);
+                cmd.Parameters.AddWithValue("@Level_3", item.Level_3);
+                cmd.Parameters.AddWithValue("@Level_4", item.Level_4);
+                cmd.Parameters.AddWithValue("@Level_5", item.Level_5);
+                cmd.Parameters.AddWithValue("@Item_Stock", item.Item_Stock);
+                cmd.Parameters.AddWithValue("@PrdQty_Per_Hour", item.PrdQty_Per_Hour);
+                cmd.Parameters.AddWithValue("@PrdQTy_Per_Batch", item.PrdQTy_Per_Batch);
+                cmd.Parameters.AddWithValue("@Cavity", item.Cavity);
+                cmd.Parameters.AddWithValue("@Line_Per_Qty", item.Line_Per_Qty);
+                cmd.Parameters.AddWithValue("@Shot_Per_Qty", item.Shot_Per_Qty);
+                cmd.Parameters.AddWithValue("@Dry_GV_Qty", item.Dry_GV_Qty);
+                cmd.Parameters.AddWithValue("@Heat_GV_Qty", item.Heat_GV_Qty);
+                cmd.Parameters.AddWithValue("@Remark", item.Remark);
+                cmd.Parameters.AddWithValue("@LotSize",item.LotSize );
+                int Checked = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                if (Checked == 0)
+                    return false;
+                return true;
+            }
+        }
+
         public List<string> ItemComboName(string level)
         {
             List<string> list = null;

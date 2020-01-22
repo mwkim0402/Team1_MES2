@@ -48,6 +48,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "투입수량", "In_Qty_Main", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "산출수량", "Out_Qty_Main", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산수량", "Prd_Qty", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산수량", "Plan_Date", false, 100);
         }
 
         private void PerformSearch_Activated(object sender, EventArgs e)

@@ -45,9 +45,9 @@
             this.txtIOIPInput = new System.Windows.Forms.TextBox();
             this.txtIOName = new System.Windows.Forms.TextBox();
             this.txtIOCodeInput = new System.Windows.Forms.TextBox();
-            this.tabControl4.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            this.tcParent1.SuspendLayout();
+            this.pnlParent1.SuspendLayout();
+            this.tcParent2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbUsable.SuspendLayout();
             this.SuspendLayout();
@@ -61,14 +61,14 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label25);
-            this.panel1.Controls.Add(this.txtIOIPInput);
-            this.panel1.Controls.Add(this.txtIOName);
-            this.panel1.Controls.Add(this.txtIOCodeInput);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.gbUsable);
+            this.pnlParent1.Controls.Add(this.label4);
+            this.pnlParent1.Controls.Add(this.label5);
+            this.pnlParent1.Controls.Add(this.label25);
+            this.pnlParent1.Controls.Add(this.txtIOIPInput);
+            this.pnlParent1.Controls.Add(this.txtIOName);
+            this.pnlParent1.Controls.Add(this.txtIOCodeInput);
+            this.pnlParent1.Controls.Add(this.btnSave);
+            this.pnlParent1.Controls.Add(this.gbUsable);
             // 
             // tabPage2
             // 
@@ -271,14 +271,14 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.EtherIOInfo_Load);
-            this.Controls.SetChildIndex(this.tabControl4, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.tabControl2, 0);
+            this.Controls.SetChildIndex(this.tcParent1, 0);
+            //this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.tcParent2, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
-            this.tabControl4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.tabControl2.ResumeLayout(false);
+            this.tcParent1.ResumeLayout(false);
+            this.pnlParent1.ResumeLayout(false);
+            this.pnlParent1.PerformLayout();
+            this.tcParent2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.gbUsable.ResumeLayout(false);

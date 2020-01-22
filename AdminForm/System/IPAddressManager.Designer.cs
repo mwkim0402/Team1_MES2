@@ -40,9 +40,9 @@
             this.gbMonitor = new System.Windows.Forms.GroupBox();
             this.rbUse_Mon = new System.Windows.Forms.RadioButton();
             this.rbNoUse_Mon = new System.Windows.Forms.RadioButton();
-            this.tabControl4.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            this.tcParent1.SuspendLayout();
+            this.pnlParent1.SuspendLayout();
+            this.tcParent2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbUsable.SuspendLayout();
             this.gbMonitor.SuspendLayout();
@@ -57,11 +57,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.gbMonitor);
-            this.panel1.Controls.Add(this.gbUsable);
-            this.panel1.Controls.Add(this.label23);
-            this.panel1.Controls.Add(this.txtAddr);
-            this.panel1.Controls.Add(this.btnSave);
+            this.pnlParent1.Controls.Add(this.gbMonitor);
+            this.pnlParent1.Controls.Add(this.gbUsable);
+            this.pnlParent1.Controls.Add(this.label23);
+            this.pnlParent1.Controls.Add(this.txtAddr);
+            this.pnlParent1.Controls.Add(this.btnSave);
             // 
             // tabPage2
             // 
@@ -228,14 +228,14 @@
             this.ShowInTaskbar = false;
             this.Text = "IPAddressManager";
             this.Load += new System.EventHandler(this.IPAddressManager_Load);
-            this.Controls.SetChildIndex(this.tabControl4, 0);
-            this.Controls.SetChildIndex(this.tabControl2, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.tcParent1, 0);
+            this.Controls.SetChildIndex(this.tcParent2, 0);
+            //this.Controls.SetChildIndex(this.pnlParent1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
-            this.tabControl4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.tabControl2.ResumeLayout(false);
+            this.tcParent1.ResumeLayout(false);
+            this.pnlParent1.ResumeLayout(false);
+            this.pnlParent1.PerformLayout();
+            this.tcParent2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.gbUsable.ResumeLayout(false);

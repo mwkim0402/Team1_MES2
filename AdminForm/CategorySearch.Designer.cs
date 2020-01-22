@@ -96,6 +96,7 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.cmbCat);
             this.Controls.Add(this.txtSearch);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "CategorySearch";
             this.Text = "CategorySearch";
             this.Load += new System.EventHandler(this.CategorySearch_Load);

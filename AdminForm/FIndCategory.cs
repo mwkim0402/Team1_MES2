@@ -17,7 +17,7 @@ namespace AdminForm
     {
         private CategoryMode category;
         private string catTable;
-
+        public string SendCode { get; set; }
         public string SendName { get; set; }
 
         //public new delegate void  TextChanged(object sender, string a);
@@ -72,6 +72,7 @@ namespace AdminForm
                 txtCatCode.Text = frm.CatCode;
                 txtCatName.Text = frm.CatName;
                 SendName = txtCatName.Text;
+                SendCode = txtCatCode.Text;
             }
 
         }

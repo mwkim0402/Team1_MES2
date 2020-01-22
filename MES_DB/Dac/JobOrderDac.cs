@@ -56,8 +56,64 @@ namespace MES_DB
                 return list;
             }
         }
+        public int InsertJobOrder(JobOrderCreateVo_Insert ins)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "insert into WorkOrder(Plan_Unit,Plan_Qty,Plan_Date,Item_Code,Wc_Code) values (@Plan_Unit,@Plan_Qty,@Plan_Date,@Item_Code,(select Wc_Code from WorkCenter_Master where Wc_Name = @Wc_Name)) where Workorderno = @workorderno";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@Workorderno", ins.workorderno);
+                cmd.Parameters.AddWithValue("@Plan_Unit", ins.plan_unit);
+                cmd.Parameters.AddWithValue("@Plan_Qty", ins.plan_qty);
+                cmd.Parameters.AddWithValue("@Plan_Date", ins.plan_date);
+                cmd.Parameters.AddWithValue("@Item_Code", ins.item_code);
+                cmd.Parameters.AddWithValue("@Wc_Name", ins.wc_name);
 
-        public int FinishMoldReq(string wo_Req_No,int req_seq)
+
+                cmd.Connection.Open();
+                int result = cmd.ExecuteNonQuery();
+                return result;
+            }
+        }
+
+        public int UpdateJobOrder(JobOrderCreateVo_Insert ins)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "update WorkOrder set Plan_Unit=@Plan_Unit,Plan_Qty=@Plan_Qty,Plan_Date=@Plan_Date,Item_Code=@Item_Code,Wc_Code =(select Wc_Code from WorkCenter_Master where Wc_Name = @Wc_Name)) where Workorderno = @workorderno";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@Workorderno", ins.workorderno);
+                cmd.Parameters.AddWithValue("@Plan_Unit", ins.plan_unit);
+                cmd.Parameters.AddWithValue("@Plan_Qty", ins.plan_qty);
+                cmd.Parameters.AddWithValue("@Plan_Date", ins.plan_date);
+                cmd.Parameters.AddWithValue("@Item_Code", ins.item_code);
+                cmd.Parameters.AddWithValue("@Wc_Name", ins.wc_name);
+
+
+                cmd.Connection.Open();
+                int result = cmd.ExecuteNonQuery();
+                return result;
+            }
+        }
+
+        public int FinishJobOrder(string Workorderno)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "update WorkOrder set Req_Status = '작업지시마감' where Workorderno = @Workorderno";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@Workorderno", Workorderno);
+
+
+                cmd.Connection.Open();
+                int result = cmd.ExecuteNonQuery();
+                return result;
+            }
+        }
+        public int FinishMoldReq(string wo_Req_No, int req_seq)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -73,9 +129,23 @@ namespace MES_DB
                 return result;
             }
         }
+        public int UndoJobOrder(string Workorderno)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "update WorkOrder set Req_Status = '현장마감' where Workorderno = @Workorderno";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@Workorderno", Workorderno);
 
-        
-            public List<MoldingOrderCreation_ReqVo> SearchMoldReq_date(DateTime start, DateTime end)
+
+                cmd.Connection.Open();
+                int result = cmd.ExecuteNonQuery();
+                return result;
+            }
+        }
+
+        public List<MoldingOrderCreation_ReqVo> SearchMoldReq_date(DateTime start, DateTime end)
         {
             string strStart = start.ToString().Substring(0, 10);
             string strEnd = end.ToString().Substring(0, 10);

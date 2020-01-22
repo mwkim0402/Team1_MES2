@@ -235,6 +235,8 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "GvMonitoring";
+            this.Activated += new System.EventHandler(this.GVMonitoring_Activated);
+            this.Deactivate += new System.EventHandler(this.GVMonitoring_Deactivate);
             this.Load += new System.EventHandler(this.GvMonitoring_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

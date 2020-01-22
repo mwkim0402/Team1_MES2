@@ -14,7 +14,7 @@ namespace FieldOperationForm
 {
     public partial class Login : Form
     {
-        string strconn;
+       
         Main_P main;
         public Login(Main_P main1)
         {
@@ -56,6 +56,7 @@ namespace FieldOperationForm
                 main.btn_NonOperation.Enabled = true;
                 main.btn_logout.Enabled = true;
                 main.btn_Home.Enabled = true;
+                Global.User_ID =Convert.ToInt32(txt_UserID.Text);
             }
 
             else if (service.GetUserType(txt_UserID.Text.Trim(), txt_UserPwd.Text.Trim()) == "성형")
@@ -71,6 +72,7 @@ namespace FieldOperationForm
                 main.btn_NonOperation.Enabled = true;
                 main. btn_logout.Enabled = true;
                 main.btn_Home.Enabled = true;
+                Global.User_ID = Convert.ToInt32(txt_UserID.Text);
             }
 
             else
@@ -86,6 +88,7 @@ namespace FieldOperationForm
                 main.btn_NonOperation.Enabled = true;
                 main.btn_logout.Enabled = true;
                 main.btn_Home.Enabled = true;
+                Global.User_ID = Convert.ToInt32(txt_UserID.Text);
             }
 
 
@@ -99,5 +102,6 @@ namespace FieldOperationForm
             main.lbl_name.Text = "";
             main.label3.Text = "";
         }
+
     }
 }

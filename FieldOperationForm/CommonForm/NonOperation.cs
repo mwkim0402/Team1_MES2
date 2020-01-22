@@ -18,9 +18,12 @@ namespace FieldOperationForm
      
             InitializeComponent();
             main = main1;
-         
+            Setdgv();
+
         }
 
+
+        #region 그리드뷰 설정
         private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
              int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft )
         {
@@ -67,10 +70,11 @@ namespace FieldOperationForm
             //dgv_NonOperation.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
         }
+        #endregion 
 
         private void NonOperation_Load(object sender, EventArgs e)
         {
-            Setdgv();
+        
         }
 
         private void NonOperation_Shown(object sender, EventArgs e)

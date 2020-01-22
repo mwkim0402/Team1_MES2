@@ -56,6 +56,9 @@
     <Compile Include="Class\CommonUtil.cs" />
     <Compile Include="Class\Global.cs" />
     <Compile Include="Class\Helper.cs" />
+    <Compile Include="Class\Text.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CommonForm\End.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,7 +109,7 @@
     <Compile Include="FieldVo\Notice_Vo.cs" />
     <Compile Include="FieldVo\User_Vo.cs" />
     <Compile Include="FieldVo\WorkAllocation_Vo.cs" />
-    <Compile Include="FieldVo\WorkCenter_Vo.cs" />
+    <Compile Include="FieldVo\WorkAssignment_Vo.cs" />
     <Compile Include="JobOrder_Load\EmptyTruck.cs">
       <SubType>Form</SubType>
     </Compile>

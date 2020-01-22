@@ -200,7 +200,7 @@
             // trvBookMark
             // 
             this.trvBookMark.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.trvBookMark.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.trvBookMark.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.trvBookMark.Indent = 30;
             this.trvBookMark.ItemHeight = 30;
             this.trvBookMark.Location = new System.Drawing.Point(0, 218);
@@ -215,7 +215,7 @@
             // 
             // button7
             // 
-            this.button7.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button7.Location = new System.Drawing.Point(0, 198);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(222, 33);
@@ -226,7 +226,7 @@
             // 
             // button6
             // 
-            this.button6.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button6.Location = new System.Drawing.Point(0, 165);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(222, 33);
@@ -237,7 +237,7 @@
             // 
             // button5
             // 
-            this.button5.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button5.Location = new System.Drawing.Point(0, 132);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(222, 33);
@@ -249,7 +249,7 @@
             // trvMenu
             // 
             this.trvMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.trvMenu.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.trvMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.trvMenu.Location = new System.Drawing.Point(0, 218);
             this.trvMenu.Name = "trvMenu";
             this.trvMenu.Size = new System.Drawing.Size(222, 280);
@@ -258,7 +258,7 @@
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button4.Location = new System.Drawing.Point(0, 99);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(222, 33);
@@ -269,7 +269,7 @@
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.Location = new System.Drawing.Point(0, 66);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(222, 33);
@@ -280,7 +280,7 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.Location = new System.Drawing.Point(0, 33);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(222, 33);
@@ -291,7 +291,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(222, 33);
@@ -314,24 +314,24 @@
             // 
             // contextMenuStrip1
             // 
-            this.contextMenuStrip1.Font = new System.Drawing.Font("나눔고딕", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.이창을제외한창모두닫기ToolStripMenuItem,
             this.전체종료ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(134, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(136, 48);
             // 
             // 이창을제외한창모두닫기ToolStripMenuItem
             // 
             this.이창을제외한창모두닫기ToolStripMenuItem.Name = "이창을제외한창모두닫기ToolStripMenuItem";
-            this.이창을제외한창모두닫기ToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.이창을제외한창모두닫기ToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.이창을제외한창모두닫기ToolStripMenuItem.Text = "다른 탭 닫기";
             this.이창을제외한창모두닫기ToolStripMenuItem.Click += new System.EventHandler(this.이창을제외한창모두닫기ToolStripMenuItem_Click);
             // 
             // 전체종료ToolStripMenuItem
             // 
             this.전체종료ToolStripMenuItem.Name = "전체종료ToolStripMenuItem";
-            this.전체종료ToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.전체종료ToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.전체종료ToolStripMenuItem.Text = "전체 종료";
             this.전체종료ToolStripMenuItem.Click += new System.EventHandler(this.전체종료ToolStripMenuItem_Click);
             // 
@@ -357,7 +357,7 @@
             // btnMenu
             // 
             this.btnMenu.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnMenu.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnMenu.ForeColor = System.Drawing.Color.White;
             this.btnMenu.Location = new System.Drawing.Point(0, 0);
             this.btnMenu.Name = "btnMenu";
@@ -380,7 +380,7 @@
             // btnBookMark
             // 
             this.btnBookMark.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnBookMark.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnBookMark.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnBookMark.ForeColor = System.Drawing.Color.White;
             this.btnBookMark.Location = new System.Drawing.Point(110, 0);
             this.btnBookMark.Name = "btnBookMark";

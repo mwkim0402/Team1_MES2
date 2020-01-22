@@ -11,6 +11,23 @@ namespace MES_DB
 {
     public class ItemDAC : ConnectionAccess
     {
+        public List<ItemGroupCombo> GetItemGroupCB()
+        {
+            List<ItemGroupCombo> list;
+            using(SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "ItemGroupCombo";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                list = Helper.DataReaderMapToList<ItemGroupCombo>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
         public List<ItemGroupVo> GetAllItemGroup()
         {
             List<ItemGroupVo> list = null;

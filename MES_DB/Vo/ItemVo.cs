@@ -15,7 +15,12 @@ namespace MES_DB
         public decimal Mat_Qty { get; set; }
         public string Use_YN { get; set; }
     }
-
+    public class ItemGroupCombo
+    {
+        public string Level_Code { get; set; }
+        public string Level_Name { get; set; }
+        public string Level { get; set; }
+    }
     public class ItemVo
     {
         public string Item_Code { get; set; }

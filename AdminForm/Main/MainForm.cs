@@ -207,9 +207,11 @@ namespace AdminForm
             Rectangle r = this.tabControl2.GetTabRect(tc.SelectedIndex);
             r.Offset(_tabWidth, _imgHitArea.Y);
             r.Width = 16;
-            r.Height = 16;
+            r.Height = 16;            
             if (r.Contains(p))
             {
+                Form tempChild = this.ActiveMdiChild;
+                tempChild.Close();
                 TabPage TabP = (TabPage)tc.TabPages[tc.SelectedIndex];
                 tc.TabPages.Remove(TabP);
             }
@@ -261,14 +263,10 @@ namespace AdminForm
                 //string Format 의 따옴표와 마침표 주의!!
                 
                 Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", nameSpace, formName));
-               // frm.TopLevel = false;
                 tabControl2.TabPages.Add(Form_Code);
                 //tabControl2.TabPages[tabControl2.TabPages.Count - 1].Controls.Add(frm);
                 tabControl2.SelectedTab = tabControl2.TabPages[tabControl2.TabPages.Count - 1];
-                frm.MdiParent = this;
-               // frm.WindowState = FormWindowState.Maximized;
-                //frm.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left;
-                // frm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+                frm.MdiParent = this;              
                 frm.Dock = DockStyle.Fill;
                 frm.Show();
             }
@@ -356,6 +354,10 @@ namespace AdminForm
         {
             tabControl2.TabPages.Clear();
             lblLocation.Text = "";
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
+            }
         }
 
         private void 이창을제외한창모두닫기ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -363,7 +365,14 @@ namespace AdminForm
             foreach (TabPage tabPage in tabControl2.TabPages)
             {
                 if (tabPage.Text.Trim() != tabControl2.SelectedTab.Text.Trim())
-                    tabControl2.TabPages.Remove(tabPage);
+                    tabControl2.TabPages.Remove(tabPage);                
+            }
+            foreach (Form frm in this.MdiChildren)
+            {
+                if(frm != this.ActiveMdiChild)
+                {
+                    frm.Close();
+                }
             }
         }
 
@@ -381,6 +390,7 @@ namespace AdminForm
                         break;
                     }
                 }
+                
             }
         }
 

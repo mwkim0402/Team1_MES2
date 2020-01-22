@@ -17,25 +17,36 @@ namespace AdminForm
         MainForm frm;
         string StartDate;
         string EndDate;
+        List<PerformSearchVO> list;
         public PerformSearch()
         {
             InitializeComponent();
         }
 
+        // 실적 보정 , 실적 나누기 버튼
         private void PerformSearch_Load(object sender, EventArgs e)
         {
             ShowDgv();
             frm = (MainForm)this.MdiParent;
+            MES_DB.PerformService service = new MES_DB.PerformService();
+            list = service.GetAllPerformSearch();
         }
 
-        // 날짜만 가지고 있는 데이터 나누기 , 날짜 , 작업장, 공정 나누기 , 실적 보정 , 실적 나누기 버튼
-        private void GetData(object sender,EventArgs e)
-        {
-            MES_DB.PerformService service = new MES_DB.PerformService();
-            List<PerformSearchVO> list = service.GetAllPerformSearch();
-            
 
-            dgvSearchResult.DataSource = list;
+        private void GetData(object sender, EventArgs e)
+        {
+            if (StartDate == null && EndDate == null && fcFactory.SendName == null && fcWork.SendName == null)
+            {
+                dgvSearchResult.DataSource = list;
+            }
+            else
+            {
+                List<PerformSearchVO> SelectList = (from item in list
+                                                    where item.Plan_Date >= Convert.ToDateTime(StartDate.Substring(0, 10)) && item.Plan_Date <= Convert.ToDateTime(EndDate.Substring(0, 10))
+                                                    && item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode
+                                                    select item).ToList();
+                dgvSearchResult.DataSource = SelectList;
+            }
         }
 
         private void ShowDgv()
@@ -48,16 +59,27 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "투입수량", "In_Qty_Main", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "산출수량", "Out_Qty_Main", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산수량", "Prd_Qty", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산수량", "Plan_Date", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산수량", "Process_code", false, 100);
         }
 
         private void PerformSearch_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += new System.EventHandler(this.GetData);
         }
-
         private void PerformSearch_Deactivate(object sender, EventArgs e)
         {
-            frm.Search_Click += new System.EventHandler(this.GetData);
+            frm.Search_Click -= new System.EventHandler(this.GetData);
+        }
+
+        private void dtpStart_ValueChanged(object sender, EventArgs e)
+        {
+            StartDate = dtpStart.Value.ToString();
+        }
+
+        private void dtpEnd_ValueChanged(object sender, EventArgs e)
+        {
+            EndDate = dtpEnd.Value.ToString();
         }
     }
 }

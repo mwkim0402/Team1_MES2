@@ -20,5 +20,15 @@ namespace MES_DB
             PerformDAC dac = new PerformDAC();
             return dac.GetAllPerformSearch();
         }
+        public List<GVMonitoringVO> GetAllMonitoring()
+        {
+            PerformDAC dac = new PerformDAC();
+            return dac.GetAllMonitoring();
+        }
+        public List<MaterialManage> GetAllMaterial()
+        {
+            PerformDAC dac = new PerformDAC();
+            return dac.GetAllMaterial();
+        }
     }
 }

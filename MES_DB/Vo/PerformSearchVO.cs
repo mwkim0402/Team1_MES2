@@ -17,5 +17,27 @@ namespace MES_DB
         public int Out_Qty_Main { get; set; }
         public int Prd_Qty { get; set; }
         public DateTime Plan_Date { get; set; }
+        public string Process_code { get; set; }
+    }
+
+    public class GVMonitoringVO
+    {
+        public string GV_Name { get; set; }
+        public string GV_Group { get; set; }
+        public string GV_Status { get; set; }
+        public string Workorderno { get; set; }
+        public string Item_Code { get; set; }
+        public string Item_Name { get; set; }
+        public int GV_Qty { get; set; }
+        public DateTime Loading_time { get; set; }
+    }
+
+    public class MaterialManage
+    {
+        public string YYYY { get; set; }
+        public string Level_Code { get; set; }
+        public string Level_Name { get; set; }
+        public int Prd_Order { get; set; }
+        public string Mat_LotNo { get; set; }
     }
 }

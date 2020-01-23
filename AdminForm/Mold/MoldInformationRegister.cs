@@ -13,7 +13,9 @@ namespace AdminForm
 {
     public partial class MoldInformationRegister : dgvOneWithInput
     {
+        MainForm frm;
 
+        int isUse;
         List<MoldingInfoVo> List = null;
 
 
@@ -75,6 +77,96 @@ namespace AdminForm
 
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
             dgv.DefaultCellStyle.SelectionBackColor = Color.MidnightBlue;
+        }
+        //저장
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            MoldingService ser = new MoldingService();
+            if (rbUse.Checked)
+            {
+                isUse = 1;
+            }
+            else if (rbNoUse.Checked)
+            {
+                isUse = 0;
+            }
+            else
+            {
+                MessageBox.Show("입력을 모두 해주세요.");
+            }
+
+
+            int result = ser.SaveMoldingInfo(txtMoldCodeInput.Text, txtMoldNameInput.Text, txtMoldGroupInput.Text, txtPrice.Text, dtpInputdate.Value.ToString(),dtpLastEquipDate.Value.ToString(),txtWarrentNum.Text,txtPS.Text,isUse);
+            if (result >= 1)
+            {
+                MessageBox.Show("저장이 완료되었습니다.");
+            }
+        }
+
+        //검색
+        private void Search_Click(object sender, EventArgs e)
+        {
+            MoldingService ser = new MoldingService();
+            if (txtMoldCodeSearch.Text != null)
+            {
+                if (txtMoldNameSearch != null)
+                {
+                    if (cmbMoldGroupSearch.Text != null)
+                    {
+                        List = ser.SearchMoldingInfo(txtMoldCodeSearch.Text, txtMoldNameSearch.Text, cmbMoldGroupSearch.Text);
+                    }
+                    else
+                    {
+                        List = ser.SearchMoldingInfo(txtMoldCodeSearch.Text, txtMoldNameSearch.Text, "");
+                    }
+                }
+                else
+                {
+                    if (cmbMoldGroupSearch.Text != null)
+                    {
+                        List = ser.SearchMoldingInfo(txtMoldCodeSearch.Text, "", cmbMoldGroupSearch.Text);
+                    }
+                    else
+                    {
+                        List = ser.SearchMoldingInfo(txtMoldCodeSearch.Text, "", "");
+                    }
+                }
+            }
+            else
+            {
+                if (txtMoldNameSearch != null)
+                {
+                    if (cmbMoldGroupSearch.Text != null)
+                    {
+                        List = ser.SearchMoldingInfo("", txtMoldNameSearch.Text, cmbMoldGroupSearch.Text);
+                    }
+                    else
+                    {
+                        List = ser.SearchMoldingInfo("", txtMoldNameSearch.Text, "");
+                    }
+                }
+                else
+                {
+                    if (cmbMoldGroupSearch.Text != null)
+                    {
+                        List = ser.SearchMoldingInfo("", "", cmbMoldGroupSearch.Text);
+                    }
+                    else
+                    {
+                        List = ser.SearchMoldingInfo("", "", "");
+                    }
+                }
+            }
+        }
+
+        private void MoldInformationRegister_Activated(object sender, EventArgs e)
+        {
+            frm.Search_Click += new System.EventHandler(Search_Click);
+        }
+
+        private void MoldInformationRegister_Deactivate(object sender, EventArgs e)
+        {
+            frm.Search_Click -= new System.EventHandler(Search_Click);
         }
     }
 }

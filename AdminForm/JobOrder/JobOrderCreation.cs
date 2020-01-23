@@ -81,6 +81,9 @@ namespace AdminForm
             this.dgvSearchResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductRequset_CellClick);
             this.dgvSearchResult.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductRequset_DoubleClick);
             dgvSearchResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+
+            dtpStart.Value = dtpEnd.Value.AddDays( - 7);
         }
 
         //수정으로 탭페이지 전환
@@ -151,9 +154,40 @@ namespace AdminForm
 
         public void Search_Click(object sender, EventArgs e)
         {
+            string strStart = dtpStart.Value.ToString().Substring(0, 10);
+            string strEnd = dtpEnd.Value.ToString().Substring(0, 10);
             JobOrderService service = new JobOrderService();
-            List = service.JobOrderCreation();
-            dgvSearchResult.DataSource = List;
+            if (fcProcess.SendCode != null)
+            {
+                if(fcWorkPlace.SendCode != null)
+                {
+                    //카테고리 둘다 있을때
+                    List = service.JobOrderSearch(strStart, strEnd, fcProcess.SendCode,fcWorkPlace.SendName);
+                    dgvSearchResult.DataSource = List;
+                }
+                else
+                {
+                    //공정만 있을때
+                    List = service.JobOrderSearch(strStart, strEnd, fcProcess.SendCode, "");
+                    dgvSearchResult.DataSource = List;
+                }
+            }
+            else
+            {
+                if (fcWorkPlace.SendCode != null)
+                {
+                    //작업장만 있을때
+                    List = service.JobOrderSearch(strStart, strEnd, "", fcWorkPlace.SendCode);
+                    dgvSearchResult.DataSource = List;
+                }
+                else
+                {
+                    //둘다 없을 때
+                    List = service.JobOrderSearch(strStart, strEnd, "", "");
+                    dgvSearchResult.DataSource = List;
+                }
+            }
+
         }
 
        

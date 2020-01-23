@@ -58,7 +58,10 @@ namespace AdminForm
                     catTable = "GV";
             }
         }
-        
+        //public Value Value
+        //{
+        //    get { return value; }
+        //}
         public FIndCategory()
         {
             InitializeComponent();

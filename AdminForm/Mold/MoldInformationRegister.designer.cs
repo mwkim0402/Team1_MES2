@@ -214,6 +214,7 @@
             this.btnSave.TabIndex = 48;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // label13
             // 
@@ -657,6 +658,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MoldInformationRegister";
+            this.Activated += new System.EventHandler(this.MoldInformationRegister_Activated);
+            this.Deactivate += new System.EventHandler(this.MoldInformationRegister_Deactivate);
             this.Load += new System.EventHandler(this.MoldInformationRegister_Load);
             this.Controls.SetChildIndex(this.tcParent1, 0);
             this.Controls.SetChildIndex(this.tcParent2, 0);

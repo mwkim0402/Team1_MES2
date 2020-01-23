@@ -13,14 +13,22 @@ namespace AdminForm
         // 콤보에 선택된 데이터 key값
         //string value = comboBox1.SelectedValue.ToString();
         //string value = ((KeyValuePair<string, string>)comboBox1.SelectedItem).Value;
-        public static void ComboBind(List<ComboItem> comboItem, ComboBox combo)
+        public static void ComboBind(List<ComboItem> comboItem, ComboBox combo, bool IsDefault)
         {
+            if (IsDefault)
+            {
+                comboItem.Insert(0, new ComboItem
+                {
+                    comboText = "선택",
+                    comboValue = "Default"
+                });
+            }
             combo.DataSource = new BindingSource(comboItem, null);
             combo.DisplayMember = "comboText";
             combo.ValueMember = "comboValue";
+            
             //combo.SelectedIndex = 1;
         }
-
         public static void DictionaryToComboBind(List<ComboItem> comboItem, ComboBox combo)
         {
             Dictionary<string, string> list = comboItem.ToDictionary(item => item.comboValue.ToString(), item => item.comboText);

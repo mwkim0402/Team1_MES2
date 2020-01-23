@@ -9,10 +9,20 @@ namespace MES_DB
     public class JobOrderService
 
     {
+
+
         public List<JobOrderCreateVo> JobOrderCreation()
         {
             JobOrderDac dac = new JobOrderDac();
             return dac.JobOrderCreation();
+        }
+
+        //검색 빈칸은 무시하고 오버로딩을 통한 다른 프로시져 제공
+        public List<JobOrderCreateVo> JobOrderSearch(string start, string end,string process,string workplace)
+        {
+            
+            JobOrderDac dac = new JobOrderDac();
+            return dac.JobOrderSearch(start, end, process, workplace);
         }
 
         public List<MoldingOrderCreation_ReqVo> MoldingOrderCreation_Req()
@@ -40,10 +50,10 @@ namespace MES_DB
             JobOrderDac dac = new JobOrderDac();
             return dac.UndoJobOrder(Workorderno);
         }
-        public List<MoldingOrderCreation_ReqVo> SearchMoldReq_date(DateTime start, DateTime end)
+        public List<MoldingOrderCreation_ReqVo> SearchMoldReq_date(DateTime start, DateTime end,string orderno,string project)
         {
             JobOrderDac dac = new JobOrderDac();
-            return dac.SearchMoldReq_date(start, end);
+            return dac.SearchMoldReq_date(start, end,orderno,project);
         }
 
         public int InsertJobOrder(JobOrderCreateVo_Insert ins)

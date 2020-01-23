@@ -15,6 +15,16 @@ namespace MES_DB
             return dac.GetMoldingInfo();
         }
 
+        public List<MoldingInfoVo> SearchMoldingInfo(string code, string name, string group)
+        {
+            MoldingDac dac = new MoldingDac();
+            return dac.SearchMoldingInfo(code,name,group);
+        }
+        public int SaveMoldingInfo(string code, string name, string group, string price, string inputdate, string lastequipdate, string warrentnum, string Ps, int isUse)
+        {
+            MoldingDac dac = new MoldingDac();
+            return dac.SaveMoldingInfo(code, name, group,price,inputdate,lastequipdate,warrentnum,Ps,isUse);
+        }
         public List<MoldUseHistoryVo> MoldUseHistory()
         {
             MoldingDac dac = new MoldingDac();

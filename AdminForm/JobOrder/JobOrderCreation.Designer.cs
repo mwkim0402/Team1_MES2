@@ -33,7 +33,7 @@
             this.btnDeadlineCancel = new System.Windows.Forms.Button();
             this.fcWorkPlace = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbPlanAmount = new AdminForm.FIndCategory();
+            this.fcProcess = new AdminForm.FIndCategory();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
@@ -134,7 +134,7 @@
             this.panel2.Controls.Add(this.btnDeadlineCancel);
             this.panel2.Controls.Add(this.fcWorkPlace);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.cbPlanAmount);
+            this.panel2.Controls.Add(this.fcProcess);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.dtpEnd);
@@ -173,6 +173,7 @@
             this.fcWorkPlace.Category = AdminForm.CategoryMode.WorkCenter;
             this.fcWorkPlace.Location = new System.Drawing.Point(665, 22);
             this.fcWorkPlace.Name = "fcWorkPlace";
+            this.fcWorkPlace.SendCode = null;
             this.fcWorkPlace.SendName = null;
             this.fcWorkPlace.Size = new System.Drawing.Size(190, 27);
             this.fcWorkPlace.TabIndex = 7;
@@ -188,15 +189,16 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "작업장";
             // 
-            // cbPlanAmount
+            // fcProcess
             // 
-            this.cbPlanAmount.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbPlanAmount.Category = AdminForm.CategoryMode.Process;
-            this.cbPlanAmount.Location = new System.Drawing.Point(403, 22);
-            this.cbPlanAmount.Name = "cbPlanAmount";
-            this.cbPlanAmount.SendName = null;
-            this.cbPlanAmount.Size = new System.Drawing.Size(190, 27);
-            this.cbPlanAmount.TabIndex = 5;
+            this.fcProcess.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.fcProcess.Category = AdminForm.CategoryMode.Process;
+            this.fcProcess.Location = new System.Drawing.Point(403, 22);
+            this.fcProcess.Name = "fcProcess";
+            this.fcProcess.SendCode = null;
+            this.fcProcess.SendName = null;
+            this.fcProcess.Size = new System.Drawing.Size(190, 27);
+            this.fcProcess.TabIndex = 5;
             // 
             // label3
             // 
@@ -234,6 +236,7 @@
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(98, 21);
             this.dtpStart.TabIndex = 1;
+            this.dtpStart.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
             // label1
             // 
@@ -597,7 +600,7 @@
         private System.Windows.Forms.ComboBox cmbWorkPlace;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown nuPlanAmount;
-        private FIndCategory cbPlanAmount;
+        private FIndCategory fcProcess;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;

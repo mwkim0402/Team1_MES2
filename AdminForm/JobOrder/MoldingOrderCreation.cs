@@ -192,12 +192,37 @@ namespace AdminForm
 
         }
 
-        //검색-생산의뢰날짜
-        private void Search_date(object sender, EventArgs e)
+        //검색
+        private void Search(object sender, EventArgs e)
         {
             JobOrderService ser = new JobOrderService();
-            ListReq = ser.SearchMoldReq_date(dtpStart.Value, dtpEnd.Value);
-            dgvProductRequset.DataSource = ListReq;
+            if (txtOrderCreationNum.Text == null)
+            {
+                if (txtProjectNum.Text == null)
+                {
+                    ListReq = ser.SearchMoldReq_date(dtpStart.Value, dtpEnd.Value,"","");
+                    dgvProductRequset.DataSource = ListReq;
+                }
+                else
+                {
+                    ListReq = ser.SearchMoldReq_date(dtpStart.Value, dtpEnd.Value, "", txtProjectNum.Text);
+                    dgvProductRequset.DataSource = ListReq;
+                }
+            }
+            else
+            {
+                if (txtProjectNum.Text == null)
+                {
+                    ListReq = ser.SearchMoldReq_date(dtpStart.Value, dtpEnd.Value, txtOrderCreationNum.Text, "");
+                    dgvProductRequset.DataSource = ListReq;
+                }
+                else
+                {
+                    ListReq = ser.SearchMoldReq_date(dtpStart.Value, dtpEnd.Value, txtOrderCreationNum.Text, txtProjectNum.Text);
+                    dgvProductRequset.DataSource = ListReq;
+                }
+            }
+            
 
         }
 

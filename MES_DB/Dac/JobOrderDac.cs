@@ -25,6 +25,27 @@ namespace MES_DB
                 return list;
             }
         }
+
+        public List<JobOrderCreateVo> JobOrderSearch(string start, string end, string process, string workplace)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "JobOrderSearch";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@startdate",start);
+                cmd.Parameters.AddWithValue("@enddate",end);
+                cmd.Parameters.AddWithValue("@procCode", int.Parse(process));
+                cmd.Parameters.AddWithValue("@WC_Name", int.Parse(workplace));
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<JobOrderCreateVo> list = Helper.DataReaderMapToList<JobOrderCreateVo>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+        
         public List<MoldingOrderCreation_ReqVo> MoldingOrderCreation_Req()
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -145,7 +166,7 @@ namespace MES_DB
             }
         }
 
-        public List<MoldingOrderCreation_ReqVo> SearchMoldReq_date(DateTime start, DateTime end)
+        public List<MoldingOrderCreation_ReqVo> SearchMoldReq_date(DateTime start, DateTime end, string orderno, string project)
         {
             string strStart = start.ToString().Substring(0, 10);
             string strEnd = end.ToString().Substring(0, 10);
@@ -153,10 +174,12 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "SearchMoldReq_date";
+                cmd.CommandText = "SearchMoldReq";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Wo_Req_No", strStart);
-                cmd.Parameters.AddWithValue("@Req_Seq", strEnd);
+                cmd.Parameters.AddWithValue("@startdate", strStart);
+                cmd.Parameters.AddWithValue("@enddate", strEnd);
+                cmd.Parameters.AddWithValue("@OrderNo", orderno);
+                cmd.Parameters.AddWithValue("@Project", project);
 
 
                 cmd.Connection.Open();

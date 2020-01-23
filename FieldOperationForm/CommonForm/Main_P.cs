@@ -112,7 +112,7 @@ namespace FieldOperationForm
                 frm1.Dock = DockStyle.Fill;
                 frm1.Show();
             }
-            else
+            else if(lbl_Job.Text=="포장")
             {
                 frm2 = new JobOrderStatus_Package(this);
                 frm2.BringToFront();

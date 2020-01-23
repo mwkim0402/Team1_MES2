@@ -16,13 +16,17 @@ namespace FieldOperationForm
     {
 
         List<WorkAllocation_Vo> WList = null;
+        List<WorkAllocation_Vo> MList = null;
         Main_P main;
+        string a;
+        string b;
         public workerAllocation(Main_P main1)
         {
             InitializeComponent();
             main = main1;
             Setdgv();
             SetWorkerList();
+            SetWorker();
         }
 
 
@@ -57,8 +61,16 @@ namespace FieldOperationForm
         private void Setdgv()
         {
 
-            AddNewColumnToDataGridView(dataGridView1, "작업자", "Title", true, 254);
-            AddNewColumnToDataGridView(dataGridView1, "할당시각", "Notice_Date", true, 280);
+            AddNewColumnToDataGridView(dataGridView1, "작업자", "User_Name", true, 254);
+            AddNewColumnToDataGridView(dataGridView1, "할당시각", "Allocation_datetime", true, 280);
+            AddNewColumnToDataGridView(dataGridView1, "할당시각", "Wc_Code ", false, 280);
+            AddNewColumnToDataGridView(dataGridView1, "할당시각", "User_ID ", false, 280);
+            AddNewColumnToDataGridView(dataGridView1, "할당시각", "Release_datetime", false, 280);
+            AddNewColumnToDataGridView(dataGridView1, "할당시각", "Wc_Name", false, 280);
+            AddNewColumnToDataGridView(dataGridView1, "할당시각", "Wc_Group", false, 280);
+            AddNewColumnToDataGridView(dataGridView1, "할당시각", "Process_Code", false, 280);
+  
+       
 
 
             this.dataGridView1.Font = new Font("나눔고딕", 14, FontStyle.Bold);
@@ -72,6 +84,13 @@ namespace FieldOperationForm
 
             AddNewColumnToDataGridView(dataGridView2, "작업자", "User_Name", true, 253);
             AddNewColumnToDataGridView(dataGridView2, "현재작업장", "Wc_Name", true, 281);
+            AddNewColumnToDataGridView(dataGridView2, "현재작업장", "Wc_Code ", false, 281);
+            AddNewColumnToDataGridView(dataGridView2, "현재작업장", "User_ID ", false, 281);
+            AddNewColumnToDataGridView(dataGridView2, "현재작업장", "Release_datetime", false, 281);
+            AddNewColumnToDataGridView(dataGridView2, "현재작업장", "Wc_Group", false, 281);
+            AddNewColumnToDataGridView(dataGridView2, "현재작업장", "Process_Code", false, 281);
+            AddNewColumnToDataGridView(dataGridView2, "현재작업장", "Allocation_datetime", false, 281);
+
 
             this.dataGridView2.Font = new Font("나눔고딕", 14, FontStyle.Bold);
             this.dataGridView2.DefaultCellStyle.Font = new Font("나눔고딕", 15, FontStyle.Bold);
@@ -83,13 +102,13 @@ namespace FieldOperationForm
         }
         #endregion
 
-        private void Set()
+        private void SetWorker()
         {
-           
-                
+            WorkAllocation_Service service = new WorkAllocation_Service();
 
-           
-        
+            MList = service.GetWorker(main.lbl_Job.Text);
+            dataGridView1.DataSource = MList;
+
         }
 
         private void SetWorkerList()
@@ -99,13 +118,100 @@ namespace FieldOperationForm
 
             WList = service.GetWorkerList(main.lbl_Job.Text);
 
-
+            dataGridView2.DataSource = WList;
 
         }
 
         private void workerAllocation_Load(object sender, EventArgs e)
         {
-            dataGridView2.DataSource = WList;
+        
+
+            txt_WorkPlace.Text = main. lbl_Job.Text;
+
+       
+        }
+
+        private void btn_WorkerOn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                WorkAssignment_Vo wa = new WorkAssignment_Vo();
+                wa.User_Name = a;
+                wa.Wc_Name = main.lbl_Job.Text;
+                WorkAllocation_Service service = new WorkAllocation_Service();
+                service.WorkAssignment(wa);
+                SetWorkerList();
+                SetWorker();
+                a = "";
+            }
+            catch { }
+
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.CurrentCell = null;
+            try
+            {
+                a = dataGridView2.Rows[e.RowIndex].Cells[4].Value.ToString();
+                label8.Text = a;
+            }
+            catch { }
+        }
+
+        private void btn_WorkerOff_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                WorkAllocation_Service service = new WorkAllocation_Service();
+
+                service.deleteWorker(b);
+
+                SetWorkerList();
+                SetWorker();
+                b = "";
+            }
+            catch { }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            dataGridView2.CurrentCell = null;
+            try
+            {
+                b = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                label8.Text = b;
+            }
+            catch { }
+        }
+
+        private void workerAllocation_Shown(object sender, EventArgs e)
+        {
+            dataGridView1.CurrentCell = null;
+            dataGridView2.CurrentCell = null;
+        }
+
+        private void btn_WorkerFullOff_Click(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("전체 해제 하시겠습니까?", "알림", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                WorkAllocation_Service service = new WorkAllocation_Service();
+                service.deleteAllWorker();
+         
+
+            }
+
+            SetWorkerList();
+            SetWorker();
+
+
+        }
+
+        private void dataGridView1_DataSourceChanged(object sender, EventArgs e)
+        {
+            txt_WorkerNum.Text = dataGridView1.RowCount.ToString();
         }
     }
 }

@@ -14,4 +14,5 @@ namespace FieldOperationForm
         public string Customer_Code { get; set; }
         public string User_Type { get; set; }
     }
+
 }

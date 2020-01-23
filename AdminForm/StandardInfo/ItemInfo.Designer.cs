@@ -86,32 +86,31 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.txtInUnit = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.rbInTrue = new System.Windows.Forms.RadioButton();
+            this.rbInFalse = new System.Windows.Forms.RadioButton();
+            this.txtInCode = new System.Windows.Forms.TextBox();
+            this.txtInName = new System.Windows.Forms.TextBox();
+            this.nuInGVQty = new System.Windows.Forms.NumericUpDown();
             this.label27 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.txtUpEngName = new System.Windows.Forms.TextBox();
+            this.nuLinePCS = new System.Windows.Forms.NumericUpDown();
             this.label28 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.nuInShotPcs = new System.Windows.Forms.NumericUpDown();
+            this.txtEngAli = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtInCavity = new System.Windows.Forms.TextBox();
             this.cmbLv5 = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtInSpec = new System.Windows.Forms.TextBox();
             this.cmbLv4 = new System.Windows.Forms.ComboBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
@@ -119,15 +118,15 @@
             this.cmbLv3 = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nuInProQty = new System.Windows.Forms.NumericUpDown();
             this.cmbLv2 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.nuInPerQty = new System.Windows.Forms.NumericUpDown();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.cmbLv1 = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtInremark = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnInsert = new System.Windows.Forms.Button();
@@ -184,6 +183,7 @@
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dgvSearchResult = new System.Windows.Forms.DataGridView();
+            this.cmbInType = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuOutputPerCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuTheoryOutput)).BeginInit();
@@ -197,11 +197,11 @@
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuInGVQty)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuLinePCS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuInShotPcs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuInProQty)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuInPerQty)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -773,30 +773,30 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.textBox17);
+            this.panel6.Controls.Add(this.cmbInType);
+            this.panel6.Controls.Add(this.txtInUnit);
             this.panel6.Controls.Add(this.label40);
             this.panel6.Controls.Add(this.label25);
             this.panel6.Controls.Add(this.groupBox1);
-            this.panel6.Controls.Add(this.textBox14);
-            this.panel6.Controls.Add(this.textBox1);
-            this.panel6.Controls.Add(this.numericUpDown5);
+            this.panel6.Controls.Add(this.txtInCode);
+            this.panel6.Controls.Add(this.txtInName);
+            this.panel6.Controls.Add(this.nuInGVQty);
             this.panel6.Controls.Add(this.label27);
             this.panel6.Controls.Add(this.label43);
-            this.panel6.Controls.Add(this.textBox2);
-            this.panel6.Controls.Add(this.numericUpDown3);
+            this.panel6.Controls.Add(this.txtUpEngName);
+            this.panel6.Controls.Add(this.nuLinePCS);
             this.panel6.Controls.Add(this.label28);
-            this.panel6.Controls.Add(this.numericUpDown4);
-            this.panel6.Controls.Add(this.textBox3);
+            this.panel6.Controls.Add(this.nuInShotPcs);
+            this.panel6.Controls.Add(this.txtEngAli);
             this.panel6.Controls.Add(this.label41);
             this.panel6.Controls.Add(this.label29);
             this.panel6.Controls.Add(this.label42);
-            this.panel6.Controls.Add(this.textBox4);
             this.panel6.Controls.Add(this.label30);
-            this.panel6.Controls.Add(this.textBox5);
+            this.panel6.Controls.Add(this.txtInCavity);
             this.panel6.Controls.Add(this.cmbLv5);
             this.panel6.Controls.Add(this.label31);
             this.panel6.Controls.Add(this.label39);
-            this.panel6.Controls.Add(this.textBox6);
+            this.panel6.Controls.Add(this.txtInSpec);
             this.panel6.Controls.Add(this.cmbLv4);
             this.panel6.Controls.Add(this.label32);
             this.panel6.Controls.Add(this.label38);
@@ -804,9 +804,9 @@
             this.panel6.Controls.Add(this.cmbLv3);
             this.panel6.Controls.Add(this.label34);
             this.panel6.Controls.Add(this.label37);
-            this.panel6.Controls.Add(this.numericUpDown1);
+            this.panel6.Controls.Add(this.nuInProQty);
             this.panel6.Controls.Add(this.cmbLv2);
-            this.panel6.Controls.Add(this.numericUpDown2);
+            this.panel6.Controls.Add(this.nuInPerQty);
             this.panel6.Controls.Add(this.label36);
             this.panel6.Controls.Add(this.label35);
             this.panel6.Controls.Add(this.cmbLv1);
@@ -816,13 +816,13 @@
             this.panel6.Size = new System.Drawing.Size(868, 223);
             this.panel6.TabIndex = 146;
             // 
-            // textBox17
+            // txtInUnit
             // 
-            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(744, 58);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(119, 29);
-            this.textBox17.TabIndex = 142;
+            this.txtInUnit.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtInUnit.Location = new System.Drawing.Point(744, 58);
+            this.txtInUnit.Name = "txtInUnit";
+            this.txtInUnit.Size = new System.Drawing.Size(119, 29);
+            this.txtInUnit.TabIndex = 142;
             // 
             // label40
             // 
@@ -840,7 +840,7 @@
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label25.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label25.Location = new System.Drawing.Point(9, 25);
+            this.label25.Location = new System.Drawing.Point(9, 30);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(72, 16);
             this.label25.TabIndex = 99;
@@ -848,8 +848,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton9);
-            this.groupBox1.Controls.Add(this.radioButton10);
+            this.groupBox1.Controls.Add(this.rbInTrue);
+            this.groupBox1.Controls.Add(this.rbInFalse);
             this.groupBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox1.Location = new System.Drawing.Point(682, 141);
             this.groupBox1.Name = "groupBox1";
@@ -858,60 +858,60 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "사용여부";
             // 
-            // radioButton9
+            // rbInTrue
             // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton9.Checked = true;
-            this.radioButton9.Location = new System.Drawing.Point(27, 25);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(42, 20);
-            this.radioButton9.TabIndex = 77;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "유";
-            this.radioButton9.UseVisualStyleBackColor = false;
+            this.rbInTrue.AutoSize = true;
+            this.rbInTrue.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbInTrue.Checked = true;
+            this.rbInTrue.Location = new System.Drawing.Point(27, 25);
+            this.rbInTrue.Name = "rbInTrue";
+            this.rbInTrue.Size = new System.Drawing.Size(42, 20);
+            this.rbInTrue.TabIndex = 77;
+            this.rbInTrue.TabStop = true;
+            this.rbInTrue.Text = "유";
+            this.rbInTrue.UseVisualStyleBackColor = false;
             // 
-            // radioButton10
+            // rbInFalse
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton10.Location = new System.Drawing.Point(101, 25);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(42, 20);
-            this.radioButton10.TabIndex = 79;
-            this.radioButton10.Text = "무";
-            this.radioButton10.UseVisualStyleBackColor = false;
+            this.rbInFalse.AutoSize = true;
+            this.rbInFalse.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbInFalse.Location = new System.Drawing.Point(101, 25);
+            this.rbInFalse.Name = "rbInFalse";
+            this.rbInFalse.Size = new System.Drawing.Size(42, 20);
+            this.rbInFalse.TabIndex = 79;
+            this.rbInFalse.Text = "무";
+            this.rbInFalse.UseVisualStyleBackColor = false;
             // 
-            // textBox14
+            // txtInCode
             // 
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(110, 19);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(117, 22);
-            this.textBox14.TabIndex = 102;
+            this.txtInCode.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInCode.Location = new System.Drawing.Point(110, 24);
+            this.txtInCode.Name = "txtInCode";
+            this.txtInCode.Size = new System.Drawing.Size(117, 25);
+            this.txtInCode.TabIndex = 102;
             // 
-            // textBox1
+            // txtInName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(110, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 22);
-            this.textBox1.TabIndex = 107;
+            this.txtInName.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInName.Location = new System.Drawing.Point(110, 60);
+            this.txtInName.Name = "txtInName";
+            this.txtInName.Size = new System.Drawing.Size(117, 25);
+            this.txtInName.TabIndex = 107;
             // 
-            // numericUpDown5
+            // nuInGVQty
             // 
-            this.numericUpDown5.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.numericUpDown5.Location = new System.Drawing.Point(607, 157);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(61, 33);
-            this.numericUpDown5.TabIndex = 140;
+            this.nuInGVQty.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.nuInGVQty.Location = new System.Drawing.Point(607, 157);
+            this.nuInGVQty.Name = "nuInGVQty";
+            this.nuInGVQty.Size = new System.Drawing.Size(61, 33);
+            this.nuInGVQty.TabIndex = 140;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label27.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label27.Location = new System.Drawing.Point(9, 61);
+            this.label27.Location = new System.Drawing.Point(9, 66);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(56, 16);
             this.label27.TabIndex = 106;
@@ -928,48 +928,48 @@
             this.label43.TabIndex = 139;
             this.label43.Text = "건조대차 기본수량";
             // 
-            // textBox2
+            // txtUpEngName
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(110, 90);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(117, 22);
-            this.textBox2.TabIndex = 109;
+            this.txtUpEngName.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUpEngName.Location = new System.Drawing.Point(110, 95);
+            this.txtUpEngName.Name = "txtUpEngName";
+            this.txtUpEngName.Size = new System.Drawing.Size(117, 25);
+            this.txtUpEngName.TabIndex = 109;
             // 
-            // numericUpDown3
+            // nuLinePCS
             // 
-            this.numericUpDown3.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.numericUpDown3.Location = new System.Drawing.Point(607, 52);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(61, 33);
-            this.numericUpDown3.TabIndex = 138;
+            this.nuLinePCS.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.nuLinePCS.Location = new System.Drawing.Point(607, 52);
+            this.nuLinePCS.Name = "nuLinePCS";
+            this.nuLinePCS.Size = new System.Drawing.Size(61, 33);
+            this.nuLinePCS.TabIndex = 138;
             // 
             // label28
             // 
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label28.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label28.Location = new System.Drawing.Point(9, 96);
+            this.label28.Location = new System.Drawing.Point(9, 101);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(93, 16);
             this.label28.TabIndex = 108;
             this.label28.Text = "품목 영문명";
             // 
-            // numericUpDown4
+            // nuInShotPcs
             // 
-            this.numericUpDown4.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.numericUpDown4.Location = new System.Drawing.Point(607, 18);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(61, 33);
-            this.numericUpDown4.TabIndex = 137;
+            this.nuInShotPcs.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.nuInShotPcs.Location = new System.Drawing.Point(607, 18);
+            this.nuInShotPcs.Name = "nuInShotPcs";
+            this.nuInShotPcs.Size = new System.Drawing.Size(61, 33);
+            this.nuInShotPcs.TabIndex = 137;
             // 
-            // textBox3
+            // txtEngAli
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(110, 125);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(117, 22);
-            this.textBox3.TabIndex = 111;
+            this.txtEngAli.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEngAli.Location = new System.Drawing.Point(110, 130);
+            this.txtEngAli.Name = "txtEngAli";
+            this.txtEngAli.Size = new System.Drawing.Size(117, 25);
+            this.txtEngAli.TabIndex = 111;
             // 
             // label41
             // 
@@ -987,7 +987,7 @@
             this.label29.AutoSize = true;
             this.label29.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label29.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label29.Location = new System.Drawing.Point(10, 131);
+            this.label29.Location = new System.Drawing.Point(10, 136);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(77, 16);
             this.label29.TabIndex = 110;
@@ -1004,32 +1004,24 @@
             this.label42.TabIndex = 135;
             this.label42.Text = "한Shot당 PCS수";
             // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(110, 159);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(117, 22);
-            this.textBox4.TabIndex = 113;
-            // 
             // label30
             // 
             this.label30.AutoSize = true;
             this.label30.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label30.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label30.Location = new System.Drawing.Point(9, 166);
+            this.label30.Location = new System.Drawing.Point(9, 171);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(77, 16);
             this.label30.TabIndex = 112;
             this.label30.Text = "품목 유형";
             // 
-            // textBox5
+            // txtInCavity
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(744, 96);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(119, 29);
-            this.textBox5.TabIndex = 115;
+            this.txtInCavity.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtInCavity.Location = new System.Drawing.Point(744, 96);
+            this.txtInCavity.Name = "txtInCavity";
+            this.txtInCavity.Size = new System.Drawing.Size(119, 29);
+            this.txtInCavity.TabIndex = 115;
             // 
             // cmbLv5
             // 
@@ -1062,13 +1054,13 @@
             this.label39.TabIndex = 131;
             this.label39.Text = "Level 5";
             // 
-            // textBox6
+            // txtInSpec
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(744, 23);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(119, 29);
-            this.textBox6.TabIndex = 117;
+            this.txtInSpec.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtInSpec.Location = new System.Drawing.Point(744, 23);
+            this.txtInSpec.Name = "txtInSpec";
+            this.txtInSpec.Size = new System.Drawing.Size(119, 29);
+            this.txtInSpec.TabIndex = 117;
             // 
             // cmbLv4
             // 
@@ -1143,13 +1135,13 @@
             this.label37.TabIndex = 127;
             this.label37.Text = "Level 3";
             // 
-            // numericUpDown1
+            // nuInProQty
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.numericUpDown1.Location = new System.Drawing.Point(607, 88);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(61, 33);
-            this.numericUpDown1.TabIndex = 121;
+            this.nuInProQty.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.nuInProQty.Location = new System.Drawing.Point(607, 88);
+            this.nuInProQty.Name = "nuInProQty";
+            this.nuInProQty.Size = new System.Drawing.Size(61, 33);
+            this.nuInProQty.TabIndex = 121;
             // 
             // cmbLv2
             // 
@@ -1160,13 +1152,13 @@
             this.cmbLv2.Size = new System.Drawing.Size(108, 24);
             this.cmbLv2.TabIndex = 126;
             // 
-            // numericUpDown2
+            // nuInPerQty
             // 
-            this.numericUpDown2.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.numericUpDown2.Location = new System.Drawing.Point(607, 122);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(61, 33);
-            this.numericUpDown2.TabIndex = 122;
+            this.nuInPerQty.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.nuInPerQty.Location = new System.Drawing.Point(607, 122);
+            this.nuInPerQty.Name = "nuInPerQty";
+            this.nuInPerQty.Size = new System.Drawing.Size(61, 33);
+            this.nuInPerQty.TabIndex = 122;
             // 
             // label36
             // 
@@ -1213,24 +1205,24 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.textBox12);
+            this.panel7.Controls.Add(this.txtInremark);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel7.Location = new System.Drawing.Point(0, 25);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(174, 198);
             this.panel7.TabIndex = 106;
             // 
-            // textBox12
+            // txtInremark
             // 
-            this.textBox12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtInremark.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox12.Location = new System.Drawing.Point(5, 3);
-            this.textBox12.Multiline = true;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox12.Size = new System.Drawing.Size(163, 188);
-            this.textBox12.TabIndex = 103;
+            this.txtInremark.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtInremark.Location = new System.Drawing.Point(5, 3);
+            this.txtInremark.Multiline = true;
+            this.txtInremark.Name = "txtInremark";
+            this.txtInremark.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtInremark.Size = new System.Drawing.Size(163, 188);
+            this.txtInremark.TabIndex = 103;
             // 
             // label26
             // 
@@ -1262,6 +1254,7 @@
             this.btnInsert.TabIndex = 143;
             this.btnInsert.Text = "저장";
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // numericUpDown6
             // 
@@ -1831,6 +1824,15 @@
             this.dgvSearchResult.Size = new System.Drawing.Size(1132, 216);
             this.dgvSearchResult.TabIndex = 10;
             // 
+            // cmbInType
+            // 
+            this.cmbInType.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbInType.FormattingEnabled = true;
+            this.cmbInType.Location = new System.Drawing.Point(110, 167);
+            this.cmbInType.Name = "cmbInType";
+            this.cmbInType.Size = new System.Drawing.Size(117, 24);
+            this.cmbInType.TabIndex = 143;
+            // 
             // ItemInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1868,11 +1870,11 @@
             this.panel6.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuInGVQty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuLinePCS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuInShotPcs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuInProQty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuInPerQty)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -1962,29 +1964,28 @@
         protected System.Windows.Forms.TabPage tabPage4;
         protected System.Windows.Forms.DataGridView dgvSearchResult;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtInCode;
+        private System.Windows.Forms.TextBox txtInremark;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton rbInTrue;
+        private System.Windows.Forms.RadioButton rbInFalse;
+        private System.Windows.Forms.TextBox txtInName;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUpEngName;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtEngAli;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtInCavity;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtInSpec;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown nuInProQty;
+        private System.Windows.Forms.NumericUpDown nuInPerQty;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.ComboBox cmbLv1;
         private System.Windows.Forms.Label label36;
@@ -1997,10 +1998,10 @@
         private System.Windows.Forms.ComboBox cmbLv5;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown nuInShotPcs;
+        private System.Windows.Forms.NumericUpDown nuLinePCS;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.NumericUpDown nuInGVQty;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.NumericUpDown numericUpDown6;
         private System.Windows.Forms.Button btnInsert;
@@ -2010,7 +2011,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox txtInUnit;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TextBox textBox7;
@@ -2058,5 +2059,6 @@
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cmbInType;
     }
 }

@@ -30,5 +30,11 @@ namespace MES_DB
             MoldingDac dac = new MoldingDac();
             return dac.MoldUseHistory();
         }
+
+        public List<MoldUseHistoryVo> SearchMoldUse(string start, string end, string item, string workplace)
+        {
+            MoldingDac dac = new MoldingDac();
+            return dac.SearchMoldUse(start,end,item,workplace);
+        }
     }
 }

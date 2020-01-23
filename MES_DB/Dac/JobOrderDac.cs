@@ -174,10 +174,10 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "SearchMoldReq";
+                cmd.CommandText = "SearchMoldingReq";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@startdate", strStart);
-                cmd.Parameters.AddWithValue("@enddate", strEnd);
+                cmd.Parameters.AddWithValue("@DateStart", strStart);
+                cmd.Parameters.AddWithValue("@DateEnd", strEnd);
                 cmd.Parameters.AddWithValue("@OrderNo", orderno);
                 cmd.Parameters.AddWithValue("@Project", project);
 

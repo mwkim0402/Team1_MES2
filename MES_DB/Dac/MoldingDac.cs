@@ -25,7 +25,7 @@ namespace MES_DB
                 return list;
             }
         }
-        public List<MoldingInfoVo> SaveMoldingInfo(string code, string name, string group, string price, string inputdate, string lastequipdate, string warrentnum, string Ps,int Use)
+        public int SaveMoldingInfo(string code, string name, string group, string price, string inputdate, string lastequipdate, string warrentnum, string Ps,int Use)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -43,8 +43,28 @@ namespace MES_DB
                 cmd.Parameters.AddWithValue("@Use_YN", Use);
 
                 cmd.Connection.Open();
+
+                int result = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return result;
+            }
+        }
+
+        internal List<MoldUseHistoryVo> SearchMoldUse(string start, string end, string item, string workplace)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "SearchMoldUse";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@DateStart", start);
+                cmd.Parameters.AddWithValue("@DateEnd", end);
+                cmd.Parameters.AddWithValue("@ItemCode", item);
+                cmd.Parameters.AddWithValue("@WorkPlaceCode", workplace);
+
+                cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<MoldingInfoVo> list = Helper.DataReaderMapToList<MoldingInfoVo>(reader);
+                List<MoldUseHistoryVo> list = Helper.DataReaderMapToList<MoldUseHistoryVo>(reader);
                 cmd.Connection.Close();
                 return list;
             }

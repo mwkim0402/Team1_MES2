@@ -18,9 +18,12 @@ namespace AdminForm
         List<MoldingOrderCreation_WoVo> ListWo = null;
         string selectedWoReq; //생산의뢰번호
         int req_Seq; //의뢰순번
+        MainForm frm;
 
         public MoldingOrderCreation()
         {
+            
+
             InitializeComponent();
         }
 
@@ -78,7 +81,7 @@ namespace AdminForm
         private void MoldingOrderCreation_Load(object sender, EventArgs e)
         {
             // 생산의뢰 dgv 컬럼 추가
-
+            frm = (MainForm)this.MdiParent;
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
             checkBoxColumn.HeaderText = "체크";
             checkBoxColumn.Name = "check";
@@ -192,13 +195,14 @@ namespace AdminForm
 
         }
 
+
         //검색
         private void Search(object sender, EventArgs e)
         {
             JobOrderService ser = new JobOrderService();
-            if (txtOrderCreationNum.Text == null)
+            if (txtOrderCreationNum.Text == "")
             {
-                if (txtProjectNum.Text == null)
+                if (txtProjectNum.Text == "")
                 {
                     ListReq = ser.SearchMoldReq_date(dtpStart.Value, dtpEnd.Value,"","");
                     dgvProductRequset.DataSource = ListReq;
@@ -211,7 +215,7 @@ namespace AdminForm
             }
             else
             {
-                if (txtProjectNum.Text == null)
+                if (txtProjectNum.Text == "")
                 {
                     ListReq = ser.SearchMoldReq_date(dtpStart.Value, dtpEnd.Value, txtOrderCreationNum.Text, "");
                     dgvProductRequset.DataSource = ListReq;
@@ -226,5 +230,15 @@ namespace AdminForm
 
         }
 
+        private void MoldingOrderCreation_Activated(object sender, EventArgs e)
+        {
+            frm.Search_Click += new System.EventHandler(this.Search);
+
+        }
+
+        private void MoldingOrderCreation_Deactivate(object sender, EventArgs e)
+        {
+            frm.Search_Click -= new System.EventHandler(this.Search);
+        }
     }
 }

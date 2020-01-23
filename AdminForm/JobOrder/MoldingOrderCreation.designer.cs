@@ -148,6 +148,7 @@
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(98, 21);
             this.dtpStart.TabIndex = 1;
+            this.dtpStart.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
             // label1
             // 
@@ -172,6 +173,8 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "MoldingOrderCreation";
+            this.Activated += new System.EventHandler(this.MoldingOrderCreation_Activated);
+            this.Deactivate += new System.EventHandler(this.MoldingOrderCreation_Deactivate);
             this.Load += new System.EventHandler(this.MoldingOrderCreation_Load);
             this.Controls.SetChildIndex(this.tabControl4, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);

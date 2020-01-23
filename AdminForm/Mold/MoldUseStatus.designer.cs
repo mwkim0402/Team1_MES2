@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.fcWorkPlace = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
-            this.fcFactory = new AdminForm.FIndCategory();
+            this.fcItem = new AdminForm.FIndCategory();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
@@ -53,7 +53,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.Controls.Add(this.fcWorkPlace);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.fcFactory);
+            this.panel1.Controls.Add(this.fcItem);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dtpEnd);
@@ -69,6 +69,8 @@
             this.fcWorkPlace.Category = AdminForm.CategoryMode.WorkCenter;
             this.fcWorkPlace.Location = new System.Drawing.Point(691, 22);
             this.fcWorkPlace.Name = "fcWorkPlace";
+            this.fcWorkPlace.SendCode = null;
+            this.fcWorkPlace.SendName = null;
             this.fcWorkPlace.Size = new System.Drawing.Size(190, 27);
             this.fcWorkPlace.TabIndex = 11;
             // 
@@ -82,13 +84,15 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "작업장";
             // 
-            // fcFactory
+            // fcItem
             // 
-            this.fcFactory.Category = AdminForm.CategoryMode.Item;
-            this.fcFactory.Location = new System.Drawing.Point(429, 22);
-            this.fcFactory.Name = "fcFactory";
-            this.fcFactory.Size = new System.Drawing.Size(190, 27);
-            this.fcFactory.TabIndex = 9;
+            this.fcItem.Category = AdminForm.CategoryMode.Item;
+            this.fcItem.Location = new System.Drawing.Point(429, 22);
+            this.fcItem.Name = "fcItem";
+            this.fcItem.SendCode = null;
+            this.fcItem.SendName = null;
+            this.fcItem.Size = new System.Drawing.Size(190, 27);
+            this.fcItem.TabIndex = 9;
             // 
             // label3
             // 
@@ -125,6 +129,7 @@
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(98, 21);
             this.dtpStart.TabIndex = 1;
+            this.dtpStart.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
             // label1
             // 
@@ -149,6 +154,8 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "MoldUseStatus";
+            this.Activated += new System.EventHandler(this.MoldUseStatus_Activated);
+            this.Deactivate += new System.EventHandler(this.MoldUseStatus_Deactivate);
             this.Load += new System.EventHandler(this.MoldUseStatus_Load);
             this.Controls.SetChildIndex(this.tabControl1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
@@ -167,7 +174,7 @@
         private System.Windows.Forms.Label label2;
         private FIndCategory fcWorkPlace;
         private System.Windows.Forms.Label label4;
-        private FIndCategory fcFactory;
+        private FIndCategory fcItem;
         private System.Windows.Forms.Label label3;
     }
 }

@@ -32,15 +32,15 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dgvSearchResult = new System.Windows.Forms.DataGridView();
             this.tcParent2 = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pnlParent1 = new System.Windows.Forms.Panel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlParent1 = new System.Windows.Forms.Panel();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tcParent1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
             this.tcParent2.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcParent1
@@ -89,12 +89,31 @@
             this.tcParent2.Size = new System.Drawing.Size(1132, 135);
             this.tcParent2.TabIndex = 9;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.pnlParent1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 32);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(1124, 99);
+            this.tabPage2.TabIndex = 0;
+            this.tabPage2.Text = "입력정보";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // pnlParent1
+            // 
+            this.pnlParent1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlParent1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlParent1.Location = new System.Drawing.Point(0, 0);
+            this.pnlParent1.Name = "pnlParent1";
+            this.pnlParent1.Size = new System.Drawing.Size(1124, 99);
+            this.pnlParent1.TabIndex = 8;
+            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 32);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1124, 0);
+            this.tabPage1.Size = new System.Drawing.Size(1124, 99);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "수정정보";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -105,28 +124,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1124, 0);
+            this.panel1.Size = new System.Drawing.Size(1124, 99);
             this.panel1.TabIndex = 9;
-            // 
-            // pnlParent1
-            // 
-            this.pnlParent1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.pnlParent1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlParent1.Location = new System.Drawing.Point(3, 3);
-            this.pnlParent1.Name = "pnlParent1";
-            this.pnlParent1.Size = new System.Drawing.Size(1118, 93);
-            this.pnlParent1.TabIndex = 8;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.pnlParent1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 32);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1124, 99);
-            this.tabPage2.TabIndex = 0;
-            this.tabPage2.Text = "입력정보";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // dgvOneWithInput
             // 
@@ -141,8 +140,8 @@
             this.tcParent1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).EndInit();
             this.tcParent2.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -18,7 +18,6 @@ namespace AdminForm
         List<JobOrderCreateVo> List = null;
         public JobOrderCreation()
         {
-            frm = (MainForm)ActiveForm;
             InitializeComponent();
         }
         private void RoadList()
@@ -52,6 +51,7 @@ namespace AdminForm
 
         private void JobOrderCreation_Load(object sender, EventArgs e)
         {
+            frm = (MainForm)this.MdiParent;
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
             checkBoxColumn.HeaderText = "체크";
             checkBoxColumn.Name = "check";
@@ -157,9 +157,9 @@ namespace AdminForm
             string strStart = dtpStart.Value.ToString().Substring(0, 10);
             string strEnd = dtpEnd.Value.ToString().Substring(0, 10);
             JobOrderService service = new JobOrderService();
-            if (fcProcess.SendCode != null)
+            if (fcProcess.SendCode != "")
             {
-                if(fcWorkPlace.SendCode != null)
+                if(fcWorkPlace.SendCode != "")
                 {
                     //카테고리 둘다 있을때
                     List = service.JobOrderSearch(strStart, strEnd, fcProcess.SendCode,fcWorkPlace.SendName);
@@ -174,7 +174,7 @@ namespace AdminForm
             }
             else
             {
-                if (fcWorkPlace.SendCode != null)
+                if (fcWorkPlace.SendCode != "")
                 {
                     //작업장만 있을때
                     List = service.JobOrderSearch(strStart, strEnd, "", fcWorkPlace.SendCode);

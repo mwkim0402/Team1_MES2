@@ -9,7 +9,8 @@ namespace AdminForm
 {
     public partial class MoldUseStatus : dgvOne
     {
-        List<MoldUseHistoryVo> List = null;
+        List<MoldUseHistoryVo> list = null;
+        MainForm frm;
 
         public MoldUseStatus()
         {
@@ -18,10 +19,12 @@ namespace AdminForm
         private void LoadList()
         {
             MoldingService service = new MoldingService();
-            List = service.MoldUseHistory();
+            list = service.MoldUseHistory();
         }
         private void MoldUseStatus_Load(object sender, EventArgs e)
         {
+            frm = (MainForm)this.MdiParent;
+
             AddNewColumnToDataGridView(dgvSearchResult, "생산일자", "???", true, 120);
             AddNewColumnToDataGridView(dgvSearchResult, "금형코드", "Mold_Code", true, 100);
             AddNewColumnToDataGridView(dgvSearchResult, "금형명", "Mold_Name", true, 150);
@@ -36,7 +39,7 @@ namespace AdminForm
             AddNewColumnToDataGridView(dgvSearchResult, "금형사용종료시간", "Use_Endtime", true, 150);
             AddNewColumnToDataGridView(dgvSearchResult, "금형사용시간", "UsingTime", true, 150);
             LoadList();
-            dgvSearchResult.DataSource = List;
+            dgvSearchResult.DataSource = list;
 
             dgvSearchResult.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
@@ -69,5 +72,50 @@ namespace AdminForm
             dgv.DefaultCellStyle.SelectionBackColor = Color.MidnightBlue;
         }
 
+        //검색
+        private void Search(object sender, EventArgs e)
+        {
+            string strStart = dtpStart.Value.ToString();
+            string strEnd = dtpEnd.Value.ToString();
+            
+            MoldingService ser = new MoldingService();
+            if (fcItem.SendCode == "")
+            {
+                if (fcWorkPlace.SendCode == "")
+                {
+                    list = ser.SearchMoldUse(strStart, strEnd, "", "");
+                    dgvSearchResult.DataSource = list;
+                }
+                else
+                {
+                    list = ser.SearchMoldUse(strStart, strEnd, "", fcWorkPlace.SendCode);
+                    dgvSearchResult.DataSource = list;
+                }
+            }
+            else
+            {
+                if (fcWorkPlace.SendCode == "")
+                {
+                    list = ser.SearchMoldUse(strStart, strEnd, fcItem.SendCode, "");
+                    dgvSearchResult.DataSource = list;
+                }
+                else
+                {
+                    list = ser.SearchMoldUse(strStart, strEnd, fcItem.SendCode, fcWorkPlace.SendCode);
+                    dgvSearchResult.DataSource = list;
+                }
+            }
+        }
+
+        private void MoldUseStatus_Deactivate(object sender, EventArgs e)
+        {
+            frm.Search_Click -= new EventHandler(Search);
+        }
+
+        private void MoldUseStatus_Activated(object sender, EventArgs e)
+        {
+            frm.Search_Click += new EventHandler(Search);
+
+        }
     }
 }

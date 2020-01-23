@@ -21,6 +21,7 @@ namespace AdminForm
 
         public MoldInformationRegister()
         {
+           
             InitializeComponent();
         }
         private void LoadList()
@@ -30,6 +31,9 @@ namespace AdminForm
         }
         private void MoldInformationRegister_Load(object sender, EventArgs e)
         {
+
+            //dgv 추가
+            frm = (MainForm)this.MdiParent;
             AddNewColumnToDataGridView(dgvSearchResult, "금형코드", "Mold_Code", true, 100);
             AddNewColumnToDataGridView(dgvSearchResult, "금형명", "Mold_Name", true, 200);
             AddNewColumnToDataGridView(dgvSearchResult, "금형그룹", "Mold_Group", true, 150);
@@ -53,8 +57,10 @@ namespace AdminForm
             dgvSearchResult.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvSearchResult.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            //콤보바인딩
+            //ComboClass.ComboBind(List<MoldingInfoVo> , cmbMoldGroupSearch, false);
         }
-
+    
         private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
        int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
         {
@@ -107,11 +113,11 @@ namespace AdminForm
         private void Search_Click(object sender, EventArgs e)
         {
             MoldingService ser = new MoldingService();
-            if (txtMoldCodeSearch.Text != null)
+            if (txtMoldCodeSearch.Text != "")
             {
-                if (txtMoldNameSearch != null)
+                if (txtMoldNameSearch.Text != "")
                 {
-                    if (cmbMoldGroupSearch.Text != null)
+                    if (cmbMoldGroupSearch.Text != "")
                     {
                         List = ser.SearchMoldingInfo(txtMoldCodeSearch.Text, txtMoldNameSearch.Text, cmbMoldGroupSearch.Text);
                     }
@@ -122,7 +128,7 @@ namespace AdminForm
                 }
                 else
                 {
-                    if (cmbMoldGroupSearch.Text != null)
+                    if (cmbMoldGroupSearch.Text != "")
                     {
                         List = ser.SearchMoldingInfo(txtMoldCodeSearch.Text, "", cmbMoldGroupSearch.Text);
                     }
@@ -134,9 +140,9 @@ namespace AdminForm
             }
             else
             {
-                if (txtMoldNameSearch != null)
+                if (txtMoldNameSearch.Text != "")
                 {
-                    if (cmbMoldGroupSearch.Text != null)
+                    if (cmbMoldGroupSearch.Text != "")
                     {
                         List = ser.SearchMoldingInfo("", txtMoldNameSearch.Text, cmbMoldGroupSearch.Text);
                     }
@@ -147,7 +153,7 @@ namespace AdminForm
                 }
                 else
                 {
-                    if (cmbMoldGroupSearch.Text != null)
+                    if (cmbMoldGroupSearch.Text != "")
                     {
                         List = ser.SearchMoldingInfo("", "", cmbMoldGroupSearch.Text);
                     }
@@ -158,15 +164,15 @@ namespace AdminForm
                 }
             }
         }
-
+        
         private void MoldInformationRegister_Activated(object sender, EventArgs e)
         {
-            frm.Search_Click += new System.EventHandler(Search_Click);
+            frm.Search_Click += new System.EventHandler(this.Search_Click);
         }
 
         private void MoldInformationRegister_Deactivate(object sender, EventArgs e)
         {
-            frm.Search_Click -= new System.EventHandler(Search_Click);
+            frm.Search_Click -= new System.EventHandler(this.Search_Click);
         }
     }
 }

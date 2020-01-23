@@ -123,7 +123,7 @@
             this.pnlParent1.Controls.Add(this.label18);
             this.pnlParent1.Controls.Add(this.txtPlanAmount);
             this.pnlParent1.Controls.Add(this.txtJobOrderCodeInput);
-            this.pnlParent1.Size = new System.Drawing.Size(1118, 92);
+            this.pnlParent1.Size = new System.Drawing.Size(1124, 98);
             // 
             // panel2
             // 
@@ -388,9 +388,9 @@
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(997, 18);
+            this.btnSave.Location = new System.Drawing.Point(1003, 18);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(105, 57);
+            this.btnSave.Size = new System.Drawing.Size(105, 63);
             this.btnSave.TabIndex = 60;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -556,6 +556,8 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "JobOrderCreation";
+            this.Activated += new System.EventHandler(this.JobOrderCreation_Activated);
+            this.Deactivate += new System.EventHandler(this.JobOrderCreation_Deactivate);
             this.Load += new System.EventHandler(this.JobOrderCreation_Load);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.tcParent1, 0);

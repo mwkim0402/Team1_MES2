@@ -198,7 +198,7 @@ namespace FieldOperationForm
             if (MessageBox.Show("전체 해제 하시겠습니까?", "알림", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 WorkAllocation_Service service = new WorkAllocation_Service();
-                service.deleteAllWorker();
+                service.deleteAllWorker(main.lbl_Job.Text);
          
 
             }

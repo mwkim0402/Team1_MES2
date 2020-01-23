@@ -95,17 +95,26 @@
     <Compile Include="CommonForm\QualityMeasurement.Designer.cs">
       <DependentUpon>QualityMeasurement.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommonForm\UpdateNonOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\UpdateNonOperation.Designer.cs">
+      <DependentUpon>UpdateNonOperation.cs</DependentUpon>
+    </Compile>
     <Compile Include="CommonForm\workerAllocation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CommonForm\workerAllocation.Designer.cs">
       <DependentUpon>workerAllocation.cs</DependentUpon>
     </Compile>
+    <Compile Include="FieldDac\NonOperation_Dac.cs" />
     <Compile Include="FieldDac\Notice_Dac.cs" />
     <Compile Include="FieldDac\User_Dac.cs" />
     <Compile Include="FieldDac\WorkAllocation_Dac.cs" />
+    <Compile Include="FieldService\NonOperation_Service.cs" />
     <Compile Include="FieldService\Notice_Service.cs" />
     <Compile Include="FieldService\WorkAllocation_Service.cs" />
+    <Compile Include="FieldVo\NonOperation_Vo.cs" />
     <Compile Include="FieldVo\Notice_Vo.cs" />
     <Compile Include="FieldVo\User_Vo.cs" />
     <Compile Include="FieldVo\WorkAllocation_Vo.cs" />
@@ -226,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CommonForm\QualityMeasurement.resx">
       <DependentUpon>QualityMeasurement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm\UpdateNonOperation.resx">
+      <DependentUpon>UpdateNonOperation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CommonForm\workerAllocation.resx">
       <DependentUpon>workerAllocation.cs</DependentUpon>

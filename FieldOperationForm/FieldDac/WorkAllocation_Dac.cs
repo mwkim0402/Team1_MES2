@@ -94,15 +94,15 @@ namespace FieldOperationForm
 
             }
         }
-        public List<WorkAssignment_Vo> deleteAllWorker()
+        public List<WorkAssignment_Vo> deleteAllWorker(string Wc_Name)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = "deleteAllWorker";
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Wc_Name", Wc_Name);
 
-             
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();

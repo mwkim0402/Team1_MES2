@@ -34,10 +34,10 @@ namespace FieldOperationForm
             WorkAllocation_Dac dac = new WorkAllocation_Dac();
             return dac.deleteWorker(User_Name);
         }
-        public List<WorkAssignment_Vo> deleteAllWorker()
+        public List<WorkAssignment_Vo> deleteAllWorker(string Wc_Name)
         {
             WorkAllocation_Dac dac = new WorkAllocation_Dac();
-            return dac.deleteAllWorker();
+            return dac.deleteAllWorker(Wc_Name);
         }
     }
 }

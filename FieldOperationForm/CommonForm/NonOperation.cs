@@ -13,19 +13,23 @@ namespace FieldOperationForm
     public partial class NonOperation : Form
     {
         Main_P main;
+        string a;
+        string b;
+        string c;
         public NonOperation(Main_P main1)
         {
-     
+
             InitializeComponent();
             main = main1;
             Setdgv();
+            AllNon();
 
         }
 
 
         #region 그리드뷰 설정
         private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
-             int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft )
+             int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
         {
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.HeaderText = headerText;
@@ -54,15 +58,15 @@ namespace FieldOperationForm
         private void Setdgv()
         {
 
-            AddNewColumnToDataGridView(dgv_NonOperation, "작업장", "Title", true,180);
-            AddNewColumnToDataGridView(dgv_NonOperation, "주원인", "Notice_Date", true, 136);
-            AddNewColumnToDataGridView(dgv_NonOperation, "상세원인", "Ins_Emp", true, 350);
-            AddNewColumnToDataGridView(dgv_NonOperation, "발생시각", "Description", true, 140);
-            AddNewColumnToDataGridView(dgv_NonOperation, "해제시각", "Description", true, 140);
-            AddNewColumnToDataGridView(dgv_NonOperation, "비가동시간(분)", "Description", true, 170);
+            AddNewColumnToDataGridView(dgv_NonOperation, "작업장", "Wc_Code", true, 120);
+            AddNewColumnToDataGridView(dgv_NonOperation, "주원인", "Nop_Ma_Name", true, 146);
+            AddNewColumnToDataGridView(dgv_NonOperation, "상세원인", "Nop_Mi_Name", true, 250);
+            AddNewColumnToDataGridView(dgv_NonOperation, "발생시각", "Nop_Happentime", true, 220);
+            AddNewColumnToDataGridView(dgv_NonOperation, "해제시각", "Nop_Canceltime", true, 220);
+            AddNewColumnToDataGridView(dgv_NonOperation, "비가동시간(분)", "Nop_time", true, 160);
             this.dgv_NonOperation.Font = new Font("나눔고딕", 14, FontStyle.Bold);
             this.dgv_NonOperation.DefaultCellStyle.Font = new Font("나눔고딕", 15, FontStyle.Bold);
-   
+
 
 
             dgv_NonOperation.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -74,12 +78,35 @@ namespace FieldOperationForm
 
         private void NonOperation_Load(object sender, EventArgs e)
         {
-        
+
         }
 
         private void NonOperation_Shown(object sender, EventArgs e)
         {
             dgv_NonOperation.CurrentCell = null;
+        }
+        private void AllNon()
+        {
+            NonOperation_Service service = new NonOperation_Service();
+            dgv_NonOperation.DataSource = service.AllNonOperation();
+        }
+
+        private void dgv_NonOperation_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                a = dgv_NonOperation.Rows[e.RowIndex].Cells[0].Value.ToString();
+                b = dgv_NonOperation.Rows[e.RowIndex].Cells[1].Value.ToString();
+                c = dgv_NonOperation.Rows[e.RowIndex].Cells[2].Value.ToString();
+            }
+            catch { }
+        }
+
+        private void btn_NonOperation_Click(object sender, EventArgs e)
+        {
+            UpdateNonOperation frm = new UpdateNonOperation(a,b,c);
+            frm.Show();
+
         }
     }
 }

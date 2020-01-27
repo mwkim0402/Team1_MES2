@@ -15,7 +15,7 @@ namespace AdminForm
     {
         MainForm frm;
         List<ItemGroupCombo> ItemGroupList = null;
-
+        List<ItemVo> ItemList = null;
         public ItemInfo()
         {
             InitializeComponent();
@@ -29,10 +29,13 @@ namespace AdminForm
             ItemService service = new ItemService();
             ItemGroupList = service.GetItemGroupCombo();
             ItemGroupComboBind();
+
+            dgvSearchResult.CellDoubleClick += dataGridView1_CellDoubleClick;
         }
         private void ItemGroupComboBind()
         {
             ComboBox[] comboArr= { cmbLv1, cmbLv2, cmbLv3, cmbLv4, cmbLv5 };
+            ComboBox[] comboUpArr = { cmbUpLvl1, cmbUpLvl2, cmbUpLvl3, cmbUpLvl4, cmbUpLvl5 };
             for(int i =0; i<5; i++)
             {
                 List<ComboItem> comboList = (from value in ItemGroupList
@@ -43,6 +46,7 @@ namespace AdminForm
                                                  comboValue = value.Level_Name
                                              }).ToList();
                 ComboClass.ComboBind(comboList, comboArr[i], true);
+                ComboClass.ComboBind(comboList, comboUpArr[i], false) ;
             }
             List<ComboItem> cmbItem = new List<ComboItem>();
             cmbItem.Add(new ComboItem
@@ -61,7 +65,7 @@ namespace AdminForm
                 comboValue = "반제품"
             });
             ComboClass.ComboBind(cmbItem, cmbInType, false) ;
-
+            ComboClass.ComboBind(cmbItem, cbUpType, false);
         }
         private void ShowDgv()
         {
@@ -91,7 +95,8 @@ namespace AdminForm
         private void Search_Click(object sender, EventArgs e)
         {
             ItemService service = new ItemService();
-            this.dgvSearchResult.DataSource = service.GetAllItemInfo();
+            ItemList = service.GetAllItemInfo();
+            this.dgvSearchResult.DataSource = ItemList;
         }
 
         private void ItemInfo_Activated(object sender, EventArgs e)
@@ -106,6 +111,12 @@ namespace AdminForm
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
+            if(txtInCode.Text == "")
+            {
+                frm.lblAlertTitle.Text = "<경고>";
+                frm.lblAlert.ForeColor = Color.Red;
+                return;
+            }
             ItemVo item = new ItemVo
             {
                 Item_Code = txtInCode.Text,
@@ -142,5 +153,57 @@ namespace AdminForm
             }
 
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tabPage1.Select();
+            string SearchID = dgvSearchResult.Rows[e.RowIndex].Cells[0].Value.ToString();
+            List<ItemVo> updateList = (from item in ItemList
+                                 where item.Item_Code == SearchID
+                                 select item).ToList();
+            ItemVo updateItem = updateList[0];
+            
+            txtUpCode.Text = SearchID;
+            txtUpName.Text = updateItem.Item_Name;
+            txtUpEnName.Text = updateItem.Item_Name_Eng;
+            txtUpEngAbb.Text = updateItem.Item_Name_Eng_Alias;
+            cbUpType.Text = updateItem.Item_Type;
+
+            if (updateItem.Level_1 != null)
+                cmbUpLvl1.Text = updateItem.Level_1;
+            else
+                cmbUpLvl1.Text = "선택";
+
+            if (updateItem.Level_2 != null)
+                cmbUpLvl2.Text = updateItem.Level_2;
+            else
+                cmbUpLvl2.Text = "선택";
+
+            if (updateItem.Level_3 != null)
+                cmbUpLvl3.Text = updateItem.Level_3;
+            else
+                cmbUpLvl3.Text = "선택";
+
+            if (updateItem.Level_4 != null)
+                cmbUpLvl4.Text = updateItem.Level_4;
+            else
+                cmbUpLvl4.Text = "선택";
+            
+            if (updateItem.Level_5 != null)
+                cmbUpLvl5.Text = updateItem.Level_5;
+            else
+                cmbUpLvl5.Text = "선택";
+
+            nuUpShot.Value = updateItem.Shot_Per_Qty;
+            nuUpLine.Value = updateItem.Line_Per_Qty;
+            nuUpProQty.Value = updateItem.PrdQty_Per_Hour;
+            nuUpPerQty.Value = updateItem.PrdQty_Per_Hour;
+            nuUpGVQty.Value = updateItem.Dry_GV_Qty;
+            txtUpCavity.Text = updateItem.Cavity.ToString();
+            txtUpUnit.Text = updateItem.Item_Unit.ToString();
+            txtUpSpec.Text = updateItem.Item_Spec;
+            txtUpRemark.Text = updateItem.Remark;
+
+       }
     }
 }

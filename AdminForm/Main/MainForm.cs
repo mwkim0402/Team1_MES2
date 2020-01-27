@@ -155,8 +155,7 @@ namespace AdminForm
             btnCreate.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Report2_32x32.png");
             btnSave.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Action_Save_New_32x32.png");
             btnEdit.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Edit_32x32.png");
-            btnDelete.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\DeleteList_32x32.png");
-            btnSearch.Image = new Bitmap(Application.StartupPath + @"\image\searchBtn.png");
+            btnDelete.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\DeleteList_32x32.png");         
             pictureBox1.Image = new Bitmap(Application.StartupPath + @"\image\mark.jpg");
             ImageList imgList = new ImageList();
             imgList.Images.Add(new Bitmap(Application.StartupPath + @"\image\doc_icon.png"));
@@ -412,6 +411,11 @@ namespace AdminForm
         {
             if (this.Delete_Click != null)
                 Delete_Click(this, null);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

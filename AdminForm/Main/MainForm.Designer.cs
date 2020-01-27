@@ -52,8 +52,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.이창을제외한창모두닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.전체종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
             this.pnlMainButton = new System.Windows.Forms.Panel();
             this.btnBookMark = new System.Windows.Forms.Button();
@@ -64,6 +62,8 @@
             this.lblLocation = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblAlertTitle = new System.Windows.Forms.Label();
+            this.lblAlert = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
@@ -113,10 +113,10 @@
             this.btnS.AutoSize = false;
             this.btnS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnS.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnS.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
+            this.btnS.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
             this.btnS.Name = "btnS";
-            this.btnS.Size = new System.Drawing.Size(40, 50);
-            this.btnS.Text = "조회";
+            this.btnS.Size = new System.Drawing.Size(60, 60);
+            this.btnS.Text = "전체조회";
             this.btnS.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnS.Click += new System.EventHandler(this.btnS_Click);
@@ -126,9 +126,9 @@
             this.btnSave.AutoSize = false;
             this.btnSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSave.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(40, 50);
+            this.btnSave.Size = new System.Drawing.Size(60, 60);
             this.btnSave.Text = "조건";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -138,9 +138,9 @@
             this.btnCreate.AutoSize = false;
             this.btnCreate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnCreate.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(40, 50);
+            this.btnCreate.Size = new System.Drawing.Size(60, 60);
             this.btnCreate.Text = "삭제";
             this.btnCreate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -152,9 +152,9 @@
             this.btnEdit.AutoSize = false;
             this.btnEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(40, 50);
+            this.btnEdit.Size = new System.Drawing.Size(60, 60);
             this.btnEdit.Text = "새로고침";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -165,9 +165,9 @@
             this.btnDelete.AutoSize = false;
             this.btnDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(40, 50);
+            this.btnDelete.Size = new System.Drawing.Size(60, 60);
             this.btnDelete.Text = "삭제";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -335,25 +335,6 @@
             this.전체종료ToolStripMenuItem.Text = "전체 종료";
             this.전체종료ToolStripMenuItem.Click += new System.EventHandler(this.전체종료ToolStripMenuItem_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(50, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(153, 21);
-            this.textBox1.TabIndex = 10;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(209, 40);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(26, 25);
-            this.btnSearch.TabIndex = 11;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
             // btnMenu
             // 
             this.btnMenu.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -447,18 +428,39 @@
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.lblAlertTitle);
+            this.panel2.Controls.Add(this.lblAlert);
             this.panel2.Controls.Add(this.button9);
             this.panel2.Controls.Add(this.button8);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.btnSearch);
-            this.panel2.Location = new System.Drawing.Point(896, 7);
+            this.panel2.Location = new System.Drawing.Point(748, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(426, 68);
+            this.panel2.Size = new System.Drawing.Size(574, 63);
             this.panel2.TabIndex = 103;
+            // 
+            // lblAlertTitle
+            // 
+            this.lblAlertTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblAlertTitle.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblAlertTitle.ForeColor = System.Drawing.Color.Red;
+            this.lblAlertTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblAlertTitle.Name = "lblAlertTitle";
+            this.lblAlertTitle.Size = new System.Drawing.Size(574, 22);
+            this.lblAlertTitle.TabIndex = 15;
+            this.lblAlertTitle.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lblAlert
+            // 
+            this.lblAlert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblAlert.ForeColor = System.Drawing.Color.Red;
+            this.lblAlert.Location = new System.Drawing.Point(0, 32);
+            this.lblAlert.Name = "lblAlert";
+            this.lblAlert.Size = new System.Drawing.Size(388, 31);
+            this.lblAlert.TabIndex = 14;
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(353, 41);
+            this.button9.Location = new System.Drawing.Point(491, 32);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(70, 23);
             this.button9.TabIndex = 13;
@@ -467,7 +469,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(259, 41);
+            this.button8.Location = new System.Drawing.Point(397, 32);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(74, 23);
             this.button8.TabIndex = 12;
@@ -501,7 +503,6 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -525,8 +526,6 @@
         private System.Windows.Forms.ToolStripButton btnDelete;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.TabControl tabControl2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Panel pnlMainButton;
         private System.Windows.Forms.Button btnBookMark;
@@ -544,5 +543,7 @@
         private System.Windows.Forms.ToolStripMenuItem 전체종료ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 이창을제외한창모두닫기ToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton btnS;
+        public System.Windows.Forms.Label lblAlert;
+        public System.Windows.Forms.Label lblAlertTitle;
     }
 }

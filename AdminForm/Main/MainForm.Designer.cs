@@ -513,7 +513,6 @@
         private System.Windows.Forms.Panel pnlMenu;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TreeView trvMenu;
-        private System.Windows.Forms.ToolStripButton btnSave;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
@@ -521,9 +520,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ToolStripButton btnCreate;
-        private System.Windows.Forms.ToolStripButton btnEdit;
-        private System.Windows.Forms.ToolStripButton btnDelete;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.Button btnMenu;
@@ -542,8 +538,12 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 전체종료ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 이창을제외한창모두닫기ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton btnS;
         public System.Windows.Forms.Label lblAlert;
         public System.Windows.Forms.Label lblAlertTitle;
+        public System.Windows.Forms.ToolStripButton btnSave;
+        public System.Windows.Forms.ToolStripButton btnCreate;
+        public System.Windows.Forms.ToolStripButton btnEdit;
+        public System.Windows.Forms.ToolStripButton btnDelete;
+        public System.Windows.Forms.ToolStripButton btnS;
     }
 }

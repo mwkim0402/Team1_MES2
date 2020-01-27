@@ -78,5 +78,48 @@ namespace MES_DB
                 return Checked == 1 ? true : false;
             }
         }
+        public List<FaultyDetailVo> GetAllFaultyDetail()
+        {
+            List<FaultyDetailVo> list;
+            string sqlString = "Select Def_Ma_Code, Def_Mi_Code, Def_Mi_Name, Use_YN, Remark from Def_Mi_Master";
+            using(SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = sqlString;
+                cmd.Connection.Open();
+                list = Helper.DataReaderMapToList<FaultyDetailVo>(cmd.ExecuteReader());
+                cmd.Connection.Close();
+            }
+            return list;
+        }
+        public bool InsertFaultyDetail(FaultyDetailVo insertVo)
+        {
+            int Checked = 0;
+            string sqlString = "insert into Def_Mi_Master(Def_Ma_Code, Def_Mi_Code, Def_Mi_Name ,Use_YN, Remark, Ins_Date, Ins_Emp, Up_Date, Up_Emp) values(@Def_Ma_Code, @Def_Mi_Code, @Def_Mi_Name, @Use_YN, @Remark, @Date, '김민우', @Date, '김민우')";
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                try
+                {
+                    cmd.Connection = new SqlConnection(ConnectionString);
+                    cmd.CommandText = sqlString;
+                    cmd.Parameters.AddWithValue("@Def_Ma_Code", insertVo.Def_Ma_Code);
+                    cmd.Parameters.AddWithValue("@Def_Mi_Code", insertVo.Def_Mi_Code);
+                    cmd.Parameters.AddWithValue("@Def_Mi_Name", insertVo.Def_Mi_Name);
+                    cmd.Parameters.AddWithValue("@Use_YN", insertVo.Use_YN);
+                    cmd.Parameters.AddWithValue("@Remark", insertVo.Remark);
+                    cmd.Parameters.AddWithValue("@Date", DateTime.Now);
+                    cmd.Connection.Open();
+                    Checked = cmd.ExecuteNonQuery();
+
+                    cmd.Connection.Close();
+                }
+                catch (Exception)
+                {
+                    throw new Exception("등록실패하였습니다, 모든 데이터를 입력하여야합니다.");
+                }
+
+            }
+            return Checked == 1 ? true : false;
+        }
     }
 }

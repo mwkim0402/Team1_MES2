@@ -23,5 +23,15 @@ namespace MES_DB
             FaultyDAC dac = new FaultyDAC();
             return dac.UpdateFaultyMaster(fMaster);
         }
+        public List<FaultyDetailVo> GetFaultyDetail()
+        {
+            FaultyDAC dac = new FaultyDAC();
+            return dac.GetAllFaultyDetail();
+        }
+        public bool InsertFaultyDetail(FaultyDetailVo insertVo)
+        {
+            FaultyDAC dac = new FaultyDAC();
+            return dac.InsertFaultyDetail(insertVo);
+        }
     }
 }

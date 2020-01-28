@@ -79,5 +79,53 @@ namespace MES_DB
                 return list;
             }
         }
+
+        public List<RegFaultyVO> GetAllRegFaultyImage()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "AllRegFaultyForm";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<RegFaultyVO> list = Helper.DataReaderMapToList<RegFaultyVO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
+        public List<QualityVO> GetAllQuality()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "GetAllQuality";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<QualityVO> list = Helper.DataReaderMapToList<QualityVO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
+        public List<RegProcessVO> GetAllRegProcess()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "AllRegProcessForm";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<RegProcessVO> list = Helper.DataReaderMapToList<RegProcessVO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
     }
 }

@@ -262,6 +262,8 @@
             this.fcWork.Category = AdminForm.CategoryMode.WorkCenter;
             this.fcWork.Location = new System.Drawing.Point(764, 19);
             this.fcWork.Name = "fcWork";
+            this.fcWork.SendCode = null;
+            this.fcWork.SendName = null;
             this.fcWork.Size = new System.Drawing.Size(190, 27);
             this.fcWork.TabIndex = 5;
             // 
@@ -270,6 +272,8 @@
             this.fcFactory.Category = AdminForm.CategoryMode.Process;
             this.fcFactory.Location = new System.Drawing.Point(489, 19);
             this.fcFactory.Name = "fcFactory";
+            this.fcFactory.SendCode = null;
+            this.fcFactory.SendName = null;
             this.fcFactory.Size = new System.Drawing.Size(190, 27);
             this.fcFactory.TabIndex = 1;
             // 
@@ -309,6 +313,8 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "RegFactory";
+            this.Activated += new System.EventHandler(this.RegProcess_Activated);
+            this.Deactivate += new System.EventHandler(this.RegProcess_Deactivate);
             this.Load += new System.EventHandler(this.RegProcess_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.tabPage2.ResumeLayout(false);

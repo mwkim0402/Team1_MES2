@@ -115,5 +115,20 @@ namespace MES_DB
                 return list;
             }
         }
+
+        public bool DeleteItemInfo(string id)
+        {
+            int Checekd = 0;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = @"Delete from Item_Master where Item_Code = @Item_Code";
+                cmd.Parameters.AddWithValue("@Item_Code", id);
+                cmd.Connection.Open();
+                Checekd = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();    
+            }
+            return Checekd == 1 ? true : false;
+        }
     }
 }

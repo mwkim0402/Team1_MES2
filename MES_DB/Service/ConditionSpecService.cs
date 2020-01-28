@@ -8,13 +8,13 @@ namespace MES_DB
 {
     public class ConditionSpecService
     {
-        public List<ConditionSpecVo> GetAllInspect()
+        public List<ConditionSpecVo> GetAllCond()
         {
             ConditionSpecDAC dac = new ConditionSpecDAC();
             return dac.GetConditionSpec();
         }
 
-        public bool InsertInspectMaster(ConditionSpecVo vo)
+        public bool InsertCondSpecsMaster(ConditionSpecVo vo)
         {
             ConditionSpecDAC dac = new ConditionSpecDAC();
             return dac.InsertConditionMaster(vo);

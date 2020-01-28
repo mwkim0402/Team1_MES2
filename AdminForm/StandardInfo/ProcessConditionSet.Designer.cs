@@ -35,6 +35,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbProGroup = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.txtDataDESC = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbProGroup = new System.Windows.Forms.ComboBox();
             this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -78,10 +78,15 @@
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
+            // tabControl4
+            // 
+            this.tabControl4.Size = new System.Drawing.Size(240, 28);
+            // 
             // tabPage4
             // 
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage4.Size = new System.Drawing.Size(232, 0);
             // 
             // panel1
             // 
@@ -112,12 +117,15 @@
             // splitContainer1
             // 
             // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.btnCopy);
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Controls.Add(this.btnCopy);
             this.panel2.Controls.Add(this.fcEquip);
             this.panel2.Controls.Add(this.fcProd);
             this.panel2.Controls.Add(this.label2);
@@ -130,12 +138,13 @@
             // btnCopy
             // 
             this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCopy.Location = new System.Drawing.Point(929, 17);
+            this.btnCopy.Location = new System.Drawing.Point(549, 3);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(193, 27);
             this.btnCopy.TabIndex = 10;
             this.btnCopy.Text = "공정조건 복사";
             this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // fcEquip
             // 
@@ -207,6 +216,30 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(521, 157);
             this.panel5.TabIndex = 155;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label9.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Location = new System.Drawing.Point(222, 16);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 16);
+            this.label9.TabIndex = 150;
+            this.label9.Text = "공정그룹";
+            // 
+            // cbProGroup
+            // 
+            this.cbProGroup.FormattingEnabled = true;
+            this.cbProGroup.Items.AddRange(new object[] {
+            "소성",
+            "건조",
+            "성형",
+            "포장"});
+            this.cbProGroup.Location = new System.Drawing.Point(316, 14);
+            this.cbProGroup.Name = "cbProGroup";
+            this.cbProGroup.Size = new System.Drawing.Size(103, 20);
+            this.cbProGroup.TabIndex = 151;
             // 
             // label25
             // 
@@ -463,30 +496,7 @@
             this.btnSave.TabIndex = 125;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label9.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(222, 16);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 16);
-            this.label9.TabIndex = 150;
-            this.label9.Text = "공정그룹";
-            // 
-            // cbProGroup
-            // 
-            this.cbProGroup.FormattingEnabled = true;
-            this.cbProGroup.Items.AddRange(new object[] {
-            "소성",
-            "건조",
-            "성형",
-            "포장"});
-            this.cbProGroup.Location = new System.Drawing.Point(316, 14);
-            this.cbProGroup.Name = "cbProGroup";
-            this.cbProGroup.Size = new System.Drawing.Size(103, 20);
-            this.cbProGroup.TabIndex = 151;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
             // ProcessConditionSet
             // 
@@ -500,6 +510,8 @@
             this.Name = "ProcessConditionSet";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.Activated += new System.EventHandler(this.CondSpec_Activated);
+            this.Deactivate += new System.EventHandler(this.CondSpec_Deactivate);
             this.Load += new System.EventHandler(this.ProcessConditionSet_Load);
             this.Controls.SetChildIndex(this.splitContainer1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);

@@ -53,8 +53,11 @@ namespace AdminForm
                 bool Checked = service.InsertFaultyMaster(InsertVo);
                 if (Checked)
                     frm.lblAlert.Text = "등록 완료하였습니다.";
+                
                 else
-                    frm.lblAlert.Text = "등록 실패하였습니다. 다시 한번 확인해주세요.";                
+                    frm.lblAlert.Text = "등록 실패하였습니다. 다시 한번 확인해주세요.";
+
+               
             }
             catch (Exception err)
             {
@@ -62,6 +65,7 @@ namespace AdminForm
             }
             finally
             {
+               // frm.lblAlert.Text = string.Format(DateTime.Now.ToShortDateString().Replace("-","") + "_{0:D4}", 103);
                 frm.btnS.PerformClick();
             }
         }

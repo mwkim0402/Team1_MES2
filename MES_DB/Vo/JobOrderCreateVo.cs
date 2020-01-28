@@ -10,7 +10,7 @@ namespace MES_DB
     {
         public string Item_Code { get; set; } 
         public string Item_Name { get; set; } 
-        public int Wc_Name { get; set; }
+        public string Wc_Name { get; set; }
         public DateTime Prd_Date { get; set; }
         public DateTime Prd_Starttime{ get; set; }
         public DateTime Prd_Endtime { get; set; }

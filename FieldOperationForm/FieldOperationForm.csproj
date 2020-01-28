@@ -107,18 +107,40 @@
     <Compile Include="CommonForm\workerAllocation.Designer.cs">
       <DependentUpon>workerAllocation.cs</DependentUpon>
     </Compile>
+    <Compile Include="FieldDac\Condition_Dac.cs" />
+    <Compile Include="FieldDac\GVDry_Dac.cs" />
+    <Compile Include="FieldDac\Inspect_Dac.cs" />
+    <Compile Include="FieldDac\Item_Dac.cs" />
     <Compile Include="FieldDac\NonOperation_Dac.cs" />
     <Compile Include="FieldDac\Notice_Dac.cs" />
+    <Compile Include="FieldDac\Process_Dac.cs" />
     <Compile Include="FieldDac\User_Dac.cs" />
     <Compile Include="FieldDac\WorkAllocation_Dac.cs" />
+    <Compile Include="FieldDac\WorkCenter_Dac.cs" />
+    <Compile Include="FieldDac\WorkOrder_Dac.cs" />
+    <Compile Include="FieldService\Condition_Service.cs" />
+    <Compile Include="FieldService\GVDry_Service.cs" />
+    <Compile Include="FieldService\Inspect_Service.cs" />
+    <Compile Include="FieldService\Item_Service.cs" />
     <Compile Include="FieldService\NonOperation_Service.cs" />
     <Compile Include="FieldService\Notice_Service.cs" />
+    <Compile Include="FieldService\Process_Service.cs" />
     <Compile Include="FieldService\WorkAllocation_Service.cs" />
+    <Compile Include="FieldService\WorkCenter_Service.cs" />
+    <Compile Include="FieldService\WorkOrder_Service.cs" />
+    <Compile Include="FieldVo\Condition_Vo.cs" />
+    <Compile Include="FieldVo\GVDry_Vo.cs" />
+    <Compile Include="FieldVo\Inspect_Vo.cs" />
+    <Compile Include="FieldVo\Item_Vo.cs" />
     <Compile Include="FieldVo\NonOperation_Vo.cs" />
     <Compile Include="FieldVo\Notice_Vo.cs" />
+    <Compile Include="FieldVo\Process_Vo.cs" />
+    <Compile Include="FieldVo\updateNonOperation_Vo.cs" />
     <Compile Include="FieldVo\User_Vo.cs" />
     <Compile Include="FieldVo\WorkAllocation_Vo.cs" />
     <Compile Include="FieldVo\WorkAssignment_Vo.cs" />
+    <Compile Include="FieldVo\WorkCenter_Vo.cs" />
+    <Compile Include="FieldVo\WorkOrder_Vo.cs" />
     <Compile Include="JobOrder_Load\EmptyTruck.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -347,7 +369,9 @@
     <Content Include="Class\DataBase_XML.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\캡처1.PNG" />
     <None Include="Resources\f.PNG" />
+    <None Include="Resources\-.png" />
     <Content Include="Resources\종료.PNG" />
     <None Include="Resources\최대화.PNG" />
     <None Include="Resources\최소화.PNG" />

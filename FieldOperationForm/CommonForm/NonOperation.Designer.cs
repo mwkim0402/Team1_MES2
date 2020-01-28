@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_NonOperation = new System.Windows.Forms.DataGridView();
             this.btn_NonOperation = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NonOperation)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,14 +86,31 @@
             this.btn_NonOperation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_NonOperation.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_NonOperation.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_NonOperation.Location = new System.Drawing.Point(1335, 11);
+            this.btn_NonOperation.Location = new System.Drawing.Point(1335, 145);
             this.btn_NonOperation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_NonOperation.Name = "btn_NonOperation";
-            this.btn_NonOperation.Size = new System.Drawing.Size(196, 606);
+            this.btn_NonOperation.Size = new System.Drawing.Size(196, 472);
             this.btn_NonOperation.TabIndex = 18;
             this.btn_NonOperation.Text = "비가동\r\n사유변경";
             this.btn_NonOperation.UseVisualStyleBackColor = false;
             this.btn_NonOperation.Click += new System.EventHandler(this.btn_NonOperation_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.Ivory;
+            this.button1.BackgroundImage = global::FieldOperationForm.Properties.Resources.캡처1;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.button1.Location = new System.Drawing.Point(1335, 11);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(196, 121);
+            this.button1.TabIndex = 19;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // NonOperation
             // 
@@ -100,6 +118,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1538, 628);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_NonOperation);
             this.Controls.Add(this.dgv_NonOperation);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -117,5 +136,6 @@
 
         private System.Windows.Forms.DataGridView dgv_NonOperation;
         private System.Windows.Forms.Button btn_NonOperation;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -1,5 +1,4 @@
-﻿using FieldOperationForm.FieldVo;
-using MES_DB;
+﻿using MES_DB;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,56 +9,64 @@ using System.Threading.Tasks;
 
 namespace FieldOperationForm
 {
-    public class NonOperation_Dac : ConnectionAccess
+   public class Inspect_Dac : ConnectionAccess
     {
-        public List<NonOperation_Vo> AllNonOperation()
+
+        public List<Inspect_Vo>InsertInspect (Inspect_Vo item)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "AllNonOperation";
+                cmd.CommandText = "InsertInspect";
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Item_Name", item.Item_Name);
+                cmd.Parameters.AddWithValue("@Inspect_Val", item.Inspect_Val);
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<NonOperation_Vo> list = Helper.DataReaderMapToList<NonOperation_Vo>(reader);
+                List<Inspect_Vo> list = Helper.DataReaderMapToList<Inspect_Vo>(reader);
                 cmd.Connection.Close();
-                return list;
-            }
-        }
-        public List<NonOperation_Vo> GetMa_NameList()
-        {
-            using (SqlCommand cmd = new SqlCommand())
-            {
-                cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "GetMa_NameList";
-                cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Connection.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                List<NonOperation_Vo> list = Helper.DataReaderMapToList<NonOperation_Vo>(reader);
-                cmd.Connection.Close();
                 return list;
+
+
             }
+
         }
 
-
-
-        public List<updateNonOperation_Vo> UpdateNop(updateNonOperation_Vo item)
+        public List<Inspect_Vo>GetVal(string Item_Name )
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
-                cmd.CommandText = "UpdateNop";
+                cmd.CommandText = "GetVal";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Nop_Ma_Name", item.Nop_Ma_Name);
-                cmd.Parameters.AddWithValue("@Nop_Mi_Name", item.Nop_Mi_Name);
-                cmd.Parameters.AddWithValue("@Nop_Ma_Name1", item.Nop_Ma_Name1);
-                cmd.Parameters.AddWithValue("@Nop_Mi_Name1", item.Nop_Mi_Name1);
+                cmd.Parameters.AddWithValue("@Item_Name", Item_Name);
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<Inspect_Vo> list = Helper.DataReaderMapToList<Inspect_Vo>(reader);
+                cmd.Connection.Close();
+
+                return list;
+
+
+            }
+
+        }
+
+        public List<Inspect_Vo> deleteVal(Inspect_Vo item)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "deleteVal";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Item_Name", item.Item_Name);
+                cmd.Parameters.AddWithValue("@Inspect_Val", item.Inspect_Val);
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<updateNonOperation_Vo> list = Helper.DataReaderMapToList<updateNonOperation_Vo>(reader);
+                List<Inspect_Vo> list = Helper.DataReaderMapToList<Inspect_Vo>(reader);
                 cmd.Connection.Close();
 
                 return list;

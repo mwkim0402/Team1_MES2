@@ -20,5 +20,11 @@ namespace FieldOperationForm
             NonOperation_Dac dac = new NonOperation_Dac();
             return dac.GetMa_NameList();
         }
+        public List<updateNonOperation_Vo> UpdateNop(updateNonOperation_Vo item)
+        {
+            NonOperation_Dac dac = new NonOperation_Dac();
+            return dac.UpdateNop(item);
+        }
+
     }
 }

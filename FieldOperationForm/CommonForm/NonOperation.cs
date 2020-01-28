@@ -107,6 +107,12 @@ namespace FieldOperationForm
             UpdateNonOperation frm = new UpdateNonOperation(a,b,c);
             frm.Show();
 
+         
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AllNon();
         }
     }
 }

@@ -63,6 +63,16 @@ namespace FieldOperationForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap _ {
+            get {
+                object obj = ResourceManager.GetObject("-", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap f {
             get {
                 object obj = ResourceManager.GetObject("f", resourceCulture);
@@ -126,6 +136,16 @@ namespace FieldOperationForm.Properties {
         internal static System.Drawing.Bitmap 캡처 {
             get {
                 object obj = ResourceManager.GetObject("캡처", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 캡처1 {
+            get {
+                object obj = ResourceManager.GetObject("캡처1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

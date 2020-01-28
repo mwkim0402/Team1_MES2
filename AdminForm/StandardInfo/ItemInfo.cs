@@ -205,5 +205,10 @@ namespace AdminForm
             txtUpRemark.Text = updateItem.Remark;
 
        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

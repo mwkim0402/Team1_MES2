@@ -33,5 +33,27 @@ namespace AdminForm
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
             dgv.DefaultCellStyle.SelectionBackColor = Color.MidnightBlue;
         }
+
+        public static void InitControl(Panel panel)
+        {
+            foreach (var item in panel.Controls)
+            {
+                if (item is TextBox)
+                {
+                    TextBox txt = (TextBox)item;
+                    txt.Text = "";
+                }
+                else if (item is ComboBox)
+                {
+                    ComboBox cb = (ComboBox)item;
+                    cb.SelectedIndex = 0;
+                }
+                else if (item is Panel)
+                {
+                    Panel pnl = (Panel)item;
+                    InitControl(pnl);
+                }
+            }
+        }
     }
 }

@@ -136,15 +136,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.txtUpRemark = new System.Windows.Forms.TextBox();
-            this.label63 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.tabControl4 = new System.Windows.Forms.TabControl();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dgvSearchResult = new System.Windows.Forms.DataGridView();
             this.cbUpType = new System.Windows.Forms.ComboBox();
             this.txtUpUnit = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -184,6 +175,15 @@
             this.label61 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.cmbUpLvl1 = new System.Windows.Forms.ComboBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.txtUpRemark = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dgvSearchResult = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuOutputPerCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuTheoryOutput)).BeginInit();
@@ -209,17 +209,17 @@
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.tabControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuUpGVQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuUpLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuUpShot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuUpProQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuUpPerQty)).BeginInit();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.tabControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -1352,105 +1352,6 @@
             this.panel8.Size = new System.Drawing.Size(868, 226);
             this.panel8.TabIndex = 149;
             // 
-            // panel9
-            // 
-            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel9.Controls.Add(this.panel10);
-            this.panel9.Controls.Add(this.label63);
-            this.panel9.Location = new System.Drawing.Point(869, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(174, 223);
-            this.panel9.TabIndex = 148;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.txtUpRemark);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel10.Location = new System.Drawing.Point(0, 25);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(174, 198);
-            this.panel10.TabIndex = 106;
-            // 
-            // txtUpRemark
-            // 
-            this.txtUpRemark.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUpRemark.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtUpRemark.Location = new System.Drawing.Point(5, 3);
-            this.txtUpRemark.Multiline = true;
-            this.txtUpRemark.Name = "txtUpRemark";
-            this.txtUpRemark.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtUpRemark.Size = new System.Drawing.Size(163, 188);
-            this.txtUpRemark.TabIndex = 103;
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label63.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label63.Location = new System.Drawing.Point(4, 6);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(40, 16);
-            this.label63.TabIndex = 100;
-            this.label63.Text = "비고";
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.btnUpdate);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel11.Location = new System.Drawing.Point(1045, 0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(76, 226);
-            this.panel11.TabIndex = 147;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnUpdate.Location = new System.Drawing.Point(9, 6);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(64, 210);
-            this.btnUpdate.TabIndex = 143;
-            this.btnUpdate.Text = "수정";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // tabControl4
-            // 
-            this.tabControl4.Controls.Add(this.tabPage4);
-            this.tabControl4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl4.Location = new System.Drawing.Point(16, 85);
-            this.tabControl4.Name = "tabControl4";
-            this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(94, 28);
-            this.tabControl4.TabIndex = 11;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 32);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(86, 0);
-            this.tabPage4.TabIndex = 0;
-            this.tabPage4.Text = "조회내역";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // dgvSearchResult
-            // 
-            this.dgvSearchResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvSearchResult.BackgroundColor = System.Drawing.Color.White;
-            this.dgvSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSearchResult.Location = new System.Drawing.Point(16, 114);
-            this.dgvSearchResult.Name = "dgvSearchResult";
-            this.dgvSearchResult.RowHeadersWidth = 51;
-            this.dgvSearchResult.RowTemplate.Height = 23;
-            this.dgvSearchResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSearchResult.Size = new System.Drawing.Size(1132, 216);
-            this.dgvSearchResult.TabIndex = 10;
-            // 
             // cbUpType
             // 
             this.cbUpType.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1836,6 +1737,106 @@
             this.cmbUpLvl1.Size = new System.Drawing.Size(108, 24);
             this.cmbUpLvl1.TabIndex = 163;
             // 
+            // panel9
+            // 
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Controls.Add(this.label63);
+            this.panel9.Location = new System.Drawing.Point(869, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(174, 223);
+            this.panel9.TabIndex = 148;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.txtUpRemark);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel10.Location = new System.Drawing.Point(0, 25);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(174, 198);
+            this.panel10.TabIndex = 106;
+            // 
+            // txtUpRemark
+            // 
+            this.txtUpRemark.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUpRemark.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtUpRemark.Location = new System.Drawing.Point(5, 3);
+            this.txtUpRemark.Multiline = true;
+            this.txtUpRemark.Name = "txtUpRemark";
+            this.txtUpRemark.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtUpRemark.Size = new System.Drawing.Size(163, 188);
+            this.txtUpRemark.TabIndex = 103;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label63.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label63.Location = new System.Drawing.Point(4, 6);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(40, 16);
+            this.label63.TabIndex = 100;
+            this.label63.Text = "비고";
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.btnUpdate);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel11.Location = new System.Drawing.Point(1045, 0);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(76, 226);
+            this.panel11.TabIndex = 147;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnUpdate.Location = new System.Drawing.Point(9, 6);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(64, 210);
+            this.btnUpdate.TabIndex = 143;
+            this.btnUpdate.Text = "수정";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // tabControl4
+            // 
+            this.tabControl4.Controls.Add(this.tabPage4);
+            this.tabControl4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl4.Location = new System.Drawing.Point(16, 85);
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedIndex = 0;
+            this.tabControl4.Size = new System.Drawing.Size(94, 28);
+            this.tabControl4.TabIndex = 11;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 32);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(86, 0);
+            this.tabPage4.TabIndex = 0;
+            this.tabPage4.Text = "조회내역";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dgvSearchResult
+            // 
+            this.dgvSearchResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSearchResult.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSearchResult.Location = new System.Drawing.Point(16, 114);
+            this.dgvSearchResult.Name = "dgvSearchResult";
+            this.dgvSearchResult.RowHeadersWidth = 51;
+            this.dgvSearchResult.RowTemplate.Height = 23;
+            this.dgvSearchResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSearchResult.Size = new System.Drawing.Size(1132, 216);
+            this.dgvSearchResult.TabIndex = 10;
+            // 
             // ItemInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1888,13 +1889,6 @@
             this.panel3.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.tabControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuUpGVQty)).EndInit();
@@ -1902,6 +1896,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.nuUpShot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuUpProQty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuUpPerQty)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).EndInit();
             this.ResumeLayout(false);
 
         }

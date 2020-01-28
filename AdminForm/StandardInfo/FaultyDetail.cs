@@ -99,6 +99,8 @@ namespace AdminForm
             frm.lblAlert.Text = "등록되었습니다.";
 
             faultyDetailList = service.GetFaultyDetail();
+
+            CommonClass.InitControl(panel1);
         }
     }
 }

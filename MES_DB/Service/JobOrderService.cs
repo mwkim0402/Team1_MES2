@@ -9,7 +9,16 @@ namespace MES_DB
     public class JobOrderService
 
     {
-
+        public List<WorkPlaceCB> GetWorkPlaceCombo()
+        {
+            JobOrderDac dac = new JobOrderDac();
+            return dac.GetWorkPlaceCombo();
+        }
+        public List<ItemCodeCB> GetItemCodeCombo()
+        {
+            JobOrderDac dac = new JobOrderDac();
+            return dac.GetItemCodeCombo();
+        }
 
         public List<JobOrderCreateVo> JobOrderCreation()
         {

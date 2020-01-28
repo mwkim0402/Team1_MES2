@@ -54,7 +54,7 @@
     <Compile Include="Service\FaultyService.cs" />
     <Compile Include="Service\FindCategoryService.cs" />
     <Compile Include="Service\ItemService.cs" />
-    <Compile Include="Service\JobOrderCreateVo_Insert.cs" />
+    <Compile Include="Vo\JobOrderCreateVo_Insert.cs" />
     <Compile Include="Service\MoldingService.cs" />
     <Compile Include="Service\JobOrderService.cs" />
     <Compile Include="Service\MenuTreeService.cs" />

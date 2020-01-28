@@ -8,6 +8,11 @@ namespace MES_DB
 {
     public class JobOrderCreateVo
     {
+        public string Wo_Status { get; set; } 
+        public string Workorderno { get; set; } 
+        public DateTime Plan_Date { get; set; } 
+        public int Plan_Qty { get; set; } 
+        public string Plan_Unit { get; set; } 
         public string Item_Code { get; set; } 
         public string Item_Name { get; set; } 
         public string Wc_Name { get; set; }

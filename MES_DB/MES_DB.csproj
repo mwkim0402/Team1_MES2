@@ -77,6 +77,7 @@
     <Compile Include="Vo\MenuTreeVo.cs" />
     <Compile Include="Vo\PerformSearchVO.cs" />
     <Compile Include="Vo\ProcessVo.cs" />
+    <Compile Include="Vo\QualityVO.cs" />
     <Compile Include="Vo\WorkCenterVo.cs" />
     <Compile Include="Vo\WorkdiligenceStatusanalysisVO.cs" />
     <Compile Include="Vo\WorkdiligenceStatusanalysisVOgridview1.cs" />

@@ -44,23 +44,30 @@
   <ItemGroup>
     <Compile Include="ConnectionAccess.cs" />
     <Compile Include="Dac\FaultyDAC.cs" />
+    <Compile Include="Dac\InspectDAC.cs" />
     <Compile Include="Dac\ItemDAC.cs" />
     <Compile Include="Dac\MoldingDac.cs" />
     <Compile Include="Dac\JobOrderDac.cs" />
     <Compile Include="Dac\MenuTreeDac.cs" />
     <Compile Include="Dac\PerformDAC.cs" />
+    <Compile Include="Dac\ProcessDAC.cs" />
+    <Compile Include="Dac\WorkCenterDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\FaultyService.cs" />
     <Compile Include="Service\FindCategoryService.cs" />
+    <Compile Include="Service\InspectService.cs" />
     <Compile Include="Service\ItemService.cs" />
-    <Compile Include="Service\JobOrderCreateVo_Insert.cs" />
+    <Compile Include="Vo\JobOrderCreateVo_Insert.cs" />
     <Compile Include="Service\MoldingService.cs" />
     <Compile Include="Service\JobOrderService.cs" />
     <Compile Include="Service\MenuTreeService.cs" />
     <Compile Include="Service\PerformService.cs" />
+    <Compile Include="Service\ProcessService.cs" />
+    <Compile Include="Service\WorkCenterService.cs" />
     <Compile Include="Vo\FaultyVo.cs" />
     <Compile Include="Vo\FindCategoryVo.cs" />
+    <Compile Include="Vo\InspectVo.cs" />
     <Compile Include="Vo\ItemVo.cs" />
     <Compile Include="Vo\MoldUseHistoryVo.cs" />
     <Compile Include="Vo\MoldingInfoVo.cs" />
@@ -69,7 +76,8 @@
     <Compile Include="Vo\JobOrderCreateVo.cs" />
     <Compile Include="Vo\MenuTreeVo.cs" />
     <Compile Include="Vo\PerformSearchVO.cs" />
-    <Compile Include="Vo\QualityVO.cs" />
+    <Compile Include="Vo\ProcessVo.cs" />
+    <Compile Include="Vo\WorkCenterVo.cs" />
     <Compile Include="Vo\WorkdiligenceStatusanalysisVO.cs" />
     <Compile Include="Vo\WorkdiligenceStatusanalysisVOgridview1.cs" />
   </ItemGroup>

@@ -48,6 +48,16 @@ namespace AdminForm
                     ComboBox cb = (ComboBox)item;
                     cb.SelectedIndex = 0;
                 }
+                else if (item is NumericUpDown)
+                {
+                    NumericUpDown nu = (NumericUpDown)item;
+                    nu.Value = 0;
+                }
+                else if (item is DateTimePicker)
+                {
+                    DateTimePicker dtp = (DateTimePicker)item;
+                    dtp.Value = DateTime.Now;
+                }
                 else if (item is Panel)
                 {
                     Panel pnl = (Panel)item;

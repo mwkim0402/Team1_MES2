@@ -82,7 +82,7 @@
             this.dgvSearchResult.RowHeadersWidth = 51;
             this.dgvSearchResult.RowTemplate.Height = 23;
             this.dgvSearchResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSearchResult.Size = new System.Drawing.Size(736, 327);
+            this.dgvSearchResult.Size = new System.Drawing.Size(736, 240);
             this.dgvSearchResult.TabIndex = 6;
             // 
             // panel1
@@ -90,9 +90,9 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Location = new System.Drawing.Point(0, 394);
+            this.panel1.Location = new System.Drawing.Point(0, 323);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(744, 84);
+            this.panel1.Size = new System.Drawing.Size(744, 155);
             this.panel1.TabIndex = 8;
             // 
             // tabControl2
@@ -100,7 +100,7 @@
             this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tabControl2.Controls.Add(this.tabPage2);
             this.tabControl2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl2.Location = new System.Drawing.Point(3, 365);
+            this.tabControl2.Location = new System.Drawing.Point(2, 293);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(94, 28);
@@ -139,6 +139,9 @@
             // 
             // dgvSelect
             // 
+            this.dgvSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSelect.BackgroundColor = System.Drawing.Color.White;
             this.dgvSelect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSelect.Location = new System.Drawing.Point(0, 29);

@@ -43,7 +43,6 @@
             this.dtpPlanDate = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.txtItemCode = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.txtPlanAmount = new System.Windows.Forms.TextBox();
@@ -54,21 +53,22 @@
             this.label6 = new System.Windows.Forms.Label();
             this.nuPlanAmount = new System.Windows.Forms.NumericUpDown();
             this.btnSave = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnModify = new System.Windows.Forms.Button();
+            this.cmbWorkPlace_CH = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.txtItemName_CH = new System.Windows.Forms.TextBox();
+            this.nuPlanAmount_CH = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpPlanDate_CH = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtPlanAmount_CH = new System.Windows.Forms.TextBox();
+            this.txtJobOrderNo_Ch = new System.Windows.Forms.TextBox();
+            this.cmbItemCode = new System.Windows.Forms.ComboBox();
+            this.cmbItemCode_CH = new System.Windows.Forms.ComboBox();
             this.tcParent1.SuspendLayout();
             this.tcParent2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -76,7 +76,7 @@
             this.pnlParent1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuPlanAmount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuPlanAmount_CH)).BeginInit();
             this.SuspendLayout();
             // 
             // tcParent2
@@ -85,21 +85,21 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cmbItemCode_CH);
+            this.panel1.Controls.Add(this.btnModify);
+            this.panel1.Controls.Add(this.cmbWorkPlace_CH);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.txtItemName_CH);
+            this.panel1.Controls.Add(this.nuPlanAmount_CH);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dtpPlanDate_CH);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.txtPlanAmount_CH);
+            this.panel1.Controls.Add(this.txtJobOrderNo_Ch);
             this.panel1.Size = new System.Drawing.Size(1124, 98);
             // 
             // tabPage2
@@ -108,6 +108,7 @@
             // 
             // pnlParent1
             // 
+            this.pnlParent1.Controls.Add(this.cmbItemCode);
             this.pnlParent1.Controls.Add(this.btnSave);
             this.pnlParent1.Controls.Add(this.cmbWorkPlace);
             this.pnlParent1.Controls.Add(this.label6);
@@ -118,7 +119,6 @@
             this.pnlParent1.Controls.Add(this.dtpPlanDate);
             this.pnlParent1.Controls.Add(this.label22);
             this.pnlParent1.Controls.Add(this.label21);
-            this.pnlParent1.Controls.Add(this.txtItemCode);
             this.pnlParent1.Controls.Add(this.label19);
             this.pnlParent1.Controls.Add(this.label18);
             this.pnlParent1.Controls.Add(this.txtPlanAmount);
@@ -199,6 +199,7 @@
             this.fcProcess.SendName = null;
             this.fcProcess.Size = new System.Drawing.Size(190, 27);
             this.fcProcess.TabIndex = 5;
+            this.fcProcess.Load += new System.EventHandler(this.FcProcess_Load);
             // 
             // label3
             // 
@@ -290,14 +291,6 @@
             this.label21.TabIndex = 47;
             this.label21.Text = "계획수량단위";
             // 
-            // txtItemCode
-            // 
-            this.txtItemCode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtItemCode.Location = new System.Drawing.Point(586, 19);
-            this.txtItemCode.Name = "txtItemCode";
-            this.txtItemCode.Size = new System.Drawing.Size(100, 23);
-            this.txtItemCode.TabIndex = 54;
-            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -350,17 +343,18 @@
             // 
             // txtItemName
             // 
+            this.txtItemName.Enabled = false;
             this.txtItemName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtItemName.Location = new System.Drawing.Point(586, 57);
+            this.txtItemName.Location = new System.Drawing.Point(591, 57);
             this.txtItemName.Name = "txtItemName";
-            this.txtItemName.Size = new System.Drawing.Size(100, 23);
+            this.txtItemName.Size = new System.Drawing.Size(138, 23);
             this.txtItemName.TabIndex = 57;
             // 
             // cmbWorkPlace
             // 
             this.cmbWorkPlace.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbWorkPlace.FormattingEnabled = true;
-            this.cmbWorkPlace.Location = new System.Drawing.Point(791, 18);
+            this.cmbWorkPlace.Location = new System.Drawing.Point(827, 18);
             this.cmbWorkPlace.Name = "cmbWorkPlace";
             this.cmbWorkPlace.Size = new System.Drawing.Size(131, 24);
             this.cmbWorkPlace.TabIndex = 59;
@@ -370,7 +364,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label6.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(715, 23);
+            this.label6.Location = new System.Drawing.Point(751, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 16);
             this.label6.TabIndex = 58;
@@ -396,32 +390,33 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
-            // button1
+            // btnModify
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnModify.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(997, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 57);
-            this.button1.TabIndex = 75;
-            this.button1.Text = "수정";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnModify.Location = new System.Drawing.Point(1003, 18);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(105, 63);
+            this.btnModify.TabIndex = 75;
+            this.btnModify.Text = "수정";
+            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.BtnModify_Click);
             // 
-            // comboBox1
+            // cmbWorkPlace_CH
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(791, 18);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(131, 24);
-            this.comboBox1.TabIndex = 74;
+            this.cmbWorkPlace_CH.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbWorkPlace_CH.FormattingEnabled = true;
+            this.cmbWorkPlace_CH.Location = new System.Drawing.Point(827, 18);
+            this.cmbWorkPlace_CH.Name = "cmbWorkPlace_CH";
+            this.cmbWorkPlace_CH.Size = new System.Drawing.Size(131, 24);
+            this.cmbWorkPlace_CH.TabIndex = 74;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label7.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(715, 23);
+            this.label7.Location = new System.Drawing.Point(751, 23);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 16);
             this.label7.TabIndex = 73;
@@ -438,21 +433,26 @@
             this.label8.TabIndex = 71;
             this.label8.Text = "품목명";
             // 
-            // textBox1
+            // txtItemName_CH
             // 
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(586, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 72;
+            this.txtItemName_CH.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtItemName_CH.Location = new System.Drawing.Point(591, 57);
+            this.txtItemName_CH.Name = "txtItemName_CH";
+            this.txtItemName_CH.Size = new System.Drawing.Size(138, 23);
+            this.txtItemName_CH.TabIndex = 72;
             // 
-            // numericUpDown1
+            // nuPlanAmount_CH
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(369, 19);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(98, 23);
-            this.numericUpDown1.TabIndex = 61;
+            this.nuPlanAmount_CH.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nuPlanAmount_CH.Location = new System.Drawing.Point(369, 19);
+            this.nuPlanAmount_CH.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.nuPlanAmount_CH.Name = "nuPlanAmount_CH";
+            this.nuPlanAmount_CH.Size = new System.Drawing.Size(98, 23);
+            this.nuPlanAmount_CH.TabIndex = 61;
             // 
             // label9
             // 
@@ -465,14 +465,14 @@
             this.label9.TabIndex = 63;
             this.label9.Text = "작업지시번호";
             // 
-            // dateTimePicker1
+            // dtpPlanDate_CH
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(369, 57);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(98, 23);
-            this.dateTimePicker1.TabIndex = 62;
+            this.dtpPlanDate_CH.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpPlanDate_CH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpPlanDate_CH.Location = new System.Drawing.Point(369, 57);
+            this.dtpPlanDate_CH.Name = "dtpPlanDate_CH";
+            this.dtpPlanDate_CH.Size = new System.Drawing.Size(98, 23);
+            this.dtpPlanDate_CH.TabIndex = 62;
             // 
             // label10
             // 
@@ -496,14 +496,6 @@
             this.label11.TabIndex = 65;
             this.label11.Text = "계획수량단위";
             // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(586, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 70;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -526,22 +518,41 @@
             this.label13.TabIndex = 67;
             this.label13.Text = "계획일자";
             // 
-            // textBox3
+            // txtPlanAmount_CH
             // 
-            this.textBox3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(146, 57);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 69;
+            this.txtPlanAmount_CH.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlanAmount_CH.Location = new System.Drawing.Point(146, 57);
+            this.txtPlanAmount_CH.Name = "txtPlanAmount_CH";
+            this.txtPlanAmount_CH.Size = new System.Drawing.Size(100, 23);
+            this.txtPlanAmount_CH.TabIndex = 69;
             // 
-            // textBox4
+            // txtJobOrderNo_Ch
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(146, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 23);
-            this.textBox4.TabIndex = 68;
+            this.txtJobOrderNo_Ch.Enabled = false;
+            this.txtJobOrderNo_Ch.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJobOrderNo_Ch.Location = new System.Drawing.Point(146, 19);
+            this.txtJobOrderNo_Ch.Name = "txtJobOrderNo_Ch";
+            this.txtJobOrderNo_Ch.Size = new System.Drawing.Size(100, 23);
+            this.txtJobOrderNo_Ch.TabIndex = 68;
+            // 
+            // cmbItemCode
+            // 
+            this.cmbItemCode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbItemCode.FormattingEnabled = true;
+            this.cmbItemCode.Location = new System.Drawing.Point(591, 19);
+            this.cmbItemCode.Name = "cmbItemCode";
+            this.cmbItemCode.Size = new System.Drawing.Size(138, 24);
+            this.cmbItemCode.TabIndex = 61;
+            this.cmbItemCode.SelectedIndexChanged += new System.EventHandler(this.CmbItemCode_SelectedIndexChanged);
+            // 
+            // cmbItemCode_CH
+            // 
+            this.cmbItemCode_CH.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbItemCode_CH.FormattingEnabled = true;
+            this.cmbItemCode_CH.Location = new System.Drawing.Point(591, 19);
+            this.cmbItemCode_CH.Name = "cmbItemCode_CH";
+            this.cmbItemCode_CH.Size = new System.Drawing.Size(138, 24);
+            this.cmbItemCode_CH.TabIndex = 76;
             // 
             // JobOrderCreation
             // 
@@ -572,7 +583,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuPlanAmount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuPlanAmount_CH)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -594,7 +605,6 @@
         private System.Windows.Forms.DateTimePicker dtpPlanDate;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox txtItemCode;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtPlanAmount;
@@ -604,20 +614,21 @@
         private System.Windows.Forms.NumericUpDown nuPlanAmount;
         private FIndCategory fcProcess;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnModify;
+        private System.Windows.Forms.ComboBox cmbWorkPlace_CH;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox txtItemName_CH;
+        private System.Windows.Forms.NumericUpDown nuPlanAmount_CH;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpPlanDate_CH;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtPlanAmount_CH;
+        private System.Windows.Forms.TextBox txtJobOrderNo_Ch;
+        private System.Windows.Forms.ComboBox cmbItemCode;
+        private System.Windows.Forms.ComboBox cmbItemCode_CH;
     }
 }

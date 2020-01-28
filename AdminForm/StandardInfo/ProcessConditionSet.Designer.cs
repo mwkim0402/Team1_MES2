@@ -64,6 +64,11 @@
             this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbUsable.SuspendLayout();
             this.SuspendLayout();
@@ -100,13 +105,13 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtDataDESC);
             this.panel1.Controls.Add(this.label25);
-            this.panel1.Location = new System.Drawing.Point(5, 390);
+            this.panel1.Location = new System.Drawing.Point(3, 323);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Size = new System.Drawing.Size(740, 90);
+            this.panel1.Size = new System.Drawing.Size(740, 157);
             // 
             // tabControl2
             // 
-            this.tabControl2.Location = new System.Drawing.Point(5, 361);
+            this.tabControl2.Location = new System.Drawing.Point(3, 291);
             this.tabControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl2.Size = new System.Drawing.Size(187, 28);
             // 
@@ -120,6 +125,9 @@
             // 
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            // 
+            // splitContainer1
+            // 
             // 
             // panel2
             // 
@@ -148,17 +156,23 @@
             // 
             // fcEquip
             // 
+            this.fcEquip.Category = AdminForm.CategoryMode.Process;
             this.fcEquip.Location = new System.Drawing.Point(382, 22);
             this.fcEquip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fcEquip.Name = "fcEquip";
+            this.fcEquip.SendCode = null;
+            this.fcEquip.SendName = null;
             this.fcEquip.Size = new System.Drawing.Size(190, 27);
             this.fcEquip.TabIndex = 9;
             // 
             // fcProd
             // 
+            this.fcProd.Category = AdminForm.CategoryMode.Process;
             this.fcProd.Location = new System.Drawing.Point(88, 22);
             this.fcProd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fcProd.Name = "fcProd";
+            this.fcProd.SendCode = null;
+            this.fcProd.SendName = null;
             this.fcProd.Size = new System.Drawing.Size(190, 27);
             this.fcProd.TabIndex = 9;
             // 
@@ -463,11 +477,17 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.ProcessConditionSet_Load);
+            this.Controls.SetChildIndex(this.splitContainer1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.tabControl4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl2.ResumeLayout(false);
+            this.tabControl3.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.gbUsable.ResumeLayout(false);

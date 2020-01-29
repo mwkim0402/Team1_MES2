@@ -46,7 +46,6 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvJob, "1", "Inspect_Val", false, 100);
 
 
-
             CommonClass.AddNewColumnToDataGridView(dgvList, "측정항목", "1", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvList, "기준값", "1", true, 100);
 

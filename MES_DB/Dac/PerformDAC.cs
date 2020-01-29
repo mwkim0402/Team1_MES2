@@ -127,5 +127,27 @@ namespace MES_DB
                 return list;
             }
         }
+
+        public List<QulityInquiryVO> GetAllProcessInquiry()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = @"select wk.Workorderno,wk.Plan_Date, P.Process_code, P.Process_name ,sp.Inspect_code,sp.Inspect_name 
+                                    ,M.Item_Name, sp.USL, sp.SL,sp.LSL,I.Inspect_datetime ,I.Inspect_date, I.Inspect_val,wk.Wc_Code,wm.Wc_Name,wk.Item_Code
+                                    from WorkOrder wk inner join Item_Master M on wk.Item_Code = M.Item_Code
+                                    inner join Inspect_Measure_History I on I.Item_Code = M.Item_Code
+                                    inner join Inspect_Spec_Master sp on sp.Item_Code = M.Item_Code
+                                    inner join Process_Master p on sp.Process_Code = p.Process_code
+                                    inner join WorkCenter_Master wm on wk.Wc_Code = wm.Wc_Code";
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<QulityInquiryVO> list = Helper.DataReaderMapToList<QulityInquiryVO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
     }
 }

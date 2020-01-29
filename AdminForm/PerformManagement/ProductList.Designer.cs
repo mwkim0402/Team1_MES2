@@ -64,6 +64,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(995, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -76,6 +77,7 @@
             this.fcCategory.Category = AdminForm.CategoryMode.Item;
             this.fcCategory.Location = new System.Drawing.Point(482, 16);
             this.fcCategory.Name = "fcCategory";
+            this.fcCategory.SendCode = null;
             this.fcCategory.SendName = null;
             this.fcCategory.Size = new System.Drawing.Size(190, 27);
             this.fcCategory.TabIndex = 5;

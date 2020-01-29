@@ -59,11 +59,13 @@ namespace AdminForm
         private void RegProcess_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += new System.EventHandler(this.GetData);
+            ToolStripManager.Merge(toolStrip1, frm.ToolStrip);
         }
 
         private void RegProcess_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= new System.EventHandler(this.GetData);
+            ToolStripManager.RevertMerge(frm.ToolStrip);
         }
     }
 }

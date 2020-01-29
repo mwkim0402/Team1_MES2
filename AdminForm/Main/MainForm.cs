@@ -21,7 +21,7 @@ namespace AdminForm
         bool open = false;
         List<MenuTreeVo> menuList;
 
-        public ToolStrip ToolStrip { get; set; }
+        public ToolStrip ToolStrip { get { return toolStrip1; }  set { toolStrip1 = value; } }
         public MainForm()
         {
             InitializeComponent();

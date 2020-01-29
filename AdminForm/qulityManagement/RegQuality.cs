@@ -56,13 +56,6 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "측정일시", "Inspect_Datetime", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "품목코드", "Item_Code", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "품목명", "Item_Name", true, 100);
-            //CommonClass.AddNewColumnToDataGridView(dgvList2, "편차", "1", true, 100);
-            //CommonClass.AddNewColumnToDataGridView(dgvList2, "1", "1", true, 100);
-            //CommonClass.AddNewColumnToDataGridView(dgvList2, "2", "1", true, 100);
-            //CommonClass.AddNewColumnToDataGridView(dgvList2, "3", "1", true, 100);
-            //CommonClass.AddNewColumnToDataGridView(dgvList2, "4", "1", true, 100);
-            //CommonClass.AddNewColumnToDataGridView(dgvList2, "5", "1", true, 100);
-            //CommonClass.AddNewColumnToDataGridView(dgvList2, "6", "1", true, 100);
         }
 
         private void RegQuality_Activated(object sender, EventArgs e)

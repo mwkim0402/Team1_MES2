@@ -200,45 +200,46 @@ namespace AdminForm
         private void Search(object sender, EventArgs e)
         {
             JobOrderService ser = new JobOrderService();
-            if (txtOrderCreationNum.Text == "")
-            {
-                if (txtProjectNum.Text == "")
-                {
-                    ListReq = ser.SearchMoldReq_date(dtpStart.Value, dtpEnd.Value,"","");
-                    dgvProductRequset.DataSource = ListReq;
-                }
-                else
-                {
-                    ListReq = ser.SearchMoldReq_date(dtpStart.Value, dtpEnd.Value, "", txtProjectNum.Text);
-                    dgvProductRequset.DataSource = ListReq;
-                }
-            }
-            else
-            {
-                if (txtProjectNum.Text == "")
-                {
-                    ListReq = ser.SearchMoldReq_date(dtpStart.Value, dtpEnd.Value, txtOrderCreationNum.Text, "");
-                    dgvProductRequset.DataSource = ListReq;
-                }
-                else
-                {
-                    ListReq = ser.SearchMoldReq_date(dtpStart.Value, dtpEnd.Value, txtOrderCreationNum.Text, txtProjectNum.Text);
-                    dgvProductRequset.DataSource = ListReq;
-                }
-            }
             
-
+           
         }
 
         private void MoldingOrderCreation_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += new System.EventHandler(this.Search);
-
+            ToolStripManager.Merge(this.toolStrip1,frm.ToolStrip);
         }
 
         private void MoldingOrderCreation_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= new System.EventHandler(this.Search);
+            ToolStripManager.RevertMerge(frm.ToolStrip);
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            ShowDialog("소성");
+        }
+
+        private void btnGun_Click(object sender, EventArgs e)
+        {
+            ShowDialog("건조");
+        }
+
+        private void btnSung_Click(object sender, EventArgs e)
+        {
+            ShowDialog("성형");
+        }
+
+        private void ShowDialog(string processName)
+        {
+            CreateWorkOrder popUp = new CreateWorkOrder(processName);
+            popUp.ShowDialog();
+        }
+
+        private void btnPo_Click(object sender, EventArgs e)
+        {
+            ShowDialog("포장");
         }
     }
 }

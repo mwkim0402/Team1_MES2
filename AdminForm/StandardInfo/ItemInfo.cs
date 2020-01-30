@@ -14,6 +14,7 @@ namespace AdminForm
         MainForm frm;
         List<ItemGroupCombo> ItemGroupList = null;
         List<ItemVo> ItemList = null;
+        List<ItemVo> searchList = null;
         public ItemInfo()
         {
             InitializeComponent();
@@ -62,6 +63,7 @@ namespace AdminForm
             });
             ComboClass.ComboBind(cmbItem, cmbInType, false) ;
             ComboClass.ComboBind(cmbItem, cbUpType, false);
+            ComboClass.ComboBind(cmbItem, cmbProdCat, true);
         }
         private void ShowDgv()
         {
@@ -205,6 +207,41 @@ namespace AdminForm
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (cmbProdCat.Text == "선택")
+            {
+                frm.lblAlert.Text = "[알람] 먼저 제품유형을 선택하여야 합니다.";
+                timer1.Start();
+                return;
+            }
+            else
+            {
+                if (txtProdCodeSearch.Text == "")
+                    searchList = ItemList.FindAll(x => x.Item_Name.ToUpper().Contains(txtProdNameSearch.Text.ToUpper())&&x.Item_Type==cmbProdCat.Text);
+                else if (txtProdNameSearch.Text == "")
+                    searchList = ItemList.FindAll(x => x.Item_Code.ToUpper().Contains(txtProdCodeSearch.Text.ToUpper()) && x.Item_Type == cmbProdCat.Text);
+                else
+                    searchList = ItemList.FindAll(x => x.Item_Name.ToUpper().Contains(txtProdNameSearch.Text.ToUpper()) && x.Item_Code.ToUpper().Contains(txtProdCodeSearch.Text.ToUpper()) && x.Item_Type == cmbProdCat.Text);
+
+                if (searchList.Count < 1)
+                {
+                    frm.lblAlert.Text = "[알람] 검색한 조건의 데이터가 존재하지 않습니다.";
+                    return;
+                }
+                //  frm.lblAlertTitle.Text = "[알람]";
+                frm.lblAlert.Text = $"[알람] {searchList.Count} 건의 데이터가 조회되었습니다.";
+                timer1.Start();
+                dgvSearchResult.DataSource = searchList;
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            frm.lblAlert.Text = "<공지사항> Test 중 입니다.";
+            timer1.Stop();
         }
     }
 }

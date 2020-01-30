@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.fcFac = new AdminForm.FIndCategory();
             this.fcProd = new AdminForm.FIndCategory();
@@ -63,6 +64,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -498,6 +500,10 @@
             this.panel5.Size = new System.Drawing.Size(521, 155);
             this.panel5.TabIndex = 152;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // QualitySizeSet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -573,5 +579,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Timer timer1;
     }
 }

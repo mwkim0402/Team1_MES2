@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnFind = new System.Windows.Forms.Button();
             this.txtFaultCatCodeName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtFaultCatCode = new System.Windows.Forms.TextBox();
@@ -57,6 +59,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rbUpdateTrue = new System.Windows.Forms.RadioButton();
             this.rbUpdateFalse = new System.Windows.Forms.RadioButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tcParent1.SuspendLayout();
             this.tcParent2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -110,6 +113,7 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.Controls.Add(this.btnFind);
             this.panel2.Controls.Add(this.txtFaultCatCodeName);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtFaultCatCode);
@@ -119,9 +123,19 @@
             this.panel2.Size = new System.Drawing.Size(1132, 67);
             this.panel2.TabIndex = 15;
             // 
+            // btnFind
+            // 
+            this.btnFind.Location = new System.Drawing.Point(802, 24);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(97, 24);
+            this.btnFind.TabIndex = 10;
+            this.btnFind.Text = "검색";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
             // txtFaultCatCodeName
             // 
-            this.txtFaultCatCodeName.Location = new System.Drawing.Point(646, 27);
+            this.txtFaultCatCodeName.Location = new System.Drawing.Point(598, 28);
             this.txtFaultCatCodeName.Name = "txtFaultCatCodeName";
             this.txtFaultCatCodeName.Size = new System.Drawing.Size(159, 21);
             this.txtFaultCatCodeName.TabIndex = 9;
@@ -130,7 +144,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(448, 29);
+            this.label2.Location = new System.Drawing.Point(414, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(178, 16);
             this.label2.TabIndex = 8;
@@ -138,7 +152,7 @@
             // 
             // txtFaultCatCode
             // 
-            this.txtFaultCatCode.Location = new System.Drawing.Point(202, 27);
+            this.txtFaultCatCode.Location = new System.Drawing.Point(190, 27);
             this.txtFaultCatCode.Name = "txtFaultCatCode";
             this.txtFaultCatCode.Size = new System.Drawing.Size(159, 21);
             this.txtFaultCatCode.TabIndex = 9;
@@ -405,6 +419,11 @@
             this.rbUpdateFalse.Text = "무";
             this.rbUpdateFalse.UseVisualStyleBackColor = false;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Faulty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -475,5 +494,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton rbUpdateTrue;
         private System.Windows.Forms.RadioButton rbUpdateFalse;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Timer timer1;
     }
 }

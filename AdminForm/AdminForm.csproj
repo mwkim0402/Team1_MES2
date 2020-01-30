@@ -70,6 +70,24 @@
     <Compile Include="FIndCategory.Designer.cs">
       <DependentUpon>FIndCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="JobOrder\CreateWorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder\CreateWorkOrder.Designer.cs">
+      <DependentUpon>CreateWorkOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder\WorkCenterSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder\WorkCenterSchedule.Designer.cs">
+      <DependentUpon>WorkCenterSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder\WorkOrderUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder\WorkOrderUpdate.Designer.cs">
+      <DependentUpon>WorkOrderUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -417,6 +435,15 @@
     <EmbeddedResource Include="FIndCategory.resx">
       <DependentUpon>FIndCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder\CreateWorkOrder.resx">
+      <DependentUpon>CreateWorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder\WorkCenterSchedule.resx">
+      <DependentUpon>WorkCenterSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder\WorkOrderUpdate.resx">
+      <DependentUpon>WorkOrderUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -608,6 +635,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\image\teamlogo.png" />
+    <None Include="bin\Debug\image\Reading_16x16.png" />
+    <None Include="bin\Debug\image\Action_Save_New_32x32.png" />
+    <None Include="bin\Debug\image\btn.png" />
     <Content Include="image\Action_Save_New_32x32.png" />
     <Content Include="image\bookmark.png" />
     <Content Include="image\btn.png" />

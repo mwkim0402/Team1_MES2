@@ -51,13 +51,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlTab = new System.Windows.Forms.Panel();
             this.lblLocation = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblAlert = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lblLogo = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -67,18 +64,20 @@
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.lblLogo = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.pnlMainButton.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -294,6 +293,7 @@
             // 
             // pnlTab
             // 
+            this.pnlTab.BackColor = System.Drawing.Color.White;
             this.pnlTab.Controls.Add(this.lblLocation);
             this.pnlTab.Controls.Add(this.pictureBox1);
             this.pnlTab.Dock = System.Windows.Forms.DockStyle.Top;
@@ -309,22 +309,14 @@
             this.lblLocation.Size = new System.Drawing.Size(507, 23);
             this.lblLocation.TabIndex = 1;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(6, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.lblAlert);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(300, 86);
+            this.panel2.Location = new System.Drawing.Point(280, 86);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1034, 45);
+            this.panel2.Size = new System.Drawing.Size(1054, 45);
             this.panel2.TabIndex = 103;
             // 
             // lblAlert
@@ -332,52 +324,38 @@
             this.lblAlert.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAlert.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblAlert.BackColor = System.Drawing.Color.Transparent;
             this.lblAlert.ForeColor = System.Drawing.Color.Red;
-            this.lblAlert.Location = new System.Drawing.Point(11, 10);
+            this.lblAlert.Location = new System.Drawing.Point(11, 15);
             this.lblAlert.Name = "lblAlert";
-            this.lblAlert.Size = new System.Drawing.Size(1011, 23);
+            this.lblAlert.Size = new System.Drawing.Size(1031, 23);
             this.lblAlert.TabIndex = 14;
             this.lblAlert.Click += new System.EventHandler(this.lblAlert_Click);
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(178, 10);
+            this.button9.Image = global::AdminForm.Properties.Resources.btn;
+            this.button9.Location = new System.Drawing.Point(189, 7);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(70, 23);
+            this.button9.Size = new System.Drawing.Size(110, 23);
             this.button9.TabIndex = 13;
             this.button9.Text = "환경설정";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(1025, 22);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(74, 23);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "로그인";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
             // panel4
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.button9);
-            this.panel4.Location = new System.Drawing.Point(996, 12);
+            this.panel4.Controls.Add(this.button8);
+            this.panel4.Location = new System.Drawing.Point(987, 24);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(326, 39);
             this.panel4.TabIndex = 105;
             // 
-            // lblLogo
-            // 
-            this.lblLogo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblLogo.Image = global::AdminForm.Properties.Resources.teamlogo;
-            this.lblLogo.Location = new System.Drawing.Point(0, 0);
-            this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(300, 131);
-            this.lblLogo.TabIndex = 108;
-            // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.toolStrip1);
             this.panel3.Controls.Add(this.lblLogo);
@@ -386,11 +364,13 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1334, 131);
             this.panel3.TabIndex = 110;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.panel3.Resize += new System.EventHandler(this.panel3_Resize);
             // 
             // toolStrip1
             // 
             this.toolStrip1.AutoSize = false;
-            this.toolStrip1.BackColor = System.Drawing.Color.White;
+            this.toolStrip1.BackColor = System.Drawing.Color.Transparent;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
@@ -399,13 +379,12 @@
             this.btnCreate,
             this.btnEdit,
             this.btnDelete,
-            this.toolStripSeparator1,
-            this.toolStripLabel3});
+            this.toolStripSeparator1});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.toolStrip1.Location = new System.Drawing.Point(300, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(280, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.ShowItemToolTips = false;
-            this.toolStrip1.Size = new System.Drawing.Size(1034, 86);
+            this.toolStrip1.Size = new System.Drawing.Size(1054, 86);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -489,20 +468,41 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 86);
             // 
-            // toolStripLabel3
+            // pictureBox1
             // 
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(19, 83);
-            this.toolStripLabel3.Text = "   ";
+            this.pictureBox1.Location = new System.Drawing.Point(6, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button8
+            // 
+            this.button8.Image = global::AdminForm.Properties.Resources.btn;
+            this.button8.Location = new System.Drawing.Point(25, 7);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(110, 23);
+            this.button8.TabIndex = 12;
+            this.button8.Text = "로그인";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // lblLogo
+            // 
+            this.lblLogo.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblLogo.Image = global::AdminForm.Properties.Resources.teamlogo;
+            this.lblLogo.Location = new System.Drawing.Point(0, 0);
+            this.lblLogo.Name = "lblLogo";
+            this.lblLogo.Size = new System.Drawing.Size(280, 131);
+            this.lblLogo.TabIndex = 108;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1334, 861);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.panel3);
@@ -518,12 +518,12 @@
             this.pnlMain.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pnlTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -566,6 +566,5 @@
         public System.Windows.Forms.ToolStripButton btnEdit;
         public System.Windows.Forms.ToolStripButton btnDelete;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
     }
 }

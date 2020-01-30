@@ -60,6 +60,7 @@
     <Compile Include="Service\FindCategoryService.cs" />
     <Compile Include="Service\InspectService.cs" />
     <Compile Include="Service\ItemService.cs" />
+    <Compile Include="Service\QualityService.cs" />
     <Compile Include="Vo\ConditionSpecVo.cs" />
     <Compile Include="Vo\JobOrderCreateVo_Insert.cs" />
     <Compile Include="Service\MoldingService.cs" />
@@ -86,9 +87,24 @@
     <Compile Include="Vo\WorkdiligenceStatusanalysisVOgridview1.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\DataBase_XML.xml" />
+    <Content Include="bin\Debug\MES_DB.dll" />
+    <Content Include="bin\Debug\MES_DB.pdb" />
     <Content Include="DataBase_XML.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="obj\Debug\MES_DB.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\MES_DB.dll" />
+    <Content Include="obj\Debug\MES_DB.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\MES_DB.csprojAssemblyReference.cache" />
+    <None Include="obj\Release\MES_DB.csprojAssemblyReference.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -46,7 +46,6 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvJob, "1", "Inspect_Val", false, 100);
 
 
-
             CommonClass.AddNewColumnToDataGridView(dgvList, "측정항목", "1", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvList, "기준값", "1", true, 100);
 
@@ -59,11 +58,13 @@ namespace AdminForm
         private void RegProcess_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += new System.EventHandler(this.GetData);
+            ToolStripManager.Merge(toolStrip1, frm.ToolStrip);
         }
 
         private void RegProcess_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= new System.EventHandler(this.GetData);
+            ToolStripManager.RevertMerge(frm.ToolStrip);
         }
     }
 }

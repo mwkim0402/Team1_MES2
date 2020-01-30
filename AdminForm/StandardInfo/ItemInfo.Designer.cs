@@ -911,6 +911,11 @@
             // 
             this.nuInGVQty.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuInGVQty.Location = new System.Drawing.Point(607, 157);
+            this.nuInGVQty.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuInGVQty.Name = "nuInGVQty";
             this.nuInGVQty.Size = new System.Drawing.Size(61, 33);
             this.nuInGVQty.TabIndex = 140;
@@ -949,6 +954,11 @@
             // 
             this.nuLinePCS.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuLinePCS.Location = new System.Drawing.Point(607, 52);
+            this.nuLinePCS.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuLinePCS.Name = "nuLinePCS";
             this.nuLinePCS.Size = new System.Drawing.Size(61, 33);
             this.nuLinePCS.TabIndex = 138;
@@ -968,6 +978,11 @@
             // 
             this.nuInShotPcs.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuInShotPcs.Location = new System.Drawing.Point(607, 18);
+            this.nuInShotPcs.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuInShotPcs.Name = "nuInShotPcs";
             this.nuInShotPcs.Size = new System.Drawing.Size(61, 33);
             this.nuInShotPcs.TabIndex = 137;
@@ -1148,6 +1163,11 @@
             // 
             this.nuInProQty.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuInProQty.Location = new System.Drawing.Point(607, 88);
+            this.nuInProQty.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuInProQty.Name = "nuInProQty";
             this.nuInProQty.Size = new System.Drawing.Size(61, 33);
             this.nuInProQty.TabIndex = 121;
@@ -1165,6 +1185,11 @@
             // 
             this.nuInPerQty.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuInPerQty.Location = new System.Drawing.Point(607, 122);
+            this.nuInPerQty.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuInPerQty.Name = "nuInPerQty";
             this.nuInPerQty.Size = new System.Drawing.Size(61, 33);
             this.nuInPerQty.TabIndex = 122;
@@ -1448,6 +1473,11 @@
             // 
             this.nuUpGVQty.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuUpGVQty.Location = new System.Drawing.Point(607, 157);
+            this.nuUpGVQty.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuUpGVQty.Name = "nuUpGVQty";
             this.nuUpGVQty.Size = new System.Drawing.Size(61, 33);
             this.nuUpGVQty.TabIndex = 177;
@@ -1486,6 +1516,11 @@
             // 
             this.nuUpLine.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuUpLine.Location = new System.Drawing.Point(607, 52);
+            this.nuUpLine.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuUpLine.Name = "nuUpLine";
             this.nuUpLine.Size = new System.Drawing.Size(61, 33);
             this.nuUpLine.TabIndex = 175;
@@ -1505,6 +1540,11 @@
             // 
             this.nuUpShot.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuUpShot.Location = new System.Drawing.Point(607, 18);
+            this.nuUpShot.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuUpShot.Name = "nuUpShot";
             this.nuUpShot.Size = new System.Drawing.Size(61, 33);
             this.nuUpShot.TabIndex = 174;
@@ -1685,6 +1725,11 @@
             // 
             this.nuUpProQty.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuUpProQty.Location = new System.Drawing.Point(607, 88);
+            this.nuUpProQty.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuUpProQty.Name = "nuUpProQty";
             this.nuUpProQty.Size = new System.Drawing.Size(61, 33);
             this.nuUpProQty.TabIndex = 160;
@@ -1702,6 +1747,11 @@
             // 
             this.nuUpPerQty.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuUpPerQty.Location = new System.Drawing.Point(607, 122);
+            this.nuUpPerQty.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuUpPerQty.Name = "nuUpPerQty";
             this.nuUpPerQty.Size = new System.Drawing.Size(61, 33);
             this.nuUpPerQty.TabIndex = 161;
@@ -1836,6 +1886,7 @@
             this.dgvSearchResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSearchResult.Size = new System.Drawing.Size(1132, 216);
             this.dgvSearchResult.TabIndex = 10;
+            this.dgvSearchResult.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // ItemInfo
             // 

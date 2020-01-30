@@ -418,5 +418,10 @@ namespace AdminForm
         {
 
         }
+
+        private void lblAlert_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

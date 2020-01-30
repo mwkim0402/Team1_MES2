@@ -432,9 +432,9 @@
             this.panel2.Controls.Add(this.lblAlert);
             this.panel2.Controls.Add(this.button9);
             this.panel2.Controls.Add(this.button8);
-            this.panel2.Location = new System.Drawing.Point(748, 12);
+            this.panel2.Location = new System.Drawing.Point(822, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(574, 63);
+            this.panel2.Size = new System.Drawing.Size(512, 63);
             this.panel2.TabIndex = 103;
             // 
             // lblAlertTitle
@@ -444,7 +444,7 @@
             this.lblAlertTitle.ForeColor = System.Drawing.Color.Red;
             this.lblAlertTitle.Location = new System.Drawing.Point(0, 0);
             this.lblAlertTitle.Name = "lblAlertTitle";
-            this.lblAlertTitle.Size = new System.Drawing.Size(574, 22);
+            this.lblAlertTitle.Size = new System.Drawing.Size(512, 22);
             this.lblAlertTitle.TabIndex = 15;
             this.lblAlertTitle.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -453,14 +453,15 @@
             this.lblAlert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblAlert.ForeColor = System.Drawing.Color.Red;
-            this.lblAlert.Location = new System.Drawing.Point(0, 32);
+            this.lblAlert.Location = new System.Drawing.Point(3, 22);
             this.lblAlert.Name = "lblAlert";
-            this.lblAlert.Size = new System.Drawing.Size(388, 31);
+            this.lblAlert.Size = new System.Drawing.Size(337, 33);
             this.lblAlert.TabIndex = 14;
+            this.lblAlert.Click += new System.EventHandler(this.lblAlert_Click);
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(491, 32);
+            this.button9.Location = new System.Drawing.Point(439, 32);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(70, 23);
             this.button9.TabIndex = 13;
@@ -469,7 +470,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(397, 32);
+            this.button8.Location = new System.Drawing.Point(359, 32);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(74, 23);
             this.button8.TabIndex = 12;

@@ -17,10 +17,9 @@ namespace FieldOperationForm
         string b;
         string c;
         string d;
-        decimal g;
+        string g;
 
-     
-
+        string f;
         public QualityMeasurement(Main_P main1)
         {
             InitializeComponent();
@@ -106,18 +105,17 @@ namespace FieldOperationForm
         {
             try
             {
-               
-
                 a = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 b = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                 c = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
 
                 d = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+               
+              
                 txt_MeasuredValue.Text = ((Convert.ToDecimal( a)+ Convert.ToDecimal(b) + Convert.ToDecimal(c))/3).ToString();
+                f = txt_MeasuredValue.Text;
 
                 SetVal();
-
-
 
             }
             catch { }
@@ -127,7 +125,8 @@ namespace FieldOperationForm
             Inspect_Service service = new Inspect_Service();
             Inspect_Vo vo = new Inspect_Vo();
             vo.Item_Name = d;
-            dataGridView2.DataSource= service.GetVal(d);
+            vo.Inspect_Val = Convert.ToDecimal(f);
+            dataGridView2.DataSource= service.GetVal(vo);
 
         }
         private void btn_Write_Click(object sender, EventArgs e)
@@ -147,14 +146,17 @@ namespace FieldOperationForm
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            Inspect_Service service = new Inspect_Service();
-            Inspect_Vo vo = new Inspect_Vo();
-            vo.Item_Name = d;
-            vo.Inspect_Val = g;
+            if (MessageBox.Show("삭제 하시겠습니까?", "알림", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Inspect_Service service = new Inspect_Service();
+                Inspect_Vo vo = new Inspect_Vo();
+                vo.Item_Name = d;
+                vo.Inspect_Val = Convert.ToDecimal(g.ToString());
 
-            service.deleteVal(vo);
-          
-            SetVal();
+                service.deleteVal(vo);
+
+                SetVal();
+            }
         }
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -162,7 +164,7 @@ namespace FieldOperationForm
             try
             {
 
-                g =Convert.ToDecimal(dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString());
+                g = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
             }
             catch { }
         }

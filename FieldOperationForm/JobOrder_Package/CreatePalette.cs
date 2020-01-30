@@ -13,12 +13,15 @@ namespace FieldOperationForm
     public partial class CreatePalette : Form
     {
         Main_P main;
+        string p;
+        List<WorkOrder_Vo> list = null;
 
-        public CreatePalette(Main_P main1)
+        public CreatePalette(Main_P main1,string no)
         {
             InitializeComponent();
             main = main1;
             Setdgv();
+            p = no;
         }
 
         private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
@@ -71,6 +74,29 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
 
 
 
+        }
+
+        private void SetWork()
+        {
+            WorkOrder_Vo vo = new WorkOrder_Vo();
+            WorkOrder_Service service = new WorkOrder_Service();
+
+            
+            list = service.GetTextWorkOrder(p);
+
+           
+            txt_WorkNum.Text = list[0].ToString();
+          //  txt_WorkNum.Text = vo.Workorderno;
+            txt_Item.Text = vo.Item_Name;
+            txt_WorkPlace.Text = vo.Wc_Name;
+            txt_WorkDate.Text = vo.Prd_Starttime.ToString();
+            txt_ResultNum.Text = vo.Prd_Qty.ToString();
+            txt_unit.Text = vo.Prd_Unit;
+        }
+
+        private void CreatePalette_Load(object sender, EventArgs e)
+        {
+            SetWork();
         }
     }
 }

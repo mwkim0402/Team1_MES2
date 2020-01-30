@@ -13,6 +13,8 @@ namespace FieldOperationForm
     public partial class JobOrderStatus : Form
     {
         Main_P main;
+        string no;
+        string start;
 
         public JobOrderStatus(Main_P main1)
         {
@@ -33,6 +35,7 @@ namespace FieldOperationForm
             col.ValueType = typeof(string);
             col.ReadOnly = true;
             col.DefaultCellStyle.Alignment = textAlign;
+            col.DefaultCellStyle.Padding = new Padding(3);
             dgv.Columns.Add(col);
 
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.Honeydew;
@@ -46,21 +49,23 @@ namespace FieldOperationForm
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
-            dgv.DefaultCellStyle.SelectionBackColor = Color.DarkSlateGray;
-
+            dgv.DefaultCellStyle.SelectionBackColor = Color.CadetBlue;
+            dgv.RowTemplate.Height = 50;
         }
         private void Setdgv()
         {
 
 
-            AddNewColumnToDataGridView(dataGridView1, "상태", "Title", true, 80);
-            AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "Notice_Date", true, 180);
-            AddNewColumnToDataGridView(dataGridView1, "할당작업자", "Notice_Date", true, 175);
-            AddNewColumnToDataGridView(dataGridView1, "품목코드 / 품목명", "Notice_Date", true, 280);
-            AddNewColumnToDataGridView(dataGridView1, "단위", "Notice_Date", true, 100);
-            AddNewColumnToDataGridView(dataGridView1, "실적수량", "Notice_Date", true, 130);
-            AddNewColumnToDataGridView(dataGridView1, "생산시작시간", "Notice_Date", true, 175);
-            AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Ins_Emp", true, 175);
+
+            AddNewColumnToDataGridView(dataGridView1, "상태", "Wo_Status", true, 120);
+            AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "Workorderno", true, 200);
+            AddNewColumnToDataGridView(dataGridView1, "할당작업장", "Wc_Name", true, 175);
+            AddNewColumnToDataGridView(dataGridView1, "품목명", "Item_Name", true, 230);
+            AddNewColumnToDataGridView(dataGridView1, "단위", "Prd_Unit", true, 100);
+            AddNewColumnToDataGridView(dataGridView1, "실적수량", "Prd_Qty", true, 130);
+            AddNewColumnToDataGridView(dataGridView1, "생산시작시간", "Prd_Starttime", true, 280);
+            AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Prd_Endtime", true, 280);
+            AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Plan_Qty", false, 175);
             this.dataGridView1.Font = new Font("나눔고딕", 17, FontStyle.Bold);
             this.dataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 17, FontStyle.Regular);
 
@@ -73,10 +78,20 @@ namespace FieldOperationForm
             //dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
         }
+
+        private void SetLoad()
+        {
+            WorkOrder_Service service = new WorkOrder_Service();
+
+            dataGridView1.DataSource = service.GetWorkOrder(main.lbl_Job.Text);
+
+
+        }
         private void JobOrderStatus_Load(object sender, EventArgs e)
         {
             main.lbl_Job.Text = "성형";
             main.lblChange.Text = "작업지시 현황";
+            SetLoad();
 
         }
         private void btn_Process_Click(object sender, EventArgs e)
@@ -132,6 +147,39 @@ namespace FieldOperationForm
         private void JobOrderStatus_Shown(object sender, EventArgs e)
         {
             dataGridView1.CurrentCell = null;
+        }
+
+        private void btn_StartEnd_Click(object sender, EventArgs e)
+        {
+            if (start == "대기")
+            {
+                WorkOrder_Service service = new WorkOrder_Service();
+
+                service.StartWork(no);
+
+                SetLoad();
+            }
+
+            else if (start == "작업시작")
+            {
+                WorkOrder_Service service = new WorkOrder_Service();
+
+                service.EndWork(no);
+
+                SetLoad();
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                no = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                start = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+
+            }
+            catch { }
         }
     }
 }

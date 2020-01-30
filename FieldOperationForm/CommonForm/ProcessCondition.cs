@@ -18,6 +18,8 @@ namespace FieldOperationForm
         string c;
         string d;
         decimal g;
+
+        string f;
         public ProcessCondition(Main_P main1)
         {
             InitializeComponent();
@@ -112,7 +114,7 @@ namespace FieldOperationForm
 
                 d = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 txt_MeasuredValue.Text = ((Convert.ToDecimal(a) + Convert.ToDecimal(b) + Convert.ToDecimal(c)) / 3).ToString();
-
+                f = txt_MeasuredValue.Text;
                 SetVal();
 
 
@@ -125,7 +127,8 @@ namespace FieldOperationForm
             Inspect_Service service = new Inspect_Service();
             Inspect_Vo vo = new Inspect_Vo();
             vo.Item_Name = d;
-            dataGridView2.DataSource = service.GetVal(d);
+            vo.Inspect_Val = Convert.ToDecimal(f);
+            dataGridView2.DataSource = service.GetVal(vo);
 
         }
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

@@ -380,6 +380,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CreatePalette";
             this.Text = "CreatePalette";
+            this.Load += new System.EventHandler(this.CreatePalette_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

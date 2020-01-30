@@ -19,10 +19,10 @@ namespace FieldOperationForm
             Inspect_Dac dac = new Inspect_Dac();
             return dac.deleteVal(item);
         }
-        public List<Inspect_Vo> GetVal(string Item_Name)
+        public List<Inspect_Vo> GetVal(Inspect_Vo Item)
         {
             Inspect_Dac dac = new Inspect_Dac();
-            return dac.GetVal(Item_Name);
+            return dac.GetVal(Item);
         }
     }
 }

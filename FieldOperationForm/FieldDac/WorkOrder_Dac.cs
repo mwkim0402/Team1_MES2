@@ -33,5 +33,89 @@ namespace FieldOperationForm
 
             }
         }
+
+        public List<WorkOrder_Vo> GetWorkOrder(string Wc_Name)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "GetWorkOrder";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Wc_Name", Wc_Name);
+                
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkOrder_Vo> list = Helper.DataReaderMapToList<WorkOrder_Vo>(reader);
+                cmd.Connection.Close();
+
+                return list;
+
+
+            }
+        }
+
+        public List<WorkOrder_Vo> StartWork(string Workorderno)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "StartWork";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Workorderno", Workorderno);
+
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkOrder_Vo> list = Helper.DataReaderMapToList<WorkOrder_Vo>(reader);
+                cmd.Connection.Close();
+
+                return list;
+
+
+            }
+        }
+
+        public List<WorkOrder_Vo> EndWork(string Workorderno)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "EndWork";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Workorderno", Workorderno);
+
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkOrder_Vo> list = Helper.DataReaderMapToList<WorkOrder_Vo>(reader);
+                cmd.Connection.Close();
+
+                return list;
+
+
+            }
+        }
+
+        public List<WorkOrder_Vo> GetTextWorkOrder(WorkOrder_Vo item)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "GetTextWorkOrder";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Workorderno", item.Workorderno);
+
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkOrder_Vo> list = Helper.DataReaderMapToList<WorkOrder_Vo>(reader);
+                cmd.Connection.Close();
+
+                return list;
+
+
+            }
+        }
     }
 }

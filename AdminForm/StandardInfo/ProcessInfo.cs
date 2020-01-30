@@ -41,10 +41,16 @@ namespace AdminForm
         private void ShowDgv()
         {
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정코드", "Process_Code", true, 200);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정 명", "Process_Name", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정 명", "Process_Name", true, 250);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정그룹", "Process_Group", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 300);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 400);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 100);
+
+            dgvSearchResult.RowHeadersVisible = false;
+            DataGridViewCheckBoxColumn chkboxCol = new DataGridViewCheckBoxColumn();
+            chkboxCol.Width = 30;
+            chkboxCol.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvSearchResult.Columns.Insert(0, chkboxCol);
         }
         private void BindCombo()
         {

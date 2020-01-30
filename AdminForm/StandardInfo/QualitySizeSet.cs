@@ -136,5 +136,11 @@ namespace AdminForm
         {
             frm.Search_Click -= this.SearchClick;
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            frm.lblAlert.Text = "";
+            timer1.Stop();
+        }
     }
 }

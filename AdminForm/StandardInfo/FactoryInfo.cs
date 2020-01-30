@@ -63,6 +63,12 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "Use_YN", true, 100);
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "비가동 상태", "Wo_Status", true, 100);
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "금형장착여부", "Mold_Setup_YN", true, 30);
+
+            dataGridView1.RowHeadersVisible = false;
+            DataGridViewCheckBoxColumn chkboxCol = new DataGridViewCheckBoxColumn();
+            chkboxCol.Width = 30;
+            chkboxCol.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns.Insert(0, chkboxCol);
         }
         private void ComboBind()
         {
@@ -149,18 +155,18 @@ namespace AdminForm
 
             if (searchList.Count < 1)
             {
-                frm.lblAlert.Text = "검색한 조건의 데이터가 존재하지 않습니다.";
+                frm.lblAlert.Text = "[알람] 검색한 조건의 데이터가 존재하지 않습니다.";
                 return;
             }
           //  frm.lblAlertTitle.Text = "[알람]";
-            frm.lblAlert.Text = $"{searchList.Count} 건의 데이터가 조회되었습니다.";
+            frm.lblAlert.Text = $"[알람] {searchList.Count} 건의 데이터가 조회되었습니다.";
             timer1.Start();
             dataGridView1.DataSource = searchList;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
             //frm.lblAlertTitle.Text = "";
-            frm.lblAlert.Text = "";
+            frm.lblAlert.Text = "<공지사항> Test 중 입니다.";
             timer1.Stop();
         }
     }

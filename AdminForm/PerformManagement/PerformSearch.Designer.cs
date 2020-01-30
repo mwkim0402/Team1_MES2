@@ -89,6 +89,7 @@
             this.btnBalance.TabIndex = 1;
             this.btnBalance.Text = "실적 보정";
             this.btnBalance.UseVisualStyleBackColor = true;
+            this.btnBalance.Click += new System.EventHandler(this.btnBalance_Click);
             // 
             // fcWork
             // 

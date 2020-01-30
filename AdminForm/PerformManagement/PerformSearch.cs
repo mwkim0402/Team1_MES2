@@ -18,6 +18,7 @@ namespace AdminForm
         string StartDate;
         string EndDate;
         List<PerformSearchVO> list;
+        string Code;
         public PerformSearch()
         {
             InitializeComponent();
@@ -51,6 +52,7 @@ namespace AdminForm
 
         private void ShowDgv()
         {
+            dgvSearchResult.CellDoubleClick += DgvSearchResult_CellDoubleClick;
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시상태", "Wo_Status", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시번호", "Workorderno", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 100);
@@ -61,6 +63,11 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산수량", "Prd_Qty", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산수량", "Plan_Date", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산수량", "Process_code", false, 100);
+        }
+
+        private void DgvSearchResult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Code = dgvSearchResult.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
 
         private void PerformSearch_Activated(object sender, EventArgs e)
@@ -80,6 +87,19 @@ namespace AdminForm
         private void dtpEnd_ValueChanged(object sender, EventArgs e)
         {
             EndDate = dtpEnd.Value.ToString();
+        }
+
+        private void btnBalance_Click(object sender, EventArgs e)
+        {
+            if (Code != null)
+            {
+                PerformSearchEdit frm = new PerformSearchEdit(Code);
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("변경할 셀을 선택해주세요.");
+            }
         }
     }
 }

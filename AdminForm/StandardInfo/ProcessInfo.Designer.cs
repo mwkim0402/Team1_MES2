@@ -30,10 +30,8 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtFacCode = new System.Windows.Forms.TextBox();
-            this.cmbUsable = new System.Windows.Forms.ComboBox();
             this.txtFacName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gbInsUsable = new System.Windows.Forms.GroupBox();
             this.rbUse = new System.Windows.Forms.RadioButton();
@@ -63,6 +61,7 @@
             this.txtInsertName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtInsertCode = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.tcParent1.SuspendLayout();
             this.tcParent2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -111,11 +110,10 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.txtFacCode);
-            this.panel2.Controls.Add(this.cmbUsable);
             this.panel2.Controls.Add(this.txtFacName);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(16, 12);
             this.panel2.Name = "panel2";
@@ -124,22 +122,14 @@
             // 
             // txtFacCode
             // 
-            this.txtFacCode.Location = new System.Drawing.Point(94, 27);
+            this.txtFacCode.Location = new System.Drawing.Point(100, 28);
             this.txtFacCode.Name = "txtFacCode";
             this.txtFacCode.Size = new System.Drawing.Size(141, 21);
             this.txtFacCode.TabIndex = 18;
             // 
-            // cmbUsable
-            // 
-            this.cmbUsable.FormattingEnabled = true;
-            this.cmbUsable.Location = new System.Drawing.Point(622, 29);
-            this.cmbUsable.Name = "cmbUsable";
-            this.cmbUsable.Size = new System.Drawing.Size(121, 20);
-            this.cmbUsable.TabIndex = 17;
-            // 
             // txtFacName
             // 
-            this.txtFacName.Location = new System.Drawing.Point(349, 27);
+            this.txtFacName.Location = new System.Drawing.Point(327, 29);
             this.txtFacName.Name = "txtFacName";
             this.txtFacName.Size = new System.Drawing.Size(141, 21);
             this.txtFacName.TabIndex = 16;
@@ -148,21 +138,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(274, 29);
+            this.label5.Location = new System.Drawing.Point(265, 29);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 16);
             this.label5.TabIndex = 15;
             this.label5.Text = "공정명";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(534, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 16);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "사용여부";
             // 
             // label1
             // 
@@ -475,6 +455,16 @@
             this.txtInsertCode.Size = new System.Drawing.Size(152, 29);
             this.txtInsertCode.TabIndex = 117;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(507, 19);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(86, 38);
+            this.btnSearch.TabIndex = 19;
+            this.btnSearch.Text = "검색";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // ProcessInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -520,11 +510,9 @@
 
         #endregion
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtFacName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbUsable;
         private System.Windows.Forms.GroupBox gbInsUsable;
         private System.Windows.Forms.RadioButton rbUse;
         private System.Windows.Forms.RadioButton rbNoUse;
@@ -554,5 +542,6 @@
         private System.Windows.Forms.TextBox txtInsertName;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtInsertCode;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

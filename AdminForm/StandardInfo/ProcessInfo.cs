@@ -143,5 +143,24 @@ namespace AdminForm
             CommonClass.InitControl(panel1);
             frm.btnS.PerformClick();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            List<ProcessVo> searchList;
+            if (txtFacCode.Text == "")
+                searchList = list.FindAll(x => x.Process_Name.ToUpper().Contains(txtFacName.Text.ToUpper()));
+            else if (txtFacName.Text == "")
+                searchList = list.FindAll(x => x.Process_Code.ToUpper().Contains(txtFacCode.Text.ToUpper()));
+            else
+                searchList = list.FindAll(x => x.Process_Name.ToUpper().Contains(txtFacName.Text.ToUpper()) && x.Process_Code.ToUpper().Contains(txtFacCode.Text.ToUpper()));
+
+            if (searchList.Count < 1)
+            {
+                frm.lblAlert.Text = "검색한 조건의 데이터가 존재하지 않습니다.";
+                return;
+            }
+            frm.lblAlert.Text = $"{searchList.Count} 건의 데이터가 조회되었습니다.";
+            dgvSearchResult.DataSource = searchList;
+        }
     }
 }

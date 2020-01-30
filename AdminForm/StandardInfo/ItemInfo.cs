@@ -120,7 +120,7 @@ namespace AdminForm
         {
             if(txtInCode.Text == "")
             {
-                frm.lblAlertTitle.Text = "<경고>";
+               // frm.lblAlertTitle.Text = "<경고>";
                 frm.lblAlert.ForeColor = Color.Red;
                 return;
             }

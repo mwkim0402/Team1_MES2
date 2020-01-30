@@ -13,6 +13,7 @@ namespace AdminForm
     public partial class FactoryInfo : Form
     {
         List<WorkCenterVo> list;
+        List<WorkCenterVo> searchList;
         List<ComboItem> processCombo;
         MainForm frm;
         public FactoryInfo()
@@ -135,6 +136,32 @@ namespace AdminForm
         private void FactoryInfo_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= this.SearchClick;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtWPCode.Text == "")
+                searchList = list.FindAll(x => x.Wc_Name.ToUpper().Contains(txtWPName.Text.ToUpper()));
+            else if (txtWPName.Text == "")
+                searchList = list.FindAll(x => x.Wc_Code.ToUpper().Contains(txtWPCode.Text.ToUpper()));
+            else
+                searchList = list.FindAll(x => x.Wc_Name.ToUpper().Contains(txtWPName.Text.ToUpper()) && x.Wc_Code.ToUpper().Contains(txtWPCode.Text.ToUpper()));
+
+            if (searchList.Count < 1)
+            {
+                frm.lblAlert.Text = "검색한 조건의 데이터가 존재하지 않습니다.";
+                return;
+            }
+          //  frm.lblAlertTitle.Text = "[알람]";
+            frm.lblAlert.Text = $"{searchList.Count} 건의 데이터가 조회되었습니다.";
+            timer1.Start();
+            dataGridView1.DataSource = searchList;
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //frm.lblAlertTitle.Text = "";
+            frm.lblAlert.Text = "";
+            timer1.Stop();
         }
     }
 }

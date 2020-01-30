@@ -128,7 +128,7 @@ namespace MES_DB
             }
         }
 
-        public List<QulityInquiryVO> GetAllProcessInquiry()
+        public List<ProcessInquiryVO> GetAllProcessInquiry()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -144,7 +144,7 @@ namespace MES_DB
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<QulityInquiryVO> list = Helper.DataReaderMapToList<QulityInquiryVO>(reader);
+                List<ProcessInquiryVO> list = Helper.DataReaderMapToList<ProcessInquiryVO>(reader);
                 cmd.Connection.Close();
                 return list;
             }

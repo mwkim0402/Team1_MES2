@@ -13,7 +13,7 @@ namespace AdminForm
     public partial class ProcessInquiry : dgvOne
     {
         MainForm frm;
-        List<QulityInquiryVO> allList;
+        List<ProcessInquiryVO> allList;
         DateTime StartDate;
         DateTime EndDate;
         public ProcessInquiry()
@@ -31,22 +31,12 @@ namespace AdminForm
 
         private void GetData(object sender, EventArgs e)
         {
-            if(StartDate != null && EndDate != null && fcFactory.SendCode !=null && fcWork.SendCode != null)
-            {
-                List<QulityInquiryVO> list = (from item in allList
-                                              where item.Plan_Date >= StartDate.Date && item.Plan_Date.Date <= EndDate && item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode
-                                              select item).ToList();
-
-                dgvSearchResult.DataSource = list;
-            }
-            else
-            {
-                MessageBox.Show("검색 조건을 모두 선택해주세요.");
-            }
+            dgvSearchResult.DataSource = allList;
         }
         private void ShowDgv()
         {
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시번호", "Workorderno", true, 100);
+            dgvSearchResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시번호", "Workorderno", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산일", "Plan_Date", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정", "Process_name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업장", "Wc_Name", true, 100);
@@ -63,17 +53,17 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "Inspect_code", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "Process_code", false, 100);
 
-
         }
 
         private void ProcessInquiry_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += new System.EventHandler(this.GetData);
-
+            ToolStripManager.Merge(toolStrip1, frm.ToolStrip);
         }
         private void ProcessInquiry_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= new System.EventHandler(this.GetData);
+            ToolStripManager.RevertMerge(frm.ToolStrip);
         }
 
         private void dtpStart_ValueChanged(object sender, EventArgs e)
@@ -85,7 +75,19 @@ namespace AdminForm
         {
             EndDate = dtpEnd.Value;
         }
-
-        
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (StartDate != null && EndDate != null && fcFactory.SendCode != null && fcWork.SendCode != null)
+            {
+                List<ProcessInquiryVO> list = (from item in allList
+                                              where item.Plan_Date >= StartDate.Date && item.Plan_Date.Date <= EndDate && item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode
+                                              select item).ToList();
+                dgvSearchResult.DataSource = list;
+            }
+            else
+            {
+                MessageBox.Show("검색 조건을 모두 선택해주세요.");
+            }
+        }
     }
 }

@@ -13,13 +13,15 @@ namespace MES_DB
        public string Process_name { get; set; }
        public string Inspect_code { get; set; }
        public string Inspect_name { get; set; }
-       public string Item_Name { get; set; }
-       public string Item_Code { get; set; }
+        public string Item_Code { get; set; }
+        public string Item_Name { get; set; }
        public DateTime Inspect_Datetime { get; set; }
        public decimal SL { get; set; }
        public DateTime Plan_Date { get; set; }
        public string Wc_Code { get; set; }
        public string Wc_Name { get; set; }
+        public decimal deviation { get; set; }
+        
     }
 
     public class QualityDetailVO
@@ -32,6 +34,8 @@ namespace MES_DB
         public DateTime Inspect_Datetime { get; set; }
         public string Item_Name { get; set; }
         public string Item_Code { get; set; }
+        public decimal deviation { get; set; }
+        public decimal Inspect_Val { get; set; }
     }
 
     public class RegProcessVO
@@ -44,10 +48,23 @@ namespace MES_DB
         public string Inspect_name { get; set; }
         public string Item_Name { get; set; }
         public string Item_Code { get; set; }
-        public string Inspect_Val { get; set; }
+        public decimal Inspect_Val { get; set; }
         public string Wc_Name { get; set; }
+        public decimal SL { get; set; }
     }
-    public class QulityInquiryVO
+    public class RegProcessListVO
+    {
+        public string Inspect_name { get; set; }
+        public decimal SL { get; set; }
+    }
+    public class RegProcessListMeaVO
+    {
+        public decimal Inspect_Val { get; set; }
+    }
+
+
+
+    public class ProcessInquiryVO
     {
        public string Workorderno { get; set; }
        public DateTime Plan_Date { get; set; }
@@ -62,6 +79,27 @@ namespace MES_DB
         public decimal LSL { get; set; }
         public DateTime Inspect_datetime { get; set; }
         public DateTime Inspect_date { get; set; }
+        public decimal Inspect_val { get; set; }
+        public string Wc_Code { get; set; }
+        public string Wc_Name { get; set; }
+    }
+
+    public class QualityInquiryVO
+    {
+       public string Workorderno { get; set; }
+       public DateTime Plan_Date { get; set; }
+        public string Process_code { get; set; }
+        public string Process_name { get; set; }
+        public string Inspect_code { get; set; }
+        public string Inspect_name { get; set; }
+        public decimal USL { get; set; }
+        public decimal SL { get; set; }
+        public decimal LSL { get; set; }
+        public DateTime Inspect_datetime { get; set; }
+        public string Item_Code{ get; set; }
+       public string Item_Name { get; set; }
+        public DateTime Inspect_date { get; set; }
+        public long Inspect_measure_seq { get; set; }
         public decimal Inspect_val { get; set; }
         public string Wc_Code { get; set; }
         public string Wc_Name { get; set; }

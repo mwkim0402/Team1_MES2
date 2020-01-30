@@ -15,6 +15,8 @@ namespace AdminForm
     {
         MainForm frm;
         List<RegProcessVO> allList;
+        DateTime StartDate;
+        DateTime EndDate;
         public RegProcess()
         {
             InitializeComponent();
@@ -26,6 +28,8 @@ namespace AdminForm
             ShowDgv();
             MES_DB.PerformService service = new MES_DB.PerformService();
             allList = service.GetAllRegProcess();
+            StartDate = dtpStart.Value;
+            EndDate = dtpEnd.Value;
         }
 
         private void GetData(object sender, EventArgs e)
@@ -46,13 +50,11 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvJob, "1", "Inspect_Val", false, 100);
 
 
-            CommonClass.AddNewColumnToDataGridView(dgvList, "측정항목", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvList, "기준값", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvList, "측정항목", "Inspect_name", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvList, "기준값", "SL", true, 100);
 
-            CommonClass.AddNewColumnToDataGridView(dgvList2, "측정일시", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvList2, "품목코드", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvList2, "품목명", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvList2, "편차", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvListDetail, "측정값", "Inspect_Val", true, 100);
+            
         }
 
         private void RegProcess_Activated(object sender, EventArgs e)
@@ -65,6 +67,52 @@ namespace AdminForm
         {
             frm.Search_Click -= new System.EventHandler(this.GetData);
             ToolStripManager.RevertMerge(frm.ToolStrip);
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (fcFactory.SendCode != null && fcWork.SendCode != null)
+            {
+                List<RegProcessVO> list = (from item in allList
+                                           where item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date && item.Process_code == fcFactory.SendCode && item.Wc_Name == fcWork.SendName
+                                           select item).ToList();
+                dgvJob.DataSource = list;
+            }
+            else
+            {
+                MessageBox.Show("검색조건을 모두 선택해주세요.");
+            }
+        }
+
+        private void dtpStart_ValueChanged(object sender, EventArgs e)
+        {
+            StartDate = dtpStart.Value;
+        }
+
+        private void dtpEnd_TabStopChanged(object sender, EventArgs e)
+        {
+            EndDate = dtpEnd.Value;
+        }
+
+        private void dgvJob_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            List<RegProcessListVO> list = (from item in allList
+                                           select new RegProcessListVO
+                                           {
+                                               Inspect_name = item.Inspect_name,
+                                               SL = item.SL
+                                           }).ToList();
+            dgvList.DataSource = list;
+        }
+
+        private void dgvList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            List<RegProcessListMeaVO> list = (from item in allList
+                                           select new RegProcessListMeaVO
+                                           {
+                                               Inspect_Val = item.Inspect_Val
+                                           }).ToList();
+            dgvListDetail.DataSource = list;
         }
     }
 }

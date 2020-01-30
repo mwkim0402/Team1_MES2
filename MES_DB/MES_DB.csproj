@@ -52,6 +52,7 @@
     <Compile Include="Dac\MenuTreeDac.cs" />
     <Compile Include="Dac\PerformDAC.cs" />
     <Compile Include="Dac\ProcessDAC.cs" />
+    <Compile Include="Dac\QualityDAC.cs" />
     <Compile Include="Dac\WorkCenterDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

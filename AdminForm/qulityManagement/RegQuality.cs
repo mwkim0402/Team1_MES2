@@ -49,6 +49,9 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Inspect_Datetime", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Inspect_code", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Plan_Date", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "deviation", false, 100);
+
+            
 
             CommonClass.AddNewColumnToDataGridView(dgvDetail, "측정항목", "Inspect_name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvDetail, "기준값", "SL", true, 100);
@@ -56,6 +59,8 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "측정일시", "Inspect_Datetime", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "품목코드", "Item_Code", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "품목명", "Item_Name", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "편차", "deviation", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "측정값", "Inspect_Val", true, 100);
         }
 
         private void RegQuality_Activated(object sender, EventArgs e)
@@ -72,11 +77,11 @@ namespace AdminForm
 
         private void dgvJob_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string itemName = dgvJob.Rows[e.RowIndex].Cells[4].Value.ToString();
+            string Name = dgvJob.Rows[e.RowIndex].Cells[3].Value.ToString();
             List<QualityDetailVO> list = (from item in allList
                                           select new QualityDetailVO 
                                           {
-                                              Inspect_name = itemName,
+                                              Inspect_name = Name,
                                               SL = item.SL
                                           }).ToList();
             dgvDetail.DataSource = list;
@@ -84,14 +89,15 @@ namespace AdminForm
 
         private void dgvDetail_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string itemName = dgvDetail.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string Name = dgvDetail.Rows[e.RowIndex].Cells[0].Value.ToString();
             List<QualityDetailDeterVO> list = (from item in allList
-                                               where item.Inspect_name == itemName
+                                               where item.Inspect_code == Name
                                                select new QualityDetailDeterVO
                                                {
                                                    Inspect_Datetime = item.Inspect_Datetime,
                                                     Item_Code = item.Item_Code,
-                                                    Item_Name = item.Item_Name
+                                                    Item_Name = item.Item_Name,
+                                                    deviation = item.deviation
                                                }).ToList();
             dgvDetaillist.DataSource = list;
         }

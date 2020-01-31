@@ -95,7 +95,7 @@
             this.btn_DryingTruck.Name = "btn_DryingTruck";
             this.btn_DryingTruck.Size = new System.Drawing.Size(194, 133);
             this.btn_DryingTruck.TabIndex = 3;
-            this.btn_DryingTruck.Text = "건조 대차\r\n로딩";
+            this.btn_DryingTruck.Text = "제강 대차\r\n로딩";
             this.btn_DryingTruck.UseVisualStyleBackColor = false;
             this.btn_DryingTruck.Click += new System.EventHandler(this.btn_DryingTruck_Click);
             // 

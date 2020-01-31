@@ -13,6 +13,11 @@ namespace FieldOperationForm
             WorkCenter_Dac dac = new WorkCenter_Dac();
             return dac.GetWcName();
         }
+        public List<WorkCenter_Vo> GetWorkCenter(string Wc_Group)
+        {
+            WorkCenter_Dac dac = new WorkCenter_Dac();
+            return dac.GetWorkCenter(Wc_Group);
+        }
 
     }
 }

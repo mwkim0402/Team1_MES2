@@ -15,7 +15,12 @@ namespace FieldOperationForm
         Main_P main;
         string no;
         string start;
-        string palette;
+        string wc;
+        string itemname;
+        string sd;
+        string qty;
+        string unit;
+
         
         public JobOrderStatus_Package(Main_P main1)
         {
@@ -181,7 +186,8 @@ namespace FieldOperationForm
             {
                 no = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 start = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-   
+
+
 
             }
             catch { }

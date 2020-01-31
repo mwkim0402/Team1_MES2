@@ -53,8 +53,7 @@ namespace FieldOperationForm
 
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
             dgv.DefaultCellStyle.SelectionBackColor = Color.CadetBlue;
-            dgv.RowTemplate.Height = 50;
-
+           
         }
         private void Setdgv()
         {

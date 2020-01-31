@@ -15,7 +15,7 @@ namespace FieldOperationForm
         List<Item_Vo> MList = null;
         List<Process_Vo> PList = null;
         List<WorkCenter_Vo> WList = null;
-
+        List<WorkCenter_Vo> CList = null;
         Main_P main;
 
         public LoadJobOrder(Main_P main1)
@@ -112,17 +112,18 @@ namespace FieldOperationForm
         private void ComboWork()
         {
             WorkCenter_Service service = new WorkCenter_Service();
-            WList = service.GetWcName();
-            if (WList.Count > 1)
+            WorkCenter_Vo vo = new WorkCenter_Vo();
+            CList = service.GetWorkCenter(main.lbl_Job.Text);
+            if (CList.Count > 0)
             {
-                List<string> NonList = (from item in WList
+                List<string> NonList = (from item in CList
                                         select item.Wc_Name).ToList();
                 CommonUtil.ComboBinding(cb_WorkPlace, NonList);
+
             }
 
         }
-
-        private void LoadJobOrder_Load(object sender, EventArgs e)
+    private void LoadJobOrder_Load(object sender, EventArgs e)
         {
             txt_WorkerDate.Text = DateTime.Now.ToString();
         }

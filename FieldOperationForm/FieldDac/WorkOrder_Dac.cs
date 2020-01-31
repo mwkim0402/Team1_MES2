@@ -97,14 +97,14 @@ namespace FieldOperationForm
             }
         }
 
-        public List<WorkOrder_Vo> GetTextWorkOrder(WorkOrder_Vo item)
+        public List<WorkOrder_Vo> GetTextWorkOrder(string Workorderno)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = "GetTextWorkOrder";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Workorderno", item.Workorderno);
+                cmd.Parameters.AddWithValue("@Workorderno", Workorderno);
 
 
                 cmd.Connection.Open();

@@ -14,7 +14,8 @@ namespace FieldOperationForm
     {
         Main_P main;
         string p;
-        List<WorkOrder_Vo> list = null;
+   
+     
 
         public CreatePalette(Main_P main1,string no)
         {
@@ -22,6 +23,7 @@ namespace FieldOperationForm
             main = main1;
             Setdgv();
             p = no;
+   
         }
 
         private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
@@ -78,20 +80,26 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
 
         private void SetWork()
         {
-            WorkOrder_Vo vo = new WorkOrder_Vo();
-            WorkOrder_Service service = new WorkOrder_Service();
+
+       
+
+           // WorkOrder_Vo vo = new WorkOrder_Vo();
+           // WorkOrder_Service service = new WorkOrder_Service();
 
             
-            list = service.GetTextWorkOrder(p);
+           ////   list=   service.GetTextWorkOrder(p);
+           // List<WorkOrder_Vo> list = service.GetTextWorkOrder(p);
 
-           
-            txt_WorkNum.Text = list[0].ToString();
-          //  txt_WorkNum.Text = vo.Workorderno;
-            txt_Item.Text = vo.Item_Name;
-            txt_WorkPlace.Text = vo.Wc_Name;
-            txt_WorkDate.Text = vo.Prd_Starttime.ToString();
-            txt_ResultNum.Text = vo.Prd_Qty.ToString();
-            txt_unit.Text = vo.Prd_Unit;
+
+            txt_WorkNum.Text = p;
+            //txt_WorkNum.Text = wc1;
+            //txt_Item.Text = itemname1;
+            //txt_WorkPlace.Text = wc1;
+            //txt_WorkDate.Text = sd1;
+            //txt_ResultNum.Text = qty1;
+            //txt_unit.Text = unit1;
+
+
         }
 
         private void CreatePalette_Load(object sender, EventArgs e)

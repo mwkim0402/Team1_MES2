@@ -31,10 +31,10 @@ namespace FieldOperationForm
             return dac.EndWork(Workorderno);
         }
 
-        public List<WorkOrder_Vo>GetTextWorkOrder(WorkOrder_Vo item)
+        public List<WorkOrder_Vo>GetTextWorkOrder(string Workorderno)
         {
             WorkOrder_Dac dac = new WorkOrder_Dac();
-            return dac.GetTextWorkOrder(item);
+            return dac.GetTextWorkOrder(Workorderno);
         }
     }
 }

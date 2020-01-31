@@ -89,7 +89,7 @@ namespace FieldOperationForm
         }
         private void JobOrderStatus_Load(object sender, EventArgs e)
         {
-            main.lbl_Job.Text = "성형";
+            main.lbl_Job.Text = "제선";
             main.lblChange.Text = "작업지시 현황";
             SetLoad();
 
@@ -131,7 +131,7 @@ namespace FieldOperationForm
             frm.MdiParent = main;
             frm.Dock = DockStyle.Fill;
             frm.Show();
-            main.lblChange.Text = "성형 생산 대차 선택";
+            main.lblChange.Text = "제강 대차 선택";
         }
 
         private void btn_mold_Click(object sender, EventArgs e)

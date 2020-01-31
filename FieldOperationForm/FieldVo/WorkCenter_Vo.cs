@@ -10,5 +10,6 @@ namespace FieldOperationForm
     {
 
         public string Wc_Name { get; set; }
+        public string Wc_Group { get; set; }
     }
 }

@@ -59,7 +59,7 @@ namespace FieldOperationForm
                 Global.User_ID =Convert.ToInt32(txt_UserID.Text);
             }
 
-            else if (service.GetUserType(txt_UserID.Text.Trim(), txt_UserPwd.Text.Trim()) == "성형")
+            else if (service.GetUserType(txt_UserID.Text.Trim(), txt_UserPwd.Text.Trim()) == "제선")
             {
                 frm1 = new JobOrderStatus(main);
                 frm1.BringToFront();

@@ -47,5 +47,11 @@ namespace MES_DB
             PerformDAC dac = new PerformDAC();
             return dac.GetAllRegProcess();
         }
+
+        public void EditPerformSearch(PerformSearchVO edit)
+        {
+            PerformDAC dac = new PerformDAC();
+            dac.EditPerformSearch(edit);
+        }
     }
 }

@@ -18,7 +18,8 @@ namespace AdminForm
         string StartDate;
         string EndDate;
         List<PerformSearchVO> list;
-        string Code;
+        PerformSearchVO edit;
+        string status;
         public PerformSearch()
         {
             InitializeComponent();
@@ -29,13 +30,14 @@ namespace AdminForm
         {
             ShowDgv();
             frm = (MainForm)this.MdiParent;
-            MES_DB.PerformService service = new MES_DB.PerformService();
-            list = service.GetAllPerformSearch();
+           
         }
 
 
         private void GetData(object sender, EventArgs e)
         {
+            MES_DB.PerformService service = new MES_DB.PerformService();
+            list = service.GetAllPerformSearch();
             if (StartDate == null && EndDate == null && fcFactory.SendName == null && fcWork.SendName == null)
             {
                 dgvSearchResult.DataSource = list;
@@ -67,7 +69,8 @@ namespace AdminForm
 
         private void DgvSearchResult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Code = dgvSearchResult.Rows[e.RowIndex].Cells[1].Value.ToString();
+            edit = (PerformSearchVO)dgvSearchResult.Rows[e.RowIndex].DataBoundItem;
+            status = dgvSearchResult.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
 
         private void PerformSearch_Activated(object sender, EventArgs e)
@@ -78,7 +81,6 @@ namespace AdminForm
         {
             frm.Search_Click -= new System.EventHandler(this.GetData);
         }
-
         private void dtpStart_ValueChanged(object sender, EventArgs e)
         {
             StartDate = dtpStart.Value.ToString();
@@ -91,10 +93,11 @@ namespace AdminForm
 
         private void btnBalance_Click(object sender, EventArgs e)
         {
-            if (Code != null)
+            if (edit != null && status != "작업종료")
             {
-                PerformSearchEdit frm = new PerformSearchEdit(Code);
-                frm.ShowDialog();
+                PerformSearchEdit frm1 = new PerformSearchEdit(edit);
+                frm1.ShowDialog();
+                frm.btnS.PerformClick();
             }
             else
             {

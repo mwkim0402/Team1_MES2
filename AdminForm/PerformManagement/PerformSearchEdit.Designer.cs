@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.cmbSelect = new System.Windows.Forms.ComboBox();
+            this.nuCount = new System.Windows.Forms.NumericUpDown();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuCount)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cmbSelect
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbSelect.FormattingEnabled = true;
+            this.cmbSelect.Items.AddRange(new object[] {
             "--선택--",
             "투입수량",
             "산출수량",
             "생산수량"});
-            this.comboBox1.Location = new System.Drawing.Point(45, 48);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 20);
-            this.comboBox1.TabIndex = 0;
+            this.cmbSelect.Location = new System.Drawing.Point(45, 48);
+            this.cmbSelect.Name = "cmbSelect";
+            this.cmbSelect.Size = new System.Drawing.Size(120, 20);
+            this.cmbSelect.TabIndex = 0;
             // 
-            // numericUpDown1
+            // nuCount
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(209, 49);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(62, 21);
-            this.numericUpDown1.TabIndex = 1;
+            this.nuCount.Location = new System.Drawing.Point(209, 49);
+            this.nuCount.Name = "nuCount";
+            this.nuCount.Size = new System.Drawing.Size(62, 21);
+            this.nuCount.TabIndex = 1;
             // 
             // btnCancel
             // 
@@ -63,6 +63,7 @@
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnEdit
             // 
@@ -81,20 +82,21 @@
             this.ClientSize = new System.Drawing.Size(321, 163);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.nuCount);
+            this.Controls.Add(this.cmbSelect);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PerformSearchEdit";
             this.Text = "PerformSearchEdit";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.Load += new System.EventHandler(this.PerformSearchEdit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nuCount)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.ComboBox cmbSelect;
+        private System.Windows.Forms.NumericUpDown nuCount;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnEdit;
     }

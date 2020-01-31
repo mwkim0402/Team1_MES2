@@ -34,7 +34,7 @@ namespace AdminForm
 
         private void GetData(object sender, EventArgs e)
         {
-            if (StartDate == null && EndDate == null && fcFactory.SendCode == null && fcWork.SendCode == null)
+            if (fcFactory.SendCode == null && fcWork.SendCode == null)
             {
                 dgvProductRequset.DataSource = allList;
             }
@@ -57,6 +57,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "불량수량", "Def_Qty", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "불량사진", "Def_Image_Name", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "공정이름", "Process_name", false, 100);
+            
 
 
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업지시번호", "Workorderno", true, 100);

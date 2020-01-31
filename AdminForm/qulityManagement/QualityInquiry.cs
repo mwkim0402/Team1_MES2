@@ -54,6 +54,8 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정순번", "Inspect_measure_seq", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정값", "Inspect_val", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "Wc_Code", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "Process_Code", false, 100);
+
         }
 
         private void QualityInquiry_Activated(object sender, EventArgs e)

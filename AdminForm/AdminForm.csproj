@@ -423,6 +423,12 @@
     <Compile Include="System\UserGroupPowerSetting.Designer.cs">
       <DependentUpon>UserGroupPowerSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserCalendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCalendar.Designer.cs">
+      <DependentUpon>UserCalendar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CategorySearch.resx">
       <DependentUpon>CategorySearch.cs</DependentUpon>
     </EmbeddedResource>
@@ -609,6 +615,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="System\UserGroupPowerSetting.resx">
       <DependentUpon>UserGroupPowerSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCalendar.resx">
+      <DependentUpon>UserCalendar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

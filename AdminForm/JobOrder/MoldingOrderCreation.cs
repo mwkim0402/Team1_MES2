@@ -13,7 +13,7 @@ namespace AdminForm
 {
     public partial class MoldingOrderCreation : dgvTwo
     {
-
+        List<WorkReqVo> workReqList = null;
         List<MoldingOrderCreation_ReqVo> ListReq = null;
         List<MoldingOrderCreation_WoVo> ListWo = null;
         string selectedWoReq; //생산의뢰번호
@@ -21,17 +21,15 @@ namespace AdminForm
         MainForm frm;
 
         public MoldingOrderCreation()
-        {
-            
-
+        {           
             InitializeComponent();
         }
 
         private void ProdReqList()
         {
-            JobOrderService service = new JobOrderService();
-            ListReq = service.MoldingOrderCreation_Req();
-            dgvProductRequset.DataSource = ListReq;
+            WorkOrderService service = new WorkOrderService();
+            workReqList = service.GetAllWorkReq();
+            dgvProductRequset.DataSource = workReqList;
         }
         private void WorkOrderList(string Wo_Req_No)
         {
@@ -82,33 +80,20 @@ namespace AdminForm
         {
             // 생산의뢰 dgv 컬럼 추가
             frm = (MainForm)this.MdiParent;
-            DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
-            checkBoxColumn.HeaderText = "체크";
-            checkBoxColumn.Name = "check";
-            dgvProductRequset.Columns.Add(checkBoxColumn);
+            dgvProductRequset.RowHeadersVisible = false;
+            DataGridViewCheckBoxColumn chkboxCol = new DataGridViewCheckBoxColumn();
+            chkboxCol.Width = 30;
+            chkboxCol.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvProductRequset.Columns.Insert(0, chkboxCol);
             AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰번호", "Wo_Req_No", true, 110);
             AddNewColumnToDataGridView(dgvProductRequset, "의뢰순번", "Req_Seq", true, 80);
-            AddNewColumnToDataGridView(dgvProductRequset, "품목코드", "Item_Code", true, 80);
             AddNewColumnToDataGridView(dgvProductRequset, "품목명", "Item_Name", true, 174);
             AddNewColumnToDataGridView(dgvProductRequset, "의뢰수량", "Req_Qty", true, 80);
-            AddNewColumnToDataGridView(dgvProductRequset, "의뢰단위", "Prd_Unit", true, 80);
             AddNewColumnToDataGridView(dgvProductRequset, "생산완료 요청일", "Prd_Plan_Date", true, 140);
-            AddNewColumnToDataGridView(dgvProductRequset, "프로젝트명", "Remark", true, 110);
             AddNewColumnToDataGridView(dgvProductRequset, "거래처명", "Cust_Name", true, 100);
             AddNewColumnToDataGridView(dgvProductRequset, "영업담당", "Sale_Emp", true, 100);
             AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰 상태", "Req_Status", true, 120);
-            AddNewColumnToDataGridView(dgvProductRequset, "생성된 작업 지시 수", "Out_Qty_Main", true, 180);
-            AddNewColumnToDataGridView(dgvProductRequset, "작업지시 생산수량", "Prd_Qty", true, 150);
-            AddNewColumnToDataGridView(dgvProductRequset, "작업지시 계획수량", "Plan_Qty", true, 150);
-            ProdReqList();
-
-            dgvProductRequset.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvProductRequset.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvProductRequset.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvProductRequset.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvProductRequset.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-
+      
             // 작업지시 dgv 컬럼 추가
             AddNewColumnToDataGridView(dgvJobOrder, "작업상태", "Wo_Status", true, 110);
             AddNewColumnToDataGridView(dgvJobOrder, "작업지시번호", "Workorderno", true, 150);
@@ -121,8 +106,7 @@ namespace AdminForm
             AddNewColumnToDataGridView(dgvJobOrder, "산출수량", "Out_Qty_Main", true,140);
             AddNewColumnToDataGridView(dgvJobOrder, "생산수량", "Prd_Qty", true,140);
             AddNewColumnToDataGridView(dgvJobOrder, "전달사항", "Remark", true, 208);
-            //WorkOrderList();
-            //dgvJobOrder.DataSource = ListWo;
+
 
             dgvJobOrder.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
@@ -131,13 +115,10 @@ namespace AdminForm
             dgvJobOrder.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvJobOrder.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-
-            //이벤트추가
-            this.dgvProductRequset.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductRequset_CellDoubleClick);
-            this.dgvProductRequset.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductRequset_CellClick);
             dgvProductRequset.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProductRequset.MultiSelect = false;
             dgvJobOrder.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            
+            ProdReqList();
         }
 
         private void DgvProductRequset_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -174,34 +155,15 @@ namespace AdminForm
         private void BtnOrderCreationDeadline_Click(object sender, EventArgs e)
         {
 
-            //체크표시한 모든 or 선택한 생산의뢰의 Wo_Status 를 '작업지시마감'으로 변경한다.
-            for (int i = 0; i < dgvProductRequset.Rows.Count; i++)
-            {
-                if(dgvProductRequset.Rows[i].Cells[0].Value == null)
-                {
-                }
-                else
-                {
-                    FinishMoldReq(selectedWoReq, req_Seq);
-                }
-            }
-
-            //생산의뢰dgv 새로고침
-            ProdReqList();
-            //작업지시dgv null
-            ListWo = null;
-            dgvJobOrder.DataSource = ListWo;
-
-
+            WorkReqVo test = new WorkReqVo();
+            test = (WorkReqVo) dgvProductRequset.SelectedRows[0].DataBoundItem;
         }
 
 
         //검색
         private void Search(object sender, EventArgs e)
         {
-            JobOrderService ser = new JobOrderService();
-            
-           
+            ProdReqList();
         }
 
         private void MoldingOrderCreation_Activated(object sender, EventArgs e)

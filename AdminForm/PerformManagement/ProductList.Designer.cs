@@ -94,7 +94,7 @@
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEnd.Location = new System.Drawing.Point(256, 19);
             this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.Size = new System.Drawing.Size(109, 21);
+            this.dtpEnd.Size = new System.Drawing.Size(104, 21);
             this.dtpEnd.TabIndex = 2;
             this.dtpEnd.ValueChanged += new System.EventHandler(this.dtpEnd_ValueChanged);
             // 

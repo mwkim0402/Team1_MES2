@@ -149,5 +149,36 @@ namespace MES_DB
                 return list;
             }
         }
+
+        public void EditPerformSearch(PerformSearchVO edit)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = @"update WorkOrder 
+                                    set Wo_Status = @Wo_Status, Workorderno = @Workorderno, Item_Code = @Item_Code,
+                                    Wc_Code=@Wc_Code, In_Qty_Main=@In_Qty_Main,
+                                    Out_Qty_Main=@Out_Qty_Main, Prd_Qty=@Prd_Qty, Plan_Date=Convert(date,@Plan_Date)
+                                    from WorkOrder w
+                                         inner join Item_Master i 
+                                    	 on w.Item_Code = i.Item_Code
+                                    where Workorderno = @Workorderno ";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@Wo_Status", edit.Wo_Status);
+                cmd.Parameters.AddWithValue("@Workorderno", edit.Workorderno);
+                cmd.Parameters.AddWithValue("@Item_Code", edit.Item_Code);
+                cmd.Parameters.AddWithValue("@Wc_Code", edit.Wc_Code);
+                cmd.Parameters.AddWithValue("@In_Qty_Main", edit.In_Qty_Main);
+                cmd.Parameters.AddWithValue("@Out_Qty_Main", edit.Out_Qty_Main);
+                cmd.Parameters.AddWithValue("@Prd_Qty", edit.Prd_Qty);
+                cmd.Parameters.AddWithValue("@Plan_Date", edit.Plan_Date);
+                
+                
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                
+            }
+        }
     }
 }

@@ -25,9 +25,10 @@ namespace AdminForm
             InitializeComponent();
         }
 
-        public UserCalendar(string[] bordDate) : this()
+        public UserCalendar(string[] bordDate, string WorkCneter) : this()
         {
             BordedDate = bordDate;
+            workCenter = WorkCneter;
             lblMonth.Text = DateTime.Now.Month.ToString();
         }
 
@@ -82,6 +83,32 @@ namespace AdminForm
                     item.ForeColor = Color.White;
                     item.BackColor = Color.DarkGray;
                 }
+            }
+        }
+
+        private void btnMonUp_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(lblMonth.Text) == 12)
+            {
+                lblYear.Text = $"{(int.Parse(lblYear.Text.Split('년')[0]) + 1)}년";
+                lblMonth.Text = 1.ToString();
+            }
+            else
+            {
+                lblMonth.Text = (int.Parse(lblMonth.Text) + 1).ToString();
+            }
+        }
+
+        private void btnMonthDown_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(lblMonth.Text) == 1)
+            {
+                lblYear.Text = $"{(int.Parse(lblYear.Text.Split('년')[0]) - 1)}년";
+                lblMonth.Text = 12.ToString();
+            }
+            else
+            {
+                lblMonth.Text = (int.Parse(lblMonth.Text) - 1).ToString();
             }
         }
     }

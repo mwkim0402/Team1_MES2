@@ -28,7 +28,7 @@ namespace AdminForm
             string[] planDate = (from item in reqCenterList
                                  where DateTime.Now.Month == item.Plan_Date.Month
                                  select item.Plan_Date.ToString("dd")).ToArray();
-            UserCalendar workCalendar = new UserCalendar(planDate);
+            UserCalendar workCalendar = new UserCalendar(planDate, workCenter);
             workCalendar.Location = new Point(6, 41);
             this.Controls.Add(workCalendar);
             CommonClass.AddNewColumnToDataGridView(dgvCenter, "생산의뢰번호", "Workorderbo", true, 110);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MES_DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,10 @@ namespace AdminForm
 {
     public partial class CreateWorkOrder : Form
     {
+        List<WorkReqCenterVo> reqCenterList;
         string pType;
+
+
         public CreateWorkOrder(string processType)
         {
             InitializeComponent();
@@ -22,7 +26,23 @@ namespace AdminForm
 
         private void button4_Click(object sender, EventArgs e)
         {
+            WorkOrderService service = new WorkOrderService();
+            reqCenterList = service.GetAllWorkReqCenter(cbWorkCenter.Text);
+            WorkCenterSchedule frm = new WorkCenterSchedule(cbWorkCenter.Text);
+            frm.ShowDialog();
+        }
+        private void CreateWorkOrder_Load(object sender, EventArgs e)
+        {          
+            
+
+            // Do not circle today's date.
+            
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
 
         }
+
     }
 }

@@ -97,6 +97,16 @@ namespace AdminForm
             {
                 lblMonth.Text = (int.Parse(lblMonth.Text) + 1).ToString();
             }
+            foreach (Button item in panel1.Controls)
+            {
+                item.Text = "";
+            }
+            startDate = Convert.ToDateTime($"{lblYear.Text.Split('년')[0]}-{lblMonth.Text}-01");
+            string day = startDate.ToString("dddd");
+            lastDay = DateTime.DaysInMonth(int.Parse(lblYear.Text.Split('년')[0]), int.Parse(lblMonth.Text));
+            SetStartDay(day);
+            DayChange(StartBtnText);
+            BordedDateChange(BordedDate);
         }
 
         private void btnMonthDown_Click(object sender, EventArgs e)
@@ -110,6 +120,16 @@ namespace AdminForm
             {
                 lblMonth.Text = (int.Parse(lblMonth.Text) - 1).ToString();
             }
+            foreach (Button item in panel1.Controls)
+            {
+                item.Text = "";
+            }
+            startDate = Convert.ToDateTime($"{lblYear.Text.Split('년')[0]}-{lblMonth.Text}-01");
+            string day = startDate.ToString("dddd");
+            lastDay = DateTime.DaysInMonth(int.Parse(lblYear.Text.Split('년')[0]), int.Parse(lblMonth.Text));
+            SetStartDay(day);
+            DayChange(StartBtnText);
+            BordedDateChange(BordedDate);
         }
     }
 }

@@ -53,6 +53,7 @@
     <Compile Include="Dac\PerformDAC.cs" />
     <Compile Include="Dac\ProcessDAC.cs" />
     <Compile Include="Dac\QualityDAC.cs" />
+    <Compile Include="Dac\UserDAC.cs" />
     <Compile Include="Dac\WorkCenterDAC.cs" />
     <Compile Include="Dac\WorkOrderDAC.cs" />
     <Compile Include="Helper.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Service\InspectService.cs" />
     <Compile Include="Service\ItemService.cs" />
     <Compile Include="Service\QualityService.cs" />
+    <Compile Include="Service\UserService.cs" />
     <Compile Include="Service\WorkOrderService.cs" />
     <Compile Include="Vo\ConditionSpecVo.cs" />
     <Compile Include="Vo\JobOrderCreateVo_Insert.cs" />
@@ -85,6 +87,7 @@
     <Compile Include="Vo\PerformSearchVO.cs" />
     <Compile Include="Vo\ProcessVo.cs" />
     <Compile Include="Vo\QualityVO.cs" />
+    <Compile Include="Vo\UserVO.cs" />
     <Compile Include="Vo\WorkCenterVo.cs" />
     <Compile Include="Vo\WorkdiligenceStatusanalysisVO.cs" />
     <Compile Include="Vo\WorkdiligenceStatusanalysisVOgridview1.cs" />

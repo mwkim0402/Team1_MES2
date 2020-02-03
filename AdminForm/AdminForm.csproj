@@ -109,12 +109,6 @@
     <Compile Include="JobOrder\WorkOrderUpdate.Designer.cs">
       <DependentUpon>WorkOrderUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="JobOrder\XtraReport1.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="JobOrder\XtraReport1.Designer.cs">
-      <DependentUpon>XtraReport1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Journal\LoadingReport.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -126,6 +120,12 @@
     </Compile>
     <Compile Include="Journal\MoldingReport.Designer.cs">
       <DependentUpon>MoldingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Journal\FiringReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Journal\FiringReport.Designer.cs">
+      <DependentUpon>FiringReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Journal\PackingReport.cs">
       <SubType>Component</SubType>
@@ -186,6 +186,12 @@
     </Compile>
     <Compile Include="Journal\PackingWorkReport.Designer.cs">
       <DependentUpon>PackingWorkReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForm\documentViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForm\documentViewer.Designer.cs">
+      <DependentUpon>documentViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="ParentForm\WorkReportParent.cs">
       <SubType>Form</SubType>
@@ -489,14 +495,14 @@
     <EmbeddedResource Include="JobOrder\WorkOrderUpdate.resx">
       <DependentUpon>WorkOrderUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JobOrder\XtraReport1.resx">
-      <DependentUpon>XtraReport1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Journal\LoadingReport.resx">
       <DependentUpon>LoadingReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Journal\MoldingReport.resx">
       <DependentUpon>MoldingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Journal\FiringReport.resx">
+      <DependentUpon>FiringReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Journal\PackingReport.resx">
       <DependentUpon>PackingReport.cs</DependentUpon>
@@ -524,6 +530,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Journal\PackingWorkReport.resx">
       <DependentUpon>PackingWorkReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForm\documentViewer.resx">
+      <DependentUpon>documentViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParentForm\WorkReportParent.resx">
       <DependentUpon>WorkReportParent.cs</DependentUpon>

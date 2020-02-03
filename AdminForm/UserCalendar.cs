@@ -7,25 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Activities.Expressions;
+using MES_DB;
 
 namespace AdminForm
 {
     public partial class UserCalendar : UserControl
     {
+        public event EventHandler Search_Click;
+
         DateTime startDate;
         string StartBtnText;
         string InsertBtnText;
         int lastDay;
         string workCenter;
-        public string[] BordedDate { get; set; }
+        public DateTime[] BordedDate { get; set; }
         public string SelectDate { get; set; }
 
         public UserCalendar()
         {
             InitializeComponent();
         }
-
-        public UserCalendar(string[] bordDate, string WorkCneter) : this()
+        public UserCalendar(DateTime[] bordDate, string WorkCneter) : this()
         {
             BordedDate = bordDate;
             workCenter = WorkCneter;
@@ -34,6 +37,7 @@ namespace AdminForm
 
         private void UserCalendar_Load(object sender, EventArgs e)
         {
+
             startDate = Convert.ToDateTime($"{lblYear.Text.Split('년')[0]}-{lblMonth.Text}-01");
             string day = startDate.ToString("dddd");
             lastDay = DateTime.DaysInMonth(int.Parse(lblYear.Text.Split('년')[0]), int.Parse(lblMonth.Text));
@@ -74,11 +78,14 @@ namespace AdminForm
                 }
             }
         }
-        private void BordedDateChange(string[] bordedDate)
+        private void BordedDateChange(DateTime[] bordedDate)
         {
+            string[] searchDate = (from item in bordedDate
+                                     where item.Month.ToString() == lblMonth.Text && item.Year.ToString() == lblYear.Text.Split('년')[0]
+                                     select item.Day.ToString()).ToArray();
             foreach (Button item in panel1.Controls)
             {
-                if (bordedDate.Contains(item.Text))
+                if (searchDate.Contains(item.Text))
                 {
                     item.ForeColor = Color.White;
                     item.BackColor = Color.DarkGray;
@@ -99,6 +106,8 @@ namespace AdminForm
             }
             foreach (Button item in panel1.Controls)
             {
+                item.BackColor = Color.White;
+                item.ForeColor = Color.Black;
                 item.Text = "";
             }
             startDate = Convert.ToDateTime($"{lblYear.Text.Split('년')[0]}-{lblMonth.Text}-01");
@@ -122,6 +131,8 @@ namespace AdminForm
             }
             foreach (Button item in panel1.Controls)
             {
+                item.BackColor = Color.White;
+                item.ForeColor = Color.Black;
                 item.Text = "";
             }
             startDate = Convert.ToDateTime($"{lblYear.Text.Split('년')[0]}-{lblMonth.Text}-01");
@@ -130,6 +141,18 @@ namespace AdminForm
             SetStartDay(day);
             DayChange(StartBtnText);
             BordedDateChange(BordedDate);
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if(btn.ForeColor == Color.Black)
+            {
+                return;
+            }
+            lblDate.Text = btn.Text;
+            if (this.Search_Click != null)
+                Search_Click(this, null);
         }
     }
 }

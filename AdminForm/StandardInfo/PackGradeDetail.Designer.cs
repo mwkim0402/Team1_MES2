@@ -49,16 +49,19 @@
             this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbUsable.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 32);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage4.Size = new System.Drawing.Size(86, 0);
             // 
             // panel1
             // 
@@ -73,22 +76,26 @@
             this.panel1.Controls.Add(this.txtPackDetailName);
             this.panel1.Controls.Add(this.txtNote);
             this.panel1.Controls.Add(this.txtPackDetailCode);
+            this.panel1.Location = new System.Drawing.Point(4, 394);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Size = new System.Drawing.Size(837, 84);
+            this.panel1.Size = new System.Drawing.Size(738, 84);
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Location = new System.Drawing.Point(6, 364);
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Size = new System.Drawing.Size(86, 0);
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 32);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(76, 0);
+            // 
+            // splitContainer1
+            // 
             // 
             // panel2
             // 
@@ -118,6 +125,8 @@
             this.fcPackLevel.Location = new System.Drawing.Point(121, 20);
             this.fcPackLevel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fcPackLevel.Name = "fcPackLevel";
+            this.fcPackLevel.SendCode = null;
+            this.fcPackLevel.SendName = null;
             this.fcPackLevel.Size = new System.Drawing.Size(190, 27);
             this.fcPackLevel.TabIndex = 17;
             // 
@@ -270,7 +279,7 @@
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(736, 18);
+            this.btnSave.Location = new System.Drawing.Point(637, 18);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(82, 48);
             this.btnSave.TabIndex = 148;
@@ -292,11 +301,17 @@
             this.ShowInTaskbar = false;
             this.Text = "PackGradeDetail";
             this.Load += new System.EventHandler(this.PackGradeDetail_Load);
+            this.Controls.SetChildIndex(this.splitContainer1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.tabControl4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl2.ResumeLayout(false);
+            this.tabControl3.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.gbUsable.ResumeLayout(false);

@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnERPDown = new System.Windows.Forms.Button();
-            this.cmbUsable = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.cmbProdCat = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtProdCodeSearch = new System.Windows.Forms.TextBox();
@@ -184,6 +183,7 @@
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dgvSearchResult = new System.Windows.Forms.DataGridView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuOutputPerCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuTheoryOutput)).BeginInit();
@@ -227,9 +227,7 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Controls.Add(this.btnERPDown);
-            this.panel2.Controls.Add(this.cmbUsable);
-            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.cmbProdCat);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.txtProdCodeSearch);
@@ -241,38 +239,20 @@
             this.panel2.Size = new System.Drawing.Size(1128, 67);
             this.panel2.TabIndex = 4;
             // 
-            // btnERPDown
+            // btnSearch
             // 
-            this.btnERPDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnERPDown.Location = new System.Drawing.Point(970, 20);
-            this.btnERPDown.Name = "btnERPDown";
-            this.btnERPDown.Size = new System.Drawing.Size(139, 30);
-            this.btnERPDown.TabIndex = 27;
-            this.btnERPDown.Text = "ERP Download";
-            this.btnERPDown.UseVisualStyleBackColor = true;
-            // 
-            // cmbUsable
-            // 
-            this.cmbUsable.FormattingEnabled = true;
-            this.cmbUsable.Location = new System.Drawing.Point(799, 25);
-            this.cmbUsable.Name = "cmbUsable";
-            this.cmbUsable.Size = new System.Drawing.Size(119, 20);
-            this.cmbUsable.TabIndex = 22;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(721, 26);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 16);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "사용유무";
+            this.btnSearch.Location = new System.Drawing.Point(716, 21);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(139, 30);
+            this.btnSearch.TabIndex = 27;
+            this.btnSearch.Text = "검색";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // cmbProdCat
             // 
             this.cmbProdCat.FormattingEnabled = true;
-            this.cmbProdCat.Location = new System.Drawing.Point(577, 24);
+            this.cmbProdCat.Location = new System.Drawing.Point(94, 25);
             this.cmbProdCat.Name = "cmbProdCat";
             this.cmbProdCat.Size = new System.Drawing.Size(119, 20);
             this.cmbProdCat.TabIndex = 16;
@@ -281,7 +261,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(499, 25);
+            this.label1.Location = new System.Drawing.Point(16, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 16);
             this.label1.TabIndex = 15;
@@ -289,7 +269,7 @@
             // 
             // txtProdCodeSearch
             // 
-            this.txtProdCodeSearch.Location = new System.Drawing.Point(93, 23);
+            this.txtProdCodeSearch.Location = new System.Drawing.Point(307, 25);
             this.txtProdCodeSearch.Name = "txtProdCodeSearch";
             this.txtProdCodeSearch.Size = new System.Drawing.Size(141, 21);
             this.txtProdCodeSearch.TabIndex = 14;
@@ -298,7 +278,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(18, 25);
+            this.label4.Location = new System.Drawing.Point(232, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 16);
             this.label4.TabIndex = 13;
@@ -306,7 +286,7 @@
             // 
             // txtProdNameSearch
             // 
-            this.txtProdNameSearch.Location = new System.Drawing.Point(325, 24);
+            this.txtProdNameSearch.Location = new System.Drawing.Point(534, 25);
             this.txtProdNameSearch.Name = "txtProdNameSearch";
             this.txtProdNameSearch.Size = new System.Drawing.Size(141, 21);
             this.txtProdNameSearch.TabIndex = 12;
@@ -315,7 +295,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(263, 25);
+            this.label3.Location = new System.Drawing.Point(472, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 4;
@@ -911,6 +891,11 @@
             // 
             this.nuInGVQty.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuInGVQty.Location = new System.Drawing.Point(607, 157);
+            this.nuInGVQty.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuInGVQty.Name = "nuInGVQty";
             this.nuInGVQty.Size = new System.Drawing.Size(61, 33);
             this.nuInGVQty.TabIndex = 140;
@@ -949,6 +934,11 @@
             // 
             this.nuLinePCS.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuLinePCS.Location = new System.Drawing.Point(607, 52);
+            this.nuLinePCS.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuLinePCS.Name = "nuLinePCS";
             this.nuLinePCS.Size = new System.Drawing.Size(61, 33);
             this.nuLinePCS.TabIndex = 138;
@@ -968,6 +958,11 @@
             // 
             this.nuInShotPcs.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuInShotPcs.Location = new System.Drawing.Point(607, 18);
+            this.nuInShotPcs.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuInShotPcs.Name = "nuInShotPcs";
             this.nuInShotPcs.Size = new System.Drawing.Size(61, 33);
             this.nuInShotPcs.TabIndex = 137;
@@ -1148,6 +1143,11 @@
             // 
             this.nuInProQty.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuInProQty.Location = new System.Drawing.Point(607, 88);
+            this.nuInProQty.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuInProQty.Name = "nuInProQty";
             this.nuInProQty.Size = new System.Drawing.Size(61, 33);
             this.nuInProQty.TabIndex = 121;
@@ -1165,6 +1165,11 @@
             // 
             this.nuInPerQty.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuInPerQty.Location = new System.Drawing.Point(607, 122);
+            this.nuInPerQty.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuInPerQty.Name = "nuInPerQty";
             this.nuInPerQty.Size = new System.Drawing.Size(61, 33);
             this.nuInPerQty.TabIndex = 122;
@@ -1448,6 +1453,11 @@
             // 
             this.nuUpGVQty.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuUpGVQty.Location = new System.Drawing.Point(607, 157);
+            this.nuUpGVQty.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuUpGVQty.Name = "nuUpGVQty";
             this.nuUpGVQty.Size = new System.Drawing.Size(61, 33);
             this.nuUpGVQty.TabIndex = 177;
@@ -1486,6 +1496,11 @@
             // 
             this.nuUpLine.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuUpLine.Location = new System.Drawing.Point(607, 52);
+            this.nuUpLine.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuUpLine.Name = "nuUpLine";
             this.nuUpLine.Size = new System.Drawing.Size(61, 33);
             this.nuUpLine.TabIndex = 175;
@@ -1505,6 +1520,11 @@
             // 
             this.nuUpShot.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuUpShot.Location = new System.Drawing.Point(607, 18);
+            this.nuUpShot.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuUpShot.Name = "nuUpShot";
             this.nuUpShot.Size = new System.Drawing.Size(61, 33);
             this.nuUpShot.TabIndex = 174;
@@ -1685,6 +1705,11 @@
             // 
             this.nuUpProQty.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuUpProQty.Location = new System.Drawing.Point(607, 88);
+            this.nuUpProQty.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuUpProQty.Name = "nuUpProQty";
             this.nuUpProQty.Size = new System.Drawing.Size(61, 33);
             this.nuUpProQty.TabIndex = 160;
@@ -1702,6 +1727,11 @@
             // 
             this.nuUpPerQty.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuUpPerQty.Location = new System.Drawing.Point(607, 122);
+            this.nuUpPerQty.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nuUpPerQty.Name = "nuUpPerQty";
             this.nuUpPerQty.Size = new System.Drawing.Size(61, 33);
             this.nuUpPerQty.TabIndex = 161;
@@ -1836,6 +1866,12 @@
             this.dgvSearchResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSearchResult.Size = new System.Drawing.Size(1132, 216);
             this.dgvSearchResult.TabIndex = 10;
+            this.dgvSearchResult.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // ItemInfo
             // 
@@ -1909,15 +1945,13 @@
 
         #endregion
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cmbUsable;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbProdCat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtProdCodeSearch;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtProdNameSearch;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnERPDown;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtPS;
@@ -2064,5 +2098,6 @@
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.ComboBox cmbUpLvl1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -53,8 +53,9 @@
             this.rbUse_Use = new System.Windows.Forms.RadioButton();
             this.rbNoUse_Use = new System.Windows.Forms.RadioButton();
             this.tcParent1.SuspendLayout();
-            this.pnlParent1.SuspendLayout();
             this.tcParent2.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.pnlParent1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbIP.SuspendLayout();
             this.gbUsable.SuspendLayout();
@@ -65,7 +66,12 @@
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             // 
-            // panel1
+            // tabPage2
+            // 
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            // 
+            // pnlParent1
             // 
             this.pnlParent1.Controls.Add(this.gbIP);
             this.pnlParent1.Controls.Add(this.txtStandFac);
@@ -78,17 +84,14 @@
             this.pnlParent1.Controls.Add(this.button1);
             this.pnlParent1.Controls.Add(this.txtUserIDInput);
             this.pnlParent1.Controls.Add(this.txtUserGroup);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlParent1.Location = new System.Drawing.Point(3, 4);
+            this.pnlParent1.Size = new System.Drawing.Size(1118, 91);
             // 
             // txtStandFac
             // 
             this.txtStandFac.Location = new System.Drawing.Point(418, 48);
             this.txtStandFac.Name = "txtStandFac";
-            this.txtStandFac.Size = new System.Drawing.Size(152, 21);
+            this.txtStandFac.Size = new System.Drawing.Size(152, 30);
             this.txtStandFac.TabIndex = 86;
             // 
             // label6
@@ -106,7 +109,7 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(1036, 18);
+            this.button1.Location = new System.Drawing.Point(1014, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 48);
             this.button1.TabIndex = 81;
@@ -117,21 +120,21 @@
             // 
             this.txtUserGroup.Location = new System.Drawing.Point(418, 16);
             this.txtUserGroup.Name = "txtUserGroup";
-            this.txtUserGroup.Size = new System.Drawing.Size(152, 21);
+            this.txtUserGroup.Size = new System.Drawing.Size(152, 30);
             this.txtUserGroup.TabIndex = 76;
             // 
             // txtUserIDInput
             // 
             this.txtUserIDInput.Location = new System.Drawing.Point(119, 47);
             this.txtUserIDInput.Name = "txtUserIDInput";
-            this.txtUserIDInput.Size = new System.Drawing.Size(152, 21);
+            this.txtUserIDInput.Size = new System.Drawing.Size(152, 30);
             this.txtUserIDInput.TabIndex = 75;
             // 
             // txtUserNameInput
             // 
             this.txtUserNameInput.Location = new System.Drawing.Point(119, 16);
             this.txtUserNameInput.Name = "txtUserNameInput";
-            this.txtUserNameInput.Size = new System.Drawing.Size(152, 21);
+            this.txtUserNameInput.Size = new System.Drawing.Size(152, 30);
             this.txtUserNameInput.TabIndex = 74;
             // 
             // label19
@@ -223,6 +226,8 @@
             this.fcPermiGroup.Location = new System.Drawing.Point(102, 22);
             this.fcPermiGroup.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fcPermiGroup.Name = "fcPermiGroup";
+            this.fcPermiGroup.SendCode = null;
+            this.fcPermiGroup.SendName = null;
             this.fcPermiGroup.Size = new System.Drawing.Size(190, 27);
             this.fcPermiGroup.TabIndex = 7;
             // 
@@ -345,12 +350,12 @@
             this.Load += new System.EventHandler(this.UserManager_Load);
             this.Controls.SetChildIndex(this.tcParent1, 0);
             this.Controls.SetChildIndex(this.tcParent2, 0);
-            //this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.tcParent1.ResumeLayout(false);
+            this.tcParent2.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.pnlParent1.ResumeLayout(false);
             this.pnlParent1.PerformLayout();
-            this.tcParent2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.gbIP.ResumeLayout(false);

@@ -28,6 +28,7 @@ namespace AdminForm
             dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue;
 
             dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            //dgv.ColumnHeadersHeight = 50;
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
@@ -48,12 +49,12 @@ namespace AdminForm
                     ComboBox cb = (ComboBox)item;
                     cb.SelectedIndex = 0;
                 }
-                else if(item is NumericUpDown)
+                else if (item is NumericUpDown)
                 {
                     NumericUpDown nu = (NumericUpDown)item;
                     nu.Value = 0;
                 }
-                else if(item is DateTimePicker)
+                else if (item is DateTimePicker)
                 {
                     DateTimePicker dtp = (DateTimePicker)item;
                     dtp.Value = DateTime.Now;

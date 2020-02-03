@@ -39,7 +39,6 @@
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -90,6 +89,7 @@
             this.btnBalance.TabIndex = 1;
             this.btnBalance.Text = "실적 보정";
             this.btnBalance.UseVisualStyleBackColor = true;
+            this.btnBalance.Click += new System.EventHandler(this.btnBalance_Click);
             // 
             // fcWork
             // 
@@ -170,21 +170,11 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "작업 일자 :";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(125, 93);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 12);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "실적 보정 , 실적 분할 해야함";
-            // 
             // PerformSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 604);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -199,12 +189,10 @@
             this.Load += new System.EventHandler(this.PerformSearch_Load);
             this.Controls.SetChildIndex(this.tabControl1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.label5, 0);
             this.tabControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -221,6 +209,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private FIndCategory fcFactory;
-        private System.Windows.Forms.Label label5;
     }
 }

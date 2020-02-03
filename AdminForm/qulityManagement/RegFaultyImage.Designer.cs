@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegFaultyImage));
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +58,8 @@
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tabControl2.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.tabPage10.SuspendLayout();
@@ -64,6 +67,7 @@
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage10
@@ -227,6 +231,8 @@
             this.fcWork.Category = AdminForm.CategoryMode.WorkCenter;
             this.fcWork.Location = new System.Drawing.Point(764, 18);
             this.fcWork.Name = "fcWork";
+            this.fcWork.SendCode = null;
+            this.fcWork.SendName = null;
             this.fcWork.Size = new System.Drawing.Size(190, 27);
             this.fcWork.TabIndex = 5;
             // 
@@ -235,6 +241,8 @@
             this.fcFactory.Category = AdminForm.CategoryMode.Process;
             this.fcFactory.Location = new System.Drawing.Point(485, 18);
             this.fcFactory.Name = "fcFactory";
+            this.fcFactory.SendCode = null;
+            this.fcFactory.SendName = null;
             this.fcFactory.Size = new System.Drawing.Size(190, 27);
             this.fcFactory.TabIndex = 5;
             // 
@@ -274,6 +282,7 @@
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(109, 21);
             this.dtpEnd.TabIndex = 2;
+            this.dtpEnd.ValueChanged += new System.EventHandler(this.dtpEnd_ValueChanged);
             // 
             // dtpStart
             // 
@@ -282,6 +291,7 @@
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(109, 21);
             this.dtpStart.TabIndex = 2;
+            this.dtpStart.ValueChanged += new System.EventHandler(this.dtpStart_ValueChanged);
             // 
             // label1
             // 
@@ -293,11 +303,40 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "작업지시일자 :";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.AutoSize = false;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(60, 60);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1156, 57);
+            this.toolStrip1.TabIndex = 11;
+            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.Visible = false;
+            this.toolStrip1.Click += new System.EventHandler(this.toolStrip1_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(60, 60);
+            this.toolStripButton1.Text = "조회하기";
+            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.ToolTipText = "조회하기";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStrip1_Click);
+            // 
             // RegFaultyImage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 604);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -306,10 +345,13 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "RegFaultyImage";
+            this.Activated += new System.EventHandler(this.RegFaultyImage_Activated);
+            this.Deactivate += new System.EventHandler(this.RegFaultyImage_Deactivate);
             this.Load += new System.EventHandler(this.RegFaultyImage_Load);
+            this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.tabControl4, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.toolStrip1, 0);
             this.tabControl2.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
@@ -318,6 +360,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -352,5 +396,7 @@
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

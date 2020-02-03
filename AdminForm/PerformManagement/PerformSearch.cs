@@ -18,6 +18,8 @@ namespace AdminForm
         string StartDate;
         string EndDate;
         List<PerformSearchVO> list;
+        PerformSearchVO edit;
+        string status;
         public PerformSearch()
         {
             InitializeComponent();
@@ -28,13 +30,14 @@ namespace AdminForm
         {
             ShowDgv();
             frm = (MainForm)this.MdiParent;
-            MES_DB.PerformService service = new MES_DB.PerformService();
-            list = service.GetAllPerformSearch();
+           
         }
 
 
         private void GetData(object sender, EventArgs e)
         {
+            MES_DB.PerformService service = new MES_DB.PerformService();
+            list = service.GetAllPerformSearch();
             if (StartDate == null && EndDate == null && fcFactory.SendName == null && fcWork.SendName == null)
             {
                 dgvSearchResult.DataSource = list;
@@ -51,6 +54,7 @@ namespace AdminForm
 
         private void ShowDgv()
         {
+            dgvSearchResult.CellDoubleClick += DgvSearchResult_CellDoubleClick;
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시상태", "Wo_Status", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시번호", "Workorderno", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 100);
@@ -63,6 +67,12 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산수량", "Process_code", false, 100);
         }
 
+        private void DgvSearchResult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            edit = (PerformSearchVO)dgvSearchResult.Rows[e.RowIndex].DataBoundItem;
+            status = dgvSearchResult.Rows[e.RowIndex].Cells[0].Value.ToString();
+        }
+
         private void PerformSearch_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += new System.EventHandler(this.GetData);
@@ -71,7 +81,6 @@ namespace AdminForm
         {
             frm.Search_Click -= new System.EventHandler(this.GetData);
         }
-
         private void dtpStart_ValueChanged(object sender, EventArgs e)
         {
             StartDate = dtpStart.Value.ToString();
@@ -80,6 +89,20 @@ namespace AdminForm
         private void dtpEnd_ValueChanged(object sender, EventArgs e)
         {
             EndDate = dtpEnd.Value.ToString();
+        }
+
+        private void btnBalance_Click(object sender, EventArgs e)
+        {
+            if (edit != null && status != "작업종료")
+            {
+                PerformSearchEdit frm1 = new PerformSearchEdit(edit);
+                frm1.ShowDialog();
+                frm.btnS.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("변경할 셀을 선택해주세요.");
+            }
         }
     }
 }

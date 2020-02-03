@@ -14,6 +14,7 @@ namespace AdminForm
     {
         List<MaterialManage> Allist;
         MainForm frm;
+
         public MaterialManagement()
         {
             InitializeComponent();
@@ -25,7 +26,6 @@ namespace AdminForm
             frm = (MainForm)this.MdiParent;
             MES_DB.PerformService service = new MES_DB.PerformService();
             Allist = service.GetAllMaterial();
-
         }
 
         private void GetData(object sender, EventArgs e)

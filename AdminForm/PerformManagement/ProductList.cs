@@ -75,17 +75,10 @@ namespace AdminForm
         {
             EndDate = dtpEnd.Value.ToString();
         }
-        
-
-        //private async void button1_Click(object sender, EventArgs e)
-        //{
-        //    await GetValue();
-        //}
         public async void Search_Click(object sender, EventArgs e)
         {
             await GetAllList();
         }
-
         private void ProductList_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += new System.EventHandler(this.Search_Click);

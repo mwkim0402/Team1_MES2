@@ -43,26 +43,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionAccess.cs" />
+    <Compile Include="Dac\ConditionSpecDAC.cs" />
     <Compile Include="Dac\FaultyDAC.cs" />
+    <Compile Include="Dac\InspectDAC.cs" />
     <Compile Include="Dac\ItemDAC.cs" />
     <Compile Include="Dac\MoldingDac.cs" />
     <Compile Include="Dac\JobOrderDac.cs" />
     <Compile Include="Dac\MenuTreeDac.cs" />
     <Compile Include="Dac\PerformDAC.cs" />
     <Compile Include="Dac\ProcessDAC.cs" />
+    <Compile Include="Dac\QualityDAC.cs" />
+    <Compile Include="Dac\UserDAC.cs" />
+    <Compile Include="Dac\WorkCenterDAC.cs" />
+    <Compile Include="Dac\WorkOrderDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\ConditionSpecService.cs" />
     <Compile Include="Service\FaultyService.cs" />
     <Compile Include="Service\FindCategoryService.cs" />
+    <Compile Include="Service\InspectService.cs" />
     <Compile Include="Service\ItemService.cs" />
+    <Compile Include="Service\QualityService.cs" />
+    <Compile Include="Service\UserService.cs" />
+    <Compile Include="Service\WorkOrderService.cs" />
+    <Compile Include="Vo\ConditionSpecVo.cs" />
     <Compile Include="Vo\JobOrderCreateVo_Insert.cs" />
     <Compile Include="Service\MoldingService.cs" />
     <Compile Include="Service\JobOrderService.cs" />
     <Compile Include="Service\MenuTreeService.cs" />
     <Compile Include="Service\PerformService.cs" />
     <Compile Include="Service\ProcessService.cs" />
+    <Compile Include="Service\WorkCenterService.cs" />
     <Compile Include="Vo\FaultyVo.cs" />
     <Compile Include="Vo\FindCategoryVo.cs" />
+    <Compile Include="Vo\InspectVo.cs" />
     <Compile Include="Vo\ItemVo.cs" />
     <Compile Include="Vo\MoldUseHistoryVo.cs" />
     <Compile Include="Vo\MoldingInfoVo.cs" />
@@ -72,13 +86,32 @@
     <Compile Include="Vo\MenuTreeVo.cs" />
     <Compile Include="Vo\PerformSearchVO.cs" />
     <Compile Include="Vo\ProcessVo.cs" />
+    <Compile Include="Vo\QualityVO.cs" />
+    <Compile Include="Vo\UserVO.cs" />
+    <Compile Include="Vo\WorkCenterVo.cs" />
     <Compile Include="Vo\WorkdiligenceStatusanalysisVO.cs" />
     <Compile Include="Vo\WorkdiligenceStatusanalysisVOgridview1.cs" />
+    <Compile Include="Vo\WorkOrder.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\DataBase_XML.xml" />
+    <Content Include="bin\Debug\MES_DB.dll" />
+    <Content Include="bin\Debug\MES_DB.pdb" />
     <Content Include="DataBase_XML.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="obj\Debug\MES_DB.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\MES_DB.dll" />
+    <Content Include="obj\Debug\MES_DB.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\MES_DB.csprojAssemblyReference.cache" />
+    <None Include="obj\Release\MES_DB.csprojAssemblyReference.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

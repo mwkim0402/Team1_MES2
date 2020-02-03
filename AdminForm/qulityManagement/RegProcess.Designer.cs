@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegProcess));
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.dgvJob = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dgvList2 = new System.Windows.Forms.DataGridView();
+            this.dgvListDetail = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -49,6 +50,8 @@
             this.fcFactory = new AdminForm.FIndCategory();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -58,11 +61,12 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListDetail)).BeginInit();
             this.panel3.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvList
@@ -77,6 +81,7 @@
             this.dgvList.RowTemplate.Height = 23;
             this.dgvList.Size = new System.Drawing.Size(244, 457);
             this.dgvList.TabIndex = 0;
+            this.dgvList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellDoubleClick);
             // 
             // tabPage2
             // 
@@ -111,6 +116,7 @@
             this.dgvJob.RowTemplate.Height = 23;
             this.dgvJob.Size = new System.Drawing.Size(344, 460);
             this.dgvJob.TabIndex = 0;
+            this.dgvJob.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJob_CellDoubleClick);
             // 
             // tabPage4
             // 
@@ -138,21 +144,21 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvList2);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvListDetail);
             this.splitContainer1.Panel2.Controls.Add(this.panel3);
             this.splitContainer1.Size = new System.Drawing.Size(775, 499);
             this.splitContainer1.SplitterDistance = 258;
             this.splitContainer1.TabIndex = 1;
             // 
-            // dgvList2
+            // dgvListDetail
             // 
-            this.dgvList2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvList2.Location = new System.Drawing.Point(0, 34);
-            this.dgvList2.Name = "dgvList2";
-            this.dgvList2.RowTemplate.Height = 23;
-            this.dgvList2.Size = new System.Drawing.Size(513, 465);
-            this.dgvList2.TabIndex = 4;
+            this.dgvListDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvListDetail.Location = new System.Drawing.Point(0, 34);
+            this.dgvListDetail.Name = "dgvListDetail";
+            this.dgvListDetail.RowTemplate.Height = 23;
+            this.dgvListDetail.Size = new System.Drawing.Size(513, 465);
+            this.dgvListDetail.TabIndex = 4;
             // 
             // panel3
             // 
@@ -166,6 +172,7 @@
             // 
             // btnRemove
             // 
+            this.btnRemove.Enabled = false;
             this.btnRemove.Location = new System.Drawing.Point(134, 5);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(113, 23);
@@ -175,6 +182,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Enabled = false;
             this.btnAdd.Location = new System.Drawing.Point(3, 5);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(113, 23);
@@ -189,6 +197,7 @@
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(109, 21);
             this.dtpEnd.TabIndex = 2;
+            this.dtpEnd.TabStopChanged += new System.EventHandler(this.dtpEnd_TabStopChanged);
             // 
             // dtpStart
             // 
@@ -197,6 +206,7 @@
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(109, 21);
             this.dtpStart.TabIndex = 2;
+            this.dtpStart.ValueChanged += new System.EventHandler(this.dtpStart_ValueChanged);
             // 
             // tabControl4
             // 
@@ -262,6 +272,8 @@
             this.fcWork.Category = AdminForm.CategoryMode.WorkCenter;
             this.fcWork.Location = new System.Drawing.Point(764, 19);
             this.fcWork.Name = "fcWork";
+            this.fcWork.SendCode = null;
+            this.fcWork.SendName = null;
             this.fcWork.Size = new System.Drawing.Size(190, 27);
             this.fcWork.TabIndex = 5;
             // 
@@ -270,6 +282,8 @@
             this.fcFactory.Category = AdminForm.CategoryMode.Process;
             this.fcFactory.Location = new System.Drawing.Point(489, 19);
             this.fcFactory.Name = "fcFactory";
+            this.fcFactory.SendCode = null;
+            this.fcFactory.SendName = null;
             this.fcFactory.Size = new System.Drawing.Size(190, 27);
             this.fcFactory.TabIndex = 1;
             // 
@@ -295,11 +309,36 @@
             this.panel1.Size = new System.Drawing.Size(1132, 502);
             this.panel1.TabIndex = 13;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1156, 63);
+            this.toolStrip1.TabIndex = 15;
+            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.Visible = false;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(60, 60);
+            this.toolStripButton1.Text = "조회하기";
+            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // RegProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 604);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -309,6 +348,8 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "RegFactory";
+            this.Activated += new System.EventHandler(this.RegProcess_Activated);
+            this.Deactivate += new System.EventHandler(this.RegProcess_Deactivate);
             this.Load += new System.EventHandler(this.RegProcess_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.tabPage2.ResumeLayout(false);
@@ -319,13 +360,16 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListDetail)).EndInit();
             this.panel3.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -350,6 +394,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dgvList2;
+        private System.Windows.Forms.DataGridView dgvListDetail;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

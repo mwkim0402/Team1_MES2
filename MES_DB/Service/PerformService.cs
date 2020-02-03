@@ -30,5 +30,28 @@ namespace MES_DB
             PerformDAC dac = new PerformDAC();
             return dac.GetAllMaterial();
         }
+        public List<RegFaultyVO> GetAllRegFaultyImage()
+        {
+            PerformDAC dac = new PerformDAC();
+            return dac.GetAllRegFaultyImage();
+        }
+
+        public List<QualityVO> GetAllQuality()
+        {
+            PerformDAC dac = new PerformDAC();
+            return dac.GetAllQuality();
+        }
+
+        public List<RegProcessVO> GetAllRegProcess()
+        {
+            PerformDAC dac = new PerformDAC();
+            return dac.GetAllRegProcess();
+        }
+
+        public void EditPerformSearch(PerformSearchVO edit)
+        {
+            PerformDAC dac = new PerformDAC();
+            dac.EditPerformSearch(edit);
+        }
     }
 }

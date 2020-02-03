@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -21,6 +22,7 @@ namespace AdminForm
         bool open = false;
         List<MenuTreeVo> menuList;
 
+        public ToolStrip ToolStrip { get { return toolStrip1; }  set { toolStrip1 = value; } }
         public MainForm()
         {
             InitializeComponent();
@@ -37,8 +39,8 @@ namespace AdminForm
             SetButtonImage();
             MenuService service = new MenuService();
             menuList = await service.GetListAsync("GetAllMenu", new List<MenuTreeVo>());
-            
-            
+
+
             trvMenu.Visible = false;
             trvBookMark.Visible = false;
             trvBookMark.Location = new Point(0, 10);
@@ -416,6 +418,33 @@ namespace AdminForm
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblAlert_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = CreateGraphics();
+            LinearGradientBrush lgb = new LinearGradientBrush(new Rectangle(0, 0, panel3.Width, panel3.Height), Color.Black, Color.Black, LinearGradientMode.Horizontal);
+            ColorBlend cb = new ColorBlend();
+            cb.Colors = new Color[] { Color.White, Color.Gray };
+            cb.Positions = new Single[] { 0.0F, 1.0F };
+            lgb.InterpolationColors = cb;
+
+            e.Graphics.FillRectangle(lgb, new Rectangle(0, 0, panel3.Width, panel3.Height));
+        }
+
+        private void panel3_Resize(object sender, EventArgs e)
+        {
+            panel3.Invalidate();
         }
     }
 }

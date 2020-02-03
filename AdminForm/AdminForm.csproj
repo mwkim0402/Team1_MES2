@@ -686,6 +686,9 @@
     <EmbeddedResource Include="UserCalendar.resx">
       <DependentUpon>UserCalendar.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -725,7 +728,7 @@
       <Name>MES_API</Name>
     </ProjectReference>
     <ProjectReference Include="..\MES_DB\MES_DB.csproj">
-      <Project>{c5a0dac0-fd93-4179-9471-da3fa7b21737}</Project>
+      <Project>{C5A0DAC0-FD93-4179-9471-DA3FA7B21737}</Project>
       <Name>MES_DB</Name>
     </ProjectReference>
     <ProjectReference Include="..\MES_DTO\MES_DTO.csproj">

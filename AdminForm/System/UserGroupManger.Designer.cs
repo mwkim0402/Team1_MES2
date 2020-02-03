@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserGroupManger));
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtUserCode = new System.Windows.Forms.TextBox();
@@ -42,13 +43,15 @@
             this.rbUse_Use = new System.Windows.Forms.RadioButton();
             this.rbNoUse_Use = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbUse_EditUse = new System.Windows.Forms.RadioButton();
+            this.rbUse_EditNoUse = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEditUserGroupCode = new System.Windows.Forms.TextBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.txtEditUserGroupName = new System.Windows.Forms.TextBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tcParent1.SuspendLayout();
             this.tcParent2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -57,6 +60,7 @@
             this.panel2.SuspendLayout();
             this.gbUsable.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -223,8 +227,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.rbUse_EditUse);
+            this.groupBox1.Controls.Add(this.rbUse_EditNoUse);
             this.groupBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox1.Location = new System.Drawing.Point(758, 22);
             this.groupBox1.Name = "groupBox1";
@@ -233,29 +237,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "사용여부";
             // 
-            // radioButton1
+            // rbUse_EditUse
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton1.Location = new System.Drawing.Point(43, 28);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(42, 20);
-            this.radioButton1.TabIndex = 77;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "유";
-            this.radioButton1.UseVisualStyleBackColor = false;
+            this.rbUse_EditUse.AutoSize = true;
+            this.rbUse_EditUse.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_EditUse.Location = new System.Drawing.Point(43, 28);
+            this.rbUse_EditUse.Name = "rbUse_EditUse";
+            this.rbUse_EditUse.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_EditUse.TabIndex = 77;
+            this.rbUse_EditUse.TabStop = true;
+            this.rbUse_EditUse.Text = "유";
+            this.rbUse_EditUse.UseVisualStyleBackColor = false;
             // 
-            // radioButton2
+            // rbUse_EditNoUse
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.radioButton2.Location = new System.Drawing.Point(111, 28);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(42, 20);
-            this.radioButton2.TabIndex = 79;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "무";
-            this.radioButton2.UseVisualStyleBackColor = false;
+            this.rbUse_EditNoUse.AutoSize = true;
+            this.rbUse_EditNoUse.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_EditNoUse.Location = new System.Drawing.Point(111, 28);
+            this.rbUse_EditNoUse.Name = "rbUse_EditNoUse";
+            this.rbUse_EditNoUse.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_EditNoUse.TabIndex = 79;
+            this.rbUse_EditNoUse.TabStop = true;
+            this.rbUse_EditNoUse.Text = "무";
+            this.rbUse_EditNoUse.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -296,6 +300,7 @@
             this.btnEdit.TabIndex = 94;
             this.btnEdit.Text = "수정";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // txtEditUserGroupName
             // 
@@ -304,11 +309,36 @@
             this.txtEditUserGroupName.Size = new System.Drawing.Size(126, 30);
             this.txtEditUserGroupName.TabIndex = 93;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1156, 63);
+            this.toolStrip1.TabIndex = 10;
+            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.Visible = false;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(60, 60);
+            this.toolStripButton1.Text = "조건검색";
+            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // UserGroupManger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 604);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -324,6 +354,7 @@
             this.Controls.SetChildIndex(this.tcParent1, 0);
             this.Controls.SetChildIndex(this.tcParent2, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.toolStrip1, 0);
             this.tcParent1.ResumeLayout(false);
             this.tcParent2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -337,7 +368,10 @@
             this.gbUsable.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -356,12 +390,14 @@
         private System.Windows.Forms.RadioButton rbUse_Use;
         private System.Windows.Forms.RadioButton rbNoUse_Use;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbUse_EditUse;
+        private System.Windows.Forms.RadioButton rbUse_EditNoUse;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEditUserGroupCode;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox txtEditUserGroupName;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

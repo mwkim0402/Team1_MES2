@@ -28,6 +28,7 @@ namespace AdminForm
             dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue;
 
             dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            //dgv.ColumnHeadersHeight = 50;
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;

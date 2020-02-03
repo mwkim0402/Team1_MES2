@@ -118,6 +118,7 @@ namespace AdminForm
             dgvProductRequset.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProductRequset.MultiSelect = false;
             dgvJobOrder.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProductRequset.CellContentClick += DgvProductRequset_CellClick;
             ProdReqList();
         }
 
@@ -125,19 +126,15 @@ namespace AdminForm
         {
             if (e.ColumnIndex == 0 )
             {
-                selectedWoReq = dgvProductRequset.SelectedRows[0].Cells[1].Value.ToString();
-                req_Seq = int.Parse(dgvProductRequset.SelectedRows[0].Cells[2].Value.ToString());
-                if (dgvProductRequset.Rows[e.RowIndex].Cells[0].Value ==null)
+                if (Convert.ToBoolean(dgvProductRequset.Rows[e.RowIndex].Cells[0].EditedFormattedValue))
                 {
-                    dgvProductRequset.SelectedRows[0].Cells[0].Value = CheckState.Checked;
-                }
-                else if (dgvProductRequset.Rows[e.RowIndex].Cells[0].Value.ToString() == "True")
-                {
-                    dgvProductRequset.SelectedRows[0].Cells[0].Value = CheckState.Unchecked;
-                }
-                else
-                {
-                    dgvProductRequset.SelectedRows[0].Cells[0].Value = CheckState.Checked;
+                    foreach(DataGridViewRow item in dgvProductRequset.Rows)
+                    {
+                        if(dgvProductRequset.SelectedRows[0] != item)
+                        {
+                            item.Cells[0].Value = false;
+                        }
+                    }
                 }
             }
         }
@@ -195,7 +192,7 @@ namespace AdminForm
 
         private void ShowDialog(string processName)
         {
-            CreateWorkOrder popUp = new CreateWorkOrder(processName);
+            CreateWorkOrder popUp = new CreateWorkOrder(processName, dgvProductRequset.SelectedRows[0].Cells[1].Value.ToString());
             popUp.ShowDialog();
         }
 

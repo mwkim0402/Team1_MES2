@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnMonUp = new System.Windows.Forms.Button();
-            this.btnMonthDown = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSun = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -85,28 +83,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.lblYear = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
+            this.btnMonthDown = new System.Windows.Forms.Button();
+            this.btnMonUp = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnMonUp
-            // 
-            this.btnMonUp.Location = new System.Drawing.Point(185, 13);
-            this.btnMonUp.Name = "btnMonUp";
-            this.btnMonUp.Size = new System.Drawing.Size(47, 23);
-            this.btnMonUp.TabIndex = 0;
-            this.btnMonUp.Text = "up";
-            this.btnMonUp.UseVisualStyleBackColor = true;
-            this.btnMonUp.Click += new System.EventHandler(this.btnMonUp_Click);
-            // 
-            // btnMonthDown
-            // 
-            this.btnMonthDown.Location = new System.Drawing.Point(244, 13);
-            this.btnMonthDown.Name = "btnMonthDown";
-            this.btnMonthDown.Size = new System.Drawing.Size(47, 23);
-            this.btnMonthDown.TabIndex = 1;
-            this.btnMonthDown.Text = "down";
-            this.btnMonthDown.UseVisualStyleBackColor = true;
-            this.btnMonthDown.Click += new System.EventHandler(this.btnMonthDown_Click);
             // 
             // label1
             // 
@@ -867,6 +847,39 @@
             this.lblDate.Size = new System.Drawing.Size(0, 12);
             this.lblDate.TabIndex = 15;
             this.lblDate.Visible = false;
+            // 
+            // btnMonthDown
+            // 
+            this.btnMonthDown.BackColor = System.Drawing.Color.Transparent;
+            this.btnMonthDown.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMonthDown.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnMonthDown.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnMonthDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMonthDown.Image = global::AdminForm.Properties.Resources.icons8_expand_arrow_32;
+            this.btnMonthDown.Location = new System.Drawing.Point(244, 13);
+            this.btnMonthDown.Name = "btnMonthDown";
+            this.btnMonthDown.Size = new System.Drawing.Size(47, 23);
+            this.btnMonthDown.TabIndex = 1;
+            this.btnMonthDown.UseVisualStyleBackColor = false;
+            this.btnMonthDown.Click += new System.EventHandler(this.btnMonthDown_Click);
+            // 
+            // btnMonUp
+            // 
+            this.btnMonUp.BackColor = System.Drawing.Color.White;
+            this.btnMonUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnMonUp.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMonUp.FlatAppearance.BorderSize = 0;
+            this.btnMonUp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMonUp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnMonUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMonUp.ForeColor = System.Drawing.Color.Transparent;
+            this.btnMonUp.Image = global::AdminForm.Properties.Resources.icons8_collapse_arrow_32;
+            this.btnMonUp.Location = new System.Drawing.Point(185, 13);
+            this.btnMonUp.Name = "btnMonUp";
+            this.btnMonUp.Size = new System.Drawing.Size(47, 23);
+            this.btnMonUp.TabIndex = 0;
+            this.btnMonUp.UseVisualStyleBackColor = false;
+            this.btnMonUp.Click += new System.EventHandler(this.btnMonUp_Click);
             // 
             // UserCalendar
             // 

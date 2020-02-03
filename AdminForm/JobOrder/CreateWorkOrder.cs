@@ -59,7 +59,8 @@ namespace AdminForm
             txtClient.Text = workReq.Cust_Name;
             txtIem.Text = workReq.Item_Name;
             nuQty.Value = workReq.Req_Qty;
-            dtpEndDate.Value = workReq.Prd_Plan_Date;          
+            dtpEndDate.Value = workReq.Prd_Plan_Date;
+            nuDefaultQty.Value = workReq.Req_Qty-service.SumWoReq(pType, workOrdNo);
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)

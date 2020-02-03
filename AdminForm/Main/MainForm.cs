@@ -153,7 +153,7 @@ namespace AdminForm
 
         private void SetButtonImage()
         {
-            btnS.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\조회 32x32.jpg");
+            btnS.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Search.ico");
             btnCreate.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Report2_32x32.png");
             btnSave.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Action_Save_New_32x32.png");
             btnEdit.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Edit_32x32.png");

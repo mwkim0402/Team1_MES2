@@ -8,12 +8,15 @@ namespace MES_DB
 {
     public class WorkOrder
     {
+        public DateTime stratTime;
+        public DateTime endTime;
         public string Workorderno { get; set; }
+        public string Process_name { get; set; }
         public string Wc_Name { get; set; }
         public string Item_Name { get; set; }
         public DateTime Plan_Date { get; set; }
-        public DateTime Plan_Starttime { get; set; }
-        public DateTime Plan_Endtime { get; set; }
+        public string Plan_Starttime { get; set; }
+        public string Plan_Endtime { get; set; }
         public int Plan_Qty { get; set; }
         public string Wo_Status { get; set; }
     }

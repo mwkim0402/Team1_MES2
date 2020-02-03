@@ -18,5 +18,17 @@ namespace MES_DB
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.GetReqCenter(code);
         }
+
+        public List<WorkOrder> GetAllWorkDetail(string code)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.GetAllWorkOrderDetail(code);
+        }
+
+        public int SumWoReq(string type, string Wo_Req_No)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.WoReqSum(type, Wo_Req_No);
+        }
     }
 }

@@ -97,15 +97,14 @@ namespace AdminForm
             // 작업지시 dgv 컬럼 추가
             AddNewColumnToDataGridView(dgvJobOrder, "작업상태", "Wo_Status", true, 110);
             AddNewColumnToDataGridView(dgvJobOrder, "작업지시번호", "Workorderno", true, 150);
-            AddNewColumnToDataGridView(dgvJobOrder, "작업지시일", "Prd_Date", true, 150);
-            AddNewColumnToDataGridView(dgvJobOrder, "품목코드", "Item_Code", true, 110);
+            AddNewColumnToDataGridView(dgvJobOrder, "공정명", "Process_name", true, 150);
+            AddNewColumnToDataGridView(dgvJobOrder, "작업장명", "Wc_Name", true, 110);
             AddNewColumnToDataGridView(dgvJobOrder, "품목명", "Item_Name", true, 220);
-            AddNewColumnToDataGridView(dgvJobOrder, "작업장", "Wc_Name", true, 140);
+            AddNewColumnToDataGridView(dgvJobOrder, "계획날짜", "Plan_Date", true, 140);
+            AddNewColumnToDataGridView(dgvJobOrder, "시작시간", "Plan_Starttime", true,140);
+            AddNewColumnToDataGridView(dgvJobOrder, "마감시간", "Plan_Endtime", true,140);
             AddNewColumnToDataGridView(dgvJobOrder, "계획수량", "Plan_Qty", true,140);
-            AddNewColumnToDataGridView(dgvJobOrder, "투입수량", "In_Qty_Main", true,140);
-            AddNewColumnToDataGridView(dgvJobOrder, "산출수량", "Out_Qty_Main", true,140);
-            AddNewColumnToDataGridView(dgvJobOrder, "생산수량", "Prd_Qty", true,140);
-            AddNewColumnToDataGridView(dgvJobOrder, "전달사항", "Remark", true, 208);
+            AddNewColumnToDataGridView(dgvJobOrder, "작업상태", "Wo_Status", true,140);
 
 
             dgvJobOrder.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -119,6 +118,7 @@ namespace AdminForm
             dgvProductRequset.MultiSelect = false;
             dgvJobOrder.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProductRequset.CellContentClick += DgvProductRequset_CellClick;
+            dgvProductRequset.CellDoubleClick += DgvProductRequset_CellDoubleClick;
             ProdReqList();
         }
 
@@ -141,12 +141,11 @@ namespace AdminForm
 
         private void DgvProductRequset_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //생산의뢰에 해당되는 작업지시를 작업지시dgv에 띄운다.
-            //workorder-> Wo_Req_No
-            selectedWoReq = dgvProductRequset.SelectedRows[0].Cells[1].Value.ToString();
-            req_Seq = int.Parse( dgvProductRequset.SelectedRows[0].Cells[2].Value.ToString());
-            WorkOrderList(selectedWoReq);
-            dgvJobOrder.DataSource = ListWo;
+            
+            WorkOrderService service = new WorkOrderService();
+            List<WorkOrder> workDetailList = service.GetAllWorkDetail(dgvProductRequset.SelectedRows[0].Cells[1].Value.ToString());
+            dgvJobOrder.DataSource = workDetailList;
+
         }
 
         private void BtnOrderCreationDeadline_Click(object sender, EventArgs e)
@@ -192,8 +191,14 @@ namespace AdminForm
 
         private void ShowDialog(string processName)
         {
-            CreateWorkOrder popUp = new CreateWorkOrder(processName, dgvProductRequset.SelectedRows[0].Cells[1].Value.ToString());
-            popUp.ShowDialog();
+            foreach (DataGridViewRow item in dgvProductRequset.Rows)
+            {
+                if (Convert.ToBoolean(item.Cells[0].EditedFormattedValue))
+                {
+                    CreateWorkOrder popUp = new CreateWorkOrder(processName, dgvProductRequset.SelectedRows[0].Cells[1].Value.ToString());
+                    popUp.ShowDialog();
+                }               
+            }
         }
 
         private void btnPo_Click(object sender, EventArgs e)

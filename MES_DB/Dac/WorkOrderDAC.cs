@@ -39,5 +39,47 @@ namespace MES_DB
             }
             return list;
         }
+        
+        public List<WorkOrder> GetAllWorkOrderDetail(string work_reqNo)
+        {
+            List<WorkOrder> list;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "GetAllWorkOrderDetail";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Wo_Req_No", work_reqNo);
+                cmd.Connection.Open();
+                list = Helper.DataReaderMapToList<WorkOrder>(cmd.ExecuteReader());
+                cmd.Connection.Close();
+            }
+            return list;
+        }
+        public int WoReqSum(string Type, string Wo_Req_No)
+        {
+            int sum = 0;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = @"select sum(plan_qty)
+                                                from WorkOrder wo inner join WorkCenter_Master wc on wo.Wc_Code = wc.Wc_Code
+                                                inner join Process_Master p on wc.Process_Code = p.Process_code
+                                                inner join Item_Master i on wo.Item_Code = i.Item_Code
+                                                where wo.Wo_Status <> '작업종료'
+                                                and Process_Group = @Type
+                                                and Wo_Req_No = @Wo_Req_No";
+              
+                cmd.Parameters.AddWithValue("@Type", Type);
+                cmd.Parameters.AddWithValue("@Wo_Req_No", Wo_Req_No);
+                cmd.Connection.Open();
+
+                if (cmd.ExecuteScalar() != DBNull.Value)
+                {
+                    sum = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                cmd.Connection.Close();
+            }
+            return sum;
+        }
     }
 }

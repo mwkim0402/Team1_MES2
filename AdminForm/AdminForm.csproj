@@ -648,6 +648,8 @@
     <None Include="bin\Debug\image\Reading_16x16.png" />
     <None Include="bin\Debug\image\Action_Save_New_32x32.png" />
     <None Include="bin\Debug\image\btn.png" />
+    <None Include="bin\Debug\image\icons8-collapse-arrow-32.png" />
+    <None Include="bin\Debug\image\icons8-expand-arrow-32.png" />
     <Content Include="image\Action_Save_New_32x32.png" />
     <Content Include="image\bookmark.png" />
     <Content Include="image\btn.png" />

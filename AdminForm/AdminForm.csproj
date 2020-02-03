@@ -33,6 +33,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -89,6 +109,30 @@
     <Compile Include="JobOrder\WorkOrderUpdate.Designer.cs">
       <DependentUpon>WorkOrderUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Journal\LoadingReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Journal\LoadingReport.Designer.cs">
+      <DependentUpon>LoadingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Journal\MoldingReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Journal\MoldingReport.Designer.cs">
+      <DependentUpon>MoldingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Journal\FiringReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Journal\FiringReport.Designer.cs">
+      <DependentUpon>FiringReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Journal\PackingReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Journal\PackingReport.Designer.cs">
+      <DependentUpon>PackingReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,17 +181,17 @@
     <Compile Include="Journal\FiringWorkReport .Designer.cs">
       <DependentUpon>FiringWorkReport .cs</DependentUpon>
     </Compile>
-    <Compile Include="Journal\SelectionPackingWorkReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Journal\SelectionPackingWorkReport.Designer.cs">
-      <DependentUpon>SelectionPackingWorkReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="Journal\PackingWorkReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Journal\PackingWorkReport.Designer.cs">
       <DependentUpon>PackingWorkReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForm\documentViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForm\documentViewer.Designer.cs">
+      <DependentUpon>documentViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="ParentForm\WorkReportParent.cs">
       <SubType>Form</SubType>
@@ -451,6 +495,18 @@
     <EmbeddedResource Include="JobOrder\WorkOrderUpdate.resx">
       <DependentUpon>WorkOrderUpdate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Journal\LoadingReport.resx">
+      <DependentUpon>LoadingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Journal\MoldingReport.resx">
+      <DependentUpon>MoldingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Journal\FiringReport.resx">
+      <DependentUpon>FiringReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Journal\PackingReport.resx">
+      <DependentUpon>PackingReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -472,11 +528,11 @@
     <EmbeddedResource Include="Journal\FiringWorkReport .resx">
       <DependentUpon>FiringWorkReport .cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Journal\SelectionPackingWorkReport.resx">
-      <DependentUpon>SelectionPackingWorkReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Journal\PackingWorkReport.resx">
       <DependentUpon>PackingWorkReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForm\documentViewer.resx">
+      <DependentUpon>documentViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParentForm\WorkReportParent.resx">
       <DependentUpon>WorkReportParent.cs</DependentUpon>
@@ -511,6 +567,7 @@
     <EmbeddedResource Include="PerformManagement\WorkdiligenceStatusanalysis.resx">
       <DependentUpon>WorkdiligenceStatusanalysis.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -629,6 +686,9 @@
     <EmbeddedResource Include="UserCalendar.resx">
       <DependentUpon>UserCalendar.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -670,7 +730,7 @@
       <Name>MES_API</Name>
     </ProjectReference>
     <ProjectReference Include="..\MES_DB\MES_DB.csproj">
-      <Project>{c5a0dac0-fd93-4179-9471-da3fa7b21737}</Project>
+      <Project>{C5A0DAC0-FD93-4179-9471-DA3FA7B21737}</Project>
       <Name>MES_DB</Name>
     </ProjectReference>
     <ProjectReference Include="..\MES_DTO\MES_DTO.csproj">

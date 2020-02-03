@@ -1,6 +1,6 @@
 ﻿namespace AdminForm
 {
-    partial class MoldingWorkReport : WorkReportParent
+    partial class MoldingWorkReport : documentViewer
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MoldingWorkReport
@@ -35,13 +37,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 604);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "MoldingWorkReport";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.Text = "MoldingWorkReport";
+            this.Load += new System.EventHandler(this.MoldingWorkReport_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

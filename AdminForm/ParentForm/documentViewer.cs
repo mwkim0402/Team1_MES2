@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace AdminForm
 {
-    public partial class SelectionPackingWorkReport : WorkReportParent
+    public partial class documentViewer : Form
     {
-        public SelectionPackingWorkReport()
+        public documentViewer()
         {
             InitializeComponent();
+            
         }
     }
 }

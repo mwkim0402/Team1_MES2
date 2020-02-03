@@ -19,5 +19,29 @@ namespace MES_DB
             UserDAC dac = new UserDAC();
             dac.InsUserGroupManagerForm(user);
         }
+
+        public void UpdateUserGroupManagerForm(UserGroupManagerVO user)
+        {
+            UserDAC dac = new UserDAC();
+            dac.UpdateUserGroupManagerForm(user);
+        }
+
+        public List<UserGroupPowerSettingVO> GetAllUserGroupPowerSettingForm()
+        {
+            UserDAC dac = new UserDAC();
+            return dac.GetAllUserGroupPowerSettingForm();
+        }
+
+        public List<UserManagerVO> GetAllUserManager()
+        {
+            UserDAC dac = new UserDAC();
+            return dac.GetAllUserManager();
+        }
+        public void InsUserManager(UserManagerVO user)
+        {
+            UserDAC dac = new UserDAC();
+            dac.InsUserManager(user);
+        }
+
     }
 }

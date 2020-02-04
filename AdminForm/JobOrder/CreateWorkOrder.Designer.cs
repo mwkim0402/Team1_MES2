@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nuDefaultQty = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
             this.nuQty = new System.Windows.Forms.NumericUpDown();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.txtClient = new System.Windows.Forms.TextBox();
@@ -44,14 +46,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpPlanEnd = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dtpEndTime = new System.Windows.Forms.DateTimePicker();
             this.button3 = new System.Windows.Forms.Button();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dtpStartTime = new System.Windows.Forms.DateTimePicker();
             this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpPlanStart = new System.Windows.Forms.DateTimePicker();
             this.cbWorkCenter = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -62,15 +64,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.nuDefaultQty = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuDefaultQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuQty)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nuDefaultQty)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -94,6 +94,30 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // nuDefaultQty
+            // 
+            this.nuDefaultQty.Enabled = false;
+            this.nuDefaultQty.Location = new System.Drawing.Point(376, 72);
+            this.nuDefaultQty.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.nuDefaultQty.Name = "nuDefaultQty";
+            this.nuDefaultQty.ReadOnly = true;
+            this.nuDefaultQty.Size = new System.Drawing.Size(122, 23);
+            this.nuDefaultQty.TabIndex = 31;
+            this.nuDefaultQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(275, 74);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(59, 15);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "잔여 수량";
             // 
             // nuQty
             // 
@@ -195,14 +219,14 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.dtpPlanEnd);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.dateTimePicker4);
+            this.groupBox2.Controls.Add(this.dtpEndTime);
             this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.dateTimePicker3);
+            this.groupBox2.Controls.Add(this.dtpStartTime);
             this.groupBox2.Controls.Add(this.numericUpDown5);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.dtpPlanStart);
             this.groupBox2.Controls.Add(this.cbWorkCenter);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.label9);
@@ -249,15 +273,15 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "계획일자";
             // 
-            // dateTimePicker2
+            // dtpPlanEnd
             // 
-            this.dateTimePicker2.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePicker2.Enabled = false;
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(441, 66);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(122, 23);
-            this.dateTimePicker2.TabIndex = 27;
+            this.dtpPlanEnd.CustomFormat = "yyyy-MM-dd";
+            this.dtpPlanEnd.Enabled = false;
+            this.dtpPlanEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpPlanEnd.Location = new System.Drawing.Point(441, 66);
+            this.dtpPlanEnd.Name = "dtpPlanEnd";
+            this.dtpPlanEnd.Size = new System.Drawing.Size(122, 23);
+            this.dtpPlanEnd.TabIndex = 27;
             // 
             // button1
             // 
@@ -267,18 +291,19 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "등록";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dateTimePicker4
+            // dtpEndTime
             // 
-            this.dateTimePicker4.CustomFormat = "hh:mm tt";
-            this.dateTimePicker4.Enabled = false;
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker4.Location = new System.Drawing.Point(587, 66);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.ShowUpDown = true;
-            this.dateTimePicker4.Size = new System.Drawing.Size(93, 23);
-            this.dateTimePicker4.TabIndex = 26;
-            this.dateTimePicker4.Value = new System.DateTime(2020, 1, 30, 0, 0, 0, 0);
+            this.dtpEndTime.CustomFormat = "hh:mm tt";
+            this.dtpEndTime.Enabled = false;
+            this.dtpEndTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEndTime.Location = new System.Drawing.Point(587, 66);
+            this.dtpEndTime.Name = "dtpEndTime";
+            this.dtpEndTime.ShowUpDown = true;
+            this.dtpEndTime.Size = new System.Drawing.Size(93, 23);
+            this.dtpEndTime.TabIndex = 26;
+            this.dtpEndTime.Value = new System.DateTime(2020, 1, 30, 0, 0, 0, 0);
             // 
             // button3
             // 
@@ -289,23 +314,23 @@
             this.button3.Text = "취소";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker3
+            // dtpStartTime
             // 
-            this.dateTimePicker3.CustomFormat = "hh:mm tt";
-            this.dateTimePicker3.Enabled = false;
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(239, 66);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.ShowUpDown = true;
-            this.dateTimePicker3.Size = new System.Drawing.Size(91, 23);
-            this.dateTimePicker3.TabIndex = 25;
-            this.dateTimePicker3.Value = new System.DateTime(2020, 1, 30, 0, 0, 0, 0);
+            this.dtpStartTime.CustomFormat = "hh:mm tt";
+            this.dtpStartTime.Enabled = false;
+            this.dtpStartTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStartTime.Location = new System.Drawing.Point(239, 66);
+            this.dtpStartTime.Name = "dtpStartTime";
+            this.dtpStartTime.ShowUpDown = true;
+            this.dtpStartTime.Size = new System.Drawing.Size(91, 23);
+            this.dtpStartTime.TabIndex = 25;
+            this.dtpStartTime.Value = new System.DateTime(2020, 1, 30, 0, 0, 0, 0);
             // 
             // numericUpDown5
             // 
             this.numericUpDown5.Location = new System.Drawing.Point(93, 107);
             this.numericUpDown5.Maximum = new decimal(new int[] {
-            59,
+            1000000,
             0,
             0,
             0});
@@ -323,15 +348,15 @@
             this.label16.TabIndex = 23;
             this.label16.Text = "계획수량";
             // 
-            // dateTimePicker1
+            // dtpPlanStart
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(93, 66);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(122, 23);
-            this.dateTimePicker1.TabIndex = 13;
+            this.dtpPlanStart.CustomFormat = "yyyy-MM-dd";
+            this.dtpPlanStart.Enabled = false;
+            this.dtpPlanStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpPlanStart.Location = new System.Drawing.Point(93, 66);
+            this.dtpPlanStart.Name = "dtpPlanStart";
+            this.dtpPlanStart.Size = new System.Drawing.Size(122, 23);
+            this.dtpPlanStart.TabIndex = 13;
             // 
             // cbWorkCenter
             // 
@@ -429,30 +454,6 @@
             this.label18.TabIndex = 9;
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // nuDefaultQty
-            // 
-            this.nuDefaultQty.Enabled = false;
-            this.nuDefaultQty.Location = new System.Drawing.Point(376, 72);
-            this.nuDefaultQty.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-            this.nuDefaultQty.Name = "nuDefaultQty";
-            this.nuDefaultQty.ReadOnly = true;
-            this.nuDefaultQty.Size = new System.Drawing.Size(122, 23);
-            this.nuDefaultQty.TabIndex = 31;
-            this.nuDefaultQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(275, 74);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(59, 15);
-            this.label10.TabIndex = 30;
-            this.label10.Text = "잔여 수량";
-            // 
             // CreateWorkOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -468,6 +469,7 @@
             this.Load += new System.EventHandler(this.CreateWorkOrder_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuDefaultQty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuQty)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -476,7 +478,6 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nuDefaultQty)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -499,12 +500,8 @@
         private System.Windows.Forms.TextBox txtClient;
         private System.Windows.Forms.TextBox txtIem;
         private System.Windows.Forms.ComboBox cbWorkCenter;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.NumericUpDown numericUpDown5;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.NumericUpDown nuQty;
         private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.Label label6;
@@ -519,6 +516,10 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.NumericUpDown nuDefaultQty;
         private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.DateTimePicker dtpPlanStart;
+        public System.Windows.Forms.DateTimePicker dtpStartTime;
+        public System.Windows.Forms.DateTimePicker dtpPlanEnd;
+        public System.Windows.Forms.DateTimePicker dtpEndTime;
         //   private UserCalendar userCalendar2;
     }
 }

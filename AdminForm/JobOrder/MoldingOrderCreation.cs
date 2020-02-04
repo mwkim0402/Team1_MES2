@@ -13,6 +13,7 @@ namespace AdminForm
 {
     public partial class MoldingOrderCreation : dgvTwo
     {
+        private delegate void SafeCallDelegate(List<WorkOrder> list);
         List<WorkReqVo> workReqList = null;
         List<MoldingOrderCreation_ReqVo> ListReq = null;
         List<MoldingOrderCreation_WoVo> ListWo = null;
@@ -140,14 +141,30 @@ namespace AdminForm
         }
 
         private void DgvProductRequset_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
+        {        
+            using (FrmWaitForm frm = new FrmWaitForm(setAction))
+            {
+                frm.ShowDialog(this);
+            }
+        }
+        private void setAction()
+        {            
             WorkOrderService service = new WorkOrderService();
             List<WorkOrder> workDetailList = service.GetAllWorkDetail(dgvProductRequset.SelectedRows[0].Cells[1].Value.ToString());
-            dgvJobOrder.DataSource = workDetailList;
-
+            WorkOrderDetailView(workDetailList);
         }
-
+        private void WorkOrderDetailView(List<WorkOrder> list)
+        {
+            if (dgvJobOrder.InvokeRequired)
+            {
+                var d = new SafeCallDelegate(WorkOrderDetailView);
+                Invoke(d, new object[] { list });
+            }
+            else
+            {
+                dgvJobOrder.DataSource = list;
+            }    
+        }
         private void BtnOrderCreationDeadline_Click(object sender, EventArgs e)
         {
 

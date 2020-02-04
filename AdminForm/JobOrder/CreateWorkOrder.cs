@@ -31,7 +31,7 @@ namespace AdminForm
         {
             WorkOrderService service = new WorkOrderService();
             reqCenterList = service.GetAllWorkReqCenter(cbWorkCenter.SelectedValue.ToString());
-            WorkCenterSchedule frm = new WorkCenterSchedule(cbWorkCenter.SelectedValue.ToString());
+            WorkCenterSchedule frm = new WorkCenterSchedule(cbWorkCenter.SelectedValue.ToString(),this);
             frm.ShowDialog();
         }
 
@@ -69,6 +69,11 @@ namespace AdminForm
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

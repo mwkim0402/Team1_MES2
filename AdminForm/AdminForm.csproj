@@ -133,6 +133,12 @@
     <Compile Include="Journal\PackingReport.Designer.cs">
       <DependentUpon>PackingReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Journal\ReportPreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Journal\ReportPreviewForm.designer.cs">
+      <DependentUpon>ReportPreviewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

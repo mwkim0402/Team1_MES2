@@ -12,6 +12,7 @@ namespace AdminForm
 {
     public partial class documentViewer : Form
     {
+        
         public documentViewer()
         {
             InitializeComponent();

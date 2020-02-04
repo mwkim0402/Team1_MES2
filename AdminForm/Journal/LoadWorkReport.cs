@@ -22,21 +22,20 @@ namespace AdminForm
 
         private void LoadWorkReport_Load(object sender, EventArgs e)
         {
-            string strConn = ConfigurationManager.ConnectionStrings["MyDBConn"].ConnectionString;
+            string strConn = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
             DataSet ds = new DataSet();
             using (SqlConnection conn = new SqlConnection(strConn))
             {
                 conn.Open();
-                string strSql = "select * from Employees where EmployeeID < 100";
+                string strSql = "select * from GV_History";
                 SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
-                da.Fill(ds, "Employees");
+                da.Fill(ds, "GV");
                 conn.Close();
             }
             LoadingReport rpt = new LoadingReport();
-            rpt.DataSource = ds.Tables["Employees"];
+            rpt.DataSource = ds.Tables["GV"];
             //ReportPreviewForm frm = new ReportPreviewForm(rpt);
 
-            documentViewer1.DocumentSource = rpt;
         }
     }
 }

@@ -22,7 +22,7 @@ namespace AdminForm
 
         private void FiringWorkReport_Load(object sender, EventArgs e)
         {
-            string strConn = ConfigurationManager.ConnectionStrings["MyDBConn"].ConnectionString;
+            string strConn = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
             DataSet ds = new DataSet();
             using (SqlConnection conn = new SqlConnection(strConn))
             {

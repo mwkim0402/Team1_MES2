@@ -35,7 +35,7 @@
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.txtClient = new System.Windows.Forms.TextBox();
             this.txtIem = new System.Windows.Forms.TextBox();
-            this.txtWorkOrderNo = new System.Windows.Forms.TextBox();
+            this.txtWorkReqNo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.dtpEndTime = new System.Windows.Forms.DateTimePicker();
             this.button3 = new System.Windows.Forms.Button();
             this.dtpStartTime = new System.Windows.Forms.DateTimePicker();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.nuPlanQty = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.dtpPlanStart = new System.Windows.Forms.DateTimePicker();
             this.cbWorkCenter = new System.Windows.Forms.ComboBox();
@@ -68,7 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nuDefaultQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuQty)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuPlanQty)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +81,7 @@
             this.groupBox1.Controls.Add(this.dtpEndDate);
             this.groupBox1.Controls.Add(this.txtClient);
             this.groupBox1.Controls.Add(this.txtIem);
-            this.groupBox1.Controls.Add(this.txtWorkOrderNo);
+            this.groupBox1.Controls.Add(this.txtWorkReqNo);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -109,6 +109,7 @@
             this.nuDefaultQty.Size = new System.Drawing.Size(122, 23);
             this.nuDefaultQty.TabIndex = 31;
             this.nuDefaultQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nuDefaultQty.ValueChanged += new System.EventHandler(this.nuDefaultQty_ValueChanged);
             // 
             // label10
             // 
@@ -160,13 +161,13 @@
             this.txtIem.Size = new System.Drawing.Size(114, 23);
             this.txtIem.TabIndex = 9;
             // 
-            // txtWorkOrderNo
+            // txtWorkReqNo
             // 
-            this.txtWorkOrderNo.Location = new System.Drawing.Point(129, 28);
-            this.txtWorkOrderNo.Name = "txtWorkOrderNo";
-            this.txtWorkOrderNo.ReadOnly = true;
-            this.txtWorkOrderNo.Size = new System.Drawing.Size(117, 23);
-            this.txtWorkOrderNo.TabIndex = 7;
+            this.txtWorkReqNo.Location = new System.Drawing.Point(129, 28);
+            this.txtWorkReqNo.Name = "txtWorkReqNo";
+            this.txtWorkReqNo.ReadOnly = true;
+            this.txtWorkReqNo.Size = new System.Drawing.Size(117, 23);
+            this.txtWorkReqNo.TabIndex = 7;
             // 
             // label7
             // 
@@ -224,7 +225,7 @@
             this.groupBox2.Controls.Add(this.dtpEndTime);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.dtpStartTime);
-            this.groupBox2.Controls.Add(this.numericUpDown5);
+            this.groupBox2.Controls.Add(this.nuPlanQty);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.dtpPlanStart);
             this.groupBox2.Controls.Add(this.cbWorkCenter);
@@ -326,18 +327,18 @@
             this.dtpStartTime.TabIndex = 25;
             this.dtpStartTime.Value = new System.DateTime(2020, 1, 30, 0, 0, 0, 0);
             // 
-            // numericUpDown5
+            // nuPlanQty
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(93, 107);
-            this.numericUpDown5.Maximum = new decimal(new int[] {
+            this.nuPlanQty.Location = new System.Drawing.Point(93, 107);
+            this.nuPlanQty.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(90, 23);
-            this.numericUpDown5.TabIndex = 24;
-            this.numericUpDown5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nuPlanQty.Name = "nuPlanQty";
+            this.nuPlanQty.Size = new System.Drawing.Size(90, 23);
+            this.nuPlanQty.TabIndex = 24;
+            this.nuPlanQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label16
             // 
@@ -473,7 +474,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nuQty)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuPlanQty)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -492,7 +493,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtWorkOrderNo;
+        private System.Windows.Forms.TextBox txtWorkReqNo;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -500,7 +501,7 @@
         private System.Windows.Forms.TextBox txtClient;
         private System.Windows.Forms.TextBox txtIem;
         private System.Windows.Forms.ComboBox cbWorkCenter;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.NumericUpDown nuPlanQty;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.NumericUpDown nuQty;
         private System.Windows.Forms.DateTimePicker dtpEndDate;

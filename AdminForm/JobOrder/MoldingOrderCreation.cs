@@ -96,7 +96,6 @@ namespace AdminForm
             AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰 상태", "Req_Status", true, 120);
       
             // 작업지시 dgv 컬럼 추가
-            AddNewColumnToDataGridView(dgvJobOrder, "작업상태", "Wo_Status", true, 110);
             AddNewColumnToDataGridView(dgvJobOrder, "작업지시번호", "Workorderno", true, 150);
             AddNewColumnToDataGridView(dgvJobOrder, "공정명", "Process_name", true, 150);
             AddNewColumnToDataGridView(dgvJobOrder, "작업장명", "Wc_Name", true, 110);
@@ -193,17 +192,17 @@ namespace AdminForm
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            ShowDialog("소성");
+            ShowDialog("압연");
         }
 
         private void btnGun_Click(object sender, EventArgs e)
         {
-            ShowDialog("건조");
+            ShowDialog("제강");
         }
 
         private void btnSung_Click(object sender, EventArgs e)
         {
-            ShowDialog("성형");
+            ShowDialog("제선");
         }
 
         private void ShowDialog(string processName)
@@ -216,6 +215,7 @@ namespace AdminForm
                     popUp.ShowDialog();
                 }               
             }
+            frm.btnS.PerformClick();
         }
 
         private void btnPo_Click(object sender, EventArgs e)

@@ -151,7 +151,7 @@
             this.btnSo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSo.Name = "btnSo";
             this.btnSo.Size = new System.Drawing.Size(80, 60);
-            this.btnSo.Text = "소성계획생성";
+            this.btnSo.Text = "압연계획생성";
             this.btnSo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSo.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
@@ -163,7 +163,7 @@
             this.btnGun.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnGun.Name = "btnGun";
             this.btnGun.Size = new System.Drawing.Size(80, 60);
-            this.btnGun.Text = "건조계획생성";
+            this.btnGun.Text = "제강계획생성";
             this.btnGun.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGun.Click += new System.EventHandler(this.btnGun_Click);
             // 
@@ -175,7 +175,7 @@
             this.btnSung.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSung.Name = "btnSung";
             this.btnSung.Size = new System.Drawing.Size(80, 60);
-            this.btnSung.Text = "성형계획생성";
+            this.btnSung.Text = "제선계획생성";
             this.btnSung.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSung.Click += new System.EventHandler(this.btnSung_Click);
             // 

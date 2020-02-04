@@ -39,7 +39,28 @@ namespace MES_DB
             }
             return list;
         }
-        
+        public bool InsertWorkOrder(WorkOrderInsVo vo)
+        {
+            int checkNum = 0;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "InsertWorkOrderDetail";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Workorderno", vo.Workorderno);
+                cmd.Parameters.AddWithValue("@Wc_Code", vo.Wc_Code);
+                cmd.Parameters.AddWithValue("@item_Name", vo.Item_Name);
+                cmd.Parameters.AddWithValue("@Plan_Date", vo.Plan_Date);
+                cmd.Parameters.AddWithValue("@Plan_Starttime", vo.Plan_Starttime);
+                cmd.Parameters.AddWithValue("@Plan_Endtime", vo.Plan_Endtime);
+                cmd.Parameters.AddWithValue("@Plan_Qty", vo.Plan_Qty);
+                cmd.Parameters.AddWithValue("@Wo_Req_No", vo.Wo_Req_No);
+                cmd.Connection.Open();
+                checkNum = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+            return checkNum==1?true:false;
+        }
         public List<WorkOrder> GetAllWorkOrderDetail(string work_reqNo)
         {
             List<WorkOrder> list;

@@ -135,7 +135,7 @@ namespace FieldOperationForm
 
         private void btn_CreatePalette_Click(object sender, EventArgs e)
         {
-            CreatePalette frm = new CreatePalette(main,no);
+            CreatePalette frm = new CreatePalette(main);
             frm.BringToFront();
             frm.MdiParent = main;
             frm.Dock = DockStyle.Fill;

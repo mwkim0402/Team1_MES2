@@ -33,10 +33,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -114,6 +132,7 @@
     <Compile Include="FieldDac\Mold_Dac.cs" />
     <Compile Include="FieldDac\NonOperation_Dac.cs" />
     <Compile Include="FieldDac\Notice_Dac.cs" />
+    <Compile Include="FieldDac\Palette_Dac.cs" />
     <Compile Include="FieldDac\Process_Dac.cs" />
     <Compile Include="FieldDac\User_Dac.cs" />
     <Compile Include="FieldDac\WorkAllocation_Dac.cs" />
@@ -126,6 +145,7 @@
     <Compile Include="FieldService\Mold_Service.cs" />
     <Compile Include="FieldService\NonOperation_Service.cs" />
     <Compile Include="FieldService\Notice_Service.cs" />
+    <Compile Include="FieldService\Palette_Service.cs" />
     <Compile Include="FieldService\Process_Service.cs" />
     <Compile Include="FieldService\WorkAllocation_Service.cs" />
     <Compile Include="FieldService\WorkCenter_Service.cs" />
@@ -137,6 +157,8 @@
     <Compile Include="FieldVo\Mold_Vo.cs" />
     <Compile Include="FieldVo\NonOperation_Vo.cs" />
     <Compile Include="FieldVo\Notice_Vo.cs" />
+    <Compile Include="FieldVo\PaletteDetail_Vo.cs" />
+    <Compile Include="FieldVo\Palette_Vo.cs" />
     <Compile Include="FieldVo\Process_Vo.cs" />
     <Compile Include="FieldVo\updateNonOperation_Vo.cs" />
     <Compile Include="FieldVo\User_Vo.cs" />
@@ -243,6 +265,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FieldService\User_Service.cs" />
+    <Compile Include="XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CommonForm\End.resx">
       <DependentUpon>End.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,34 +343,20 @@
     <EmbeddedResource Include="JobOrder_Package\warehousing.resx">
       <DependentUpon>warehousing.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\dgvOne.resx">
-      <DependentUpon>dgvOne.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\dgvTwo.resx">
-      <DependentUpon>dgvTwo.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\dgvOne.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Properties\dgvOne.Designer.cs">
-      <DependentUpon>dgvOne.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\dgvTwo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Properties\dgvTwo.Designer.cs">
-      <DependentUpon>dgvTwo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

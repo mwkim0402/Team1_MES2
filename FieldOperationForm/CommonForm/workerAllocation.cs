@@ -20,7 +20,7 @@ namespace FieldOperationForm
         Main_P main;
         string a;
         string b;
-        string o;
+
         public workerAllocation(Main_P main1)
         {
             InitializeComponent();

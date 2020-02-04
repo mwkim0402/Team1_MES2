@@ -45,8 +45,12 @@ namespace AdminForm
         {
             txtEditName.Text = dgvSearchResult.Rows[e.RowIndex].Cells[0].Value.ToString();
             txtEditID.Text = dgvSearchResult.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtEditProcess.Text = dgvSearchResult.Rows[e.RowIndex].Cells[3].Value.ToString();
-            if(dgvSearchResult.Rows[e.RowIndex].Cells[4].Value.ToString() == "Y")
+            if(dgvSearchResult.Rows[e.RowIndex].Cells[6].Value == null)
+                txtEditProcess.Text = "";
+            else
+                txtEditProcess.Text = dgvSearchResult.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+            if (dgvSearchResult.Rows[e.RowIndex].Cells[4].Value.ToString() == "Y")
             {
                 rbEditUseY.Checked = true;
             }
@@ -62,6 +66,9 @@ namespace AdminForm
                     cmbTypeEdit.SelectedItem = item;
                 }
             }
+
+            txtEditGroupCode.Text = dgvSearchResult.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtEditGroupName.Text = dgvSearchResult.Rows[e.RowIndex].Cells[3].Value.ToString();
         }
 
         private void UserManager_Activated(object sender, EventArgs e)
@@ -129,14 +136,68 @@ namespace AdminForm
                 MessageBox.Show("사용유무를 선택해주세요.");
             }
 
+            if(txtGroupCode.Text == "")
+            {
+                MessageBox.Show("그룹코드를 입력해주세요.");
+            }
+            else
+            {
+                user.UserGroup_Code = txtGroupCode.Text;
+            }
 
+            if(txtGroupName.Text == "")
+            {
+                MessageBox.Show("그룹 이름을 입력해주세요.");
+            }
+            else
+            {
+                user.UserGroup_Name = txtGroupName.Text;
+            }
+            user.User_Type = cmbType.SelectedItem.ToString();
             service.InsUserManager(user);
             MessageBox.Show("입력되었습니다.");
+            frm.btnS.PerformClick();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            // 수정해야한다.
+            UserManagerVO user = new UserManagerVO();
+            MES_DB.UserService service = new MES_DB.UserService();
+            user.User_ID = Convert.ToInt32(txtEditID.Text);
+            user.User_Type = cmbTypeEdit.SelectedItem.ToString();
+            user.Default_Process_Code = txtEditProcess.Text;
+            user.UserGroup_Code = txtEditGroupCode.Text;
+            user.UserGroup_Name = txtEditGroupName.Text;
+            
+            if (rbEditUseY.Checked == true)
+            {
+                user.Use_YN = "Y";
+            }
+            else if(rbEditUserN.Checked == true)
+            {
+                user.Use_YN = "N";
+            }
+            else
+            {
+                MessageBox.Show("사용유무를 선택해주세요.");
+            }
+
+            service.UpdateUserManager(user);
+            MessageBox.Show("수정되었습니다.");
+            frm.btnS.PerformClick();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            string selectitem = string.Empty;
+            if (cmbUsable.SelectedItem.ToString() != null)
+                selectitem = cmbUsable.SelectedItem.ToString();
+
+            List<UserManagerVO> list = (from item in allList
+                                        where item.User_ID == Convert.ToInt32(txtUserID.Text) && item.User_Name == txtUserName.Text && item.Use_YN == selectitem && item.UserGroup_Code == fcPermiGroup.SendCode
+                                        select item).ToList();
+
+            dgvSearchResult.DataSource = list;
         }
     }
 }

@@ -43,5 +43,10 @@ namespace MES_DB
             dac.InsUserManager(user);
         }
 
+        public void UpdateUserManager(UserManagerVO user)
+        {
+            UserDAC dac = new UserDAC();
+            dac.UpdateUserManager(user);
+        }
     }
 }

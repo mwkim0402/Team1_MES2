@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserManager));
             this.txtStandFac = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -61,6 +62,16 @@
             this.cmbType = new System.Windows.Forms.ComboBox();
             this.cmbTypeEdit = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtGroupCode = new System.Windows.Forms.TextBox();
+            this.txtGroupName = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtEditGroupCode = new System.Windows.Forms.TextBox();
+            this.txtEditGroupName = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tcParent1.SuspendLayout();
             this.tcParent2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -69,6 +80,7 @@
             this.panel2.SuspendLayout();
             this.gbUsable.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -78,6 +90,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.txtEditGroupCode);
+            this.panel1.Controls.Add(this.txtEditGroupName);
             this.panel1.Controls.Add(this.cmbTypeEdit);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtEditProcess);
@@ -96,6 +112,10 @@
             // 
             // pnlParent1
             // 
+            this.pnlParent1.Controls.Add(this.label10);
+            this.pnlParent1.Controls.Add(this.label11);
+            this.pnlParent1.Controls.Add(this.txtGroupCode);
+            this.pnlParent1.Controls.Add(this.txtGroupName);
             this.pnlParent1.Controls.Add(this.cmbType);
             this.pnlParent1.Controls.Add(this.txtStandFac);
             this.pnlParent1.Controls.Add(this.gbUsable);
@@ -112,7 +132,7 @@
             // 
             // txtStandFac
             // 
-            this.txtStandFac.Location = new System.Drawing.Point(418, 48);
+            this.txtStandFac.Location = new System.Drawing.Point(397, 48);
             this.txtStandFac.Name = "txtStandFac";
             this.txtStandFac.Size = new System.Drawing.Size(152, 30);
             this.txtStandFac.TabIndex = 86;
@@ -122,7 +142,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label6.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(319, 51);
+            this.label6.Location = new System.Drawing.Point(298, 55);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 16);
             this.label6.TabIndex = 85;
@@ -159,7 +179,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label19.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label19.Location = new System.Drawing.Point(20, 49);
+            this.label19.Location = new System.Drawing.Point(22, 55);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(74, 16);
             this.label19.TabIndex = 72;
@@ -170,7 +190,7 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label21.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label21.Location = new System.Drawing.Point(319, 18);
+            this.label21.Location = new System.Drawing.Point(298, 21);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(40, 16);
             this.label21.TabIndex = 71;
@@ -181,7 +201,7 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label23.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label23.Location = new System.Drawing.Point(20, 16);
+            this.label23.Location = new System.Drawing.Point(20, 21);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(93, 16);
             this.label23.TabIndex = 70;
@@ -192,6 +212,7 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.Controls.Add(this.toolStrip1);
             this.panel2.Controls.Add(this.txtUserName);
             this.panel2.Controls.Add(this.txtUserID);
             this.panel2.Controls.Add(this.cmbUsable);
@@ -280,10 +301,11 @@
             // 
             // gbUsable
             // 
+            this.gbUsable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gbUsable.Controls.Add(this.rbUse_Use);
             this.gbUsable.Controls.Add(this.rbNoUse_Use);
             this.gbUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.gbUsable.Location = new System.Drawing.Point(597, 11);
+            this.gbUsable.Location = new System.Drawing.Point(797, 14);
             this.gbUsable.Name = "gbUsable";
             this.gbUsable.Size = new System.Drawing.Size(200, 64);
             this.gbUsable.TabIndex = 88;
@@ -316,17 +338,18 @@
             // 
             // txtEditProcess
             // 
-            this.txtEditProcess.Location = new System.Drawing.Point(421, 52);
+            this.txtEditProcess.Location = new System.Drawing.Point(400, 52);
             this.txtEditProcess.Name = "txtEditProcess";
             this.txtEditProcess.Size = new System.Drawing.Size(152, 30);
             this.txtEditProcess.TabIndex = 98;
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.rbEditUseY);
             this.groupBox2.Controls.Add(this.rbEditUserN);
             this.groupBox2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox2.Location = new System.Drawing.Point(600, 15);
+            this.groupBox2.Location = new System.Drawing.Point(800, 18);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 64);
             this.groupBox2.TabIndex = 99;
@@ -362,7 +385,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(322, 55);
+            this.label2.Location = new System.Drawing.Point(301, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 16);
             this.label2.TabIndex = 97;
@@ -373,7 +396,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label8.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(23, 20);
+            this.label8.Location = new System.Drawing.Point(23, 25);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(93, 16);
             this.label8.TabIndex = 90;
@@ -384,7 +407,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label9.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(23, 53);
+            this.label9.Location = new System.Drawing.Point(25, 59);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 16);
             this.label9.TabIndex = 92;
@@ -426,7 +449,7 @@
             "포장",
             "제선",
             "적재"});
-            this.cmbType.Location = new System.Drawing.Point(418, 11);
+            this.cmbType.Location = new System.Drawing.Point(397, 11);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(152, 31);
             this.cmbType.TabIndex = 89;
@@ -439,7 +462,7 @@
             "포장",
             "제선",
             "적재"});
-            this.cmbTypeEdit.Location = new System.Drawing.Point(421, 15);
+            this.cmbTypeEdit.Location = new System.Drawing.Point(400, 15);
             this.cmbTypeEdit.Name = "cmbTypeEdit";
             this.cmbTypeEdit.Size = new System.Drawing.Size(152, 31);
             this.cmbTypeEdit.TabIndex = 101;
@@ -449,11 +472,108 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(322, 22);
+            this.label1.Location = new System.Drawing.Point(301, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 16);
             this.label1.TabIndex = 100;
             this.label1.Text = "부서";
+            // 
+            // txtGroupCode
+            // 
+            this.txtGroupCode.Location = new System.Drawing.Point(671, 12);
+            this.txtGroupCode.Name = "txtGroupCode";
+            this.txtGroupCode.Size = new System.Drawing.Size(152, 30);
+            this.txtGroupCode.TabIndex = 92;
+            // 
+            // txtGroupName
+            // 
+            this.txtGroupName.Location = new System.Drawing.Point(671, 47);
+            this.txtGroupName.Name = "txtGroupName";
+            this.txtGroupName.Size = new System.Drawing.Size(152, 30);
+            this.txtGroupName.TabIndex = 93;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label12.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label12.Location = new System.Drawing.Point(577, 25);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(77, 16);
+            this.label12.TabIndex = 102;
+            this.label12.Text = "그룹 코드";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label13.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label13.Location = new System.Drawing.Point(578, 60);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(77, 16);
+            this.label13.TabIndex = 103;
+            this.label13.Text = "그룹 이름";
+            // 
+            // txtEditGroupCode
+            // 
+            this.txtEditGroupCode.Enabled = false;
+            this.txtEditGroupCode.Location = new System.Drawing.Point(674, 16);
+            this.txtEditGroupCode.Name = "txtEditGroupCode";
+            this.txtEditGroupCode.Size = new System.Drawing.Size(152, 30);
+            this.txtEditGroupCode.TabIndex = 104;
+            // 
+            // txtEditGroupName
+            // 
+            this.txtEditGroupName.Location = new System.Drawing.Point(674, 51);
+            this.txtEditGroupName.Name = "txtEditGroupName";
+            this.txtEditGroupName.Size = new System.Drawing.Size(152, 30);
+            this.txtEditGroupName.TabIndex = 105;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label10.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label10.Location = new System.Drawing.Point(574, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 16);
+            this.label10.TabIndex = 104;
+            this.label10.Text = "그룹 코드";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label11.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label11.Location = new System.Drawing.Point(575, 56);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 16);
+            this.label11.TabIndex = 105;
+            this.label11.Text = "그룹 이름";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1128, 63);
+            this.toolStrip1.TabIndex = 12;
+            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.Visible = false;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(60, 60);
+            this.toolStripButton1.Text = "조건검색";
+            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // UserManager
             // 
@@ -488,6 +608,8 @@
             this.gbUsable.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -526,5 +648,15 @@
         private System.Windows.Forms.ComboBox cmbType;
         private System.Windows.Forms.ComboBox cmbTypeEdit;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtEditGroupCode;
+        private System.Windows.Forms.TextBox txtEditGroupName;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtGroupCode;
+        private System.Windows.Forms.TextBox txtGroupName;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

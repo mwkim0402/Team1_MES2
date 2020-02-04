@@ -31,5 +31,7 @@ namespace MES_DB
         public int Pw_Reset_Count { get; set; }
         public string Default_Process_Code { get; set; }
         public string User_Type { get; set; }
+        
+        
     }
 }

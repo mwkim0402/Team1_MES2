@@ -30,5 +30,10 @@ namespace MES_DB
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.WoReqSum(type, Wo_Req_No);
         }
+        public bool InsertWorkOrder(WorkOrderInsVo vo)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.InsertWorkOrder(vo);
+        }
     }
 }

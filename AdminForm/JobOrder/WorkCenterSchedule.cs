@@ -13,13 +13,15 @@ namespace AdminForm
 {
     public partial class WorkCenterSchedule : Form
     {
+        CreateWorkOrder frm;
         UserCalendar workCalendar;
         List<WorkReqCenterVo> reqCenterList;
         string workCenter;
-        public WorkCenterSchedule(string WorkCenter)
+        public WorkCenterSchedule(string WorkCenter, CreateWorkOrder form)
         {
             InitializeComponent();
             workCenter = WorkCenter;
+            frm = form;
         }
 
         private void WorkCenterSchedule_Load(object sender, EventArgs e)
@@ -49,17 +51,20 @@ namespace AdminForm
 
         private void button1_Click(object sender, EventArgs e)
         {
+            DateTime startTime = Convert.ToDateTime($"{dtpPlanDate.Value.ToShortDateString()} {String.Format("{0:tt HH:mm}", dtpStartTime.Value)}");
+            DateTime endTime = Convert.ToDateTime($"{dtpPlanDate.Value.ToShortDateString()} {String.Format("{0:tt HH:mm}", dtpEndTime.Value)}");
             foreach (WorkReqCenterVo item in reqCenterList)
             {
-                DateTime a = item.Plan_Starttime;
-                DateTime b = Convert.ToDateTime($"{String.Format("{0:yyyy-MM-dd}",dateTimePicker1.Value)} {String.Format("{0:tt HH:mm:ss}", dateTimePicker3.Value)}");
-                string x = String.Format("{0:yyyy-MM-dd}", dateTimePicker1.Value);
-                string y = String.Format("{0:tt HH:mm}", dateTimePicker3.Value);
-                if (item.Plan_Starttime < Convert.ToDateTime($"{dateTimePicker1.Value.ToShortDateString()}+{String.Format("{0:tt HH:mm}", dateTimePicker3.Value)}"))
-                {
 
+                if ((item.Plan_Starttime < startTime && item.Plan_Endtime > startTime) || (item.Plan_Starttime < endTime && item.Plan_Endtime > endTime))
+                {
+                    MessageBox.Show("계획한 시간에 예정된 작업이 있습니다. 다시 확인해주세요.");
+                    return;
                 }
             }
+            frm.dtpPlanStart.Value = frm.dtpPlanEnd.Value = dtpPlanDate.Value.Date;
+            frm.dtpStartTime.Value = dtpStartTime.Value;
+            frm.dtpEndTime.Value = dtpEndTime.Value;
         }
     }
 }

@@ -13,6 +13,7 @@ namespace AdminForm
 {
     public partial class MoldingOrderCreation : dgvTwo
     {
+        private delegate void SafeCallDelegate(List<WorkOrder> list);
         List<WorkReqVo> workReqList = null;
         List<MoldingOrderCreation_ReqVo> ListReq = null;
         List<MoldingOrderCreation_WoVo> ListWo = null;
@@ -95,7 +96,6 @@ namespace AdminForm
             AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰 상태", "Req_Status", true, 120);
       
             // 작업지시 dgv 컬럼 추가
-            AddNewColumnToDataGridView(dgvJobOrder, "작업상태", "Wo_Status", true, 110);
             AddNewColumnToDataGridView(dgvJobOrder, "작업지시번호", "Workorderno", true, 150);
             AddNewColumnToDataGridView(dgvJobOrder, "공정명", "Process_name", true, 150);
             AddNewColumnToDataGridView(dgvJobOrder, "작업장명", "Wc_Name", true, 110);
@@ -140,14 +140,30 @@ namespace AdminForm
         }
 
         private void DgvProductRequset_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
+        {        
+            using (FrmWaitForm frm = new FrmWaitForm(setAction))
+            {
+                frm.ShowDialog(this);
+            }
+        }
+        private void setAction()
+        {            
             WorkOrderService service = new WorkOrderService();
             List<WorkOrder> workDetailList = service.GetAllWorkDetail(dgvProductRequset.SelectedRows[0].Cells[1].Value.ToString());
-            dgvJobOrder.DataSource = workDetailList;
-
+            WorkOrderDetailView(workDetailList);
         }
-
+        private void WorkOrderDetailView(List<WorkOrder> list)
+        {
+            if (dgvJobOrder.InvokeRequired)
+            {
+                var d = new SafeCallDelegate(WorkOrderDetailView);
+                Invoke(d, new object[] { list });
+            }
+            else
+            {
+                dgvJobOrder.DataSource = list;
+            }    
+        }
         private void BtnOrderCreationDeadline_Click(object sender, EventArgs e)
         {
 
@@ -176,17 +192,17 @@ namespace AdminForm
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            ShowDialog("소성");
+            ShowDialog("압연");
         }
 
         private void btnGun_Click(object sender, EventArgs e)
         {
-            ShowDialog("건조");
+            ShowDialog("제강");
         }
 
         private void btnSung_Click(object sender, EventArgs e)
         {
-            ShowDialog("성형");
+            ShowDialog("제선");
         }
 
         private void ShowDialog(string processName)
@@ -199,6 +215,7 @@ namespace AdminForm
                     popUp.ShowDialog();
                 }               
             }
+            frm.btnS.PerformClick();
         }
 
         private void btnPo_Click(object sender, EventArgs e)

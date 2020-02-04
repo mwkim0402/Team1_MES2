@@ -103,21 +103,43 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = @"Insert into User_Master (User_ID,User_Name,User_PW,User_Type,Default_Process_Code,Monitoring_YN,Use_YN)
-                                    values(@User_ID, @User_Name, '1234', @User_Type, @Default_Process_Code, 'Y', @Use_YN,@User_Type)";
-                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "InsUserManager";
+                cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@User_ID", user.User_ID);
                 cmd.Parameters.AddWithValue("@User_Name", user.User_Name);
                 cmd.Parameters.AddWithValue("@User_Type", user.User_Type);
                 cmd.Parameters.AddWithValue("@Default_Process_Code", user.Default_Process_Code);
                 cmd.Parameters.AddWithValue("@Use_YN", user.Use_YN);
+                cmd.Parameters.AddWithValue("@UserGroup_Name", user.UserGroup_Name);
+                cmd.Parameters.AddWithValue("@UserGroup_Code", user.UserGroup_Code);
                 
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+        }
+        public void UpdateUserManager(UserManagerVO user)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "UpdateUserManager";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@User_ID", user.User_ID);
+                cmd.Parameters.AddWithValue("@UserGroup_Code", user.UserGroup_Code);
+                cmd.Parameters.AddWithValue("@UserGroup_Name", user.UserGroup_Name);
+                cmd.Parameters.AddWithValue("@User_Type", user.User_Type);
+                cmd.Parameters.AddWithValue("@Default_Process_Code", user.Default_Process_Code);
+                cmd.Parameters.AddWithValue("@Use_YN", user.Use_YN);
+
 
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
             }
         }
+
     }
 }

@@ -91,6 +91,12 @@
     <Compile Include="FIndCategory.Designer.cs">
       <DependentUpon>FIndCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWaitForm.Designer.cs">
+      <DependentUpon>FrmWaitForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="JobOrder\CreateWorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -492,6 +498,9 @@
     <EmbeddedResource Include="FIndCategory.resx">
       <DependentUpon>FIndCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmWaitForm.resx">
+      <DependentUpon>FrmWaitForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="JobOrder\CreateWorkOrder.resx">
       <DependentUpon>CreateWorkOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -716,6 +725,7 @@
     <None Include="bin\Debug\image\btn.png" />
     <None Include="bin\Debug\image\icons8-collapse-arrow-32.png" />
     <None Include="bin\Debug\image\icons8-expand-arrow-32.png" />
+    <None Include="bin\Debug\image\Loading.gif" />
     <Content Include="image\Action_Save_New_32x32.png" />
     <Content Include="image\bookmark.png" />
     <Content Include="image\btn.png" />

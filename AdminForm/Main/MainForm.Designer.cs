@@ -53,7 +53,6 @@
             this.lblLocation = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblAlert = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -64,7 +63,9 @@
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.lblName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.lblLogo = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
@@ -332,16 +333,6 @@
             this.lblAlert.TabIndex = 14;
             this.lblAlert.Click += new System.EventHandler(this.lblAlert_Click);
             // 
-            // button9
-            // 
-            this.button9.Image = global::AdminForm.Properties.Resources.btn;
-            this.button9.Location = new System.Drawing.Point(189, 7);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(110, 23);
-            this.button9.TabIndex = 13;
-            this.button9.Text = "환경설정";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // panel4
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -355,6 +346,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lblName);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.toolStrip1);
@@ -468,6 +460,14 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 86);
             // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(985, 71);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(0, 12);
+            this.lblName.TabIndex = 14;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(6, 8);
@@ -475,6 +475,16 @@
             this.pictureBox1.Size = new System.Drawing.Size(16, 16);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // button9
+            // 
+            this.button9.Image = global::AdminForm.Properties.Resources.btn;
+            this.button9.Location = new System.Drawing.Point(189, 7);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(110, 23);
+            this.button9.TabIndex = 13;
+            this.button9.Text = "환경설정";
+            this.button9.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
@@ -485,6 +495,7 @@
             this.button8.TabIndex = 12;
             this.button8.Text = "로그인";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // lblLogo
             // 
@@ -521,6 +532,7 @@
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -566,5 +578,6 @@
         public System.Windows.Forms.ToolStripButton btnEdit;
         public System.Windows.Forms.ToolStripButton btnDelete;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.Label lblName;
     }
 }

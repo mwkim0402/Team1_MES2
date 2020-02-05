@@ -446,5 +446,15 @@ namespace AdminForm
         {
             panel3.Invalidate();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            LoginForm frm = new LoginForm();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("로그인 되었습니다.");
+                lblName.Text = frm.SendName + "님 안녕하세요.";
+            }
+        }
     }
 }

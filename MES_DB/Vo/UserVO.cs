@@ -16,7 +16,7 @@ namespace MES_DB
     }
     public class UserGroupPowerSettingVO
     {
-        public string UserGroup_Name { get; set; }
+        public int User_ID { get; set; }
         public string Screen_Code { get; set; }
         public string Pre_Type { get; set; }
     }

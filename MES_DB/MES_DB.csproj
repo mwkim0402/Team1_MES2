@@ -47,6 +47,7 @@
     <Compile Include="Dac\FaultyDAC.cs" />
     <Compile Include="Dac\InspectDAC.cs" />
     <Compile Include="Dac\ItemDAC.cs" />
+    <Compile Include="Dac\LoginDAC.cs" />
     <Compile Include="Dac\MoldingDac.cs" />
     <Compile Include="Dac\JobOrderDac.cs" />
     <Compile Include="Dac\MenuTreeDac.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Service\FindCategoryService.cs" />
     <Compile Include="Service\InspectService.cs" />
     <Compile Include="Service\ItemService.cs" />
+    <Compile Include="Service\LoginService.cs" />
     <Compile Include="Service\QualityService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Service\WorkOrderService.cs" />
@@ -78,6 +80,7 @@
     <Compile Include="Vo\FindCategoryVo.cs" />
     <Compile Include="Vo\InspectVo.cs" />
     <Compile Include="Vo\ItemVo.cs" />
+    <Compile Include="Vo\LoginVO.cs" />
     <Compile Include="Vo\MoldUseHistoryVo.cs" />
     <Compile Include="Vo\MoldingInfoVo.cs" />
     <Compile Include="Vo\MoldingOrderCreation_WoVo.cs" />

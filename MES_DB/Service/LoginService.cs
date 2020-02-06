@@ -13,5 +13,11 @@ namespace MES_DB
             LoginDAC dac = new LoginDAC();
             return dac.LoginOK(login);
         }
+
+        public List<LoginVO> LoginAuthority(LoginVO login)
+        {
+            LoginDAC dac = new LoginDAC();
+            return dac.LoginAuthority(login);
+        }
     }
 }

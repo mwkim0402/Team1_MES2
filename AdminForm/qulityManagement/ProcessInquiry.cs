@@ -42,13 +42,13 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업장", "Wc_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목명", "Item_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정항목", "Inspect_name", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정항목", "Condition_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "USL", "USL", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "SL", "SL", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "LSL", "LSL", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정일시", "Inspect_datetime", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정일자", "Inspect_date", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정값", "Inspect_val", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정일시", "Condition_Date", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정일자", "Condition_Datetime", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정값", "Condition_Val", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "Wc_Code", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "Inspect_code", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "Process_code", false, 100);
@@ -80,7 +80,7 @@ namespace AdminForm
             if (StartDate != null && EndDate != null && fcFactory.SendCode != null && fcWork.SendCode != null)
             {
                 List<ProcessInquiryVO> list = (from item in allList
-                                              where item.Plan_Date >= StartDate.Date && item.Plan_Date.Date <= EndDate && item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode
+                                              where item.Plan_Date >= StartDate.Date && item.Plan_Date.Date <= EndDate && item.Process_name == fcFactory.SendName && item.Wc_Name == fcWork.SendName
                                               select item).ToList();
                 dgvSearchResult.DataSource = list;
             }

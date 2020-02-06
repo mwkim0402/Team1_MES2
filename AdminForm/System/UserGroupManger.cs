@@ -25,6 +25,7 @@ namespace AdminForm
         {
             ShowDgv();
             frm = (MainForm)this.MdiParent;
+            CommonClass.Userauthority(btnSave, btnEdit);
         }
         private void GetData(object sender, EventArgs e)
         {
@@ -85,6 +86,7 @@ namespace AdminForm
             else
             {
                 MessageBox.Show("사용유무를 체크해주세요.");
+                return;
             }
             service.InsUserGroupManagerForm(userVo);
 

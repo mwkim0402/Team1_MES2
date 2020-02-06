@@ -1,4 +1,5 @@
-﻿using MES_DB;
+﻿using FieldOperationForm;
+using MES_DB;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,6 @@ namespace AdminForm
     public partial class LoginForm : Form
     {
         
-        public string SendName { get; set; }
         public LoginForm()
         {
             InitializeComponent();
@@ -32,7 +32,8 @@ namespace AdminForm
             if(list.Count > 0)
             {
                 //btnLogin.DialogResult = DialogResult.OK;
-                SendName = list[0].User_Name;
+                Global.User_Name = list[0].User_Name;
+                Global.User_ID = list[0].User_ID;
             }
             else
             {

@@ -133,13 +133,12 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = @"select wk.Workorderno,wk.Plan_Date, P.Process_code, P.Process_name ,sp.Inspect_code,sp.Inspect_name 
-                                    ,M.Item_Name, sp.USL, sp.SL,sp.LSL,I.Inspect_datetime ,I.Inspect_date, I.Inspect_val,wk.Wc_Code,wm.Wc_Name,wk.Item_Code
-                                    from WorkOrder wk inner join Item_Master M on wk.Item_Code = M.Item_Code
-                                    inner join Inspect_Measure_History I on I.Item_Code = M.Item_Code
-                                    inner join Inspect_Spec_Master sp on sp.Item_Code = M.Item_Code
-                                    inner join Process_Master p on sp.Process_Code = p.Process_code
-                                    inner join WorkCenter_Master wm on wk.Wc_Code = wm.Wc_Code";
+                cmd.CommandText = @"select w.Workorderno,w.Plan_Date,p.Process_name,wm.Wc_Name,c.Condition_Name,c.USL,c.SL,c.LSL,ch.Condition_Date,ch.Condition_Datetime,ch.Condition_Val,i.Item_Code,i.Item_Name from WorkOrder w 
+                                    inner join Condition_Measure_History ch on ch.Workorderno = w.Workorderno
+                                    inner join Condition_Spec_Master c on c.Condition_Code = ch.Condition_Code
+                                    inner join WorkCenter_Master wm on wm.Wc_Code = w.Wc_Code
+                                    inner join Process_Master p on wm.Process_Code = p.Process_code
+                                    inner join Item_Master i on i.Item_Code = w.Item_Code";
                 cmd.CommandType = CommandType.Text;
 
                 cmd.Connection.Open();

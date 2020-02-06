@@ -39,6 +39,7 @@
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,15 +89,16 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 85);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(94, 28);
+            this.tabControl1.Size = new System.Drawing.Size(1132, 460);
             this.tabControl1.TabIndex = 8;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.documentViewer1);
             this.tabPage1.Location = new System.Drawing.Point(4, 32);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(86, 0);
+            this.tabPage1.Size = new System.Drawing.Size(1124, 424);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "조회내역";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -107,17 +109,16 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.documentViewer1.IsMetric = true;
-            this.documentViewer1.Location = new System.Drawing.Point(12, 114);
+            this.documentViewer1.Location = new System.Drawing.Point(3, 3);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(1132, 478);
-            this.documentViewer1.TabIndex = 9;
+            this.documentViewer1.Size = new System.Drawing.Size(1118, 418);
+            this.documentViewer1.TabIndex = 0;
             // 
             // documentViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 604);
-            this.Controls.Add(this.documentViewer1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -130,6 +131,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -142,6 +144,6 @@
         private System.Drawing.Printing.PrintDocument printDocument1;
         public System.Windows.Forms.TabControl tabControl1;
         public System.Windows.Forms.TabPage tabPage1;
-        protected DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
+        public DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
     }
 }

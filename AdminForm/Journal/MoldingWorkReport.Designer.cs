@@ -30,6 +30,7 @@
         {
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MoldingWorkReport
@@ -39,10 +40,13 @@
             this.ClientSize = new System.Drawing.Size(1156, 604);
             this.Name = "MoldingWorkReport";
             this.Text = "MoldingWorkReport";
+            this.Activated += new System.EventHandler(this.MoldingWorkReport_Activated);
+            this.Deactivate += new System.EventHandler(this.MoldingWorkReport_Deactivate);
             this.Load += new System.EventHandler(this.MoldingWorkReport_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

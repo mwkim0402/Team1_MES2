@@ -30,6 +30,7 @@
         {
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PackingWorkReport
@@ -39,10 +40,13 @@
             this.ClientSize = new System.Drawing.Size(1156, 604);
             this.Name = "PackingWorkReport";
             this.Text = "PackingWorkReport";
+            this.Activated += new System.EventHandler(this.PackingWorkReport_Activated);
+            this.Deactivate += new System.EventHandler(this.PackingWorkReport_Deactivate);
             this.Load += new System.EventHandler(this.PackingWorkReport_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

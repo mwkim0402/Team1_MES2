@@ -15,6 +15,8 @@ namespace AdminForm
 {
     public partial class LoadWorkReport : documentViewer
     {
+        private delegate void SafeCallDelegate(LoadingReport rep);
+        MainForm frm;
         public LoadWorkReport()
         {
             InitializeComponent();
@@ -22,20 +24,74 @@ namespace AdminForm
 
         private void LoadWorkReport_Load(object sender, EventArgs e)
         {
-            string strConn = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
-            DataSet ds = new DataSet();
-            using (SqlConnection conn = new SqlConnection(strConn))
+            frm = (MainForm)this.MdiParent;
+            using (FrmWaitForm frm = new FrmWaitForm(setAction))
             {
-                conn.Open();
-                string strSql = "select * from GV_History";
-                SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
-                da.Fill(ds, "GV");
-                conn.Close();
+                frm.ShowDialog(this);
             }
-            LoadingReport rpt = new LoadingReport();
-            rpt.DataSource = ds.Tables["GV"];
-            //ReportPreviewForm frm = new ReportPreviewForm(rpt);
+        }
 
+
+        private void LoadWorkReport_Activated(object sender, EventArgs e)
+        {
+            frm.Search_Click += this.Search_Click;
+        }
+
+        public void Search_Click(object sender, EventArgs e)
+        {
+            using (FrmWaitForm frm = new FrmWaitForm(setAction))
+            {
+                frm.ShowDialog(this);
+            }
+        }
+
+        private void LoadWorkReport_Deactivate(object sender, EventArgs e)
+        {
+            frm.Search_Click -= this.Search_Click;
+        }
+
+        private void setAction()
+        {
+            
+                string findDate = dtpProduction.Value.ToString().Substring(0, 10);
+
+                string strConn = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
+                DataSet ds = new DataSet();
+                using (SqlConnection conn = new SqlConnection(strConn))
+                {
+                    conn.Open();
+                    string strSql = $"select * from GV_History where Loading_Date = '{findDate}'";
+               
+                    SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
+                    da.Fill(ds, "GV");
+                    conn.Close();
+                }
+                LoadingReport rpt = new LoadingReport();
+                rpt.Parameters["SelectedDate"].Value = dtpProduction.Value;
+                rpt.Parameters["SelectedDate"].Visible = false;
+                rpt.DataSource = ds;
+                rpt.CreateDocument();
+                //Form2 frm = new Form2();
+                //frm.documentViewer1.DocumentSource = rpt;
+                //frm.ShowDialog();
+                WorkOrderDetailView(rpt);
+            
+        }
+
+        private void WorkOrderDetailView(LoadingReport rep)
+        {
+            
+            if (documentViewer1.InvokeRequired)
+            {
+                var d = new SafeCallDelegate(WorkOrderDetailView);
+                Invoke(d, new object[] { rep });
+            }
+            else
+            {
+                documentViewer1.DocumentSource= rep;
+                documentViewer1.PrintingSystem.ExecCommand(DevExpress.XtraPrinting.PrintingSystemCommand.SubmitParameters, new object[] { true });
+
+            }
         }
     }
 }

@@ -26,6 +26,7 @@ namespace AdminForm
             cmbType.SelectedIndex = 0;
             frm = (MainForm)this.MdiParent;
             ShowDgv();
+            CommonClass.Userauthority(btnSave, btnEdit);
         }
 
         private void ShowDgv()
@@ -101,26 +102,33 @@ namespace AdminForm
             else
             {
                 MessageBox.Show("숫자를 입력해주세요.");
+                return;
             }
 
             if (txtUserNameInput.Text != "")
                 user.User_Name = txtUserNameInput.Text;
             else
+            { 
                 MessageBox.Show("이름을 입력해주세요.");
-
+                return;
+            }
 
             if (cmbType.SelectedIndex != 0)
                 user.UserGroup_Code = cmbType.SelectedItem.ToString();
             else
+            { 
                 MessageBox.Show("타입 항목을 선택해주세요.");
+                return;
+            }
 
-            if(txtStandFac.Text != "")
+            if (txtStandFac.Text != "")
             {
                 user.Default_Process_Code = txtStandFac.Text;
             }
             else
             {
                 MessageBox.Show("공정을 입력해주세요.");
+                return;
             }
 
             if(rbUse_Use.Checked == true)
@@ -134,11 +142,13 @@ namespace AdminForm
             else
             {
                 MessageBox.Show("사용유무를 선택해주세요.");
+                return;
             }
 
             if(txtGroupCode.Text == "")
             {
                 MessageBox.Show("그룹코드를 입력해주세요.");
+                return;
             }
             else
             {
@@ -148,6 +158,7 @@ namespace AdminForm
             if(txtGroupName.Text == "")
             {
                 MessageBox.Show("그룹 이름을 입력해주세요.");
+                return;
             }
             else
             {

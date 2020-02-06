@@ -51,9 +51,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlTab = new System.Windows.Forms.Panel();
             this.lblLocation = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblName = new System.Windows.Forms.Label();
             this.lblAlert = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -63,10 +67,6 @@
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.lblName = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.lblLogo = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -74,11 +74,11 @@
             this.pnlMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -310,15 +310,33 @@
             this.lblLocation.Size = new System.Drawing.Size(507, 23);
             this.lblLocation.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(6, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.lblName);
             this.panel2.Controls.Add(this.lblAlert);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(280, 86);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1054, 45);
             this.panel2.TabIndex = 103;
+            // 
+            // lblName
+            // 
+            this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(827, 15);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(0, 12);
+            this.lblName.TabIndex = 14;
             // 
             // lblAlert
             // 
@@ -338,15 +356,35 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.button9);
-            this.panel4.Controls.Add(this.button8);
+            this.panel4.Controls.Add(this.btnLogin);
             this.panel4.Location = new System.Drawing.Point(987, 24);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(326, 39);
             this.panel4.TabIndex = 105;
             // 
+            // button9
+            // 
+            this.button9.Image = global::AdminForm.Properties.Resources.btn;
+            this.button9.Location = new System.Drawing.Point(189, 7);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(110, 23);
+            this.button9.TabIndex = 13;
+            this.button9.Text = "환경설정";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Image = global::AdminForm.Properties.Resources.btn;
+            this.btnLogin.Location = new System.Drawing.Point(25, 7);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(110, 23);
+            this.btnLogin.TabIndex = 12;
+            this.btnLogin.Text = "로그인";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.lblName);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.toolStrip1);
@@ -460,43 +498,6 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 86);
             // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(985, 71);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(0, 12);
-            this.lblName.TabIndex = 14;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(6, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button9
-            // 
-            this.button9.Image = global::AdminForm.Properties.Resources.btn;
-            this.button9.Location = new System.Drawing.Point(189, 7);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(110, 23);
-            this.button9.TabIndex = 13;
-            this.button9.Text = "환경설정";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Image = global::AdminForm.Properties.Resources.btn;
-            this.button8.Location = new System.Drawing.Point(25, 7);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(110, 23);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "로그인";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
             // lblLogo
             // 
             this.lblLogo.BackColor = System.Drawing.Color.Transparent;
@@ -529,13 +530,13 @@
             this.pnlMain.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pnlTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -558,7 +559,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TreeView trvBookMark;
         private System.Windows.Forms.Panel pnlTab;
         private System.Windows.Forms.PictureBox pictureBox1;

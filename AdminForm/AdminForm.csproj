@@ -750,6 +750,10 @@
     <Content Include="image\구디로고.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FieldOperationForm\FieldOperationForm.csproj">
+      <Project>{845F5B3F-2317-4332-A594-1EB7001BBD01}</Project>
+      <Name>FieldOperationForm</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MES_API\MES_API.csproj">
       <Project>{d6db38a5-69c8-4604-9d39-4f6168113965}</Project>
       <Name>MES_API</Name>

@@ -10,6 +10,5 @@ namespace FieldOperationForm
     {
         public static string User_Name;
         public static int User_ID;
-        
     }
 }

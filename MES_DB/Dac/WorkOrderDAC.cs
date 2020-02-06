@@ -23,13 +23,27 @@ namespace MES_DB
             }
             return list;
         }
+        public List<WorkReq_OrderVo> GetWorkReqQty()
+        {
+            List<WorkReq_OrderVo> list;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "GetAllWorkOrder";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Connection.Open();
+                list = Helper.DataReaderMapToList<WorkReq_OrderVo>(cmd.ExecuteReader());
+                cmd.Connection.Close();
+            }
+            return list;
+        }
         public List<WorkReqCenterVo> GetReqCenter(string wcCode)
         {
             List<WorkReqCenterVo> list;
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = @"select Workorderno, Plan_Date, Plan_Starttime, Plan_Endtime, Wo_Status
+                cmd.CommandText = @"select Workorderno, Plan_Date, Convert(varchar(8),Plan_Starttime,108) Plan_Starttime, Convert(varchar(8),Plan_Endtime,108) Plan_Endtime, Wo_Status
                                                 from WorkOrder
                                                 where Wc_Code = @Wc_Code";
                 cmd.Parameters.AddWithValue("@WC_Code", wcCode);
@@ -87,7 +101,7 @@ namespace MES_DB
                                                 inner join Process_Master p on wc.Process_Code = p.Process_code
                                                 inner join Item_Master i on wo.Item_Code = i.Item_Code
                                                 where wo.Wo_Status <> '작업종료'
-                                                and Process_Group = @Type
+                                                and Process_name = @Type
                                                 and Wo_Req_No = @Wo_Req_No";
               
                 cmd.Parameters.AddWithValue("@Type", Type);

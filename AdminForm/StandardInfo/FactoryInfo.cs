@@ -56,13 +56,13 @@ namespace AdminForm
            // CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업지시 자동 생성 유무", "Auto_Wo_YN", true,30);
            // CommonClass.AddNewColumnToDataGridView(dataGridView1, "자동 비가동 여부", "Nop_Auto_YN", true, 30);
            // CommonClass.AddNewColumnToDataGridView(dataGridView1, "자동 비가동 시간", "Nop_Check_Time", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "실적등록유형", "Prd_Req_Type", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "실적등록유형", "Prd_Req_Type", true, 120);
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "실적단위", "Prd_Unit", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "팔레트생성유무", "Pallet_YN", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "팔레트생성유무", "Pallet_YN", true, 140);
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "비고", "Remark", true, 100);
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "Use_YN", true, 100);
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "비가동 상태", "Wo_Status", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "금형장착여부", "Mold_Setup_YN", true, 30);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "금형장착여부", "Mold_Setup_YN", true, 120);
 
             dataGridView1.RowHeadersVisible = false;
             DataGridViewCheckBoxColumn chkboxCol = new DataGridViewCheckBoxColumn();
@@ -101,7 +101,7 @@ namespace AdminForm
 
         private void rbUse_NonOp_CheckedChanged(object sender, EventArgs e)
         {
-            nuNonTime.Enabled = rbUse_NonOp.Checked;
+            //nuNonTime.Enabled = rbUse_NonOp.Checked;
         }
 
         private void cbProcessCode_SelectedIndexChanged(object sender, EventArgs e)
@@ -121,12 +121,12 @@ namespace AdminForm
             //item.Nop_Auto_YN = rbUse_NonOp.Checked ? "Y" : "N";
             //item.Nop_Check_Time = rbUse_NonOp.Checked ? Convert.ToInt32(nuNonTime.Value) : 0;
             item.Mold_Setup_YN = rbUse_MoldEq.Checked ? "Y" : "N";
-            item.Use_YN = rbUse_Use.Checked ? "Y" : "N";
+            item.Use_YN = rbUseTrue.Checked ? "Y" : "N";
             item.Pallet_YN = rbUse_Pallet.Checked ? "Y":"N";
           //  item.Auto_Wo_YN = rbUse_OrderCreate.Checked ? "Y" : "N";
          //   item.Auto_Start_YN = rbUse_OrderStart.Checked ? "Y" : "N";
             item.Mold_Setup_YN = rbUse_MoldEq.Checked ? "Y" : "N";
-            item.Remark = txtPS.Text;
+            item.Remark = rbUse.Text;
 
             WorkCenterService service = new WorkCenterService();
             service.InsertWorkCenter(item);

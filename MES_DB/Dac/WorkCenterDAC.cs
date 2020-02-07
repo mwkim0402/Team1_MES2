@@ -27,16 +27,12 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = @"insert into WorkCenter_Master(Wc_Code, Wc_Name, Wc_Group, Process_Code, Auto_Wo_YN, Auto_Start_YN, Wo_Status, Nop_Auto_YN, Nop_Check_Time, Prd_Req_Type, Pallet_YN, Prd_Unit, Mold_Setup_YN, Use_YN, Remark, Ins_Date, Ins_Emp, Up_Date, Up_Emp)
-                                                values(@Wc_Code, @Wc_Name, @Wc_Group, @Process_Code, @Auto_Wo_YN, @Auto_Start_YN, 'STOP', @Nop_Auto_YN, @Nop_Check_Time, @Prd_Req_Type, @Pallet_YN, @Prd_Unit, @Mold_Setup_YN, @Use_YN, @Remark, @Ins_Date, '김민우', @Ins_Date, '김민우')";
+                cmd.CommandText = @"insert into WorkCenter_Master(Wc_Code, Wc_Name, Wc_Group, Process_Code, Wo_Status, Prd_Req_Type, Pallet_YN, Prd_Unit, Mold_Setup_YN, Use_YN, Remark, Ins_Date, Ins_Emp, Up_Date, Up_Emp)
+                                                values(@Wc_Code, @Wc_Name, @Wc_Group, @Process_Code, 'STOP', @Prd_Req_Type, @Pallet_YN, @Prd_Unit, @Mold_Setup_YN, @Use_YN, @Remark, @Ins_Date, '김민우', @Ins_Date, '김민우')";
                 cmd.Parameters.AddWithValue("@Wc_Code",workVo.Wc_Code);
                 cmd.Parameters.AddWithValue("@Wc_Name",workVo.Wc_Name);
                 cmd.Parameters.AddWithValue("@Wc_Group",workVo.Wc_Group);
                 cmd.Parameters.AddWithValue("@Process_Code",workVo.Process_Code);
-                //cmd.Parameters.AddWithValue("@Auto_Wo_YN",workVo.Auto_Wo_YN);
-               // cmd.Parameters.AddWithValue("@Auto_Start_YN",workVo.Auto_Start_YN);
-               // cmd.Parameters.AddWithValue("@Nop_Auto_YN",workVo.Nop_Auto_YN);
-              //  cmd.Parameters.AddWithValue("@Nop_Check_Time",workVo.Nop_Check_Time);
                 cmd.Parameters.AddWithValue("@Prd_Req_Type",workVo.Prd_Req_Type);
                 cmd.Parameters.AddWithValue("@Pallet_YN",workVo.Pallet_YN);
                 cmd.Parameters.AddWithValue("@Prd_Unit",workVo.Prd_Unit);

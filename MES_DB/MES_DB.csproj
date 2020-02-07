@@ -51,6 +51,7 @@
     <Compile Include="Dac\MoldingDac.cs" />
     <Compile Include="Dac\JobOrderDac.cs" />
     <Compile Include="Dac\MenuTreeDac.cs" />
+    <Compile Include="Dac\NonOperationDAC.cs" />
     <Compile Include="Dac\PerformDAC.cs" />
     <Compile Include="Dac\ProcessDAC.cs" />
     <Compile Include="Dac\QualityDAC.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Service\ItemService.cs" />
     <Compile Include="Service\LoginService.cs" />
     <Compile Include="Service\MoldingInfoDetailVo.cs" />
+    <Compile Include="Service\NonOperationMaService.cs" />
     <Compile Include="Service\QualityService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Service\WorkOrderService.cs" />
@@ -88,6 +90,7 @@
     <Compile Include="Vo\MoldingOrderCreation_ReqVo.cs" />
     <Compile Include="Vo\JobOrderCreateVo.cs" />
     <Compile Include="Vo\MenuTreeVo.cs" />
+    <Compile Include="Vo\NonOperationVO.cs" />
     <Compile Include="Vo\PerformSearchVO.cs" />
     <Compile Include="Vo\ProcessVo.cs" />
     <Compile Include="Vo\QualityVO.cs" />

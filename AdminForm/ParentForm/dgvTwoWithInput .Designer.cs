@@ -82,7 +82,7 @@
             this.dgvSearchResult.RowHeadersWidth = 51;
             this.dgvSearchResult.RowTemplate.Height = 23;
             this.dgvSearchResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSearchResult.Size = new System.Drawing.Size(736, 240);
+            this.dgvSearchResult.Size = new System.Drawing.Size(833, 240);
             this.dgvSearchResult.TabIndex = 6;
             // 
             // panel1
@@ -92,7 +92,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.Location = new System.Drawing.Point(0, 323);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(744, 155);
+            this.panel1.Size = new System.Drawing.Size(841, 155);
             this.panel1.TabIndex = 8;
             // 
             // tabControl2
@@ -124,7 +124,7 @@
             this.tabControl3.Location = new System.Drawing.Point(0, 0);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(373, 28);
+            this.tabControl3.Size = new System.Drawing.Size(276, 28);
             this.tabControl3.TabIndex = 11;
             // 
             // tabPage3
@@ -132,7 +132,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 32);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(365, 0);
+            this.tabPage3.Size = new System.Drawing.Size(268, 0);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "조회내역";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -150,7 +150,7 @@
             this.dgvSelect.RowHeadersWidth = 51;
             this.dgvSelect.RowTemplate.Height = 23;
             this.dgvSelect.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSelect.Size = new System.Drawing.Size(369, 448);
+            this.dgvSelect.Size = new System.Drawing.Size(272, 448);
             this.dgvSelect.TabIndex = 10;
             // 
             // splitContainer1
@@ -173,7 +173,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.tabControl2);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Size = new System.Drawing.Size(1122, 480);
-            this.splitContainer1.SplitterDistance = 373;
+            this.splitContainer1.SplitterDistance = 276;
             this.splitContainer1.TabIndex = 12;
             // 
             // dgvTwoWithInput

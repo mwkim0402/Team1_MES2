@@ -60,6 +60,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.btnImage = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl2.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.tabPage10.SuspendLayout();
@@ -331,11 +333,26 @@
             this.toolStripButton1.ToolTipText = "조회하기";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStrip1_Click);
             // 
+            // btnImage
+            // 
+            this.btnImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImage.Location = new System.Drawing.Point(925, 327);
+            this.btnImage.Name = "btnImage";
+            this.btnImage.Size = new System.Drawing.Size(165, 23);
+            this.btnImage.TabIndex = 12;
+            this.btnImage.Text = "불량사진 등록";
+            this.btnImage.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // RegFaultyImage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 604);
+            this.Controls.Add(this.btnImage);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -352,6 +369,7 @@
             this.Controls.SetChildIndex(this.tabControl4, 0);
             this.Controls.SetChildIndex(this.tabControl2, 0);
             this.Controls.SetChildIndex(this.toolStrip1, 0);
+            this.Controls.SetChildIndex(this.btnImage, 0);
             this.tabControl2.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
@@ -398,5 +416,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.Button btnImage;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

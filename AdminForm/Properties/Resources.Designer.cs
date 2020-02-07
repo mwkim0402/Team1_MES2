@@ -113,16 +113,6 @@ namespace AdminForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap logotest {
-            get {
-                object obj = ResourceManager.GetObject("logotest", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
         internal static System.Drawing.Bitmap Reading_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Reading_16x16", resourceCulture);
@@ -136,16 +126,6 @@ namespace AdminForm.Properties {
         internal static System.Drawing.Bitmap teamlogo {
             get {
                 object obj = ResourceManager.GetObject("teamlogo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap teamlogotest {
-            get {
-                object obj = ResourceManager.GetObject("teamlogotest", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

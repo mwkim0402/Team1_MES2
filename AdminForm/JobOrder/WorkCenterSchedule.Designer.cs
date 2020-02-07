@@ -31,6 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.dgvCenter = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpStartTime = new System.Windows.Forms.DateTimePicker();
@@ -38,14 +39,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpEndTime = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCenter)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Location = new System.Drawing.Point(666, 396);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 29);
@@ -72,6 +71,16 @@
             this.label14.Size = new System.Drawing.Size(128, 21);
             this.label14.TabIndex = 10;
             this.label14.Text = "작업장작업 일지";
+            // 
+            // label15
+            // 
+            this.label15.Image = global::AdminForm.Properties.Resources.Reading_16x16;
+            this.label15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label15.Location = new System.Drawing.Point(3, 1);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(23, 27);
+            this.label15.TabIndex = 9;
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgvCenter
             // 
@@ -146,16 +155,6 @@
             this.button2.TabIndex = 42;
             this.button2.Text = "취소";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            this.label15.Image = global::AdminForm.Properties.Resources.Reading_16x16;
-            this.label15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label15.Location = new System.Drawing.Point(3, 1);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(23, 27);
-            this.label15.TabIndex = 9;
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // WorkCenterSchedule
             // 

@@ -57,10 +57,12 @@ namespace AdminForm
         {
             DateTime startTime = Convert.ToDateTime($"{dtpPlanDate.Value.ToShortDateString()} {String.Format("{0:tt HH:mm}", dtpStartTime.Value)}");
             DateTime endTime = Convert.ToDateTime($"{dtpPlanDate.Value.ToShortDateString()} {String.Format("{0:tt HH:mm}", dtpEndTime.Value)}");
+            
             foreach (WorkReqCenterVo item in reqCenterList)
             {
-
-                if ((Convert.ToDateTime(item.Plan_Starttime) < startTime && Convert.ToDateTime(item.Plan_Endtime) > startTime) || (Convert.ToDateTime(item.Plan_Starttime) < endTime && Convert.ToDateTime(item.Plan_Endtime) > endTime))
+                DateTime planStartTime = Convert.ToDateTime($"{item.Plan_Date.ToShortDateString()} {String.Format("{0:tt HH:mm}", item.Plan_Starttime)}");
+                DateTime plnaEndTime = Convert.ToDateTime($"{item.Plan_Date.ToShortDateString()} {String.Format("{0:tt HH:mm}", item.Plan_Endtime)}");
+                if ((planStartTime < startTime && plnaEndTime > startTime) || (planStartTime < endTime && plnaEndTime > endTime) || (startTime < planStartTime && endTime > planStartTime) || (startTime < plnaEndTime && endTime > plnaEndTime))
                 {
                     MessageBox.Show("계획한 시간에 예정된 작업이 있습니다. 다시 확인해주세요.");
                     return;
@@ -69,6 +71,7 @@ namespace AdminForm
             frm.dtpPlanStart.Value = frm.dtpPlanEnd.Value = dtpPlanDate.Value.Date;
             frm.dtpStartTime.Value = dtpStartTime.Value;
             frm.dtpEndTime.Value = dtpEndTime.Value;
+            this.Close();
         }
     }
 }

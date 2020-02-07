@@ -25,12 +25,14 @@ namespace AdminForm
         {
             frm = (MainForm)this.MdiParent;
             ShowDgv();
-            QualityService service = new QualityService();
-            allList = service.GetAllProcessInquiry();
+            StartDate = dtpStart.Value;
+            EndDate = dtpEnd.Value;
         }
 
         private void GetData(object sender, EventArgs e)
         {
+            QualityService service = new QualityService();
+            allList = service.GetAllProcessInquiry(StartDate, EndDate);
             dgvSearchResult.DataSource = allList;
         }
         private void ShowDgv()
@@ -49,10 +51,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정일시", "Condition_Date", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정일자", "Condition_Datetime", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정값", "Condition_Val", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "Wc_Code", false, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "Inspect_code", false, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "Process_code", false, 100);
-
+           
         }
 
         private void ProcessInquiry_Activated(object sender, EventArgs e)
@@ -77,10 +76,10 @@ namespace AdminForm
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            if (StartDate != null && EndDate != null && fcFactory.SendCode != null && fcWork.SendCode != null)
+            if (fcFactory.SendCode != null && fcWork.SendCode != null)
             {
                 List<ProcessInquiryVO> list = (from item in allList
-                                              where item.Plan_Date >= StartDate.Date && item.Plan_Date.Date <= EndDate && item.Process_name == fcFactory.SendName && item.Wc_Name == fcWork.SendName
+                                              where  item.Process_name == fcFactory.SendName && item.Wc_Name == fcWork.SendName
                                               select item).ToList();
                 dgvSearchResult.DataSource = list;
             }

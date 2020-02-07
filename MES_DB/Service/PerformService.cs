@@ -15,10 +15,10 @@ namespace MES_DB
             PerformDAC dac = new PerformDAC();
             return dac.AllWorkStatuseList();
         }
-        public List<PerformSearchVO> GetAllPerformSearch()
+        public List<PerformSearchVO> GetAllPerformSearch(DateTime Start,DateTime End)
         {
             PerformDAC dac = new PerformDAC();
-            return dac.GetAllPerformSearch();
+            return dac.GetAllPerformSearch(Start,End);
         }
         public List<GVMonitoringVO> GetAllMonitoring()
         {

@@ -28,16 +28,19 @@ namespace MES_DB
             }
         }
 
-        public List<PerformSearchVO> GetAllPerformSearch()
+        public List<PerformSearchVO> GetAllPerformSearch(DateTime Start,DateTime End)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "select w.Wo_Status,w.Workorderno,w.Plan_Date,i.Item_Code,i.Item_Name,w.Wc_Code,w.In_Qty_Main,w.Out_Qty_Main,w.Prd_Qty,w.Wc_Code,p.Process_code" +
-                    " from WorkOrder w inner join Item_Master i on i.Item_Code = w.Item_Code inner join WorkCenter_Master wc on w.Wc_Code = wc.Wc_Code " +
-                    "inner join Process_Master p on wc.Process_Code = p.Process_code";
+                cmd.CommandText = @"select w.Wo_Status,w.Workorderno,w.Plan_Date,i.Item_Code,i.Item_Name,w.Wc_Code,w.In_Qty_Main,w.Out_Qty_Main,w.Prd_Qty,w.Wc_Code,p.Process_code
+                     from WorkOrder w inner join Item_Master i on i.Item_Code = w.Item_Code inner join WorkCenter_Master wc on w.Wc_Code = wc.Wc_Code
+                    inner join Process_Master p on wc.Process_Code = p.Process_code 
+                    where w.Plan_Date between @Startdate and @Enddate ";
                 cmd.CommandType = CommandType.Text;
 
+                cmd.Parameters.AddWithValue("@Startdate", Start);
+                cmd.Parameters.AddWithValue("@Enddate", End);
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<PerformSearchVO> list = Helper.DataReaderMapToList<PerformSearchVO>(reader);
@@ -128,7 +131,7 @@ namespace MES_DB
             }
         }
 
-        public List<ProcessInquiryVO> GetAllProcessInquiry()
+        public List<ProcessInquiryVO> GetAllProcessInquiry(DateTime Start,DateTime End)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -138,8 +141,12 @@ namespace MES_DB
                                     inner join Condition_Spec_Master c on c.Condition_Code = ch.Condition_Code
                                     inner join WorkCenter_Master wm on wm.Wc_Code = w.Wc_Code
                                     inner join Process_Master p on wm.Process_Code = p.Process_code
-                                    inner join Item_Master i on i.Item_Code = w.Item_Code";
+                                    inner join Item_Master i on i.Item_Code = w.Item_Code 
+                                    where w.Plan_Date between @Startdate and @Enddate";
                 cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Startdate", Start);
+                cmd.Parameters.AddWithValue("@Enddate", End);
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();

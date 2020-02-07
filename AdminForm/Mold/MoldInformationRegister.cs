@@ -58,7 +58,13 @@ namespace AdminForm
             dgvSearchResult.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgvSearchResult.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSearchResult_DoubleClick);
             //콤보바인딩
-            ComboClass.ComboBind(List<ComboItem> , cmbMoldGroupSearch, false);
+            List<ComboItem> item = (from items in List
+                                    select new ComboItem
+                                    {
+                                        comboText = items.Mold_Group,
+                                        comboValue = items.Mold_Group
+                                    }).ToList();
+            ComboClass.ComboBind(item , cmbMoldGroupSearch, false);
 
             
         }

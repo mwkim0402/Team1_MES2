@@ -26,14 +26,14 @@ namespace AdminForm
         {
             frm = (MainForm)this.MdiParent;
             ShowDgv();
-            MES_DB.PerformService service = new MES_DB.PerformService();
-            allList = service.GetAllRegProcess();
             StartDate = dtpStart.Value;
             EndDate = dtpEnd.Value;
         }
 
         private void GetData(object sender, EventArgs e)
         {
+            MES_DB.PerformService service = new MES_DB.PerformService();
+            allList = service.GetAllRegProcess(StartDate,EndDate);
             dgvJob.DataSource = allList;
         }
         private void ShowDgv()
@@ -44,10 +44,10 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvJob, "작업장", "Wc_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "품목코드", "Item_Code", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "품목명", "Item_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "1", "Process_code", false, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "1", "Inspect_code", false, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "1", "Inspect_name", false, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "1", "Inspect_Val", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Process_code", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Inspect_code", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Inspect_name", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Inspect_Val", false, 100);
 
 
             CommonClass.AddNewColumnToDataGridView(dgvList, "측정항목", "Inspect_name", true, 100);
@@ -71,16 +71,33 @@ namespace AdminForm
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            if (fcFactory.SendCode != null && fcWork.SendCode != null)
+            //if (fcFactory.SendCode != null && fcWork.SendCode != null)
+            //{
+            //    List<RegProcessVO> list = (from item in allList
+            //                               where item.Process_code == fcFactory.SendCode && item.Wc_Name == fcWork.SendName
+            //                               select item).ToList();
+            //    dgvJob.DataSource = list;
+            //}
+            if ((fcWork.SendCode != null && fcWork.SendName != "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
             {
                 List<RegProcessVO> list = (from item in allList
-                                           where item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date && item.Process_code == fcFactory.SendCode && item.Wc_Name == fcWork.SendName
+                                               where item.Process_code == fcFactory.SendCode && item.Wc_Name == fcWork.SendName
+                                               select item).ToList();
+                dgvJob.DataSource = list;
+            }
+            else if ((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode == ""))
+            {
+                List<RegProcessVO> list = (from item in allList
+                                               where item.Wc_Name == fcWork.SendName
                                            select item).ToList();
                 dgvJob.DataSource = list;
             }
-            else
+            else if ((fcWork.SendCode == null || fcWork.SendCode == "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
             {
-                MessageBox.Show("검색조건을 모두 선택해주세요.");
+                List<RegProcessVO> list = (from item in allList
+                                               where item.Process_code == fcFactory.SendCode
+                                               select item).ToList();
+                dgvJob.DataSource = list;
             }
         }
 

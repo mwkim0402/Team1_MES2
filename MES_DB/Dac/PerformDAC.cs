@@ -11,7 +11,25 @@ namespace MES_DB
 {
     public class PerformDAC : ConnectionAccess
     {
-        public List<WorkdiligenceStatusanalysisVO> AllWorkStatuseList()
+        public List<ProductListVO> GetProductListform(DateTime Start,DateTime End)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "ProductListSearch";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Startdate", Start);
+                cmd.Parameters.AddWithValue("@Enddate", End);
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ProductListVO> list = Helper.DataReaderMapToList<ProductListVO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
+        public List<WorkdiligenceStatusanalysisVO> AllWorkStatuseList(DateTime Start, DateTime End)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -19,7 +37,8 @@ namespace MES_DB
                 cmd.CommandText = "GetAllWorkStatus";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-
+                cmd.Parameters.AddWithValue("@StartDate", Start);
+                cmd.Parameters.AddWithValue("@Enddate", End);
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<WorkdiligenceStatusanalysisVO> list = Helper.DataReaderMapToList<WorkdiligenceStatusanalysisVO>(reader);
@@ -99,7 +118,7 @@ namespace MES_DB
             }
         }
 
-        public List<QualityVO> GetAllQuality()
+        public List<QualityVO> GetAllQuality(DateTime start, DateTime end)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -107,6 +126,8 @@ namespace MES_DB
                 cmd.CommandText = "GetAllQuality";
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@StartDate", start);
+                cmd.Parameters.AddWithValue("@EndDate", end);
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<QualityVO> list = Helper.DataReaderMapToList<QualityVO>(reader);
@@ -115,7 +136,7 @@ namespace MES_DB
             }
         }
 
-        public List<RegProcessVO> GetAllRegProcess()
+        public List<RegProcessVO> GetAllRegProcess(DateTime start, DateTime end)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -123,6 +144,8 @@ namespace MES_DB
                 cmd.CommandText = "AllRegProcessForm";
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@StartDate", start);
+                cmd.Parameters.AddWithValue("@EndDate", end);
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<RegProcessVO> list = Helper.DataReaderMapToList<RegProcessVO>(reader);

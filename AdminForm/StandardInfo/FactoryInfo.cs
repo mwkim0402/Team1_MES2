@@ -79,12 +79,12 @@ namespace AdminForm
      
         private void cmbWPCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbWPCategory.Text == "소성")               
-                txtWPCodeInput.Text = CreateCode("PL", list.FindAll(x => x.Wc_Code.Contains("PL")).Count + 1);
-            else if (cmbWPCategory.Text == "건조")
-                txtWPCodeInput.Text = CreateCode("DY", list.FindAll(x => x.Wc_Code.Contains("DY")).Count + 1);
-            else if (cmbWPCategory.Text == "성형")
-                txtWPCodeInput.Text = CreateCode("FR", list.FindAll(x => x.Wc_Code.Contains("FR")).Count + 1);
+            if (cmbWPCategory.Text == "제강")               
+                txtWPCodeInput.Text = CreateCode("SM", list.FindAll(x => x.Wc_Code.Contains("SM")).Count + 1);
+            else if (cmbWPCategory.Text == "제선")
+                txtWPCodeInput.Text = CreateCode("IM", list.FindAll(x => x.Wc_Code.Contains("IM")).Count + 1);
+            else if (cmbWPCategory.Text == "압연")
+                txtWPCodeInput.Text = CreateCode("RL", list.FindAll(x => x.Wc_Code.Contains("RL")).Count + 1);
             else if (cmbWPCategory.Text == "포장")
                 txtWPCodeInput.Text = CreateCode("PK", list.FindAll(x => x.Wc_Code.Contains("PK")).Count + 1);
         }

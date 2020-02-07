@@ -745,6 +745,8 @@
     <None Include="bin\Debug\image\icons8-collapse-arrow-32.png" />
     <None Include="bin\Debug\image\icons8-expand-arrow-32.png" />
     <None Include="bin\Debug\image\Loading.gif" />
+    <None Include="bin\Debug\image\teamlogotest.png" />
+    <None Include="bin\Debug\image\logotest.PNG" />
     <Content Include="image\Action_Save_New_32x32.png" />
     <Content Include="image\bookmark.png" />
     <Content Include="image\btn.png" />

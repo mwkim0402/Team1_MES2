@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.txtWPCode = new System.Windows.Forms.TextBox();
             this.txtWPName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,6 +59,7 @@
             this.rbNoUse_Use = new System.Windows.Forms.RadioButton();
             this.cbProcessCode = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.fcFactory = new AdminForm.FIndCategory();
             this.txtWPCodeInput = new System.Windows.Forms.TextBox();
             this.cmbPerformUnit = new System.Windows.Forms.ComboBox();
             this.txtWPNameInput = new System.Windows.Forms.TextBox();
@@ -94,8 +96,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.fcFactory = new AdminForm.FIndCategory();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -130,6 +130,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1050, 67);
             this.panel2.TabIndex = 4;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(520, 11);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(86, 38);
+            this.btnSearch.TabIndex = 20;
+            this.btnSearch.Text = "검색";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtWPCode
             // 
@@ -438,6 +448,17 @@
             this.label13.TabIndex = 131;
             this.label13.Text = "자동 비가동 시간";
             // 
+            // fcFactory
+            // 
+            this.fcFactory.Category = AdminForm.CategoryMode.Process;
+            this.fcFactory.Location = new System.Drawing.Point(-650, -866);
+            this.fcFactory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.fcFactory.Name = "fcFactory";
+            this.fcFactory.SendCode = null;
+            this.fcFactory.SendName = null;
+            this.fcFactory.Size = new System.Drawing.Size(190, 27);
+            this.fcFactory.TabIndex = 21;
+            // 
             // txtWPCodeInput
             // 
             this.txtWPCodeInput.Location = new System.Drawing.Point(114, 74);
@@ -471,15 +492,15 @@
             // 
             this.cmbWPCategory.FormattingEnabled = true;
             this.cmbWPCategory.Items.AddRange(new object[] {
-            "소성",
-            "건조",
-            "성형",
+            "제선",
+            "제강",
+            "압연",
             "포장"});
             this.cmbWPCategory.Location = new System.Drawing.Point(114, 34);
             this.cmbWPCategory.Name = "cmbWPCategory";
             this.cmbWPCategory.Size = new System.Drawing.Size(154, 20);
             this.cmbWPCategory.TabIndex = 141;
-            this.cmbWPCategory.Text = "소성";
+            this.cmbWPCategory.Text = "제선";
             this.cmbWPCategory.SelectedIndexChanged += new System.EventHandler(this.cmbWPCategory_SelectedIndexChanged);
             // 
             // gbAutoNonOp
@@ -844,27 +865,6 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1047, 273);
             this.dataGridView1.TabIndex = 15;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(520, 11);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(86, 38);
-            this.btnSearch.TabIndex = 20;
-            this.btnSearch.Text = "검색";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // fcFactory
-            // 
-            this.fcFactory.Category = AdminForm.CategoryMode.Process;
-            this.fcFactory.Location = new System.Drawing.Point(-650, -866);
-            this.fcFactory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.fcFactory.Name = "fcFactory";
-            this.fcFactory.SendCode = null;
-            this.fcFactory.SendName = null;
-            this.fcFactory.Size = new System.Drawing.Size(190, 27);
-            this.fcFactory.TabIndex = 21;
             // 
             // timer1
             // 

@@ -39,20 +39,18 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(14, 106);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabControl1.Location = new System.Drawing.Point(12, 85);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(107, 35);
+            this.tabControl1.Size = new System.Drawing.Size(94, 28);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 38);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 32);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Size = new System.Drawing.Size(99, 0);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(86, 0);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "조회내역";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -65,22 +63,21 @@
             this.dgvSearchResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSearchResult.BackgroundColor = System.Drawing.Color.White;
             this.dgvSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSearchResult.Location = new System.Drawing.Point(14, 142);
-            this.dgvSearchResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvSearchResult.Location = new System.Drawing.Point(12, 114);
             this.dgvSearchResult.Name = "dgvSearchResult";
             this.dgvSearchResult.RowHeadersWidth = 51;
             this.dgvSearchResult.RowTemplate.Height = 23;
-            this.dgvSearchResult.Size = new System.Drawing.Size(1294, 589);
+            this.dgvSearchResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSearchResult.Size = new System.Drawing.Size(1132, 471);
             this.dgvSearchResult.TabIndex = 6;
             // 
             // dgvOne
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1321, 755);
+            this.ClientSize = new System.Drawing.Size(1156, 604);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.dgvSearchResult);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "dgvOne";
             this.Text = "dgvOne";
             this.tabControl1.ResumeLayout(false);

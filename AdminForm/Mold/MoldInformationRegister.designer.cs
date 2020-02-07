@@ -79,6 +79,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.cmbMoldGroupI = new System.Windows.Forms.ComboBox();
             this.cmbMoldGroupM = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.tcParent1.SuspendLayout();
             this.tcParent2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -138,6 +139,7 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.cmbMoldGroupSearch);
             this.panel2.Controls.Add(this.txtMoldNameSearch);
             this.panel2.Controls.Add(this.txtMoldCodeSearch);
@@ -635,6 +637,7 @@
             // 
             // cmbMoldGroupI
             // 
+            this.cmbMoldGroupI.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbMoldGroupI.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.cmbMoldGroupI.FormattingEnabled = true;
             this.cmbMoldGroupI.Location = new System.Drawing.Point(499, 22);
@@ -651,6 +654,18 @@
             this.cmbMoldGroupM.Name = "cmbMoldGroupM";
             this.cmbMoldGroupM.Size = new System.Drawing.Size(99, 24);
             this.cmbMoldGroupM.TabIndex = 99;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.Location = new System.Drawing.Point(1030, 11);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(82, 48);
+            this.btnSearch.TabIndex = 99;
+            this.btnSearch.Text = "검색";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // MoldInformationRegister
             // 
@@ -736,5 +751,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ComboBox cmbMoldGroupM;
         private System.Windows.Forms.ComboBox cmbMoldGroupI;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

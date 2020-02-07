@@ -71,6 +71,7 @@
             this.dgvJobOrder.Location = new System.Drawing.Point(12, 356);
             this.dgvJobOrder.Name = "dgvJobOrder";
             this.dgvJobOrder.RowTemplate.Height = 23;
+            this.dgvJobOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvJobOrder.Size = new System.Drawing.Size(1132, 220);
             this.dgvJobOrder.TabIndex = 9;
             // 
@@ -105,6 +106,7 @@
             this.dgvProductRequset.Location = new System.Drawing.Point(12, 113);
             this.dgvProductRequset.Name = "dgvProductRequset";
             this.dgvProductRequset.RowTemplate.Height = 23;
+            this.dgvProductRequset.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductRequset.Size = new System.Drawing.Size(1132, 207);
             this.dgvProductRequset.TabIndex = 7;
             // 

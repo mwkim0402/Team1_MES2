@@ -83,10 +83,20 @@ namespace AdminForm
                                               select item).ToList();
                 dgvSearchResult.DataSource = list;
             }
-            else
+            else if(fcFactory.SendCode != null && fcWork.SendCode == null)
             {
-                MessageBox.Show("검색 조건을 모두 선택해주세요.");
+                List<ProcessInquiryVO> list = (from item in allList
+                                               where item.Process_name == fcFactory.SendName 
+                                               select item).ToList();
+                dgvSearchResult.DataSource = list;
             }
+            else if (fcFactory.SendCode == null && fcWork.SendCode != null)
+            {
+                List<ProcessInquiryVO> list = (from item in allList
+                                               where item.Wc_Name == fcWork.SendName
+                                               select item).ToList();
+                dgvSearchResult.DataSource = list;
+            }  
         }
     }
 }

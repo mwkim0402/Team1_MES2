@@ -52,10 +52,10 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업장 명", "Wc_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업장 유형", "Wc_Group", true, 100);       
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "공정 코드", "Process_Code", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업지시 자동시작 여부", "Auto_Start_YN", true, 30);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업지시 자동 생성 유무", "Auto_Wo_YN", true,30);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "자동 비가동 여부", "Nop_Auto_YN", true, 30);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "자동 비가동 시간", "Nop_Check_Time", true, 100);
+            //CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업지시 자동시작 여부", "Auto_Start_YN", true, 30);
+           // CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업지시 자동 생성 유무", "Auto_Wo_YN", true,30);
+           // CommonClass.AddNewColumnToDataGridView(dataGridView1, "자동 비가동 여부", "Nop_Auto_YN", true, 30);
+           // CommonClass.AddNewColumnToDataGridView(dataGridView1, "자동 비가동 시간", "Nop_Check_Time", true, 100);
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "실적등록유형", "Prd_Req_Type", true, 100);
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "실적단위", "Prd_Unit", true, 100);
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "팔레트생성유무", "Pallet_YN", true, 100);
@@ -118,13 +118,13 @@ namespace AdminForm
             item.Process_Code = cbProcessCode.Text;
             item.Prd_Unit = cmbPerformUnit.Text;
             item.Prd_Req_Type = "임시";
-            item.Nop_Auto_YN = rbUse_NonOp.Checked ? "Y" : "N";
-            item.Nop_Check_Time = rbUse_NonOp.Checked ? Convert.ToInt32(nuNonTime.Value) : 0;
+            //item.Nop_Auto_YN = rbUse_NonOp.Checked ? "Y" : "N";
+            //item.Nop_Check_Time = rbUse_NonOp.Checked ? Convert.ToInt32(nuNonTime.Value) : 0;
             item.Mold_Setup_YN = rbUse_MoldEq.Checked ? "Y" : "N";
             item.Use_YN = rbUse_Use.Checked ? "Y" : "N";
             item.Pallet_YN = rbUse_Pallet.Checked ? "Y":"N";
-            item.Auto_Wo_YN = rbUse_OrderCreate.Checked ? "Y" : "N";
-            item.Auto_Start_YN = rbUse_OrderStart.Checked ? "Y" : "N";
+          //  item.Auto_Wo_YN = rbUse_OrderCreate.Checked ? "Y" : "N";
+         //   item.Auto_Start_YN = rbUse_OrderStart.Checked ? "Y" : "N";
             item.Mold_Setup_YN = rbUse_MoldEq.Checked ? "Y" : "N";
             item.Remark = txtPS.Text;
 

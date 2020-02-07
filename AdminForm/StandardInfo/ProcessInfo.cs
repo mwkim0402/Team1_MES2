@@ -113,7 +113,7 @@ namespace AdminForm
         private void CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             tcParent2.SelectedIndex = 1;
-            string upDateID = dgvSearchResult.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string upDateID = dgvSearchResult.Rows[e.RowIndex].Cells[1].Value.ToString();
             ProcessVo updateVo = list.Find(x => x.Process_Code == upDateID);
             txtUpCode.Text = updateVo.Process_Code;
             txtUpName.Text = updateVo.Process_Name;

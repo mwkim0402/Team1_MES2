@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace AdminForm
 {
-   
+
 
     public partial class FiringWorkReport : documentViewer
     {
@@ -27,6 +27,7 @@ namespace AdminForm
         private void FiringWorkReport_Load(object sender, EventArgs e)
         {
             frm = (MainForm)this.MdiParent;
+            //setAction();
             using (FrmWaitForm frm = new FrmWaitForm(setAction))
             {
                 frm.ShowDialog(this);
@@ -52,31 +53,34 @@ namespace AdminForm
             using (SqlConnection conn = new SqlConnection(strConn))
             {
                 conn.Open();
-                string strSql = $"select * from GV_Master where Ins_Date = '{findDate}'";
-
+                string strSql = @"select Hist_Seq, GV_Code, Item_Name, wo.Workorderno, In_Time
+                  from GV_History gv inner join WorkOrder wo on gv.Workorderno = wo.Workorderno
+                  inner join Item_Master i on wo.Item_Code = i.item_Code";
                 SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
-                da.Fill(ds, "GV");
+                da.Fill(ds, "GV_Work_His");
                 conn.Close();
             }
             FiringReport rpt = new FiringReport();
             rpt.Parameters["SelectedDate"].Value = dtpProduction.Value;
             rpt.Parameters["SelectedDate"].Visible = false;
-            rpt.DataSource = ds;
+            rpt.DataSource = ds.Tables["GV_Work_His"];
             rpt.CreateDocument();
+           // documentViewer1.DocumentSource = rpt;
+           // documentViewer1.PrintingSystem.ExecCommand(DevExpress.XtraPrinting.PrintingSystemCommand.SubmitParameters, new object[] { true });
             //Form2 frm = new Form2();
             //frm.documentViewer1.DocumentSource = rpt;
             //frm.ShowDialog();
+       
             WorkOrderDetailView(rpt);
-
         }
 
         private void WorkOrderDetailView(FiringReport rep)
         {
-
             if (documentViewer1.InvokeRequired)
             {
                 var d = new SafeCallDelegate(WorkOrderDetailView);
-                Invoke(d, new object[] { rep });
+
+                documentViewer1.Invoke(d, new object[] { rep });
             }
             else
             {

@@ -33,10 +33,10 @@ namespace MES_DB
                 cmd.Parameters.AddWithValue("@Wc_Name",workVo.Wc_Name);
                 cmd.Parameters.AddWithValue("@Wc_Group",workVo.Wc_Group);
                 cmd.Parameters.AddWithValue("@Process_Code",workVo.Process_Code);
-                cmd.Parameters.AddWithValue("@Auto_Wo_YN",workVo.Auto_Wo_YN);
-                cmd.Parameters.AddWithValue("@Auto_Start_YN",workVo.Auto_Start_YN);
-                cmd.Parameters.AddWithValue("@Nop_Auto_YN",workVo.Nop_Auto_YN);
-                cmd.Parameters.AddWithValue("@Nop_Check_Time",workVo.Nop_Check_Time);
+                //cmd.Parameters.AddWithValue("@Auto_Wo_YN",workVo.Auto_Wo_YN);
+               // cmd.Parameters.AddWithValue("@Auto_Start_YN",workVo.Auto_Start_YN);
+               // cmd.Parameters.AddWithValue("@Nop_Auto_YN",workVo.Nop_Auto_YN);
+              //  cmd.Parameters.AddWithValue("@Nop_Check_Time",workVo.Nop_Check_Time);
                 cmd.Parameters.AddWithValue("@Prd_Req_Type",workVo.Prd_Req_Type);
                 cmd.Parameters.AddWithValue("@Pallet_YN",workVo.Pallet_YN);
                 cmd.Parameters.AddWithValue("@Prd_Unit",workVo.Prd_Unit);

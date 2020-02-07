@@ -14,7 +14,7 @@ namespace AdminForm
     public partial class MoldInformationRegister : dgvOneWithInput
     {
         MainForm frm;
-
+        List<MoldingInfoDetailVo> detailList = new List<MoldingInfoDetailVo>();
         int isUse;
         List<MoldingInfoVo> List = null;
 
@@ -56,11 +56,40 @@ namespace AdminForm
             dgvSearchResult.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvSearchResult.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvSearchResult.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+            this.dgvSearchResult.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSearchResult_DoubleClick);
             //콤보바인딩
-            //ComboClass.ComboBind(List<MoldingInfoVo> , cmbMoldGroupSearch, false);
+            List<ComboItem> item = (from items in List
+                                    select new ComboItem
+                                    {
+                                        comboText = items.Mold_Group,
+                                        comboValue = items.Mold_Group
+                                    }).ToList();
+            ComboClass.ComboBind(item , cmbMoldGroupSearch, false);
+
+            
         }
-    
+
+        private void DgvSearchResult_DoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MoldingService service = new MoldingService();
+            detailList = service.GetMoldingInfoDetail(dgvSearchResult.SelectedRows[0].Cells[1].ToString());
+            txtMoldCodeM.Text = detailList[0].Mold_Code;
+            txtMoldNameM.Text = detailList[0].Mold_Name;
+            cmbMoldGroupM.SelectedItem = detailList[0].Mold_Group; //
+            txtWarrentNumM.Text = detailList[0].Guar_Shot_Cnt.ToString();
+            txtPriceM.Text = detailList[0].Purchase_Amt.ToString();
+            dtpInputdateM.Value = detailList[0].In_Date;
+            dtpLastEquipDateM.Value = detailList[0].Last_Setup_Time;
+            if (detailList[0].Use_YN.ToString() == "1")
+            {
+                rbUseM.Checked = true;
+            }
+            else
+            {
+                rbNoUseM.Checked = true;
+            }
+        }
+
         private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
        int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleCenter)
         {
@@ -102,10 +131,24 @@ namespace AdminForm
             }
 
 
-            int result = ser.SaveMoldingInfo(txtMoldCodeInput.Text, txtMoldNameInput.Text, txtMoldGroupInput.Text, txtPrice.Text, dtpInputdate.Value.ToString(),dtpLastEquipDate.Value.ToString(),txtWarrentNum.Text,txtPS.Text,isUse);
+            int result = ser.SaveMoldingInfo(txtMoldCodeInput.Text, txtMoldNameInput.Text, cmbMoldGroupI.SelectedItem.ToString(), txtPrice.Text, dtpInputdate.Value.ToString(),dtpLastEquipDate.Value.ToString(),txtWarrentNum.Text,txtPS.Text,isUse);
             if (result >= 1)
             {
                 MessageBox.Show("저장이 완료되었습니다.");
+                txtMoldCodeM.Text = null;
+                txtMoldNameM.Text = null;
+                cmbMoldGroupM.SelectedIndex = 0; //
+                txtWarrentNumM.Text = null;
+                txtPriceM.Text = null;
+                dtpInputdateM.Value = DateTime.Now;
+                dtpLastEquipDateM.Value = DateTime.Now;
+                rbUse.Checked = false;
+                rbNoUse.Checked = false;
+
+            }
+            else
+            {
+                MessageBox.Show("오류.");
             }
         }
 
@@ -163,9 +206,25 @@ namespace AdminForm
                     }
                 }
             }
+            if (List.Count < 1)
+            {
+                frm.lblAlert.Text = "[알람] 검색한 조건의 데이터가 존재하지 않습니다.";
+                return;
+            }
+            frm.lblAlert.Text = $"[알람] {List.Count} 건의 데이터가 조회되었습니다.";
+            timer1.Start();
+            dgvSearchResult.DataSource = List;
         }
-        
-        private void MoldInformationRegister_Activated(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //frm.lblAlertTitle.Text = "";
+            frm.lblAlert.Text = "<공지사항> Test 중 입니다.";
+            timer1.Stop();
+        }
+
+    
+
+    private void MoldInformationRegister_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += new System.EventHandler(this.Search_Click);
         }
@@ -173,6 +232,32 @@ namespace AdminForm
         private void MoldInformationRegister_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= new System.EventHandler(this.Search_Click);
+        }
+
+        private void BtnModify_Click(object sender, EventArgs e)
+        {
+            detailList[0].Mold_Code = txtMoldCodeM.Text;
+            detailList[0].Mold_Name=txtMoldNameM.Text;
+            detailList[0].Mold_Group=cmbMoldGroupM.SelectedItem.ToString(); //
+            detailList[0].Guar_Shot_Cnt=int.Parse( txtWarrentNumM.Text);
+            detailList[0].Purchase_Amt= int.Parse(txtPriceM.Text);
+            detailList[0].In_Date=dtpInputdateM.Value;
+            detailList[0].Last_Setup_Time=dtpLastEquipDateM.Value;
+            if (rbUseM.Checked)
+            {
+                detailList[0].Use_YN = '1';
+            }
+            else
+            {
+                detailList[0].Use_YN = '0';
+            }
+
+            MoldingService ser = new MoldingService();
+            int result = ser.UpdateMoldingInfo(detailList[0]);
+            if (result >= 1)
+            {
+                MessageBox.Show("수정이 완료되었습니다.");
+            }
         }
     }
 }

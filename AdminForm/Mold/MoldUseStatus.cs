@@ -25,7 +25,7 @@ namespace AdminForm
         {
             frm = (MainForm)this.MdiParent;
 
-            AddNewColumnToDataGridView(dgvSearchResult, "생산일자", "???", true, 120);
+            //AddNewColumnToDataGridView(dgvSearchResult, "생산일자", "???", true, 120);
             AddNewColumnToDataGridView(dgvSearchResult, "금형코드", "Mold_Code", true, 100);
             AddNewColumnToDataGridView(dgvSearchResult, "금형명", "Mold_Name", true, 150);
             AddNewColumnToDataGridView(dgvSearchResult, "작업지시번호", "Workorderno", true, 100);
@@ -47,6 +47,8 @@ namespace AdminForm
             dgvSearchResult.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvSearchResult.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvSearchResult.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtpStart.Value = dtpEnd.Value;
+            dtpStart.Value.AddDays(-7);
         }
         private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
     int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleCenter)

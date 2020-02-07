@@ -52,17 +52,17 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업장 명", "Wc_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업장 유형", "Wc_Group", true, 100);       
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "공정 코드", "Process_Code", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업지시 자동시작 여부", "Auto_Start_YN", true, 30);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업지시 자동 생성 유무", "Auto_Wo_YN", true,30);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "자동 비가동 여부", "Nop_Auto_YN", true, 30);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "자동 비가동 시간", "Nop_Check_Time", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "실적등록유형", "Prd_Req_Type", true, 100);
+            //CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업지시 자동시작 여부", "Auto_Start_YN", true, 30);
+           // CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업지시 자동 생성 유무", "Auto_Wo_YN", true,30);
+           // CommonClass.AddNewColumnToDataGridView(dataGridView1, "자동 비가동 여부", "Nop_Auto_YN", true, 30);
+           // CommonClass.AddNewColumnToDataGridView(dataGridView1, "자동 비가동 시간", "Nop_Check_Time", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "실적등록유형", "Prd_Req_Type", true, 120);
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "실적단위", "Prd_Unit", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "팔레트생성유무", "Pallet_YN", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "팔레트생성유무", "Pallet_YN", true, 140);
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "비고", "Remark", true, 100);
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "Use_YN", true, 100);
             CommonClass.AddNewColumnToDataGridView(dataGridView1, "비가동 상태", "Wo_Status", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "금형장착여부", "Mold_Setup_YN", true, 30);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "금형장착여부", "Mold_Setup_YN", true, 120);
 
             dataGridView1.RowHeadersVisible = false;
             DataGridViewCheckBoxColumn chkboxCol = new DataGridViewCheckBoxColumn();
@@ -79,12 +79,12 @@ namespace AdminForm
      
         private void cmbWPCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbWPCategory.Text == "소성")               
-                txtWPCodeInput.Text = CreateCode("PL", list.FindAll(x => x.Wc_Code.Contains("PL")).Count + 1);
-            else if (cmbWPCategory.Text == "건조")
-                txtWPCodeInput.Text = CreateCode("DY", list.FindAll(x => x.Wc_Code.Contains("DY")).Count + 1);
-            else if (cmbWPCategory.Text == "성형")
-                txtWPCodeInput.Text = CreateCode("FR", list.FindAll(x => x.Wc_Code.Contains("FR")).Count + 1);
+            if (cmbWPCategory.Text == "제강")               
+                txtWPCodeInput.Text = CreateCode("SM", list.FindAll(x => x.Wc_Code.Contains("SM")).Count + 1);
+            else if (cmbWPCategory.Text == "제선")
+                txtWPCodeInput.Text = CreateCode("IM", list.FindAll(x => x.Wc_Code.Contains("IM")).Count + 1);
+            else if (cmbWPCategory.Text == "압연")
+                txtWPCodeInput.Text = CreateCode("RL", list.FindAll(x => x.Wc_Code.Contains("RL")).Count + 1);
             else if (cmbWPCategory.Text == "포장")
                 txtWPCodeInput.Text = CreateCode("PK", list.FindAll(x => x.Wc_Code.Contains("PK")).Count + 1);
         }
@@ -101,7 +101,7 @@ namespace AdminForm
 
         private void rbUse_NonOp_CheckedChanged(object sender, EventArgs e)
         {
-            nuNonTime.Enabled = rbUse_NonOp.Checked;
+            //nuNonTime.Enabled = rbUse_NonOp.Checked;
         }
 
         private void cbProcessCode_SelectedIndexChanged(object sender, EventArgs e)
@@ -118,15 +118,15 @@ namespace AdminForm
             item.Process_Code = cbProcessCode.Text;
             item.Prd_Unit = cmbPerformUnit.Text;
             item.Prd_Req_Type = "임시";
-            item.Nop_Auto_YN = rbUse_NonOp.Checked ? "Y" : "N";
-            item.Nop_Check_Time = rbUse_NonOp.Checked ? Convert.ToInt32(nuNonTime.Value) : 0;
+            //item.Nop_Auto_YN = rbUse_NonOp.Checked ? "Y" : "N";
+            //item.Nop_Check_Time = rbUse_NonOp.Checked ? Convert.ToInt32(nuNonTime.Value) : 0;
             item.Mold_Setup_YN = rbUse_MoldEq.Checked ? "Y" : "N";
-            item.Use_YN = rbUse_Use.Checked ? "Y" : "N";
+            item.Use_YN = rbUseTrue.Checked ? "Y" : "N";
             item.Pallet_YN = rbUse_Pallet.Checked ? "Y":"N";
-            item.Auto_Wo_YN = rbUse_OrderCreate.Checked ? "Y" : "N";
-            item.Auto_Start_YN = rbUse_OrderStart.Checked ? "Y" : "N";
+          //  item.Auto_Wo_YN = rbUse_OrderCreate.Checked ? "Y" : "N";
+         //   item.Auto_Start_YN = rbUse_OrderStart.Checked ? "Y" : "N";
             item.Mold_Setup_YN = rbUse_MoldEq.Checked ? "Y" : "N";
-            item.Remark = txtPS.Text;
+            item.Remark = rbUse.Text;
 
             WorkCenterService service = new WorkCenterService();
             service.InsertWorkCenter(item);

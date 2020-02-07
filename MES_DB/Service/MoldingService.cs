@@ -36,5 +36,17 @@ namespace MES_DB
             MoldingDac dac = new MoldingDac();
             return dac.SearchMoldUse(start,end,item,workplace);
         }
+
+        public List<MoldingInfoDetailVo> GetMoldingInfoDetail(string moldcode)
+        {
+            MoldingDac dac = new MoldingDac();
+            return dac.GetMoldingInfoDetail(moldcode);
+        }
+
+        public int UpdateMoldingInfo(MoldingInfoDetailVo detail)
+        {
+            MoldingDac dac = new MoldingDac();
+            return dac.UpdateMoldingInfo(detail);
+        }
     }
 }

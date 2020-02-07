@@ -65,6 +65,7 @@
     <Compile Include="Service\InspectService.cs" />
     <Compile Include="Service\ItemService.cs" />
     <Compile Include="Service\LoginService.cs" />
+    <Compile Include="Service\MoldingInfoDetailVo.cs" />
     <Compile Include="Service\QualityService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Service\WorkOrderService.cs" />

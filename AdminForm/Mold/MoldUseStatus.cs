@@ -25,7 +25,7 @@ namespace AdminForm
         {
             frm = (MainForm)this.MdiParent;
 
-            AddNewColumnToDataGridView(dgvSearchResult, "생산일자", "???", true, 120);
+            //AddNewColumnToDataGridView(dgvSearchResult, "생산일자", "???", true, 120);
             AddNewColumnToDataGridView(dgvSearchResult, "금형코드", "Mold_Code", true, 100);
             AddNewColumnToDataGridView(dgvSearchResult, "금형명", "Mold_Name", true, 150);
             AddNewColumnToDataGridView(dgvSearchResult, "작업지시번호", "Workorderno", true, 100);

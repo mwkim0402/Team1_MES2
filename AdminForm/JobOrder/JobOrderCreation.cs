@@ -65,16 +65,16 @@ namespace AdminForm
             //기본값 설정
             dtpStart.Value = dtpEnd.Value.AddDays(-7);
             
-            foreach (JobOrderCreateVo item in List)
-            {
+            //foreach (JobOrderCreateVo item in List)
+            //{
                 
-                JobOrderCreateVo ifitem = new JobOrderCreateVo();
-                ifitem.Workorderno = item.Workorderno;
-                if (ifitem.Workorderno.ToString().Substring(0,8) == DateTime.Today.Date.ToShortDateString().Replace("-", ""))
-                {
-                    daycount.Add(ifitem);
-                }
-            }
+            //    JobOrderCreateVo ifitem = new JobOrderCreateVo();
+            //    ifitem.Workorderno = item.Workorderno;
+            //    if (ifitem.Workorderno.ToString().Substring(0,8) == DateTime.Today.Date.ToString())
+            //    {
+            //        daycount.Add(ifitem);
+            //    }
+            //}
                                                
 
             txtJobOrderCodeInput.Text = DateTime.Today.Date.ToShortDateString().Replace("-", "") + String.Format("{0:D4}", daycount.Count+ 1);

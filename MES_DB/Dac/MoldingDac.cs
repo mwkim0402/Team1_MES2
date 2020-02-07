@@ -30,7 +30,7 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "insert into Mold_Master(Mold_Code,Mold_Name,Mold_Group,Pruchase_Amt,In_Date,Ins_Date,Guar_Shot_Cnt,Use_YN)values(@Code,@Name,@Group,@Price,@Inputdate,@Lastequipdate,@Warrentnum,@PS,@Use_YN)";
+                cmd.CommandText = "insert into Mold_Master(Mold_Code,Mold_Name,Mold_Group,Pruchase_Amt,In_Date,Last_Setup_Time,Guar_Shot_Cnt,Remark,Use_YN)values(@Code,@Name,@Group,@Price,@Inputdate,@Lastequipdate,@Warrentnum,@PS,@Use_YN)";
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@Code", code);
                 cmd.Parameters.AddWithValue("@Name", name);
@@ -47,6 +47,47 @@ namespace MES_DB
                 int result = cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
                 return result;
+            }
+        }
+
+        public int UpdateMoldingInfo(MoldingInfoDetailVo detail)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "UpdateMoldingInfo";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Code", detail.Mold_Code);
+                cmd.Parameters.AddWithValue("@Name", detail.Mold_Name);
+                cmd.Parameters.AddWithValue("@Group", detail.Mold_Group);
+                cmd.Parameters.AddWithValue("@Price", detail.Purchase_Amt);
+                cmd.Parameters.AddWithValue("@Inputdate", detail.In_Date);
+                cmd.Parameters.AddWithValue("@Lastequipdate", detail.Last_Setup_Time);
+                cmd.Parameters.AddWithValue("@Warrentnum", detail.Guar_Shot_Cnt);
+                cmd.Parameters.AddWithValue("@PS", detail.Remark);
+                cmd.Parameters.AddWithValue("@Use_YN", detail.Use_YN);
+
+                cmd.Connection.Open();
+                int result = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                return result;
+            }
+        }
+
+        public List<MoldingInfoDetailVo> GetMoldingInfoDetail(string moldcode)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "Select Mold_Code,Mold_Name,Mold_Group,Mold_Status,Cum_Shot_Cnt,Cum_Prd_Qty,Cum_Time,Guar_Shot_Cnt,Purchase_Amt,In_Date,Last_Setup_Time,Remark,Use_YN from Mold_Master where Mold_Code = @MoldCode";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@MoldCode", moldcode);
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<MoldingInfoDetailVo> detaildata = Helper.DataReaderMapToList<MoldingInfoDetailVo>(reader);
+                cmd.Connection.Close();
+                return detaildata;
             }
         }
 

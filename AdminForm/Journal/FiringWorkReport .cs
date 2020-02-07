@@ -53,9 +53,9 @@ namespace AdminForm
             using (SqlConnection conn = new SqlConnection(strConn))
             {
                 conn.Open();
-                string strSql = @"select Hist_Seq, GV_Code, Item_Name, wo.Workorderno, In_Time
+                string strSql = $@"select Hist_Seq, GV_Code, Item_Name, wo.Workorderno, In_Time
                   from GV_History gv inner join WorkOrder wo on gv.Workorderno = wo.Workorderno
-                  inner join Item_Master i on wo.Item_Code = i.item_Code";
+                  inner join Item_Master i on wo.Item_Code = i.item_Code where gv.Loading_Date =  '{findDate}' ";
                 SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
                 da.Fill(ds, "GV_Work_His");
                 conn.Close();
@@ -65,11 +65,6 @@ namespace AdminForm
             rpt.Parameters["SelectedDate"].Visible = false;
             rpt.DataSource = ds.Tables["GV_Work_His"];
             rpt.CreateDocument();
-           // documentViewer1.DocumentSource = rpt;
-           // documentViewer1.PrintingSystem.ExecCommand(DevExpress.XtraPrinting.PrintingSystemCommand.SubmitParameters, new object[] { true });
-            //Form2 frm = new Form2();
-            //frm.documentViewer1.DocumentSource = rpt;
-            //frm.ShowDialog();
        
             WorkOrderDetailView(rpt);
         }

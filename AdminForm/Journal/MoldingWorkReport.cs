@@ -46,20 +46,28 @@ namespace AdminForm
             string findDate = dtpProduction.Value.ToString().Substring(0, 10);
 
             string strConn = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
-            DataSet ds = new DataSet();
+            DataSet dsQuery = new DataSet();
+            DataSet dsQuery_1 = new DataSet();
             using (SqlConnection conn = new SqlConnection(strConn))
             {
                 conn.Open();
-                string strSql = $"select * from GV_Master where Ins_Date = '{findDate}'";
+                string strSql = $@"select Use_Seq, MM.Mold_Name, MH.Workorderno, (MH.Use_Starttime - MH.Use_Endtime) As [Using Time]
+                                    from Mold_Use_History MH inner
+                                    join Mold_Master MM on MH.Mold_Code = MM.Mold_Code";
 
                 SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
-                da.Fill(ds, "GV");
+                da.Fill(dsQuery, "Query");
+
+                strSql = $@"select * from Mold_Master";
+
+                da = new SqlDataAdapter(strSql, conn);
+                da.Fill(dsQuery, "Query_1");
                 conn.Close();
             }
             MoldingReport rpt = new MoldingReport();
             rpt.Parameters["SelectedDate"].Value = dtpProduction.Value;
             rpt.Parameters["SelectedDate"].Visible = false;
-            rpt.DataSource = ds;
+            rpt.DataSource = dsQuery;
             rpt.CreateDocument();
             //Form2 frm = new Form2();
             //frm.documentViewer1.DocumentSource = rpt;

@@ -117,6 +117,8 @@
             this.captionsStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.LineTotalCalcField = new DevExpress.XtraReports.UI.CalculatedField();
             this.SelectedDate = new DevExpress.XtraReports.Parameters.Parameter();
+            this.DetailReport = new DevExpress.XtraReports.UI.DetailReportBand();
+            this.Detail1 = new DevExpress.XtraReports.UI.DetailBand();
             ((System.ComponentModel.ISupportInitialize)(this.detailTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceInfoTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
@@ -125,9 +127,7 @@
             // 
             // Detail
             // 
-            this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.detailTable});
-            this.Detail.HeightF = 56.70821F;
+            this.Detail.HeightF = 0F;
             this.Detail.KeepTogether = true;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
@@ -136,7 +136,7 @@
             // 
             // detailTable
             // 
-            this.detailTable.LocationFloat = new DevExpress.Utils.PointFloat(10.0009F, 0F);
+            this.detailTable.LocationFloat = new DevExpress.Utils.PointFloat(10.00093F, 1.333269F);
             this.detailTable.Name = "detailTable";
             this.detailTable.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 5, 0, 100F);
             this.detailTable.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -956,6 +956,20 @@
             this.SelectedDate.Type = typeof(System.DateTime);
             this.SelectedDate.ValueInfo = "2020-02-03";
             // 
+            // DetailReport
+            // 
+            this.DetailReport.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+            this.Detail1});
+            this.DetailReport.Level = 0;
+            this.DetailReport.Name = "DetailReport";
+            // 
+            // Detail1
+            // 
+            this.Detail1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.detailTable});
+            this.Detail1.HeightF = 43.08326F;
+            this.Detail1.Name = "Detail1";
+            // 
             // LoadingReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -963,7 +977,8 @@
             this.TopMargin,
             this.BottomMargin,
             this.GroupHeader2,
-            this.GroupHeader1});
+            this.GroupHeader1,
+            this.DetailReport});
             this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
             this.LineTotalCalcField});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
@@ -1049,5 +1064,7 @@
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow1;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell3;
         public DevExpress.XtraReports.Parameters.Parameter SelectedDate;
+        private DevExpress.XtraReports.UI.DetailReportBand DetailReport;
+        private DevExpress.XtraReports.UI.DetailBand Detail1;
     }
 }

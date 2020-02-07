@@ -14,7 +14,7 @@ namespace AdminForm
     public partial class MoldingOrderCreation : dgvTwo
     {
         private delegate void SafeCallDelegate(List<WorkOrder> list);
-        List<WorkReqVo> workReqList = null;
+        List<WorkReq_OrderVo> workReqList = null;
         List<MoldingOrderCreation_ReqVo> ListReq = null;
         List<MoldingOrderCreation_WoVo> ListWo = null;
         string selectedWoReq; //생산의뢰번호
@@ -29,7 +29,7 @@ namespace AdminForm
         private void ProdReqList()
         {
             WorkOrderService service = new WorkOrderService();
-            workReqList = service.GetAllWorkReq();
+            workReqList = service.GetAllWorkReqQty();
             dgvProductRequset.DataSource = workReqList;
         }
         private void WorkOrderList(string Wo_Req_No)
@@ -87,11 +87,13 @@ namespace AdminForm
             chkboxCol.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvProductRequset.Columns.Insert(0, chkboxCol);
             AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰번호", "Wo_Req_No", true, 110);
-            AddNewColumnToDataGridView(dgvProductRequset, "의뢰순번", "Req_Seq", true, 80);
-            AddNewColumnToDataGridView(dgvProductRequset, "품목명", "Item_Name", true, 174);
-            AddNewColumnToDataGridView(dgvProductRequset, "의뢰수량", "Req_Qty", true, 80);
-            AddNewColumnToDataGridView(dgvProductRequset, "생산완료 요청일", "Prd_Plan_Date", true, 140);
-            AddNewColumnToDataGridView(dgvProductRequset, "거래처명", "Cust_Name", true, 100);
+            AddNewColumnToDataGridView(dgvProductRequset, "품목명", "item_Name", true, 80);
+            AddNewColumnToDataGridView(dgvProductRequset, "압연잔여수량", "RollingP", true, 174);
+            AddNewColumnToDataGridView(dgvProductRequset, "제강잔여수량", "SteelP", true, 140);
+            AddNewColumnToDataGridView(dgvProductRequset, "제선잔여수량", "IronP", true, 80);          
+            AddNewColumnToDataGridView(dgvProductRequset, "포장잔여수량", "PackageP", true, 100);
+            AddNewColumnToDataGridView(dgvProductRequset, "마감날짜", "Prd_Plan_Date", true, 100);
+            AddNewColumnToDataGridView(dgvProductRequset, "고객사", "Cust_Name", true, 100);
             AddNewColumnToDataGridView(dgvProductRequset, "영업담당", "Sale_Emp", true, 100);
             AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰 상태", "Req_Status", true, 120);
       
@@ -211,6 +213,38 @@ namespace AdminForm
             {
                 if (Convert.ToBoolean(item.Cells[0].EditedFormattedValue))
                 {
+                    if(processName == "압연")
+                    {
+                        if(Convert.ToInt32(item.Cells[3].Value) == 0)
+                        {
+                            MessageBox.Show("잔여수량이 존재하지않아 작업계획을 할 수 없습니다.");
+                            return;
+                        }
+                    }
+                    else if(processName == "제선")
+                    {
+                        if (Convert.ToInt32(item.Cells[4].Value) == 0)
+                        {
+                            MessageBox.Show("잔여수량이 존재하지않아 작업계획을 할 수 없습니다.");
+                            return;
+                        }
+                    }
+                    else if (processName == "제강")
+                    {
+                        if (Convert.ToInt32(item.Cells[5].Value) == 0)
+                        {
+                            MessageBox.Show("잔여수량이 존재하지않아 작업계획을 할 수 없습니다.");
+                            return;
+                        }
+                    }
+                    else if (processName == "포장")
+                    {
+                        if (Convert.ToInt32(item.Cells[6].Value) == 0)
+                        {
+                            MessageBox.Show("잔여수량이 존재하지않아 작업계획을 할 수 없습니다.");
+                            return;
+                        }
+                    }
                     CreateWorkOrder popUp = new CreateWorkOrder(processName, dgvProductRequset.SelectedRows[0].Cells[1].Value.ToString());
                     popUp.ShowDialog();
                 }               

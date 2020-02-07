@@ -57,18 +57,18 @@ namespace AdminForm
             List<ComboItem> comboItems = new List<ComboItem>();
             comboItems.Add(new ComboItem
             {
-                comboText = "소성",
-                comboValue = "소성"
+                comboText = "압연",
+                comboValue = "압연"
             });
             comboItems.Add(new ComboItem
             {
-                comboText = "건조",
-                comboValue = "건조"
+                comboText = "제선",
+                comboValue = "제선"
             });
             comboItems.Add(new ComboItem
             {
-                comboText = "성형",
-                comboValue = "성형"
+                comboText = "제강",
+                comboValue = "제강"
             });
             comboItems.Add(new ComboItem
             {

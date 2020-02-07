@@ -80,6 +80,10 @@ namespace AdminForm
         }
         private void BordedDateChange(DateTime[] bordedDate)
         {
+            if (bordedDate == null)
+            {
+                return;
+            }
             string[] searchDate = (from item in bordedDate
                                      where item.Month.ToString() == lblMonth.Text && item.Year.ToString() == lblYear.Text.Split('년')[0]
                                      select item.Day.ToString()).ToArray();

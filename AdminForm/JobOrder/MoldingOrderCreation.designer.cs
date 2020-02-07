@@ -132,9 +132,9 @@
             // 
             this.toolStrip1.AutoSize = false;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnSo,
-            this.btnGun,
             this.btnSung,
+            this.btnGun,
+            this.btnSo,
             this.btnPo});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";

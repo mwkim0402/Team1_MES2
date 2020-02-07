@@ -31,8 +31,8 @@ namespace AdminForm
         }
         private void ItemGroupComboBind()
         {
-            ComboBox[] comboArr= { cmbLv1, cmbLv2, cmbLv3, cmbLv4, cmbLv5 };
-            ComboBox[] comboUpArr = { cmbUpLvl1, cmbUpLvl2, cmbUpLvl3, cmbUpLvl4, cmbUpLvl5 };
+           // ComboBox[] comboArr= { cmbLv1, cmbLv2, cmbLv3, cmbLv4, cmbLv5 };
+          //  ComboBox[] comboUpArr = { cmbUpLvl1, cmbUpLvl2, cmbUpLvl3, cmbUpLvl4, cmbUpLvl5 };
             for(int i =0; i<5; i++)
             {
                 List<ComboItem> comboList = (from value in ItemGroupList
@@ -42,8 +42,8 @@ namespace AdminForm
                                                  comboText = value.Level_Code,
                                                  comboValue = value.Level_Name
                                              }).ToList();
-                ComboClass.ComboBind(comboList, comboArr[i], true);
-                ComboClass.ComboBind(comboList, comboUpArr[i], false) ;
+             //   ComboClass.ComboBind(comboList, comboArr[i], true);
+              //  ComboClass.ComboBind(comboList, comboUpArr[i], false) ;
             }
             List<ComboItem> cmbItem = new List<ComboItem>();
             cmbItem.Add(new ComboItem
@@ -75,19 +75,10 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격", "Item_Spec", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "단위", "Item_Unit", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "안전재고", "Item_Stock", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "Level 1", "Level_1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "Level 2", "Level_2", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "Level 3", "Level_3", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "Level 4", "Level_4", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "Level 5", "Level_5", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "LotSize", "LotSize", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "캐비티", "Cavity", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "시간당 생산량", "PrdQty_Per_Hour", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "배치당 생산량", "PrdQTy_Per_Batch", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "한줄당PCS수", "Line_Per_Qty", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "한Shot당 PCS수", "Shot_Per_Qty", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "건조대차 기본 수량 ", "Dry_GV_Qty", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "소성대차 기본 수량 ", "Heat_GV_Qty", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "압연공정 UPH", "RollingUPH", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "제강공정 UPH", "SteelUPH", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "제선공정 UPH", "IronUPH", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "포장공정 UPH", "PackageUPH", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 100);
             // customize dataviewgrid, add checkbox column
             dgvSearchResult.RowHeadersVisible = false;
@@ -135,20 +126,19 @@ namespace AdminForm
                 Item_Type = cmbInType.Text,
                 Item_Spec = txtInSpec.Text,
                 Item_Unit = txtInUnit.Text,
-                Level_1 = cmbLv1.Text,
-                Level_2 = cmbLv2.Text,
-                Level_3 = cmbLv3.Text,
-                Level_4 = cmbLv4.Text,
-                Level_5 = cmbLv5.Text,
-                Item_Stock = Convert.ToDecimal(0),
-                LotSize = Convert.ToDecimal(10),
-                PrdQty_Per_Hour = Convert.ToDecimal(10),
-                PrdQTy_Per_Batch = Convert.ToDecimal(10),
-                Cavity = int.Parse(txtInCavity.Text),
-                Line_Per_Qty = Convert.ToInt32(nuLinePCS.Value),
-                Shot_Per_Qty = Convert.ToInt32(nuInShotPcs.Value),
-                Dry_GV_Qty = Convert.ToInt32(nuInGVQty.Value),
-                Heat_GV_Qty = Convert.ToInt32(nuInGVQty.Value),
+                //Level_1 = cmbLv1.Text,
+             //   Level_2 = cmbLv2.Text,
+              //  Level_3 = cmbLv3.Text,
+              //  Level_4 = cmbLv4.Text,
+              //  Level_5 = cmbLv5.Text,
+                IronUPH = Convert.ToDecimal(nuInsIron.Value),
+                RollingUPH = Convert.ToDecimal(nuInsRolling.Value),
+                SteelUPH = Convert.ToDecimal(nuInsSteel.Value),
+                PackageUPH = Convert.ToDecimal(nuInsPackage.Value),
+                //Cavity = int.Parse(txtInCavity.Text),
+              //  Line_Per_Qty = Convert.ToInt32(nuLinePCS.Value),
+                           // Dry_GV_Qty = Convert.ToInt32(nuInGVQty.Value),
+//Heat_GV_Qty = Convert.ToInt32(nuInGVQty.Value),
                 Remark = txtInremark.Text
             };
             ItemService service = new ItemService();
@@ -178,18 +168,23 @@ namespace AdminForm
             cmbInType.Text = updateItem.Item_Type;
             txtUpSpec.Text = updateItem.Item_Spec;
             txtUpUnit.Text = updateItem.Item_Unit;
-            cmbUpLvl1.Text = updateItem.Level_1;
-            cmbUpLvl2.Text = updateItem.Level_2;
-            cmbUpLvl3.Text = updateItem.Level_3;
-            cmbUpLvl4.Text = updateItem.Level_4;
-            cmbUpLvl5.Text = updateItem.Level_5;
-            txtUpCavity.Text = updateItem.Cavity.ToString();
-            nuUpLine.Value = updateItem.Line_Per_Qty;
-            nuUpShot.Value = updateItem.Shot_Per_Qty;
-            nuUpGVQty.Value = updateItem.Dry_GV_Qty;
-            nuUpProQty.Value = updateItem.PrdQty_Per_Hour;
-            nuUpPerQty.Value = updateItem.PrdQTy_Per_Batch;
+            nuUpIron.Value = updateItem.IronUPH;
+            nuUpRolling.Value = updateItem.RollingUPH;
+            nuUpSteel.Value = updateItem.SteelUPH;
+            nuUpPack.Value = updateItem.PackageUPH;
             txtUpRemark.Text = updateItem.Remark;
+       //     cmbUpLvl1.Text = updateItem.Level_1;
+         //   cmbUpLvl2.Text = updateItem.Level_2;
+           // cmbUpLvl3.Text = updateItem.Level_3;
+            //cmbUpLvl4.Text = updateItem.Level_4;
+            //cmbUpLvl5.Text = updateItem.Level_5;
+            //txtUpCavity.Text = updateItem.Cavity.ToString();
+            //nuUpLine.Value = updateItem.Line_Per_Qty;
+            //nuUpShot.Value = updateItem.Shot_Per_Qty;
+            //nuUpGVQty.Value = updateItem.Dry_GV_Qty;
+            //nuUpProQty.Value = updateItem.PrdQty_Per_Hour;
+            //nuUpPerQty.Value = updateItem.PrdQTy_Per_Batch;
+            //txtUpRemark.Text = updateItem.Remark;
 
         }
         private void DeleteItem(object sender, EventArgs e)
@@ -242,6 +237,11 @@ namespace AdminForm
         {
             frm.lblAlert.Text = "<공지사항> Test 중 입니다.";
             timer1.Stop();
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

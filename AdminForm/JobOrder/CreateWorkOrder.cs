@@ -16,9 +16,11 @@ namespace AdminForm
         List<WorkReqCenterVo> reqCenterList;
         List<WorkCenterVo> workCenters;
         List<WorkOrder> workOrderList;
+        List<ItemUPH> itemUphList;
         WorkReqVo workReq;
         string pType;
         string workOrdNo;
+        decimal uph;
 
         public CreateWorkOrder(string processType, string WorkOrderNo)
         {
@@ -62,6 +64,25 @@ namespace AdminForm
             nuQty.Value = workReq.Req_Qty;
             dtpEndDate.Value = workReq.Prd_Plan_Date;
             nuDefaultQty.Value = workReq.Req_Qty - service.SumWoReq(pType, workOrdNo);
+
+            ItemService itemService = new ItemService();
+            itemUphList = itemService.ItemUph(txtIem.Text);
+            if (pType == "압연")
+            {
+                uph = itemUphList[0].RollingUPH;
+            }
+            else if(pType == "제선")
+            {
+                uph = itemUphList[0].IronUPH;
+            }
+            else if(pType == "제강")
+            {
+                uph = itemUphList[0].SteelUPH;
+            }
+            else
+            {
+                uph = itemUphList[0].PackageUPH;
+            }
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
@@ -109,6 +130,15 @@ namespace AdminForm
         private void nuDefaultQty_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dtpEndTime_ValueChanged(object sender, EventArgs e)
+        {
+            TimeSpan difTime = dtpEndTime.Value - dtpStartTime.Value;
+            if (difTime.TotalHours > 0)
+            {
+                nuPlanQty.Value = (int)(difTime.TotalHours * (double)uph);
+            }
         }
     }
 }

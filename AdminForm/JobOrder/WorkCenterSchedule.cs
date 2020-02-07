@@ -27,10 +27,14 @@ namespace AdminForm
         private void WorkCenterSchedule_Load(object sender, EventArgs e)
         {
             WorkOrderService service = new WorkOrderService();
+            DateTime[] planDate = null;
             reqCenterList = service.GetAllWorkReqCenter(workCenter);
-            DateTime[] planDate = (from item in reqCenterList
-                                   select item.Plan_Date).ToArray();
-            workCalendar = new UserCalendar(planDate, workCenter);
+            if (reqCenterList != null)
+            {
+                planDate = (from item in reqCenterList
+                                       select item.Plan_Date).ToArray();
+            }
+            workCalendar = new UserCalendar(planDate, workCenter);          
             workCalendar.Search_Click += btnSearch;
             workCalendar.Location = new Point(6, 41);
             this.Controls.Add(workCalendar);
@@ -56,7 +60,7 @@ namespace AdminForm
             foreach (WorkReqCenterVo item in reqCenterList)
             {
 
-                if ((item.Plan_Starttime < startTime && item.Plan_Endtime > startTime) || (item.Plan_Starttime < endTime && item.Plan_Endtime > endTime))
+                if ((Convert.ToDateTime(item.Plan_Starttime) < startTime && Convert.ToDateTime(item.Plan_Endtime) > startTime) || (Convert.ToDateTime(item.Plan_Starttime) < endTime && Convert.ToDateTime(item.Plan_Endtime) > endTime))
                 {
                     MessageBox.Show("계획한 시간에 예정된 작업이 있습니다. 다시 확인해주세요.");
                     return;

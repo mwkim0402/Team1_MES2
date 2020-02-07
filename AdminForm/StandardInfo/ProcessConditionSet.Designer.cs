@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCopy = new System.Windows.Forms.Button();
             this.fcEquip = new AdminForm.FIndCategory();
             this.fcProd = new AdminForm.FIndCategory();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCopy = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.cbProGroup = new System.Windows.Forms.ComboBox();
@@ -95,7 +95,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(3, 323);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Size = new System.Drawing.Size(740, 157);
+            this.panel1.Size = new System.Drawing.Size(839, 157);
             // 
             // tabControl2
             // 
@@ -113,6 +113,11 @@
             // 
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage3.Size = new System.Drawing.Size(266, 0);
+            // 
+            // tabControl3
+            // 
+            this.tabControl3.Size = new System.Drawing.Size(274, 28);
             // 
             // splitContainer1
             // 
@@ -120,6 +125,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.btnCopy);
+            this.splitContainer1.SplitterDistance = 274;
             // 
             // panel2
             // 
@@ -134,17 +140,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1132, 67);
             this.panel2.TabIndex = 16;
-            // 
-            // btnCopy
-            // 
-            this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCopy.Location = new System.Drawing.Point(549, 3);
-            this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(193, 27);
-            this.btnCopy.TabIndex = 10;
-            this.btnCopy.Text = "공정조건 복사";
-            this.btnCopy.UseVisualStyleBackColor = true;
-            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // fcEquip
             // 
@@ -187,6 +182,17 @@
             this.label1.Size = new System.Drawing.Size(40, 16);
             this.label1.TabIndex = 8;
             this.label1.Text = "품목";
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCopy.Location = new System.Drawing.Point(648, 3);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(193, 27);
+            this.btnCopy.TabIndex = 10;
+            this.btnCopy.Text = "공정조건 복사";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // panel5
             // 
@@ -452,7 +458,7 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Location = new System.Drawing.Point(524, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(161, 149);
+            this.panel4.Size = new System.Drawing.Size(260, 149);
             this.panel4.TabIndex = 154;
             // 
             // txtNote
@@ -463,7 +469,7 @@
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtNote.Size = new System.Drawing.Size(154, 119);
+            this.txtNote.Size = new System.Drawing.Size(253, 119);
             this.txtNote.TabIndex = 134;
             // 
             // label6
@@ -481,7 +487,7 @@
             // 
             this.panel3.Controls.Add(this.btnSave);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(689, 0);
+            this.panel3.Location = new System.Drawing.Point(788, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(51, 157);
             this.panel3.TabIndex = 153;

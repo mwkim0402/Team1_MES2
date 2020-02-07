@@ -98,7 +98,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(1, 320);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Size = new System.Drawing.Size(741, 157);
+            this.panel1.Size = new System.Drawing.Size(834, 157);
             // 
             // tabControl2
             // 
@@ -114,11 +114,11 @@
             // 
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(364, 0);
+            this.tabPage3.Size = new System.Drawing.Size(271, 0);
             // 
             // tabControl3
             // 
-            this.tabControl3.Size = new System.Drawing.Size(372, 28);
+            this.tabControl3.Size = new System.Drawing.Size(279, 28);
             // 
             // splitContainer1
             // 
@@ -127,7 +127,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.btnCopy);
             this.splitContainer1.Size = new System.Drawing.Size(1121, 480);
-            this.splitContainer1.SplitterDistance = 372;
+            this.splitContainer1.SplitterDistance = 279;
             // 
             // panel2
             // 
@@ -188,7 +188,7 @@
             // btnCopy
             // 
             this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCopy.Location = new System.Drawing.Point(549, 4);
+            this.btnCopy.Location = new System.Drawing.Point(642, 4);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(193, 27);
             this.btnCopy.TabIndex = 10;
@@ -262,7 +262,7 @@
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtNote.Size = new System.Drawing.Size(154, 119);
+            this.txtNote.Size = new System.Drawing.Size(247, 119);
             this.txtNote.TabIndex = 134;
             // 
             // btnSave
@@ -454,7 +454,7 @@
             // 
             this.panel3.Controls.Add(this.btnSave);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(688, 0);
+            this.panel3.Location = new System.Drawing.Point(781, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(51, 155);
             this.panel3.TabIndex = 150;
@@ -468,7 +468,7 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Location = new System.Drawing.Point(524, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(161, 149);
+            this.panel4.Size = new System.Drawing.Size(254, 149);
             this.panel4.TabIndex = 151;
             // 
             // panel5

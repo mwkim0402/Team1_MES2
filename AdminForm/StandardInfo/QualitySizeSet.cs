@@ -66,8 +66,8 @@ namespace AdminForm
         {
             tabPage3.Text = "품목 조회";
             tabPage4.Text = "품질 규격 조회";
-            CommonClass.AddNewColumnToDataGridView(dgvSelect, "품목 코드", "comboText", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSelect, "품목 명", "comboValue", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSelect, "품목 코드", "comboText", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvSelect, "품목 명", "comboValue", true, 120);
 
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정코드", "Process_Code", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "검사항목 코드", "Inspect_Code", true, 100);

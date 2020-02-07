@@ -604,8 +604,16 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <EmbeddedResource Include="qulityManagement\MaterialManagement.resx">
       <DependentUpon>MaterialManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -732,7 +740,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="image\조회 32x32.jpg" />
     <None Include="bin\Debug\image\teamlogo.png" />
     <None Include="bin\Debug\image\Reading_16x16.png" />
     <None Include="bin\Debug\image\Action_Save_New_32x32.png" />
@@ -746,37 +753,14 @@
     <Content Include="image\bookmark.png" />
     <Content Include="image\btn.png" />
     <Content Include="image\buttonImage.png" />
-    <Content Include="image\Copy.ico" />
     <Content Include="image\DeleteList_32x32.png" />
     <Content Include="image\doc_icon.png" />
-    <Content Include="image\Edit.ico" />
     <Content Include="image\Edit_32x32.png" />
-    <Content Include="image\Erase.ico" />
-    <Content Include="image\Error.ico" />
-    <Content Include="image\Exit.ico" />
-    <Content Include="image\Home.ico" />
-    <Content Include="image\icons8-collapse-arrow-32.png" />
-    <Content Include="image\icons8-expand-arrow-32.png" />
-    <Content Include="image\Loading.gif" />
-    <Content Include="image\logotest.PNG" />
     <Content Include="image\mark.jpg" />
-    <Content Include="image\Notes_16x16.png" />
-    <Content Include="image\Paste.ico" />
-    <Content Include="image\Print.ico" />
-    <Content Include="image\Reading_16x16.png" />
     <Content Include="image\Remove_16x16.png" />
     <Content Include="image\Report2_32x32.png" />
-    <Content Include="image\Save as.ico" />
-    <Content Include="image\Search text.ico" />
-    <Content Include="image\Search.ico" />
     <Content Include="image\searchBtn.png" />
-    <Content Include="image\Settings.ico" />
-    <Content Include="image\star_16x16.png" />
     <Content Include="image\teamlogo.png" />
-    <Content Include="image\teamlogotest.png" />
-    <Content Include="image\Tools.ico" />
-    <Content Include="image\Warning.ico" />
-    <Content Include="image\Zoom.ico" />
     <Content Include="image\구디로고.png" />
   </ItemGroup>
   <ItemGroup>

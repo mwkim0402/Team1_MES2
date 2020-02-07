@@ -84,7 +84,7 @@ namespace AdminForm
             detailList = service.GetMoldingInfoDetail(selected);
             txtMoldCodeM.Text = detailList[0].Mold_Code;
             txtMoldNameM.Text = detailList[0].Mold_Name;
-            cmbMoldGroupM.SelectedItem = detailList[0].Mold_Group; //
+            cmbMoldGroupM.SelectedValue = detailList[0].Mold_Group; //
             txtWarrentNumM.Text = detailList[0].Guar_Shot_Cnt.ToString();
             txtPriceM.Text = detailList[0].Purchase_Amt.ToString();
             dtpInputdateM.Value = detailList[0].In_Date;
@@ -136,13 +136,13 @@ namespace AdminForm
                 isUse = "N";
 
             }
-            int result = ser.SaveMoldingInfo(txtMoldCodeInput.Text, txtMoldNameInput.Text, cmbMoldGroupI.SelectedItem.ToString(), int.Parse(txtPrice.Text), dtpInputdate.Value.ToString().Substring(0,10), dtpLastEquipDate.Value.ToString().Substring(0, 10),int.Parse( txtWarrentNum.Text), txtPS.Text, isUse);
+            int result = ser.SaveMoldingInfo(txtMoldCodeInput.Text, txtMoldNameInput.Text, cmbMoldGroupI.SelectedValue.ToString(), int.Parse(txtPrice.Text), dtpInputdate.Value.ToString().Substring(0,10), dtpLastEquipDate.Value.ToString().Substring(0, 10),int.Parse( txtWarrentNum.Text), txtPS.Text, isUse);
             if (result >= 1)
             {
                 MessageBox.Show("저장이 완료되었습니다.");
                 txtMoldCodeInput.Text = null;
                 txtMoldNameInput.Text = null;
-                cmbMoldGroupI.SelectedIndex = 0;
+                cmbMoldGroupI.SelectedValue = 0;
                 txtWarrentNum.Text = null;
                 txtPrice.Text = null;
                 dtpInputdate.Value = DateTime.Now;
@@ -186,7 +186,7 @@ namespace AdminForm
         {
             detailList[0].Mold_Code = txtMoldCodeM.Text;
             detailList[0].Mold_Name=txtMoldNameM.Text;
-            detailList[0].Mold_Group=cmbMoldGroupM.SelectedItem.ToString(); //
+            detailList[0].Mold_Group=cmbMoldGroupM.SelectedValue.ToString(); //
             detailList[0].Guar_Shot_Cnt=int.Parse( txtWarrentNumM.Text);
             detailList[0].Purchase_Amt= int.Parse(txtPriceM.Text);
             detailList[0].In_Date=dtpInputdateM.Value;

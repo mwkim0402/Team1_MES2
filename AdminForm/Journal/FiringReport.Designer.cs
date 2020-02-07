@@ -170,6 +170,8 @@
             this.captionsStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.SelectedDate = new DevExpress.XtraReports.Parameters.Parameter();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.DetailReport = new DevExpress.XtraReports.UI.DetailReportBand();
+            this.Detail1 = new DevExpress.XtraReports.UI.DetailBand();
             ((System.ComponentModel.ISupportInitialize)(this.detailTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -179,9 +181,7 @@
             // 
             // Detail
             // 
-            this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.detailTable});
-            this.Detail.HeightF = 46F;
+            this.Detail.HeightF = 0F;
             this.Detail.KeepTogether = true;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
@@ -190,12 +190,12 @@
             // 
             // detailTable
             // 
-            this.detailTable.LocationFloat = new DevExpress.Utils.PointFloat(10.0009F, 0F);
+            this.detailTable.LocationFloat = new DevExpress.Utils.PointFloat(10.03183F, 0F);
             this.detailTable.Name = "detailTable";
             this.detailTable.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 5, 0, 100F);
             this.detailTable.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.detailTableRow1});
-            this.detailTable.SizeF = new System.Drawing.SizeF(638.9991F, 36F);
+            this.detailTable.SizeF = new System.Drawing.SizeF(638.9682F, 36F);
             this.detailTable.StylePriority.UseFont = false;
             this.detailTable.StylePriority.UsePadding = false;
             this.detailTable.StylePriority.UseTextAlignment = false;
@@ -317,7 +317,7 @@
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow3,
             this.xrTableRow4});
-            this.xrTable2.SizeF = new System.Drawing.SizeF(628.9783F, 116.8334F);
+            this.xrTable2.SizeF = new System.Drawing.SizeF(638.9683F, 116.8334F);
             this.xrTable2.StylePriority.UseBorders = false;
             this.xrTable2.StylePriority.UseFont = false;
             this.xrTable2.StylePriority.UsePadding = false;
@@ -478,13 +478,13 @@
             this.xrTable3.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(10.03183F, 54.24998F);
+            this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(10.03183F, 54.24995F);
             this.xrTable3.Name = "xrTable3";
             this.xrTable3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 5, 0, 100F);
             this.xrTable3.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow5,
             this.xrTableRow6});
-            this.xrTable3.SizeF = new System.Drawing.SizeF(628.9783F, 72.50001F);
+            this.xrTable3.SizeF = new System.Drawing.SizeF(638.9682F, 72.50001F);
             this.xrTable3.StylePriority.UseBorders = false;
             this.xrTable3.StylePriority.UseFont = false;
             this.xrTable3.StylePriority.UsePadding = false;
@@ -1117,6 +1117,19 @@
             masterDetailInfo4});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
+            // DetailReport
+            // 
+            this.DetailReport.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+            this.Detail1});
+            this.DetailReport.Level = 0;
+            this.DetailReport.Name = "DetailReport";
+            // 
+            // Detail1
+            // 
+            this.Detail1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.detailTable});
+            this.Detail1.Name = "Detail1";
+            // 
             // FiringReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1124,7 +1137,8 @@
             this.TopMargin,
             this.BottomMargin,
             this.GroupHeader2,
-            this.GroupHeader1});
+            this.GroupHeader1,
+            this.DetailReport});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.sqlDataSource1});
             this.DataMember = "GV_Master";
@@ -1218,5 +1232,7 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell19;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell18;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.XtraReports.UI.DetailReportBand DetailReport;
+        private DevExpress.XtraReports.UI.DetailBand Detail1;
     }
 }

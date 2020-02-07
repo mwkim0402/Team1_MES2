@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cmbMoldGroupSearch = new System.Windows.Forms.ComboBox();
             this.txtMoldNameSearch = new System.Windows.Forms.TextBox();
@@ -77,6 +78,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tcParent1.SuspendLayout();
             this.tcParent2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -108,7 +110,6 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Size = new System.Drawing.Size(1124, 99);
             // 
             // pnlParent1
             // 
@@ -732,5 +733,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Timer timer1;
     }
 }

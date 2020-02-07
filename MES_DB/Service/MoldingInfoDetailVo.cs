@@ -16,6 +16,6 @@ namespace MES_DB
         public DateTime In_Date { get; set; }
         public DateTime Last_Setup_Time { get; set; }
         public string Remark { get; set; }
-        public Char Use_YN { get; set; }
+        public string Use_YN { get; set; }
     }
 }

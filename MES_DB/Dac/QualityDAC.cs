@@ -9,7 +9,7 @@ namespace MES_DB
 {
     public class QualityDAC : ConnectionAccess
     {
-        public List<QualityInquiryVO> GetQulityInquiryForm()
+        public List<QualityInquiryVO> GetQulityInquiryForm(DateTime Start, DateTime End)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -19,8 +19,11 @@ namespace MES_DB
                                     inner join Inspect_Spec_Master sp on sp.Item_Code = wk.Item_Code
                                     inner join Inspect_Measure_History I on I.WorkOrderNo = wk.Workorderno
                                     inner join Process_Master P on I.Process_Code = P.Process_code
-                                    inner join WorkCenter_Master wm on wk.Wc_Code = wm.Wc_Code";
+                                    inner join WorkCenter_Master wm on wk.Wc_Code = wm.Wc_Code
+                                    where wk.Plan_Date between @StartDate and @Enddate ";
                 cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@StartDate", Start);
+                cmd.Parameters.AddWithValue("@Enddate", End);
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();

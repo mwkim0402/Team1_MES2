@@ -25,19 +25,17 @@ namespace AdminForm
         {
             frm = (MainForm)this.MdiParent;
             ShowDgv();
-            MES_DB.PerformService service = new MES_DB.PerformService();
-            allList = service.GetAllRegFaultyImage();
-            
+
         }
 
 
 
         private void GetData(object sender, EventArgs e)
         {
-            if (fcFactory.SendCode == null && fcWork.SendCode == null)
-            {
-                dgvProductRequset.DataSource = allList;
-            }
+            MES_DB.PerformService service = new MES_DB.PerformService();
+            allList = service.GetAllRegFaultyImage();
+            dgvProductRequset.DataSource = allList;
+
         }
         private void ShowDgv()
         {
@@ -57,7 +55,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "불량수량", "Def_Qty", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "불량사진", "Def_Image_Name", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "공정이름", "Process_name", false, 100);
-            
+
 
 
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업지시번호", "Workorderno", true, 100);
@@ -115,14 +113,35 @@ namespace AdminForm
 
         private void toolStrip1_Click(object sender, EventArgs e)
         {
-            if (StartDate != null && EndDate != null && fcFactory.SendCode != null && fcWork.SendCode != null)
+            //if (StartDate != null && EndDate != null && fcFactory.SendCode != null && fcWork.SendCode != null)
+            //{
+            //    List<RegFaultyVO> listLamda = allList.FindAll(x => x.Plan_Date >= StartDate.Date && (x.Plan_Date <= EndDate.Date) && x.Process_name == fcFactory.SendName && x.Wc_Name == fcWork.SendName);
+            //    dgvProductRequset.DataSource = listLamda;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("모든 항목을 선택해주세요.");
+            //}
+            if ((fcWork.SendCode != null && fcWork.SendName != "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
             {
-                List<RegFaultyVO> listLamda = allList.FindAll(x=>x.Plan_Date >= StartDate.Date && (x.Plan_Date <= EndDate.Date) && x.Process_name == fcFactory.SendName && x.Wc_Name == fcWork.SendName);
-                dgvProductRequset.DataSource = listLamda;
+                List<RegFaultyVO> list = (from item in allList
+                                          where item.Process_name == fcFactory.SendName && item.Wc_Name == fcWork.SendName
+                                          select item).ToList();
+                dgvProductRequset.DataSource = list;
             }
-            else
+            else if ((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode == ""))
             {
-                MessageBox.Show("모든 항목을 선택해주세요.");
+                List<RegFaultyVO> list = (from item in allList
+                                          where item.Wc_Name == fcWork.SendName
+                                          select item).ToList();
+                dgvProductRequset.DataSource = list;
+            }
+            else if ((fcWork.SendCode == null || fcWork.SendCode == "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
+            {
+                List<RegFaultyVO> list = (from item in allList
+                                          where item.Process_name == fcFactory.SendName
+                                          select item).ToList();
+                dgvProductRequset.DataSource = list;
             }
         }
     }

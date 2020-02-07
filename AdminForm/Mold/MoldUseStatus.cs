@@ -47,8 +47,7 @@ namespace AdminForm
             dgvSearchResult.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvSearchResult.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvSearchResult.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtpStart.Value = dtpEnd.Value;
-            dtpStart.Value.AddDays(-7);
+            dtpStart.Value = dtpEnd.Value.AddDays(-7);
         }
         private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
     int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleCenter)
@@ -77,44 +76,7 @@ namespace AdminForm
         //검색
         private void Search(object sender, EventArgs e)
         {
-            string strStart = dtpStart.Value.ToString();
-            string strEnd = dtpEnd.Value.ToString();
-            
-            MoldingService ser = new MoldingService();
-            if (fcItem.SendCode == "")
-            {
-                if (fcWorkPlace.SendCode == "")
-                {
-                    list = ser.SearchMoldUse(strStart, strEnd, "", "");
-                    dgvSearchResult.DataSource = list;
-                }
-                else
-                {
-                    list = ser.SearchMoldUse(strStart, strEnd, "", fcWorkPlace.SendCode);
-                    dgvSearchResult.DataSource = list;
-                }
-            }
-            else
-            {
-                if (fcWorkPlace.SendCode == "")
-                {
-                    list = ser.SearchMoldUse(strStart, strEnd, fcItem.SendCode, "");
-                    dgvSearchResult.DataSource = list;
-                }
-                else
-                {
-                    list = ser.SearchMoldUse(strStart, strEnd, fcItem.SendCode, fcWorkPlace.SendCode);
-                    dgvSearchResult.DataSource = list;
-                }
-            }
-            if (list.Count < 1)
-            {
-                frm.lblAlert.Text = "[알람] 검색한 조건의 데이터가 존재하지 않습니다.";
-                return;
-            }
-            frm.lblAlert.Text = $"[알람] {list.Count} 건의 데이터가 조회되었습니다.";
-            timer1.Start();
-            dgvSearchResult.DataSource = list;
+            LoadList();
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -133,6 +95,48 @@ namespace AdminForm
         {
             frm.Search_Click += new EventHandler(Search);
 
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            string strStart = dtpStart.Value.ToString();
+            string strEnd = dtpEnd.Value.ToString();
+
+            MoldingService ser = new MoldingService();
+            if (fcItem.SendCode == null)
+            {
+                if (fcWorkPlace.SendCode == null)
+                {
+                    list = ser.SearchMoldUse(strStart, strEnd, "", "");
+                    dgvSearchResult.DataSource = list;
+                }
+                else
+                {
+                    list = ser.SearchMoldUse(strStart, strEnd, "", fcWorkPlace.SendCode);
+                    dgvSearchResult.DataSource = list;
+                }
+            }
+            else
+            {
+                if (fcWorkPlace.SendCode == null)
+                {
+                    list = ser.SearchMoldUse(strStart, strEnd, fcItem.SendCode, "");
+                    dgvSearchResult.DataSource = list;
+                }
+                else
+                {
+                    list = ser.SearchMoldUse(strStart, strEnd, fcItem.SendCode, fcWorkPlace.SendCode);
+                    dgvSearchResult.DataSource = list;
+                }
+            }
+            if (list.Count < 1)
+            {
+                frm.lblAlert.Text = "[알람] 검색한 조건의 데이터가 존재하지 않습니다.";
+                return;
+            }
+            frm.lblAlert.Text = $"[알람] {list.Count} 건의 데이터가 조회되었습니다.";
+            timer1.Start();
+            dgvSearchResult.DataSource = list;
         }
     }
 }

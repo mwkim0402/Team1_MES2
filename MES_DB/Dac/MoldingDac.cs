@@ -25,12 +25,12 @@ namespace MES_DB
                 return list;
             }
         }
-        public int SaveMoldingInfo(string code, string name, string group, string price, string inputdate, string lastequipdate, string warrentnum, string Ps,int Use)
+        public int SaveMoldingInfo(string code, string name, string group, int price, string inputdate, string lastequipdate, int warrentnum, string Ps,string Use)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "insert into Mold_Master(Mold_Code,Mold_Name,Mold_Group,Pruchase_Amt,In_Date,Last_Setup_Time,Guar_Shot_Cnt,Remark,Use_YN)values(@Code,@Name,@Group,@Price,@Inputdate,@Lastequipdate,@Warrentnum,@PS,@Use_YN)";
+                cmd.CommandText = "insert into Mold_Master(Mold_Code,Mold_Name,Mold_Group,Purchase_Amt,In_Date,Last_Setup_Time,Guar_Shot_Cnt,Remark,Use_YN,Mold_Status)values(@Code,@Name,@Group,@Price,@Inputdate,@Lastequipdate,@Warrentnum,@PS,@Use_YN,'N')";
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@Code", code);
                 cmd.Parameters.AddWithValue("@Name", name);
@@ -79,9 +79,9 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "Select Mold_Code,Mold_Name,Mold_Group,Mold_Status,Cum_Shot_Cnt,Cum_Prd_Qty,Cum_Time,Guar_Shot_Cnt,Purchase_Amt,In_Date,Last_Setup_Time,Remark,Use_YN from Mold_Master where Mold_Code = @MoldCode";
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@MoldCode", moldcode);
+                cmd.CommandText = "Select Mold_Code,Mold_Name,Mold_Group,Mold_Status,Cum_Shot_Cnt,Cum_Prd_Qty,Cum_Time,Guar_Shot_Cnt,Purchase_Amt,In_Date,Last_Setup_Time,Remark,Use_YN from Mold_Master where Mold_Code = @Mold_Code";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@Mold_Code", moldcode);
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();

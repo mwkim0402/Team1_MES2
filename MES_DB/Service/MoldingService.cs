@@ -20,7 +20,7 @@ namespace MES_DB
             MoldingDac dac = new MoldingDac();
             return dac.SearchMoldingInfo(code,name,group);
         }
-        public int SaveMoldingInfo(string code, string name, string group, string price, string inputdate, string lastequipdate, string warrentnum, string Ps, int isUse)
+        public int SaveMoldingInfo(string code, string name, string group, int price, string inputdate, string lastequipdate, int warrentnum, string Ps, string isUse)
         {
             MoldingDac dac = new MoldingDac();
             return dac.SaveMoldingInfo(code, name, group,price,inputdate,lastequipdate,warrentnum,Ps,isUse);

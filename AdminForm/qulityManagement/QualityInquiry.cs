@@ -24,14 +24,15 @@ namespace AdminForm
         private void QualityInquiry_Load(object sender, EventArgs e)
         {
             frm = (MainForm)this.MdiParent;
-            QualityService service = new QualityService();
-            allList =service.GetAllQualityInquiry();
-            ShowDgv();
             StartDate = dtpStart.Value;
             EndDate = dtpEnd.Value;
+            ShowDgv();
+            
         }
         private void GetData(object sender, EventArgs e)
         {
+            QualityService service = new QualityService();
+            allList = service.GetAllQualityInquiry(StartDate, EndDate);
             dgvSearchResult.DataSource = allList;
         }
         private void ShowDgv()
@@ -71,18 +72,27 @@ namespace AdminForm
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            if(fcWork.SendCode != null && fcFactory.SendCode != null)
+            if((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode != null && fcFactory.SendCode !=""))
             {
                 List<QualityInquiryVO> list = (from item in allList
-                                               where item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date && item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode
+                                               where item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode
                                                select item).ToList();
                 dgvSearchResult.DataSource = list;
             }
-            else
+            else if((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode ==""))
             {
-                MessageBox.Show("검색조건을 모두 선택해주세요.");
+                List<QualityInquiryVO> list = (from item in allList
+                                               where item.Wc_Code == fcWork.SendCode
+                                               select item).ToList();
+                dgvSearchResult.DataSource = list;
             }
-            //dtpStart.CustomFormat.Substring(0, 10);
+            else if ((fcWork.SendCode == null || fcWork.SendCode =="") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
+            {
+                List<QualityInquiryVO> list = (from item in allList
+                                               where item.Process_code == fcFactory.SendCode
+                                               select item).ToList();
+                dgvSearchResult.DataSource = list;
+            }
         }
 
         private void dtpStart_ValueChanged(object sender, EventArgs e)

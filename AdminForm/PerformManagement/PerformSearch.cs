@@ -15,9 +15,9 @@ namespace AdminForm
     public partial class PerformSearch : dgvOne
     {
         MainForm frm;
-        string StartDate;
-        string EndDate;
-        List<PerformSearchVO> list;
+        DateTime StartDate;
+        DateTime EndDate;
+        List<PerformSearchVO> allList;
         PerformSearchVO edit;
         string status;
         public PerformSearch()
@@ -30,26 +30,29 @@ namespace AdminForm
         {
             ShowDgv();
             frm = (MainForm)this.MdiParent;
-           
+            StartDate = dtpStart.Value;
+            EndDate = dtpEnd.Value;
         }
 
 
         private void GetData(object sender, EventArgs e)
         {
             MES_DB.PerformService service = new MES_DB.PerformService();
-            list = service.GetAllPerformSearch();
-            if (StartDate == null && EndDate == null && fcFactory.SendName == null && fcWork.SendName == null)
-            {
-                dgvSearchResult.DataSource = list;
-            }
-            else
-            {
-                List<PerformSearchVO> SelectList = (from item in list
-                                                    where item.Plan_Date >= Convert.ToDateTime(StartDate.Substring(0, 10)) && item.Plan_Date <= Convert.ToDateTime(EndDate.Substring(0, 10))
-                                                    && item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode
-                                                    select item).ToList();
-                dgvSearchResult.DataSource = SelectList;
-            }
+            allList = service.GetAllPerformSearch(StartDate,EndDate);
+            dgvSearchResult.DataSource = allList;
+
+            //if (StartDate == null && EndDate == null && fcFactory.SendName == null && fcWork.SendName == null)
+            //{
+               
+            //}
+            //else
+            //{
+            //    List<PerformSearchVO> SelectList = (from item in list
+            //                                        where item.Plan_Date >= Convert.ToDateTime(StartDate.Substring(0, 10)) && item.Plan_Date <= Convert.ToDateTime(EndDate.Substring(0, 10))
+            //                                        && item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode
+            //                                        select item).ToList();
+            //    dgvSearchResult.DataSource = SelectList;
+            //}
         }
 
         private void ShowDgv()
@@ -76,19 +79,21 @@ namespace AdminForm
         private void PerformSearch_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += new System.EventHandler(this.GetData);
+            ToolStripManager.Merge(toolStrip1, frm.ToolStrip);
         }
         private void PerformSearch_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= new System.EventHandler(this.GetData);
+            ToolStripManager.RevertMerge(frm.ToolStrip);
         }
         private void dtpStart_ValueChanged(object sender, EventArgs e)
         {
-            StartDate = dtpStart.Value.ToString();
+            StartDate = dtpStart.Value;
         }
 
         private void dtpEnd_ValueChanged(object sender, EventArgs e)
         {
-            EndDate = dtpEnd.Value.ToString();
+            EndDate = dtpEnd.Value;
         }
 
         private void btnBalance_Click(object sender, EventArgs e)
@@ -103,6 +108,37 @@ namespace AdminForm
             {
                 MessageBox.Show("변경할 셀을 선택해주세요.");
             }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            frm.lblAlert.Text = "";
+            if (fcFactory.SendCode != null && fcWork.SendCode != null)
+            {
+                List<PerformSearchVO> list = (from item in allList
+                                              where item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode
+                                              select item).ToList();
+                dgvSearchResult.DataSource = list;
+            }
+            else if (fcFactory.SendCode != null && fcWork.SendCode == null)
+            {
+                List<PerformSearchVO> list = (from item in allList
+                                              where item.Process_code == fcFactory.SendCode
+                                              select item).ToList();
+                dgvSearchResult.DataSource = list;
+            }
+            else if(fcWork.SendCode != null && fcFactory.SendCode == null)
+            {
+                List<PerformSearchVO> list = (from item in allList
+                                              where item.Wc_Code == fcWork.SendCode
+                                              select item).ToList();
+                dgvSearchResult.DataSource = list;
+            }
+            else
+            {
+                frm.lblAlert.Text = "조건을 선택해주세요.";
+            }
+
         }
     }
 }

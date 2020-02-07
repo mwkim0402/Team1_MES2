@@ -479,7 +479,7 @@
             // 
             // button9
             // 
-            this.button9.Image = global::AdminForm.Properties.Resources.btn;
+           // this.button9.Image = global::AdminForm.Properties.Resources.btn;
             this.button9.Location = new System.Drawing.Point(189, 7);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(110, 23);
@@ -489,7 +489,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Image = global::AdminForm.Properties.Resources.btn;
+           // this.btnLogin.Image = global::AdminForm.Properties.Resources.btn;
             this.btnLogin.Location = new System.Drawing.Point(25, 7);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(110, 23);

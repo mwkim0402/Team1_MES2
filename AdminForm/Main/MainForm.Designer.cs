@@ -502,7 +502,7 @@
             // 
             this.lblLogo.BackColor = System.Drawing.Color.Transparent;
             this.lblLogo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblLogo.Image = global::AdminForm.Properties.Resources.teamlogotest;
+            //this.lblLogo.Image = global::AdminForm.Properties.Resources.teamlogotest;
             this.lblLogo.Location = new System.Drawing.Point(0, 0);
             this.lblLogo.Name = "lblLogo";
             this.lblLogo.Size = new System.Drawing.Size(237, 131);

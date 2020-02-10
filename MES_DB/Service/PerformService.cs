@@ -30,10 +30,15 @@ namespace MES_DB
             PerformDAC dac = new PerformDAC();
             return dac.GetAllMaterial();
         }
-        public List<RegFaultyVO> GetAllRegFaultyImage()
+        public List<RegFaultyVO> GetAllRegFaultyImage(DateTime start, DateTime end)
         {
             PerformDAC dac = new PerformDAC();
-            return dac.GetAllRegFaultyImage();
+            return dac.GetAllRegFaultyImage(start, end);
+        }
+        public void InsFaltyImage(string fileName, string filePath, string WorkOderNo,int faultyNum)
+        {
+            PerformDAC dac = new PerformDAC();
+            dac.InsFaltyImage(fileName, filePath, WorkOderNo,faultyNum);
         }
 
         public List<QualityVO> GetAllQuality(DateTime start,DateTime end)

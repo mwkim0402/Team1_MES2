@@ -69,6 +69,8 @@ namespace MES_DB
         public int Def_Qty { get; set; }
         public string Def_Image_Name { get; set; }
         public string Process_name { get; set;}
+        public int workImageCount { get; set; }
+        public string Def_Image_Path { get; set; }
     }
 
     public class RegFaultyVODetail
@@ -81,5 +83,6 @@ namespace MES_DB
         public DateTime Def_Date { get; set; }
         public int Def_Qty { get; set; }
         public string Def_Image_Name { get; set; }
+        public string Def_Image_Path { get; set; }
     }
 }

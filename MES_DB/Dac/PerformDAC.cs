@@ -102,7 +102,7 @@ namespace MES_DB
             }
         }
 
-        public List<RegFaultyVO> GetAllRegFaultyImage()
+        public List<RegFaultyVO> GetAllRegFaultyImage(DateTime start, DateTime end)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -110,11 +110,35 @@ namespace MES_DB
                 cmd.CommandText = "AllRegFaultyForm";
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@StartDate", start);
+                cmd.Parameters.AddWithValue("@EndDate", end);
+
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<RegFaultyVO> list = Helper.DataReaderMapToList<RegFaultyVO>(reader);
                 cmd.Connection.Close();
                 return list;
+            }
+        }
+
+        public void InsFaltyImage(string fileName, string filePath, string WorkOderNo, int faultyNum)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "InsertFaultyImage";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@WorkOderNo", WorkOderNo);
+                cmd.Parameters.AddWithValue("@fileName", fileName);
+                cmd.Parameters.AddWithValue("@filePath", filePath);
+                cmd.Parameters.AddWithValue("@Def_Qty", faultyNum);
+
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+
+                cmd.Connection.Close();
+
             }
         }
 

@@ -45,6 +45,7 @@
     <Compile Include="ConnectionAccess.cs" />
     <Compile Include="Dac\ConditionSpecDAC.cs" />
     <Compile Include="Dac\FaultyDAC.cs" />
+    <Compile Include="Dac\GVInfoDAC.cs" />
     <Compile Include="Dac\InspectDAC.cs" />
     <Compile Include="Dac\ItemDAC.cs" />
     <Compile Include="Dac\LoginDAC.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Service\ConditionSpecService.cs" />
     <Compile Include="Service\FaultyService.cs" />
     <Compile Include="Service\FindCategoryService.cs" />
+    <Compile Include="Service\GVInfoService.cs" />
     <Compile Include="Service\InspectService.cs" />
     <Compile Include="Service\ItemService.cs" />
     <Compile Include="Service\LoginService.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Service\WorkOrderService.cs" />
     <Compile Include="Vo\ConditionSpecVo.cs" />
+    <Compile Include="Vo\GvInfoVo.cs" />
     <Compile Include="Vo\JobOrderCreateVo_Insert.cs" />
     <Compile Include="Service\MoldingService.cs" />
     <Compile Include="Service\JobOrderService.cs" />

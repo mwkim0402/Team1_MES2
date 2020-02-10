@@ -325,6 +325,12 @@
     <Compile Include="qulityManagement\RegQuality.Designer.cs">
       <DependentUpon>RegQuality.cs</DependentUpon>
     </Compile>
+    <Compile Include="qulityManagement\ViewFaultyImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qulityManagement\ViewFaultyImage.Designer.cs">
+      <DependentUpon>ViewFaultyImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Service\PerformService\PerformService.cs" />
     <Compile Include="Service\SystemService\MenuService.cs" />
     <Compile Include="Service\TestService.cs" />
@@ -629,6 +635,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="qulityManagement\RegQuality.resx">
       <DependentUpon>RegQuality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qulityManagement\ViewFaultyImage.resx">
+      <DependentUpon>ViewFaultyImage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StandardInfo\EtherIOChannelSet.resx">
       <DependentUpon>EtherIOChannelSet.cs</DependentUpon>

@@ -22,6 +22,7 @@ namespace AdminForm
 
         private void button1_Click(object sender, EventArgs e)
         {
+            btnLogin.DialogResult = DialogResult.OK;
             LoginService service = new LoginService();
             LoginVO loginVo = new LoginVO();
             loginVo.User_ID = Convert.ToInt32(txtID.Text);
@@ -38,6 +39,7 @@ namespace AdminForm
             else
             {
                 MessageBox.Show("로그인에 실패했습니다.");
+                btnLogin.DialogResult = DialogResult.Cancel;
             }
         }
     }

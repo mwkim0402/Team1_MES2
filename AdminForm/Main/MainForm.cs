@@ -157,6 +157,7 @@ namespace AdminForm
 
         private void SetButtonImage()
         {
+            lblLogo.Image = new Bitmap(Application.StartupPath + @"\image\teamlogotest.png");
             btnS.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Search.ico");
             btnCreate.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Report2_32x32.png");
             btnSave.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Action_Save_New_32x32.png");

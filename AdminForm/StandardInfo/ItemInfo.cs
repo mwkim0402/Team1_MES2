@@ -27,7 +27,8 @@ namespace AdminForm
 
             ItemService service = new ItemService();
             ItemGroupList = service.GetItemGroupCombo();
-            ItemGroupComboBind();           
+            ItemGroupComboBind();
+            dgvSearchResult.ColumnHeadersHeight = 500;
         }
         private void ItemGroupComboBind()
         {

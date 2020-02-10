@@ -42,8 +42,8 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "그룹코드", "Level_Code", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "그룹명", "Level_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "Level", "Level", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "P/L당 PCS 수량", "PCS_Qty", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "PCS당 소재량", "Mat_Qty", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "P/L당 PCS 수량", "PCS_Qty", true, 80, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "PCS당 소재량", "Mat_Qty", true, 80, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 100);
         }
         private void ItemLevelComboBind()

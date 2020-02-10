@@ -37,9 +37,9 @@
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnSo = new System.Windows.Forms.ToolStripButton();
-            this.btnGun = new System.Windows.Forms.ToolStripButton();
             this.btnSung = new System.Windows.Forms.ToolStripButton();
+            this.btnGun = new System.Windows.Forms.ToolStripButton();
+            this.btnSo = new System.Windows.Forms.ToolStripButton();
             this.btnPo = new System.Windows.Forms.ToolStripButton();
             this.tabControl2.SuspendLayout();
             this.tabControl4.SuspendLayout();
@@ -66,16 +66,18 @@
             // 
             // txtOrderCreationNum
             // 
-            this.txtOrderCreationNum.Location = new System.Drawing.Point(472, 25);
+            this.txtOrderCreationNum.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.txtOrderCreationNum.Location = new System.Drawing.Point(745, 21);
             this.txtOrderCreationNum.Name = "txtOrderCreationNum";
-            this.txtOrderCreationNum.Size = new System.Drawing.Size(100, 21);
+            this.txtOrderCreationNum.Size = new System.Drawing.Size(125, 26);
             this.txtOrderCreationNum.TabIndex = 11;
             // 
             // btnOrderCreationDeadline
             // 
-            this.btnOrderCreationDeadline.Location = new System.Drawing.Point(590, 18);
+            this.btnOrderCreationDeadline.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.btnOrderCreationDeadline.Location = new System.Drawing.Point(1025, 8);
             this.btnOrderCreationDeadline.Name = "btnOrderCreationDeadline";
-            this.btnOrderCreationDeadline.Size = new System.Drawing.Size(65, 33);
+            this.btnOrderCreationDeadline.Size = new System.Drawing.Size(86, 52);
             this.btnOrderCreationDeadline.TabIndex = 10;
             this.btnOrderCreationDeadline.Text = "조회";
             this.btnOrderCreationDeadline.UseVisualStyleBackColor = true;
@@ -84,47 +86,49 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(357, 27);
+            this.label3.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.label3.Location = new System.Drawing.Point(636, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 16);
+            this.label3.Size = new System.Drawing.Size(103, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "생산의뢰 번호";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(222, 27);
+            this.label2.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.label2.Location = new System.Drawing.Point(330, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 16);
+            this.label2.Size = new System.Drawing.Size(19, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "~";
             // 
             // dtpEnd
             // 
+            this.dtpEnd.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEnd.Location = new System.Drawing.Point(245, 25);
+            this.dtpEnd.Location = new System.Drawing.Point(355, 21);
             this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.Size = new System.Drawing.Size(98, 21);
+            this.dtpEnd.Size = new System.Drawing.Size(134, 26);
             this.dtpEnd.TabIndex = 2;
             // 
             // dtpStart
             // 
+            this.dtpStart.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStart.Location = new System.Drawing.Point(118, 24);
+            this.dtpStart.Location = new System.Drawing.Point(190, 21);
             this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(98, 21);
+            this.dtpStart.Size = new System.Drawing.Size(134, 26);
             this.dtpStart.TabIndex = 1;
             this.dtpStart.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(8, 26);
+            this.label1.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.label1.Location = new System.Drawing.Point(67, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 16);
+            this.label1.Size = new System.Drawing.Size(99, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "생산의뢰날짜";
             // 
@@ -143,17 +147,17 @@
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.Visible = false;
             // 
-            // btnSo
+            // btnSung
             // 
-            this.btnSo.AutoSize = false;
-            this.btnSo.Image = global::AdminForm.Properties.Resources.Action_Save_New_32x32;
-            this.btnSo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnSo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSo.Name = "btnSo";
-            this.btnSo.Size = new System.Drawing.Size(80, 60);
-            this.btnSo.Text = "압연계획생성";
-            this.btnSo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSo.Click += new System.EventHandler(this.toolStripButton4_Click);
+            this.btnSung.AutoSize = false;
+            this.btnSung.Image = global::AdminForm.Properties.Resources.Action_Save_New_32x32;
+            this.btnSung.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnSung.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSung.Name = "btnSung";
+            this.btnSung.Size = new System.Drawing.Size(80, 60);
+            this.btnSung.Text = "제선계획생성";
+            this.btnSung.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSung.Click += new System.EventHandler(this.btnSung_Click);
             // 
             // btnGun
             // 
@@ -167,17 +171,17 @@
             this.btnGun.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGun.Click += new System.EventHandler(this.btnGun_Click);
             // 
-            // btnSung
+            // btnSo
             // 
-            this.btnSung.AutoSize = false;
-            this.btnSung.Image = global::AdminForm.Properties.Resources.Action_Save_New_32x32;
-            this.btnSung.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnSung.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSung.Name = "btnSung";
-            this.btnSung.Size = new System.Drawing.Size(80, 60);
-            this.btnSung.Text = "제선계획생성";
-            this.btnSung.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSung.Click += new System.EventHandler(this.btnSung_Click);
+            this.btnSo.AutoSize = false;
+            this.btnSo.Image = global::AdminForm.Properties.Resources.Action_Save_New_32x32;
+            this.btnSo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnSo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSo.Name = "btnSo";
+            this.btnSo.Size = new System.Drawing.Size(80, 60);
+            this.btnSo.Text = "압연계획생성";
+            this.btnSo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSo.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // btnPo
             // 

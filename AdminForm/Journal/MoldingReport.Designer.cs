@@ -88,6 +88,7 @@
             this.Detail1 = new DevExpress.XtraReports.UI.DetailBand();
             this.DetailReport1 = new DevExpress.XtraReports.UI.DetailReportBand();
             this.Detail2 = new DevExpress.XtraReports.UI.DetailBand();
+            this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerTable)).BeginInit();
@@ -670,7 +671,7 @@
             this.xrTable4.Name = "xrTable4";
             this.xrTable4.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow5});
-            this.xrTable4.SizeF = new System.Drawing.SizeF(907.5727F, 40.00003F);
+            this.xrTable4.SizeF = new System.Drawing.SizeF(928.6769F, 40.00003F);
             this.xrTable4.StyleName = "simpleTextStyle";
             this.xrTable4.StylePriority.UseFont = false;
             this.xrTable4.StylePriority.UseForeColor = false;
@@ -788,6 +789,11 @@
             this.xrTable4});
             this.Detail2.Name = "Detail2";
             // 
+            // GroupFooter1
+            // 
+            this.GroupFooter1.HeightF = 68.75F;
+            this.GroupFooter1.Name = "GroupFooter1";
+            // 
             // MoldingReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -797,6 +803,7 @@
             this.GroupHeader2,
             this.GroupHeader1,
             this.DetailReport,
+            this.GroupFooter1,
             this.DetailReport1});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.sqlDataSource1});
@@ -881,5 +888,6 @@
         private DevExpress.XtraReports.UI.DetailBand Detail1;
         private DevExpress.XtraReports.UI.DetailReportBand DetailReport1;
         private DevExpress.XtraReports.UI.DetailBand Detail2;
+        private DevExpress.XtraReports.UI.GroupFooterBand GroupFooter1;
     }
 }

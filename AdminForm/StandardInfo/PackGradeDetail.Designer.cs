@@ -78,9 +78,9 @@
             this.panel1.Controls.Add(this.txtPackDetailName);
             this.panel1.Controls.Add(this.txtNote);
             this.panel1.Controls.Add(this.txtPackDetailCode);
-            this.panel1.Location = new System.Drawing.Point(4, 353);
+            this.panel1.Location = new System.Drawing.Point(4, 356);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Size = new System.Drawing.Size(838, 125);
+            this.panel1.Size = new System.Drawing.Size(838, 122);
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // tabControl2
@@ -295,7 +295,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(771, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(67, 125);
+            this.panel3.Size = new System.Drawing.Size(67, 122);
             this.panel3.TabIndex = 149;
             // 
             // PackGradeDetail

@@ -30,8 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegQuality));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.fcWorker = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.fcFactory = new AdminForm.FIndCategory();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
@@ -50,8 +52,6 @@
             this.dgvJob = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.fcWorker = new AdminForm.FIndCategory();
-            this.fcFactory = new AdminForm.FIndCategory();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -87,32 +87,53 @@
             this.panel2.Size = new System.Drawing.Size(1128, 63);
             this.panel2.TabIndex = 12;
             // 
+            // fcWorker
+            // 
+            this.fcWorker.Category = AdminForm.CategoryMode.WorkCenter;
+            this.fcWorker.Location = new System.Drawing.Point(764, 19);
+            this.fcWorker.Name = "fcWorker";
+            this.fcWorker.SendCode = null;
+            this.fcWorker.SendName = null;
+            this.fcWorker.Size = new System.Drawing.Size(190, 27);
+            this.fcWorker.TabIndex = 5;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(692, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 16);
+            this.label4.Size = new System.Drawing.Size(58, 19);
             this.label4.TabIndex = 4;
-            this.label4.Text = "작업장 :";
+            this.label4.Text = "작업장 ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(433, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 16);
+            this.label3.Size = new System.Drawing.Size(43, 19);
             this.label3.TabIndex = 1;
-            this.label3.Text = "공정 :";
+            this.label3.Text = "공정 ";
+            // 
+            // fcFactory
+            // 
+            this.fcFactory.Category = AdminForm.CategoryMode.Process;
+            this.fcFactory.Location = new System.Drawing.Point(489, 19);
+            this.fcFactory.Name = "fcFactory";
+            this.fcFactory.SendCode = null;
+            this.fcFactory.SendName = null;
+            this.fcFactory.Size = new System.Drawing.Size(190, 27);
+            this.fcFactory.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(280, 26);
+            this.label2.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(280, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 12);
+            this.label2.Size = new System.Drawing.Size(19, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "~";
             // 
@@ -128,7 +149,7 @@
             // dtpStart
             // 
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStart.Location = new System.Drawing.Point(157, 21);
+            this.dtpStart.Location = new System.Drawing.Point(157, 23);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(109, 21);
             this.dtpStart.TabIndex = 2;
@@ -137,12 +158,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(20, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 16);
+            this.label1.Size = new System.Drawing.Size(107, 19);
             this.label1.TabIndex = 1;
-            this.label1.Text = "작업 지시일자 :";
+            this.label1.Text = "작업 지시일자 ";
             // 
             // panel1
             // 
@@ -313,26 +334,6 @@
             this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // fcWorker
-            // 
-            this.fcWorker.Category = AdminForm.CategoryMode.WorkCenter;
-            this.fcWorker.Location = new System.Drawing.Point(764, 19);
-            this.fcWorker.Name = "fcWorker";
-            this.fcWorker.SendCode = null;
-            this.fcWorker.SendName = null;
-            this.fcWorker.Size = new System.Drawing.Size(190, 27);
-            this.fcWorker.TabIndex = 5;
-            // 
-            // fcFactory
-            // 
-            this.fcFactory.Category = AdminForm.CategoryMode.Process;
-            this.fcFactory.Location = new System.Drawing.Point(489, 19);
-            this.fcFactory.Name = "fcFactory";
-            this.fcFactory.SendCode = null;
-            this.fcFactory.SendName = null;
-            this.fcFactory.Size = new System.Drawing.Size(190, 27);
-            this.fcFactory.TabIndex = 1;
             // 
             // RegQuality
             // 

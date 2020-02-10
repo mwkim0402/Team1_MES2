@@ -37,6 +37,7 @@
             // 
             // cmbSelect
             // 
+            this.cmbSelect.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cmbSelect.FormattingEnabled = true;
             this.cmbSelect.Items.AddRange(new object[] {
             "--선택--",
@@ -45,21 +46,23 @@
             "생산수량"});
             this.cmbSelect.Location = new System.Drawing.Point(45, 48);
             this.cmbSelect.Name = "cmbSelect";
-            this.cmbSelect.Size = new System.Drawing.Size(120, 20);
+            this.cmbSelect.Size = new System.Drawing.Size(120, 24);
             this.cmbSelect.TabIndex = 0;
             // 
             // nuCount
             // 
+            this.nuCount.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.nuCount.Location = new System.Drawing.Point(209, 49);
             this.nuCount.Name = "nuCount";
-            this.nuCount.Size = new System.Drawing.Size(62, 21);
+            this.nuCount.Size = new System.Drawing.Size(62, 26);
             this.nuCount.TabIndex = 1;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(184, 119);
+            this.btnCancel.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancel.Location = new System.Drawing.Point(181, 107);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(94, 26);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -67,9 +70,10 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(64, 119);
+            this.btnEdit.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnEdit.Location = new System.Drawing.Point(61, 107);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.Size = new System.Drawing.Size(94, 26);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "수정하기";
             this.btnEdit.UseVisualStyleBackColor = true;

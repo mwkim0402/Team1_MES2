@@ -47,7 +47,7 @@
             // 
             this.tcParent1.Controls.Add(this.tabPage4);
             this.tcParent1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcParent1.Location = new System.Drawing.Point(16, 85);
+            this.tcParent1.Location = new System.Drawing.Point(12, 85);
             this.tcParent1.Name = "tcParent1";
             this.tcParent1.SelectedIndex = 0;
             this.tcParent1.Size = new System.Drawing.Size(94, 28);
@@ -70,7 +70,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSearchResult.BackgroundColor = System.Drawing.Color.White;
             this.dgvSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSearchResult.Location = new System.Drawing.Point(16, 114);
+            this.dgvSearchResult.Location = new System.Drawing.Point(12, 114);
             this.dgvSearchResult.Name = "dgvSearchResult";
             this.dgvSearchResult.RowTemplate.Height = 23;
             this.dgvSearchResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -84,7 +84,7 @@
             this.tcParent2.Controls.Add(this.tabPage2);
             this.tcParent2.Controls.Add(this.tabPage1);
             this.tcParent2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcParent2.Location = new System.Drawing.Point(13, 466);
+            this.tcParent2.Location = new System.Drawing.Point(12, 466);
             this.tcParent2.Name = "tcParent2";
             this.tcParent2.SelectedIndex = 0;
             this.tcParent2.Size = new System.Drawing.Size(1132, 135);

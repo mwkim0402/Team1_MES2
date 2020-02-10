@@ -1,4 +1,4 @@
-﻿using MES_DB;
+﻿                     using MES_DB;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -88,10 +88,10 @@ namespace AdminForm
             dgvProductRequset.Columns.Insert(0, chkboxCol);
             AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰번호", "Wo_Req_No", true, 110);
             AddNewColumnToDataGridView(dgvProductRequset, "품목명", "item_Name", true, 80);
-            AddNewColumnToDataGridView(dgvProductRequset, "압연잔여수량", "RollingP", true, 174);
-            AddNewColumnToDataGridView(dgvProductRequset, "제강잔여수량", "SteelP", true, 140);
-            AddNewColumnToDataGridView(dgvProductRequset, "제선잔여수량", "IronP", true, 80);          
-            AddNewColumnToDataGridView(dgvProductRequset, "포장잔여수량", "PackageP", true, 100);
+            AddNewColumnToDataGridView(dgvProductRequset, "압연잔여수량", "RollingP", true, 174, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvProductRequset, "제강잔여수량", "SteelP", true, 140,DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvProductRequset, "제선잔여수량", "IronP", true, 80, DataGridViewContentAlignment.MiddleRight);          
+            AddNewColumnToDataGridView(dgvProductRequset, "포장잔여수량", "PackageP", true, 100, DataGridViewContentAlignment.MiddleRight);
             AddNewColumnToDataGridView(dgvProductRequset, "마감날짜", "Prd_Plan_Date", true, 100);
             AddNewColumnToDataGridView(dgvProductRequset, "고객사", "Cust_Name", true, 100);
             AddNewColumnToDataGridView(dgvProductRequset, "영업담당", "Sale_Emp", true, 100);
@@ -105,7 +105,7 @@ namespace AdminForm
             AddNewColumnToDataGridView(dgvJobOrder, "계획날짜", "Plan_Date", true, 140);
             AddNewColumnToDataGridView(dgvJobOrder, "시작시간", "Plan_Starttime", true,140);
             AddNewColumnToDataGridView(dgvJobOrder, "마감시간", "Plan_Endtime", true,140);
-            AddNewColumnToDataGridView(dgvJobOrder, "계획수량", "Plan_Qty", true,140);
+            AddNewColumnToDataGridView(dgvJobOrder, "계획수량", "Plan_Qty", true,140, DataGridViewContentAlignment.MiddleRight);
             AddNewColumnToDataGridView(dgvJobOrder, "작업상태", "Wo_Status", true,140);
 
 

@@ -34,5 +34,10 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "1", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "1", true, 100);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

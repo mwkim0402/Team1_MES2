@@ -56,19 +56,20 @@
             // 
             // dtpProduction
             // 
+            this.dtpProduction.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpProduction.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpProduction.Location = new System.Drawing.Point(97, 24);
             this.dtpProduction.Name = "dtpProduction";
-            this.dtpProduction.Size = new System.Drawing.Size(98, 21);
+            this.dtpProduction.Size = new System.Drawing.Size(131, 26);
             this.dtpProduction.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(19, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 16);
+            this.label1.Size = new System.Drawing.Size(69, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "생산일자";
             // 
@@ -89,7 +90,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 85);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1132, 460);
+            this.tabControl1.Size = new System.Drawing.Size(1132, 507);
             this.tabControl1.TabIndex = 8;
             // 
             // tabPage1
@@ -98,20 +99,18 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 32);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1124, 424);
+            this.tabPage1.Size = new System.Drawing.Size(1124, 471);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "조회내역";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // documentViewer1
             // 
-            this.documentViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.documentViewer1.IsMetric = true;
             this.documentViewer1.Location = new System.Drawing.Point(3, 3);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(1118, 418);
+            this.documentViewer1.Size = new System.Drawing.Size(1118, 465);
             this.documentViewer1.TabIndex = 0;
             // 
             // documentViewer

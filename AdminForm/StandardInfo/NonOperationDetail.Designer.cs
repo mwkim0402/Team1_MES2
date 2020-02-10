@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.fcNonOpCat = new AdminForm.FIndCategory();
             this.label1 = new System.Windows.Forms.Label();
+            this.fcNonOpCat = new AdminForm.FIndCategory();
             this.label5 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.txtNonOperationDetailName = new System.Windows.Forms.TextBox();
@@ -41,7 +41,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbNonOpMa = new System.Windows.Forms.ComboBox();
             this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -55,14 +55,20 @@
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
+            // tabControl4
+            // 
+            this.tabControl4.Size = new System.Drawing.Size(297, 28);
+            // 
             // tabPage4
             // 
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage4.Size = new System.Drawing.Size(289, 0);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.fcNonOpCat);
+            this.panel1.Controls.Add(this.cmbNonOpMa);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
@@ -96,23 +102,11 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Controls.Add(this.fcNonOpCat);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1132, 67);
             this.panel2.TabIndex = 14;
-            // 
-            // fcNonOpCat
-            // 
-            this.fcNonOpCat.Category = AdminForm.CategoryMode.NonOper;
-            this.fcNonOpCat.Location = new System.Drawing.Point(154, 23);
-            this.fcNonOpCat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.fcNonOpCat.Name = "fcNonOpCat";
-            this.fcNonOpCat.SendCode = null;
-            this.fcNonOpCat.SendName = null;
-            this.fcNonOpCat.Size = new System.Drawing.Size(190, 27);
-            this.fcNonOpCat.TabIndex = 9;
             // 
             // label1
             // 
@@ -124,12 +118,23 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "비가동 대분류";
             // 
+            // fcNonOpCat
+            // 
+            this.fcNonOpCat.Category = AdminForm.CategoryMode.NonOper;
+            this.fcNonOpCat.Location = new System.Drawing.Point(-6, -776);
+            this.fcNonOpCat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.fcNonOpCat.Name = "fcNonOpCat";
+            this.fcNonOpCat.SendCode = null;
+            this.fcNonOpCat.SendName = null;
+            this.fcNonOpCat.Size = new System.Drawing.Size(190, 27);
+            this.fcNonOpCat.TabIndex = 9;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label5.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(22, 65);
+            this.label5.Location = new System.Drawing.Point(22, 104);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(146, 16);
             this.label5.TabIndex = 130;
@@ -140,7 +145,7 @@
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label25.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label25.Location = new System.Drawing.Point(22, 24);
+            this.label25.Location = new System.Drawing.Point(22, 63);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(162, 16);
             this.label25.TabIndex = 131;
@@ -148,15 +153,16 @@
             // 
             // txtNonOperationDetailName
             // 
-            this.txtNonOperationDetailName.Location = new System.Drawing.Point(200, 65);
+            this.txtNonOperationDetailName.Location = new System.Drawing.Point(200, 104);
             this.txtNonOperationDetailName.Name = "txtNonOperationDetailName";
             this.txtNonOperationDetailName.Size = new System.Drawing.Size(227, 21);
             this.txtNonOperationDetailName.TabIndex = 132;
             // 
             // txtNonOperationDetailCode
             // 
-            this.txtNonOperationDetailCode.Location = new System.Drawing.Point(200, 24);
+            this.txtNonOperationDetailCode.Location = new System.Drawing.Point(200, 63);
             this.txtNonOperationDetailCode.Name = "txtNonOperationDetailCode";
+            this.txtNonOperationDetailCode.ReadOnly = true;
             this.txtNonOperationDetailCode.Size = new System.Drawing.Size(227, 21);
             this.txtNonOperationDetailCode.TabIndex = 133;
             // 
@@ -196,7 +202,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 132);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "저장";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // panel4
@@ -214,19 +220,20 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(22, 107);
+            this.label2.Location = new System.Drawing.Point(22, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 16);
             this.label2.TabIndex = 140;
             this.label2.Text = "비가동 대분류 그룹";
             // 
-            // comboBox1
+            // cmbNonOpMa
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(200, 107);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(227, 20);
-            this.comboBox1.TabIndex = 141;
+            this.cmbNonOpMa.FormattingEnabled = true;
+            this.cmbNonOpMa.Location = new System.Drawing.Point(200, 26);
+            this.cmbNonOpMa.Name = "cmbNonOpMa";
+            this.cmbNonOpMa.Size = new System.Drawing.Size(227, 20);
+            this.cmbNonOpMa.TabIndex = 141;
+            this.cmbNonOpMa.SelectedIndexChanged += new System.EventHandler(this.cmbNonOpMa_SelectedIndexChanged);
             // 
             // NonOperationDetail
             // 
@@ -242,6 +249,8 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "NonOperationDetail";
+            this.Activated += new System.EventHandler(this.NonOperationDetail_Activated);
+            this.Deactivate += new System.EventHandler(this.NonOperationDetail_Deactivate);
             this.Load += new System.EventHandler(this.NonOperationDetail_Load);
             this.Controls.SetChildIndex(this.splitContainer1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
@@ -277,7 +286,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbNonOpMa;
         private System.Windows.Forms.Label label2;
     }
 }

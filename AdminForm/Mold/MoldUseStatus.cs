@@ -33,8 +33,8 @@ namespace AdminForm
             AddNewColumnToDataGridView(dgvSearchResult, "품목명", "Item_Name", true, 150);
             AddNewColumnToDataGridView(dgvSearchResult, "작업장코드", "Wc_Code", true, 100);
             AddNewColumnToDataGridView(dgvSearchResult, "작업장명", "Wc_Name", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형타수", "Mold_Shot_Cnt", true, 100);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형생산량", "Mold_Prd_Qty", true, 100);
+            AddNewColumnToDataGridView(dgvSearchResult, "금형타수", "Mold_Shot_Cnt", true, 100, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvSearchResult, "금형생산량", "Mold_Prd_Qty", true, 100, DataGridViewContentAlignment.MiddleRight);
             AddNewColumnToDataGridView(dgvSearchResult, "금형사용시작시간", "Use_Starttime", true, 150);
             AddNewColumnToDataGridView(dgvSearchResult, "금형사용종료시간", "Use_Endtime", true, 150);
             AddNewColumnToDataGridView(dgvSearchResult, "금형사용시간", "UsingTime", true, 150);

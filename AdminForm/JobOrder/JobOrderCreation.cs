@@ -120,7 +120,7 @@ namespace AdminForm
             AddNewColumnToDataGridView(dgvSearchResult, "작업지시상태", "Wo_Status", true, 120);
             AddNewColumnToDataGridView(dgvSearchResult, "작업지시번호", "Workorderno", true, 120);
             AddNewColumnToDataGridView(dgvSearchResult, "계획일자", "Plan_Date", true, 120);
-            AddNewColumnToDataGridView(dgvSearchResult, "계획수량", "Plan_Qty", true, 120);
+            AddNewColumnToDataGridView(dgvSearchResult, "계획수량", "Plan_Qty", true, 120,DataGridViewContentAlignment.MiddleRight);
             AddNewColumnToDataGridView(dgvSearchResult, "계획수량단위", "Plan_Unit", true, 120);
             AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 120);
             AddNewColumnToDataGridView(dgvSearchResult, "품목명", "Item_Name", true, 255);
@@ -128,9 +128,9 @@ namespace AdminForm
             AddNewColumnToDataGridView(dgvSearchResult, "생산일자", "Prd_Date", true, 140);
             AddNewColumnToDataGridView(dgvSearchResult, "생산시작시각", "Prd_Starttime", true, 150);
             AddNewColumnToDataGridView(dgvSearchResult, "생산종료시간", "Prd_Endtime", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "투입수량", "In_Qty_Main", true, 100);
-            AddNewColumnToDataGridView(dgvSearchResult, "산출수량", "Out_Qty_Main", true, 100);
-            AddNewColumnToDataGridView(dgvSearchResult, "생산수량", "Prd_Qty", true, 100);
+            AddNewColumnToDataGridView(dgvSearchResult, "투입수량", "In_Qty_Main", true, 100, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvSearchResult, "산출수량", "Out_Qty_Main", true, 100, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvSearchResult, "생산수량", "Prd_Qty", true, 100, DataGridViewContentAlignment.MiddleRight);
             AddNewColumnToDataGridView(dgvSearchResult, "생산의뢰 번호", "Wo_Req_No", true, 130);
             AddNewColumnToDataGridView(dgvSearchResult, "생산의뢰 순번", "Req_Seq", true, 130);
             AddNewColumnToDataGridView(dgvSearchResult, "프로젝트명", "Remark", true, 150);

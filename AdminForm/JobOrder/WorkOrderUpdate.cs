@@ -26,5 +26,10 @@ namespace AdminForm.JobOrder
         {
 
         }
+
+        private void WorkOrderUpdate_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

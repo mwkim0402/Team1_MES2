@@ -45,7 +45,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(666, 396);
+            this.button1.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.button1.Location = new System.Drawing.Point(695, 396);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 29);
             this.button1.TabIndex = 2;
@@ -95,60 +96,61 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(8, 404);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 21);
+            this.label2.Size = new System.Drawing.Size(69, 19);
             this.label2.TabIndex = 36;
             this.label2.Text = "계획일자";
             // 
             // dtpStartTime
             // 
             this.dtpStartTime.CustomFormat = "hh:mm tt";
-            this.dtpStartTime.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpStartTime.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpStartTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpStartTime.Location = new System.Drawing.Point(276, 400);
             this.dtpStartTime.Name = "dtpStartTime";
             this.dtpStartTime.ShowUpDown = true;
-            this.dtpStartTime.Size = new System.Drawing.Size(129, 29);
+            this.dtpStartTime.Size = new System.Drawing.Size(129, 26);
             this.dtpStartTime.TabIndex = 35;
             this.dtpStartTime.Value = new System.DateTime(2020, 1, 30, 0, 0, 0, 0);
             // 
             // dtpPlanDate
             // 
             this.dtpPlanDate.CustomFormat = "yyyy-MM-dd";
-            this.dtpPlanDate.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpPlanDate.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpPlanDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpPlanDate.Location = new System.Drawing.Point(96, 400);
             this.dtpPlanDate.Name = "dtpPlanDate";
-            this.dtpPlanDate.Size = new System.Drawing.Size(174, 29);
+            this.dtpPlanDate.Size = new System.Drawing.Size(174, 26);
             this.dtpPlanDate.TabIndex = 34;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(411, 406);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(17, 21);
+            this.label1.Size = new System.Drawing.Size(15, 19);
             this.label1.TabIndex = 41;
             this.label1.Text = "-";
             // 
             // dtpEndTime
             // 
             this.dtpEndTime.CustomFormat = "hh:mm tt";
-            this.dtpEndTime.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpEndTime.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpEndTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEndTime.Location = new System.Drawing.Point(434, 400);
             this.dtpEndTime.Name = "dtpEndTime";
             this.dtpEndTime.ShowUpDown = true;
-            this.dtpEndTime.Size = new System.Drawing.Size(129, 29);
+            this.dtpEndTime.Size = new System.Drawing.Size(129, 26);
             this.dtpEndTime.TabIndex = 39;
             this.dtpEndTime.Value = new System.DateTime(2020, 1, 30, 0, 0, 0, 0);
             // 
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.button2.Location = new System.Drawing.Point(798, 396);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 29);

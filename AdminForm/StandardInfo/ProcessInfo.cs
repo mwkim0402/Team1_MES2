@@ -26,7 +26,8 @@ namespace AdminForm
             this.dgvSearchResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.dgvSearchResult.CellDoubleClick += CellDoubleClick;
             LoadData();
-            BindCombo();           
+            BindCombo();
+            dgvSearchResult.ColumnHeadersHeight = 30;
         }
         private void LoadData()
         {
@@ -42,9 +43,9 @@ namespace AdminForm
         {
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정코드", "Process_Code", true, 200);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정 명", "Process_Name", true, 250);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정그룹", "Process_Group", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정그룹", "Process_Group", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 400);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 120);
 
             dgvSearchResult.RowHeadersVisible = false;
             DataGridViewCheckBoxColumn chkboxCol = new DataGridViewCheckBoxColumn();

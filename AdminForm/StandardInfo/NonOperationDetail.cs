@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MES_DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,10 @@ namespace AdminForm
 {
     public partial class NonOperationDetail : dgvTwoWithInput
     {
+        MainForm frm;
+        List<NonOperationVO> nonOpMaList;
+        List<NonOpMiVo> nonOpMiList;
+        List<ComboItem> comboList;
         public NonOperationDetail()
         {
             InitializeComponent();
@@ -20,22 +25,79 @@ namespace AdminForm
         private void NonOperationDetail_Load(object sender, EventArgs e)
         {
             ShowDgv();
+            NonOperationMaService service = new NonOperationMaService();
+            nonOpMaList = service.GettNonOperationMa();
+            nonOpMiList = service.GetNonOpMi();
+            dgvSelect.DataSource = nonOpMaList;
+            frm = (MainForm)this.MdiParent;
+            ComboBind();
         }
 
+        private void ComboBind()
+        {
+            comboList = (from item in nonOpMaList
+                         select new ComboItem
+                         {
+                             comboText = item.Nop_Ma_Name,
+                             comboValue = item.Nop_Ma_Code
+                         }).ToList();
+            ComboClass.ComboBind(comboList, cmbNonOpMa, false);
+        }
         private void ShowDgv()
         {
-            tabPage3.Text = "";
-            tabPage4.Text = "";
+            tabPage3.Text = "비가동 대분류 목록";
+            tabPage4.Text = "비가동 상세분류 조회";
 
-            CommonClass.AddNewColumnToDataGridView(dgvSelect, "비가동 대분류 코드", "1", true, 200);
-            CommonClass.AddNewColumnToDataGridView(dgvSelect, "비가동 대분류 명", "1", true, 150);
-            CommonClass.AddNewColumnToDataGridView(dgvSelect, "비고", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSelect, "사용유무", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSelect, "비가동 대분류 코드", "Nop_Ma_Code", true, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvSelect, "비가동 대분류 명", "Nop_Ma_Name", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSelect, "사용유무", "Use_YN", true, 100);
 
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비가동 상세분류 코드", "1", true, 200);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비가동 상세분류 명", "1", true, 150);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "정렬순번", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비가동 상세분류 코드", "Nop_Mi_Code", true, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비가동 상세분류 명", "Nop_Mi_Name", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 100);
+        }
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string searchCode = dgvSelect.Rows[e.RowIndex].Cells[0].Value.ToString();
+            List<NonOpMiVo> searchList = nonOpMiList.FindAll(x => x.Nop_Ma_Code == searchCode);
+            dgvSearchResult.DataSource = searchList;
+        }
+
+        private void NonOperationDetail_Activated(object sender, EventArgs e)
+        {
+            dgvSelect.CellDoubleClick += dataGridView1_CellDoubleClick;
+        }
+
+        private void NonOperationDetail_Deactivate(object sender, EventArgs e)
+        {
+            dgvSelect.CellDoubleClick -= dataGridView1_CellDoubleClick;
+        }
+
+        private void cmbNonOpMa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string value = cmbNonOpMa.SelectedValue.ToString();
+            int count = nonOpMiList.FindAll(x => x.Nop_Ma_Code == cmbNonOpMa.SelectedValue.ToString()).Count;
+            if (cmbNonOpMa.SelectedValue.ToString() == "기계오작동")
+            {
+                txtNonOperationDetailCode.Text = "Malfunction_"+ string.Format("{0:D3}", count);
+            }
+            else if (cmbNonOpMa.DisplayMember == "기계교체")
+            {       
+                txtNonOperationDetailCode.Text = "MacReplacement_" + string.Format("{0:D3}", count);
+            }
+            else if (cmbNonOpMa.DisplayMember == "작업 대기 시간")
+            {               
+                txtNonOperationDetailCode.Text = "DummyPass_" + string.Format("{0:D3}", count);
+            }
+            else if (cmbNonOpMa.DisplayMember == "작업 대기 시간")
+            {
+                txtNonOperationDetailCode.Text = "MacCleaning _" + string.Format("{0:D3}", count);
+            }
+            else
+            {
+                txtNonOperationDetailCode.Text = "ETC_" + string.Format("{0:D3}", count);
+            }
         }
     }
 }

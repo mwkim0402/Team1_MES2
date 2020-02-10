@@ -18,6 +18,18 @@ namespace MES_DB
             NonOperationDAC dac = new NonOperationDAC();
             return dac.GetAllNonOpMa();
         }
+        
+        public bool InsertNonOpMi(NonOpMiVo vo)
+        {
+            NonOperationDAC dac = new NonOperationDAC();
+            return dac.InsertNonOpMi(vo);
+        }
+
+        public List<NonOpMiVo> GetNonOpMi()
+        {
+            NonOperationDAC dac = new NonOperationDAC();
+            return dac.GetNonOpMi();
+        }
     }
 
 }

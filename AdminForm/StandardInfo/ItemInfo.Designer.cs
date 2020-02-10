@@ -85,6 +85,12 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.nuInsPackage = new System.Windows.Forms.NumericUpDown();
+            this.nuInsIron = new System.Windows.Forms.NumericUpDown();
+            this.nuInsSteel = new System.Windows.Forms.NumericUpDown();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.cmbInType = new System.Windows.Forms.ComboBox();
             this.txtInUnit = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
@@ -115,6 +121,14 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.nuUpPack = new System.Windows.Forms.NumericUpDown();
+            this.nuUpSteel = new System.Windows.Forms.NumericUpDown();
+            this.nuUpIron = new System.Windows.Forms.NumericUpDown();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.nuUpRolling = new System.Windows.Forms.NumericUpDown();
+            this.label37 = new System.Windows.Forms.Label();
             this.cbUpType = new System.Windows.Forms.ComboBox();
             this.txtUpUnit = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -142,20 +156,6 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dgvSearchResult = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.nuInsSteel = new System.Windows.Forms.NumericUpDown();
-            this.nuInsIron = new System.Windows.Forms.NumericUpDown();
-            this.nuInsPackage = new System.Windows.Forms.NumericUpDown();
-            this.nuUpPack = new System.Windows.Forms.NumericUpDown();
-            this.nuUpSteel = new System.Windows.Forms.NumericUpDown();
-            this.nuUpIron = new System.Windows.Forms.NumericUpDown();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.nuUpRolling = new System.Windows.Forms.NumericUpDown();
-            this.label37 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuOutputPerCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuTheoryOutput)).BeginInit();
@@ -168,6 +168,9 @@
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuInsPackage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuInsIron)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuInsSteel)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuInsRolling)).BeginInit();
             this.panel5.SuspendLayout();
@@ -177,19 +180,16 @@
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuUpPack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuUpSteel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuUpIron)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuUpRolling)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             this.tabControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuInsSteel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuInsIron)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuInsPackage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuUpPack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuUpSteel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuUpIron)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuUpRolling)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -753,6 +753,78 @@
             this.panel6.TabIndex = 146;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
+            // nuInsPackage
+            // 
+            this.nuInsPackage.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.nuInsPackage.Location = new System.Drawing.Point(414, 136);
+            this.nuInsPackage.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nuInsPackage.Name = "nuInsPackage";
+            this.nuInsPackage.Size = new System.Drawing.Size(107, 33);
+            this.nuInsPackage.TabIndex = 151;
+            // 
+            // nuInsIron
+            // 
+            this.nuInsIron.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.nuInsIron.Location = new System.Drawing.Point(414, 60);
+            this.nuInsIron.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nuInsIron.Name = "nuInsIron";
+            this.nuInsIron.Size = new System.Drawing.Size(107, 33);
+            this.nuInsIron.TabIndex = 150;
+            // 
+            // nuInsSteel
+            // 
+            this.nuInsSteel.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.nuInsSteel.Location = new System.Drawing.Point(414, 98);
+            this.nuInsSteel.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nuInsSteel.Name = "nuInsSteel";
+            this.nuInsSteel.Size = new System.Drawing.Size(107, 33);
+            this.nuInsSteel.TabIndex = 149;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label34.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label34.Location = new System.Drawing.Point(263, 142);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(113, 16);
+            this.label34.TabIndex = 148;
+            this.label34.Text = "포장작업 UPH ";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label33.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label33.Location = new System.Drawing.Point(263, 66);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(113, 16);
+            this.label33.TabIndex = 146;
+            this.label33.Text = "제강작업 UPH ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label6.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Location = new System.Drawing.Point(263, 104);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(113, 16);
+            this.label6.TabIndex = 144;
+            this.label6.Text = "제선작업 UPH ";
+            // 
             // cmbInType
             // 
             this.cmbInType.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1085,6 +1157,102 @@
             this.panel8.Size = new System.Drawing.Size(792, 226);
             this.panel8.TabIndex = 149;
             // 
+            // nuUpPack
+            // 
+            this.nuUpPack.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.nuUpPack.Location = new System.Drawing.Point(425, 136);
+            this.nuUpPack.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nuUpPack.Name = "nuUpPack";
+            this.nuUpPack.Size = new System.Drawing.Size(107, 33);
+            this.nuUpPack.TabIndex = 188;
+            // 
+            // nuUpSteel
+            // 
+            this.nuUpSteel.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.nuUpSteel.Location = new System.Drawing.Point(425, 60);
+            this.nuUpSteel.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nuUpSteel.Name = "nuUpSteel";
+            this.nuUpSteel.Size = new System.Drawing.Size(107, 33);
+            this.nuUpSteel.TabIndex = 187;
+            // 
+            // nuUpIron
+            // 
+            this.nuUpIron.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.nuUpIron.Location = new System.Drawing.Point(425, 98);
+            this.nuUpIron.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nuUpIron.Name = "nuUpIron";
+            this.nuUpIron.Size = new System.Drawing.Size(107, 33);
+            this.nuUpIron.TabIndex = 186;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label31.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label31.Location = new System.Drawing.Point(274, 142);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(113, 16);
+            this.label31.TabIndex = 185;
+            this.label31.Text = "포장작업 UPH ";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label35.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label35.Location = new System.Drawing.Point(274, 66);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(113, 16);
+            this.label35.TabIndex = 184;
+            this.label35.Text = "제강작업 UPH ";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label36.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label36.Location = new System.Drawing.Point(274, 104);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(113, 16);
+            this.label36.TabIndex = 183;
+            this.label36.Text = "제선작업 UPH ";
+            // 
+            // nuUpRolling
+            // 
+            this.nuUpRolling.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.nuUpRolling.Location = new System.Drawing.Point(425, 22);
+            this.nuUpRolling.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nuUpRolling.Name = "nuUpRolling";
+            this.nuUpRolling.Size = new System.Drawing.Size(107, 33);
+            this.nuUpRolling.TabIndex = 182;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label37.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label37.Location = new System.Drawing.Point(274, 28);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(113, 16);
+            this.label37.TabIndex = 181;
+            this.label37.Text = "압연작업 UPH ";
+            // 
             // cbUpType
             // 
             this.cbUpType.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1362,174 +1530,6 @@
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label6.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(263, 104);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 16);
-            this.label6.TabIndex = 144;
-            this.label6.Text = "제선작업 UPH ";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label33.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label33.Location = new System.Drawing.Point(263, 66);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(113, 16);
-            this.label33.TabIndex = 146;
-            this.label33.Text = "제강작업 UPH ";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label34.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label34.Location = new System.Drawing.Point(263, 142);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(113, 16);
-            this.label34.TabIndex = 148;
-            this.label34.Text = "포장작업 UPH ";
-            // 
-            // nuInsSteel
-            // 
-            this.nuInsSteel.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.nuInsSteel.Location = new System.Drawing.Point(414, 98);
-            this.nuInsSteel.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.nuInsSteel.Name = "nuInsSteel";
-            this.nuInsSteel.Size = new System.Drawing.Size(107, 33);
-            this.nuInsSteel.TabIndex = 149;
-            // 
-            // nuInsIron
-            // 
-            this.nuInsIron.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.nuInsIron.Location = new System.Drawing.Point(414, 60);
-            this.nuInsIron.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.nuInsIron.Name = "nuInsIron";
-            this.nuInsIron.Size = new System.Drawing.Size(107, 33);
-            this.nuInsIron.TabIndex = 150;
-            // 
-            // nuInsPackage
-            // 
-            this.nuInsPackage.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.nuInsPackage.Location = new System.Drawing.Point(414, 136);
-            this.nuInsPackage.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.nuInsPackage.Name = "nuInsPackage";
-            this.nuInsPackage.Size = new System.Drawing.Size(107, 33);
-            this.nuInsPackage.TabIndex = 151;
-            // 
-            // nuUpPack
-            // 
-            this.nuUpPack.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.nuUpPack.Location = new System.Drawing.Point(425, 136);
-            this.nuUpPack.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.nuUpPack.Name = "nuUpPack";
-            this.nuUpPack.Size = new System.Drawing.Size(107, 33);
-            this.nuUpPack.TabIndex = 188;
-            // 
-            // nuUpSteel
-            // 
-            this.nuUpSteel.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.nuUpSteel.Location = new System.Drawing.Point(425, 60);
-            this.nuUpSteel.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.nuUpSteel.Name = "nuUpSteel";
-            this.nuUpSteel.Size = new System.Drawing.Size(107, 33);
-            this.nuUpSteel.TabIndex = 187;
-            // 
-            // nuUpIron
-            // 
-            this.nuUpIron.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.nuUpIron.Location = new System.Drawing.Point(425, 98);
-            this.nuUpIron.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.nuUpIron.Name = "nuUpIron";
-            this.nuUpIron.Size = new System.Drawing.Size(107, 33);
-            this.nuUpIron.TabIndex = 186;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label31.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label31.Location = new System.Drawing.Point(274, 142);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(113, 16);
-            this.label31.TabIndex = 185;
-            this.label31.Text = "포장작업 UPH ";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label35.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label35.Location = new System.Drawing.Point(274, 66);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(113, 16);
-            this.label35.TabIndex = 184;
-            this.label35.Text = "제강작업 UPH ";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label36.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label36.Location = new System.Drawing.Point(274, 104);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(113, 16);
-            this.label36.TabIndex = 183;
-            this.label36.Text = "제선작업 UPH ";
-            // 
-            // nuUpRolling
-            // 
-            this.nuUpRolling.Font = new System.Drawing.Font("맑은 고딕 Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.nuUpRolling.Location = new System.Drawing.Point(425, 22);
-            this.nuUpRolling.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.nuUpRolling.Name = "nuUpRolling";
-            this.nuUpRolling.Size = new System.Drawing.Size(107, 33);
-            this.nuUpRolling.TabIndex = 182;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label37.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label37.Location = new System.Drawing.Point(274, 28);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(113, 16);
-            this.label37.TabIndex = 181;
-            this.label37.Text = "압연작업 UPH ";
-            // 
             // ItemInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1565,6 +1565,9 @@
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuInsPackage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuInsIron)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuInsSteel)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuInsRolling)).EndInit();
@@ -1578,6 +1581,10 @@
             this.panel3.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuUpPack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuUpSteel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuUpIron)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuUpRolling)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -1587,13 +1594,6 @@
             this.panel11.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResult)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuInsSteel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuInsIron)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuInsPackage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuUpPack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuUpSteel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuUpIron)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nuUpRolling)).EndInit();
             this.ResumeLayout(false);
 
         }

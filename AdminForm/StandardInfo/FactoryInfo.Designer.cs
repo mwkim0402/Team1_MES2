@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtWPCode = new System.Windows.Forms.TextBox();
@@ -68,6 +69,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbUseTrue = new System.Windows.Forms.RadioButton();
+            this.rbUseFalse = new System.Windows.Forms.RadioButton();
             this.gbMoldEquip = new System.Windows.Forms.GroupBox();
             this.rbUse_MoldEq = new System.Windows.Forms.RadioButton();
             this.rbNoUse_MoldEq = new System.Windows.Forms.RadioButton();
@@ -82,9 +86,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbUseTrue = new System.Windows.Forms.RadioButton();
-            this.rbUseFalse = new System.Windows.Forms.RadioButton();
             this.fcFactory = new AdminForm.FIndCategory();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -92,13 +93,13 @@
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.gbMoldEquip.SuspendLayout();
             this.gbPalletCreate.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -520,6 +521,42 @@
             this.panel5.Size = new System.Drawing.Size(214, 240);
             this.panel5.TabIndex = 16;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbUseTrue);
+            this.groupBox2.Controls.Add(this.rbUseFalse);
+            this.groupBox2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox2.Location = new System.Drawing.Point(14, 123);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(170, 47);
+            this.groupBox2.TabIndex = 107;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "사용 유무";
+            // 
+            // rbUseTrue
+            // 
+            this.rbUseTrue.AutoSize = true;
+            this.rbUseTrue.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUseTrue.Location = new System.Drawing.Point(48, 20);
+            this.rbUseTrue.Name = "rbUseTrue";
+            this.rbUseTrue.Size = new System.Drawing.Size(42, 20);
+            this.rbUseTrue.TabIndex = 77;
+            this.rbUseTrue.Text = "유";
+            this.rbUseTrue.UseVisualStyleBackColor = false;
+            // 
+            // rbUseFalse
+            // 
+            this.rbUseFalse.AutoSize = true;
+            this.rbUseFalse.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUseFalse.Checked = true;
+            this.rbUseFalse.Location = new System.Drawing.Point(116, 20);
+            this.rbUseFalse.Name = "rbUseFalse";
+            this.rbUseFalse.Size = new System.Drawing.Size(42, 20);
+            this.rbUseFalse.TabIndex = 79;
+            this.rbUseFalse.TabStop = true;
+            this.rbUseFalse.Text = "무";
+            this.rbUseFalse.UseVisualStyleBackColor = false;
+            // 
             // gbMoldEquip
             // 
             this.gbMoldEquip.Controls.Add(this.rbUse_MoldEq);
@@ -659,6 +696,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 114);
             this.dataGridView1.Name = "dataGridView1";
@@ -670,42 +716,6 @@
             // 
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.rbUseTrue);
-            this.groupBox2.Controls.Add(this.rbUseFalse);
-            this.groupBox2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox2.Location = new System.Drawing.Point(14, 123);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(170, 47);
-            this.groupBox2.TabIndex = 107;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "사용 유무";
-            // 
-            // rbUseTrue
-            // 
-            this.rbUseTrue.AutoSize = true;
-            this.rbUseTrue.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.rbUseTrue.Location = new System.Drawing.Point(48, 20);
-            this.rbUseTrue.Name = "rbUseTrue";
-            this.rbUseTrue.Size = new System.Drawing.Size(42, 20);
-            this.rbUseTrue.TabIndex = 77;
-            this.rbUseTrue.Text = "유";
-            this.rbUseTrue.UseVisualStyleBackColor = false;
-            // 
-            // rbUseFalse
-            // 
-            this.rbUseFalse.AutoSize = true;
-            this.rbUseFalse.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.rbUseFalse.Checked = true;
-            this.rbUseFalse.Location = new System.Drawing.Point(116, 20);
-            this.rbUseFalse.Name = "rbUseFalse";
-            this.rbUseFalse.Size = new System.Drawing.Size(42, 20);
-            this.rbUseFalse.TabIndex = 79;
-            this.rbUseFalse.TabStop = true;
-            this.rbUseFalse.Text = "무";
-            this.rbUseFalse.UseVisualStyleBackColor = false;
             // 
             // fcFactory
             // 
@@ -750,6 +760,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.gbMoldEquip.ResumeLayout(false);
             this.gbMoldEquip.PerformLayout();
             this.gbPalletCreate.ResumeLayout(false);
@@ -758,8 +770,6 @@
             this.tabControl4.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }

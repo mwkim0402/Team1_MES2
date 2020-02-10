@@ -25,14 +25,17 @@ namespace AdminForm
         private void NonOperationDetail_Load(object sender, EventArgs e)
         {
             ShowDgv();
+            Search();
+            frm = (MainForm)this.MdiParent;
+            ComboBind();
+        }
+        private void Search()
+        {
             NonOperationMaService service = new NonOperationMaService();
             nonOpMaList = service.GettNonOperationMa();
             nonOpMiList = service.GetNonOpMi();
             dgvSelect.DataSource = nonOpMaList;
-            frm = (MainForm)this.MdiParent;
-            ComboBind();
         }
-
         private void ComboBind()
         {
             comboList = (from item in nonOpMaList
@@ -75,22 +78,21 @@ namespace AdminForm
         }
 
         private void cmbNonOpMa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string value = cmbNonOpMa.SelectedValue.ToString();
-            int count = nonOpMiList.FindAll(x => x.Nop_Ma_Code == cmbNonOpMa.SelectedValue.ToString()).Count;
-            if (cmbNonOpMa.SelectedValue.ToString() == "기계오작동")
+        {           
+            int count = nonOpMiList.FindAll(x => x.Nop_Ma_Code == cmbNonOpMa.SelectedValue.ToString()).Count+1;
+            if (cmbNonOpMa.Text == "기계오작동")
             {
                 txtNonOperationDetailCode.Text = "Malfunction_"+ string.Format("{0:D3}", count);
             }
-            else if (cmbNonOpMa.DisplayMember == "기계교체")
+            else if (cmbNonOpMa.Text == "기계교체")
             {       
                 txtNonOperationDetailCode.Text = "MacReplacement_" + string.Format("{0:D3}", count);
             }
-            else if (cmbNonOpMa.DisplayMember == "작업 대기 시간")
+            else if (cmbNonOpMa.Text == "작업 대기 시간")
             {               
                 txtNonOperationDetailCode.Text = "DummyPass_" + string.Format("{0:D3}", count);
             }
-            else if (cmbNonOpMa.DisplayMember == "작업 대기 시간")
+            else if (cmbNonOpMa.Text == "청소")
             {
                 txtNonOperationDetailCode.Text = "MacCleaning _" + string.Format("{0:D3}", count);
             }
@@ -98,6 +100,21 @@ namespace AdminForm
             {
                 txtNonOperationDetailCode.Text = "ETC_" + string.Format("{0:D3}", count);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            NonOperationMaService service = new NonOperationMaService();
+            service.InsertNonOpMi(new NonOpMiVo
+            {
+                Nop_Ma_Code = cmbNonOpMa.SelectedValue.ToString(),
+                Nop_Mi_Code = txtNonOperationDetailCode.Text,
+                Nop_Mi_Name = txtNonOperationDetailName.Text,
+                Remark = txtNote.Text,
+                Use_YN = "Y"
+            });
+            CommonClass.InitControl(panel1);
+            Search();
         }
     }
 }

@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Main</h2>
+<h2>메인화면</h2>
 
 <section class="content">
     <!-- Info boxes -->
@@ -14,7 +14,7 @@
                 <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">CPU Traffic</span>
+                    <span class="info-box-text">불량률</span>
                     <span class="info-box-number">90<small>%</small></span>
                 </div>
                 <!-- /.info-box-content -->
@@ -27,8 +27,8 @@
                 <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Likes</span>
-                    <span class="info-box-number">41,410</span>
+                    <span class="info-box-text">금일 생산현황</span>
+                    <span class="info-box-number">760</span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -43,7 +43,7 @@
                 <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Sales</span>
+                    <span class="info-box-text">누적 생산현황</span>
                     <span class="info-box-number">760</span>
                 </div>
                 <!-- /.info-box-content -->
@@ -56,8 +56,8 @@
                 <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">New Members</span>
-                    <span class="info-box-number">2,000</span>
+                    <span class="info-box-text">평균근무 시간</span>
+                    <span class="info-box-number">8.3</span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -71,7 +71,7 @@
         <div class="col-md-12">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Monthly Recap Report</h3>
+                    <h3 class="box-title">월별 생산 현황</h3>
 
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -97,7 +97,7 @@
                     <div class="row">
                         <div class="col-md-8">
                             <p class="text-center">
-                                <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
+                                <strong>판매현황: 2020년 1월 1일 - 2020년 1월 31일</strong>
                             </p>
 
                             <div class="chart">
@@ -109,11 +109,11 @@
                         <!-- /.col -->
                         <div class="col-md-4">
                             <p class="text-center">
-                                <strong>Goal Completion</strong>
+                                <strong>완료 현황 (%)</strong>
                             </p>
 
                             <div class="progress-group">
-                                <span class="progress-text">Add Products to Cart</span>
+                                <span class="progress-text">제선</span>
                                 <span class="progress-number"><b>160</b>/200</span>
 
                                 <div class="progress sm">
@@ -122,7 +122,7 @@
                             </div>
                             <!-- /.progress-group -->
                             <div class="progress-group">
-                                <span class="progress-text">Complete Purchase</span>
+                                <span class="progress-text">제강</span>
                                 <span class="progress-number"><b>310</b>/400</span>
 
                                 <div class="progress sm">
@@ -131,7 +131,7 @@
                             </div>
                             <!-- /.progress-group -->
                             <div class="progress-group">
-                                <span class="progress-text">Visit Premium Page</span>
+                                <span class="progress-text">압연</span>
                                 <span class="progress-number"><b>480</b>/800</span>
 
                                 <div class="progress sm">
@@ -140,11 +140,19 @@
                             </div>
                             <!-- /.progress-group -->
                             <div class="progress-group">
-                                <span class="progress-text">Send Inquiries</span>
-                                <span class="progress-number"><b>250</b>/500</span>
+                                <span class="progress-text">포장</span>
+                                <span class="progress-number"><b>200</b>/500</span>
 
                                 <div class="progress sm">
                                     <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-group">
+                                <span class="progress-text">적재</span>
+                                <span class="progress-number"><b>250</b>/500</span>
+
+                                <div class="progress sm">
+                                    <div class="progress-bar progress-bar-light-blue" style="width: 80%"></div>
                                 </div>
                             </div>
                             <!-- /.progress-group -->
@@ -255,287 +263,11 @@
                 </div>
                 <!-- /.box-body -->
             </div>
-            <!-- /.box -->
-            <div class="row">
-                <div class="col-md-6">
-                    <!-- DIRECT CHAT -->
-                    <div class="box box-warning direct-chat direct-chat-warning">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Direct Chat</h3>
-
-                            <div class="box-tools pull-right">
-                                <span data-toggle="tooltip" title="3 New Messages" class="badge bg-yellow">3</span>
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                                    <i class="fa fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="Contacts"
-                                        data-widget="chat-pane-toggle">
-                                    <i class="fa fa-comments"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove">
-                                    <i class="fa fa-times"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body">
-                            <!-- Conversations are loaded here -->
-                            <div class="direct-chat-messages">
-                                <!-- Message. Default to the left -->
-                                <div class="direct-chat-msg">
-                                    <div class="direct-chat-info clearfix">
-                                        <span class="direct-chat-name pull-left">Alexander Pierce</span>
-                                        <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
-                                    </div>
-                                    <!-- /.direct-chat-info -->
-                                    <img class="direct-chat-img" src="~/dist/img/user1-128x128.jpg" alt="message user image">
-                                    <!-- /.direct-chat-img -->
-                                    <div class="direct-chat-text">
-                                        Is this template really for free? That's unbelievable!
-                                    </div>
-                                    <!-- /.direct-chat-text -->
-                                </div>
-                                <!-- /.direct-chat-msg -->
-                                <!-- Message to the right -->
-                                <div class="direct-chat-msg right">
-                                    <div class="direct-chat-info clearfix">
-                                        <span class="direct-chat-name pull-right">Sarah Bullock</span>
-                                        <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
-                                    </div>
-                                    <!-- /.direct-chat-info -->
-                                    <img class="direct-chat-img" src="~/dist/img/user3-128x128.jpg" alt="message user image">
-                                    <!-- /.direct-chat-img -->
-                                    <div class="direct-chat-text">
-                                        You better believe it!
-                                    </div>
-                                    <!-- /.direct-chat-text -->
-                                </div>
-                                <!-- /.direct-chat-msg -->
-                                <!-- Message. Default to the left -->
-                                <div class="direct-chat-msg">
-                                    <div class="direct-chat-info clearfix">
-                                        <span class="direct-chat-name pull-left">Alexander Pierce</span>
-                                        <span class="direct-chat-timestamp pull-right">23 Jan 5:37 pm</span>
-                                    </div>
-                                    <!-- /.direct-chat-info -->
-                                    <img class="direct-chat-img" src="~/dist/img/user1-128x128.jpg" alt="message user image">
-                                    <!-- /.direct-chat-img -->
-                                    <div class="direct-chat-text">
-                                        Working with AdminLTE on a great new app! Wanna join?
-                                    </div>
-                                    <!-- /.direct-chat-text -->
-                                </div>
-                                <!-- /.direct-chat-msg -->
-                                <!-- Message to the right -->
-                                <div class="direct-chat-msg right">
-                                    <div class="direct-chat-info clearfix">
-                                        <span class="direct-chat-name pull-right">Sarah Bullock</span>
-                                        <span class="direct-chat-timestamp pull-left">23 Jan 6:10 pm</span>
-                                    </div>
-                                    <!-- /.direct-chat-info -->
-                                    <img class="direct-chat-img" src="~/dist/img/user3-128x128.jpg" alt="message user image">
-                                    <!-- /.direct-chat-img -->
-                                    <div class="direct-chat-text">
-                                        I would love to.
-                                    </div>
-                                    <!-- /.direct-chat-text -->
-                                </div>
-                                <!-- /.direct-chat-msg -->
-
-                            </div>
-                            <!--/.direct-chat-messages-->
-                            <!-- Contacts are loaded here -->
-                            <div class="direct-chat-contacts">
-                                <ul class="contacts-list">
-                                    <li>
-                                        <a href="#">
-                                            <img class="contacts-list-img" src="~/dist/img/user1-128x128.jpg" alt="User Image">
-
-                                            <div class="contacts-list-info">
-                                                <span class="contacts-list-name">
-                                                    Count Dracula
-                                                    <small class="contacts-list-date pull-right">2/28/2015</small>
-                                                </span>
-                                                <span class="contacts-list-msg">How have you been? I was...</span>
-                                            </div>
-                                            <!-- /.contacts-list-info -->
-                                        </a>
-                                    </li>
-                                    <!-- End Contact Item -->
-                                    <li>
-                                        <a href="#">
-                                            <img class="contacts-list-img" src="~/dist/img/user7-128x128.jpg" alt="User Image">
-
-                                            <div class="contacts-list-info">
-                                                <span class="contacts-list-name">
-                                                    Sarah Doe
-                                                    <small class="contacts-list-date pull-right">2/23/2015</small>
-                                                </span>
-                                                <span class="contacts-list-msg">I will be waiting for...</span>
-                                            </div>
-                                            <!-- /.contacts-list-info -->
-                                        </a>
-                                    </li>
-                                    <!-- End Contact Item -->
-                                    <li>
-                                        <a href="#">
-                                            <img class="contacts-list-img" src="~/dist/img/user3-128x128.jpg" alt="User Image">
-
-                                            <div class="contacts-list-info">
-                                                <span class="contacts-list-name">
-                                                    Nadia Jolie
-                                                    <small class="contacts-list-date pull-right">2/20/2015</small>
-                                                </span>
-                                                <span class="contacts-list-msg">I'll call you back at...</span>
-                                            </div>
-                                            <!-- /.contacts-list-info -->
-                                        </a>
-                                    </li>
-                                    <!-- End Contact Item -->
-                                    <li>
-                                        <a href="#">
-                                            <img class="contacts-list-img" src="~/dist/img/user5-128x128.jpg" alt="User Image">
-
-                                            <div class="contacts-list-info">
-                                                <span class="contacts-list-name">
-                                                    Nora S. Vans
-                                                    <small class="contacts-list-date pull-right">2/10/2015</small>
-                                                </span>
-                                                <span class="contacts-list-msg">Where is your new...</span>
-                                            </div>
-                                            <!-- /.contacts-list-info -->
-                                        </a>
-                                    </li>
-                                    <!-- End Contact Item -->
-                                    <li>
-                                        <a href="#">
-                                            <img class="contacts-list-img" src="~/dist/img/user6-128x128.jpg" alt="User Image">
-
-                                            <div class="contacts-list-info">
-                                                <span class="contacts-list-name">
-                                                    John K.
-                                                    <small class="contacts-list-date pull-right">1/27/2015</small>
-                                                </span>
-                                                <span class="contacts-list-msg">Can I take a look at...</span>
-                                            </div>
-                                            <!-- /.contacts-list-info -->
-                                        </a>
-                                    </li>
-                                    <!-- End Contact Item -->
-                                    <li>
-                                        <a href="#">
-                                            <img class="contacts-list-img" src="~/dist/img/user8-128x128.jpg" alt="User Image">
-
-                                            <div class="contacts-list-info">
-                                                <span class="contacts-list-name">
-                                                    Kenneth M.
-                                                    <small class="contacts-list-date pull-right">1/4/2015</small>
-                                                </span>
-                                                <span class="contacts-list-msg">Never mind I found...</span>
-                                            </div>
-                                            <!-- /.contacts-list-info -->
-                                        </a>
-                                    </li>
-                                    <!-- End Contact Item -->
-                                </ul>
-                                <!-- /.contatcts-list -->
-                            </div>
-                            <!-- /.direct-chat-pane -->
-                        </div>
-                        <!-- /.box-body -->
-                        <div class="box-footer">
-                            <form action="#" method="post">
-                                <div class="input-group">
-                                    <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-                                    <span class="input-group-btn">
-                                        <button type="button" class="btn btn-warning btn-flat">Send</button>
-                                    </span>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- /.box-footer-->
-                    </div>
-                    <!--/.direct-chat -->
-                </div>
-                <!-- /.col -->
-
-                <div class="col-md-6">
-                    <!-- USERS LIST -->
-                    <div class="box box-danger">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Latest Members</h3>
-
-                            <div class="box-tools pull-right">
-                                <span class="label label-danger">8 New Members</span>
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                                    <i class="fa fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove">
-                                    <i class="fa fa-times"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body no-padding">
-                            <ul class="users-list clearfix">
-                                <li>
-                                    <img src="~/dist/img/user1-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Alexander Pierce</a>
-                                    <span class="users-list-date">Today</span>
-                                </li>
-                                <li>
-                                    <img src="~/dist/img/user8-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Norman</a>
-                                    <span class="users-list-date">Yesterday</span>
-                                </li>
-                                <li>
-                                    <img src="~/dist/img/user7-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Jane</a>
-                                    <span class="users-list-date">12 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="~/dist/img/user6-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">John</a>
-                                    <span class="users-list-date">12 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="~/dist/img/user2-160x160.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Alexander</a>
-                                    <span class="users-list-date">13 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="~/dist/img/user5-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Sarah</a>
-                                    <span class="users-list-date">14 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="~/dist/img/user4-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Nora</a>
-                                    <span class="users-list-date">15 Jan</span>
-                                </li>
-                                <li>
-                                    <img src="~/dist/img/user3-128x128.jpg" alt="User Image">
-                                    <a class="users-list-name" href="#">Nadia</a>
-                                    <span class="users-list-date">15 Jan</span>
-                                </li>
-                            </ul>
-                            <!-- /.users-list -->
-                        </div>
-                        <!-- /.box-body -->
-                        <div class="box-footer text-center">
-                            <a href="javascript:void(0)" class="uppercase">View All Users</a>
-                        </div>
-                        <!-- /.box-footer -->
-                    </div>
-                    <!--/.box -->
-                </div>
-                <!-- /.col -->
-            </div>
-            <!-- /.row -->
+            
             <!-- TABLE: LATEST ORDERS -->
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Latest Orders</h3>
+                    <h3 class="box-title">최근 생산의뢰</h3>
 
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -550,17 +282,17 @@
                         <table class="table no-margin">
                             <thead>
                                 <tr>
-                                    <th>Order ID</th>
-                                    <th>Item</th>
-                                    <th>Status</th>
-                                    <th>Popularity</th>
+                                    <th>생산의뢰번호</th>
+                                    <th>상품명</th>
+                                    <th>현재상태</th>
+                                    <th>생산의뢰량</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><a href="pages/examples/invoice.html">OR9842</a></td>
                                     <td>Call of Duty IV</td>
-                                    <td><span class="label label-success">Shipped</span></td>
+                                    <td><span class="label label-success">제선</span></td>
                                     <td>
                                         <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
                                     </td>
@@ -568,7 +300,7 @@
                                 <tr>
                                     <td><a href="pages/examples/invoice.html">OR1848</a></td>
                                     <td>Samsung Smart TV</td>
-                                    <td><span class="label label-warning">Pending</span></td>
+                                    <td><span class="label label-warning">제강</span></td>
                                     <td>
                                         <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
                                     </td>
@@ -576,7 +308,7 @@
                                 <tr>
                                     <td><a href="pages/examples/invoice.html">OR7429</a></td>
                                     <td>iPhone 6 Plus</td>
-                                    <td><span class="label label-danger">Delivered</span></td>
+                                    <td><span class="label label-danger">압연</span></td>
                                     <td>
                                         <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
                                     </td>
@@ -584,7 +316,7 @@
                                 <tr>
                                     <td><a href="pages/examples/invoice.html">OR7429</a></td>
                                     <td>Samsung Smart TV</td>
-                                    <td><span class="label label-info">Processing</span></td>
+                                    <td><span class="label label-info">적재</span></td>
                                     <td>
                                         <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
                                     </td>
@@ -592,7 +324,7 @@
                                 <tr>
                                     <td><a href="pages/examples/invoice.html">OR1848</a></td>
                                     <td>Samsung Smart TV</td>
-                                    <td><span class="label label-warning">Pending</span></td>
+                                    <td><span class="label label-warning">적재</span></td>
                                     <td>
                                         <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
                                     </td>
@@ -600,7 +332,7 @@
                                 <tr>
                                     <td><a href="pages/examples/invoice.html">OR7429</a></td>
                                     <td>iPhone 6 Plus</td>
-                                    <td><span class="label label-danger">Delivered</span></td>
+                                    <td><span class="label label-danger">포장</span></td>
                                     <td>
                                         <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
                                     </td>
@@ -608,7 +340,7 @@
                                 <tr>
                                     <td><a href="pages/examples/invoice.html">OR9842</a></td>
                                     <td>Call of Duty IV</td>
-                                    <td><span class="label label-success">Shipped</span></td>
+                                    <td><span class="label label-success">완료</span></td>
                                     <td>
                                         <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
                                     </td>
@@ -702,7 +434,7 @@
 
             <div class="box box-default">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Browser Usage</h3>
+                    <h3 class="box-title">작업장 사용량</h3>
 
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -723,12 +455,11 @@
                         <!-- /.col -->
                         <div class="col-md-4">
                             <ul class="chart-legend clearfix">
-                                <li><i class="fa fa-circle-o text-red"></i> Chrome</li>
-                                <li><i class="fa fa-circle-o text-green"></i> IE</li>
-                                <li><i class="fa fa-circle-o text-yellow"></i> FireFox</li>
-                                <li><i class="fa fa-circle-o text-aqua"></i> Safari</li>
-                                <li><i class="fa fa-circle-o text-light-blue"></i> Opera</li>
-                                <li><i class="fa fa-circle-o text-gray"></i> Navigator</li>
+                                <li><i class="fa fa-circle-o text-red"></i> 제강</li>
+                                <li><i class="fa fa-circle-o text-green"></i> 제선</li>
+                                <li><i class="fa fa-circle-o text-yellow"></i> 압연</li>
+                                <li><i class="fa fa-circle-o text-aqua"></i> 적재</li>
+                                <li><i class="fa fa-circle-o text-light-blue"></i> 포장</li>
                             </ul>
                         </div>
                         <!-- /.col -->
@@ -761,7 +492,7 @@
             <!-- PRODUCT LIST -->
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Recently Added Products</h3>
+                    <h3 class="box-title">최근 추가된 상품</h3>
 
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse">

@@ -40,6 +40,7 @@
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tabControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +81,7 @@
             this.fcWorkPlace.Category = AdminForm.CategoryMode.WorkCenter;
             this.fcWorkPlace.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.fcWorkPlace.Location = new System.Drawing.Point(761, 20);
+            this.fcWorkPlace.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fcWorkPlace.Name = "fcWorkPlace";
             this.fcWorkPlace.SendCode = null;
             this.fcWorkPlace.SendName = null;
@@ -101,6 +103,7 @@
             this.fcItem.Category = AdminForm.CategoryMode.Item;
             this.fcItem.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.fcItem.Location = new System.Drawing.Point(428, 19);
+            this.fcItem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fcItem.Name = "fcItem";
             this.fcItem.SendCode = null;
             this.fcItem.SendName = null;
@@ -193,5 +196,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

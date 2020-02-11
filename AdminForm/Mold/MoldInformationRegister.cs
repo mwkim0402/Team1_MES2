@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Interop;
 
 namespace AdminForm
 {
@@ -34,19 +35,19 @@ namespace AdminForm
 
             //dgv 추가
             frm = (MainForm)this.MdiParent;
-            AddNewColumnToDataGridView(dgvSearchResult, "금형코드", "Mold_Code", true, 100);
+            AddNewColumnToDataGridView(dgvSearchResult, "금형코드", "Mold_Code", true, 110);
             AddNewColumnToDataGridView(dgvSearchResult, "금형명", "Mold_Name", true, 200);
             AddNewColumnToDataGridView(dgvSearchResult, "금형그룹", "Mold_Group", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형상태", "Mold_Status", true, 100);
+            AddNewColumnToDataGridView(dgvSearchResult, "금형상태", "Mold_Status", true, 110);
             AddNewColumnToDataGridView(dgvSearchResult, "금형누적타수", "Cum_Shot_Cnt", true, 150, DataGridViewContentAlignment.MiddleRight);
             AddNewColumnToDataGridView(dgvSearchResult, "금형누적생산량", "Cum_Prd_Qty", true, 150, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형누적사용시간", "Cum_Time", true, 145);
-            AddNewColumnToDataGridView(dgvSearchResult, "보장타수", "Guar_Shot_Cnt", true, 100, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvSearchResult, "구입금액", "Purchase_Amt", true, 100, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvSearchResult, "금형누적사용시간", "Cum_Time", true, 160);
+            AddNewColumnToDataGridView(dgvSearchResult, "보장타수", "Guar_Shot_Cnt", true, 110, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvSearchResult, "구입금액", "Purchase_Amt", true, 110, DataGridViewContentAlignment.MiddleRight);
             AddNewColumnToDataGridView(dgvSearchResult, "입고일자", "In_Date", true, 150);
             AddNewColumnToDataGridView(dgvSearchResult, "최종장착일시", "Last_Setup_Time", true, 150);
             AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 80);
-            AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 80);
+            AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 110);
             LoadList();
             dgvSearchResult.DataSource = List;
 
@@ -134,26 +135,32 @@ namespace AdminForm
             else
             {
                 isUse = "N";
-
             }
-            int result = ser.SaveMoldingInfo(txtMoldCodeInput.Text, txtMoldNameInput.Text, cmbMoldGroupI.SelectedValue.ToString(), int.Parse(txtPrice.Text), dtpInputdate.Value.ToString().Substring(0,10), dtpLastEquipDate.Value.ToString().Substring(0, 10),int.Parse( txtWarrentNum.Text), txtPS.Text, isUse);
-            if (result >= 1)
+            if (int.TryParse(txtPrice.Text, out int price) && int.TryParse(txtWarrentNum.Text, out int warrentNum))
             {
-                MessageBox.Show("저장이 완료되었습니다.");
-                txtMoldCodeInput.Text = null;
-                txtMoldNameInput.Text = null;
-                cmbMoldGroupI.SelectedValue = 0;
-                txtWarrentNum.Text = null;
-                txtPrice.Text = null;
-                dtpInputdate.Value = DateTime.Now;
-                dtpLastEquipDate.Value = DateTime.Now;
-                rbUse.Checked = false;
-                rbNoUse.Checked = false;
-                LoadList();
+                int result = ser.SaveMoldingInfo(txtMoldCodeInput.Text, txtMoldNameInput.Text, cmbMoldGroupI.SelectedValue.ToString(), int.Parse(txtPrice.Text), dtpInputdate.Value.ToString().Substring(0, 10), dtpLastEquipDate.Value.ToString().Substring(0, 10), int.Parse(txtWarrentNum.Text), txtPS.Text, isUse);
+                if (result >= 1)
+                {
+                    MessageBox.Show("저장이 완료되었습니다.");
+                    txtMoldCodeInput.Text = null;
+                    txtMoldNameInput.Text = null;
+                    cmbMoldGroupI.SelectedValue = 0;
+                    txtWarrentNum.Text = null;
+                    txtPrice.Text = null;
+                    dtpInputdate.Value = DateTime.Now;
+                    dtpLastEquipDate.Value = DateTime.Now;
+                    rbUse.Checked = false;
+                    rbNoUse.Checked = false;
+                    LoadList();
+                }
+                else
+                {
+                    MessageBox.Show("오류.");
+                }
             }
             else
             {
-                MessageBox.Show("오류.");
+                MessageBox.Show("정확한 값을 입력해 주세요.");
             }
 
         }
@@ -166,21 +173,75 @@ namespace AdminForm
         private void timer1_Tick(object sender, EventArgs e)
         {
             //frm.lblAlertTitle.Text = "";
-            frm.lblAlert.Text = "<공지사항> Test 중 입니다.";
+            //frm.lblAlert.Text = "<공지사항> Test 중 입니다.";
             timer1.Stop();
         }
 
     
 
-    private void MoldInformationRegister_Activated(object sender, EventArgs e)
+        private void MoldInformationRegister_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += new EventHandler(this.Search_Click);
+            frm.Insert_Click += new EventHandler(this.ExportToExcel);
         }
 
         private void MoldInformationRegister_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= new EventHandler(this.Search_Click);
+            frm.Insert_Click -= new EventHandler(this.ExportToExcel);
         }
+        private void ExportToExcel(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application xlApp;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+
+            int i, j;
+
+            saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
+            saveFileDialog1.InitialDirectory = "C:";
+            saveFileDialog1.Title = "Save";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkBook = xlApp.Workbooks.Add();
+                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                for (i = 0; i <= dgvSearchResult.RowCount - 2; i++)
+                {
+                    for (j = 0; j <= dgvSearchResult.ColumnCount - 1; j++)
+                    {
+                        xlWorkSheet.Cells[i + 1, j + 1] = dgvSearchResult[j, i].Value.ToString();
+                    }
+                }
+
+                xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                xlWorkBook.Close(true);
+                xlApp.Quit();
+
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+            }
+        }
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
 
         private void BtnModify_Click(object sender, EventArgs e)
         {
@@ -263,10 +324,10 @@ namespace AdminForm
             }
             if (List.Count < 1)
             {
-                frm.lblAlert.Text = "[알람] 검색한 조건의 데이터가 존재하지 않습니다.";
+                //frm.lblAlert.Text = "[알람] 검색한 조건의 데이터가 존재하지 않습니다.";
                 return;
             }
-            frm.lblAlert.Text = $"[알람] {List.Count} 건의 데이터가 조회되었습니다.";
+            //frm.lblAlert.Text = $"[알람] {List.Count} 건의 데이터가 조회되었습니다.";
             timer1.Start();
             dgvSearchResult.DataSource = List;
         }

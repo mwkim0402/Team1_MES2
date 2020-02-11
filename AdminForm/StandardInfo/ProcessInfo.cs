@@ -45,7 +45,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정 명", "Process_Name", true, 250);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정그룹", "Process_Group", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 400);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 120, DataGridViewContentAlignment.MiddleCenter);
 
             dgvSearchResult.RowHeadersVisible = false;
             DataGridViewCheckBoxColumn chkboxCol = new DataGridViewCheckBoxColumn();
@@ -163,10 +163,10 @@ namespace AdminForm
 
             if (searchList.Count < 1)
             {
-                frm.lblAlert.Text = "검색한 조건의 데이터가 존재하지 않습니다.";
+               // frm.lblAlert.Text = "검색한 조건의 데이터가 존재하지 않습니다.";
                 return;
             }
-            frm.lblAlert.Text = $"{searchList.Count} 건의 데이터가 조회되었습니다.";
+           // frm.lblAlert.Text = $"{searchList.Count} 건의 데이터가 조회되었습니다.";
             dgvSearchResult.DataSource = searchList;
         }
     }

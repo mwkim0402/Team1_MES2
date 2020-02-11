@@ -52,13 +52,13 @@ namespace AdminForm
             tabPage4.Text = "비가동 상세분류 조회";
 
             CommonClass.AddNewColumnToDataGridView(dgvSelect, "비가동 대분류 코드", "Nop_Ma_Code", true, 200);
-            CommonClass.AddNewColumnToDataGridView(dgvSelect, "비가동 대분류 명", "Nop_Ma_Name", true, 150);
-            CommonClass.AddNewColumnToDataGridView(dgvSelect, "사용유무", "Use_YN", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSelect, "비가동 대분류 명", "Nop_Ma_Name", true, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvSelect, "사용유무", "Use_YN", true, 150, DataGridViewContentAlignment.MiddleCenter);
 
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비가동 상세분류 코드", "Nop_Mi_Code", true, 200);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비가동 상세분류 명", "Nop_Mi_Name", true, 150);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비가동 상세분류 명", "Nop_Mi_Name", true, 200);            
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 150, DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 300);
         }
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

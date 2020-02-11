@@ -26,17 +26,17 @@ namespace AdminForm
             frm = (MainForm)this.MdiParent;
 
             //AddNewColumnToDataGridView(dgvSearchResult, "생산일자", "???", true, 120);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형코드", "Mold_Code", true, 100);
+            AddNewColumnToDataGridView(dgvSearchResult, "금형코드", "Mold_Code", true, 110);
             AddNewColumnToDataGridView(dgvSearchResult, "금형명", "Mold_Name", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "작업지시번호", "Workorderno", true, 100);
-            AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 100);
+            AddNewColumnToDataGridView(dgvSearchResult, "작업지시번호", "Workorderno", true, 170);
+            AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 110);
             AddNewColumnToDataGridView(dgvSearchResult, "품목명", "Item_Name", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "작업장코드", "Wc_Code", true, 100);
+            AddNewColumnToDataGridView(dgvSearchResult, "작업장코드", "Wc_Code", true, 130);
             AddNewColumnToDataGridView(dgvSearchResult, "작업장명", "Wc_Name", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형타수", "Mold_Shot_Cnt", true, 100, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형생산량", "Mold_Prd_Qty", true, 100, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형사용시작시간", "Use_Starttime", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형사용종료시간", "Use_Endtime", true, 150);
+            AddNewColumnToDataGridView(dgvSearchResult, "금형타수", "Mold_Shot_Cnt", true, 110, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvSearchResult, "금형생산량", "Mold_Prd_Qty", true, 130, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvSearchResult, "금형사용시작시간", "Use_Starttime", true, 170);
+            AddNewColumnToDataGridView(dgvSearchResult, "금형사용종료시간", "Use_Endtime", true, 170);
             AddNewColumnToDataGridView(dgvSearchResult, "금형사용시간", "UsingTime", true, 150);
             LoadList();
             dgvSearchResult.DataSource = list;
@@ -89,11 +89,13 @@ namespace AdminForm
         private void MoldUseStatus_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= new EventHandler(Search);
+            frm.Insert_Click -= new EventHandler(this.ExportToExcel);
         }
 
         private void MoldUseStatus_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += new EventHandler(Search);
+            frm.Insert_Click += new EventHandler(this.ExportToExcel);
 
         }
 
@@ -137,6 +139,57 @@ namespace AdminForm
             frm.lblAlert.Text = $"[알람] {list.Count} 건의 데이터가 조회되었습니다.";
             timer1.Start();
             dgvSearchResult.DataSource = list;
+        }
+        private void ExportToExcel(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application xlApp;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+
+            int i, j;
+
+            saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
+            saveFileDialog1.InitialDirectory = "C:";
+            saveFileDialog1.Title = "Save";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkBook = xlApp.Workbooks.Add();
+                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                for (i = 0; i <= dgvSearchResult.RowCount - 2; i++)
+                {
+                    for (j = 0; j <= dgvSearchResult.ColumnCount - 1; j++)
+                    {
+                        xlWorkSheet.Cells[i + 1, j + 1] = dgvSearchResult[j, i].Value.ToString();
+                    }
+                }
+
+                xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                xlWorkBook.Close(true);
+                xlApp.Quit();
+
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+            }
+        }
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
         }
     }
 }

@@ -49,6 +49,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.button2 = new System.Windows.Forms.Button();
             this.tcParent1.SuspendLayout();
             this.tcParent2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -59,10 +60,19 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // tcParent1
+            // 
+            this.tcParent1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
+            // 
             // tabPage4
             // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 28);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            // 
+            // tcParent2
+            // 
+            this.tcParent2.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
             // 
             // panel1
             // 
@@ -72,11 +82,14 @@
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Size = new System.Drawing.Size(1124, 103);
             // 
             // tabPage2
             // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1124, 103);
             // 
             // pnlParent1
             // 
@@ -87,13 +100,14 @@
             this.pnlParent1.Controls.Add(this.btnSave);
             this.pnlParent1.Controls.Add(this.gbUsable);
             this.pnlParent1.Location = new System.Drawing.Point(3, 4);
-            this.pnlParent1.Size = new System.Drawing.Size(1118, 91);
+            this.pnlParent1.Size = new System.Drawing.Size(1118, 95);
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.txtNonOpCodeName);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.NonOpCatCode);
@@ -105,78 +119,82 @@
             // 
             // txtNonOpCodeName
             // 
-            this.txtNonOpCodeName.Location = new System.Drawing.Point(634, 27);
+            this.txtNonOpCodeName.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.txtNonOpCodeName.Location = new System.Drawing.Point(563, 25);
             this.txtNonOpCodeName.Name = "txtNonOpCodeName";
-            this.txtNonOpCodeName.Size = new System.Drawing.Size(159, 21);
+            this.txtNonOpCodeName.Size = new System.Drawing.Size(159, 26);
             this.txtNonOpCodeName.TabIndex = 9;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(448, 28);
+            this.label2.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.label2.Location = new System.Drawing.Point(377, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 16);
+            this.label2.Size = new System.Drawing.Size(152, 19);
             this.label2.TabIndex = 8;
             this.label2.Text = "비가동 대분류 코드명";
             // 
             // NonOpCatCode
             // 
+            this.NonOpCatCode.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.NonOpCatCode.Location = new System.Drawing.Point(184, 27);
             this.NonOpCatCode.Name = "NonOpCatCode";
-            this.NonOpCatCode.Size = new System.Drawing.Size(159, 21);
+            this.NonOpCatCode.Size = new System.Drawing.Size(159, 26);
             this.NonOpCatCode.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label1.Location = new System.Drawing.Point(22, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 16);
+            this.label1.Size = new System.Drawing.Size(137, 19);
             this.label1.TabIndex = 8;
             this.label1.Text = "비가동 대분류 코드";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label5.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(431, 42);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.label5.Location = new System.Drawing.Point(401, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 16);
+            this.label5.Size = new System.Drawing.Size(122, 19);
             this.label5.TabIndex = 126;
             this.label5.Text = "비가동 대분류 명";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label25.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label25.Location = new System.Drawing.Point(57, 43);
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.label25.Location = new System.Drawing.Point(26, 38);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(146, 16);
+            this.label25.Size = new System.Drawing.Size(137, 19);
             this.label25.TabIndex = 127;
             this.label25.Text = "비가동 대분류 코드";
             // 
             // txtNonOperationName
             // 
-            this.txtNonOperationName.Location = new System.Drawing.Point(567, 34);
+            this.txtNonOperationName.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.txtNonOperationName.Location = new System.Drawing.Point(553, 34);
             this.txtNonOperationName.Name = "txtNonOperationName";
-            this.txtNonOperationName.Size = new System.Drawing.Size(138, 30);
+            this.txtNonOperationName.Size = new System.Drawing.Size(138, 26);
             this.txtNonOperationName.TabIndex = 128;
             // 
             // txtNonOperationCode
             // 
-            this.txtNonOperationCode.Location = new System.Drawing.Point(224, 35);
+            this.txtNonOperationCode.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.txtNonOperationCode.Location = new System.Drawing.Point(193, 34);
             this.txtNonOperationCode.Name = "txtNonOperationCode";
-            this.txtNonOperationCode.Size = new System.Drawing.Size(143, 30);
+            this.txtNonOperationCode.Size = new System.Drawing.Size(143, 26);
             this.txtNonOperationCode.TabIndex = 129;
             // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSave.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.btnSave.Location = new System.Drawing.Point(1018, 18);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(82, 48);
@@ -189,7 +207,7 @@
             // 
             this.gbUsable.Controls.Add(this.rbY);
             this.gbUsable.Controls.Add(this.rbN);
-            this.gbUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.gbUsable.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.gbUsable.Location = new System.Drawing.Point(722, 18);
             this.gbUsable.Name = "gbUsable";
             this.gbUsable.Size = new System.Drawing.Size(247, 56);
@@ -200,11 +218,12 @@
             // rbY
             // 
             this.rbY.AutoSize = true;
-            this.rbY.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbY.BackColor = System.Drawing.Color.Transparent;
             this.rbY.Checked = true;
+            this.rbY.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.rbY.Location = new System.Drawing.Point(62, 26);
             this.rbY.Name = "rbY";
-            this.rbY.Size = new System.Drawing.Size(42, 20);
+            this.rbY.Size = new System.Drawing.Size(42, 23);
             this.rbY.TabIndex = 77;
             this.rbY.TabStop = true;
             this.rbY.Text = "유";
@@ -213,10 +232,11 @@
             // rbN
             // 
             this.rbN.AutoSize = true;
-            this.rbN.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbN.BackColor = System.Drawing.Color.Transparent;
+            this.rbN.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.rbN.Location = new System.Drawing.Point(149, 25);
             this.rbN.Name = "rbN";
-            this.rbN.Size = new System.Drawing.Size(42, 20);
+            this.rbN.Size = new System.Drawing.Size(42, 23);
             this.rbN.TabIndex = 79;
             this.rbN.Text = "무";
             this.rbN.UseVisualStyleBackColor = false;
@@ -224,43 +244,45 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label3.Location = new System.Drawing.Point(382, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 16);
+            this.label3.Size = new System.Drawing.Size(122, 19);
             this.label3.TabIndex = 132;
             this.label3.Text = "비가동 대분류 명";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label4.Location = new System.Drawing.Point(25, 45);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 16);
+            this.label4.Size = new System.Drawing.Size(137, 19);
             this.label4.TabIndex = 133;
             this.label4.Text = "비가동 대분류 코드";
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.textBox1.Location = new System.Drawing.Point(535, 37);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 30);
+            this.textBox1.Size = new System.Drawing.Size(138, 26);
             this.textBox1.TabIndex = 134;
             // 
             // textBox2
             // 
+            this.textBox2.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.textBox2.Location = new System.Drawing.Point(197, 37);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(138, 30);
+            this.textBox2.Size = new System.Drawing.Size(138, 26);
             this.textBox2.TabIndex = 135;
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.button1.Location = new System.Drawing.Point(1018, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 48);
@@ -272,7 +294,7 @@
             // 
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox1.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.groupBox1.Location = new System.Drawing.Point(722, 21);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(247, 56);
@@ -283,10 +305,11 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
+            this.radioButton1.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.radioButton1.Location = new System.Drawing.Point(62, 26);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(42, 20);
+            this.radioButton1.Size = new System.Drawing.Size(42, 23);
             this.radioButton1.TabIndex = 77;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "유";
@@ -295,14 +318,25 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.radioButton2.BackColor = System.Drawing.Color.Transparent;
+            this.radioButton2.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.radioButton2.Location = new System.Drawing.Point(149, 25);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(42, 20);
+            this.radioButton2.Size = new System.Drawing.Size(42, 23);
             this.radioButton2.TabIndex = 79;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "무";
             this.radioButton2.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.button2.Location = new System.Drawing.Point(745, 22);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 27);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "조회";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // NonOperation
             // 
@@ -364,5 +398,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -49,6 +49,8 @@ namespace AdminForm
             trvBookMark.Visible = false;
             trvBookMark.Location = new Point(0, 10);
             btnMenu.BackColor = SystemColors.ActiveCaptionText;
+
+            LoadHome();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -159,7 +161,7 @@ namespace AdminForm
         {
             lblLogo.Image = new Bitmap(Application.StartupPath + @"\image\teamlogotest.png");
             btnS.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Search.ico");
-            btnCreate.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Report2_32x32.png");
+            btnHome.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Report2_32x32.png");
             btnSave.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Action_Save_New_32x32.png");
             btnEdit.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Edit_32x32.png");
             btnDelete.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\DeleteList_32x32.png");
@@ -362,7 +364,8 @@ namespace AdminForm
             lblLocation.Text = "";
             foreach (Form frm in this.MdiChildren)
             {
-                frm.Close();
+                if (frm.Name != "MainChild")
+                    frm.Close();
             }
         }
 
@@ -375,7 +378,7 @@ namespace AdminForm
             }
             foreach (Form frm in this.MdiChildren)
             {
-                if (frm != this.ActiveMdiChild)
+                if (frm != this.ActiveMdiChild || frm.Name!="MainChild")
                 {
                     frm.Close();
                 }
@@ -400,7 +403,13 @@ namespace AdminForm
             }
         }
 
-
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            MainChild homeFrm = new MainChild(); 
+            homeFrm.MdiParent = this;
+            homeFrm.Dock = DockStyle.Fill;
+            homeFrm.Show();
+        }
         // 메인 메뉴 조회 공통 버튼
         private void btnS_Click(object sender, EventArgs e)
         {
@@ -492,6 +501,25 @@ namespace AdminForm
                     }
                 }
             }
+        }
+        private void LoadHome()
+        {
+            MainChild homeFrm = new MainChild();
+            homeFrm.MdiParent = this;
+            homeFrm.Dock = DockStyle.Fill;
+            homeFrm.Show();
+        }
+        private void btnCreate_Click_1(object sender, EventArgs e)
+        {
+            foreach (var item in this.MdiChildren)
+            {
+                if (item.Name == "MainChild")
+                {
+                    item.Activate();
+                    return;
+                }
+            }
+            LoadHome();
         }
     }
 }

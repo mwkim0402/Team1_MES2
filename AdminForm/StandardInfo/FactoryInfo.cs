@@ -48,21 +48,20 @@ namespace AdminForm
         }
         private void ShowDgv()
         {
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업장 코드", "Wc_Code", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업장 명", "Wc_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업장 유형", "Wc_Group", true, 100);       
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "공정 코드", "Process_Code", true, 100);
-            //CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업지시 자동시작 여부", "Auto_Start_YN", true, 30);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업장 코드", "Wc_Code", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업장 명", "Wc_Name", true, 130);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업장 유형", "Wc_Group", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "공정 코드", "Process_Code", true, 120);          //CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업지시 자동시작 여부", "Auto_Start_YN", true, 30);
            // CommonClass.AddNewColumnToDataGridView(dataGridView1, "작업지시 자동 생성 유무", "Auto_Wo_YN", true,30);
            // CommonClass.AddNewColumnToDataGridView(dataGridView1, "자동 비가동 여부", "Nop_Auto_YN", true, 30);
            // CommonClass.AddNewColumnToDataGridView(dataGridView1, "자동 비가동 시간", "Nop_Check_Time", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "실적등록유형", "Prd_Req_Type", true, 120);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "실적단위", "Prd_Unit", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "팔레트생성유무", "Pallet_YN", true, 140);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "비고", "Remark", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "Use_YN", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "비가동 상태", "Wo_Status", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dataGridView1, "금형장착여부", "Mold_Setup_YN", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "실적등록유형", "Prd_Req_Type", true, 180);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "실적단위", "Prd_Unit", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "비가동 상태", "Wo_Status", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "금형장착여부", "Mold_Setup_YN", true, 160,DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "팔레트생성유무", "Pallet_YN", true, 180, DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "사용유무", "Use_YN", true, 120, DataGridViewContentAlignment.MiddleCenter);            
+            CommonClass.AddNewColumnToDataGridView(dataGridView1, "비고", "Remark", true, 200);
 
             dataGridView1.RowHeadersVisible = false;
             DataGridViewCheckBoxColumn chkboxCol = new DataGridViewCheckBoxColumn();

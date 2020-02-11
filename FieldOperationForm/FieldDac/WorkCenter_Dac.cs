@@ -44,5 +44,21 @@ namespace FieldOperationForm
                 return list;
             }
         }
+        public List<WorkCenter_Vo>IronWorkCenter ()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "IronWorkCenter";
+                cmd.CommandType = CommandType.StoredProcedure;
+           
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkCenter_Vo> list = Helper.DataReaderMapToList<WorkCenter_Vo>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
     }
 }

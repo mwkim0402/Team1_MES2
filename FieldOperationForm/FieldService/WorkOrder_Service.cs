@@ -36,5 +36,11 @@ namespace FieldOperationForm
             WorkOrder_Dac dac = new WorkOrder_Dac();
             return dac.GetTextWorkOrder(Workorderno);
         }
+
+        public List<WorkOrder_Vo> IronWork()
+        {
+            WorkOrder_Dac dac = new WorkOrder_Dac();
+            return dac.IronWork();
+        }
     }
 }

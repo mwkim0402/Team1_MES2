@@ -153,6 +153,7 @@
             this.txt_Item.Name = "txt_Item";
             this.txt_Item.Size = new System.Drawing.Size(327, 41);
             this.txt_Item.TabIndex = 5;
+            this.txt_Item.Text = "item003";
             // 
             // label4
             // 
@@ -197,6 +198,7 @@
             this.txt_WorkNum.Name = "txt_WorkNum";
             this.txt_WorkNum.Size = new System.Drawing.Size(327, 41);
             this.txt_WorkNum.TabIndex = 1;
+            this.txt_WorkNum.Text = "20200103_렉슨_No압연2";
             // 
             // label2
             // 

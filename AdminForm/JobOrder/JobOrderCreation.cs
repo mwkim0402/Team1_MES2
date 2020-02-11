@@ -209,7 +209,7 @@ namespace AdminForm
             //체크표시한 모든 or 선택한 작업지시의 Wo_Status 를 '작업지시마감'으로 변경한다.
             for (int i = 0; i < dgvSearchResult.Rows.Count + 1; i++)
             {
-                if (dgvSearchResult.Rows[i].Cells[0].Value.ToString() == "True")
+                if (dgvSearchResult.Rows[i].Cells[0].FormattedValue.ToString() == "True")
                 {
                     FinishJobOrder(selectedWorkOrderNo);
 
@@ -313,7 +313,7 @@ namespace AdminForm
             //체크표시한 모든 or 선택한 작업지시의 Wo_Status 를 '작업지시마감'으로 변경한다.
             for (int i = 0; i < dgvSearchResult.Rows.Count; i++)
             {
-                if (dgvSearchResult.Rows[i].Cells[0].Value.ToString() == "True")
+                if (dgvSearchResult.Rows[i].Cells[0].FormattedValue.ToString() == "True")
                 {
                     RerollMoldReq(selectedWorkOrderNo);
 

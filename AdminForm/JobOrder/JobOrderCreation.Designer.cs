@@ -100,11 +100,11 @@
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.txtPlanAmount_CH);
             this.panel1.Controls.Add(this.txtJobOrderNo_Ch);
-            this.panel1.Size = new System.Drawing.Size(1124, 98);
+            this.panel1.Size = new System.Drawing.Size(1124, 102);
             // 
             // tabPage2
             // 
-            this.tabPage2.Size = new System.Drawing.Size(1124, 98);
+            this.tabPage2.Size = new System.Drawing.Size(1124, 102);
             // 
             // pnlParent1
             // 
@@ -124,7 +124,7 @@
             this.pnlParent1.Controls.Add(this.txtPlanAmount);
             this.pnlParent1.Controls.Add(this.txtJobOrderCodeInput);
             this.pnlParent1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlParent1.Size = new System.Drawing.Size(1124, 98);
+            this.pnlParent1.Size = new System.Drawing.Size(1124, 102);
             // 
             // panel2
             // 
@@ -268,7 +268,7 @@
             // 
             this.dtpPlanDate.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.dtpPlanDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPlanDate.Location = new System.Drawing.Point(369, 57);
+            this.dtpPlanDate.Location = new System.Drawing.Point(389, 57);
             this.dtpPlanDate.Name = "dtpPlanDate";
             this.dtpPlanDate.Size = new System.Drawing.Size(98, 26);
             this.dtpPlanDate.TabIndex = 43;
@@ -300,7 +300,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label19.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label19.Location = new System.Drawing.Point(286, 22);
+            this.label19.Location = new System.Drawing.Point(306, 22);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(69, 19);
             this.label19.TabIndex = 48;
@@ -311,7 +311,7 @@
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label18.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label18.Location = new System.Drawing.Point(286, 60);
+            this.label18.Location = new System.Drawing.Point(306, 60);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(69, 19);
             this.label18.TabIndex = 49;
@@ -320,18 +320,18 @@
             // txtPlanAmount
             // 
             this.txtPlanAmount.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtPlanAmount.Location = new System.Drawing.Point(146, 57);
+            this.txtPlanAmount.Location = new System.Drawing.Point(128, 56);
             this.txtPlanAmount.Name = "txtPlanAmount";
-            this.txtPlanAmount.Size = new System.Drawing.Size(100, 26);
+            this.txtPlanAmount.Size = new System.Drawing.Size(152, 26);
             this.txtPlanAmount.TabIndex = 52;
             // 
             // txtJobOrderCodeInput
             // 
             this.txtJobOrderCodeInput.Enabled = false;
             this.txtJobOrderCodeInput.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtJobOrderCodeInput.Location = new System.Drawing.Point(146, 19);
+            this.txtJobOrderCodeInput.Location = new System.Drawing.Point(128, 18);
             this.txtJobOrderCodeInput.Name = "txtJobOrderCodeInput";
-            this.txtJobOrderCodeInput.Size = new System.Drawing.Size(100, 26);
+            this.txtJobOrderCodeInput.Size = new System.Drawing.Size(152, 26);
             this.txtJobOrderCodeInput.TabIndex = 51;
             // 
             // label5
@@ -377,7 +377,7 @@
             // nuPlanAmount
             // 
             this.nuPlanAmount.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.nuPlanAmount.Location = new System.Drawing.Point(369, 19);
+            this.nuPlanAmount.Location = new System.Drawing.Point(389, 19);
             this.nuPlanAmount.Name = "nuPlanAmount";
             this.nuPlanAmount.Size = new System.Drawing.Size(98, 26);
             this.nuPlanAmount.TabIndex = 10;
@@ -389,7 +389,7 @@
             this.btnSave.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.btnSave.Location = new System.Drawing.Point(1003, 18);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(105, 63);
+            this.btnSave.Size = new System.Drawing.Size(105, 67);
             this.btnSave.TabIndex = 60;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -402,7 +402,7 @@
             this.btnModify.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.btnModify.Location = new System.Drawing.Point(1003, 18);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(105, 63);
+            this.btnModify.Size = new System.Drawing.Size(105, 67);
             this.btnModify.TabIndex = 75;
             this.btnModify.Text = "수정";
             this.btnModify.UseVisualStyleBackColor = true;
@@ -450,7 +450,7 @@
             // nuPlanAmount_CH
             // 
             this.nuPlanAmount_CH.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.nuPlanAmount_CH.Location = new System.Drawing.Point(369, 19);
+            this.nuPlanAmount_CH.Location = new System.Drawing.Point(389, 19);
             this.nuPlanAmount_CH.Maximum = new decimal(new int[] {
             50000,
             0,
@@ -475,7 +475,7 @@
             // 
             this.dtpPlanDate_CH.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.dtpPlanDate_CH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPlanDate_CH.Location = new System.Drawing.Point(369, 57);
+            this.dtpPlanDate_CH.Location = new System.Drawing.Point(389, 57);
             this.dtpPlanDate_CH.Name = "dtpPlanDate_CH";
             this.dtpPlanDate_CH.Size = new System.Drawing.Size(98, 26);
             this.dtpPlanDate_CH.TabIndex = 62;
@@ -507,7 +507,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label12.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label12.Location = new System.Drawing.Point(286, 22);
+            this.label12.Location = new System.Drawing.Point(306, 22);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(69, 19);
             this.label12.TabIndex = 66;
@@ -518,7 +518,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label13.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label13.Location = new System.Drawing.Point(286, 60);
+            this.label13.Location = new System.Drawing.Point(306, 60);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(69, 19);
             this.label13.TabIndex = 67;
@@ -527,18 +527,18 @@
             // txtPlanAmount_CH
             // 
             this.txtPlanAmount_CH.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtPlanAmount_CH.Location = new System.Drawing.Point(146, 57);
+            this.txtPlanAmount_CH.Location = new System.Drawing.Point(128, 56);
             this.txtPlanAmount_CH.Name = "txtPlanAmount_CH";
-            this.txtPlanAmount_CH.Size = new System.Drawing.Size(100, 26);
+            this.txtPlanAmount_CH.Size = new System.Drawing.Size(152, 26);
             this.txtPlanAmount_CH.TabIndex = 69;
             // 
             // txtJobOrderNo_Ch
             // 
             this.txtJobOrderNo_Ch.Enabled = false;
             this.txtJobOrderNo_Ch.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtJobOrderNo_Ch.Location = new System.Drawing.Point(146, 19);
+            this.txtJobOrderNo_Ch.Location = new System.Drawing.Point(128, 18);
             this.txtJobOrderNo_Ch.Name = "txtJobOrderNo_Ch";
-            this.txtJobOrderNo_Ch.Size = new System.Drawing.Size(100, 26);
+            this.txtJobOrderNo_Ch.Size = new System.Drawing.Size(152, 26);
             this.txtJobOrderNo_Ch.TabIndex = 68;
             // 
             // cmbItemCode

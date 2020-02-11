@@ -29,11 +29,12 @@ namespace AdminForm
 
         private void ShowDgv()
         {
+            dgvSearchResult.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "대차코드", "GV_Code", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "대차명", "GV_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "대차그룹", "GV_Group", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "대차상태", "GV_Status", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 100, DataGridViewContentAlignment.MiddleCenter);
         }
         
         private void btnSave_Click(object sender, EventArgs e)

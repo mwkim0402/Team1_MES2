@@ -31,9 +31,10 @@ namespace AdminForm
 
         private void ShowDgv()
         {
+            dgvSearchResult.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비가동 대분류 코드", "Nop_Ma_Code", true, 300);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비가동 대분류 명", "Nop_Ma_Name", true, 300);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 300);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 300,DataGridViewContentAlignment.MiddleCenter);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace AdminForm
             }
             catch(Exception err)
             {
-                frm.lblAlert.Text = err.Message;
+                //frm.lblAlert.Text = err.Message;
             }
         }
         private void btnSearch_Click(object sender, EventArgs e)

@@ -66,20 +66,21 @@ namespace AdminForm
         {
             tabPage3.Text = "품목 조회";
             tabPage4.Text = "품질 규격 조회";
-            CommonClass.AddNewColumnToDataGridView(dgvSelect, "품목 코드", "comboText", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvSelect, "품목 코드", "comboText", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvSelect, "품목 명", "comboValue", true, 120);
 
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정코드", "Process_Code", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "검사항목 코드", "Inspect_Code", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "검사항목 명", "Inspect_Name", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정코드", "Process_Code", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "검사항목 코드", "Inspect_Code", true, 180);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "검사항목 명", "Inspect_Name", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "SPEC", "Spec_Desc", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격상한값", "USL", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격하한값", "SL", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격기준값", "LSL", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "샘플크기", "Sample_Size", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격상한값", "USL", true, 150,DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격하한값", "SL", true, 150, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격기준값", "LSL", true, 150, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "샘플크기", "Sample_Size", true, 120, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "단위", "Inspect_Unit", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 120,DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 200);
         }
         private void ItemDataSearch(object sender, DataGridViewCellEventArgs e)
         {
@@ -92,7 +93,7 @@ namespace AdminForm
         {
             if (dgvSearchResult.SelectedRows.Count < 1)
             {
-                frm.lblAlert.Text = "복사할 상품의 정보를 선택하세요";
+                //frm.lblAlert.Text = "복사할 상품의 정보를 선택하세요";
                 return;
             }
             InspectVo copyVo = inspectMaster.Find(x => x.Inspect_Code == dgvSearchResult.SelectedRows[0].Cells[2].Value.ToString());
@@ -139,7 +140,7 @@ namespace AdminForm
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            frm.lblAlert.Text = "";
+            //frm.lblAlert.Text = "";
             timer1.Stop();
         }
     }

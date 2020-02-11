@@ -84,7 +84,7 @@ namespace AdminForm
         {
             if (dgvSearchResult.SelectedRows.Count < 1)
             {
-                frm.lblAlert.Text = "복사할 상품의 정보를 선택하세요";
+               // frm.lblAlert.Text = "복사할 상품의 정보를 선택하세요";
                 return;
             }
             ConditionSpecVo copyVo = condSpecMaster.Find(x => x.Condition_Code == dgvSearchResult.SelectedRows[0].Cells[2].Value.ToString());
@@ -113,21 +113,22 @@ namespace AdminForm
         {
             tabPage3.Text = "품목 정보";
             tabPage4.Text = "공정 조건 조회";
-            CommonClass.AddNewColumnToDataGridView(dgvSelect, "품목 코드", "comboText", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvSelect, "품목 코드", "comboText", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvSelect, "품목 명", "comboValue", true, 120);
 
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업장", "Wc_Code", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "검사항목코드", "Condition_Code", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "검사항목", "Condition_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "그룹", "Condition_Group", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정조건 코드", "Condition_Code", true, 180);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정조건 명", "Condition_Name", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정그룹", "Condition_Group", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "SPEC", "Spec_Desc", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "기준값", "SL", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "상한값", "USL", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "하한값", "LSL", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정단위", "Condition_Unit", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격기준값", "SL", true, 150, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격상한값", "USL", true, 150, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격하한값", "LSL", true, 150, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정단위", "Condition_Unit", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 120, DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 200);
+            
         }
 
         private void btnSave_Click_1(object sender, EventArgs e)

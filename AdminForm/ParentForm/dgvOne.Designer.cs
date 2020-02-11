@@ -83,6 +83,7 @@
             this.dgvSearchResult.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSearchResult.Location = new System.Drawing.Point(12, 114);
             this.dgvSearchResult.Name = "dgvSearchResult";
+            this.dgvSearchResult.RowHeadersVisible = false;
             this.dgvSearchResult.RowHeadersWidth = 51;
             this.dgvSearchResult.RowTemplate.Height = 23;
             this.dgvSearchResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

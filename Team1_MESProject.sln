@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MES_DTO", "MES_DTO\MES_DTO.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MES_DB", "MES_DB\MES_DB.csproj", "{C5A0DAC0-FD93-4179-9471-DA3FA7B21737}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAdminLTE1", "WebAdminLTE1\WebAdminLTE1.csproj", "{6347E00A-5386-4380-AE69-EAC3C31E5660}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,18 @@ Global
 		{C5A0DAC0-FD93-4179-9471-DA3FA7B21737}.Release|x64.Build.0 = Release|Any CPU
 		{C5A0DAC0-FD93-4179-9471-DA3FA7B21737}.Release|x86.ActiveCfg = Release|Any CPU
 		{C5A0DAC0-FD93-4179-9471-DA3FA7B21737}.Release|x86.Build.0 = Release|Any CPU
+		{6347E00A-5386-4380-AE69-EAC3C31E5660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6347E00A-5386-4380-AE69-EAC3C31E5660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6347E00A-5386-4380-AE69-EAC3C31E5660}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6347E00A-5386-4380-AE69-EAC3C31E5660}.Debug|x64.Build.0 = Debug|Any CPU
+		{6347E00A-5386-4380-AE69-EAC3C31E5660}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6347E00A-5386-4380-AE69-EAC3C31E5660}.Debug|x86.Build.0 = Debug|Any CPU
+		{6347E00A-5386-4380-AE69-EAC3C31E5660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6347E00A-5386-4380-AE69-EAC3C31E5660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6347E00A-5386-4380-AE69-EAC3C31E5660}.Release|x64.ActiveCfg = Release|Any CPU
+		{6347E00A-5386-4380-AE69-EAC3C31E5660}.Release|x64.Build.0 = Release|Any CPU
+		{6347E00A-5386-4380-AE69-EAC3C31E5660}.Release|x86.ActiveCfg = Release|Any CPU
+		{6347E00A-5386-4380-AE69-EAC3C31E5660}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

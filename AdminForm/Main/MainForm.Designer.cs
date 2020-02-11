@@ -63,7 +63,7 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnS = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
-            this.btnCreate = new System.Windows.Forms.ToolStripButton();
+            this.btnHome = new System.Windows.Forms.ToolStripButton();
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -305,7 +305,8 @@
             // 
             // lblLocation
             // 
-            this.lblLocation.Location = new System.Drawing.Point(28, 8);
+            this.lblLocation.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblLocation.Location = new System.Drawing.Point(28, 7);
             this.lblLocation.Name = "lblLocation";
             this.lblLocation.Size = new System.Drawing.Size(507, 23);
             this.lblLocation.TabIndex = 1;
@@ -402,9 +403,9 @@
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
+            this.btnHome,
             this.btnS,
             this.btnSave,
-            this.btnCreate,
             this.btnEdit,
             this.btnDelete,
             this.toolStripSeparator1});
@@ -450,18 +451,19 @@
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // btnCreate
+            // btnHome
             // 
-            this.btnCreate.AutoSize = false;
-            this.btnCreate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnCreate.ImageTransparentColor = System.Drawing.Color.LightYellow;
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(60, 60);
-            this.btnCreate.Text = "추가예정";
-            this.btnCreate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCreate.ToolTipText = "작성";
+            this.btnHome.AutoSize = false;
+            this.btnHome.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnHome.ImageTransparentColor = System.Drawing.Color.LightYellow;
+            this.btnHome.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(60, 60);
+            this.btnHome.Text = "Home";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnHome.ToolTipText = "작성";
+            this.btnHome.Click += new System.EventHandler(this.btnCreate_Click_1);
             // 
             // btnEdit
             // 
@@ -560,7 +562,6 @@
         private System.Windows.Forms.TreeView trvBookMark;
         private System.Windows.Forms.Panel pnlTab;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblLocation;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 전체종료ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 이창을제외한창모두닫기ToolStripMenuItem;
@@ -572,10 +573,11 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         public System.Windows.Forms.ToolStripButton btnS;
         public System.Windows.Forms.ToolStripButton btnSave;
-        public System.Windows.Forms.ToolStripButton btnCreate;
+        public System.Windows.Forms.ToolStripButton btnHome;
         public System.Windows.Forms.ToolStripButton btnEdit;
         public System.Windows.Forms.ToolStripButton btnDelete;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Label lblName;
+        public System.Windows.Forms.Label lblLocation;
     }
 }

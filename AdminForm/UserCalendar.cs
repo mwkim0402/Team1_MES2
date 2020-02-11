@@ -28,6 +28,11 @@ namespace AdminForm
         {
             InitializeComponent();
         }
+        public UserCalendar(DateTime[] bordDate) : this()
+        {
+            BordedDate = bordDate;          
+            lblMonth.Text = DateTime.Now.Month.ToString();
+        }
         public UserCalendar(DateTime[] bordDate, string WorkCneter) : this()
         {
             BordedDate = bordDate;

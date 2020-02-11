@@ -161,6 +161,12 @@
     <Compile Include="Main\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\MainChild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MainChild.Designer.cs">
+      <DependentUpon>MainChild.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,18 +340,6 @@
     <Compile Include="Service\PerformService\PerformService.cs" />
     <Compile Include="Service\SystemService\MenuService.cs" />
     <Compile Include="Service\TestService.cs" />
-    <Compile Include="StandardInfo\EtherIOChannelSet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StandardInfo\EtherIOChannelSet.Designer.cs">
-      <DependentUpon>EtherIOChannelSet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="StandardInfo\EtherIOInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StandardInfo\EtherIOInfo.Designer.cs">
-      <DependentUpon>EtherIOInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="StandardInfo\FactoryInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -547,6 +541,9 @@
     <EmbeddedResource Include="Main\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main\MainChild.resx">
+      <DependentUpon>MainChild.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -638,12 +635,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="qulityManagement\ViewFaultyImage.resx">
       <DependentUpon>ViewFaultyImage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StandardInfo\EtherIOChannelSet.resx">
-      <DependentUpon>EtherIOChannelSet.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StandardInfo\EtherIOInfo.resx">
-      <DependentUpon>EtherIOInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StandardInfo\FactoryInfo.resx">
       <DependentUpon>FactoryInfo.cs</DependentUpon>

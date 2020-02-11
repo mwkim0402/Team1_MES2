@@ -22,8 +22,10 @@ namespace AdminForm
 
         private void UserManager_Load(object sender, EventArgs e)
         {
-            cmbTypeEdit.SelectedIndex = 0;
-            cmbType.SelectedIndex = 0;
+            cmbEditProcess.SelectedIndex = 0;
+            cmbProcess.SelectedIndex = 0;
+            cmbGroupCode.SelectedIndex = 0;
+            cmbEditGroupCode.SelectedIndex = 0;
             frm = (MainForm)this.MdiParent;
             ShowDgv();
             CommonClass.Userauthority(btnSave, btnEdit);
@@ -32,24 +34,28 @@ namespace AdminForm
         private void ShowDgv()
         {
             dgvSearchResult.CellDoubleClick += DgvSearchResult_CellDoubleClick;
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 이름", "User_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 ID", "User_ID", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 그룹코드", "UserGroup_Code", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 그룹 명", "UserGroup_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "패스워드 초기화 횟수", "Pw_Reset_Count", true, 150);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "기본 공정", "Default_Process_Code", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "User_Type", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 이름", "User_Name", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 ID", "User_ID", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 그룹코드", "UserGroup_Code", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 그룹 명", "UserGroup_Name", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "패스워드 초기화 횟수", "Pw_Reset_Count", true, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "기본 공정", "User_Type", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "Default_Process_Code", false, 100);
         }
 
+        
         private void DgvSearchResult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             txtEditName.Text = dgvSearchResult.Rows[e.RowIndex].Cells[0].Value.ToString();
             txtEditID.Text = dgvSearchResult.Rows[e.RowIndex].Cells[1].Value.ToString();
-            if(dgvSearchResult.Rows[e.RowIndex].Cells[6].Value == null)
-                txtEditProcess.Text = "";
-            else
-                txtEditProcess.Text = dgvSearchResult.Rows[e.RowIndex].Cells[6].Value.ToString();
+            foreach (var item in cmbEditUserType.Items)
+            {
+                if (item.ToString() == dgvSearchResult.Rows[e.RowIndex].Cells[6].Value.ToString())
+                {
+                    cmbEditUserType.SelectedItem = item;
+                }
+            }
 
             if (dgvSearchResult.Rows[e.RowIndex].Cells[4].Value.ToString() == "Y")
             {
@@ -60,15 +66,22 @@ namespace AdminForm
                 rbEditUserN.Checked = true;
             }
 
-            foreach(var item in cmbTypeEdit.Items)
+            foreach (var item in cmbEditProcess.Items)
             {
-                if(item.ToString() == dgvSearchResult.Rows[e.RowIndex].Cells[7].Value.ToString())
+                if (item.ToString() == dgvSearchResult.Rows[e.RowIndex].Cells[7].Value.ToString())
                 {
-                    cmbTypeEdit.SelectedItem = item;
+                    cmbEditProcess.SelectedItem = item;
                 }
             }
 
-            txtEditGroupCode.Text = dgvSearchResult.Rows[e.RowIndex].Cells[2].Value.ToString();
+            foreach (var item in cmbEditGroupCode.Items)
+            {
+                if (item.ToString() == dgvSearchResult.Rows[e.RowIndex].Cells[2].Value.ToString())
+                {
+                    cmbEditGroupCode.SelectedItem = item;
+                }
+            }
+            //txtEditGroupCode.Text = dgvSearchResult.Rows[e.RowIndex].Cells[2].Value.ToString();
             txtEditGroupName.Text = dgvSearchResult.Rows[e.RowIndex].Cells[3].Value.ToString();
         }
 
@@ -95,7 +108,7 @@ namespace AdminForm
             UserManagerVO user = new UserManagerVO();
             int numchk = 0;
             bool isNum = int.TryParse(txtUserIDInput.Text, out numchk);
-            if(isNum == true)
+            if (isNum == true)
             {
                 user.User_ID = Convert.ToInt32(txtUserIDInput.Text);
             }
@@ -108,34 +121,34 @@ namespace AdminForm
             if (txtUserNameInput.Text != "")
                 user.User_Name = txtUserNameInput.Text;
             else
-            { 
+            {
                 MessageBox.Show("이름을 입력해주세요.");
                 return;
             }
 
-            if (cmbType.SelectedIndex != 0)
-                user.UserGroup_Code = cmbType.SelectedItem.ToString();
+            if (cmbProcess.SelectedIndex != 0)
+                user.UserGroup_Code = cmbProcess.SelectedItem.ToString();
             else
-            { 
+            {
                 MessageBox.Show("타입 항목을 선택해주세요.");
                 return;
             }
 
-            if (txtStandFac.Text != "")
+            if (cmbProcess.SelectedIndex != 0)
             {
-                user.Default_Process_Code = txtStandFac.Text;
+                user.User_Type = cmbProcess.SelectedItem.ToString();
             }
             else
             {
-                MessageBox.Show("공정을 입력해주세요.");
+                MessageBox.Show("공정을 선택해주세요.");
                 return;
             }
 
-            if(rbUse_Use.Checked == true)
+            if (rbUse_Use.Checked == true)
             {
                 user.Use_YN = "Y";
             }
-            else if(rbNoUse_Use.Checked == true)
+            else if (rbNoUse_Use.Checked == true)
             {
                 user.Use_YN = "N";
             }
@@ -145,17 +158,17 @@ namespace AdminForm
                 return;
             }
 
-            if(txtGroupCode.Text == "")
+            if (cmbGroupCode.SelectedItem.ToString() == "-- 선택 --")
             {
                 MessageBox.Show("그룹코드를 입력해주세요.");
                 return;
             }
             else
             {
-                user.UserGroup_Code = txtGroupCode.Text;
+                user.UserGroup_Code = cmbGroupCode.SelectedItem.ToString();
             }
 
-            if(txtGroupName.Text == "")
+            if (txtGroupName.Text == "")
             {
                 MessageBox.Show("그룹 이름을 입력해주세요.");
                 return;
@@ -164,7 +177,7 @@ namespace AdminForm
             {
                 user.UserGroup_Name = txtGroupName.Text;
             }
-            user.User_Type = cmbType.SelectedItem.ToString();
+            user.Default_Process_Code = cmbUserType.SelectedItem.ToString();
             service.InsUserManager(user);
             MessageBox.Show("입력되었습니다.");
             frm.btnS.PerformClick();
@@ -175,16 +188,19 @@ namespace AdminForm
             UserManagerVO user = new UserManagerVO();
             MES_DB.UserService service = new MES_DB.UserService();
             user.User_ID = Convert.ToInt32(txtEditID.Text);
-            user.User_Type = cmbTypeEdit.SelectedItem.ToString();
-            user.Default_Process_Code = txtEditProcess.Text;
-            user.UserGroup_Code = txtEditGroupCode.Text;
+            user.User_Type = cmbEditProcess.SelectedItem.ToString();
+            if (cmbEditProcess.SelectedItem.ToString() != "-- 선택 --")
+            {
+                user.Default_Process_Code = cmbEditUserType.SelectedItem.ToString();
+            }
+            user.UserGroup_Code = cmbEditGroupCode.SelectedItem.ToString();
             user.UserGroup_Name = txtEditGroupName.Text;
-            
+
             if (rbEditUseY.Checked == true)
             {
                 user.Use_YN = "Y";
             }
-            else if(rbEditUserN.Checked == true)
+            else if (rbEditUserN.Checked == true)
             {
                 user.Use_YN = "N";
             }
@@ -209,6 +225,57 @@ namespace AdminForm
                                         select item).ToList();
 
             dgvSearchResult.DataSource = list;
+        }
+
+        private void cmbGroupCode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbGroupCode.SelectedIndex != 0)
+            {
+                if (allList != null)
+                {
+                    List<string> Name = (from item in allList
+                                         where item.UserGroup_Code == cmbGroupCode.SelectedItem.ToString()
+                                         select item.UserGroup_Name).ToList();
+                    txtGroupName.Text = Name[0];
+                }
+                else
+                {
+                    cmbGroupCode.SelectedIndex = 0;
+                    MessageBox.Show("전체조회를 눌러주세요.");
+                }
+            }
+
+        }
+
+        private void cmbUserType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbUserType.SelectedIndex == 1)
+                cmbGroupCode.SelectedIndex = 2;
+            else
+                cmbGroupCode.SelectedIndex = 1;
+
+        }
+
+        private void cmbEditUserType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbEditUserType.SelectedIndex == 1)
+            {
+                cmbEditGroupCode.SelectedItem = "UserLevel2";
+            }
+            else
+                cmbEditGroupCode.SelectedItem = "UserLevel1";
+        }
+
+        private void cmbEditGroupCode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmbEditGroupCode.SelectedIndex == 1)
+            {
+                txtEditGroupName.Text = "사원";
+            }
+            else
+            {
+                txtEditGroupName.Text = "임원";
+            }
         }
     }
 }

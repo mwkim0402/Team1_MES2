@@ -30,7 +30,7 @@ namespace AdminForm
         private void ShowDgv()
         {
             dgvSearchResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 명", "User_ID", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 명", "User_ID", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "화면명", "Screen_Code", true, 200);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "권한", "Pre_Type", true, 120);
         }

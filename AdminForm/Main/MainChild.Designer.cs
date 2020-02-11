@@ -167,6 +167,7 @@
             this.panel5.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.panel5.Controls.Add(this.label4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Font = new System.Drawing.Font("나눔고딕", 9F);
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(505, 41);
@@ -190,6 +191,7 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.dataGridView2);
             this.panel4.Controls.Add(this.label13);
+            this.panel4.Font = new System.Drawing.Font("나눔고딕", 9F);
             this.panel4.Location = new System.Drawing.Point(12, 313);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(869, 346);
@@ -227,6 +229,7 @@
             this.panel6.Controls.Add(this.label3);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.label1);
+            this.panel6.Font = new System.Drawing.Font("나눔고딕", 9F);
             this.panel6.Location = new System.Drawing.Point(12, 12);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(326, 281);
@@ -237,7 +240,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(15, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 12);
+            this.label3.Size = new System.Drawing.Size(36, 14);
             this.label3.TabIndex = 2;
             this.label3.Text = "부서 :";
             // 
@@ -267,6 +270,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox1.Font = new System.Drawing.Font("나눔고딕", 9F);
             this.groupBox1.Location = new System.Drawing.Point(887, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(316, 671);

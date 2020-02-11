@@ -452,6 +452,7 @@
             this.btnSave.Text = "저장";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEdit
             // 

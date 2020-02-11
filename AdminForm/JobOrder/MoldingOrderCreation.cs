@@ -182,16 +182,68 @@ namespace AdminForm
 
         private void MoldingOrderCreation_Activated(object sender, EventArgs e)
         {
+            frm.Search_Click += new System.EventHandler(this.ExportToExcel);
             frm.Search_Click += new System.EventHandler(this.Search);
             ToolStripManager.Merge(this.toolStrip1,frm.ToolStrip);
         }
 
         private void MoldingOrderCreation_Deactivate(object sender, EventArgs e)
         {
+            frm.Search_Click -= new System.EventHandler(this.ExportToExcel);
             frm.Search_Click -= new System.EventHandler(this.Search);
             ToolStripManager.RevertMerge(frm.ToolStrip);
         }
+        private void ExportToExcel(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application xlApp;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
 
+            int i, j;
+
+            saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
+            saveFileDialog1.InitialDirectory = "C:";
+            saveFileDialog1.Title = "Save";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkBook = xlApp.Workbooks.Add();
+                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                for (i = 0; i <= dgvJobOrder.RowCount - 2; i++)
+                {
+                    for (j = 0; j <= dgvJobOrder.ColumnCount - 1; j++)
+                    {
+                        xlWorkSheet.Cells[i + 1, j + 1] = dgvJobOrder[j, i].Value.ToString();
+                    }
+                }
+
+                xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                xlWorkBook.Close(true);
+                xlApp.Quit();
+
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+            }
+        }
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             ShowDialog("압연");

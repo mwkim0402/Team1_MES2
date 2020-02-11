@@ -273,12 +273,66 @@ namespace AdminForm
         private void JobOrderCreation_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += new System.EventHandler(Search_Click);
+            frm.Search_Click += new System.EventHandler(ExportToExcel);
            
+        }
+
+        private void ExportToExcel(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application xlApp;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+
+            int i, j;
+
+            saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
+            saveFileDialog1.InitialDirectory = "C:";
+            saveFileDialog1.Title = "Save";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkBook = xlApp.Workbooks.Add();
+                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                for (i = 0; i <= dgvSearchResult.RowCount - 2; i++)
+                {
+                    for (j = 0; j <= dgvSearchResult.ColumnCount - 1; j++)
+                    {
+                        xlWorkSheet.Cells[i + 1, j + 1] = dgvSearchResult[j, i].Value.ToString();
+                    }
+                }
+
+                xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                xlWorkBook.Close(true);
+                xlApp.Quit();
+
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+            }
+        }
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
         }
 
         private void JobOrderCreation_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= new System.EventHandler(Search_Click);
+            frm.Search_Click -= new System.EventHandler(ExportToExcel);
         }
 
         private void BtnSave_Click(object sender, EventArgs e)

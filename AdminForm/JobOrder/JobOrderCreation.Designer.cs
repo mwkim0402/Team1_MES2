@@ -69,6 +69,7 @@
             this.txtJobOrderNo_Ch = new System.Windows.Forms.TextBox();
             this.cmbItemCode = new System.Windows.Forms.ComboBox();
             this.cmbItemCode_CH = new System.Windows.Forms.ComboBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tcParent1.SuspendLayout();
             this.tcParent2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -636,5 +637,6 @@
         private System.Windows.Forms.TextBox txtJobOrderNo_Ch;
         private System.Windows.Forms.ComboBox cmbItemCode;
         private System.Windows.Forms.ComboBox cmbItemCode_CH;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

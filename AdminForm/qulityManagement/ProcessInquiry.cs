@@ -38,18 +38,18 @@ namespace AdminForm
         private void ShowDgv()
         {
             dgvSearchResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시번호", "Workorderno", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시번호", "Workorderno", true, 200);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산일", "Plan_Date", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정", "Process_name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업장", "Wc_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목명", "Item_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정항목", "Condition_Name", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정항목", "Condition_Name", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "USL", "USL", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "SL", "SL", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "LSL", "LSL", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정일시", "Condition_Date", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정일자", "Condition_Datetime", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정일시", "Condition_Date", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정일자", "Condition_Datetime", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정값", "Condition_Val", true, 100);
            
         }

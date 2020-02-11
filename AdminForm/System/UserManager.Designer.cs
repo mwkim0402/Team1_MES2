@@ -104,6 +104,7 @@
             this.panel1.Controls.Add(this.txtEditName);
             this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.txtEditID);
+            this.panel1.Size = new System.Drawing.Size(1124, 103);
             // 
             // tabPage2
             // 
@@ -126,9 +127,9 @@
             this.pnlParent1.Controls.Add(this.txtUserNameInput);
             this.pnlParent1.Controls.Add(this.btnSave);
             this.pnlParent1.Controls.Add(this.txtUserIDInput);
-            this.pnlParent1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
+            this.pnlParent1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlParent1.Location = new System.Drawing.Point(3, 4);
-            this.pnlParent1.Size = new System.Drawing.Size(1118, 91);
+            this.pnlParent1.Size = new System.Drawing.Size(1118, 95);
             // 
             // label6
             // 
@@ -157,14 +158,14 @@
             // 
             this.txtUserIDInput.Location = new System.Drawing.Point(119, 47);
             this.txtUserIDInput.Name = "txtUserIDInput";
-            this.txtUserIDInput.Size = new System.Drawing.Size(152, 30);
+            this.txtUserIDInput.Size = new System.Drawing.Size(152, 26);
             this.txtUserIDInput.TabIndex = 75;
             // 
             // txtUserNameInput
             // 
             this.txtUserNameInput.Location = new System.Drawing.Point(119, 13);
             this.txtUserNameInput.Name = "txtUserNameInput";
-            this.txtUserNameInput.Size = new System.Drawing.Size(152, 30);
+            this.txtUserNameInput.Size = new System.Drawing.Size(152, 26);
             this.txtUserNameInput.TabIndex = 74;
             // 
             // label19
@@ -428,7 +429,7 @@
             this.txtEditName.Enabled = false;
             this.txtEditName.Location = new System.Drawing.Point(122, 17);
             this.txtEditName.Name = "txtEditName";
-            this.txtEditName.Size = new System.Drawing.Size(152, 30);
+            this.txtEditName.Size = new System.Drawing.Size(152, 26);
             this.txtEditName.TabIndex = 93;
             // 
             // btnEdit
@@ -448,7 +449,7 @@
             this.txtEditID.Enabled = false;
             this.txtEditID.Location = new System.Drawing.Point(122, 51);
             this.txtEditID.Name = "txtEditID";
-            this.txtEditID.Size = new System.Drawing.Size(152, 30);
+            this.txtEditID.Size = new System.Drawing.Size(152, 26);
             this.txtEditID.TabIndex = 94;
             // 
             // cmbProcess
@@ -461,7 +462,7 @@
             "적재"});
             this.cmbProcess.Location = new System.Drawing.Point(397, 11);
             this.cmbProcess.Name = "cmbProcess";
-            this.cmbProcess.Size = new System.Drawing.Size(152, 31);
+            this.cmbProcess.Size = new System.Drawing.Size(152, 27);
             this.cmbProcess.TabIndex = 89;
             // 
             // cmbEditProcess
@@ -474,7 +475,7 @@
             "적재"});
             this.cmbEditProcess.Location = new System.Drawing.Point(400, 15);
             this.cmbEditProcess.Name = "cmbEditProcess";
-            this.cmbEditProcess.Size = new System.Drawing.Size(152, 31);
+            this.cmbEditProcess.Size = new System.Drawing.Size(152, 27);
             this.cmbEditProcess.TabIndex = 101;
             // 
             // label1
@@ -492,7 +493,7 @@
             // 
             this.txtGroupName.Location = new System.Drawing.Point(671, 47);
             this.txtGroupName.Name = "txtGroupName";
-            this.txtGroupName.Size = new System.Drawing.Size(152, 30);
+            this.txtGroupName.Size = new System.Drawing.Size(152, 26);
             this.txtGroupName.TabIndex = 93;
             // 
             // label12
@@ -521,7 +522,7 @@
             // 
             this.txtEditGroupName.Location = new System.Drawing.Point(674, 51);
             this.txtEditGroupName.Name = "txtEditGroupName";
-            this.txtEditGroupName.Size = new System.Drawing.Size(152, 30);
+            this.txtEditGroupName.Size = new System.Drawing.Size(152, 26);
             this.txtEditGroupName.TabIndex = 105;
             // 
             // label10
@@ -555,7 +556,7 @@
             "UserLevel2"});
             this.cmbGroupCode.Location = new System.Drawing.Point(671, 11);
             this.cmbGroupCode.Name = "cmbGroupCode";
-            this.cmbGroupCode.Size = new System.Drawing.Size(152, 31);
+            this.cmbGroupCode.Size = new System.Drawing.Size(152, 27);
             this.cmbGroupCode.TabIndex = 106;
             this.cmbGroupCode.SelectedIndexChanged += new System.EventHandler(this.cmbGroupCode_SelectedIndexChanged);
             // 
@@ -568,7 +569,7 @@
             "UserLevel2"});
             this.cmbEditGroupCode.Location = new System.Drawing.Point(674, 15);
             this.cmbEditGroupCode.Name = "cmbEditGroupCode";
-            this.cmbEditGroupCode.Size = new System.Drawing.Size(152, 31);
+            this.cmbEditGroupCode.Size = new System.Drawing.Size(152, 27);
             this.cmbEditGroupCode.TabIndex = 106;
             this.cmbEditGroupCode.SelectedIndexChanged += new System.EventHandler(this.cmbEditGroupCode_SelectedIndexChanged);
             // 
@@ -581,7 +582,7 @@
             "Engineer"});
             this.cmbEditUserType.Location = new System.Drawing.Point(400, 50);
             this.cmbEditUserType.Name = "cmbEditUserType";
-            this.cmbEditUserType.Size = new System.Drawing.Size(152, 31);
+            this.cmbEditUserType.Size = new System.Drawing.Size(152, 27);
             this.cmbEditUserType.TabIndex = 107;
             this.cmbEditUserType.SelectedIndexChanged += new System.EventHandler(this.cmbEditUserType_SelectedIndexChanged);
             // 
@@ -594,7 +595,7 @@
             "Engineer"});
             this.cmbUserType.Location = new System.Drawing.Point(397, 46);
             this.cmbUserType.Name = "cmbUserType";
-            this.cmbUserType.Size = new System.Drawing.Size(152, 31);
+            this.cmbUserType.Size = new System.Drawing.Size(152, 27);
             this.cmbUserType.TabIndex = 108;
             this.cmbUserType.SelectedIndexChanged += new System.EventHandler(this.cmbUserType_SelectedIndexChanged);
             // 

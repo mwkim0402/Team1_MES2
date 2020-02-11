@@ -80,6 +80,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.cmbMoldGroupI = new System.Windows.Forms.ComboBox();
             this.cmbMoldGroupM = new System.Windows.Forms.ComboBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tcParent1.SuspendLayout();
             this.tcParent2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -756,5 +757,6 @@
         private System.Windows.Forms.ComboBox cmbMoldGroupM;
         private System.Windows.Forms.ComboBox cmbMoldGroupI;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

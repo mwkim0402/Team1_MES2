@@ -57,6 +57,7 @@
     <Compile Include="Dac\ProcessDAC.cs" />
     <Compile Include="Dac\QualityDAC.cs" />
     <Compile Include="Dac\UserDAC.cs" />
+    <Compile Include="Dac\WoReqDAC.cs" />
     <Compile Include="Dac\WorkCenterDAC.cs" />
     <Compile Include="Dac\WorkOrderDAC.cs" />
     <Compile Include="Helper.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Service\NonOperationMaService.cs" />
     <Compile Include="Service\QualityService.cs" />
     <Compile Include="Service\UserService.cs" />
+    <Compile Include="Service\WoReqService.cs" />
     <Compile Include="Service\WorkOrderService.cs" />
     <Compile Include="Vo\ConditionSpecVo.cs" />
     <Compile Include="Vo\GvInfoVo.cs" />
@@ -102,6 +104,7 @@
     <Compile Include="Vo\WorkdiligenceStatusanalysisVO.cs" />
     <Compile Include="Vo\WorkdiligenceStatusanalysisVOgridview1.cs" />
     <Compile Include="Vo\WorkOrder.cs" />
+    <Compile Include="Vo\Wo_Req.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\DataBase_XML.xml" />

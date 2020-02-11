@@ -117,5 +117,26 @@ namespace FieldOperationForm
 
             }
         }
+
+        public List<WorkOrder_Vo>IronWork ( )
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "IronWork";
+                cmd.CommandType = CommandType.StoredProcedure;
+               
+
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkOrder_Vo> list = Helper.DataReaderMapToList<WorkOrder_Vo>(reader);
+                cmd.Connection.Close();
+
+                return list;
+
+
+            }
+        }
     }
 }

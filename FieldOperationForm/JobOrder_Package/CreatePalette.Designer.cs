@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_unit = new System.Windows.Forms.TextBox();
             this.txt_ResultNum = new System.Windows.Forms.TextBox();
@@ -55,6 +55,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btn_Print = new System.Windows.Forms.Button();
+            this.cb_Item = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -221,8 +222,8 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 146);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(875, 470);
@@ -372,12 +373,23 @@
             this.btn_Print.Text = "인쇄";
             this.btn_Print.UseVisualStyleBackColor = false;
             // 
+            // cb_Item
+            // 
+            this.cb_Item.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cb_Item.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cb_Item.FormattingEnabled = true;
+            this.cb_Item.Location = new System.Drawing.Point(218, 139);
+            this.cb_Item.Name = "cb_Item";
+            this.cb_Item.Size = new System.Drawing.Size(327, 39);
+            this.cb_Item.TabIndex = 19;
+            // 
             // CreatePalette
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1538, 628);
+            this.Controls.Add(this.cb_Item);
             this.Controls.Add(this.btn_Print);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
@@ -423,5 +435,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btn_Print;
+        private System.Windows.Forms.ComboBox cb_Item;
     }
 }

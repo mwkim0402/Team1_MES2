@@ -67,10 +67,10 @@ namespace FieldOperationForm
             AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "Workorderno", true, 200);
             AddNewColumnToDataGridView(dataGridView1, "할당작업장", "Wc_Name", true, 175);
             AddNewColumnToDataGridView(dataGridView1, "품목명", "Item_Name", true, 230);
-            AddNewColumnToDataGridView(dataGridView1, "단위", "Prd_Unit", true, 100);
-            AddNewColumnToDataGridView(dataGridView1, "실적수량", "Prd_Qty", true, 130);
-            AddNewColumnToDataGridView(dataGridView1, "생산시작시간", "Prd_Starttime", true, 280);
-            AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Prd_Endtime", true, 280);
+            AddNewColumnToDataGridView(dataGridView1, "단위", "Plan_Unit", true, 100);
+            AddNewColumnToDataGridView(dataGridView1, "실적수량", "Plan_Qty", true, 130);
+            AddNewColumnToDataGridView(dataGridView1, "생산시작시간", "Plan_Starttime", true, 280);
+            AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Plan_Endtime", true, 280);
             AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Plan_Qty", false, 175);
             this.dataGridView1.Font = new Font("나눔고딕", 17, FontStyle.Bold);
             this.dataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 17, FontStyle.Regular);

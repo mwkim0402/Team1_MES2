@@ -51,9 +51,10 @@
             // 
             // btnFind
             // 
-            this.btnFind.Location = new System.Drawing.Point(62, 2);
+            this.btnFind.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnFind.Location = new System.Drawing.Point(62, 3);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(31, 23);
+            this.btnFind.Size = new System.Drawing.Size(31, 21);
             this.btnFind.TabIndex = 2;
             this.btnFind.Text = "...";
             this.btnFind.UseVisualStyleBackColor = true;

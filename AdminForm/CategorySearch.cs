@@ -60,7 +60,7 @@ namespace AdminForm
             cmbCat.Text = catTable;
         }
 
-        private void dgvList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             catCode = dgvList.Rows[e.RowIndex].Cells[0].Value.ToString();
             catName = dgvList.Rows[e.RowIndex].Cells[1].Value.ToString();

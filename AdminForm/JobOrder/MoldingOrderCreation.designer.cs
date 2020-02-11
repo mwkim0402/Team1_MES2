@@ -41,6 +41,7 @@
             this.btnGun = new System.Windows.Forms.ToolStripButton();
             this.btnSo = new System.Windows.Forms.ToolStripButton();
             this.btnPo = new System.Windows.Forms.ToolStripButton();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tabControl2.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -242,5 +243,6 @@
         private System.Windows.Forms.ToolStripButton btnGun;
         private System.Windows.Forms.ToolStripButton btnSung;
         private System.Windows.Forms.ToolStripButton btnPo;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

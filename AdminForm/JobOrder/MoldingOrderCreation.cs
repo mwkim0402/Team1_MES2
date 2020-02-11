@@ -86,22 +86,22 @@ namespace AdminForm
             chkboxCol.Width = 30;
             chkboxCol.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvProductRequset.Columns.Insert(0, chkboxCol);
-            AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰번호", "Wo_Req_No", true, 110);
-            AddNewColumnToDataGridView(dgvProductRequset, "품목명", "item_Name", true, 80);
-            AddNewColumnToDataGridView(dgvProductRequset, "압연잔여수량", "RollingP", true, 174, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvProductRequset, "제강잔여수량", "SteelP", true, 140,DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvProductRequset, "제선잔여수량", "IronP", true, 80, DataGridViewContentAlignment.MiddleRight);          
-            AddNewColumnToDataGridView(dgvProductRequset, "포장잔여수량", "PackageP", true, 100, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvProductRequset, "마감날짜", "Prd_Plan_Date", true, 100);
+            AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰번호", "Wo_Req_No", true, 180);
+            AddNewColumnToDataGridView(dgvProductRequset, "품목명", "item_Name", true, 100);
+            AddNewColumnToDataGridView(dgvProductRequset, "압연잔여수량", "RollingP", true, 170, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvProductRequset, "제강잔여수량", "SteelP", true, 170,DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvProductRequset, "제선잔여수량", "IronP", true, 170, DataGridViewContentAlignment.MiddleRight);          
+            AddNewColumnToDataGridView(dgvProductRequset, "포장잔여수량", "PackageP", true, 170, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvProductRequset, "마감날짜", "Prd_Plan_Date", true, 120);
             AddNewColumnToDataGridView(dgvProductRequset, "고객사", "Cust_Name", true, 100);
-            AddNewColumnToDataGridView(dgvProductRequset, "영업담당", "Sale_Emp", true, 100);
-            AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰 상태", "Req_Status", true, 120);
+            AddNewColumnToDataGridView(dgvProductRequset, "영업담당", "Sale_Emp", true, 120);
+            AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰 상태", "Req_Status", true, 160);
       
             // 작업지시 dgv 컬럼 추가
-            AddNewColumnToDataGridView(dgvJobOrder, "작업지시번호", "Workorderno", true, 150);
+            AddNewColumnToDataGridView(dgvJobOrder, "작업지시번호", "Workorderno", true, 200);
             AddNewColumnToDataGridView(dgvJobOrder, "공정명", "Process_name", true, 150);
-            AddNewColumnToDataGridView(dgvJobOrder, "작업장명", "Wc_Name", true, 110);
-            AddNewColumnToDataGridView(dgvJobOrder, "품목명", "Item_Name", true, 220);
+            AddNewColumnToDataGridView(dgvJobOrder, "작업장명", "Wc_Name", true, 120);
+            AddNewColumnToDataGridView(dgvJobOrder, "품목명", "Item_Name", true, 170);
             AddNewColumnToDataGridView(dgvJobOrder, "계획날짜", "Plan_Date", true, 140);
             AddNewColumnToDataGridView(dgvJobOrder, "시작시간", "Plan_Starttime", true,140);
             AddNewColumnToDataGridView(dgvJobOrder, "마감시간", "Plan_Endtime", true,140);

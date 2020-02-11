@@ -131,6 +131,12 @@
     <Compile Include="JobOrder\WorkOrderUpdate.Designer.cs">
       <DependentUpon>WorkOrderUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Journal\Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Journal\Print.designer.cs">
+      <DependentUpon>Print.cs</DependentUpon>
+    </Compile>
     <Compile Include="Journal\LoadingReport.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -531,6 +537,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="JobOrder\WorkOrderUpdate.resx">
       <DependentUpon>WorkOrderUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Journal\Print.resx">
+      <DependentUpon>Print.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Journal\LoadingReport.resx">
       <DependentUpon>LoadingReport.cs</DependentUpon>

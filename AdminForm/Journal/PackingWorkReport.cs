@@ -84,11 +84,29 @@ namespace AdminForm
         private void PackingWorkReport_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += this.Search_Click;
+            frm.Insert_Click += this.Print_Click;
         }
 
         private void PackingWorkReport_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= this.Search_Click;
+            frm.Insert_Click -= this.Print_Click;
+        }
+        private void Print_Click(object sender, EventArgs e)
+        {
+            using (FrmWaitForm frm = new FrmWaitForm(printAction))
+            {
+                frm.ShowDialog(this);
+            }
+           
+        }
+
+        private void printAction()
+        {
+            Print frm = new Print();
+            frm.documentViewer1.DocumentSource = this.documentViewer1.DocumentSource;
+            frm.documentViewer1.PrintingSystem.ExecCommand(DevExpress.XtraPrinting.PrintingSystemCommand.SubmitParameters, new object[] { true });
+            frm.Show();
         }
     }
 }

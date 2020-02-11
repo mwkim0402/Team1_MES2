@@ -104,7 +104,7 @@ namespace FieldOperationForm
                 frm.Dock = DockStyle.Fill;
                 frm.Show();
             }
-            else if (lbl_Job.Text == "성형")
+            else if (lbl_Job.Text == "제선")
             {
                 frm1 = new JobOrderStatus(this);
                 frm1.BringToFront();

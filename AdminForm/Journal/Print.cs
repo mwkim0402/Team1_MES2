@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AdminForm
 {
-    public partial class dgvTwo : Form
+    public partial class Print : Form
     {
-        public dgvTwo()
+        public Print()
         {
             InitializeComponent();
         }

@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_JobOrder = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_PlannedQuantity = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_WorkerDate = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cb_WorkPlace = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txt_SearchTruck = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txt_WorkerDate = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -61,6 +63,7 @@
             this.btn_JobOrder.TabIndex = 20;
             this.btn_JobOrder.Text = "작업지시 생성";
             this.btn_JobOrder.UseVisualStyleBackColor = false;
+            this.btn_JobOrder.Click += new System.EventHandler(this.btn_JobOrder_Click);
             // 
             // groupBox1
             // 
@@ -102,16 +105,6 @@
             this.label4.Size = new System.Drawing.Size(104, 28);
             this.label4.TabIndex = 21;
             this.label4.Text = "계획수량";
-            // 
-            // txt_WorkerDate
-            // 
-            this.txt_WorkerDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_WorkerDate.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_WorkerDate.Location = new System.Drawing.Point(210, 290);
-            this.txt_WorkerDate.Multiline = true;
-            this.txt_WorkerDate.Name = "txt_WorkerDate";
-            this.txt_WorkerDate.Size = new System.Drawing.Size(368, 41);
-            this.txt_WorkerDate.TabIndex = 18;
             // 
             // label3
             // 
@@ -207,12 +200,16 @@
             // 
             // dataGridView1
             // 
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 68);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(883, 548);
             this.dataGridView1.TabIndex = 27;
@@ -239,6 +236,17 @@
             this.label7.Text = "대차 검색";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txt_WorkerDate
+            // 
+            this.txt_WorkerDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_WorkerDate.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txt_WorkerDate.Location = new System.Drawing.Point(210, 290);
+            this.txt_WorkerDate.Multiline = true;
+            this.txt_WorkerDate.Name = "txt_WorkerDate";
+            this.txt_WorkerDate.ReadOnly = true;
+            this.txt_WorkerDate.Size = new System.Drawing.Size(368, 41);
+            this.txt_WorkerDate.TabIndex = 18;
+            // 
             // LoadJobOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -254,6 +262,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoadJobOrder";
             this.Text = "LoadJobOrder";
+            this.Load += new System.EventHandler(this.LoadJobOrder_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -268,7 +277,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txt_PlannedQuantity;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_WorkerDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cb_WorkPlace;
         private System.Windows.Forms.Label label2;
@@ -280,5 +288,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txt_SearchTruck;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txt_WorkerDate;
     }
 }

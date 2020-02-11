@@ -35,19 +35,21 @@ namespace AdminForm
         private void LoadWorkReport_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += this.Search_Click;
+            frm.Insert_Click += this.Print_Click;
         }
 
+        
+        private void LoadWorkReport_Deactivate(object sender, EventArgs e)
+        {
+            frm.Search_Click -= this.Search_Click;
+            frm.Insert_Click -= this.Print_Click;
+        }
         public void Search_Click(object sender, EventArgs e)
         {
             using (FrmWaitForm frm = new FrmWaitForm(setAction))
             {
                 frm.ShowDialog(this);
             }
-        }
-
-        private void LoadWorkReport_Deactivate(object sender, EventArgs e)
-        {
-            frm.Search_Click -= this.Search_Click;
         }
 
         private void setAction()
@@ -77,7 +79,22 @@ namespace AdminForm
                 WorkOrderDetailView(rpt);
             
         }
+        private void Print_Click(object sender, EventArgs e)
+        {
+            using (FrmWaitForm frm = new FrmWaitForm(printAction))
+            {
+                frm.ShowDialog(this);
+            }
 
+        }
+
+        private void printAction()
+        {
+            Print frm = new Print();
+            frm.documentViewer1.DocumentSource = this.documentViewer1.DocumentSource;
+            frm.documentViewer1.PrintingSystem.ExecCommand(DevExpress.XtraPrinting.PrintingSystemCommand.SubmitParameters, new object[] { true });
+            frm.Show();
+        }
         private void WorkOrderDetailView(LoadingReport rep)
         {
             

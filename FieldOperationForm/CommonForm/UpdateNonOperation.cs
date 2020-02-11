@@ -30,8 +30,14 @@ namespace FieldOperationForm
         private void UpdateNonOperation_Load(object sender, EventArgs e)
         {
             txt_Workplace.Text = a1;
-            cb_Hap.Text = b1;
+            
             txt_Detail.Text = c1;
+            txt_Hap.Text = b1;
+
+            txt_Workplace1.Text = a1;
+            txt_Detail1.Text = c1;
+            cb_Hap.Text = b1;
+
 
             initComboBox();
 
@@ -52,7 +58,20 @@ namespace FieldOperationForm
 
         private void btn_Write_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("변경 하시겠습니까?", "알림", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                NonOperation_Service service = new NonOperation_Service();
 
+                updateNonOperation_Vo vo = new updateNonOperation_Vo();
+                vo.Nop_Ma_Name = txt_Hap.Text;
+                vo.Nop_Mi_Name = txt_Detail.Text;
+                vo.Nop_Ma_Name1 = cb_Hap.Text;
+                vo.Nop_Mi_Name1 = txt_Detail1.Text;
+                service.UpdateNop(vo);
+
+                this.Close();
+
+            }
         }
     }
 

@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_P));
             this.panel10 = new System.Windows.Forms.Panel();
+            this.btn_Max = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btn_Min = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_Job = new System.Windows.Forms.Label();
@@ -44,9 +47,6 @@
             this.btn_Home = new System.Windows.Forms.Button();
             this.btn_logout = new System.Windows.Forms.Button();
             this.btn_FormClose = new System.Windows.Forms.Button();
-            this.btn_Min = new System.Windows.Forms.Button();
-            this.btn_Max = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel10.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -66,6 +66,45 @@
             this.panel10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel10_MouseDown);
             this.panel10.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel10_MouseMove);
             this.panel10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel10_MouseUp);
+            // 
+            // btn_Max
+            // 
+            this.btn_Max.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_Max.BackColor = System.Drawing.Color.White;
+            this.btn_Max.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Max.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_Max.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Max.ImageIndex = 0;
+            this.btn_Max.ImageList = this.imageList1;
+            this.btn_Max.Location = new System.Drawing.Point(1165, 7);
+            this.btn_Max.Name = "btn_Max";
+            this.btn_Max.Size = new System.Drawing.Size(73, 33);
+            this.btn_Max.TabIndex = 13;
+            this.btn_Max.UseVisualStyleBackColor = false;
+            this.btn_Max.Click += new System.EventHandler(this.btn_Max_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "캡처.PNG");
+            this.imageList1.Images.SetKeyName(1, "캡처2.PNG");
+            // 
+            // btn_Min
+            // 
+            this.btn_Min.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_Min.BackColor = System.Drawing.Color.White;
+            this.btn_Min.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Min.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_Min.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Min.ImageIndex = 1;
+            this.btn_Min.ImageList = this.imageList1;
+            this.btn_Min.Location = new System.Drawing.Point(1244, 7);
+            this.btn_Min.Name = "btn_Min";
+            this.btn_Min.Size = new System.Drawing.Size(73, 33);
+            this.btn_Min.TabIndex = 12;
+            this.btn_Min.UseVisualStyleBackColor = false;
+            this.btn_Min.Click += new System.EventHandler(this.btn_Min_Click);
             // 
             // label3
             // 
@@ -90,7 +129,7 @@
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(270, 43);
             this.lbl_name.TabIndex = 13;
-            this.lbl_name.Text = "ㄹ옹로";
+            this.lbl_name.Text = "-";
             this.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Job
@@ -103,7 +142,7 @@
             this.lbl_Job.Name = "lbl_Job";
             this.lbl_Job.Size = new System.Drawing.Size(270, 43);
             this.lbl_Job.TabIndex = 12;
-            this.lbl_Job.Text = "ㄶㄶ";
+            this.lbl_Job.Text = "-";
             this.lbl_Job.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblChange
@@ -117,7 +156,7 @@
             this.lblChange.Name = "lblChange";
             this.lblChange.Size = new System.Drawing.Size(440, 95);
             this.lblChange.TabIndex = 0;
-            this.lblChange.Text = "ㅎㄴ아ㅓ한";
+            this.lblChange.Text = "메인";
             this.lblChange.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
@@ -236,45 +275,6 @@
             this.btn_FormClose.TabIndex = 12;
             this.btn_FormClose.UseVisualStyleBackColor = false;
             this.btn_FormClose.Click += new System.EventHandler(this.btn_FormClose_Click);
-            // 
-            // btn_Min
-            // 
-            this.btn_Min.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_Min.BackColor = System.Drawing.Color.White;
-            this.btn_Min.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Min.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_Min.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Min.ImageIndex = 1;
-            this.btn_Min.ImageList = this.imageList1;
-            this.btn_Min.Location = new System.Drawing.Point(1244, 7);
-            this.btn_Min.Name = "btn_Min";
-            this.btn_Min.Size = new System.Drawing.Size(73, 33);
-            this.btn_Min.TabIndex = 12;
-            this.btn_Min.UseVisualStyleBackColor = false;
-            this.btn_Min.Click += new System.EventHandler(this.btn_Min_Click);
-            // 
-            // btn_Max
-            // 
-            this.btn_Max.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_Max.BackColor = System.Drawing.Color.White;
-            this.btn_Max.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Max.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_Max.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Max.ImageIndex = 0;
-            this.btn_Max.ImageList = this.imageList1;
-            this.btn_Max.Location = new System.Drawing.Point(1165, 7);
-            this.btn_Max.Name = "btn_Max";
-            this.btn_Max.Size = new System.Drawing.Size(73, 33);
-            this.btn_Max.TabIndex = 13;
-            this.btn_Max.UseVisualStyleBackColor = false;
-            this.btn_Max.Click += new System.EventHandler(this.btn_Max_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "캡처.PNG");
-            this.imageList1.Images.SetKeyName(1, "캡처2.PNG");
             // 
             // Main_P
             // 

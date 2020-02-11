@@ -80,6 +80,7 @@
             this.txt_UserPwd.Font = new System.Drawing.Font("나눔고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txt_UserPwd.Location = new System.Drawing.Point(411, 214);
             this.txt_UserPwd.Name = "txt_UserPwd";
+            this.txt_UserPwd.PasswordChar = '*';
             this.txt_UserPwd.Size = new System.Drawing.Size(650, 76);
             this.txt_UserPwd.TabIndex = 6;
             // 

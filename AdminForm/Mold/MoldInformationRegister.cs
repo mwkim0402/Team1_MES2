@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Interop;
 
 namespace AdminForm
 {
@@ -134,26 +135,32 @@ namespace AdminForm
             else
             {
                 isUse = "N";
-
             }
-            int result = ser.SaveMoldingInfo(txtMoldCodeInput.Text, txtMoldNameInput.Text, cmbMoldGroupI.SelectedValue.ToString(), int.Parse(txtPrice.Text), dtpInputdate.Value.ToString().Substring(0,10), dtpLastEquipDate.Value.ToString().Substring(0, 10),int.Parse( txtWarrentNum.Text), txtPS.Text, isUse);
-            if (result >= 1)
+            if (int.TryParse(txtPrice.Text, out int price) && int.TryParse(txtWarrentNum.Text, out int warrentNum))
             {
-                MessageBox.Show("저장이 완료되었습니다.");
-                txtMoldCodeInput.Text = null;
-                txtMoldNameInput.Text = null;
-                cmbMoldGroupI.SelectedValue = 0;
-                txtWarrentNum.Text = null;
-                txtPrice.Text = null;
-                dtpInputdate.Value = DateTime.Now;
-                dtpLastEquipDate.Value = DateTime.Now;
-                rbUse.Checked = false;
-                rbNoUse.Checked = false;
-                LoadList();
+                int result = ser.SaveMoldingInfo(txtMoldCodeInput.Text, txtMoldNameInput.Text, cmbMoldGroupI.SelectedValue.ToString(), int.Parse(txtPrice.Text), dtpInputdate.Value.ToString().Substring(0, 10), dtpLastEquipDate.Value.ToString().Substring(0, 10), int.Parse(txtWarrentNum.Text), txtPS.Text, isUse);
+                if (result >= 1)
+                {
+                    MessageBox.Show("저장이 완료되었습니다.");
+                    txtMoldCodeInput.Text = null;
+                    txtMoldNameInput.Text = null;
+                    cmbMoldGroupI.SelectedValue = 0;
+                    txtWarrentNum.Text = null;
+                    txtPrice.Text = null;
+                    dtpInputdate.Value = DateTime.Now;
+                    dtpLastEquipDate.Value = DateTime.Now;
+                    rbUse.Checked = false;
+                    rbNoUse.Checked = false;
+                    LoadList();
+                }
+                else
+                {
+                    MessageBox.Show("오류.");
+                }
             }
             else
             {
-                MessageBox.Show("오류.");
+                MessageBox.Show("정확한 값을 입력해 주세요.");
             }
 
         }
@@ -172,15 +179,69 @@ namespace AdminForm
 
     
 
-    private void MoldInformationRegister_Activated(object sender, EventArgs e)
+        private void MoldInformationRegister_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += new EventHandler(this.Search_Click);
+            frm.Insert_Click += new EventHandler(this.ExportToExcel);
         }
 
         private void MoldInformationRegister_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= new EventHandler(this.Search_Click);
+            frm.Insert_Click -= new EventHandler(this.ExportToExcel);
         }
+        private void ExportToExcel(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application xlApp;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+
+            int i, j;
+
+            saveFileDialog1.Filter = "Excel Files (*.xls)|*.xls";
+            saveFileDialog1.InitialDirectory = "C:";
+            saveFileDialog1.Title = "Save";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                xlApp = new Microsoft.Office.Interop.Excel.Application();
+                xlWorkBook = xlApp.Workbooks.Add();
+                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                for (i = 0; i <= dgvSearchResult.RowCount - 2; i++)
+                {
+                    for (j = 0; j <= dgvSearchResult.ColumnCount - 1; j++)
+                    {
+                        xlWorkSheet.Cells[i + 1, j + 1] = dgvSearchResult[j, i].Value.ToString();
+                    }
+                }
+
+                xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                xlWorkBook.Close(true);
+                xlApp.Quit();
+
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+            }
+        }
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
 
         private void BtnModify_Click(object sender, EventArgs e)
         {

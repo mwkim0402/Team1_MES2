@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_PlannedQuantity = new System.Windows.Forms.TextBox();
@@ -47,13 +49,20 @@
             // 
             // dataGridView1
             // 
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(946, 604);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -105,6 +114,7 @@
             this.txt_WorkerDate.Location = new System.Drawing.Point(172, 290);
             this.txt_WorkerDate.Multiline = true;
             this.txt_WorkerDate.Name = "txt_WorkerDate";
+            this.txt_WorkerDate.ReadOnly = true;
             this.txt_WorkerDate.Size = new System.Drawing.Size(357, 41);
             this.txt_WorkerDate.TabIndex = 18;
             // 
@@ -199,6 +209,7 @@
             this.btn_JobOrder.TabIndex = 18;
             this.btn_JobOrder.Text = "작업지시 생성";
             this.btn_JobOrder.UseVisualStyleBackColor = false;
+            this.btn_JobOrder.Click += new System.EventHandler(this.btn_JobOrder_Click);
             // 
             // JobOrder
             // 
@@ -212,6 +223,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "JobOrder";
             this.Text = "JobOrder";
+            this.Load += new System.EventHandler(this.JobOrder_Load);
             this.Shown += new System.EventHandler(this.JobOrder_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);

@@ -14,12 +14,13 @@ namespace FieldOperationForm
 {
     public partial class workerAllocation : Form
     {
-
+        List<WorkCenter_Vo> CList = null;
         List<WorkAllocation_Vo> WList = null;
         List<WorkAllocation_Vo> MList = null;
         Main_P main;
         string a;
         string b;
+
         public workerAllocation(Main_P main1)
         {
             InitializeComponent();
@@ -106,7 +107,7 @@ namespace FieldOperationForm
         {
             WorkAllocation_Service service = new WorkAllocation_Service();
 
-            MList = service.GetWorker(main.lbl_Job.Text);
+            MList = service.GetWorker(cb_Wc_Name.Text);
             dataGridView1.DataSource = MList;
 
         }
@@ -116,7 +117,7 @@ namespace FieldOperationForm
 
             WorkAllocation_Service service = new WorkAllocation_Service();
 
-            WList = service.GetWorkerList(main.lbl_Job.Text);
+            WList = service.GetWorkerList(cb_Wc_Name.Text);
 
             dataGridView2.DataSource = WList;
 
@@ -124,11 +125,12 @@ namespace FieldOperationForm
 
         private void workerAllocation_Load(object sender, EventArgs e)
         {
-        
 
-            txt_WorkPlace.Text = main. lbl_Job.Text;
+            initComboBox();
 
-       
+
+
+
         }
 
         private void btn_WorkerOn_Click(object sender, EventArgs e)
@@ -137,7 +139,7 @@ namespace FieldOperationForm
             {
                 WorkAssignment_Vo wa = new WorkAssignment_Vo();
                 wa.User_Name = a;
-                wa.Wc_Name = main.lbl_Job.Text;
+                wa.Wc_Name = cb_Wc_Name.Text;
                 WorkAllocation_Service service = new WorkAllocation_Service();
                 service.WorkAssignment(wa);
                 SetWorkerList();
@@ -198,7 +200,7 @@ namespace FieldOperationForm
             if (MessageBox.Show("전체 해제 하시겠습니까?", "알림", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 WorkAllocation_Service service = new WorkAllocation_Service();
-                service.deleteAllWorker(main.lbl_Job.Text);
+                service.deleteAllWorker(cb_Wc_Name.Text);
          
 
             }
@@ -212,6 +214,28 @@ namespace FieldOperationForm
         private void dataGridView1_DataSourceChanged(object sender, EventArgs e)
         {
             txt_WorkerNum.Text = dataGridView1.RowCount.ToString();
+        }
+
+
+        private void initComboBox()
+        {
+           
+            WorkCenter_Service service = new WorkCenter_Service();
+            WorkCenter_Vo vo = new WorkCenter_Vo();
+            CList = service.GetWorkCenter(main.lbl_Job.Text);
+            if (CList.Count > 0)
+            {
+                List<string> NonList = (from item in CList
+                                        select item.Wc_Name).ToList();
+                CommonUtil.ComboBinding(cb_Wc_Name, NonList);
+            }
+
+        }
+
+        private void cb_Wc_Name_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetWorker();
+            SetWorkerList();
         }
     }
 }

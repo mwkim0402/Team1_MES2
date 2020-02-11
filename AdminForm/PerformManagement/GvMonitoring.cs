@@ -56,17 +56,16 @@ namespace AdminForm
         {
             CommonClass.AddNewColumnToDataGridView(dgvDry, "대차명", "GV_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvDry, "상태", "GV_Status", true, 70);
-            CommonClass.AddNewColumnToDataGridView(dgvDry, "상태", "GV_Group", true, 70);
+            CommonClass.AddNewColumnToDataGridView(dgvDry, "그룹명", "GV_Group", true, 70);
             CommonClass.AddNewColumnToDataGridView(dgvDry, "작업지시번호", "Workorderno", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvDry, "품목코드", "Item_Code", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvDry, "품목명", "Item_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvDry, "수량", "GV_Qty", true, 70);
             CommonClass.AddNewColumnToDataGridView(dgvDry, "로딩시간", "Loading_time", true, 100);
            
-
             CommonClass.AddNewColumnToDataGridView(dgvPlasticity, "대차명", "GV_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvPlasticity, "상태", "GV_Status", true, 70);
-            CommonClass.AddNewColumnToDataGridView(dgvPlasticity, "상태", "GV_Group", true, 70);
+            CommonClass.AddNewColumnToDataGridView(dgvPlasticity, "그룹명", "GV_Group", true, 70);
             CommonClass.AddNewColumnToDataGridView(dgvPlasticity, "작업지시번호", "Workorderno", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvPlasticity, "품목코드", "Item_Code", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvPlasticity, "품목명", "Item_Name", true, 100);

@@ -12,14 +12,22 @@ namespace FieldOperationForm
 {
     public partial class JobOrder : Form
     {
+        List<Item_Vo> MList = null;
+        List<Process_Vo> PList = null;
+        List<WorkCenter_Vo> WList = null;
+        List<WorkCenter_Vo> CList = null;
         Main_P main;
         public JobOrder(Main_P main1)
         {
             InitializeComponent();
             main = main1;
             Setdgv();
+            initComboBox();
+            ComboPro();
+            ComboWork();
+            SetGV();
         }
-
+        #region 그리드뷰 설정
         private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
 int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
         {
@@ -50,10 +58,10 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
         private void Setdgv()
         {
 
-            AddNewColumnToDataGridView(dataGridView1, "소성대차", "Title", true, 252);
-            AddNewColumnToDataGridView(dataGridView1, "품목코드", "Notice_Date", true, 185);
-            AddNewColumnToDataGridView(dataGridView1, "품목명", "Notice_Date", true, 191);
-            AddNewColumnToDataGridView(dataGridView1, "수량", "Notice_Date", true, 180);
+            AddNewColumnToDataGridView(dataGridView1, "소성대차", "GV_Name", true, 252);
+            AddNewColumnToDataGridView(dataGridView1, "품목코드", "Item_Code", true, 185);
+            AddNewColumnToDataGridView(dataGridView1, "품목명", "Item_Name", true, 191);
+            AddNewColumnToDataGridView(dataGridView1, "수량", "GV_Qty", true, 180);
 
 
             this.dataGridView1.Font = new Font("나눔고딕", 16, FontStyle.Bold);
@@ -68,10 +76,75 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
 
 
         }
+        #endregion
+        //품목명
+        private void initComboBox()
+        {
+            Item_Service service = new Item_Service();
+            MList = service.GetItemName();
+            if (MList.Count > 1)
+            {
+                List<string> NonList = (from item in MList
+                                        select item.Item_Name).ToList();
+                CommonUtil.ComboBinding(cb_Item, NonList);
+            }
+
+        }
+        //공정명
+        private void ComboPro()
+        {
+            Process_Service service = new Process_Service();
+            PList = service.GetProName();
+            if (PList.Count >= 1)
+            {
+                List<string> NonList = (from item in PList
+                                        select item.Process_name).ToList();
+                CommonUtil.ComboBinding(cb_Process, NonList);
+            }
+
+        }
+        //작업장 명
+        private void ComboWork()
+        {
+            WorkCenter_Service service = new WorkCenter_Service();
+            WorkCenter_Vo vo = new WorkCenter_Vo();
+            CList = service.GetWorkCenter(main.lbl_Job.Text);
+            if (CList.Count > 0)
+            {
+                List<string> NonList = (from item in CList
+                                        select item.Wc_Name).ToList();
+                CommonUtil.ComboBinding(cb_WorkPlace, NonList);
+
+            }
+        }
 
         private void JobOrder_Shown(object sender, EventArgs e)
         {
             dataGridView1.CurrentCell = null;
+        }
+
+        private void btn_JobOrder_Click(object sender, EventArgs e)
+        {
+            WorkOrder_Service service = new WorkOrder_Service();
+            WorkOrder_Vo vo = new WorkOrder_Vo();
+            vo.Item_Name = cb_Item.Text;
+            vo.Wc_Name = cb_WorkPlace.Text;
+
+            vo.Plan_Qty = Convert.ToInt32(txt_PlannedQuantity.Text);
+
+            service.InsertWorkOrder(vo);
+            MessageBox.Show("작업지시 생성 완료");
+        }
+
+        private void SetGV()
+        {
+            GVDry_Service service = new GVDry_Service();
+            dataGridView1.DataSource = service.GetGV();
+        }
+
+        private void JobOrder_Load(object sender, EventArgs e)
+        {
+            txt_WorkerDate.Text = DateTime.Now.ToString();
         }
     }
 }

@@ -12,7 +12,8 @@ namespace FieldOperationForm
 {
     public partial class Notice : Form
     {
-
+        bool TagMove;
+        int MValX, MValY;
         List<Notice_Vo> NList = null;
         public Notice()
         {
@@ -119,8 +120,30 @@ namespace FieldOperationForm
             
             }
 
-   
-         
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            TagMove = true;
+            MValX = e.X;
+            MValY = e.Y;
         }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TagMove == true)
+            {
+                this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            TagMove = false;
+        }
+    }
     }
 

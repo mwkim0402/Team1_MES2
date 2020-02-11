@@ -63,7 +63,7 @@
             // fcWorker
             // 
             this.fcWorker.Category = AdminForm.CategoryMode.Employees;
-            this.fcWorker.Location = new System.Drawing.Point(419, 21);
+            this.fcWorker.Location = new System.Drawing.Point(421, 23);
             this.fcWorker.Name = "fcWorker";
             this.fcWorker.SendCode = null;
             this.fcWorker.SendName = null;
@@ -73,27 +73,27 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(357, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 16);
+            this.label3.Size = new System.Drawing.Size(54, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "작업자";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(222, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 16);
+            this.label2.Size = new System.Drawing.Size(19, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "~";
             // 
             // dtpEnd
             // 
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEnd.Location = new System.Drawing.Point(245, 25);
+            this.dtpEnd.Location = new System.Drawing.Point(245, 26);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(98, 21);
             this.dtpEnd.TabIndex = 2;
@@ -102,7 +102,7 @@
             // dtpStart
             // 
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStart.Location = new System.Drawing.Point(118, 24);
+            this.dtpStart.Location = new System.Drawing.Point(118, 26);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(98, 21);
             this.dtpStart.TabIndex = 1;
@@ -111,10 +111,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(29, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 16);
+            this.label1.Size = new System.Drawing.Size(69, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "근무일자";
             // 

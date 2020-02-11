@@ -1,0 +1,68 @@
+﻿@model WebApplication0106.Models.CartIndexViewModel
+
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Cart</h3>
+
+
+
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+
+                        
+                            <tr>
+                                <th>Item</th>
+                                <th>Quantity</th>
+                                <th class="text-right">Price</th>
+                                <th class="text-right">subTotal</th>
+                                <th></th>
+                            </tr>
+                       
+                        
+                            @foreach (var line in Model.Cart.Lines)
+                            {
+                                <tr>
+                                    <td class="text-left">@line.product.Name</td>
+                                    <td class="text-center">@line.Qty</td>
+                                    <td class="text-right">@line.product.Price.ToString("c")</td>
+                                    <td class="text-right">@((line.Qty * line.product.Price).ToString("c"))</td>
+                                    <td>
+                                        @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                                        {
+                                            @Html.Hidden("ProductID", line.product.ProductID)
+                                            @Html.Hidden("returnUrl", Model.ReturnUrl)
+                                            <input type="submit" value="Remove" class="btn btn-sm btn-warning" />
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" class="text-right">Total:</td>
+                                <td class="text-right">@Model.Cart.ComputeTotalValue().ToString("c")</td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+
+            <div class="text-center">
+                <a href="@Model.ReturnUrl" class="btn btn-primary">쇼핑 계속하기</a>
+                @Html.ActionLink("결제하기", "Checkout", null, new { @class = "btn btn - primary" })
+            </div>
+        </div>
+    </div>
+
+

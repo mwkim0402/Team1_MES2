@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.tabControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,19 +52,20 @@
             // 
             // dtpProduction
             // 
+            this.dtpProduction.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpProduction.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpProduction.Location = new System.Drawing.Point(97, 24);
             this.dtpProduction.Name = "dtpProduction";
-            this.dtpProduction.Size = new System.Drawing.Size(98, 21);
+            this.dtpProduction.Size = new System.Drawing.Size(129, 26);
             this.dtpProduction.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(19, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 16);
+            this.label1.Size = new System.Drawing.Size(69, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "생산일자";
             // 
@@ -90,6 +92,9 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "WorkReportParent";
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.tabControl1, 0);
+            this.tabControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

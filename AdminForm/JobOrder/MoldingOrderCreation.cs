@@ -1,4 +1,4 @@
-﻿using MES_DB;
+﻿                     using MES_DB;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,22 +13,24 @@ namespace AdminForm
 {
     public partial class MoldingOrderCreation : dgvTwo
     {
-
+        private delegate void SafeCallDelegate(List<WorkOrder> list);
+        List<WorkReq_OrderVo> workReqList = null;
         List<MoldingOrderCreation_ReqVo> ListReq = null;
         List<MoldingOrderCreation_WoVo> ListWo = null;
         string selectedWoReq; //생산의뢰번호
         int req_Seq; //의뢰순번
+        MainForm frm;
 
         public MoldingOrderCreation()
-        {
+        {           
             InitializeComponent();
         }
 
         private void ProdReqList()
         {
-            JobOrderService service = new JobOrderService();
-            ListReq = service.MoldingOrderCreation_Req();
-            dgvProductRequset.DataSource = ListReq;
+            WorkOrderService service = new WorkOrderService();
+            workReqList = service.GetAllWorkReqQty();
+            dgvProductRequset.DataSource = workReqList;
         }
         private void WorkOrderList(string Wo_Req_No)
         {
@@ -78,48 +80,34 @@ namespace AdminForm
         private void MoldingOrderCreation_Load(object sender, EventArgs e)
         {
             // 생산의뢰 dgv 컬럼 추가
-
-            DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
-            checkBoxColumn.HeaderText = "체크";
-            checkBoxColumn.Name = "check";
-            dgvProductRequset.Columns.Add(checkBoxColumn);
+            frm = (MainForm)this.MdiParent;
+            dgvProductRequset.RowHeadersVisible = false;
+            DataGridViewCheckBoxColumn chkboxCol = new DataGridViewCheckBoxColumn();
+            chkboxCol.Width = 30;
+            chkboxCol.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvProductRequset.Columns.Insert(0, chkboxCol);
             AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰번호", "Wo_Req_No", true, 110);
-            AddNewColumnToDataGridView(dgvProductRequset, "의뢰순번", "Req_Seq", true, 80);
-            AddNewColumnToDataGridView(dgvProductRequset, "품목코드", "Item_Code", true, 80);
-            AddNewColumnToDataGridView(dgvProductRequset, "품목명", "Item_Name", true, 174);
-            AddNewColumnToDataGridView(dgvProductRequset, "의뢰수량", "Req_Qty", true, 80);
-            AddNewColumnToDataGridView(dgvProductRequset, "의뢰단위", "Prd_Unit", true, 80);
-            AddNewColumnToDataGridView(dgvProductRequset, "생산완료 요청일", "Prd_Plan_Date", true, 140);
-            AddNewColumnToDataGridView(dgvProductRequset, "프로젝트명", "Remark", true, 110);
-            AddNewColumnToDataGridView(dgvProductRequset, "거래처명", "Cust_Name", true, 100);
+            AddNewColumnToDataGridView(dgvProductRequset, "품목명", "item_Name", true, 80);
+            AddNewColumnToDataGridView(dgvProductRequset, "압연잔여수량", "RollingP", true, 174, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvProductRequset, "제강잔여수량", "SteelP", true, 140,DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvProductRequset, "제선잔여수량", "IronP", true, 80, DataGridViewContentAlignment.MiddleRight);          
+            AddNewColumnToDataGridView(dgvProductRequset, "포장잔여수량", "PackageP", true, 100, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvProductRequset, "마감날짜", "Prd_Plan_Date", true, 100);
+            AddNewColumnToDataGridView(dgvProductRequset, "고객사", "Cust_Name", true, 100);
             AddNewColumnToDataGridView(dgvProductRequset, "영업담당", "Sale_Emp", true, 100);
             AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰 상태", "Req_Status", true, 120);
-            AddNewColumnToDataGridView(dgvProductRequset, "생성된 작업 지시 수", "Out_Qty_Main", true, 180);
-            AddNewColumnToDataGridView(dgvProductRequset, "작업지시 생산수량", "Prd_Qty", true, 150);
-            AddNewColumnToDataGridView(dgvProductRequset, "작업지시 계획수량", "Plan_Qty", true, 150);
-            ProdReqList();
-
-            dgvProductRequset.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvProductRequset.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvProductRequset.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvProductRequset.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvProductRequset.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-
+      
             // 작업지시 dgv 컬럼 추가
-            AddNewColumnToDataGridView(dgvJobOrder, "작업상태", "Wo_Status", true, 110);
             AddNewColumnToDataGridView(dgvJobOrder, "작업지시번호", "Workorderno", true, 150);
-            AddNewColumnToDataGridView(dgvJobOrder, "작업지시일", "Prd_Date", true, 150);
-            AddNewColumnToDataGridView(dgvJobOrder, "품목코드", "Item_Code", true, 110);
+            AddNewColumnToDataGridView(dgvJobOrder, "공정명", "Process_name", true, 150);
+            AddNewColumnToDataGridView(dgvJobOrder, "작업장명", "Wc_Name", true, 110);
             AddNewColumnToDataGridView(dgvJobOrder, "품목명", "Item_Name", true, 220);
-            AddNewColumnToDataGridView(dgvJobOrder, "작업장", "Wc_Name", true, 140);
-            AddNewColumnToDataGridView(dgvJobOrder, "계획수량", "Plan_Qty", true,140);
-            AddNewColumnToDataGridView(dgvJobOrder, "투입수량", "In_Qty_Main", true,140);
-            AddNewColumnToDataGridView(dgvJobOrder, "산출수량", "Out_Qty_Main", true,140);
-            AddNewColumnToDataGridView(dgvJobOrder, "생산수량", "Prd_Qty", true,140);
-            AddNewColumnToDataGridView(dgvJobOrder, "전달사항", "Remark", true, 208);
-            //WorkOrderList();
-            //dgvJobOrder.DataSource = ListWo;
+            AddNewColumnToDataGridView(dgvJobOrder, "계획날짜", "Plan_Date", true, 140);
+            AddNewColumnToDataGridView(dgvJobOrder, "시작시간", "Plan_Starttime", true,140);
+            AddNewColumnToDataGridView(dgvJobOrder, "마감시간", "Plan_Endtime", true,140);
+            AddNewColumnToDataGridView(dgvJobOrder, "계획수량", "Plan_Qty", true,140, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvJobOrder, "작업상태", "Wo_Status", true,140);
+
 
             dgvJobOrder.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
@@ -128,103 +116,150 @@ namespace AdminForm
             dgvJobOrder.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvJobOrder.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-
-            //이벤트추가
-            this.dgvProductRequset.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductRequset_CellDoubleClick);
-            this.dgvProductRequset.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductRequset_CellClick);
             dgvProductRequset.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProductRequset.MultiSelect = false;
             dgvJobOrder.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            
+            dgvProductRequset.CellContentClick += DgvProductRequset_CellClick;
+            dgvProductRequset.CellDoubleClick += DgvProductRequset_CellDoubleClick;
+            ProdReqList();
         }
 
         private void DgvProductRequset_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0 )
             {
-                selectedWoReq = dgvProductRequset.SelectedRows[0].Cells[1].Value.ToString();
-                req_Seq = int.Parse(dgvProductRequset.SelectedRows[0].Cells[2].Value.ToString());
-                if (dgvProductRequset.Rows[e.RowIndex].Cells[0].Value ==null)
+                if (Convert.ToBoolean(dgvProductRequset.Rows[e.RowIndex].Cells[0].EditedFormattedValue))
                 {
-                    dgvProductRequset.SelectedRows[0].Cells[0].Value = CheckState.Checked;
-                }
-                else if (dgvProductRequset.Rows[e.RowIndex].Cells[0].Value.ToString() == "True")
-                {
-                    dgvProductRequset.SelectedRows[0].Cells[0].Value = CheckState.Unchecked;
-                }
-                else
-                {
-                    dgvProductRequset.SelectedRows[0].Cells[0].Value = CheckState.Checked;
+                    foreach(DataGridViewRow item in dgvProductRequset.Rows)
+                    {
+                        if(dgvProductRequset.SelectedRows[0] != item)
+                        {
+                            item.Cells[0].Value = false;
+                        }
+                    }
                 }
             }
         }
 
         private void DgvProductRequset_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //생산의뢰에 해당되는 작업지시를 작업지시dgv에 띄운다.
-            //workorder-> Wo_Req_No
-            selectedWoReq = dgvProductRequset.SelectedRows[0].Cells[1].Value.ToString();
-            req_Seq = int.Parse( dgvProductRequset.SelectedRows[0].Cells[2].Value.ToString());
-            WorkOrderList(selectedWoReq);
-            dgvJobOrder.DataSource = ListWo;
+        {        
+            using (FrmWaitForm frm = new FrmWaitForm(setAction))
+            {
+                frm.ShowDialog(this);
+            }
         }
-
+        private void setAction()
+        {            
+            WorkOrderService service = new WorkOrderService();
+            List<WorkOrder> workDetailList = service.GetAllWorkDetail(dgvProductRequset.SelectedRows[0].Cells[1].Value.ToString());
+            WorkOrderDetailView(workDetailList);
+        }
+        private void WorkOrderDetailView(List<WorkOrder> list)
+        {
+            if (dgvJobOrder.InvokeRequired)
+            {
+                var d = new SafeCallDelegate(WorkOrderDetailView);
+                Invoke(d, new object[] { list });
+            }
+            else
+            {
+                dgvJobOrder.DataSource = list;
+            }    
+        }
         private void BtnOrderCreationDeadline_Click(object sender, EventArgs e)
         {
 
-            //체크표시한 모든 or 선택한 생산의뢰의 Wo_Status 를 '작업지시마감'으로 변경한다.
-            for (int i = 0; i < dgvProductRequset.Rows.Count; i++)
-            {
-                if(dgvProductRequset.Rows[i].Cells[0].Value == null)
-                {
-                }
-                else
-                {
-                    FinishMoldReq(selectedWoReq, req_Seq);
-                }
-            }
-
-            //생산의뢰dgv 새로고침
-            ProdReqList();
-            //작업지시dgv null
-            ListWo = null;
-            dgvJobOrder.DataSource = ListWo;
-
-
+            WorkReqVo test = new WorkReqVo();
+            test = (WorkReqVo) dgvProductRequset.SelectedRows[0].DataBoundItem;
         }
+
 
         //검색
         private void Search(object sender, EventArgs e)
         {
-            JobOrderService ser = new JobOrderService();
-            if (txtOrderCreationNum.Text == null)
-            {
-                if (txtProjectNum.Text == null)
-                {
-                    ListReq = ser.SearchMoldReq_date(dtpStart.Value, dtpEnd.Value,"","");
-                    dgvProductRequset.DataSource = ListReq;
-                }
-                else
-                {
-                    ListReq = ser.SearchMoldReq_date(dtpStart.Value, dtpEnd.Value, "", txtProjectNum.Text);
-                    dgvProductRequset.DataSource = ListReq;
-                }
-            }
-            else
-            {
-                if (txtProjectNum.Text == null)
-                {
-                    ListReq = ser.SearchMoldReq_date(dtpStart.Value, dtpEnd.Value, txtOrderCreationNum.Text, "");
-                    dgvProductRequset.DataSource = ListReq;
-                }
-                else
-                {
-                    ListReq = ser.SearchMoldReq_date(dtpStart.Value, dtpEnd.Value, txtOrderCreationNum.Text, txtProjectNum.Text);
-                    dgvProductRequset.DataSource = ListReq;
-                }
-            }
-            
-
+            ProdReqList();
         }
 
+        private void MoldingOrderCreation_Activated(object sender, EventArgs e)
+        {
+            frm.Search_Click += new System.EventHandler(this.Search);
+            ToolStripManager.Merge(this.toolStrip1,frm.ToolStrip);
+        }
+
+        private void MoldingOrderCreation_Deactivate(object sender, EventArgs e)
+        {
+            frm.Search_Click -= new System.EventHandler(this.Search);
+            ToolStripManager.RevertMerge(frm.ToolStrip);
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            ShowDialog("압연");
+        }
+
+        private void btnGun_Click(object sender, EventArgs e)
+        {
+            ShowDialog("제강");
+        }
+
+        private void btnSung_Click(object sender, EventArgs e)
+        {
+            ShowDialog("제선");
+        }
+
+        private void ShowDialog(string processName)
+        {
+            foreach (DataGridViewRow item in dgvProductRequset.Rows)
+            {
+                if (Convert.ToBoolean(item.Cells[0].EditedFormattedValue))
+                {
+                    if(processName == "압연")
+                    {
+                        if(Convert.ToInt32(item.Cells[3].Value) == 0)
+                        {
+                            MessageBox.Show("잔여수량이 존재하지않아 작업계획을 할 수 없습니다.");
+                            return;
+                        }
+                    }
+                    else if(processName == "제선")
+                    {
+                        if (Convert.ToInt32(item.Cells[4].Value) == 0)
+                        {
+                            MessageBox.Show("잔여수량이 존재하지않아 작업계획을 할 수 없습니다.");
+                            return;
+                        }
+                    }
+                    else if (processName == "제강")
+                    {
+                        if (Convert.ToInt32(item.Cells[5].Value) == 0)
+                        {
+                            MessageBox.Show("잔여수량이 존재하지않아 작업계획을 할 수 없습니다.");
+                            return;
+                        }
+                    }
+                    else if (processName == "포장")
+                    {
+                        if (Convert.ToInt32(item.Cells[6].Value) == 0)
+                        {
+                            MessageBox.Show("잔여수량이 존재하지않아 작업계획을 할 수 없습니다.");
+                            return;
+                        }
+                    }
+                    CreateWorkOrder popUp = new CreateWorkOrder(processName, dgvProductRequset.SelectedRows[0].Cells[1].Value.ToString());
+                    popUp.ShowDialog();
+                }               
+            }
+            frm.btnS.PerformClick();
+        }
+
+        private void btnPo_Click(object sender, EventArgs e)
+        {
+            ShowDialog("포장");
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

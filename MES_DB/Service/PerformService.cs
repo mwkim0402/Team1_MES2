@@ -10,15 +10,15 @@ namespace MES_DB
 {
     public class PerformService
     {
-        public List<WorkdiligenceStatusanalysisVO> GetAllWorkStatus()
+        public List<WorkdiligenceStatusanalysisVO> GetAllWorkStatus(DateTime Start, DateTime End)
         {
             PerformDAC dac = new PerformDAC();
-            return dac.AllWorkStatuseList();
+            return dac.AllWorkStatuseList(Start, End);
         }
-        public List<PerformSearchVO> GetAllPerformSearch()
+        public List<PerformSearchVO> GetAllPerformSearch(DateTime Start, DateTime End)
         {
             PerformDAC dac = new PerformDAC();
-            return dac.GetAllPerformSearch();
+            return dac.GetAllPerformSearch(Start, End);
         }
         public List<GVMonitoringVO> GetAllMonitoring()
         {
@@ -29,6 +29,39 @@ namespace MES_DB
         {
             PerformDAC dac = new PerformDAC();
             return dac.GetAllMaterial();
+        }
+        public List<RegFaultyVO> GetAllRegFaultyImage(DateTime start, DateTime end)
+        {
+            PerformDAC dac = new PerformDAC();
+            return dac.GetAllRegFaultyImage(start, end);
+        }
+        public void InsFaltyImage(string fileName, string filePath, string WorkOderNo,int faultyNum)
+        {
+            PerformDAC dac = new PerformDAC();
+            dac.InsFaltyImage(fileName, filePath, WorkOderNo,faultyNum);
+        }
+
+        public List<QualityVO> GetAllQuality(DateTime start,DateTime end)
+        {
+            PerformDAC dac = new PerformDAC();
+            return dac.GetAllQuality(start,end);
+        }
+
+        public List<RegProcessVO> GetAllRegProcess(DateTime start,DateTime end)
+        {
+            PerformDAC dac = new PerformDAC();
+            return dac.GetAllRegProcess(start,end);
+        }
+
+        public void EditPerformSearch(PerformSearchVO edit)
+        {
+            PerformDAC dac = new PerformDAC();
+            dac.EditPerformSearch(edit);
+        }
+        public List<ProductListVO> GetProductListform(DateTime Start, DateTime End)
+        {
+            PerformDAC dac = new PerformDAC();
+            return dac.GetProductListform(Start,End);
         }
     }
 }

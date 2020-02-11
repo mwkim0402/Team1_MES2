@@ -1,6 +1,6 @@
 ﻿namespace AdminForm
 {
-    partial class PackingWorkReport: WorkReportParent
+    partial class PackingWorkReport: documentViewer
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PackingWorkReport
@@ -35,13 +38,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 604);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "PackingWorkReport";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.Text = "PackingWorkReport";
+            this.Activated += new System.EventHandler(this.PackingWorkReport_Activated);
+            this.Deactivate += new System.EventHandler(this.PackingWorkReport_Deactivate);
+            this.Load += new System.EventHandler(this.PackingWorkReport_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

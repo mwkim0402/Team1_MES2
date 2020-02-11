@@ -19,6 +19,6 @@ namespace MES_DB
          public int Mold_Prd_Qty   {get;set;}
          public DateTime  Use_Starttime  {get;set;}
          public DateTime Use_Endtime    {get;set;}
-         public DateTime UsingTime { get; set; }
+         public int UsingTime { get; set; }
     }
 }

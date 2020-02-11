@@ -6,6 +6,19 @@ using System.Threading.Tasks;
 
 namespace MES_DB
 {
+    public class ProductListVO
+    {
+        public DateTime Prd_Date { get; set; }
+        public string Item_Code { get; set; }
+        public string Item_Name { get; set; }
+        public string Pallet_No { get; set; }
+        public int In_Qty { get; set; }
+        public DateTime Closed_Time { get; set; }
+        public DateTime Cancel_Time { get; set; }
+        public string Upload_Flag { get; set; }
+        public string Workorderno { get; set; }
+        public string Wo_Status { get; set; }
+    }
     public class PerformSearchVO
     {
         public string Wo_Status { get; set; }
@@ -39,5 +52,37 @@ namespace MES_DB
         public string Level_Name { get; set; }
         public int Prd_Order { get; set; }
         public string Mat_LotNo { get; set; }
+    }
+
+    public class RegFaultyVO
+    {
+        public string Wo_Status { get; set; }
+        public string Workorderno { get; set; }
+        public string Wc_Name { get; set; }
+        public DateTime Plan_Date { get; set; }
+        public int Prd_Qty { get; set; }
+        public string Item_Code { get; set; }
+        public string Item_Name { get; set; }
+        public string Def_Ma_Code { get; set; }
+        public string Def_Mi_Code { get; set; }
+        public DateTime Def_Date { get; set; }
+        public int Def_Qty { get; set; }
+        public string Def_Image_Name { get; set; }
+        public string Process_name { get; set;}
+        public int workImageCount { get; set; }
+        public string Def_Image_Path { get; set; }
+    }
+
+    public class RegFaultyVODetail
+    {
+        public string Workorderno { get; set; }
+        public string Item_Code { get; set; }
+        public string Item_Name { get; set; }
+        public string Def_Ma_Code { get; set; }
+        public string Def_Mi_Code { get; set; }
+        public DateTime Def_Date { get; set; }
+        public int Def_Qty { get; set; }
+        public string Def_Image_Name { get; set; }
+        public string Def_Image_Path { get; set; }
     }
 }

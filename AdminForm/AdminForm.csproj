@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,17 +48,39 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -69,6 +106,60 @@
     </Compile>
     <Compile Include="FIndCategory.Designer.cs">
       <DependentUpon>FIndCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWaitForm.Designer.cs">
+      <DependentUpon>FrmWaitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder\CreateWorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder\CreateWorkOrder.Designer.cs">
+      <DependentUpon>CreateWorkOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder\WorkCenterSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder\WorkCenterSchedule.Designer.cs">
+      <DependentUpon>WorkCenterSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder\WorkOrderUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder\WorkOrderUpdate.Designer.cs">
+      <DependentUpon>WorkOrderUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Journal\LoadingReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Journal\LoadingReport.Designer.cs">
+      <DependentUpon>LoadingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Journal\MoldingReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Journal\MoldingReport.Designer.cs">
+      <DependentUpon>MoldingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Journal\FiringReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Journal\FiringReport.Designer.cs">
+      <DependentUpon>FiringReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Journal\PackingReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Journal\PackingReport.Designer.cs">
+      <DependentUpon>PackingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main\MainForm.cs">
       <SubType>Form</SubType>
@@ -118,17 +209,17 @@
     <Compile Include="Journal\FiringWorkReport .Designer.cs">
       <DependentUpon>FiringWorkReport .cs</DependentUpon>
     </Compile>
-    <Compile Include="Journal\SelectionPackingWorkReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Journal\SelectionPackingWorkReport.Designer.cs">
-      <DependentUpon>SelectionPackingWorkReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="Journal\PackingWorkReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Journal\PackingWorkReport.Designer.cs">
       <DependentUpon>PackingWorkReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentForm\documentViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParentForm\documentViewer.Designer.cs">
+      <DependentUpon>documentViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="ParentForm\WorkReportParent.cs">
       <SubType>Form</SubType>
@@ -165,6 +256,12 @@
     </Compile>
     <Compile Include="PerformManagement\PerformSearch.Designer.cs">
       <DependentUpon>PerformSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerformManagement\PerformSearchEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerformManagement\PerformSearchEdit.Designer.cs">
+      <DependentUpon>PerformSearchEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="PerformManagement\ProductList.cs">
       <SubType>Form</SubType>
@@ -227,6 +324,12 @@
     </Compile>
     <Compile Include="qulityManagement\RegQuality.Designer.cs">
       <DependentUpon>RegQuality.cs</DependentUpon>
+    </Compile>
+    <Compile Include="qulityManagement\ViewFaultyImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qulityManagement\ViewFaultyImage.Designer.cs">
+      <DependentUpon>ViewFaultyImage.cs</DependentUpon>
     </Compile>
     <Compile Include="Service\PerformService\PerformService.cs" />
     <Compile Include="Service\SystemService\MenuService.cs" />
@@ -405,11 +508,44 @@
     <Compile Include="System\UserGroupPowerSetting.Designer.cs">
       <DependentUpon>UserGroupPowerSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserCalendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCalendar.Designer.cs">
+      <DependentUpon>UserCalendar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CategorySearch.resx">
       <DependentUpon>CategorySearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FIndCategory.resx">
       <DependentUpon>FIndCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWaitForm.resx">
+      <DependentUpon>FrmWaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder\CreateWorkOrder.resx">
+      <DependentUpon>CreateWorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder\WorkCenterSchedule.resx">
+      <DependentUpon>WorkCenterSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder\WorkOrderUpdate.resx">
+      <DependentUpon>WorkOrderUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Journal\LoadingReport.resx">
+      <DependentUpon>LoadingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Journal\MoldingReport.resx">
+      <DependentUpon>MoldingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Journal\FiringReport.resx">
+      <DependentUpon>FiringReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Journal\PackingReport.resx">
+      <DependentUpon>PackingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -432,11 +568,11 @@
     <EmbeddedResource Include="Journal\FiringWorkReport .resx">
       <DependentUpon>FiringWorkReport .cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Journal\SelectionPackingWorkReport.resx">
-      <DependentUpon>SelectionPackingWorkReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Journal\PackingWorkReport.resx">
       <DependentUpon>PackingWorkReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParentForm\documentViewer.resx">
+      <DependentUpon>documentViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParentForm\WorkReportParent.resx">
       <DependentUpon>WorkReportParent.cs</DependentUpon>
@@ -456,6 +592,9 @@
     <EmbeddedResource Include="PerformManagement\PerformSearch.resx">
       <DependentUpon>PerformSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PerformManagement\PerformSearchEdit.resx">
+      <DependentUpon>PerformSearchEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PerformManagement\ProductList.resx">
       <DependentUpon>ProductList.cs</DependentUpon>
     </EmbeddedResource>
@@ -468,6 +607,7 @@
     <EmbeddedResource Include="PerformManagement\WorkdiligenceStatusanalysis.resx">
       <DependentUpon>WorkdiligenceStatusanalysis.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -495,6 +635,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="qulityManagement\RegQuality.resx">
       <DependentUpon>RegQuality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qulityManagement\ViewFaultyImage.resx">
+      <DependentUpon>ViewFaultyImage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StandardInfo\EtherIOChannelSet.resx">
       <DependentUpon>EtherIOChannelSet.cs</DependentUpon>
@@ -583,6 +726,12 @@
     <EmbeddedResource Include="System\UserGroupPowerSetting.resx">
       <DependentUpon>UserGroupPowerSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserCalendar.resx">
+      <DependentUpon>UserCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -599,6 +748,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\image\teamlogo.png" />
+    <None Include="bin\Debug\image\Reading_16x16.png" />
+    <None Include="bin\Debug\image\Action_Save_New_32x32.png" />
+    <None Include="bin\Debug\image\btn.png" />
+    <None Include="bin\Debug\image\icons8-collapse-arrow-32.png" />
+    <None Include="bin\Debug\image\icons8-expand-arrow-32.png" />
+    <None Include="bin\Debug\image\Loading.gif" />
+    <None Include="bin\Debug\image\teamlogotest.png" />
+    <None Include="bin\Debug\image\logotest.PNG" />
     <Content Include="image\Action_Save_New_32x32.png" />
     <Content Include="image\bookmark.png" />
     <Content Include="image\btn.png" />
@@ -614,18 +771,34 @@
     <Content Include="image\구디로고.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FieldOperationForm\FieldOperationForm.csproj">
+      <Project>{845F5B3F-2317-4332-A594-1EB7001BBD01}</Project>
+      <Name>FieldOperationForm</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MES_API\MES_API.csproj">
       <Project>{d6db38a5-69c8-4604-9d39-4f6168113965}</Project>
       <Name>MES_API</Name>
     </ProjectReference>
     <ProjectReference Include="..\MES_DB\MES_DB.csproj">
-      <Project>{c5a0dac0-fd93-4179-9471-da3fa7b21737}</Project>
+      <Project>{C5A0DAC0-FD93-4179-9471-DA3FA7B21737}</Project>
       <Name>MES_DB</Name>
     </ProjectReference>
     <ProjectReference Include="..\MES_DTO\MES_DTO.csproj">
       <Project>{92324320-e0a8-43d3-803e-73e445f281c3}</Project>
       <Name>MES_DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

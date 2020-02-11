@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MES_DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace AdminForm
 {
     public partial class UserGroupPowerSetting : dgvOne
     {
+        List<UserGroupPowerSettingVO> allList;
+        MainForm frm;
         public UserGroupPowerSetting()
         {
             InitializeComponent();
@@ -19,19 +22,44 @@ namespace AdminForm
 
         private void UserGroupPowerSetting_Load(object sender, EventArgs e)
         {
+            frm = (MainForm)this.MdiParent;
             ShowDgv();
         }
 
+
         private void ShowDgv()
         {
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "메뉴 코드", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "화면명", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "모듈권한", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "조회권한", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "추가권한", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "편집권한", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "삭제권한", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "전체권한", "1", true, 100);
+            dgvSearchResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 명", "User_ID", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "화면명", "Screen_Code", true, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "권한", "Pre_Type", true, 120);
+        }
+
+        private void UserGroupPowerSetting_Activated(object sender, EventArgs e)
+        {
+            frm.Search_Click += new System.EventHandler(this.GetData);
+            ToolStripManager.Merge(toolStrip1, frm.ToolStrip);
+        }
+
+        private void UserGroupPowerSetting_Deactivate(object sender, EventArgs e)
+        {
+            frm.Search_Click -= new System.EventHandler(this.GetData);
+            ToolStripManager.RevertMerge(frm.ToolStrip);
+        }
+
+        private void GetData(object sender, EventArgs e)
+        {
+            MES_DB.UserService service = new MES_DB.UserService();
+            allList = service.GetAllUserGroupPowerSettingForm();
+            dgvSearchResult.DataSource = allList;
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            List<UserGroupPowerSettingVO> list = (from item in allList
+                                                  
+                                                  select item).ToList();
+            dgvSearchResult.DataSource = list;
         }
     }
 }

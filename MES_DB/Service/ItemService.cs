@@ -29,5 +29,16 @@ namespace MES_DB
             ItemDAC dac = new ItemDAC();
             return dac.InsertItemIfno(vo);
         }
+
+        public bool DeleteItemInfo(string id)
+        {
+            ItemDAC dac = new ItemDAC();
+            return dac.DeleteItemInfo(id);
+        }
+        public List<ItemUPH> ItemUph(string itemName)
+        {
+            ItemDAC dac = new ItemDAC();
+            return dac.ItemUph(itemName);
+        }
     }
 }

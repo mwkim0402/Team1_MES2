@@ -1,8 +1,10 @@
-﻿using MES_DB;
+﻿using FieldOperationForm;
+using MES_DB;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -21,6 +23,7 @@ namespace AdminForm
         bool open = false;
         List<MenuTreeVo> menuList;
 
+        public ToolStrip ToolStrip { get { return toolStrip1; } set { toolStrip1 = value; } }
         public MainForm()
         {
             InitializeComponent();
@@ -32,13 +35,16 @@ namespace AdminForm
             // Add the Handler to draw the Image on Tab Pages
             tabControl2.DrawItem += tabControl4_DrawItem;
         }
+
+
+
         private async void MainForm_Load(object sender, EventArgs e)
         {
             SetButtonImage();
             MenuService service = new MenuService();
             menuList = await service.GetListAsync("GetAllMenu", new List<MenuTreeVo>());
-            
-            
+
+
             trvMenu.Visible = false;
             trvBookMark.Visible = false;
             trvBookMark.Location = new Point(0, 10);
@@ -127,7 +133,7 @@ namespace AdminForm
         }
 
         private void CreateMenuTree(string ParentMenu)
-        {         
+        {
             trvMenu.Nodes.Clear();
             trvMenu.ItemHeight = 25;
             List<MenuTreeVo> childMenu = (from item in menuList
@@ -138,10 +144,10 @@ namespace AdminForm
             trvMenu.Nodes.Add(ParentMenu);
             trvMenu.Nodes[0].ImageIndex = 0;
             foreach (MenuTreeVo item in childMenu)
-            {                                
-                trvMenu.Nodes[0].Nodes.Add(item.Screen_Code.Trim());            
+            {
+                trvMenu.Nodes[0].Nodes.Add(item.Screen_Code.Trim());
             }
-            for(int i =0; i<trvMenu.Nodes[0].Nodes.Count; i++)
+            for (int i = 0; i < trvMenu.Nodes[0].Nodes.Count; i++)
             {
                 trvMenu.Nodes[0].Nodes[i].ImageIndex = 1;
                 trvMenu.Nodes[0].Nodes[i].SelectedImageIndex = 1;
@@ -151,12 +157,12 @@ namespace AdminForm
 
         private void SetButtonImage()
         {
-            btnS.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\조회 32x32.jpg");
+            lblLogo.Image = new Bitmap(Application.StartupPath + @"\image\teamlogotest.png");
+            btnS.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Search.ico");
             btnCreate.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Report2_32x32.png");
             btnSave.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Action_Save_New_32x32.png");
             btnEdit.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Edit_32x32.png");
             btnDelete.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\DeleteList_32x32.png");
-            btnSearch.Image = new Bitmap(Application.StartupPath + @"\image\searchBtn.png");
             pictureBox1.Image = new Bitmap(Application.StartupPath + @"\image\mark.jpg");
             ImageList imgList = new ImageList();
             imgList.Images.Add(new Bitmap(Application.StartupPath + @"\image\doc_icon.png"));
@@ -207,7 +213,7 @@ namespace AdminForm
             Rectangle r = this.tabControl2.GetTabRect(tc.SelectedIndex);
             r.Offset(_tabWidth, _imgHitArea.Y);
             r.Width = 16;
-            r.Height = 16;            
+            r.Height = 16;
             if (r.Contains(p))
             {
                 Form tempChild = this.ActiveMdiChild;
@@ -229,7 +235,7 @@ namespace AdminForm
         private void trvBookMark_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             TreeView trv = (TreeView)sender;
-            if (trv.SelectedNode == null || trv.SelectedNode.Text=="즐겨찾기")
+            if (trv.SelectedNode == null || trv.SelectedNode.Text == "즐겨찾기")
             {
                 return;
             }
@@ -261,12 +267,12 @@ namespace AdminForm
                 string nameSpace = "AdminForm"; //네임스페이스 명
                 Assembly cuasm = Assembly.GetExecutingAssembly();
                 //string Format 의 따옴표와 마침표 주의!!
-                
+
                 Form frm = (Form)cuasm.CreateInstance(string.Format("{0}.{1}", nameSpace, formName));
                 tabControl2.TabPages.Add(Form_Code);
                 //tabControl2.TabPages[tabControl2.TabPages.Count - 1].Controls.Add(frm);
                 tabControl2.SelectedTab = tabControl2.TabPages[tabControl2.TabPages.Count - 1];
-                frm.MdiParent = this;              
+                frm.MdiParent = this;
                 frm.Dock = DockStyle.Fill;
                 frm.Show();
             }
@@ -306,7 +312,7 @@ namespace AdminForm
                 trvBookMark.Nodes[0].Nodes.Add("소성작업일지");
                 trvBookMark.Nodes[0].Nodes.Add("완제품 입고리스트");
 
-                for(int i=0; i<trvBookMark.Nodes[0].Nodes.Count; i++)
+                for (int i = 0; i < trvBookMark.Nodes[0].Nodes.Count; i++)
                 {
                     trvBookMark.Nodes[0].Nodes[i].ImageIndex = 1;
                     trvBookMark.Nodes[0].Nodes[i].SelectedImageIndex = 1;
@@ -332,17 +338,17 @@ namespace AdminForm
 
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TabControl tc = (TabControl)sender;            
+            TabControl tc = (TabControl)sender;
             if (tc.SelectedTab == null)
             {
                 lblLocation.Text = "";
                 return;
-            }            
+            }
             MenuTreeVo selectMenu = menuList.Find(x => x.Screen_Code.Contains(tc.SelectedTab.Text));
-            foreach(Form frm in this.MdiChildren)
+            foreach (Form frm in this.MdiChildren)
             {
                 if (frm.Name == selectMenu.Form_Name)
-                {                  
+                {
                     frm.Activate();
                 }
             }
@@ -365,11 +371,11 @@ namespace AdminForm
             foreach (TabPage tabPage in tabControl2.TabPages)
             {
                 if (tabPage.Text.Trim() != tabControl2.SelectedTab.Text.Trim())
-                    tabControl2.TabPages.Remove(tabPage);                
+                    tabControl2.TabPages.Remove(tabPage);
             }
             foreach (Form frm in this.MdiChildren)
             {
-                if(frm != this.ActiveMdiChild)
+                if (frm != this.ActiveMdiChild)
                 {
                     frm.Close();
                 }
@@ -379,7 +385,7 @@ namespace AdminForm
         // 탭컨트롤 헤드내에서만 ContextMenuStrip 사용가능
         private void tabControl2_MouseUp(object sender, MouseEventArgs e)
         {
-            if(e.Button == System.Windows.Forms.MouseButtons.Right)
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
                 for (int i = 0; i < tabControl2.TabCount; i++)
                 {
@@ -390,7 +396,7 @@ namespace AdminForm
                         break;
                     }
                 }
-                
+
             }
         }
 
@@ -412,6 +418,80 @@ namespace AdminForm
         {
             if (this.Delete_Click != null)
                 Delete_Click(this, null);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAlert_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = CreateGraphics();
+            LinearGradientBrush lgb = new LinearGradientBrush(new Rectangle(0, 0, panel3.Width, panel3.Height), Color.Black, Color.Black, LinearGradientMode.Horizontal);
+            ColorBlend cb = new ColorBlend();
+            cb.Colors = new Color[] { Color.White, Color.Gray };
+            cb.Positions = new Single[] { 0.0F, 1.0F };
+            lgb.InterpolationColors = cb;
+
+            e.Graphics.FillRectangle(lgb, new Rectangle(0, 0, panel3.Width, panel3.Height));
+        }
+
+        private void panel3_Resize(object sender, EventArgs e)
+        {
+            panel3.Invalidate();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            //LoginForm 열어서 로그인 하고 아이디 값 , 이름 값 받아서 Global 클래스에 값 넣기
+            LoginForm frm = new LoginForm();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("로그인 되었습니다.");
+                lblName.Text = Global.User_Name + "님 안녕하세요.";
+                Userauthority();
+            }
+        }
+        private void Userauthority()
+        {
+            // 메인 화면에서 유저아이디 체크 후 권한 확인하고 버튼 수정
+
+            LoginService service = new LoginService();
+            LoginVO userVO = new LoginVO();
+            userVO.User_ID = Global.User_ID;
+            userVO.Screen_Code = "메인";
+            List<LoginVO> list = service.LoginAuthority(userVO);
+
+            
+
+            // 추가,조회,삭제,수정 부분중에 메인 폼에는 조회와 삭제만 있어서 조회,삭제 버튼만 제어
+            if (list.Count > 0)
+            {
+                // list[0].Pre_Type = "추가,조회,수정,삭제"  --> 이런식으로 값을 가져온다
+                string[] Authority = list[0].Pre_Type.Split(',');
+                for (int i = 0; i < Authority.Length; i++)
+                {
+                    if (Authority[i] == "조회")
+                    {
+                        btnDelete.Enabled = false;
+                    }
+                    else if (Authority[i] == "삭제")
+                    {
+                        btnDelete.Enabled = true;
+                    }
+                }
+            }
         }
     }
 }

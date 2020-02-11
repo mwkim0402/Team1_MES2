@@ -14,43 +14,29 @@ namespace AdminForm
     public partial class ProductList : dgvOne
     {
         MainForm frm;
-        
-        List<ProductListVO> list; //AllList
+        DateTime StartDate;
+        DateTime EndDate;
+        List<MES_DB.ProductListVO> allList; //AllList
+
+
         public ProductList()
         {
             InitializeComponent();
         }
 
-        string StartDate;
-        string EndDate;
-        
-
         private void ProductList_Load(object sender, EventArgs e)
         {
             ShowDgv();
             frm = (MainForm)this.MdiParent;
+            StartDate = dtpStart.Value;
+            EndDate = dtpEnd.Value;
         }
 
-        // 상세조회
-        private async Task GetValue()
+        private void GetAllList(object sender, EventArgs e)
         {
-            PerformService service = new PerformService();
-            FIndCategory fnd = new FIndCategory();
-            
-
-            // AllList 에서 조회해서 데이터 그리드뷰에 넣는 부분
-            List<ProductListVO> list2 = (from item in list
-                                         where item.Prd_Date >= Convert.ToDateTime(StartDate.Substring(0, 10)) && item.Prd_Date <= Convert.ToDateTime(EndDate.Substring(0, 10))
-                                          && item.Item_Name == fcCategory.SendName
-                                         select item).ToList();
-            dgvSearchResult.DataSource = list2;
-        }
-
-        private async Task GetAllList()
-        {
-            PerformService service = new PerformService();
-            list = await service.GetsListAsync<List<ProductListVO>>("ProductList", new List<ProductListVO>());
-            dgvSearchResult.DataSource = list;
+            MES_DB.PerformService service = new MES_DB.PerformService();
+            allList = service.GetProductListform(StartDate, EndDate);
+            dgvSearchResult.DataSource = allList;
         }
 
         private void ShowDgv()
@@ -69,31 +55,36 @@ namespace AdminForm
 
         private void dtpStart_ValueChanged(object sender, EventArgs e)
         {
-            StartDate = dtpStart.Value.ToString();
+            StartDate = dtpStart.Value;
         }
         private void dtpEnd_ValueChanged(object sender, EventArgs e)
         {
-            EndDate = dtpEnd.Value.ToString();
+            EndDate = dtpEnd.Value;
         }
         
-
-        //private async void button1_Click(object sender, EventArgs e)
-        //{
-        //    await GetValue();
-        //}
-        public async void Search_Click(object sender, EventArgs e)
+        private void ProductList_ActivatedAsync(object sender, EventArgs e)
         {
-            await GetAllList();
-        }
-
-        private void ProductList_Activated(object sender, EventArgs e)
-        {
-            frm.Search_Click += new System.EventHandler(this.Search_Click);
+            frm.Search_Click += new System.EventHandler(this.GetAllList);
+            ToolStripManager.Merge(toolStrip1, frm.ToolStrip);
         }
 
         private void ProductList_Deactivate(object sender, EventArgs e)
         {
-            frm.Search_Click -= new System.EventHandler(this.Search_Click);
+            frm.Search_Click -= new System.EventHandler(this.GetAllList);
+            ToolStripManager.RevertMerge(frm.ToolStrip);
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            frm.lblAlert.Text = "";
+            // AllList 에서 조회해서 데이터 그리드뷰에 넣는 부분
+            List<MES_DB.ProductListVO> list = (from item in allList
+                                        where item.Item_Name == fcCategory.SendName
+                                        select item).ToList();
+            if (list.Count > 0)
+                dgvSearchResult.DataSource = list;
+            
+                
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserGroupManger));
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtUserCode = new System.Windows.Forms.TextBox();
@@ -41,21 +42,47 @@
             this.gbUsable = new System.Windows.Forms.GroupBox();
             this.rbUse_Use = new System.Windows.Forms.RadioButton();
             this.rbNoUse_Use = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbUse_EditUse = new System.Windows.Forms.RadioButton();
+            this.rbUse_EditNoUse = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtEditUserGroupCode = new System.Windows.Forms.TextBox();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.txtEditUserGroupName = new System.Windows.Forms.TextBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tcParent1.SuspendLayout();
-            this.pnlParent1.SuspendLayout();
             this.tcParent2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.pnlParent1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbUsable.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 38);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tabPage4.Size = new System.Drawing.Size(99, 0);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             // 
             // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txtEditUserGroupCode);
+            this.panel1.Controls.Add(this.btnEdit);
+            this.panel1.Controls.Add(this.txtEditUserGroupName);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            // 
+            // pnlParent1
             // 
             this.pnlParent1.Controls.Add(this.gbUsable);
             this.pnlParent1.Controls.Add(this.label23);
@@ -63,13 +90,8 @@
             this.pnlParent1.Controls.Add(this.txtUserNameInput);
             this.pnlParent1.Controls.Add(this.btnSave);
             this.pnlParent1.Controls.Add(this.txtUserCodeInput);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 38);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tabPage2.Size = new System.Drawing.Size(99, 0);
+            this.pnlParent1.Location = new System.Drawing.Point(3, 4);
+            this.pnlParent1.Size = new System.Drawing.Size(1118, 91);
             // 
             // panel2
             // 
@@ -80,35 +102,32 @@
             this.panel2.Controls.Add(this.txtUserCode);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(18, 15);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Location = new System.Drawing.Point(16, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1289, 84);
+            this.panel2.Size = new System.Drawing.Size(1128, 67);
             this.panel2.TabIndex = 4;
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(569, 30);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUserName.Location = new System.Drawing.Point(498, 24);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(173, 25);
+            this.txtUserName.Size = new System.Drawing.Size(152, 21);
             this.txtUserName.TabIndex = 6;
             // 
             // txtUserCode
             // 
-            this.txtUserCode.Location = new System.Drawing.Point(177, 30);
-            this.txtUserCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUserCode.Location = new System.Drawing.Point(155, 24);
             this.txtUserCode.Name = "txtUserCode";
-            this.txtUserCode.Size = new System.Drawing.Size(173, 25);
+            this.txtUserCode.Size = new System.Drawing.Size(152, 21);
             this.txtUserCode.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(400, 32);
+            this.label3.Location = new System.Drawing.Point(350, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 20);
+            this.label3.Size = new System.Drawing.Size(109, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "사용자 그룹명";
             // 
@@ -116,9 +135,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(33, 32);
+            this.label1.Location = new System.Drawing.Point(29, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 20);
+            this.label1.Size = new System.Drawing.Size(120, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "사용자그룹코드";
             // 
@@ -126,28 +145,26 @@
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(1183, 25);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Location = new System.Drawing.Point(997, 26);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(94, 60);
+            this.btnSave.Size = new System.Drawing.Size(82, 48);
             this.btnSave.TabIndex = 56;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtUserCodeInput
             // 
-            this.txtUserCodeInput.Location = new System.Drawing.Point(483, 22);
-            this.txtUserCodeInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUserCodeInput.Location = new System.Drawing.Point(422, 18);
             this.txtUserCodeInput.Name = "txtUserCodeInput";
-            this.txtUserCodeInput.Size = new System.Drawing.Size(143, 25);
+            this.txtUserCodeInput.Size = new System.Drawing.Size(126, 30);
             this.txtUserCodeInput.TabIndex = 53;
             // 
             // txtUserNameInput
             // 
-            this.txtUserNameInput.Location = new System.Drawing.Point(176, 24);
-            this.txtUserNameInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUserNameInput.Location = new System.Drawing.Point(153, 19);
             this.txtUserNameInput.Name = "txtUserNameInput";
-            this.txtUserNameInput.Size = new System.Drawing.Size(143, 25);
+            this.txtUserNameInput.Size = new System.Drawing.Size(126, 30);
             this.txtUserNameInput.TabIndex = 52;
             // 
             // label21
@@ -155,9 +172,9 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label21.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label21.Location = new System.Drawing.Point(351, 26);
+            this.label21.Location = new System.Drawing.Point(297, 26);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(136, 20);
+            this.label21.Size = new System.Drawing.Size(109, 16);
             this.label21.TabIndex = 50;
             this.label21.Text = "사용자 그룹명";
             // 
@@ -166,22 +183,21 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label23.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label23.Location = new System.Drawing.Point(22, 25);
+            this.label23.Location = new System.Drawing.Point(24, 27);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(149, 20);
+            this.label23.Size = new System.Drawing.Size(120, 16);
             this.label23.TabIndex = 49;
             this.label23.Text = "사용자그룹코드";
             // 
             // gbUsable
             // 
+            this.gbUsable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gbUsable.Controls.Add(this.rbUse_Use);
             this.gbUsable.Controls.Add(this.rbNoUse_Use);
             this.gbUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.gbUsable.Location = new System.Drawing.Point(915, 12);
-            this.gbUsable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbUsable.Location = new System.Drawing.Point(755, 18);
             this.gbUsable.Name = "gbUsable";
-            this.gbUsable.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbUsable.Size = new System.Drawing.Size(229, 80);
+            this.gbUsable.Size = new System.Drawing.Size(200, 64);
             this.gbUsable.TabIndex = 89;
             this.gbUsable.TabStop = false;
             this.gbUsable.Text = "사용여부";
@@ -190,10 +206,9 @@
             // 
             this.rbUse_Use.AutoSize = true;
             this.rbUse_Use.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.rbUse_Use.Location = new System.Drawing.Point(49, 35);
-            this.rbUse_Use.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rbUse_Use.Location = new System.Drawing.Point(43, 28);
             this.rbUse_Use.Name = "rbUse_Use";
-            this.rbUse_Use.Size = new System.Drawing.Size(50, 24);
+            this.rbUse_Use.Size = new System.Drawing.Size(42, 20);
             this.rbUse_Use.TabIndex = 77;
             this.rbUse_Use.TabStop = true;
             this.rbUse_Use.Text = "유";
@@ -203,43 +218,162 @@
             // 
             this.rbNoUse_Use.AutoSize = true;
             this.rbNoUse_Use.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.rbNoUse_Use.Location = new System.Drawing.Point(127, 35);
-            this.rbNoUse_Use.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rbNoUse_Use.Location = new System.Drawing.Point(111, 28);
             this.rbNoUse_Use.Name = "rbNoUse_Use";
-            this.rbNoUse_Use.Size = new System.Drawing.Size(50, 24);
+            this.rbNoUse_Use.Size = new System.Drawing.Size(42, 20);
             this.rbNoUse_Use.TabIndex = 79;
             this.rbNoUse_Use.TabStop = true;
             this.rbNoUse_Use.Text = "무";
             this.rbNoUse_Use.UseVisualStyleBackColor = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.rbUse_EditUse);
+            this.groupBox1.Controls.Add(this.rbUse_EditNoUse);
+            this.groupBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox1.Location = new System.Drawing.Point(758, 22);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 64);
+            this.groupBox1.TabIndex = 95;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "사용여부";
+            // 
+            // rbUse_EditUse
+            // 
+            this.rbUse_EditUse.AutoSize = true;
+            this.rbUse_EditUse.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_EditUse.Location = new System.Drawing.Point(43, 28);
+            this.rbUse_EditUse.Name = "rbUse_EditUse";
+            this.rbUse_EditUse.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_EditUse.TabIndex = 77;
+            this.rbUse_EditUse.TabStop = true;
+            this.rbUse_EditUse.Text = "유";
+            this.rbUse_EditUse.UseVisualStyleBackColor = false;
+            // 
+            // rbUse_EditNoUse
+            // 
+            this.rbUse_EditNoUse.AutoSize = true;
+            this.rbUse_EditNoUse.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_EditNoUse.Location = new System.Drawing.Point(111, 28);
+            this.rbUse_EditNoUse.Name = "rbUse_EditNoUse";
+            this.rbUse_EditNoUse.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_EditNoUse.TabIndex = 79;
+            this.rbUse_EditNoUse.TabStop = true;
+            this.rbUse_EditNoUse.Text = "무";
+            this.rbUse_EditNoUse.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(27, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 16);
+            this.label2.TabIndex = 90;
+            this.label2.Text = "사용자그룹코드";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(300, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 16);
+            this.label4.TabIndex = 91;
+            this.label4.Text = "사용자 그룹명";
+            // 
+            // txtEditUserGroupCode
+            // 
+            this.txtEditUserGroupCode.Location = new System.Drawing.Point(156, 23);
+            this.txtEditUserGroupCode.Name = "txtEditUserGroupCode";
+            this.txtEditUserGroupCode.Size = new System.Drawing.Size(126, 30);
+            this.txtEditUserGroupCode.TabIndex = 92;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnEdit.Location = new System.Drawing.Point(1000, 30);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(82, 48);
+            this.btnEdit.TabIndex = 94;
+            this.btnEdit.Text = "수정";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // txtEditUserGroupName
+            // 
+            this.txtEditUserGroupName.Location = new System.Drawing.Point(425, 22);
+            this.txtEditUserGroupName.Name = "txtEditUserGroupName";
+            this.txtEditUserGroupName.Size = new System.Drawing.Size(126, 30);
+            this.txtEditUserGroupName.TabIndex = 93;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1156, 63);
+            this.toolStrip1.TabIndex = 10;
+            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.Visible = false;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(60, 60);
+            this.toolStripButton1.Text = "조건검색";
+            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // UserGroupManger
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1321, 755);
+            this.ClientSize = new System.Drawing.Size(1156, 604);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UserGroupManger";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "UserGroupManger";
+            this.Activated += new System.EventHandler(this.UserGroupManger_Activated);
+            this.Deactivate += new System.EventHandler(this.UserGroupManger_Deactivate);
             this.Load += new System.EventHandler(this.UserGroupManger_Load);
             this.Controls.SetChildIndex(this.tcParent1, 0);
             this.Controls.SetChildIndex(this.tcParent2, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
-           // this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.toolStrip1, 0);
             this.tcParent1.ResumeLayout(false);
+            this.tcParent2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.pnlParent1.ResumeLayout(false);
             this.pnlParent1.PerformLayout();
-            this.tcParent2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.gbUsable.ResumeLayout(false);
             this.gbUsable.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -257,5 +391,15 @@
         private System.Windows.Forms.GroupBox gbUsable;
         private System.Windows.Forms.RadioButton rbUse_Use;
         private System.Windows.Forms.RadioButton rbNoUse_Use;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbUse_EditUse;
+        private System.Windows.Forms.RadioButton rbUse_EditNoUse;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtEditUserGroupCode;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.TextBox txtEditUserGroupName;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

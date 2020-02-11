@@ -76,21 +76,13 @@ namespace MES_DB
                 cmd.Parameters.AddWithValue("@Item_Type", item.Item_Type);
                 cmd.Parameters.AddWithValue("@Item_Spec", item.Item_Spec);
                 cmd.Parameters.AddWithValue("@Item_Unit", item.Item_Unit);
-                cmd.Parameters.AddWithValue("@Level_1", item.Level_1);
-                cmd.Parameters.AddWithValue("@Level_2", item.Level_2);
-                cmd.Parameters.AddWithValue("@Level_3", item.Level_3);
-                cmd.Parameters.AddWithValue("@Level_4", item.Level_4);
-                cmd.Parameters.AddWithValue("@Level_5", item.Level_5);
+                
                 cmd.Parameters.AddWithValue("@Item_Stock", item.Item_Stock);
-                cmd.Parameters.AddWithValue("@PrdQty_Per_Hour", item.PrdQty_Per_Hour);
-                cmd.Parameters.AddWithValue("@PrdQTy_Per_Batch", item.PrdQTy_Per_Batch);
-                cmd.Parameters.AddWithValue("@Cavity", item.Cavity);
-                cmd.Parameters.AddWithValue("@Line_Per_Qty", item.Line_Per_Qty);
-                cmd.Parameters.AddWithValue("@Shot_Per_Qty", item.Shot_Per_Qty);
-                cmd.Parameters.AddWithValue("@Dry_GV_Qty", item.Dry_GV_Qty);
-                cmd.Parameters.AddWithValue("@Heat_GV_Qty", item.Heat_GV_Qty);
+                cmd.Parameters.AddWithValue("@RollingUPH", item.RollingUPH);
+                cmd.Parameters.AddWithValue("@SteelUPH", item.SteelUPH);
+                cmd.Parameters.AddWithValue("@IronUPH", item.IronUPH);
+                cmd.Parameters.AddWithValue("@PackageUPH", item.PackageUPH);
                 cmd.Parameters.AddWithValue("@Remark", item.Remark);
-                cmd.Parameters.AddWithValue("@LotSize",item.LotSize );
                 int Checked = cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
                 if (Checked == 0)
@@ -114,6 +106,37 @@ namespace MES_DB
                 cmd.Connection.Close();
                 return list;
             }
+        }
+        public List<ItemUPH> ItemUph(string itemName)
+        {
+            List<ItemUPH> list;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = @"select RollingUPH, SteelUPH, IronUPH, PackageUPH
+                                                from Item_Master
+                                                where Item_Name = @Item_Name";
+                cmd.Parameters.AddWithValue("@Item_Name", itemName);
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                list = Helper.DataReaderMapToList<ItemUPH>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+        public bool DeleteItemInfo(string id)
+        {
+            int Checekd = 0;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = @"Delete from Item_Master where Item_Code = @Item_Code";
+                cmd.Parameters.AddWithValue("@Item_Code", id);
+                cmd.Connection.Open();
+                Checekd = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();    
+            }
+            return Checekd == 1 ? true : false;
         }
     }
 }

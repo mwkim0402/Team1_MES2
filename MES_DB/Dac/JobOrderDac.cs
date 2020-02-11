@@ -10,6 +10,37 @@ namespace MES_DB
 {
     public class JobOrderDac : ConnectionAccess
     {
+
+        public List<ItemCodeCB> GetItemCodeCombo()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "GetItemCodeCombo";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ItemCodeCB> list = Helper.DataReaderMapToList<ItemCodeCB>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+        public List<WorkPlaceCB> GetWorkPlaceCombo()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "GetWorkPlaceCombo";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkPlaceCB> list = Helper.DataReaderMapToList<WorkPlaceCB>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
         public List<JobOrderCreateVo> JobOrderCreation()
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -30,13 +61,22 @@ namespace MES_DB
         {
             using (SqlCommand cmd = new SqlCommand())
             {
+                
                 cmd.Connection = new SqlConnection(ConnectionString);
                 cmd.CommandText = "JobOrderSearch";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@startdate",start);
                 cmd.Parameters.AddWithValue("@enddate",end);
-                cmd.Parameters.AddWithValue("@procCode", int.Parse(process));
-                cmd.Parameters.AddWithValue("@WC_Name", int.Parse(workplace));
+                if (process == null)
+                    cmd.Parameters.AddWithValue("@procCode", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@procCode", int.Parse(process));
+
+                if (process == null)
+                    cmd.Parameters.AddWithValue("@WC_Name", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@WC_Name", workplace);
+                
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -82,14 +122,14 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "insert into WorkOrder(Plan_Unit,Plan_Qty,Plan_Date,Item_Code,Wc_Code) values (@Plan_Unit,@Plan_Qty,@Plan_Date,@Item_Code,(select Wc_Code from WorkCenter_Master where Wc_Name = @Wc_Name)) where Workorderno = @workorderno";
+                cmd.CommandText = "insert into WorkOrder(Workorderno,Plan_Unit,Plan_Qty,Plan_Date,Item_Code,Wc_Code,Wo_Status) values (@Workorderno,@Plan_Unit,@Plan_Qty,@Plan_Date,@Item_Code,@Wc_Code,'대기')";
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@Workorderno", ins.workorderno);
                 cmd.Parameters.AddWithValue("@Plan_Unit", ins.plan_unit);
                 cmd.Parameters.AddWithValue("@Plan_Qty", ins.plan_qty);
                 cmd.Parameters.AddWithValue("@Plan_Date", ins.plan_date);
                 cmd.Parameters.AddWithValue("@Item_Code", ins.item_code);
-                cmd.Parameters.AddWithValue("@Wc_Name", ins.wc_name);
+                cmd.Parameters.AddWithValue("@Wc_Code", ins.wc_code);
 
 
                 cmd.Connection.Open();
@@ -103,14 +143,14 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "update WorkOrder set Plan_Unit=@Plan_Unit,Plan_Qty=@Plan_Qty,Plan_Date=@Plan_Date,Item_Code=@Item_Code,Wc_Code =(select Wc_Code from WorkCenter_Master where Wc_Name = @Wc_Name)) where Workorderno = @workorderno";
+                cmd.CommandText = "update WorkOrder set Plan_Unit=@Plan_Unit,Plan_Qty=@Plan_Qty,Plan_Date=@Plan_Date,Item_Code=@Item_Code,Wc_Code =@Wc_Code where Workorderno = @Workorderno";
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@Workorderno", ins.workorderno);
                 cmd.Parameters.AddWithValue("@Plan_Unit", ins.plan_unit);
                 cmd.Parameters.AddWithValue("@Plan_Qty", ins.plan_qty);
                 cmd.Parameters.AddWithValue("@Plan_Date", ins.plan_date);
                 cmd.Parameters.AddWithValue("@Item_Code", ins.item_code);
-                cmd.Parameters.AddWithValue("@Wc_Name", ins.wc_name);
+                cmd.Parameters.AddWithValue("@Wc_Code", ins.wc_code);
 
 
                 cmd.Connection.Open();
@@ -174,10 +214,10 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "SearchMoldReq";
+                cmd.CommandText = "SearchMoldingReq";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@startdate", strStart);
-                cmd.Parameters.AddWithValue("@enddate", strEnd);
+                cmd.Parameters.AddWithValue("@DateStart", strStart);
+                cmd.Parameters.AddWithValue("@DateEnd", strEnd);
                 cmd.Parameters.AddWithValue("@OrderNo", orderno);
                 cmd.Parameters.AddWithValue("@Project", project);
 
@@ -189,5 +229,7 @@ namespace MES_DB
                 return list;
             }
         }
+
+       
     }
 }

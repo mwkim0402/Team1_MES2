@@ -46,23 +46,28 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbUsable.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 32);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage4.Size = new System.Drawing.Size(86, 0);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.rbYes);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -73,22 +78,27 @@
             this.panel1.Controls.Add(this.txtPackDetailName);
             this.panel1.Controls.Add(this.txtNote);
             this.panel1.Controls.Add(this.txtPackDetailCode);
+            this.panel1.Location = new System.Drawing.Point(4, 356);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Size = new System.Drawing.Size(837, 84);
+            this.panel1.Size = new System.Drawing.Size(838, 122);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Location = new System.Drawing.Point(6, 324);
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Size = new System.Drawing.Size(86, 0);
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 32);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(76, 0);
+            // 
+            // splitContainer1
+            // 
             // 
             // panel2
             // 
@@ -118,6 +128,8 @@
             this.fcPackLevel.Location = new System.Drawing.Point(121, 20);
             this.fcPackLevel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fcPackLevel.Name = "fcPackLevel";
+            this.fcPackLevel.SendCode = null;
+            this.fcPackLevel.SendName = null;
             this.fcPackLevel.Size = new System.Drawing.Size(190, 27);
             this.fcPackLevel.TabIndex = 17;
             // 
@@ -182,9 +194,9 @@
             this.gbUsable.Controls.Add(this.rbY);
             this.gbUsable.Controls.Add(this.rbN);
             this.gbUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.gbUsable.Location = new System.Drawing.Point(527, 10);
+            this.gbUsable.Location = new System.Drawing.Point(326, 16);
             this.gbUsable.Name = "gbUsable";
-            this.gbUsable.Size = new System.Drawing.Size(86, 64);
+            this.gbUsable.Size = new System.Drawing.Size(151, 49);
             this.gbUsable.TabIndex = 146;
             this.gbUsable.TabStop = false;
             this.gbUsable.Text = "사용여부";
@@ -205,7 +217,7 @@
             // 
             this.rbN.AutoSize = true;
             this.rbN.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.rbN.Location = new System.Drawing.Point(24, 44);
+            this.rbN.Location = new System.Drawing.Point(89, 18);
             this.rbN.Name = "rbN";
             this.rbN.Size = new System.Drawing.Size(42, 20);
             this.rbN.TabIndex = 79;
@@ -218,7 +230,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(326, 18);
+            this.label3.Location = new System.Drawing.Point(498, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 16);
             this.label3.TabIndex = 147;
@@ -228,7 +240,7 @@
             // 
             this.rbNo.AutoSize = true;
             this.rbNo.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.rbNo.Location = new System.Drawing.Point(479, 51);
+            this.rbNo.Location = new System.Drawing.Point(167, 86);
             this.rbNo.Name = "rbNo";
             this.rbNo.Size = new System.Drawing.Size(35, 16);
             this.rbNo.TabIndex = 79;
@@ -240,7 +252,7 @@
             // 
             this.rbYes.AutoSize = true;
             this.rbYes.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.rbYes.Location = new System.Drawing.Point(428, 51);
+            this.rbYes.Location = new System.Drawing.Point(116, 86);
             this.rbYes.Name = "rbYes";
             this.rbYes.Size = new System.Drawing.Size(35, 16);
             this.rbYes.TabIndex = 77;
@@ -253,7 +265,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(326, 50);
+            this.label4.Location = new System.Drawing.Point(14, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 16);
             this.label4.TabIndex = 147;
@@ -261,7 +273,7 @@
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(383, 16);
+            this.txtNote.Location = new System.Drawing.Point(555, 26);
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(138, 21);
             this.txtNote.TabIndex = 145;
@@ -270,12 +282,21 @@
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(736, 18);
+            this.btnSave.Location = new System.Drawing.Point(2, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(82, 48);
+            this.btnSave.Size = new System.Drawing.Size(62, 115);
             this.btnSave.TabIndex = 148;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnSave);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(771, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(67, 122);
+            this.panel3.TabIndex = 149;
             // 
             // PackGradeDetail
             // 
@@ -292,15 +313,22 @@
             this.ShowInTaskbar = false;
             this.Text = "PackGradeDetail";
             this.Load += new System.EventHandler(this.PackGradeDetail_Load);
+            this.Controls.SetChildIndex(this.splitContainer1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.tabControl4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl2.ResumeLayout(false);
+            this.tabControl3.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.gbUsable.ResumeLayout(false);
             this.gbUsable.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -325,5 +353,6 @@
         private System.Windows.Forms.RadioButton rbNo;
         private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Panel panel3;
     }
 }

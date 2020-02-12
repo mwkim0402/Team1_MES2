@@ -56,7 +56,7 @@ namespace AdminForm
         {
             CommonClass.AddNewColumnToDataGridView(dgvDry, "대차명", "GV_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvDry, "상태", "GV_Status", true, 70);
-            CommonClass.AddNewColumnToDataGridView(dgvDry, "그룹명", "GV_Group", true, 70);
+            CommonClass.AddNewColumnToDataGridView(dgvDry, "그룹명", "GV_Group", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvDry, "작업지시번호", "Workorderno", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvDry, "품목코드", "Item_Code", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvDry, "품목명", "Item_Name", true, 100);

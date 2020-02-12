@@ -58,7 +58,7 @@ namespace FieldOperationForm
         private void Setdgv()
         {
 
-            AddNewColumnToDataGridView(dgv_NonOperation, "작업장", "Wc_Code", true, 120);
+            AddNewColumnToDataGridView(dgv_NonOperation, "작업장", "Wc_Name", true, 120);
             AddNewColumnToDataGridView(dgv_NonOperation, "주원인", "Nop_Ma_Name", true, 146);
             AddNewColumnToDataGridView(dgv_NonOperation, "상세원인", "Nop_Mi_Name", true, 250);
             AddNewColumnToDataGridView(dgv_NonOperation, "발생시각", "Nop_Happentime", true, 220);

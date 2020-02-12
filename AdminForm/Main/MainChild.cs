@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FieldOperationForm;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,10 +11,14 @@ using System.Windows.Forms;
 
 namespace AdminForm
 {
+    
+
     public partial class MainChild : Form
     {
         MainForm frm;
         UserCalendar workCalendar;
+
+        
         public MainChild()
         {
             InitializeComponent();
@@ -56,6 +61,11 @@ namespace AdminForm
                     this.ClientSize = pictureBox1.Image.Size;
                 }
             }
+        }
+
+        public void GetLoginName()
+        {
+
         }
     }
 }

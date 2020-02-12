@@ -33,17 +33,17 @@ namespace AdminForm
         private void GetData(object sender, EventArgs e)
         {
             MES_DB.PerformService service = new MES_DB.PerformService();
-            allList = service.GetAllRegProcess(StartDate,EndDate);
+            allList = service.GetAllRegProcess();
             dgvJob.DataSource = allList;
         }
         private void ShowDgv()
         {
 
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "작업지시번호", "Workorderno", true, 130);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "생산일자", "Plan_Date", true, 100,DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "작업지시번호", "Workorderno", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "생산일자", "Plan_Date", true, 120,DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "공정", "Process_name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "작업장", "Wc_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "품목코드", "Item_Code", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "품목코드", "Item_Code", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "품목명", "Item_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Process_code", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Inspect_code", false, 100);
@@ -51,7 +51,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Inspect_Val", false, 100);
 
 
-            CommonClass.AddNewColumnToDataGridView(dgvList, "측정항목", "Inspect_name", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvList, "측정항목", "Inspect_name", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvList, "기준값", "SL", true, 100);
 
             CommonClass.AddNewColumnToDataGridView(dgvListDetail, "측정값", "Inspect_Val", true, 100);
@@ -82,22 +82,22 @@ namespace AdminForm
             if ((fcWork.SendCode != null && fcWork.SendName != "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
             {
                 List<RegProcessVO> list = (from item in allList
-                                               where item.Process_code == fcFactory.SendCode && item.Wc_Name == fcWork.SendName
+                                               where item.Process_code == fcFactory.SendCode && item.Wc_Name == fcWork.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
                                                select item).ToList();
                 dgvJob.DataSource = list;
             }
             else if ((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode == ""))
             {
                 List<RegProcessVO> list = (from item in allList
-                                               where item.Wc_Name == fcWork.SendName
+                                               where item.Wc_Name == fcWork.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
                                            select item).ToList();
                 dgvJob.DataSource = list;
             }
             else if ((fcWork.SendCode == null || fcWork.SendCode == "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
             {
                 List<RegProcessVO> list = (from item in allList
-                                               where item.Process_code == fcFactory.SendCode
-                                               select item).ToList();
+                                               where item.Process_code == fcFactory.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                           select item).ToList();
                 dgvJob.DataSource = list;
             }
         }

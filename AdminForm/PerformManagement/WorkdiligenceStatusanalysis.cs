@@ -44,7 +44,7 @@ namespace AdminForm
         private void GetAllList(object sender, EventArgs e)
         {
             MES_DB.PerformService service = new MES_DB.PerformService();
-            AllList = service.GetAllWorkStatus(StartDate, EndDate);
+            AllList = service.GetAllWorkStatus();
             List<WorkdiligenceStatusanalysisVOgridview1> list;
             //if (fcWorker.SendName == null)
             //{

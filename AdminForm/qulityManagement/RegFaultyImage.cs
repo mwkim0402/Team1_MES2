@@ -38,7 +38,7 @@ namespace AdminForm
         private void GetData(object sender, EventArgs e)
         {
             MES_DB.PerformService service = new MES_DB.PerformService();
-            allList = service.GetAllRegFaultyImage(StartDate, EndDate);
+            allList = service.GetAllRegFaultyImage();
             dgvProductRequset.DataSource = allList;
         }
         private void ShowDgv()
@@ -92,7 +92,6 @@ namespace AdminForm
                 string path = dgvJobOrder.Rows[e.RowIndex].Cells[8].Value.ToString();
                 ViewFaultyImage frm = new ViewFaultyImage(Name,path);
                 frm.ShowDialog();
-
             }
         }
 
@@ -157,21 +156,21 @@ namespace AdminForm
             if ((fcWork.SendCode != null && fcWork.SendName != "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
             {
                 List<RegFaultyVO> list = (from item in allList
-                                          where item.Process_name == fcFactory.SendName && item.Wc_Name == fcWork.SendName
+                                          where item.Process_name == fcFactory.SendName && item.Wc_Name == fcWork.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
                                           select item).ToList();
                 dgvProductRequset.DataSource = list;
             }
             else if ((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode == ""))
             {
                 List<RegFaultyVO> list = (from item in allList
-                                          where item.Wc_Name == fcWork.SendName
+                                          where item.Wc_Name == fcWork.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
                                           select item).ToList();
                 dgvProductRequset.DataSource = list;
             }
             else if ((fcWork.SendCode == null || fcWork.SendCode == "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
             {
                 List<RegFaultyVO> list = (from item in allList
-                                          where item.Process_name == fcFactory.SendName
+                                          where item.Process_name == fcFactory.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
                                           select item).ToList();
                 dgvProductRequset.DataSource = list;
             }

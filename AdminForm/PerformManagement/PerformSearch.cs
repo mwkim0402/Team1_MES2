@@ -38,7 +38,7 @@ namespace AdminForm
         private void GetData(object sender, EventArgs e)
         {
             MES_DB.PerformService service = new MES_DB.PerformService();
-            allList = service.GetAllPerformSearch(StartDate,EndDate);
+            allList = service.GetAllPerformSearch();
             dgvSearchResult.DataSource = allList;
 
             //if (StartDate == null && EndDate == null && fcFactory.SendName == null && fcWork.SendName == null)

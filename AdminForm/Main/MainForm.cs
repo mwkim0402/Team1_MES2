@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace AdminForm
 {
+    public delegate string SendName(string name);
     public partial class MainForm : Form
     {
         public event EventHandler Search_Click;
@@ -23,7 +24,8 @@ namespace AdminForm
         bool open = false;
         List<MenuTreeVo> menuList;
 
-        //public string SendID { get; set; }
+        public event SendName sendName;
+
         public ToolStrip ToolStrip { get { return toolStrip1; } set { toolStrip1 = value; } }
         public MainForm()
         {
@@ -466,11 +468,19 @@ namespace AdminForm
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("로그인 되었습니다.");
+
+                LoginID(Global.User_Name);
                 
                 //lblName.Text = Global.User_Name + "님 환영합니다.";
                 Userauthority();
             }
         }
+
+        private void LoginID(string ID)
+        {
+            
+        }
+
         private void Userauthority()
         {
             // 메인 화면에서 유저아이디 체크 후 권한 확인하고 버튼 수정

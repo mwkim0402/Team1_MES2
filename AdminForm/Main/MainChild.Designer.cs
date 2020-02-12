@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -49,9 +50,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -59,7 +60,6 @@
             this.panel6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,8 +83,18 @@
             this.panel2.Size = new System.Drawing.Size(887, 671);
             this.panel2.TabIndex = 10;
             // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.Controls.Add(this.panel3);
+            this.panel7.Location = new System.Drawing.Point(355, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(529, 261);
+            this.panel7.TabIndex = 16;
+            // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.button5);
@@ -157,6 +167,7 @@
             this.panel5.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.panel5.Controls.Add(this.label4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Font = new System.Drawing.Font("나눔고딕", 9F);
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(505, 41);
@@ -180,6 +191,7 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.dataGridView2);
             this.panel4.Controls.Add(this.label13);
+            this.panel4.Font = new System.Drawing.Font("나눔고딕", 9F);
             this.panel4.Location = new System.Drawing.Point(12, 313);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(869, 346);
@@ -217,6 +229,7 @@
             this.panel6.Controls.Add(this.label3);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.label1);
+            this.panel6.Font = new System.Drawing.Font("나눔고딕", 9F);
             this.panel6.Location = new System.Drawing.Point(12, 12);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(326, 281);
@@ -227,7 +240,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(15, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 12);
+            this.label3.Size = new System.Drawing.Size(36, 14);
             this.label3.TabIndex = 2;
             this.label3.Text = "부서 :";
             // 
@@ -257,6 +270,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox1.Font = new System.Drawing.Font("나눔고딕", 9F);
             this.groupBox1.Location = new System.Drawing.Point(887, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(316, 671);
@@ -287,15 +301,6 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "일정 조회";
             // 
-            // panel7
-            // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.Controls.Add(this.panel3);
-            this.panel7.Location = new System.Drawing.Point(355, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(529, 261);
-            this.panel7.TabIndex = 16;
-            // 
             // MainChild
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -314,6 +319,7 @@
             this.Load += new System.EventHandler(this.MainChild_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -325,7 +331,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

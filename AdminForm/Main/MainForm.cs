@@ -521,5 +521,11 @@ namespace AdminForm
             }
             LoadHome();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (this.Insert_Click != null)
+                Insert_Click(this, null);
+        }
     }
 }

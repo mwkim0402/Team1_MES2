@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserManager));
-            this.txtStandFac = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtUserIDInput = new System.Windows.Forms.TextBox();
@@ -51,7 +50,6 @@
             this.gbUsable = new System.Windows.Forms.GroupBox();
             this.rbUse_Use = new System.Windows.Forms.RadioButton();
             this.rbNoUse_Use = new System.Windows.Forms.RadioButton();
-            this.txtEditProcess = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbEditUseY = new System.Windows.Forms.RadioButton();
             this.rbEditUserN = new System.Windows.Forms.RadioButton();
@@ -61,17 +59,19 @@
             this.txtEditName = new System.Windows.Forms.TextBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.txtEditID = new System.Windows.Forms.TextBox();
-            this.cmbType = new System.Windows.Forms.ComboBox();
-            this.cmbTypeEdit = new System.Windows.Forms.ComboBox();
+            this.cmbProcess = new System.Windows.Forms.ComboBox();
+            this.cmbEditProcess = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtGroupCode = new System.Windows.Forms.TextBox();
             this.txtGroupName = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtEditGroupCode = new System.Windows.Forms.TextBox();
             this.txtEditGroupName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.cmbGroupCode = new System.Windows.Forms.ComboBox();
+            this.cmbEditGroupCode = new System.Windows.Forms.ComboBox();
+            this.cmbEditUserType = new System.Windows.Forms.ComboBox();
+            this.cmbUserType = new System.Windows.Forms.ComboBox();
             this.tcParent1.SuspendLayout();
             this.tcParent2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -90,13 +90,13 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cmbEditUserType);
+            this.panel1.Controls.Add(this.cmbEditGroupCode);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.txtEditGroupCode);
             this.panel1.Controls.Add(this.txtEditGroupName);
-            this.panel1.Controls.Add(this.cmbTypeEdit);
+            this.panel1.Controls.Add(this.cmbEditProcess);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtEditProcess);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label8);
@@ -104,6 +104,7 @@
             this.panel1.Controls.Add(this.txtEditName);
             this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.txtEditID);
+            this.panel1.Size = new System.Drawing.Size(1124, 103);
             // 
             // tabPage2
             // 
@@ -112,12 +113,12 @@
             // 
             // pnlParent1
             // 
+            this.pnlParent1.Controls.Add(this.cmbUserType);
+            this.pnlParent1.Controls.Add(this.cmbGroupCode);
             this.pnlParent1.Controls.Add(this.label10);
             this.pnlParent1.Controls.Add(this.label11);
-            this.pnlParent1.Controls.Add(this.txtGroupCode);
             this.pnlParent1.Controls.Add(this.txtGroupName);
-            this.pnlParent1.Controls.Add(this.cmbType);
-            this.pnlParent1.Controls.Add(this.txtStandFac);
+            this.pnlParent1.Controls.Add(this.cmbProcess);
             this.pnlParent1.Controls.Add(this.gbUsable);
             this.pnlParent1.Controls.Add(this.label21);
             this.pnlParent1.Controls.Add(this.label6);
@@ -126,27 +127,20 @@
             this.pnlParent1.Controls.Add(this.txtUserNameInput);
             this.pnlParent1.Controls.Add(this.btnSave);
             this.pnlParent1.Controls.Add(this.txtUserIDInput);
-            this.pnlParent1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
+            this.pnlParent1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlParent1.Location = new System.Drawing.Point(3, 4);
-            this.pnlParent1.Size = new System.Drawing.Size(1118, 91);
-            // 
-            // txtStandFac
-            // 
-            this.txtStandFac.Location = new System.Drawing.Point(397, 48);
-            this.txtStandFac.Name = "txtStandFac";
-            this.txtStandFac.Size = new System.Drawing.Size(152, 30);
-            this.txtStandFac.TabIndex = 86;
+            this.pnlParent1.Size = new System.Drawing.Size(1118, 95);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label6.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(298, 55);
+            this.label6.Location = new System.Drawing.Point(288, 55);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 16);
+            this.label6.Size = new System.Drawing.Size(93, 16);
             this.label6.TabIndex = 85;
-            this.label6.Text = "기본 공정";
+            this.label6.Text = "사용자 구분";
             // 
             // btnSave
             // 
@@ -164,14 +158,14 @@
             // 
             this.txtUserIDInput.Location = new System.Drawing.Point(119, 47);
             this.txtUserIDInput.Name = "txtUserIDInput";
-            this.txtUserIDInput.Size = new System.Drawing.Size(152, 30);
+            this.txtUserIDInput.Size = new System.Drawing.Size(152, 26);
             this.txtUserIDInput.TabIndex = 75;
             // 
             // txtUserNameInput
             // 
             this.txtUserNameInput.Location = new System.Drawing.Point(119, 13);
             this.txtUserNameInput.Name = "txtUserNameInput";
-            this.txtUserNameInput.Size = new System.Drawing.Size(152, 30);
+            this.txtUserNameInput.Size = new System.Drawing.Size(152, 26);
             this.txtUserNameInput.TabIndex = 74;
             // 
             // label19
@@ -190,11 +184,11 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label21.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label21.Location = new System.Drawing.Point(298, 21);
+            this.label21.Location = new System.Drawing.Point(338, 21);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(40, 16);
             this.label21.TabIndex = 71;
-            this.label21.Text = "부서";
+            this.label21.Text = "공정";
             // 
             // label23
             // 
@@ -360,13 +354,6 @@
             this.rbNoUse_Use.Text = "무";
             this.rbNoUse_Use.UseVisualStyleBackColor = false;
             // 
-            // txtEditProcess
-            // 
-            this.txtEditProcess.Location = new System.Drawing.Point(400, 52);
-            this.txtEditProcess.Name = "txtEditProcess";
-            this.txtEditProcess.Size = new System.Drawing.Size(152, 30);
-            this.txtEditProcess.TabIndex = 98;
-            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -409,11 +396,11 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(301, 59);
+            this.label2.Location = new System.Drawing.Point(291, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 16);
+            this.label2.Size = new System.Drawing.Size(93, 16);
             this.label2.TabIndex = 97;
-            this.label2.Text = "기본 공정";
+            this.label2.Text = "사용자 구분";
             // 
             // label8
             // 
@@ -442,7 +429,7 @@
             this.txtEditName.Enabled = false;
             this.txtEditName.Location = new System.Drawing.Point(122, 17);
             this.txtEditName.Name = "txtEditName";
-            this.txtEditName.Size = new System.Drawing.Size(152, 30);
+            this.txtEditName.Size = new System.Drawing.Size(152, 26);
             this.txtEditName.TabIndex = 93;
             // 
             // btnEdit
@@ -462,58 +449,51 @@
             this.txtEditID.Enabled = false;
             this.txtEditID.Location = new System.Drawing.Point(122, 51);
             this.txtEditID.Name = "txtEditID";
-            this.txtEditID.Size = new System.Drawing.Size(152, 30);
+            this.txtEditID.Size = new System.Drawing.Size(152, 26);
             this.txtEditID.TabIndex = 94;
             // 
-            // cmbType
+            // cmbProcess
             // 
-            this.cmbType.FormattingEnabled = true;
-            this.cmbType.Items.AddRange(new object[] {
+            this.cmbProcess.FormattingEnabled = true;
+            this.cmbProcess.Items.AddRange(new object[] {
             "-- 선택 -- ",
             "포장",
             "제선",
             "적재"});
-            this.cmbType.Location = new System.Drawing.Point(397, 11);
-            this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(152, 31);
-            this.cmbType.TabIndex = 89;
+            this.cmbProcess.Location = new System.Drawing.Point(397, 11);
+            this.cmbProcess.Name = "cmbProcess";
+            this.cmbProcess.Size = new System.Drawing.Size(152, 27);
+            this.cmbProcess.TabIndex = 89;
             // 
-            // cmbTypeEdit
+            // cmbEditProcess
             // 
-            this.cmbTypeEdit.FormattingEnabled = true;
-            this.cmbTypeEdit.Items.AddRange(new object[] {
+            this.cmbEditProcess.FormattingEnabled = true;
+            this.cmbEditProcess.Items.AddRange(new object[] {
             "-- 선택 -- ",
             "포장",
             "제선",
             "적재"});
-            this.cmbTypeEdit.Location = new System.Drawing.Point(400, 15);
-            this.cmbTypeEdit.Name = "cmbTypeEdit";
-            this.cmbTypeEdit.Size = new System.Drawing.Size(152, 31);
-            this.cmbTypeEdit.TabIndex = 101;
+            this.cmbEditProcess.Location = new System.Drawing.Point(400, 15);
+            this.cmbEditProcess.Name = "cmbEditProcess";
+            this.cmbEditProcess.Size = new System.Drawing.Size(152, 27);
+            this.cmbEditProcess.TabIndex = 101;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(301, 25);
+            this.label1.Location = new System.Drawing.Point(341, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 16);
             this.label1.TabIndex = 100;
-            this.label1.Text = "부서";
-            // 
-            // txtGroupCode
-            // 
-            this.txtGroupCode.Location = new System.Drawing.Point(671, 12);
-            this.txtGroupCode.Name = "txtGroupCode";
-            this.txtGroupCode.Size = new System.Drawing.Size(152, 30);
-            this.txtGroupCode.TabIndex = 92;
+            this.label1.Text = "공정";
             // 
             // txtGroupName
             // 
             this.txtGroupName.Location = new System.Drawing.Point(671, 47);
             this.txtGroupName.Name = "txtGroupName";
-            this.txtGroupName.Size = new System.Drawing.Size(152, 30);
+            this.txtGroupName.Size = new System.Drawing.Size(152, 26);
             this.txtGroupName.TabIndex = 93;
             // 
             // label12
@@ -538,19 +518,11 @@
             this.label13.TabIndex = 103;
             this.label13.Text = "그룹 이름";
             // 
-            // txtEditGroupCode
-            // 
-            this.txtEditGroupCode.Enabled = false;
-            this.txtEditGroupCode.Location = new System.Drawing.Point(674, 16);
-            this.txtEditGroupCode.Name = "txtEditGroupCode";
-            this.txtEditGroupCode.Size = new System.Drawing.Size(152, 30);
-            this.txtEditGroupCode.TabIndex = 104;
-            // 
             // txtEditGroupName
             // 
             this.txtEditGroupName.Location = new System.Drawing.Point(674, 51);
             this.txtEditGroupName.Name = "txtEditGroupName";
-            this.txtEditGroupName.Size = new System.Drawing.Size(152, 30);
+            this.txtEditGroupName.Size = new System.Drawing.Size(152, 26);
             this.txtEditGroupName.TabIndex = 105;
             // 
             // label10
@@ -574,6 +546,58 @@
             this.label11.Size = new System.Drawing.Size(77, 16);
             this.label11.TabIndex = 105;
             this.label11.Text = "그룹 이름";
+            // 
+            // cmbGroupCode
+            // 
+            this.cmbGroupCode.FormattingEnabled = true;
+            this.cmbGroupCode.Items.AddRange(new object[] {
+            "-- 선택 -- ",
+            "UserLevel1",
+            "UserLevel2"});
+            this.cmbGroupCode.Location = new System.Drawing.Point(671, 11);
+            this.cmbGroupCode.Name = "cmbGroupCode";
+            this.cmbGroupCode.Size = new System.Drawing.Size(152, 27);
+            this.cmbGroupCode.TabIndex = 106;
+            this.cmbGroupCode.SelectedIndexChanged += new System.EventHandler(this.cmbGroupCode_SelectedIndexChanged);
+            // 
+            // cmbEditGroupCode
+            // 
+            this.cmbEditGroupCode.FormattingEnabled = true;
+            this.cmbEditGroupCode.Items.AddRange(new object[] {
+            "-- 선택 -- ",
+            "UserLevel1",
+            "UserLevel2"});
+            this.cmbEditGroupCode.Location = new System.Drawing.Point(674, 15);
+            this.cmbEditGroupCode.Name = "cmbEditGroupCode";
+            this.cmbEditGroupCode.Size = new System.Drawing.Size(152, 27);
+            this.cmbEditGroupCode.TabIndex = 106;
+            this.cmbEditGroupCode.SelectedIndexChanged += new System.EventHandler(this.cmbEditGroupCode_SelectedIndexChanged);
+            // 
+            // cmbEditUserType
+            // 
+            this.cmbEditUserType.FormattingEnabled = true;
+            this.cmbEditUserType.Items.AddRange(new object[] {
+            "-- 선택 --",
+            "Manager",
+            "Engineer"});
+            this.cmbEditUserType.Location = new System.Drawing.Point(400, 50);
+            this.cmbEditUserType.Name = "cmbEditUserType";
+            this.cmbEditUserType.Size = new System.Drawing.Size(152, 27);
+            this.cmbEditUserType.TabIndex = 107;
+            this.cmbEditUserType.SelectedIndexChanged += new System.EventHandler(this.cmbEditUserType_SelectedIndexChanged);
+            // 
+            // cmbUserType
+            // 
+            this.cmbUserType.FormattingEnabled = true;
+            this.cmbUserType.Items.AddRange(new object[] {
+            "-- 선택 -- ",
+            "Manager",
+            "Engineer"});
+            this.cmbUserType.Location = new System.Drawing.Point(397, 46);
+            this.cmbUserType.Name = "cmbUserType";
+            this.cmbUserType.Size = new System.Drawing.Size(152, 27);
+            this.cmbUserType.TabIndex = 108;
+            this.cmbUserType.SelectedIndexChanged += new System.EventHandler(this.cmbUserType_SelectedIndexChanged);
             // 
             // UserManager
             // 
@@ -615,7 +639,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtStandFac;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label23;
@@ -635,7 +658,6 @@
         private System.Windows.Forms.GroupBox gbUsable;
         private System.Windows.Forms.RadioButton rbUse_Use;
         private System.Windows.Forms.RadioButton rbNoUse_Use;
-        private System.Windows.Forms.TextBox txtEditProcess;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton rbEditUseY;
         private System.Windows.Forms.RadioButton rbEditUserN;
@@ -645,18 +667,20 @@
         private System.Windows.Forms.TextBox txtEditName;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox txtEditID;
-        private System.Windows.Forms.ComboBox cmbType;
-        private System.Windows.Forms.ComboBox cmbTypeEdit;
+        private System.Windows.Forms.ComboBox cmbProcess;
+        private System.Windows.Forms.ComboBox cmbEditProcess;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtEditGroupCode;
         private System.Windows.Forms.TextBox txtEditGroupName;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtGroupCode;
         private System.Windows.Forms.TextBox txtGroupName;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ComboBox cmbEditGroupCode;
+        private System.Windows.Forms.ComboBox cmbGroupCode;
+        private System.Windows.Forms.ComboBox cmbEditUserType;
+        private System.Windows.Forms.ComboBox cmbUserType;
     }
 }

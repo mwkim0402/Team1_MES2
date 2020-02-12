@@ -173,7 +173,7 @@ namespace AdminForm
         private void timer1_Tick(object sender, EventArgs e)
         {
             //frm.lblAlertTitle.Text = "";
-            frm.lblAlert.Text = "<공지사항> Test 중 입니다.";
+            //frm.lblAlert.Text = "<공지사항> Test 중 입니다.";
             timer1.Stop();
         }
 
@@ -324,10 +324,10 @@ namespace AdminForm
             }
             if (List.Count < 1)
             {
-                frm.lblAlert.Text = "[알람] 검색한 조건의 데이터가 존재하지 않습니다.";
+                //frm.lblAlert.Text = "[알람] 검색한 조건의 데이터가 존재하지 않습니다.";
                 return;
             }
-            frm.lblAlert.Text = $"[알람] {List.Count} 건의 데이터가 조회되었습니다.";
+            //frm.lblAlert.Text = $"[알람] {List.Count} 건의 데이터가 조회되었습니다.";
             timer1.Start();
             dgvSearchResult.DataSource = List;
         }

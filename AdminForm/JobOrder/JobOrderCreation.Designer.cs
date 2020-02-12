@@ -29,28 +29,15 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnDeadline = new System.Windows.Forms.Button();
-            this.btnDeadlineCancel = new System.Windows.Forms.Button();
-            this.fcWorkPlace = new AdminForm.FIndCategory();
-            this.label4 = new System.Windows.Forms.Label();
-            this.fcProcess = new AdminForm.FIndCategory();
+            this.txtOrderCreationNum = new System.Windows.Forms.TextBox();
+            this.btnOrderCreationDeadline = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
-            this.dtpStart = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.dtpPlanDate = new System.Windows.Forms.DateTimePicker();
-            this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtPlanAmount = new System.Windows.Forms.TextBox();
             this.txtJobOrderCodeInput = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtItemName = new System.Windows.Forms.TextBox();
-            this.cmbWorkPlace = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.nuPlanAmount = new System.Windows.Forms.NumericUpDown();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
@@ -67,9 +54,15 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtPlanAmount_CH = new System.Windows.Forms.TextBox();
             this.txtJobOrderNo_Ch = new System.Windows.Forms.TextBox();
-            this.cmbItemCode = new System.Windows.Forms.ComboBox();
             this.cmbItemCode_CH = new System.Windows.Forms.ComboBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.cmbItemName = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtCustName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtProjectName = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tcParent1.SuspendLayout();
             this.tcParent2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -109,20 +102,18 @@
             // 
             // pnlParent1
             // 
-            this.pnlParent1.Controls.Add(this.cmbItemCode);
-            this.pnlParent1.Controls.Add(this.btnSave);
-            this.pnlParent1.Controls.Add(this.cmbWorkPlace);
             this.pnlParent1.Controls.Add(this.label6);
+            this.pnlParent1.Controls.Add(this.txtProjectName);
             this.pnlParent1.Controls.Add(this.label5);
-            this.pnlParent1.Controls.Add(this.txtItemName);
+            this.pnlParent1.Controls.Add(this.txtCustName);
+            this.pnlParent1.Controls.Add(this.cmbItemName);
+            this.pnlParent1.Controls.Add(this.btnSave);
             this.pnlParent1.Controls.Add(this.nuPlanAmount);
             this.pnlParent1.Controls.Add(this.label23);
             this.pnlParent1.Controls.Add(this.dtpPlanDate);
-            this.pnlParent1.Controls.Add(this.label22);
             this.pnlParent1.Controls.Add(this.label21);
             this.pnlParent1.Controls.Add(this.label19);
             this.pnlParent1.Controls.Add(this.label18);
-            this.pnlParent1.Controls.Add(this.txtPlanAmount);
             this.pnlParent1.Controls.Add(this.txtJobOrderCodeInput);
             this.pnlParent1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlParent1.Size = new System.Drawing.Size(1124, 102);
@@ -132,199 +123,97 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel2.Controls.Add(this.btnDeadline);
-            this.panel2.Controls.Add(this.btnDeadlineCancel);
-            this.panel2.Controls.Add(this.fcWorkPlace);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.fcProcess);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.dtpEnd);
-            this.panel2.Controls.Add(this.dtpStart);
+            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.txtOrderCreationNum);
+            this.panel2.Controls.Add(this.btnOrderCreationDeadline);
+            this.panel2.Controls.Add(this.label3);
             this.panel2.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.panel2.Location = new System.Drawing.Point(16, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1128, 67);
             this.panel2.TabIndex = 4;
             // 
-            // btnDeadline
+            // txtOrderCreationNum
             // 
-            this.btnDeadline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeadline.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDeadline.Location = new System.Drawing.Point(985, 5);
-            this.btnDeadline.Name = "btnDeadline";
-            this.btnDeadline.Size = new System.Drawing.Size(124, 25);
-            this.btnDeadline.TabIndex = 11;
-            this.btnDeadline.Text = "작업지시 마감";
-            this.btnDeadline.UseVisualStyleBackColor = true;
-            this.btnDeadline.Click += new System.EventHandler(this.BtnDeadline_Click);
+            this.txtOrderCreationNum.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.txtOrderCreationNum.Location = new System.Drawing.Point(324, 19);
+            this.txtOrderCreationNum.Name = "txtOrderCreationNum";
+            this.txtOrderCreationNum.Size = new System.Drawing.Size(125, 26);
+            this.txtOrderCreationNum.TabIndex = 18;
             // 
-            // btnDeadlineCancel
+            // btnOrderCreationDeadline
             // 
-            this.btnDeadlineCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeadlineCancel.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnDeadlineCancel.Location = new System.Drawing.Point(985, 36);
-            this.btnDeadlineCancel.Name = "btnDeadlineCancel";
-            this.btnDeadlineCancel.Size = new System.Drawing.Size(124, 25);
-            this.btnDeadlineCancel.TabIndex = 10;
-            this.btnDeadlineCancel.Text = "작업지시 마감취소";
-            this.btnDeadlineCancel.UseVisualStyleBackColor = true;
-            this.btnDeadlineCancel.Click += new System.EventHandler(this.BtnDeadlineCancel_Click);
-            // 
-            // fcWorkPlace
-            // 
-            this.fcWorkPlace.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.fcWorkPlace.Category = AdminForm.CategoryMode.WorkCenter;
-            this.fcWorkPlace.Location = new System.Drawing.Point(750, 20);
-            this.fcWorkPlace.Name = "fcWorkPlace";
-            this.fcWorkPlace.SendCode = null;
-            this.fcWorkPlace.SendName = null;
-            this.fcWorkPlace.Size = new System.Drawing.Size(224, 41);
-            this.fcWorkPlace.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(676, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 19);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "작업장";
-            // 
-            // fcProcess
-            // 
-            this.fcProcess.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.fcProcess.Category = AdminForm.CategoryMode.Process;
-            this.fcProcess.Location = new System.Drawing.Point(437, 20);
-            this.fcProcess.Name = "fcProcess";
-            this.fcProcess.SendCode = null;
-            this.fcProcess.SendName = null;
-            this.fcProcess.Size = new System.Drawing.Size(224, 39);
-            this.fcProcess.TabIndex = 5;
-            this.fcProcess.Load += new System.EventHandler(this.FcProcess_Load);
+            this.btnOrderCreationDeadline.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.btnOrderCreationDeadline.Location = new System.Drawing.Point(479, 11);
+            this.btnOrderCreationDeadline.Name = "btnOrderCreationDeadline";
+            this.btnOrderCreationDeadline.Size = new System.Drawing.Size(86, 40);
+            this.btnOrderCreationDeadline.TabIndex = 17;
+            this.btnOrderCreationDeadline.Text = "조회";
+            this.btnOrderCreationDeadline.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(375, 25);
+            this.label3.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.label3.Location = new System.Drawing.Point(264, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 19);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "공정";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(226, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "~";
-            // 
-            // dtpEnd
-            // 
-            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEnd.Location = new System.Drawing.Point(249, 24);
-            this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.Size = new System.Drawing.Size(98, 22);
-            this.dtpEnd.TabIndex = 2;
-            // 
-            // dtpStart
-            // 
-            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStart.Location = new System.Drawing.Point(122, 24);
-            this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(98, 22);
-            this.dtpStart.TabIndex = 1;
-            this.dtpStart.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(17, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "작업지시일자";
+            this.label3.Size = new System.Drawing.Size(54, 19);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "고객사";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label23.Location = new System.Drawing.Point(23, 22);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(99, 19);
             this.label23.TabIndex = 45;
-            this.label23.Text = "작업지시번호";
+            this.label23.Text = "생산의뢰번호";
             // 
             // dtpPlanDate
             // 
             this.dtpPlanDate.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.dtpPlanDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPlanDate.Location = new System.Drawing.Point(389, 57);
+            this.dtpPlanDate.Location = new System.Drawing.Point(678, 60);
             this.dtpPlanDate.Name = "dtpPlanDate";
-            this.dtpPlanDate.Size = new System.Drawing.Size(98, 26);
+            this.dtpPlanDate.Size = new System.Drawing.Size(152, 26);
             this.dtpPlanDate.TabIndex = 43;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label22.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label22.Location = new System.Drawing.Point(506, 23);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(69, 19);
-            this.label22.TabIndex = 46;
-            this.label22.Text = "품목코드";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label21.Location = new System.Drawing.Point(23, 60);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(99, 19);
+            this.label21.Size = new System.Drawing.Size(54, 19);
             this.label21.TabIndex = 47;
-            this.label21.Text = "계획수량단위";
+            this.label21.Text = "제품명";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label19.Location = new System.Drawing.Point(306, 22);
+            this.label19.Location = new System.Drawing.Point(298, 60);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(69, 19);
             this.label19.TabIndex = 48;
-            this.label19.Text = "계획수량";
+            this.label19.Text = "제품수량";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label18.Location = new System.Drawing.Point(306, 60);
+            this.label18.Location = new System.Drawing.Point(591, 63);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(69, 19);
             this.label18.TabIndex = 49;
-            this.label18.Text = "계획일자";
-            // 
-            // txtPlanAmount
-            // 
-            this.txtPlanAmount.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtPlanAmount.Location = new System.Drawing.Point(128, 56);
-            this.txtPlanAmount.Name = "txtPlanAmount";
-            this.txtPlanAmount.Size = new System.Drawing.Size(152, 26);
-            this.txtPlanAmount.TabIndex = 52;
+            this.label18.Text = "마감날짜";
             // 
             // txtJobOrderCodeInput
             // 
@@ -332,56 +221,23 @@
             this.txtJobOrderCodeInput.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.txtJobOrderCodeInput.Location = new System.Drawing.Point(128, 18);
             this.txtJobOrderCodeInput.Name = "txtJobOrderCodeInput";
+            this.txtJobOrderCodeInput.ReadOnly = true;
             this.txtJobOrderCodeInput.Size = new System.Drawing.Size(152, 26);
             this.txtJobOrderCodeInput.TabIndex = 51;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label5.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label5.Location = new System.Drawing.Point(522, 60);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 19);
-            this.label5.TabIndex = 56;
-            this.label5.Text = "품목명";
-            // 
-            // txtItemName
-            // 
-            this.txtItemName.Enabled = false;
-            this.txtItemName.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtItemName.Location = new System.Drawing.Point(591, 57);
-            this.txtItemName.Name = "txtItemName";
-            this.txtItemName.Size = new System.Drawing.Size(138, 26);
-            this.txtItemName.TabIndex = 57;
-            // 
-            // cmbWorkPlace
-            // 
-            this.cmbWorkPlace.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.cmbWorkPlace.FormattingEnabled = true;
-            this.cmbWorkPlace.Location = new System.Drawing.Point(827, 18);
-            this.cmbWorkPlace.Name = "cmbWorkPlace";
-            this.cmbWorkPlace.Size = new System.Drawing.Size(131, 27);
-            this.cmbWorkPlace.TabIndex = 59;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label6.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label6.Location = new System.Drawing.Point(751, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 19);
-            this.label6.TabIndex = 58;
-            this.label6.Text = "작업장";
             // 
             // nuPlanAmount
             // 
             this.nuPlanAmount.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.nuPlanAmount.Location = new System.Drawing.Point(389, 19);
+            this.nuPlanAmount.Location = new System.Drawing.Point(403, 58);
+            this.nuPlanAmount.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.nuPlanAmount.Name = "nuPlanAmount";
-            this.nuPlanAmount.Size = new System.Drawing.Size(98, 26);
+            this.nuPlanAmount.Size = new System.Drawing.Size(152, 26);
             this.nuPlanAmount.TabIndex = 10;
+            this.nuPlanAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnSave
             // 
@@ -542,16 +398,6 @@
             this.txtJobOrderNo_Ch.Size = new System.Drawing.Size(152, 26);
             this.txtJobOrderNo_Ch.TabIndex = 68;
             // 
-            // cmbItemCode
-            // 
-            this.cmbItemCode.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.cmbItemCode.FormattingEnabled = true;
-            this.cmbItemCode.Location = new System.Drawing.Point(591, 19);
-            this.cmbItemCode.Name = "cmbItemCode";
-            this.cmbItemCode.Size = new System.Drawing.Size(138, 27);
-            this.cmbItemCode.TabIndex = 61;
-            this.cmbItemCode.SelectedIndexChanged += new System.EventHandler(this.CmbItemCode_SelectedIndexChanged);
-            // 
             // cmbItemCode_CH
             // 
             this.cmbItemCode_CH.Font = new System.Drawing.Font("나눔고딕", 12F);
@@ -560,6 +406,70 @@
             this.cmbItemCode_CH.Name = "cmbItemCode_CH";
             this.cmbItemCode_CH.Size = new System.Drawing.Size(138, 27);
             this.cmbItemCode_CH.TabIndex = 76;
+            // 
+            // cmbItemName
+            // 
+            this.cmbItemName.FormattingEnabled = true;
+            this.cmbItemName.Location = new System.Drawing.Point(128, 60);
+            this.cmbItemName.Name = "cmbItemName";
+            this.cmbItemName.Size = new System.Drawing.Size(152, 27);
+            this.cmbItemName.TabIndex = 62;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.label5.Location = new System.Drawing.Point(298, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 19);
+            this.label5.TabIndex = 63;
+            this.label5.Text = "고객사명";
+            // 
+            // txtCustName
+            // 
+            this.txtCustName.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.txtCustName.Location = new System.Drawing.Point(403, 19);
+            this.txtCustName.Name = "txtCustName";
+            this.txtCustName.Size = new System.Drawing.Size(152, 26);
+            this.txtCustName.TabIndex = 64;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.label6.Location = new System.Drawing.Point(591, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 19);
+            this.label6.TabIndex = 65;
+            this.label6.Text = "프로젝트명";
+            // 
+            // txtProjectName
+            // 
+            this.txtProjectName.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.txtProjectName.Location = new System.Drawing.Point(678, 18);
+            this.txtProjectName.Name = "txtProjectName";
+            this.txtProjectName.Size = new System.Drawing.Size(152, 26);
+            this.txtProjectName.TabIndex = 66;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.textBox1.Location = new System.Drawing.Point(83, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 26);
+            this.textBox1.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.label1.Location = new System.Drawing.Point(23, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 19);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "제품명";
             // 
             // JobOrderCreation
             // 
@@ -597,29 +507,13 @@
 
         #endregion
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DateTimePicker dtpEnd;
-        private System.Windows.Forms.DateTimePicker dtpStart;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private FIndCategory fcWorkPlace;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnDeadlineCancel;
-        private System.Windows.Forms.Button btnDeadline;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtItemName;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.DateTimePicker dtpPlanDate;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtPlanAmount;
         private System.Windows.Forms.TextBox txtJobOrderCodeInput;
-        private System.Windows.Forms.ComboBox cmbWorkPlace;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown nuPlanAmount;
-        private FIndCategory fcProcess;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.ComboBox cmbWorkPlace_CH;
@@ -635,8 +529,17 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtPlanAmount_CH;
         private System.Windows.Forms.TextBox txtJobOrderNo_Ch;
-        private System.Windows.Forms.ComboBox cmbItemCode;
         private System.Windows.Forms.ComboBox cmbItemCode_CH;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtProjectName;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtCustName;
+        private System.Windows.Forms.ComboBox cmbItemName;
+        private System.Windows.Forms.TextBox txtOrderCreationNum;
+        private System.Windows.Forms.Button btnOrderCreationDeadline;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

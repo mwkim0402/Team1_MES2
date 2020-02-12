@@ -100,6 +100,7 @@
             this.dgvSearchResult.Location = new System.Drawing.Point(6, 32);
             this.dgvSearchResult.MultiSelect = false;
             this.dgvSearchResult.Name = "dgvSearchResult";
+            this.dgvSearchResult.RowHeadersVisible = false;
             this.dgvSearchResult.RowHeadersWidth = 51;
             this.dgvSearchResult.RowTemplate.Height = 23;
             this.dgvSearchResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -185,6 +186,7 @@
             this.dgvSelect.Location = new System.Drawing.Point(0, 29);
             this.dgvSelect.MultiSelect = false;
             this.dgvSelect.Name = "dgvSelect";
+            this.dgvSelect.RowHeadersVisible = false;
             this.dgvSelect.RowHeadersWidth = 51;
             this.dgvSelect.RowTemplate.Height = 23;
             this.dgvSelect.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

@@ -30,9 +30,10 @@ namespace AdminForm
 
         private void ShowDgv()
         {
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "불량현상 대분류 코드", "Def_Ma_Code", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "불량현상 대분류 명", "Def_Ma_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 100);
+            dgvSearchResult.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "불량현상 대분류 코드", "Def_Ma_Code", true, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "불량현상 대분류 명", "Def_Ma_Name", true, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 100,DataGridViewContentAlignment.MiddleCenter);
         }
         private void btnSearch(object sender, EventArgs e)
         {
@@ -52,17 +53,17 @@ namespace AdminForm
             {
                 FaultyService service = new FaultyService();
                 bool Checked = service.InsertFaultyMaster(InsertVo);
-                if (Checked)
-                    frm.lblAlert.Text = "등록 완료하였습니다.";
+                //if (Checked)
+                //   // frm.lblAlert.Text = "등록 완료하였습니다.";
                 
-                else
-                    frm.lblAlert.Text = "등록 실패하였습니다. 다시 한번 확인해주세요.";
+                //else
+                //   // frm.lblAlert.Text = "등록 실패하였습니다. 다시 한번 확인해주세요.";
 
                
             }
             catch (Exception err)
             {
-                frm.lblAlert.Text = err.Message;
+               // frm.lblAlert.Text = err.Message;
             }
             finally
             {
@@ -105,14 +106,14 @@ namespace AdminForm
             {
                 FaultyService service = new FaultyService();
                 bool Checked = service.UpdateFaultyMaster(InsertVo);
-                if (Checked)
-                    frm.lblAlert.Text = "등록 완료하였습니다.";
-                else
-                    frm.lblAlert.Text = "등록 실패하였습니다. 다시 한번 확인해주세요.";
+                //if (Checked)
+                //    //frm.lblAlert.Text = "등록 완료하였습니다.";
+                //else
+                //    //frm.lblAlert.Text = "등록 실패하였습니다. 다시 한번 확인해주세요.";
             }
             catch (Exception err)
             {
-                frm.lblAlert.Text = err.Message;
+                //frm.lblAlert.Text = err.Message;
             }
             finally
             {

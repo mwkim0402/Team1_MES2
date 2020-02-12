@@ -41,16 +41,16 @@ namespace AdminForm
 
         private void ShowDgv()
         {
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산일자", "Prd_Date", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산일자", "Prd_Date", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목명", "Item_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "팔레트번호", "Pallet_No", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "입고수량", "In_Qty", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "마감시각", "Closed_Time", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "취소시각", "Cancel_Time", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "ERP 업로드여부", "Upload_Flag", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시번호", "Workorderno", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시상태", "Wo_Status", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "팔레트번호", "Pallet_No", true, 130);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "입고수량", "In_Qty", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "마감시각", "Closed_Time", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "취소시각", "Cancel_Time", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "ERP 업로드여부", "Upload_Flag", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시번호", "Workorderno", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시상태", "Wo_Status", true, 150);
         }
 
         private void dtpStart_ValueChanged(object sender, EventArgs e)

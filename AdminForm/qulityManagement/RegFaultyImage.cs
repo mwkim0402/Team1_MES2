@@ -47,14 +47,14 @@ namespace AdminForm
             tabPage4.Text = "작업지시";
             tabPage2.Text = "상세내역";
             dgvProductRequset.CellDoubleClick += ViewDgvDetail;
-            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "작업지시상태", "Wo_Status", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "작업지시번호", "Workorderno", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "생산일자", "Plan_Date", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "품목코드", "Item_Code", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "작업지시상태", "Wo_Status", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "작업지시번호", "Workorderno", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "생산일자", "Plan_Date", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "품목코드", "Item_Code", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "품목명", "Item_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "작업장", "Wc_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "실적", "Prd_Qty", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "불량이미지 건수", "workImageCount", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "불량이미지 건수", "workImageCount", true, 180);
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "x", "Def_Ma_Code", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "x", "Def_Mi_Code", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "x", "Def_Date", false, 100);
@@ -66,14 +66,14 @@ namespace AdminForm
 
 
             dgvJobOrder.CellDoubleClick += DgvProductRequset_CellDoubleClick;
-            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업지시번호", "Workorderno", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "품목코드", "Item_Code", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업지시번호", "Workorderno", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "품목코드", "Item_Code", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "품목명", "Item_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "불량대분류", "Def_Ma_Code", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "불량상세분류", "Def_Mi_Code", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "발생일시", "Def_Date", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "불량수량", "Def_Qty", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "불량사진", "Def_Image_Name", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "불량대분류", "Def_Ma_Code", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "불량상세분류", "Def_Mi_Code", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "발생일시", "Def_Date", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "불량수량", "Def_Qty", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "불량사진", "Def_Image_Name", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "x", "Def_Image_Path", false, 100);
         }
 

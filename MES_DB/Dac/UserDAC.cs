@@ -69,7 +69,7 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = @"select m.User_ID,s.Screen_Code,s.Pre_Type
+                cmd.CommandText = @"select m.User_Name,s.Screen_Code,s.Pre_Type
                                     from ScreenItem_Authority s inner join UserGroup_Master u on s.UserGroup_Code = u.UserGroup_Code
                                     inner join UserGroup_Mapping um on um.UserGroup_Code = u.UserGroup_Code
                                     inner join User_Master m on um.User_ID = m.User_ID";

@@ -18,6 +18,10 @@ namespace FieldOperationForm
             WorkCenter_Dac dac = new WorkCenter_Dac();
             return dac.GetWorkCenter(Wc_Group);
         }
-
+        public List<WorkCenter_Vo> IronWorkCenter()
+        {
+            WorkCenter_Dac dac = new WorkCenter_Dac();
+            return dac.IronWorkCenter();
+        }
     }
 }

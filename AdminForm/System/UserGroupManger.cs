@@ -38,9 +38,9 @@ namespace AdminForm
         private void ShowDgv()
         {
             dgvSearchResult.CellDoubleClick += DgvSearchResult_CellDoubleClick;
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 그룹코드", "UserGroup_Code", true, 150);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 그룹 명", "UserGroup_Name", true, 150);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 그룹코드", "UserGroup_Code", true, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 그룹 명", "UserGroup_Name", true, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 150);
         }
 
         private void DgvSearchResult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

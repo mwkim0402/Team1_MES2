@@ -68,19 +68,19 @@ namespace AdminForm
         }
         private void ShowDgv()
         {
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목명", "Item_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목 영문명", "Item_Name_Eng", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목 영문명 약어", "Item_Name_Eng_Alias", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목유형", "Item_Type", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목 영문명", "Item_Name_Eng", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목 영문 약어", "Item_Name_Eng_Alias", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목유형", "Item_Type", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격", "Item_Spec", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "단위", "Item_Unit", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "안전재고", "Item_Stock", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "압연공정 UPH", "RollingUPH", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "제강공정 UPH", "SteelUPH", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "제선공정 UPH", "IronUPH", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "포장공정 UPH", "PackageUPH", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "안전재고", "Item_Stock", true, 150, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "압연공정 UPH", "RollingUPH", true, 180, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "제강공정 UPH", "SteelUPH", true, 180, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "제선공정 UPH", "IronUPH", true, 180, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "포장공정 UPH", "PackageUPH", true, 180, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 200);
             // customize dataviewgrid, add checkbox column
             dgvSearchResult.RowHeadersVisible = false;
             DataGridViewCheckBoxColumn chkboxCol = new DataGridViewCheckBoxColumn();
@@ -209,7 +209,7 @@ namespace AdminForm
         {
             if (cmbProdCat.Text == "선택")
             {
-                frm.lblAlert.Text = "[알람] 먼저 제품유형을 선택하여야 합니다.";
+               // frm.lblAlert.Text = "[알람] 먼저 제품유형을 선택하여야 합니다.";
                 timer1.Start();
                 return;
             }
@@ -224,11 +224,11 @@ namespace AdminForm
 
                 if (searchList.Count < 1)
                 {
-                    frm.lblAlert.Text = "[알람] 검색한 조건의 데이터가 존재하지 않습니다.";
+                  //  frm.lblAlert.Text = "[알람] 검색한 조건의 데이터가 존재하지 않습니다.";
                     return;
                 }
                 //  frm.lblAlertTitle.Text = "[알람]";
-                frm.lblAlert.Text = $"[알람] {searchList.Count} 건의 데이터가 조회되었습니다.";
+               // frm.lblAlert.Text = $"[알람] {searchList.Count} 건의 데이터가 조회되었습니다.";
                 timer1.Start();
                 dgvSearchResult.DataSource = searchList;
             }
@@ -236,7 +236,7 @@ namespace AdminForm
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            frm.lblAlert.Text = "<공지사항> Test 중 입니다.";
+         //   frm.lblAlert.Text = "<공지사항> Test 중 입니다.";
             timer1.Stop();
         }
 

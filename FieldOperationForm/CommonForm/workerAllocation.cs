@@ -15,6 +15,7 @@ namespace FieldOperationForm
     public partial class workerAllocation : Form
     {
         List<WorkCenter_Vo> CList = null;
+        List<WorkCenter_Vo> QList = null;
         List<WorkAllocation_Vo> WList = null;
         List<WorkAllocation_Vo> MList = null;
         Main_P main;
@@ -219,18 +220,33 @@ namespace FieldOperationForm
 
         private void initComboBox()
         {
-           
-            WorkCenter_Service service = new WorkCenter_Service();
-            WorkCenter_Vo vo = new WorkCenter_Vo();
-            CList = service.GetWorkCenter(main.lbl_Job.Text);
-            if (CList.Count > 0)
+            if (main.lbl_Job.Text == "제선")
             {
-                List<string> NonList = (from item in CList
-                                        select item.Wc_Name).ToList();
-                CommonUtil.ComboBinding(cb_Wc_Name, NonList);
+                WorkCenter_Service service = new WorkCenter_Service();
+                WorkCenter_Vo vo = new WorkCenter_Vo();
+                QList = service.IronWorkCenter();
+                if (QList.Count > 0)
+                {
+                    List<string> NonList = (from item in QList
+                                            select item.Wc_Name).ToList();
+                    CommonUtil.ComboBinding(cb_Wc_Name, NonList);
+                }
             }
+            else
+            {
 
+                WorkCenter_Service service = new WorkCenter_Service();
+                WorkCenter_Vo vo = new WorkCenter_Vo();
+                CList = service.GetWorkCenter(main.lbl_Job.Text);
+                if (CList.Count > 0)
+                {
+                    List<string> NonList = (from item in CList
+                                            select item.Wc_Name).ToList();
+                    CommonUtil.ComboBinding(cb_Wc_Name, NonList);
+                }
+            }
         }
+ 
 
         private void cb_Wc_Name_SelectedIndexChanged(object sender, EventArgs e)
         {

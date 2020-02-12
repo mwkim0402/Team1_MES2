@@ -38,14 +38,14 @@ namespace AdminForm
         }
         private void ShowDgv()
         {
-            CommonClass.AddNewColumnToDataGridView(dgvSelect, "불량현상 대분류 코드", "Def_Ma_Code", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSelect, "불량현상 대분류 명", "Def_Ma_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSelect, "사용유무", "Use_YN", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSelect, "불량현상 대분류 코드", "Def_Ma_Code", true, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvSelect, "불량현상 대분류 명", "Def_Ma_Name", true, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvSelect, "사용유무", "Use_YN", true, 150, DataGridViewContentAlignment.MiddleCenter);
 
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "불량현상 대분류 코드", "Def_Ma_Code", true, 150);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "불량현상 상세분류 코드", "Def_Mi_Code", true, 200);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "불량현상 상세분류 명", "Def_Mi_Name", true, 200);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 50);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "불량현상 대분류 코드", "Def_Ma_Code", true, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "불량현상 상세분류 코드", "Def_Mi_Code", true, 250);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "불량현상 상세분류 명", "Def_Mi_Name", true, 250);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 150, DataGridViewContentAlignment.MiddleCenter);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 500);
         }
         private void ComboBind()

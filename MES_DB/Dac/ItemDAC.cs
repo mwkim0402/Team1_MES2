@@ -77,7 +77,7 @@ namespace MES_DB
                 cmd.Parameters.AddWithValue("@Item_Spec", item.Item_Spec);
                 cmd.Parameters.AddWithValue("@Item_Unit", item.Item_Unit);
                 
-                cmd.Parameters.AddWithValue("@Item_Stock", item.Item_Stock);
+               // cmd.Parameters.AddWithValue("@Item_Stock", item.Item_Stock);
                 cmd.Parameters.AddWithValue("@RollingUPH", item.RollingUPH);
                 cmd.Parameters.AddWithValue("@SteelUPH", item.SteelUPH);
                 cmd.Parameters.AddWithValue("@IronUPH", item.IronUPH);

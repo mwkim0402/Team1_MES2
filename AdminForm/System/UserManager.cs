@@ -26,6 +26,8 @@ namespace AdminForm
             cmbProcess.SelectedIndex = 0;
             cmbGroupCode.SelectedIndex = 0;
             cmbEditGroupCode.SelectedIndex = 0;
+            cmbUserType.SelectedIndex = 0;
+            cmbEditUserType.SelectedIndex = 0;
             frm = (MainForm)this.MdiParent;
             ShowDgv();
             CommonClass.Userauthority(btnSave, btnEdit);
@@ -81,18 +83,20 @@ namespace AdminForm
                     cmbEditGroupCode.SelectedItem = item;
                 }
             }
-            //txtEditGroupCode.Text = dgvSearchResult.Rows[e.RowIndex].Cells[2].Value.ToString();
             txtEditGroupName.Text = dgvSearchResult.Rows[e.RowIndex].Cells[3].Value.ToString();
         }
 
         private void UserManager_Activated(object sender, EventArgs e)
         {
+            //dgvSearchResult.ClearSelection();
             frm.Search_Click += new System.EventHandler(this.GetData);
+            ToolStripManager.Merge(toolStrip1, frm.ToolStrip);
         }
 
         private void UserManager_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= new System.EventHandler(this.GetData);
+            ToolStripManager.RevertMerge(frm.ToolStrip);
         }
         private void GetData(object sender, EventArgs e)
         {
@@ -251,7 +255,7 @@ namespace AdminForm
         {
             if (cmbUserType.SelectedIndex == 1)
                 cmbGroupCode.SelectedIndex = 2;
-            else
+            else if(cmbUserType.SelectedIndex == 2)
                 cmbGroupCode.SelectedIndex = 1;
 
         }
@@ -262,7 +266,7 @@ namespace AdminForm
             {
                 cmbEditGroupCode.SelectedItem = "UserLevel2";
             }
-            else
+            else if(cmbEditUserType.SelectedIndex ==2)
                 cmbEditGroupCode.SelectedItem = "UserLevel1";
         }
 
@@ -272,10 +276,11 @@ namespace AdminForm
             {
                 txtEditGroupName.Text = "사원";
             }
-            else
+            else if(cmbEditGroupCode.SelectedIndex == 2)
             {
                 txtEditGroupName.Text = "임원";
             }
+            
         }
     }
 }

@@ -14,20 +14,15 @@ namespace AdminForm
     public partial class JobOrderCreation : dgvOneWithInput
     {
         MainForm frm;
-        List<ItemCodeCB> comlist;
         string selectedWorkOrderNo; //작업지시번호
-        List<JobOrderCreateVo> daycount= new List<JobOrderCreateVo>();
-
+        List<Wo_Req> woReqList = new List<Wo_Req>();
+        
         List<JobOrderCreateVo> List = null;
         public JobOrderCreation()
         {
             InitializeComponent();
         }
-        private void RoadList()
-        {
-            JobOrderService service = new JobOrderService();
-            List = service.JobOrderCreation();
-        }
+
         private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
          int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
         {
@@ -55,61 +50,22 @@ namespace AdminForm
         private void JobOrderCreation_Load(object sender, EventArgs e)
         {
             DgvLoad();
-            WorkplaceCB();
-            ItemCodeCB();
-
-            this.dgvSearchResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductRequset_CellClick);
-            dgvSearchResult.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSearchResult.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductRequset_DoubleClick);
-
-            //기본값 설정
-            dtpStart.Value = dtpEnd.Value.AddDays(-7);
-            
-            //foreach (JobOrderCreateVo item in List)
-            //{
-                
-            //    JobOrderCreateVo ifitem = new JobOrderCreateVo();
-            //    ifitem.Workorderno = item.Workorderno;
-            //    if (ifitem.Workorderno.ToString().Substring(0,8) == DateTime.Today.Date.ToString())
-            //    {
-            //        daycount.Add(ifitem);
-            //    }
-            //}
-                                               
-
-            txtJobOrderCodeInput.Text = DateTime.Today.Date.ToShortDateString().Replace("-", "") + String.Format("{0:D4}", daycount.Count+ 1);
+            RefreshList();
+            ComboBind();
+            CreateWoReqNo();
         }
-
-        private void ItemCodeCB()
+        private void ComboBind()
         {
-            JobOrderService ser = new JobOrderService();
-            comlist = ser.GetItemCodeCombo();
-
-            List<ComboItem> comboList = (from value in comlist
-                                         select new ComboItem
-                                         {
-                                             comboText = value.Item_Code,
-                                             comboValue = value.Item_Name
-                                         }).ToList();
-            ComboClass.ComboBind(comboList, cmbItemCode, true);
-            ComboClass.ComboBind(comboList, cmbItemCode_CH, true);
+            ItemService service = new ItemService();
+            List<ComboItem> cbItem = (from item in service.GetAllItemInfo()
+                                      where item.Item_Type =="완제품"
+                                      select new ComboItem
+                                      {
+                                          comboText = item.Item_Name,
+                                          comboValue = item.Item_Code
+                                      }).ToList();
+            ComboClass.ComboBind(cbItem, cmbItemName, false);
         }
-
-        private void WorkplaceCB()
-        {
-            JobOrderService ser = new JobOrderService();
-           List<WorkPlaceCB> comlist = ser.GetWorkPlaceCombo();
-
-            List<ComboItem> comboList = (from value in comlist
-                                         select new ComboItem
-                                         {
-                                             comboText = value.Wc_Name,
-                                             comboValue = value.Wc_code
-                                         }).ToList();
-            ComboClass.ComboBind(comboList, cmbWorkPlace, true);
-            ComboClass.ComboBind(comboList, cmbWorkPlace_CH, true);
-        }
-
         private void DgvLoad()
         {
             frm = (MainForm)this.MdiParent;
@@ -117,32 +73,14 @@ namespace AdminForm
             checkBoxColumn.HeaderText = "체크";
             checkBoxColumn.Name = "check";
             dgvSearchResult.Columns.Add(checkBoxColumn);
-            AddNewColumnToDataGridView(dgvSearchResult, "작업지시상태", "Wo_Status", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "작업지시번호", "Workorderno", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "계획일자", "Plan_Date", true, 120);
-            AddNewColumnToDataGridView(dgvSearchResult, "계획수량", "Plan_Qty", true, 120,DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvSearchResult, "계획수량단위", "Plan_Unit", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 120);
-            AddNewColumnToDataGridView(dgvSearchResult, "품목명", "Item_Name", true, 180);
-            AddNewColumnToDataGridView(dgvSearchResult, "작업장", "Wc_Name", true, 130);
-            AddNewColumnToDataGridView(dgvSearchResult, "생산일자", "Prd_Date", true, 140);
-            AddNewColumnToDataGridView(dgvSearchResult, "생산시작시각", "Prd_Starttime", true, 180);
-            AddNewColumnToDataGridView(dgvSearchResult, "생산종료시간", "Prd_Endtime", true, 180);
-            AddNewColumnToDataGridView(dgvSearchResult, "투입수량", "In_Qty_Main", true, 120, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvSearchResult, "산출수량", "Out_Qty_Main", true, 120, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvSearchResult, "생산수량", "Prd_Qty", true, 120, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvSearchResult, "생산의뢰 번호", "Wo_Req_No", true, 160);
-            AddNewColumnToDataGridView(dgvSearchResult, "생산의뢰 순번", "Req_Seq", true, 160);
-            AddNewColumnToDataGridView(dgvSearchResult, "프로젝트명", "Remark", true, 150);
-            RoadList();
-            dgvSearchResult.DataSource = List;
-
-            dgvSearchResult.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvSearchResult.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvSearchResult.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvSearchResult.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvSearchResult.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+            AddNewColumnToDataGridView(dgvSearchResult, "생산의뢰번호", "Wo_Req_No", true, 150);
+            AddNewColumnToDataGridView(dgvSearchResult, "우선순위", "Req_Seq", true, 150);
+            AddNewColumnToDataGridView(dgvSearchResult, "고객사", "Cust_Name", true, 150);
+            AddNewColumnToDataGridView(dgvSearchResult, "프로젝트명", "Project_Name", true, 120);
+            AddNewColumnToDataGridView(dgvSearchResult, "의뢰제품명", "Item_Code", true, 120);
+            AddNewColumnToDataGridView(dgvSearchResult, "의뢰수량", "Req_Qty", true, 150, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvSearchResult, "의뢰등록날짜", "Ins_Date", true, 150);
+            AddNewColumnToDataGridView(dgvSearchResult, "마감날짜", "Prd_Plan_Date", true, 150);
         }
 
         //수정으로 탭페이지 전환
@@ -157,7 +95,7 @@ namespace AdminForm
 
             foreach (ComboItem item in cmbItemCode_CH.Items)
             {
-                if(dgvSearchResult.SelectedRows[0].Cells[6].Value.ToString() == item.comboText.ToString())
+                if (dgvSearchResult.SelectedRows[0].Cells[6].Value.ToString() == item.comboText.ToString())
                 {
                     cmbItemCode_CH.SelectedItem = item;
                 }
@@ -185,96 +123,26 @@ namespace AdminForm
 
         }
 
-        private void DgvProductRequset_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 0)
-            {
-                selectedWorkOrderNo = dgvSearchResult.SelectedRows[0].Cells[1].Value.ToString();
-                if (dgvSearchResult.Rows[e.RowIndex].Cells[0].Value == null)
-                {
-                    dgvSearchResult.SelectedRows[0].Cells[0].Value = CheckState.Checked;
-                }
-                else if (dgvSearchResult.Rows[e.RowIndex].Cells[0].Value.ToString() == "True")
-                {
-                    dgvSearchResult.SelectedRows[0].Cells[0].Value = CheckState.Unchecked;
-                }
-                else
-                {
-                    dgvSearchResult.SelectedRows[0].Cells[0].Value = CheckState.Checked;
-                }
-            }
-        }
-        private void BtnDeadline_Click(object sender, EventArgs e)
-        {
-            //체크표시한 모든 or 선택한 작업지시의 Wo_Status 를 '작업지시마감'으로 변경한다.
-            for (int i = 0; i < dgvSearchResult.Rows.Count + 1; i++)
-            {
-                if (dgvSearchResult.Rows[i].Cells[0].FormattedValue.ToString() == "True")
-                {
-                    FinishJobOrder(selectedWorkOrderNo);
-
-                }
-            }
-
-            //작업지시dgv 새로고침
-            RefreshList();
-            //작업지시dgv null
-            List = null;
-            dgvSearchResult.DataSource = List;
-
-        }
+       
         private void RefreshList()
         {
-            JobOrderService service = new JobOrderService();
-            List = service.JobOrderCreation();
-            dgvSearchResult.DataSource = List;
+            WoReqService service = new WoReqService();
+            woReqList = service.GetAllWoReq();
+            dgvSearchResult.DataSource = woReqList;
         }
 
         public void Search_Click(object sender, EventArgs e)
         {
-            string strStart = dtpStart.Value.ToString().Substring(0, 10);
-            string strEnd = dtpEnd.Value.ToString().Substring(0, 10);
-            JobOrderService service = new JobOrderService();
-            if (fcProcess.SendCode != "")
-            {
-                if(fcWorkPlace.SendCode != "")
-                {
-                    //카테고리 둘다 있을때
-                    List = service.JobOrderSearch(strStart, strEnd, fcProcess.SendCode,fcWorkPlace.SendName);
-                    dgvSearchResult.DataSource = List;
-                }
-                else
-                {
-                    //공정만 있을때
-                    List = service.JobOrderSearch(strStart, strEnd, fcProcess.SendCode, "");
-                    dgvSearchResult.DataSource = List;
-                }
-            }
-            else
-            {
-                if (fcWorkPlace.SendCode != "")
-                {
-                    //작업장만 있을때
-                    List = service.JobOrderSearch(strStart, strEnd, "", fcWorkPlace.SendCode);
-                    dgvSearchResult.DataSource = List;
-                }
-                else
-                {
-                    //둘다 없을 때
-                    List = service.JobOrderSearch(strStart, strEnd, "", "");
-                    dgvSearchResult.DataSource = List;
-                }
-            }
-
+            RefreshList();
         }
 
-       
+
 
         private void JobOrderCreation_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += new System.EventHandler(Search_Click);
-            frm.Search_Click += new System.EventHandler(ExportToExcel);
-           
+            frm.Insert_Click += new System.EventHandler(ExportToExcel);
+
         }
 
         private void ExportToExcel(object sender, EventArgs e)
@@ -332,54 +200,30 @@ namespace AdminForm
         private void JobOrderCreation_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= new System.EventHandler(Search_Click);
-            frm.Search_Click -= new System.EventHandler(ExportToExcel);
+            frm.Insert_Click -= new System.EventHandler(ExportToExcel);
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            if(btnSave.Text == "저장") //저장
+            WoReqService service = new WoReqService();
+            int req_Num= (woReqList.FindAll(x => x.Prd_Plan_Date.Date == dtpPlanDate.Value.Date).Count) + 1;
+            service.InsertWoReq(new Wo_Req
             {
-                JobOrderCreateVo_Insert ins = new JobOrderCreateVo_Insert();
-                ins.workorderno = txtJobOrderCodeInput.Text;
-                ins.plan_qty = (int)nuPlanAmount.Value;
-                ins.plan_unit = txtPlanAmount.Text;
-                ins.plan_date = dtpPlanDate.Value.ToString().Substring(0, 10);
-                ins.item_code = cmbItemCode.Text;
-                ins.wc_code = cmbWorkPlace.SelectedValue.ToString();
-
-                JobOrderService ser = new JobOrderService();
-                if(ser.InsertJobOrder(ins) >= 1)
-                {
-                    MessageBox.Show("저장이 완료되었습니다.");
-                }
-                else
-                {
-                    MessageBox.Show("저장이 실패되었습니다.");
-                }
-            }
-           
-               
-
-        }
-
-        private void BtnDeadlineCancel_Click(object sender, EventArgs e)
-        {
-            //체크표시한 모든 or 선택한 작업지시의 Wo_Status 를 '작업지시마감'으로 변경한다.
-            for (int i = 0; i < dgvSearchResult.Rows.Count; i++)
-            {
-                if (dgvSearchResult.Rows[i].Cells[0].FormattedValue.ToString() == "True")
-                {
-                    RerollMoldReq(selectedWorkOrderNo);
-
-                }
-            }
-
-            //작업지시dgv 새로고침
+                Wo_Req_No = txtJobOrderCodeInput.Text,
+                Cust_Name = txtCustName.Text,
+                Project_Name = txtProjectName.Text,
+                Req_Qty = Convert.ToInt32(nuPlanAmount.Text),
+                Prd_Plan_Date = dtpPlanDate.Value.Date,
+                Item_Code = cmbItemName.SelectedValue.ToString(),
+                Req_Seq = req_Num,
+                Ins_Date = DateTime.Now.Date
+            });
+            CommonClass.InitControl(pnlParent1);
             RefreshList();
-            //작업지시dgv null
-            List = null;
-            dgvSearchResult.DataSource = List;
+            CreateWoReqNo();
         }
+
+     
 
         private void RerollMoldReq(string Workorderno)
         {
@@ -394,49 +238,16 @@ namespace AdminForm
             }
         }
 
-        private void CmbItemCode_SelectedIndexChanged(object sender, EventArgs e)
+        private void CreateWoReqNo()
         {
-            foreach (ItemCodeCB item in comlist)
-            {
-                if (item.Item_Code == cmbItemCode.Text)
-                {
-                   txtItemName.Text = item.Item_Name;
-                }
-            }
+            txtJobOrderCodeInput.Text = string.Format($"{DateTime.Now.ToShortDateString().Replace("-","")}_{woReqList.FindAll(x => x.Ins_Date.Date == DateTime.Now.Date).Count+1}");
         }
-
-        private void FcProcess_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtnModify_Click(object sender, EventArgs e)
         {
-            
-                JobOrderCreateVo_Insert ins = new JobOrderCreateVo_Insert();
-                ins.workorderno = txtJobOrderNo_Ch.Text;
-                ins.plan_qty = (int)nuPlanAmount_CH.Value;
-                ins.plan_unit = txtPlanAmount_CH.Text;
-                ins.plan_date = dtpPlanDate_CH.Value.ToString().Substring(0, 10);
-                ins.item_code = cmbItemCode_CH.Text;
-                ins.wc_code = cmbWorkPlace_CH.SelectedValue.ToString();
 
-                JobOrderService ser = new JobOrderService();
-            if (ser.UpdateJobOrder(ins)>= 1)
-            {
-                MessageBox.Show("수정이 완료되었습니다.");
-
-            }
-            else
-            {
-                MessageBox.Show("수정이 실패했습니다.");
-
-            }
-
-            RefreshList();
         }
     }
 
 
-   
+
 }

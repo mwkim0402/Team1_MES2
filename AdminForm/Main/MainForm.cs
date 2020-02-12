@@ -23,6 +23,7 @@ namespace AdminForm
         bool open = false;
         List<MenuTreeVo> menuList;
 
+        //public string SendID { get; set; }
         public ToolStrip ToolStrip { get { return toolStrip1; } set { toolStrip1 = value; } }
         public MainForm()
         {
@@ -162,7 +163,7 @@ namespace AdminForm
             lblLogo.Image = new Bitmap(Application.StartupPath + @"\image\teamlogotest.png");
             btnS.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Search.ico");
             btnHome.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Report2_32x32.png");
-            btnSave.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Action_Save_New_32x32.png");
+            btnSave.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Action_Export_ToXls_32x32.png");
             btnEdit.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Edit_32x32.png");
             btnDelete.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\DeleteList_32x32.png");
             pictureBox1.Image = new Bitmap(Application.StartupPath + @"\image\mark.jpg");
@@ -223,9 +224,6 @@ namespace AdminForm
                 TabPage TabP = (TabPage)tc.TabPages[tc.SelectedIndex];
                 tc.TabPages.Remove(TabP);
             }
-
-            //Form tempChild = this.ActiveMdiChild;
-            //tempChild.Close();
         }
 
         #region 폼동적생성
@@ -378,10 +376,10 @@ namespace AdminForm
             }
             foreach (Form frm in this.MdiChildren)
             {
-                if (frm != this.ActiveMdiChild || frm.Name!="MainChild")
+                if (frm != this.ActiveMdiChild && frm.Name!="MainChild")
                 {
                     frm.Close();
-                }
+                }                
             }
         }
 
@@ -468,7 +466,8 @@ namespace AdminForm
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("로그인 되었습니다.");
-                lblName.Text = Global.User_Name + "님 안녕하세요.";
+                
+                //lblName.Text = Global.User_Name + "님 환영합니다.";
                 Userauthority();
             }
         }
@@ -520,6 +519,12 @@ namespace AdminForm
                 }
             }
             LoadHome();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (this.Insert_Click != null)
+                Insert_Click(this, null);
         }
     }
 }

@@ -12,19 +12,19 @@ namespace WebApplication0106.Controllers
     {
         // GET: Product
         int pageSize = 10;
-        public ActionResult List(string category,int page = 1)
+        public ActionResult List(string group,int page = 1)
         {
             ProductDAC product = new ProductDAC();
             ProductListView model = new ProductListView
             {
-                Products = product.GetProducts(page, pageSize,category),
+                Products = product.GetList(page, pageSize,group),
                 PagingInfo = new PagingInfo
                 {
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
-                    TotalItems = product.GetProductTotalCount(category)
+                    TotalItems = product.GetProductTotalCount(group)
                 },
-                CurrentCategory = category
+                CurrentCategory = group
             };
             return View(model);
         }

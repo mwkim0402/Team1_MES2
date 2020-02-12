@@ -16,7 +16,7 @@ namespace MES_DB
         public decimal USL { get; set; }
         public decimal SL { get; set; }
         public decimal LSL { get; set; }
-        public int Sample_Size { get; set; }
+        public string Inspect_Group { get; set; }
         public string Inspect_Unit { get; set; }
         public string Use_YN { get; set; }
         public string Remark { get; set; }

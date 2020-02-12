@@ -390,9 +390,9 @@
             this.toolStripLabel1,
             this.btnHome,
             this.btnS,
+            this.btnDelete,
             this.btnSave,
             this.btnEdit,
-            this.btnDelete,
             this.toolStripSeparator1});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.toolStrip1.Location = new System.Drawing.Point(237, 0);
@@ -449,7 +449,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(60, 60);
-            this.btnSave.Text = "저장";
+            this.btnSave.Text = "엑셀 저장";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -463,7 +463,7 @@
             this.btnEdit.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(60, 60);
-            this.btnEdit.Text = "새로고침";
+            this.btnEdit.Text = "추가 예정";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEdit.ToolTipText = "수정";

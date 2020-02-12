@@ -183,6 +183,12 @@
     <Compile Include="Main\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\UserInfoChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\UserInfoChange.Designer.cs">
+      <DependentUpon>UserInfoChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mold\MoldInformationRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -559,6 +565,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\UserInfoChange.resx">
+      <DependentUpon>UserInfoChange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mold\MoldInformationRegister.resx">
       <DependentUpon>MoldInformationRegister.cs</DependentUpon>

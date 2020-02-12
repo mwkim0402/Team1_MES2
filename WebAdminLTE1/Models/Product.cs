@@ -7,10 +7,10 @@ namespace WebApplication0106.Models
 {
     public class Product
     {
-        public int ProductID { get; set; }
-        public string Name { get; set; }
-        public string Description{ get; set; }
-        public decimal Price { get; set; }
-        public string Category { get; set; }
+        public string Wc_Code { get; set; }
+        public string Wc_Name { get; set; }
+        public string Wc_Group { get; set; }
+        public string Process_Code { get; set; }
+        public string Wo_Status { get; set; }
     }
 }

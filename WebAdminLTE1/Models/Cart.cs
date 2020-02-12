@@ -20,7 +20,7 @@ namespace WebApplication0106.Models
         {
             //신규로 추가되는 제품인지, 기존에 추가되어 있는 제품인지.
 
-            CartLine line = Lines.Where(p => p.product.ProductID == product.ProductID).FirstOrDefault();
+            CartLine line = Lines.Where(p => p.product.Wc_Code == product.Wc_Code).FirstOrDefault();
 
             if (line == null)
             {
@@ -39,7 +39,7 @@ namespace WebApplication0106.Models
 
         public void RemoveItem(Product product)
         {
-            lines.RemoveAll(i => i.product.ProductID == product.ProductID);
+            lines.RemoveAll(i => i.product.Wc_Code == product.Wc_Code);
         }
 
         public List<CartLine> Lines
@@ -47,10 +47,7 @@ namespace WebApplication0106.Models
             get { return lines; }
         }
 
-        public decimal ComputeTotalValue()
-        {
-            return lines.Sum(i => i.product.Price * i.Qty);
-        }
+       
         public void Clear()
         {
             lines.Clear();

@@ -82,11 +82,8 @@
                                 <i class="fa fa-wrench"></i>
                             </button>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">기간 설정</a></li>
+                                <!--<li class="divider"></li>-->
                             </ul>
                         </div>
                         <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -97,14 +94,14 @@
                     <div class="row">
                         <div class="col-md-8">
                             <p class="text-center">
-                                <strong>판매현황: 2020년 1월 1일 - 2020년 1월 31일</strong>
+                                <strong>판매현황: @DateTime.Today.Year 년 @DateTime.Today.Month 월 1 일 - @DateTime.Today.Year 년 @DateTime.Today.Month 월 30 일</strong>
                             </p>
 
                             <div class="chart">
                                 <!-- Sales Chart Canvas -->
                                 <canvas id="salesChart" style="height: 180px;"></canvas>
                             </div>
-                            <!-- /.chart-responsive -->
+                            <!-- /.chart-responsive --> 
                         </div>
                         <!-- /.col -->
                         <div class="col-md-4">
@@ -167,8 +164,8 @@
                         <div class="col-sm-3 col-xs-6">
                             <div class="description-block border-right">
                                 <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
-                                <h5 class="description-header">$35,210.43</h5>
-                                <span class="description-text">TOTAL REVENUE</span>
+                                <h5 class="description-header">￦35,210.43</h5>
+                                <span class="description-text">매출액</span>
                             </div>
                             <!-- /.description-block -->
                         </div>
@@ -176,8 +173,8 @@
                         <div class="col-sm-3 col-xs-6">
                             <div class="description-block border-right">
                                 <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
-                                <h5 class="description-header">$10,390.90</h5>
-                                <span class="description-text">TOTAL COST</span>
+                                <h5 class="description-header">￦10,390.90</h5>
+                                <span class="description-text">원가비용</span>
                             </div>
                             <!-- /.description-block -->
                         </div>
@@ -185,8 +182,8 @@
                         <div class="col-sm-3 col-xs-6">
                             <div class="description-block border-right">
                                 <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
-                                <h5 class="description-header">$24,813.53</h5>
-                                <span class="description-text">TOTAL PROFIT</span>
+                                <h5 class="description-header">￦24,813.53</h5>
+                                <span class="description-text">순이익</span>
                             </div>
                             <!-- /.description-block -->
                         </div>
@@ -194,8 +191,8 @@
                         <div class="col-sm-3 col-xs-6">
                             <div class="description-block">
                                 <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>
-                                <h5 class="description-header">1200</h5>
-                                <span class="description-text">GOAL COMPLETIONS</span>
+                                <h5 class="description-header">￦1200</h5>
+                                <span class="description-text">목표액</span>
                             </div>
                             <!-- /.description-block -->
                         </div>
@@ -216,7 +213,7 @@
             <!-- MAP & BOX PANE -->
             <div class="box box-success">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Visitors Report</h3>
+                    <h3 class="box-title">직책별 분포도</h3>
 
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -238,21 +235,22 @@
                         <div class="col-md-3 col-sm-4">
                             <div class="pad box-pane-right bg-green" style="min-height: 280px">
                                 <div class="description-block margin-bottom">
-                                    <div class="sparkbar pad" data-color="#fff">90,70,90,70,75,80,70</div>
-                                    <h5 class="description-header">8390</h5>
-                                    <span class="description-text">Visits</span>
+                                    <span class="description-text">@DateTime.Today.Year 년 기준</span>
+                                    <div class="sparkbar pad" data-color="#fff">관리자</div>
+                                    <h4 class="description-header">30 명</h4>
+                                    <span class="description-text">______</span>
                                 </div>
                                 <!-- /.description-block -->
                                 <div class="description-block margin-bottom">
-                                    <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div>
-                                    <h5 class="description-header">30%</h5>
-                                    <span class="description-text">Referrals</span>
+                                    <div class="sparkbar pad" data-color="#fff">임원직</div>
+                                    <h4 class="description-header">100 명</h4>
+                                    <span class="description-text">______</span>
                                 </div>
                                 <!-- /.description-block -->
                                 <div class="description-block">
-                                    <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div>
-                                    <h5 class="description-header">70%</h5>
-                                    <span class="description-text">Organic</span>
+                                    <div class="sparkbar pad" data-color="#fff">사원직</div>
+                                    <h5 class="description-header">170 명</h5>
+                                    <span class="description-text">______</span>
                                 </div>
                                 <!-- /.description-block -->
                             </div>
@@ -277,7 +275,7 @@
                     </div>
                 </div>
                 <!-- /.box-header -->
-                <div class="box-body">
+                <div class="box-body" style="height : 647px">
                     <div class="table-responsive">
                         <table class="table no-margin">
                             <thead>
@@ -352,8 +350,7 @@
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer clearfix">
-                    <a href="javascript:void(0)" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
-                    <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>
+                    <a href="/Product/List" class="btn btn-sm btn-default btn-flat pull-right">전체 보기</a>
                 </div>
                 <!-- /.box-footer -->
             </div>
@@ -363,18 +360,18 @@
 
         <div class="col-md-4">
             <!-- Info Boxes Style 2 -->
-            <div class="info-box bg-yellow">
+            <div class="info-box bg-red">
                 <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Inventory</span>
+                    <span class="info-box-text">제강</span>
                     <span class="info-box-number">5,200</span>
 
                     <div class="progress">
                         <div class="progress-bar" style="width: 50%"></div>
                     </div>
                     <span class="progress-description">
-                        50% Increase in 30 Days
+                        50% 증가
                     </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -384,31 +381,31 @@
                 <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Mentions</span>
+                    <span class="info-box-text">제선</span>
                     <span class="info-box-number">92,050</span>
 
                     <div class="progress">
                         <div class="progress-bar" style="width: 20%"></div>
                     </div>
                     <span class="progress-description">
-                        20% Increase in 30 Days
+                        20% 증가
                     </span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
-            <div class="info-box bg-red">
+            <div class="info-box bg-yellow">
                 <span class="info-box-icon"><i class="ion ion-ios-cloud-download-outline"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Downloads</span>
+                    <span class="info-box-text">압연</span>
                     <span class="info-box-number">114,381</span>
 
                     <div class="progress">
                         <div class="progress-bar" style="width: 70%"></div>
                     </div>
                     <span class="progress-description">
-                        70% Increase in 30 Days
+                        70% 증가
                     </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -418,14 +415,31 @@
                 <span class="info-box-icon"><i class="ion-ios-chatbubble-outline"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Direct Messages</span>
+                    <span class="info-box-text">적재</span>
                     <span class="info-box-number">163,921</span>
 
                     <div class="progress">
                         <div class="progress-bar" style="width: 40%"></div>
                     </div>
                     <span class="progress-description">
-                        40% Increase in 30 Days
+                        40% 증가
+                    </span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+            <div class="info-box bg-light-blue">
+                <span class="info-box-icon"><i class="ion-ios-chatbubble-outline"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">포장</span>
+                    <span class="info-box-number">163,921</span>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 40%"></div>
+                    </div>
+                    <span class="progress-description">
+                        40% 증가
                     </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -466,33 +480,14 @@
                     </div>
                     <!-- /.row -->
                 </div>
-                <!-- /.box-body -->
-                <div class="box-footer no-padding">
-                    <ul class="nav nav-pills nav-stacked">
-                        <li>
-                            <a href="#">
-                                United States of America
-                                <span class="pull-right text-red"><i class="fa fa-angle-down"></i> 12%</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">India <span class="pull-right text-green"><i class="fa fa-angle-up"></i> 4%</span></a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                China
-                                <span class="pull-right text-yellow"><i class="fa fa-angle-left"></i> 0%</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+
                 <!-- /.footer -->
             </div>
             <!-- /.box -->
             <!-- PRODUCT LIST -->
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">최근 추가된 상품</h3>
+                    <h3 class="box-title">최근 추가된 작업지시</h3>
 
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -578,3 +573,4 @@
     <!-- /.row -->
 </section>
 <!-- /.content -->
+

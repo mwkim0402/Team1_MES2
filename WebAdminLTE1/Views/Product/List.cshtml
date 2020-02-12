@@ -1,6 +1,6 @@
 ﻿@model WebApplication0106.Models.ProductListView
 @{
-    ViewBag.Title = "제품목록";
+    ViewBag.Title = "작업장별 생산현황";
 }
 
 @foreach (var p in Model.Products)
@@ -8,5 +8,5 @@
     @Html.Partial("ProductSummary", p)
 }
 <div class="btn-group pull-right">
-    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory }))
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, WC_Group = Model.CurrentCategory }))
 </div>

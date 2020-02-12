@@ -39,13 +39,13 @@ namespace AdminForm
         private void ShowDgv()
         {
             CommonClass.AddNewColumnToDataGridView(dgvJob, "작업지시번호", "Workorderno", true, 120);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "생산일자", "Plan_Date", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "생산일자", "Plan_Date", true, 100,DataGridViewContentAlignment.MiddleCenter);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "공정", "Process_name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "작업장", "Wc_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "품목코드", "Item_Code", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "품목명", "Item_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "측정항목", "Inspect_name", false, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "기준값", "SL", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "기준값", "SL", false, 100,DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Process_code", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Wc_Code", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Inspect_Datetime", false, 100);

@@ -45,7 +45,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -227,7 +227,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.label3);
-            this.panel6.Controls.Add(this.label2);
+            this.panel6.Controls.Add(this.lblID);
             this.panel6.Controls.Add(this.label1);
             this.panel6.Font = new System.Drawing.Font("나눔고딕", 9F);
             this.panel6.Location = new System.Drawing.Point(12, 12);
@@ -244,15 +244,15 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "부서 :";
             // 
-            // label2
+            // lblID
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("나눔고딕", 11F);
-            this.label2.Location = new System.Drawing.Point(87, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "___ 환영합니다.";
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("나눔고딕", 11F);
+            this.lblID.Location = new System.Drawing.Point(87, 9);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(111, 17);
+            this.lblID.TabIndex = 1;
+            this.lblID.Text = "___ 환영합니다.";
             // 
             // label1
             // 
@@ -345,7 +345,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button6;

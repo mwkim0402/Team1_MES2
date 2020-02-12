@@ -23,6 +23,7 @@ namespace AdminForm
         bool open = false;
         List<MenuTreeVo> menuList;
 
+        //public string SendID { get; set; }
         public ToolStrip ToolStrip { get { return toolStrip1; } set { toolStrip1 = value; } }
         public MainForm()
         {
@@ -468,7 +469,8 @@ namespace AdminForm
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("로그인 되었습니다.");
-                lblName.Text = Global.User_Name + "님 안녕하세요.";
+                
+                //lblName.Text = Global.User_Name + "님 환영합니다.";
                 Userauthority();
             }
         }

@@ -20,7 +20,7 @@ namespace MES_DB
                                     inner join Inspect_Measure_History I on I.WorkOrderNo = wk.Workorderno
                                     inner join Process_Master P on I.Process_Code = P.Process_code
                                     inner join WorkCenter_Master wm on wk.Wc_Code = wm.Wc_Code
-                                    where wk.Plan_Date between @StartDate and @Enddate ";
+                                    where wk.Plan_Date between @StartDate and DateAdd(dd,1,@Enddate) ";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@StartDate", Start);
                 cmd.Parameters.AddWithValue("@Enddate", End);

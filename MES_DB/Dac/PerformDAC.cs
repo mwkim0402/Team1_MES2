@@ -55,7 +55,7 @@ namespace MES_DB
                 cmd.CommandText = @"select w.Wo_Status,w.Workorderno,w.Plan_Date,i.Item_Code,i.Item_Name,w.Wc_Code,w.In_Qty_Main,w.Out_Qty_Main,w.Prd_Qty,w.Wc_Code,p.Process_code
                      from WorkOrder w inner join Item_Master i on i.Item_Code = w.Item_Code inner join WorkCenter_Master wc on w.Wc_Code = wc.Wc_Code
                     inner join Process_Master p on wc.Process_Code = p.Process_code 
-                    where w.Plan_Date between @Startdate and @Enddate ";
+                    where w.Plan_Date between @Startdate and DateAdd(dd,1,@Enddate) ";
                 cmd.CommandType = CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Startdate", Start);
@@ -189,7 +189,7 @@ namespace MES_DB
                                     inner join WorkCenter_Master wm on wm.Wc_Code = w.Wc_Code
                                     inner join Process_Master p on wm.Process_Code = p.Process_code
                                     inner join Item_Master i on i.Item_Code = w.Item_Code 
-                                    where w.Plan_Date between @Startdate and @Enddate";
+                                    where w.Plan_Date between @Startdate and DateAdd(dd,1,@Enddate)";
                 cmd.CommandType = CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Startdate", Start);

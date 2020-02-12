@@ -125,7 +125,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -143,7 +143,6 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.dgvJob);
-            this.tabPage4.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tabPage4.Location = new System.Drawing.Point(4, 32);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);

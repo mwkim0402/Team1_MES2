@@ -45,15 +45,15 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목명", "Item_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정항목", "Inspect_name", true, 120);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "USL", "USL", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "SL", "SL", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "LSL", "LSL", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정일시", "Inspect_datetime", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "USL", "USL", true, 100,DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "SL", "SL", true, 100,DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "LSL", "LSL", true, 100,DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정일시", "Inspect_datetime", true, 150,DataGridViewContentAlignment.MiddleCenter);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "상세품목코드", "Inspect_code", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "상세품목명", "Inspect_name", true, 130);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정회차", "Inspect_date", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정순번", "Inspect_measure_seq", true, 120);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정값", "Inspect_val", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정값", "Inspect_val", true, 100,DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "Wc_Code", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "Process_Code", false, 100);
         }

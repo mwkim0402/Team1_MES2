@@ -82,12 +82,12 @@ namespace AdminForm
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbInsertGroup.Text == "소성")
-                txtInsertCode.Text = CreateCode("PL", list.Count + 1);
-            else if(cbInsertGroup.Text == "건조") 
-                txtInsertCode.Text =  CreateCode("DY", list.Count + 1);
-            else if (cbInsertGroup.Text == "성형")
-                txtInsertCode.Text = CreateCode("FR", list.Count + 1);
+            if(cbInsertGroup.Text == "제선")
+                txtInsertCode.Text = CreateCode("IM", list.Count + 1);
+            else if(cbInsertGroup.Text == "제강") 
+                txtInsertCode.Text =  CreateCode("SM", list.Count + 1);
+            else if (cbInsertGroup.Text == "압연")
+                txtInsertCode.Text = CreateCode("RL", list.Count + 1);
             else if (cbInsertGroup.Text == "포장")
                 txtInsertCode.Text = CreateCode("PK", list.Count + 1);
         }

@@ -163,8 +163,8 @@ namespace AdminForm
             lblLogo.Image = new Bitmap(Application.StartupPath + @"\image\teamlogotest.png");
             btnS.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Search.ico");
             btnHome.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Report2_32x32.png");
-            btnSave.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Action_Export_ToXls_32x32.png");
-            btnEdit.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Edit_32x32.png");
+            btnExcel.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Action_Export_ToXls_32x32.png");
+            btnSave.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Save as.ico");
             btnDelete.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\DeleteList_32x32.png");
             pictureBox1.Image = new Bitmap(Application.StartupPath + @"\image\mark.jpg");
             ImageList imgList = new ImageList();

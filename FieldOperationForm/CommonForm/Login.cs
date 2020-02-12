@@ -27,12 +27,10 @@ namespace FieldOperationForm
         private void btn_Login_Click(object sender, EventArgs e)
         {
             User_Service service = new User_Service();
-            JobOrderStatus_Load frm; //적재
-            JobOrderStatus frm1;//성형
+            JobOrderStatus_Load frm; //압연
+            JobOrderStatus frm1;//제선
             JobOrderStatus_Package frm2; // 포장
-
-           
-            
+            JobOrderStatus_Steelmaking frm3;//제강
 
             if (service.UserLogin(txt_UserID.Text.Trim(), txt_UserPwd.Text.Trim()) == 0)
             {
@@ -42,7 +40,7 @@ namespace FieldOperationForm
                 txt_UserID.Focus();
                 return;
             }
-            else if (service.GetUserType(txt_UserID.Text.Trim(), txt_UserPwd.Text.Trim()) == "적재")
+            else if (service.GetUserType(txt_UserID.Text.Trim(), txt_UserPwd.Text.Trim()) == "압연")
             {
 
                 frm = new JobOrderStatus_Load(main);
@@ -71,6 +69,22 @@ namespace FieldOperationForm
                 main.label3.Text = "님";
                 main.btn_NonOperation.Enabled = true;
                 main. btn_logout.Enabled = true;
+                main.btn_Home.Enabled = true;
+                Global.User_ID = Convert.ToInt32(txt_UserID.Text);
+            }
+
+            else if (service.GetUserType(txt_UserID.Text.Trim(), txt_UserPwd.Text.Trim()) == "제강")
+            {
+                frm3 = new JobOrderStatus_Steelmaking(main);
+                frm3.BringToFront();
+                frm3.MdiParent = main;
+                frm3.Dock = DockStyle.Fill;
+                frm3.Show();
+                this.Hide();
+                main.lbl_name.Text = service.GetUserName(txt_UserID.Text.Trim(), txt_UserPwd.Text.Trim());
+                main.label3.Text = "님";
+                main.btn_NonOperation.Enabled = true;
+                main.btn_logout.Enabled = true;
                 main.btn_Home.Enabled = true;
                 Global.User_ID = Convert.ToInt32(txt_UserID.Text);
             }

@@ -10,17 +10,19 @@ using System.Windows.Forms;
 
 namespace FieldOperationForm
 {
-    public partial class JobOrderStatus : Form
+    public partial class JobOrderStatus_Steelmaking : Form
     {
         Main_P main;
         string no;
         string start;
 
-        public JobOrderStatus(Main_P main1)
+        public JobOrderStatus_Steelmaking(Main_P main1)
         {
             InitializeComponent();
             main = main1;
             Setdgv();
+            main.btn_Max.Click += Sizeup;
+            main.btn_Min.Click += SizeDown;
         }
 
         // DataGridView 컬럼 설정
@@ -89,13 +91,7 @@ namespace FieldOperationForm
 
 
         }
-        private void JobOrderStatus_Load(object sender, EventArgs e)
-        {
-            main.lbl_Job.Text = "제선";
-            main.lblChange.Text = "작업지시 현황";
-            SetLoad();
 
-        }
         private void btn_Process_Click(object sender, EventArgs e)
         {
             ProcessCondition frm = new ProcessCondition(main);
@@ -116,25 +112,6 @@ namespace FieldOperationForm
             main.lblChange.Text = "작업자할당";
         }
 
-        private void btn_Quality_Click(object sender, EventArgs e)
-        {
-            QualityMeasurement frm = new QualityMeasurement(main);
-            frm.BringToFront();
-            frm.MdiParent = main;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-            main.lblChange.Text = "품질 측정값 등록";
-        }
-
-        private void btn_DryingTruck_Click(object sender, EventArgs e)
-        {
-            Truck frm = new Truck(main);
-            frm.BringToFront();
-            frm.MdiParent = main;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-            main.lblChange.Text = "제강 대차 선택";
-        }
 
         private void btn_mold_Click(object sender, EventArgs e)
         {
@@ -177,12 +154,34 @@ namespace FieldOperationForm
             try
             {
                 start = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-             //   no = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                //   no = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 no = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
 
 
             }
             catch { }
         }
+
+        private void btn_FieldClose_Click(object sender, EventArgs e)
+        {
+      
+        }
+
+        private void JobOrderStatus_Steelmaking_Load(object sender, EventArgs e)
+        {
+            main.lbl_Job.Text = "제강";
+            main.lblChange.Text = "작업지시 현황";
+            SetLoad();
+        }
+        private void Sizeup(object sender, EventArgs e)
+        {
+          //if(  this.WindowState == FormWindowState.Normal)
+          //  btn_FieldClose.Location = new Point(100, 100);
+        }
+        private void SizeDown(object sender, EventArgs e)
+        {
+            //btn_FieldClose.Location = new Point(425, 432);
+        }
+
     }
 }

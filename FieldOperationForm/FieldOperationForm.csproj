@@ -166,53 +166,23 @@
     <Compile Include="FieldVo\WorkAssignment_Vo.cs" />
     <Compile Include="FieldVo\WorkCenter_Vo.cs" />
     <Compile Include="FieldVo\WorkOrder_Vo.cs" />
-    <Compile Include="JobOrder_Load\EmptyTruck.cs">
+    <Compile Include="JobOrder_Rolled\JobOrderStatus_Load .cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="JobOrder_Load\EmptyTruck.Designer.cs">
-      <DependentUpon>EmptyTruck.cs</DependentUpon>
-    </Compile>
-    <Compile Include="JobOrder_Load\Frame.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="JobOrder_Load\Frame.Designer.cs">
-      <DependentUpon>Frame.cs</DependentUpon>
-    </Compile>
-    <Compile Include="JobOrder_Load\JobOrderStatus_Load .cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="JobOrder_Load\JobOrderStatus_Load .Designer.cs">
+    <Compile Include="JobOrder_Rolled\JobOrderStatus_Load .Designer.cs">
       <DependentUpon>JobOrderStatus_Load .cs</DependentUpon>
     </Compile>
-    <Compile Include="JobOrder_Load\LoadJobOrder.cs">
+    <Compile Include="JobOrder_JeSun\JobOrderStatus .cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="JobOrder_Load\LoadJobOrder.Designer.cs">
-      <DependentUpon>LoadJobOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="JobOrder_Load\LoadPerformance.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="JobOrder_Load\LoadPerformance.Designer.cs">
-      <DependentUpon>LoadPerformance.cs</DependentUpon>
-    </Compile>
-    <Compile Include="JobOrder_Molding\JobOrderStatus .cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="JobOrder_Molding\JobOrderStatus .Designer.cs">
+    <Compile Include="JobOrder_JeSun\JobOrderStatus .Designer.cs">
       <DependentUpon>JobOrderStatus .cs</DependentUpon>
     </Compile>
-    <Compile Include="JobOrder_Molding\Mold.cs">
+    <Compile Include="JobOrder_JeSun\Mold.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="JobOrder_Molding\Mold.Designer.cs">
+    <Compile Include="JobOrder_JeSun\Mold.Designer.cs">
       <DependentUpon>Mold.cs</DependentUpon>
-    </Compile>
-    <Compile Include="JobOrder_Molding\Truck.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="JobOrder_Molding\Truck.Designer.cs">
-      <DependentUpon>Truck.cs</DependentUpon>
     </Compile>
     <Compile Include="JobOrder_Package\CreatePalette.cs">
       <SubType>Form</SubType>
@@ -250,17 +220,17 @@
     <Compile Include="JobOrder_Package\PaletteBarCode.Designer.cs">
       <DependentUpon>PaletteBarCode.cs</DependentUpon>
     </Compile>
-    <Compile Include="JobOrder_Package\Unloading.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="JobOrder_Package\Unloading.Designer.cs">
-      <DependentUpon>Unloading.cs</DependentUpon>
-    </Compile>
     <Compile Include="JobOrder_Package\warehousing.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="JobOrder_Package\warehousing.Designer.cs">
       <DependentUpon>warehousing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Steelmaking\JobOrderStatus_Steelmaking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Steelmaking\JobOrderStatus_Steelmaking.Designer.cs">
+      <DependentUpon>JobOrderStatus_Steelmaking.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -295,29 +265,14 @@
     <EmbeddedResource Include="CommonForm\workerAllocation.resx">
       <DependentUpon>workerAllocation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JobOrder_Load\EmptyTruck.resx">
-      <DependentUpon>EmptyTruck.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="JobOrder_Load\Frame.resx">
-      <DependentUpon>Frame.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="JobOrder_Load\JobOrderStatus_Load .resx">
+    <EmbeddedResource Include="JobOrder_Rolled\JobOrderStatus_Load .resx">
       <DependentUpon>JobOrderStatus_Load .cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JobOrder_Load\LoadJobOrder.resx">
-      <DependentUpon>LoadJobOrder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="JobOrder_Load\LoadPerformance.resx">
-      <DependentUpon>LoadPerformance.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="JobOrder_Molding\JobOrderStatus .resx">
+    <EmbeddedResource Include="JobOrder_JeSun\JobOrderStatus .resx">
       <DependentUpon>JobOrderStatus .cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JobOrder_Molding\Mold.resx">
+    <EmbeddedResource Include="JobOrder_JeSun\Mold.resx">
       <DependentUpon>Mold.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="JobOrder_Molding\Truck.resx">
-      <DependentUpon>Truck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JobOrder_Package\CreatePalette.resx">
       <DependentUpon>CreatePalette.cs</DependentUpon>
@@ -337,11 +292,11 @@
     <EmbeddedResource Include="JobOrder_Package\PaletteBarCode.resx">
       <DependentUpon>PaletteBarCode.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JobOrder_Package\Unloading.resx">
-      <DependentUpon>Unloading.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="JobOrder_Package\warehousing.resx">
       <DependentUpon>warehousing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Steelmaking\JobOrderStatus_Steelmaking.resx">
+      <DependentUpon>JobOrderStatus_Steelmaking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -409,5 +364,6 @@
       <Name>MES_DTO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

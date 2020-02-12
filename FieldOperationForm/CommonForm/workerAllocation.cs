@@ -220,20 +220,7 @@ namespace FieldOperationForm
 
         private void initComboBox()
         {
-            if (main.lbl_Job.Text == "제선")
-            {
-                WorkCenter_Service service = new WorkCenter_Service();
-                WorkCenter_Vo vo = new WorkCenter_Vo();
-                QList = service.IronWorkCenter();
-                if (QList.Count > 0)
-                {
-                    List<string> NonList = (from item in QList
-                                            select item.Wc_Name).ToList();
-                    CommonUtil.ComboBinding(cb_Wc_Name, NonList);
-                }
-            }
-            else
-            {
+          
 
                 WorkCenter_Service service = new WorkCenter_Service();
                 WorkCenter_Vo vo = new WorkCenter_Vo();
@@ -244,7 +231,7 @@ namespace FieldOperationForm
                                             select item.Wc_Name).ToList();
                     CommonUtil.ComboBinding(cb_Wc_Name, NonList);
                 }
-            }
+            
         }
  
 

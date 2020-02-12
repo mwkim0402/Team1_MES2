@@ -94,17 +94,14 @@ namespace FieldOperationForm
 
         private void JobOrderStatus_Load_Load(object sender, EventArgs e)
         {
-            main.lbl_Job.Text = "적재";
+            main.lbl_Job.Text = "압연";
       
 
             main.lblChange.Text = "작업지시 현황";    
             SetLoad();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+    
         private void btn_Worker_Click(object sender, EventArgs e)
         {
             workerAllocation frm = new workerAllocation(main);
@@ -125,56 +122,12 @@ namespace FieldOperationForm
             main.lblChange.Text = "공정조건 등록";
         }
 
-        private void btn_Quality_Click(object sender, EventArgs e)
-        {
-            QualityMeasurement frm = new QualityMeasurement(main);
-            frm.BringToFront();
-            frm.MdiParent = main;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-            main.lblChange.Text = "품질 측정값 등록";
-        }
 
-        private void btn_JobOrder_Click(object sender, EventArgs e)
-        {
-         
-            LoadJobOrder frm = new LoadJobOrder(main);
-            frm.BringToFront();
-            frm.MdiParent = main;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-            main.lblChange.Text = "적재 작업지시 생성";
-        }
+    
 
-        private void btn_LoadPerformance_Click(object sender, EventArgs e)
-        {
-            LoadPerformance frm = new LoadPerformance(main);
-            frm.BringToFront();
-            frm.MdiParent = main;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-            main.lblChange.Text = "적재 실적 등록";
-        }
+   
 
-        private void btn_frame_Click(object sender, EventArgs e)
-        {
-            Frame frm = new Frame(main);
-            frm.BringToFront();
-            frm.MdiParent = main;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-            main.lblChange.Text = "요입 / 요출 관리";
-        }
-
-        private void btn_EmptyDriedTruck_Click(object sender, EventArgs e)
-        {
-            EmptyTruck frm = new EmptyTruck(main);
-            frm.BringToFront();
-            frm.MdiParent = main;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-            main.lblChange.Text = "건조대차 비우기";
-        }
+       
 
         private void JobOrderStatus_Load_Shown(object sender, EventArgs e)
         {

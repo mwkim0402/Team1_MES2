@@ -92,11 +92,12 @@ namespace FieldOperationForm
 
         private void btn_Home_Click(object sender, EventArgs e)
         {
-            JobOrderStatus_Load frm; //적재
-            JobOrderStatus frm1;//성형
+            JobOrderStatus_Load frm; //압연
+            JobOrderStatus frm1;//제선
             JobOrderStatus_Package frm2; // 포장
+            JobOrderStatus_Steelmaking frm3; //제강
 
-            if (lbl_Job.Text == "적재")
+            if (lbl_Job.Text == "압연")
             {
                 frm = new JobOrderStatus_Load(this);
                 frm.BringToFront();
@@ -120,6 +121,14 @@ namespace FieldOperationForm
                 frm2.Dock = DockStyle.Fill;
                 frm2.Show();
             }
+            else if (lbl_Job.Text == "제강")
+            {
+                frm3 = new JobOrderStatus_Steelmaking(this);
+                frm3.BringToFront();
+                frm3.MdiParent = this;
+                frm3.Dock = DockStyle.Fill;
+                frm3.Show();
+            }
         }
 
         private void panel10_MouseDown(object sender, MouseEventArgs e)
@@ -140,6 +149,8 @@ namespace FieldOperationForm
         private void btn_Max_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+            //JobOrderStatus_Steelmaking frm = new JobOrderStatus_Steelmaking(this);
+            //frm.btn_FieldClose.Location = new Point(100, 100);
         }
 
         private void btn_Min_Click(object sender, EventArgs e)

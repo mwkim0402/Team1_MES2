@@ -316,8 +316,8 @@
         private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.Button btn_Home;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btn_Max;
-        private System.Windows.Forms.Button btn_Min;
+        public System.Windows.Forms.Button btn_Max;
+        public System.Windows.Forms.Button btn_Min;
         private System.Windows.Forms.ImageList imageList1;
     }
 }

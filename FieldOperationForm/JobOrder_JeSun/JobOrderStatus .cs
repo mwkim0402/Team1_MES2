@@ -10,26 +10,19 @@ using System.Windows.Forms;
 
 namespace FieldOperationForm
 {
-    public partial class JobOrderStatus_Package : Form
+    public partial class JobOrderStatus : Form
     {
         Main_P main;
         string no;
         string start;
-        string wc;
-        string itemname;
-        string sd;
-        string qty;
-        string unit;
 
-        
-        public JobOrderStatus_Package(Main_P main1)
+        public JobOrderStatus(Main_P main1)
         {
             InitializeComponent();
             main = main1;
             Setdgv();
         }
 
-        #region 그리드뷰설정
         // DataGridView 컬럼 설정
         private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
            int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
@@ -58,10 +51,11 @@ namespace FieldOperationForm
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
             dgv.DefaultCellStyle.SelectionBackColor = Color.CadetBlue;
             dgv.RowTemplate.Height = 50;
-
         }
         private void Setdgv()
         {
+
+
 
             AddNewColumnToDataGridView(dataGridView1, "상태", "Wo_Status", true, 120);
             AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "Workorderno", true, 200);
@@ -72,8 +66,11 @@ namespace FieldOperationForm
             AddNewColumnToDataGridView(dataGridView1, "생산시작시간", "Plan_Starttime", true, 280);
             AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Plan_Endtime", true, 280);
             AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Plan_Qty", false, 175);
+            AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Plan_Date", false, 175);
+
             this.dataGridView1.Font = new Font("나눔고딕", 17, FontStyle.Bold);
             this.dataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 17, FontStyle.Regular);
+
 
 
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -83,34 +80,30 @@ namespace FieldOperationForm
             //dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
         }
-        #endregion
 
         private void SetLoad()
         {
             WorkOrder_Service service = new WorkOrder_Service();
 
-            dataGridView1.DataSource = service.GetWorkOrder(main.lbl_Job.Text);
+            dataGridView1.DataSource = service.IronWork();
 
 
         }
-
-        private void JobOrderStatus_Package_Load(object sender, EventArgs e)
+        private void JobOrderStatus_Load(object sender, EventArgs e)
         {
-            main.lbl_Job.Text = "포장";
+            main.lbl_Job.Text = "제선";
             main.lblChange.Text = "작업지시 현황";
             SetLoad();
+
         }
-
- 
-
-        private void btn_Quality_Click(object sender, EventArgs e)
+        private void btn_Process_Click(object sender, EventArgs e)
         {
-            QualityMeasurement frm = new QualityMeasurement(main);
+            ProcessCondition frm = new ProcessCondition(main);
             frm.BringToFront();
             frm.MdiParent = main;
             frm.Dock = DockStyle.Fill;
             frm.Show();
-            main.lblChange.Text = "품질 측정값 등록";
+            main.lblChange.Text = "공정조건 등록";
         }
 
         private void btn_Worker_Click(object sender, EventArgs e)
@@ -123,71 +116,36 @@ namespace FieldOperationForm
             main.lblChange.Text = "작업자할당";
         }
 
-        private void btn_JobOrder_Click(object sender, EventArgs e)
+        private void btn_Quality_Click(object sender, EventArgs e)
         {
-            JobOrder frm = new JobOrder(main);
+            QualityMeasurement frm = new QualityMeasurement(main);
             frm.BringToFront();
             frm.MdiParent = main;
             frm.Dock = DockStyle.Fill;
             frm.Show();
-            main.lblChange.Text = "작업지시 생성";
+            main.lblChange.Text = "품질 측정값 등록";
         }
 
-        private void btn_CreatePalette_Click(object sender, EventArgs e)
+       
+
+        private void btn_mold_Click(object sender, EventArgs e)
         {
-            CreatePalette frm = new CreatePalette(main);
+            Mold frm = new Mold(main);
             frm.BringToFront();
             frm.MdiParent = main;
             frm.Dock = DockStyle.Fill;
             frm.Show();
-            main.lblChange.Text = "팔레트 생성";
-
-
+            main.lblChange.Text = "금형 장착 / 탈착 등록";
         }
 
-        private void btn_BarCode_Click(object sender, EventArgs e)
-        {
-            PaletteBarCode frm = new PaletteBarCode(main);
-            frm.BringToFront();
-            frm.MdiParent = main;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-            main.lblChange.Text = "팔레트 바코드 재발행";
-        }
-
-        private void btn_warehousing_Click(object sender, EventArgs e)
-        {
-            warehousing frm = new warehousing(main);
-            frm.BringToFront();
-            frm.MdiParent = main;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-            main.lblChange.Text = "포장 입고 등록";
-        }
-
-     
-
-        private void JobOrderStatus_Package_Shown(object sender, EventArgs e)
+        private void JobOrderStatus_Shown(object sender, EventArgs e)
         {
             dataGridView1.CurrentCell = null;
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                no = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                start = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-
-
-            }
-            catch { }
-        }
-
         private void btn_StartEnd_Click(object sender, EventArgs e)
         {
-            if (start == "대기")
+            if (start == "작업대기")
             {
                 WorkOrder_Service service = new WorkOrder_Service();
 
@@ -204,6 +162,19 @@ namespace FieldOperationForm
 
                 SetLoad();
             }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                start = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+             //   no = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                no = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+
+            }
+            catch { }
         }
     }
 }

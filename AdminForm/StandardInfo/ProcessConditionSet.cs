@@ -38,11 +38,11 @@ namespace AdminForm
         {
             WorkCenterService workService = new WorkCenterService();
             workCombo = (from item in workService.GetAllWorkCenter()
-                            select new ComboItem
-                            {
-                                comboText = item.Wc_Code,
-                                comboValue = item.Wc_Name
-                            }).ToList();
+                         select new ComboItem
+                         {
+                             comboText = item.Wc_Code,
+                             comboValue = item.Wc_Name
+                         }).ToList();
             ProcessService proService = new ProcessService();
             processCombo = (from item in proService.GetAllProcess()
                             select new ComboItem
@@ -62,15 +62,15 @@ namespace AdminForm
             ConditionSpecService condService = new ConditionSpecService();
             condSpecMaster = condService.GetAllCond();
 
-           
+
         }
         private void ComboBind()
         {
-            ComboClass.ComboBind(processCombo, cbProGroup, false);
+            //ComboClass.ComboBind(processCombo, cbProGroup, false);
             ComboClass.ComboBind(ItemCombo, cbItemCd, false);
             ComboClass.ComboBind(workCombo, cbWorkCd, false);
-            cbProGroup.SelectedIndex = 1;
-            cbItemCd.SelectedIndex = 1;
+            cbProGroup.SelectedIndex = 0;
+            cbItemCd.SelectedIndex = 0;
         }
 
         private void ItemDataSearch(object sender, DataGridViewCellEventArgs e)
@@ -84,7 +84,7 @@ namespace AdminForm
         {
             if (dgvSearchResult.SelectedRows.Count < 1)
             {
-               // frm.lblAlert.Text = "복사할 상품의 정보를 선택하세요";
+                // frm.lblAlert.Text = "복사할 상품의 정보를 선택하세요";
                 return;
             }
             ConditionSpecVo copyVo = condSpecMaster.Find(x => x.Condition_Code == dgvSearchResult.SelectedRows[0].Cells[2].Value.ToString());
@@ -96,7 +96,7 @@ namespace AdminForm
             txtUnit.Text = copyVo.Condition_Unit;
         }
 
-    
+
 
         private void CondSpec_Activated(object sender, EventArgs e)
         {
@@ -107,7 +107,7 @@ namespace AdminForm
         {
             frm.Search_Click -= this.SearchClick;
         }
-       
+
 
         private void ShowDgv()
         {
@@ -121,14 +121,14 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정조건 코드", "Condition_Code", true, 180);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정조건 명", "Condition_Name", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정그룹", "Condition_Group", true, 120);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "SPEC", "Spec_Desc", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정단위", "Condition_Unit", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격기준값", "SL", true, 150, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격상한값", "USL", true, 150, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격하한값", "LSL", true, 150, DataGridViewContentAlignment.MiddleRight);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "공정단위", "Condition_Unit", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "SPEC", "Spec_Desc", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 120, DataGridViewContentAlignment.MiddleCenter);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 200);
-            
+
         }
 
         private void btnSave_Click_1(object sender, EventArgs e)
@@ -152,6 +152,34 @@ namespace AdminForm
             service.InsertCondSpecsMaster(conVo);
             CommonClass.InitControl(panel1);
             frm.btnS.PerformClick();
+        }
+
+        private void cbProGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbProGroup.Text == "습도")
+            {
+                txtUnit.Text = "%";
+            }
+            else if (cbProGroup.Text == "온도")
+            {
+                txtUnit.Text = "℃";
+            }
+            else if (cbProGroup.Text == "가스 사용량")
+            {
+                txtUnit.Text = "MJ";
+            }
+        }
+
+        private void cbItemCd_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cbWorkCd.SelectedValue != null)
+            {
+                int count = condSpecMaster.FindAll(x => x.Wc_Code == cbWorkCd.Text.ToString() && x.Item_Code == cbItemCd.Text.ToString()).Count + 1;
+                string id = $"{cbWorkCd.Text.ToString().Substring(0, 2)}{cbItemCd.Text.ToString()}_Cond{count}";
+                txtCondCode.Text = id;
+            }
+
         }
     }
 }

@@ -30,10 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.fcFac = new AdminForm.FIndCategory();
-            this.fcProd = new AdminForm.FIndCategory();
-            this.label2 = new System.Windows.Forms.Label();
+            this.fIndCategory1 = new AdminForm.FIndCategory();
             this.label1 = new System.Windows.Forms.Label();
+            this.fcProd = new AdminForm.FIndCategory();
             this.btnCopy = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,7 +47,6 @@
             this.rbN = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtSample = new System.Windows.Forms.TextBox();
             this.txtUSL = new System.Windows.Forms.TextBox();
             this.cbProcessCd = new System.Windows.Forms.ComboBox();
             this.cbItemCd = new System.Windows.Forms.ComboBox();
@@ -64,9 +62,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.cbSampleSize = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.fIndCategory1 = new AdminForm.FIndCategory();
             this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -84,12 +81,10 @@
             // 
             // tabControl4
             // 
-            this.tabControl4.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
             this.tabControl4.Size = new System.Drawing.Size(222, 28);
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 28);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Size = new System.Drawing.Size(214, 0);
@@ -106,26 +101,22 @@
             // 
             // tabControl2
             // 
-            this.tabControl2.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
             this.tabControl2.Location = new System.Drawing.Point(2, 288);
             this.tabControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Size = new System.Drawing.Size(271, 0);
             // 
             // tabControl3
             // 
-            this.tabControl3.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
             this.tabControl3.Size = new System.Drawing.Size(279, 28);
             // 
             // splitContainer1
@@ -143,47 +134,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel2.Controls.Add(this.fIndCategory1);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.fcFac);
-            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1121, 67);
             this.panel2.TabIndex = 17;
             // 
-            // fcFac
+            // fIndCategory1
             // 
-            this.fcFac.Category = AdminForm.CategoryMode.Process;
-            this.fcFac.Font = new System.Drawing.Font("나눔고딕", 10F);
-            this.fcFac.Location = new System.Drawing.Point(346, 18);
-            this.fcFac.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.fcFac.Name = "fcFac";
-            this.fcFac.SendCode = null;
-            this.fcFac.SendName = null;
-            this.fcFac.Size = new System.Drawing.Size(230, 43);
-            this.fcFac.TabIndex = 9;
-            // 
-            // fcProd
-            // 
-            this.fcProd.Category = AdminForm.CategoryMode.Item;
-            this.fcProd.Location = new System.Drawing.Point(-217, -393);
-            this.fcProd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.fcProd.Name = "fcProd";
-            this.fcProd.SendCode = null;
-            this.fcProd.SendName = null;
-            this.fcProd.Size = new System.Drawing.Size(271, 43);
-            this.fcProd.TabIndex = 9;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label2.Location = new System.Drawing.Point(300, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 19);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "공정";
+            this.fIndCategory1.Category = AdminForm.CategoryMode.Process;
+            this.fIndCategory1.Font = new System.Drawing.Font("나눔고딕", 10F);
+            this.fIndCategory1.Location = new System.Drawing.Point(58, 18);
+            this.fIndCategory1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.fIndCategory1.Name = "fIndCategory1";
+            this.fIndCategory1.SendCode = null;
+            this.fIndCategory1.SendName = null;
+            this.fIndCategory1.Size = new System.Drawing.Size(221, 43);
+            this.fIndCategory1.TabIndex = 11;
             // 
             // label1
             // 
@@ -194,6 +161,17 @@
             this.label1.Size = new System.Drawing.Size(39, 19);
             this.label1.TabIndex = 8;
             this.label1.Text = "품목";
+            // 
+            // fcProd
+            // 
+            this.fcProd.Category = AdminForm.CategoryMode.Item;
+            this.fcProd.Location = new System.Drawing.Point(-217, -392);
+            this.fcProd.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.fcProd.Name = "fcProd";
+            this.fcProd.SendCode = null;
+            this.fcProd.SendName = null;
+            this.fcProd.Size = new System.Drawing.Size(271, 42);
+            this.fcProd.TabIndex = 9;
             // 
             // btnCopy
             // 
@@ -256,7 +234,7 @@
             this.txtDataDESC.Font = new System.Drawing.Font("나눔고딕", 10F);
             this.txtDataDESC.Location = new System.Drawing.Point(95, 123);
             this.txtDataDESC.Name = "txtDataDESC";
-            this.txtDataDESC.Size = new System.Drawing.Size(103, 23);
+            this.txtDataDESC.Size = new System.Drawing.Size(151, 23);
             this.txtDataDESC.TabIndex = 132;
             // 
             // txtInsepctCode
@@ -264,7 +242,8 @@
             this.txtInsepctCode.Font = new System.Drawing.Font("나눔고딕", 10F);
             this.txtInsepctCode.Location = new System.Drawing.Point(95, 66);
             this.txtInsepctCode.Name = "txtInsepctCode";
-            this.txtInsepctCode.Size = new System.Drawing.Size(103, 23);
+            this.txtInsepctCode.ReadOnly = true;
+            this.txtInsepctCode.Size = new System.Drawing.Size(151, 23);
             this.txtInsepctCode.TabIndex = 133;
             // 
             // txtNote
@@ -336,7 +315,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label8.Location = new System.Drawing.Point(222, 18);
+            this.label8.Location = new System.Drawing.Point(252, 70);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(84, 19);
             this.label8.TabIndex = 135;
@@ -347,27 +326,20 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label9.Location = new System.Drawing.Point(222, 97);
+            this.label9.Location = new System.Drawing.Point(252, 18);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 19);
             this.label9.TabIndex = 136;
-            this.label9.Text = "샘플크기";
-            // 
-            // txtSample
-            // 
-            this.txtSample.Font = new System.Drawing.Font("나눔고딕", 10F);
-            this.txtSample.Location = new System.Drawing.Point(316, 93);
-            this.txtSample.Name = "txtSample";
-            this.txtSample.Size = new System.Drawing.Size(103, 23);
-            this.txtSample.TabIndex = 138;
+            this.label9.Text = "검사항목";
             // 
             // txtUSL
             // 
             this.txtUSL.Font = new System.Drawing.Font("나눔고딕", 10F);
-            this.txtUSL.Location = new System.Drawing.Point(316, 14);
+            this.txtUSL.Location = new System.Drawing.Point(346, 70);
             this.txtUSL.Name = "txtUSL";
-            this.txtUSL.Size = new System.Drawing.Size(103, 23);
+            this.txtUSL.Size = new System.Drawing.Size(61, 23);
             this.txtUSL.TabIndex = 137;
+            this.txtUSL.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cbProcessCd
             // 
@@ -375,8 +347,9 @@
             this.cbProcessCd.FormattingEnabled = true;
             this.cbProcessCd.Location = new System.Drawing.Point(95, 14);
             this.cbProcessCd.Name = "cbProcessCd";
-            this.cbProcessCd.Size = new System.Drawing.Size(103, 23);
+            this.cbProcessCd.Size = new System.Drawing.Size(151, 23);
             this.cbProcessCd.TabIndex = 139;
+            this.cbProcessCd.SelectedIndexChanged += new System.EventHandler(this.cbItemCd_SelectedIndexChanged);
             // 
             // cbItemCd
             // 
@@ -384,8 +357,9 @@
             this.cbItemCd.FormattingEnabled = true;
             this.cbItemCd.Location = new System.Drawing.Point(95, 40);
             this.cbItemCd.Name = "cbItemCd";
-            this.cbItemCd.Size = new System.Drawing.Size(103, 23);
+            this.cbItemCd.Size = new System.Drawing.Size(151, 23);
             this.cbItemCd.TabIndex = 141;
+            this.cbItemCd.SelectedIndexChanged += new System.EventHandler(this.cbItemCd_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -414,7 +388,7 @@
             this.txtInspectName.Font = new System.Drawing.Font("나눔고딕", 10F);
             this.txtInspectName.Location = new System.Drawing.Point(95, 93);
             this.txtInspectName.Name = "txtInspectName";
-            this.txtInspectName.Size = new System.Drawing.Size(103, 23);
+            this.txtInspectName.Size = new System.Drawing.Size(151, 23);
             this.txtInspectName.TabIndex = 143;
             // 
             // label11
@@ -422,7 +396,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label11.Location = new System.Drawing.Point(222, 44);
+            this.label11.Location = new System.Drawing.Point(252, 96);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(84, 19);
             this.label11.TabIndex = 144;
@@ -431,17 +405,18 @@
             // txtSL
             // 
             this.txtSL.Font = new System.Drawing.Font("나눔고딕", 10F);
-            this.txtSL.Location = new System.Drawing.Point(316, 41);
+            this.txtSL.Location = new System.Drawing.Point(346, 96);
             this.txtSL.Name = "txtSL";
-            this.txtSL.Size = new System.Drawing.Size(103, 23);
+            this.txtSL.Size = new System.Drawing.Size(61, 23);
             this.txtSL.TabIndex = 145;
+            this.txtSL.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label12.Location = new System.Drawing.Point(222, 72);
+            this.label12.Location = new System.Drawing.Point(252, 124);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(84, 19);
             this.label12.TabIndex = 146;
@@ -450,17 +425,18 @@
             // txtLSL
             // 
             this.txtLSL.Font = new System.Drawing.Font("나눔고딕", 10F);
-            this.txtLSL.Location = new System.Drawing.Point(316, 67);
+            this.txtLSL.Location = new System.Drawing.Point(346, 123);
             this.txtLSL.Name = "txtLSL";
-            this.txtLSL.Size = new System.Drawing.Size(103, 23);
+            this.txtLSL.Size = new System.Drawing.Size(61, 23);
             this.txtLSL.TabIndex = 147;
+            this.txtLSL.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label5.Location = new System.Drawing.Point(222, 122);
+            this.label5.Location = new System.Drawing.Point(252, 44);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 19);
             this.label5.TabIndex = 148;
@@ -469,9 +445,10 @@
             // txtUnit
             // 
             this.txtUnit.Font = new System.Drawing.Font("나눔고딕", 10F);
-            this.txtUnit.Location = new System.Drawing.Point(316, 120);
+            this.txtUnit.Location = new System.Drawing.Point(346, 43);
             this.txtUnit.Name = "txtUnit";
-            this.txtUnit.Size = new System.Drawing.Size(103, 23);
+            this.txtUnit.ReadOnly = true;
+            this.txtUnit.Size = new System.Drawing.Size(61, 23);
             this.txtUnit.TabIndex = 149;
             // 
             // panel3
@@ -498,6 +475,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.cbSampleSize);
             this.panel5.Controls.Add(this.label25);
             this.panel5.Controls.Add(this.txtDataDESC);
             this.panel5.Controls.Add(this.fcProd);
@@ -508,7 +486,6 @@
             this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.txtLSL);
-            this.panel5.Controls.Add(this.txtSample);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Controls.Add(this.gbUsable);
             this.panel5.Controls.Add(this.txtSL);
@@ -527,31 +504,23 @@
             this.panel5.Size = new System.Drawing.Size(521, 155);
             this.panel5.TabIndex = 152;
             // 
+            // cbSampleSize
+            // 
+            this.cbSampleSize.FormattingEnabled = true;
+            this.cbSampleSize.Items.AddRange(new object[] {
+            "두께",
+            "길이",
+            "무게",
+            "강도"});
+            this.cbSampleSize.Location = new System.Drawing.Point(346, 14);
+            this.cbSampleSize.Name = "cbSampleSize";
+            this.cbSampleSize.Size = new System.Drawing.Size(61, 23);
+            this.cbSampleSize.TabIndex = 150;
+            this.cbSampleSize.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.button1.Location = new System.Drawing.Point(583, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 33);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "조회";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // fIndCategory1
-            // 
-            this.fIndCategory1.Category = AdminForm.CategoryMode.Process;
-            this.fIndCategory1.Font = new System.Drawing.Font("나눔고딕", 10F);
-            this.fIndCategory1.Location = new System.Drawing.Point(58, 18);
-            this.fIndCategory1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.fIndCategory1.Name = "fIndCategory1";
-            this.fIndCategory1.SendCode = null;
-            this.fIndCategory1.SendName = null;
-            this.fIndCategory1.Size = new System.Drawing.Size(221, 43);
-            this.fIndCategory1.TabIndex = 11;
             // 
             // QualitySizeSet
             // 
@@ -595,9 +564,7 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnCopy;
-        private FIndCategory fcFac;
         private FIndCategory fcProd;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.GroupBox gbUsable;
@@ -613,7 +580,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtUSL;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtSample;
         private System.Windows.Forms.ComboBox cbProcessCd;
         private System.Windows.Forms.ComboBox cbItemCd;
         private System.Windows.Forms.Label label4;
@@ -630,6 +596,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Timer timer1;
         private FIndCategory fIndCategory1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbSampleSize;
     }
 }

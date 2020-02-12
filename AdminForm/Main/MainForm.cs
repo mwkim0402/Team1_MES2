@@ -163,7 +163,7 @@ namespace AdminForm
             lblLogo.Image = new Bitmap(Application.StartupPath + @"\image\teamlogotest.png");
             btnS.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Search.ico");
             btnHome.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Report2_32x32.png");
-            btnSave.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Action_Save_New_32x32.png");
+            btnSave.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Action_Export_ToXls_32x32.png");
             btnEdit.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Edit_32x32.png");
             btnDelete.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\DeleteList_32x32.png");
             pictureBox1.Image = new Bitmap(Application.StartupPath + @"\image\mark.jpg");
@@ -224,9 +224,6 @@ namespace AdminForm
                 TabPage TabP = (TabPage)tc.TabPages[tc.SelectedIndex];
                 tc.TabPages.Remove(TabP);
             }
-
-            //Form tempChild = this.ActiveMdiChild;
-            //tempChild.Close();
         }
 
         #region 폼동적생성
@@ -379,10 +376,10 @@ namespace AdminForm
             }
             foreach (Form frm in this.MdiChildren)
             {
-                if (frm != this.ActiveMdiChild || frm.Name!="MainChild")
+                if (frm != this.ActiveMdiChild && frm.Name!="MainChild")
                 {
                     frm.Close();
-                }
+                }                
             }
         }
 

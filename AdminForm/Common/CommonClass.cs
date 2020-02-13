@@ -74,7 +74,7 @@ namespace AdminForm
             
             LoginService service = new LoginService();
             LoginVO userVO = new LoginVO();
-            userVO.User_ID = Global.User_ID;
+            userVO.User_ID = Convert.ToInt32(Global.LoginID);
             userVO.Screen_Code = "메인";
             List<LoginVO> list = service.LoginAuthority(userVO);
             

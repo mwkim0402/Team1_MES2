@@ -7,15 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Net.Sockets;
+using System.Timers;
+using MES_DB;
 namespace FieldOperationForm
 {
     public partial class JobOrderStatus : Form
     {
+        System.Timers.Timer timer1;
         Main_P main;
         string no;
         string start;
-
+        List<WorkOrderCheckVo> processWorkList;
+        List<ItemVo> itemList;
+        bool isFirstData = true;
         public JobOrderStatus(Main_P main1)
         {
             InitializeComponent();
@@ -84,10 +89,12 @@ namespace FieldOperationForm
         private void SetLoad()
         {
             WorkOrder_Service service = new WorkOrder_Service();
-
             dataGridView1.DataSource = service.IronWork();
-
-
+            WorkOrderService service2 = new WorkOrderService();
+            processWorkList = service2.GetPrcocess_Workorder(main.lbl_Job.Text);
+            ItemService service3 = new ItemService();
+            itemList = service3.GetAllItemInfo();
+            
         }
         private void JobOrderStatus_Load(object sender, EventArgs e)
         {
@@ -126,8 +133,6 @@ namespace FieldOperationForm
             main.lblChange.Text = "품질 측정값 등록";
         }
 
-       
-
         private void btn_mold_Click(object sender, EventArgs e)
         {
             Mold frm = new Mold(main);
@@ -145,22 +150,22 @@ namespace FieldOperationForm
 
         private void btn_StartEnd_Click(object sender, EventArgs e)
         {
+            // dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
             if (start == "작업대기")
             {
-                WorkOrder_Service service = new WorkOrder_Service();
-
-                service.StartWork(no);
-
+                //WorkOrder_Service service = new WorkOrder_Service();
+                //service.StartWork(no);
                 SetLoad();
+                SetTimer();
             }
-
             else if (start == "작업시작")
             {
                 WorkOrder_Service service = new WorkOrder_Service();
 
                 service.EndWork(no);
-
                 SetLoad();
+                timer1.Stop();
+                timer1.Dispose();
             }
         }
 
@@ -175,6 +180,55 @@ namespace FieldOperationForm
 
             }
             catch { }
+        }
+
+        private void SetTimer()
+        {
+            timer1 = new System.Timers.Timer(3000);
+            timer1.Enabled = true;
+            timer1.Elapsed += timer1_Elapse;
+            timer1.AutoReset = true;
+        }
+        private void timer1_Elapse(object sender, ElapsedEventArgs e)
+        {
+            //if (isFirstData)
+            //{
+            //    string workWorderNo = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            //    int UPHperSecond = (int)itemList.Find(x => x.Item_Name == (dataGridView1.SelectedRows[0].Cells[4].Value.ToString())).IronUPH / 60 / 20;
+            //    Random rnd = new Random((int)DateTime.UtcNow.Ticks);
+            //    int faultyQty = rnd.Next(0, 2);
+            //    TcpClient tc = new TcpClient("127.0.0.1", 7000);
+            //    NetworkStream stream = tc.GetStream();
+            //    string msg = $"{processWorkList.Find(x => x.Workorderno == workWorderNo).Wc_Code} 가동시작!! \n{workWorderNo}/{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Wc_Code}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Plan_Qty}/{UPHperSecond - faultyQty}/{faultyQty}";
+            //    byte[] buff = Encoding.UTF8.GetBytes(msg);
+            //    stream.Write(buff, 0, buff.Length);
+            //    byte[] outBuff = new byte[1024];
+            //    int nbytes = stream.Read(outBuff, 0, outBuff.Length);
+            //    string outMsg = Encoding.UTF8.GetString(outBuff, 0, nbytes);
+            //    stream.Close();
+            //    tc.Close();
+
+            //    isFirstData = false;
+            //}
+            //else
+            //{
+                
+                string workWorderNo = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+                int UPHperSecond = (int)itemList.Find(x => x.Item_Name == (dataGridView1.SelectedRows[0].Cells[4].Value.ToString())).IronUPH / 60 / 20;
+                Random rnd = new Random((int)DateTime.UtcNow.Ticks);
+                int faultyQty = rnd.Next(0, 2);
+                TcpClient tc = new TcpClient("127.0.0.1", 7000);
+                NetworkStream stream = tc.GetStream();
+                string msg = $"{workWorderNo}/{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Wc_Code}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Plan_Qty}/{UPHperSecond - faultyQty}/{faultyQty}";
+                byte[] buff = Encoding.UTF8.GetBytes(msg);
+                stream.Write(buff, 0, buff.Length);
+                byte[] outBuff = new byte[1024];
+                int nbytes = stream.Read(outBuff, 0, outBuff.Length);
+                string outMsg = Encoding.UTF8.GetString(outBuff, 0, nbytes);
+                stream.Close();
+                tc.Close();
+            
+            
         }
     }
 }

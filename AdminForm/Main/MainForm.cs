@@ -11,10 +11,11 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace AdminForm
-{
+{   
     public delegate string SendName(string name);
     public partial class MainForm : Form
     {
+        private delegate void SafeCallDelegate(MainForm frm);
         public event EventHandler Search_Click;
         public event EventHandler Insert_Click;
         public event EventHandler Delete_Click;
@@ -23,7 +24,7 @@ namespace AdminForm
         int CheckBtnIndex = 100;
         bool open = false;
         List<MenuTreeVo> menuList;
-
+        //MainChild homeFrm = new MainChild();
         public event SendName sendName;
 
         public ToolStrip ToolStrip { get { return toolStrip1; } set { toolStrip1 = value; } }
@@ -46,15 +47,20 @@ namespace AdminForm
             SetButtonImage();
             MenuService service = new MenuService();
             menuList = await service.GetListAsync("GetAllMenu", new List<MenuTreeVo>());
-
-
             trvMenu.Visible = false;
             trvBookMark.Visible = false;
             trvBookMark.Location = new Point(0, 10);
             btnMenu.BackColor = SystemColors.ActiveCaptionText;
-
             LoadHome();
         }
+        private void LoadHome()
+        {
+            MainChild homeFrm = new MainChild();
+            homeFrm.MdiParent = this;
+            homeFrm.Dock = DockStyle.Fill;
+            homeFrm.Show();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             trvMenu.Visible = true;
@@ -378,10 +384,10 @@ namespace AdminForm
             }
             foreach (Form frm in this.MdiChildren)
             {
-                if (frm != this.ActiveMdiChild && frm.Name!="MainChild")
+                if (frm != this.ActiveMdiChild && frm.Name != "MainChild")
                 {
                     frm.Close();
-                }                
+                }
             }
         }
 
@@ -405,7 +411,7 @@ namespace AdminForm
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            MainChild homeFrm = new MainChild(); 
+            MainChild homeFrm = new MainChild();
             homeFrm.MdiParent = this;
             homeFrm.Dock = DockStyle.Fill;
             homeFrm.Show();
@@ -469,8 +475,8 @@ namespace AdminForm
             {
                 MessageBox.Show("로그인 되었습니다.");
 
-                LoginID(Global.User_Name);
-                
+                //LoginID(Global.User_Name);
+
                 //lblName.Text = Global.User_Name + "님 환영합니다.";
                 Userauthority();
             }
@@ -478,7 +484,7 @@ namespace AdminForm
 
         private void LoginID(string ID)
         {
-            
+
         }
 
         private void Userauthority()
@@ -487,11 +493,11 @@ namespace AdminForm
 
             LoginService service = new LoginService();
             LoginVO userVO = new LoginVO();
-            userVO.User_ID = Global.User_ID;
+            userVO.User_ID = Convert.ToInt32(Global.LoginID);
             userVO.Screen_Code = "메인";
             List<LoginVO> list = service.LoginAuthority(userVO);
 
-            
+
 
             // 추가,조회,삭제,수정 부분중에 메인 폼에는 조회와 삭제만 있어서 조회,삭제 버튼만 제어
             if (list.Count > 0)
@@ -511,13 +517,7 @@ namespace AdminForm
                 }
             }
         }
-        private void LoadHome()
-        {
-            MainChild homeFrm = new MainChild();
-            homeFrm.MdiParent = this;
-            homeFrm.Dock = DockStyle.Fill;
-            homeFrm.Show();
-        }
+       
         private void btnCreate_Click_1(object sender, EventArgs e)
         {
             foreach (var item in this.MdiChildren)
@@ -535,6 +535,13 @@ namespace AdminForm
         {
             if (this.Insert_Click != null)
                 Insert_Click(this, null);
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+            // Use this since we are a console app
+            //System.Environment.Exit(1);
         }
     }
 }

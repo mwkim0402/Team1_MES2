@@ -117,6 +117,7 @@
     <Compile Include="FrmWaitForm.Designer.cs">
       <DependentUpon>FrmWaitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="JobOrder\CreateWorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>

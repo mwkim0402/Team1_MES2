@@ -513,6 +513,7 @@
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Text = "MES_Solution";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pnlMenu.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);

@@ -4,7 +4,7 @@ using System.Collections;
 using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 
-namespace FieldOperationForm
+namespace FieldOperationForm.JobOrder_Package
 {
     public partial class XtraReport1 : DevExpress.XtraReports.UI.XtraReport
     {

@@ -68,6 +68,27 @@ namespace WebApplication0106.DAC
             return iTotCount;
         }
 
+        public int GetWorkCenterCount(string category)
+        {
+            int iTotCount = 0;
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                string sql = "select count(*) 작업장수 from WorkCenter_Master where Wc_group = @WC_Group group by Wc_Group";
+
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    if (category == null)
+                        cmd.Parameters.AddWithValue("@WC_Group", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@WC_Group", category);
+
+                    iTotCount = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            return iTotCount;
+        }
+
 
         public List<string> GetProductCategory()
         {
@@ -107,7 +128,8 @@ namespace WebApplication0106.DAC
             return (list == null) ? null : list[0];
         }
 
-            public void Dispose()
+
+        public void Dispose()
         {
 
         }

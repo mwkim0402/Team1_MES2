@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_StartEnd = new System.Windows.Forms.Button();
             this.btn_FieldClose = new System.Windows.Forms.Button();
@@ -41,14 +41,16 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(30, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1475, 392);
@@ -57,14 +59,14 @@
             // 
             // btn_StartEnd
             // 
-            this.btn_StartEnd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_StartEnd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_StartEnd.BackColor = System.Drawing.Color.Ivory;
             this.btn_StartEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_StartEnd.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_StartEnd.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btn_StartEnd.Location = new System.Drawing.Point(30, 433);
             this.btn_StartEnd.Name = "btn_StartEnd";
-            this.btn_StartEnd.Size = new System.Drawing.Size(201, 154);
+            this.btn_StartEnd.Size = new System.Drawing.Size(219, 154);
             this.btn_StartEnd.TabIndex = 1;
             this.btn_StartEnd.Text = "작업시작/ \r\n종료";
             this.btn_StartEnd.UseVisualStyleBackColor = false;
@@ -72,28 +74,28 @@
             // 
             // btn_FieldClose
             // 
-            this.btn_FieldClose.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_FieldClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_FieldClose.BackColor = System.Drawing.Color.Ivory;
             this.btn_FieldClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_FieldClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_FieldClose.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_FieldClose.Location = new System.Drawing.Point(284, 433);
+            this.btn_FieldClose.Location = new System.Drawing.Point(281, 433);
             this.btn_FieldClose.Name = "btn_FieldClose";
-            this.btn_FieldClose.Size = new System.Drawing.Size(201, 154);
+            this.btn_FieldClose.Size = new System.Drawing.Size(219, 154);
             this.btn_FieldClose.TabIndex = 2;
             this.btn_FieldClose.Text = "현장마감";
             this.btn_FieldClose.UseVisualStyleBackColor = false;
             // 
             // btn_Worker
             // 
-            this.btn_Worker.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Worker.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_Worker.BackColor = System.Drawing.Color.Ivory;
             this.btn_Worker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Worker.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Worker.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Worker.Location = new System.Drawing.Point(538, 433);
+            this.btn_Worker.Location = new System.Drawing.Point(532, 433);
             this.btn_Worker.Name = "btn_Worker";
-            this.btn_Worker.Size = new System.Drawing.Size(201, 154);
+            this.btn_Worker.Size = new System.Drawing.Size(219, 154);
             this.btn_Worker.TabIndex = 4;
             this.btn_Worker.Text = "작업자\r\n할당";
             this.btn_Worker.UseVisualStyleBackColor = false;
@@ -101,14 +103,14 @@
             // 
             // btn_CreatePalette
             // 
-            this.btn_CreatePalette.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_CreatePalette.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_CreatePalette.BackColor = System.Drawing.Color.Ivory;
             this.btn_CreatePalette.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CreatePalette.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_CreatePalette.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_CreatePalette.Location = new System.Drawing.Point(792, 433);
+            this.btn_CreatePalette.Location = new System.Drawing.Point(783, 433);
             this.btn_CreatePalette.Name = "btn_CreatePalette";
-            this.btn_CreatePalette.Size = new System.Drawing.Size(201, 154);
+            this.btn_CreatePalette.Size = new System.Drawing.Size(219, 154);
             this.btn_CreatePalette.TabIndex = 5;
             this.btn_CreatePalette.Text = "팔레트\r\n생성";
             this.btn_CreatePalette.UseVisualStyleBackColor = false;
@@ -116,14 +118,14 @@
             // 
             // btn_BarCode
             // 
-            this.btn_BarCode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_BarCode.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_BarCode.BackColor = System.Drawing.Color.Ivory;
             this.btn_BarCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_BarCode.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_BarCode.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_BarCode.Location = new System.Drawing.Point(1046, 433);
+            this.btn_BarCode.Location = new System.Drawing.Point(1034, 433);
             this.btn_BarCode.Name = "btn_BarCode";
-            this.btn_BarCode.Size = new System.Drawing.Size(201, 154);
+            this.btn_BarCode.Size = new System.Drawing.Size(219, 154);
             this.btn_BarCode.TabIndex = 6;
             this.btn_BarCode.Text = "팔레트 바코드\r\n재발행";
             this.btn_BarCode.UseVisualStyleBackColor = false;
@@ -131,14 +133,14 @@
             // 
             // btn_warehousing
             // 
-            this.btn_warehousing.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_warehousing.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_warehousing.BackColor = System.Drawing.Color.Ivory;
             this.btn_warehousing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_warehousing.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_warehousing.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_warehousing.Location = new System.Drawing.Point(1300, 433);
+            this.btn_warehousing.Location = new System.Drawing.Point(1285, 433);
             this.btn_warehousing.Name = "btn_warehousing";
-            this.btn_warehousing.Size = new System.Drawing.Size(201, 154);
+            this.btn_warehousing.Size = new System.Drawing.Size(219, 154);
             this.btn_warehousing.TabIndex = 7;
             this.btn_warehousing.Text = "입고등록";
             this.btn_warehousing.UseVisualStyleBackColor = false;

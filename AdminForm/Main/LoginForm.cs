@@ -14,7 +14,7 @@ namespace AdminForm
 {
     public partial class LoginForm : Form
     {
-        
+
         public LoginForm()
         {
             InitializeComponent();
@@ -30,17 +30,29 @@ namespace AdminForm
 
             List<LoginVO> list = new List<LoginVO>();
             list = service.LoginOK(loginVo);
-            if(list.Count > 0)
+            if (list.Count > 0)
             {
                 //btnLogin.DialogResult = DialogResult.OK;
-                Global.User_Name = list[0].User_Name;
-                Global.User_ID = list[0].User_ID;
+                Global.LoginID = list[0].User_ID;
+                MainForm frm = new MainForm();
+                frm.Show();
+                this.Hide();
             }
             else
             {
                 MessageBox.Show("로그인에 실패했습니다.");
                 btnLogin.DialogResult = DialogResult.Cancel;
             }
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            pictureBox1.Image = new Bitmap(Application.StartupPath + @"\image\logotest.png");
+            btnLogin.Image = new Bitmap(Application.StartupPath + @"\image\Login.png");
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
         }
     }
 }

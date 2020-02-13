@@ -11,7 +11,7 @@ namespace WebApplication0106.Controllers
     public class ProductController : Controller
     {
         // GET: Product
-        int pageSize = 10;
+        int pageSize = 5;
         public ActionResult List(string group=null,int page = 1)
         {
             ProductDAC product = new ProductDAC();
@@ -26,6 +26,7 @@ namespace WebApplication0106.Controllers
                 },
                 CurrentCategory = group
             };
+            ViewBag.WorkOrderList = model;
             return View(model);
         }
 

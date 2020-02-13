@@ -1,19 +1,11 @@
 ﻿@model WebApplication0106.Models.JobOrder
 
-<div class="well">
+<div class="well" style="background-color:dimgray">
     <h3>
-        <strong>@Model.Workorderno</strong>
-        <span class="pull-right label label-primary">@Model.Item_Name.ToString()</span>
-        <span class="pull-right label label-primary">@Model.Wc_Name.ToString()</span>
+        <strong style="color:white">@Model.Workorderno</strong>
+        <span class="pull-right label" style="background-color:rebeccapurple">@Model.Wo_Status</span>
+        <span class="pull-right label" style="background-color:rebeccapurple">@Model.Item_Name.ToString()</span>
+        <span class="pull-right label" style="background-color:rebeccapurple">@Model.Wc_Name.ToString()</span>
     </h3>
-    @using (Html.BeginForm("상세보기", "Cart"))
-
-    {
-        <div>
-            @Html.Hidden("Workorderno", Model.Workorderno)
-            <input type="submit" style="background-color:rebeccapurple" value="@Model.Wo_Status" class="btn btn-success pull-right" />
-        </div>
-
-    }
-    <span class="lead">@Model.Plan_Date 까지</span>
+    <span class="lead" style="color:whitesmoke;font-size:16px">@Model.Plan_Date 까지</span>
 </div>

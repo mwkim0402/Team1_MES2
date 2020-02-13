@@ -37,6 +37,25 @@ namespace WebApplication0106.DAC
             
                 return list;
         }
+
+        internal List<JobOrder> GetWorkOrderFive()
+        {
+            List<JobOrder> list = new List<JobOrder>();
+            string sql = "GetJobOrderFive";
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    list = Helper.DataReaderMapToList<JobOrder>(cmd.ExecuteReader());
+                }
+            }
+
+            return list;
+        }
+
         public int GetWorkOrderTotalCount(string category)
         {
             int iTotCount = 0;

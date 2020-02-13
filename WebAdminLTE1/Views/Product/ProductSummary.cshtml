@@ -1,19 +1,33 @@
 ﻿@model WebApplication0106.Models.Product
 
-    <div class="well">
+    <div class="well" style="background-color:dimgray">
         <h3>
-            <strong>@Model.Wc_Name</strong>
-            <span class="pull-right label label-primary">@Model.Wc_Group.ToString()</span>
+            <strong style="color:white">@Model.Wc_Name</strong>
+            <span class="pull-right label" style="background-color:rebeccapurple">@Model.Wc_Group.ToString()</span>
+
         </h3>
         @using (Html.BeginForm("상세보기", "Cart"))
 
         {
+
+            <div class="progress-group">
+                <span class="progress-text" style="color:white">현재 생산량</span>
+                <span class="progress-number" style="color:white;font-size:13px"><b>160</b>/200</span>
+
+                <div class="progress sm">
+                    <div class="progress-bar progress-bar-primary" style="width: 80%; background-color:rebeccapurple"></div>
+                </div>
+            </div>
             <div>
-                @Html.Hidden("Wc_Code",Model.Wc_Code)
-                @Html.Hidden("returnUrl",Request.Url.PathAndQuery)
-                <input type="submit" style="background-color:rebeccapurple" value="상세보기" class="btn btn-success pull-right" />
+                @Html.Hidden("Wc_Code", Model.Wc_Code)
+                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                <input type="submit" style="background-color:rebeccapurple; border:0px" value="상세보기" class="btn btn-success pull-right" />
+
+                <span class="pull-left label" style="background-color:rebeccapurple">상태 : @Model.Wo_Status</span>
             </div>
 
         }
-        <span class="lead">@Model.Wo_Status &nbsp;</span>
+        &nbsp;
+        <h4>
+        </h4>
     </div>

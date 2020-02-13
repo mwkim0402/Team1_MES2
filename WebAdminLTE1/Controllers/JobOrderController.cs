@@ -11,7 +11,7 @@ namespace WebAdminLTE1.Controllers
     public class JobOrderController : Controller
     {
         // GET: JobOrder
-        int pageSize = 10;
+        int pageSize = 5;
         public ActionResult List(int page = 1)
         {
             //작업지시별 불량률 확인 하고 리스트로 뿌려준다.
@@ -26,6 +26,7 @@ namespace WebAdminLTE1.Controllers
                     TotalItems = jobOrder.GetWorkOrderTotalCount(null) //전체조회
                 }
             };
+            ViewBag.TopFive = model;
             return View(model);
         }
 

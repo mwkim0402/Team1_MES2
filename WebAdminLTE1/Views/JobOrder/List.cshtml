@@ -1,11 +1,11 @@
-﻿@model WebApplication0106.Models.ProductListView
+﻿@model IEnumerable<WebApplication0106.Models.JobOrderListView>
 @{
     ViewBag.Title = "작업장별 생산현황";
 }
 
-@foreach (var p in Model.Products)
+@foreach (var p in Model.JobOrders)
 {
-    @Html.Partial("ProductSummary", p)
+    @Html.Partial("JobOrderSummary", p)
 }
 <div class="btn-group pull-right">
     @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, group = Model.CurrentCategory }))

@@ -5,13 +5,13 @@
             <strong>@Model.Wc_Name</strong>
             <span class="pull-right label label-primary">@Model.Wc_Group.ToString()</span>
         </h3>
-        @using (Html.BeginForm("상세보기?", "Cart"))
+        @using (Html.BeginForm("상세보기", "Cart"))
 
         {
             <div>
                 @Html.Hidden("Wc_Code",Model.Wc_Code)
                 @Html.Hidden("returnUrl",Request.Url.PathAndQuery)
-                <input type="submit" value="Add to Cart" class="btn btn-success pull-right" />
+                <input type="submit" style="background-color:rebeccapurple" value="상세보기" class="btn btn-success pull-right" />
             </div>
 
         }

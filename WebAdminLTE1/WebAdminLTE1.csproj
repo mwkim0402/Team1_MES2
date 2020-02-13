@@ -7383,10 +7383,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobOrderController.cs" />
     <Compile Include="Controllers\NAVController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="DAC\EmailOrderProcessor.cs" />
     <Compile Include="DAC\Helper.cs" />
+    <Compile Include="DAC\JobOrderDAC.cs" />
     <Compile Include="DAC\ProductDAC.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -7395,7 +7397,9 @@
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartIndexViewModel.cs" />
     <Compile Include="Models\PagingInfo.cs" />
+    <Compile Include="Models\JobOrder.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\JobOrderListView.cs" />
     <Compile Include="Models\ProductListView.cs" />
     <Compile Include="Models\ShipInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -7410,6 +7414,8 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Views\JobOrder\List.cshtml" />
+    <Content Include="Views\JobOrder\JobOrderSummary.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

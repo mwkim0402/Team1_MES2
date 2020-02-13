@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cb_Item = new System.Windows.Forms.ComboBox();
             this.txt_unit = new System.Windows.Forms.TextBox();
             this.txt_ResultNum = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,8 +41,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_WorkDate = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_WorkNum = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txt_WorkNum = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_RatingDetail = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btn_Print = new System.Windows.Forms.Button();
-            this.cb_Item = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -64,6 +64,7 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Controls.Add(this.cb_Item);
             this.groupBox2.Controls.Add(this.txt_unit);
             this.groupBox2.Controls.Add(this.txt_ResultNum);
             this.groupBox2.Controls.Add(this.label5);
@@ -74,13 +75,23 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txt_WorkDate);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txt_WorkNum);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(12, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1519, 119);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
+            // 
+            // cb_Item
+            // 
+            this.cb_Item.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cb_Item.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cb_Item.FormattingEnabled = true;
+            this.cb_Item.Location = new System.Drawing.Point(206, 20);
+            this.cb_Item.Name = "cb_Item";
+            this.cb_Item.Size = new System.Drawing.Size(327, 32);
+            this.cb_Item.TabIndex = 19;
+            this.cb_Item.SelectedIndexChanged += new System.EventHandler(this.cb_Item_SelectedIndexChanged);
             // 
             // txt_unit
             // 
@@ -89,6 +100,7 @@
             this.txt_unit.Location = new System.Drawing.Point(1156, 65);
             this.txt_unit.Multiline = true;
             this.txt_unit.Name = "txt_unit";
+            this.txt_unit.ReadOnly = true;
             this.txt_unit.Size = new System.Drawing.Size(327, 41);
             this.txt_unit.TabIndex = 11;
             // 
@@ -99,6 +111,7 @@
             this.txt_ResultNum.Location = new System.Drawing.Point(695, 65);
             this.txt_ResultNum.Multiline = true;
             this.txt_ResultNum.Name = "txt_ResultNum";
+            this.txt_ResultNum.ReadOnly = true;
             this.txt_ResultNum.Size = new System.Drawing.Size(327, 41);
             this.txt_ResultNum.TabIndex = 7;
             // 
@@ -133,6 +146,7 @@
             this.txt_WorkPlace.Location = new System.Drawing.Point(1156, 18);
             this.txt_WorkPlace.Multiline = true;
             this.txt_WorkPlace.Name = "txt_WorkPlace";
+            this.txt_WorkPlace.ReadOnly = true;
             this.txt_WorkPlace.Size = new System.Drawing.Size(327, 41);
             this.txt_WorkPlace.TabIndex = 9;
             // 
@@ -155,6 +169,7 @@
             this.txt_Item.Location = new System.Drawing.Point(695, 18);
             this.txt_Item.Multiline = true;
             this.txt_Item.Name = "txt_Item";
+            this.txt_Item.ReadOnly = true;
             this.txt_Item.Size = new System.Drawing.Size(327, 41);
             this.txt_Item.TabIndex = 5;
             // 
@@ -177,6 +192,7 @@
             this.txt_WorkDate.Location = new System.Drawing.Point(206, 65);
             this.txt_WorkDate.Multiline = true;
             this.txt_WorkDate.Name = "txt_WorkDate";
+            this.txt_WorkDate.ReadOnly = true;
             this.txt_WorkDate.Size = new System.Drawing.Size(327, 41);
             this.txt_WorkDate.TabIndex = 3;
             // 
@@ -192,16 +208,6 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "작업 지시일";
             // 
-            // txt_WorkNum
-            // 
-            this.txt_WorkNum.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_WorkNum.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_WorkNum.Location = new System.Drawing.Point(206, 18);
-            this.txt_WorkNum.Multiline = true;
-            this.txt_WorkNum.Name = "txt_WorkNum";
-            this.txt_WorkNum.Size = new System.Drawing.Size(327, 41);
-            this.txt_WorkNum.TabIndex = 1;
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -213,6 +219,16 @@
             this.label2.Size = new System.Drawing.Size(157, 28);
             this.label2.TabIndex = 2;
             this.label2.Text = "작업 지시번호";
+            // 
+            // txt_WorkNum
+            // 
+            this.txt_WorkNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_WorkNum.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txt_WorkNum.Location = new System.Drawing.Point(319, 264);
+            this.txt_WorkNum.Multiline = true;
+            this.txt_WorkNum.Name = "txt_WorkNum";
+            this.txt_WorkNum.Size = new System.Drawing.Size(327, 41);
+            this.txt_WorkNum.TabIndex = 1;
             // 
             // dataGridView1
             // 
@@ -256,6 +272,7 @@
             this.txt_RatingDetail.Location = new System.Drawing.Point(220, 159);
             this.txt_RatingDetail.Multiline = true;
             this.txt_RatingDetail.Name = "txt_RatingDetail";
+            this.txt_RatingDetail.ReadOnly = true;
             this.txt_RatingDetail.Size = new System.Drawing.Size(368, 41);
             this.txt_RatingDetail.TabIndex = 24;
             // 
@@ -266,6 +283,7 @@
             this.txt_Rating.Location = new System.Drawing.Point(220, 93);
             this.txt_Rating.Multiline = true;
             this.txt_Rating.Name = "txt_Rating";
+            this.txt_Rating.ReadOnly = true;
             this.txt_Rating.Size = new System.Drawing.Size(368, 41);
             this.txt_Rating.TabIndex = 23;
             // 
@@ -276,6 +294,7 @@
             this.txt_PaletteNum.Location = new System.Drawing.Point(220, 27);
             this.txt_PaletteNum.Multiline = true;
             this.txt_PaletteNum.Name = "txt_PaletteNum";
+            this.txt_PaletteNum.ReadOnly = true;
             this.txt_PaletteNum.Size = new System.Drawing.Size(368, 41);
             this.txt_PaletteNum.TabIndex = 22;
             // 
@@ -308,6 +327,7 @@
             this.txt_Size.Location = new System.Drawing.Point(220, 225);
             this.txt_Size.Multiline = true;
             this.txt_Size.Name = "txt_Size";
+            this.txt_Size.ReadOnly = true;
             this.txt_Size.Size = new System.Drawing.Size(368, 41);
             this.txt_Size.TabIndex = 18;
             // 
@@ -372,16 +392,7 @@
             this.btn_Print.TabIndex = 18;
             this.btn_Print.Text = "인쇄";
             this.btn_Print.UseVisualStyleBackColor = false;
-            // 
-            // cb_Item
-            // 
-            this.cb_Item.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cb_Item.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cb_Item.FormattingEnabled = true;
-            this.cb_Item.Location = new System.Drawing.Point(218, 139);
-            this.cb_Item.Name = "cb_Item";
-            this.cb_Item.Size = new System.Drawing.Size(327, 39);
-            this.cb_Item.TabIndex = 19;
+            this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
             // 
             // CreatePalette
             // 
@@ -389,11 +400,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1538, 628);
-            this.Controls.Add(this.cb_Item);
             this.Controls.Add(this.btn_Print);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.txt_WorkNum);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CreatePalette";
             this.Text = "CreatePalette";
@@ -404,6 +415,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

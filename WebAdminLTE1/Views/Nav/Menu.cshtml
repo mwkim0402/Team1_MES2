@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<string>
 
     <ul class="treeview-menu">
-        <li>@Html.ActionLink("전체", "Product", "List")</li>
+        <li>@Html.ActionLink("전체", "List", "Product")</li>
         @foreach (var link in Model)
         {
             <li>
@@ -9,7 +9,7 @@
            {
                controller = "Product",
                action = "List",
-               category = link,
+               group = link,
                page = 1
            })
 

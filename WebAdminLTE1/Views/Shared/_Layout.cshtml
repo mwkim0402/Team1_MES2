@@ -26,7 +26,7 @@
         <header class="main-header">
 
             <!-- Logo -->
-            <a href="index2.html" class="logo">
+            <a href="/Home/Index" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>B</b>MES</span>
                 <!-- logo for regular state and mobile devices -->
@@ -150,9 +150,8 @@
 
                 
                 <ul class="sidebar-menu" data-widget="tree">
-                    <li class="header">HEADER</li>
+                    <li class="header">통계 서비스</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li class="active"><a href="/Home/Index"><i class="fa fa-link"></i> <span>MES Project</span></a></li>
                     <li class="treeview">
                         <a href="/Product/List">
                             <i class="fa fa-link"></i> <span>작업장별 생산현황</span>
@@ -163,7 +162,7 @@
                         @Html.Action("Menu", "Nav")
 
                     </li>
-                    <li><a href="/Product/List"><i class="fa fa-link"></i> <span>전체 월별 생산현황</span></a></li>
+                    <li><a href="/JobOrder/List"><i class="fa fa-link"></i> <span>전체 월별 생산현황</span></a></li>
                     <li><a href="/Product/List"><i class="fa fa-link"></i> <span>불량 현황</span></a></li>
                     <li><a href="/Home/Member"><i class="fa fa-link"></i> <span>근태 현황</span></a></li>
                 </ul>
@@ -214,35 +213,64 @@
             <div class="tab-content">
                 <!-- Home tab content -->
                 <div class="tab-pane active" id="control-sidebar-home-tab">
-                    <h3 class="control-sidebar-heading">Recent Activity</h3>
-                    <ul class="control-sidebar-menu">
-                        <li>
-                            <a href="javascript:;">
-                                <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-                                <div class="menu-info">
-                                    <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                                    <p>Will be 23 on April 24th</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                   
                     <!-- /.control-sidebar-menu -->
 
-                    <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                    <h3 class="control-sidebar-heading">현재 진행상황</h3>
                     <ul class="control-sidebar-menu">
                         <li>
                             <a href="javascript:;">
                                 <h4 class="control-sidebar-subheading">
-                                    Custom Template Design
+                                    Project1
                                     <span class="pull-right-container">
-                                        <span class="label label-danger pull-right">70%</span>
+                                        <span class="label label-danger pull-right">15%</span>
                                     </span>
                                 </h4>
 
                                 <div class="progress progress-xxs">
-                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                    <div class="progress-bar progress-bar-danger" style="width: 15%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <h4 class="control-sidebar-subheading">
+                                    Project2
+                                    <span class="pull-right-container">
+                                        <span class="label label-danger pull-right">20%</span>
+                                    </span>
+                                </h4>
+
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-danger" style="width: 20%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <h4 class="control-sidebar-subheading">
+                                    Project3
+                                    <span class="pull-right-container">
+                                        <span class="label label-danger pull-right">55%</span>
+                                    </span>
+                                </h4>
+
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <h4 class="control-sidebar-subheading">
+                                    Project4
+                                    <span class="pull-right-container">
+                                        <span class="label label-danger pull-right">93%</span>
+                                    </span>
+                                </h4>
+
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-danger" style="width: 93%"></div>
                                 </div>
                             </a>
                         </li>
@@ -257,7 +285,7 @@
                 <!-- Settings tab content -->
                 <div class="tab-pane" id="control-sidebar-settings-tab">
                     <form method="post">
-                        <h3 class="control-sidebar-heading">General Settings</h3>
+                        <h3 class="control-sidebar-heading">설정</h3>
 
                         <div class="form-group">
                             <label class="control-sidebar-subheading">

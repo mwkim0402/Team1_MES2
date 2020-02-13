@@ -471,8 +471,8 @@ namespace AdminForm
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     MessageBox.Show("로그인 되었습니다.");
-                    this.SendNameEvent += new SendName(homeFrm.GetName);
-                    SendNameEvent(Global.User_Name + "님 환영합니다.");
+                   // this.SendNameEvent += new SendName(homeFrm.GetName);
+                   // SendNameEvent(Global.User_Name + "님 환영합니다.");
                     //lblName.Text = Global.User_Name + "님 환영합니다.";
                     btnLogin.Text = "로그아웃";
                     Userauthority();
@@ -482,7 +482,7 @@ namespace AdminForm
             {
                 // 버튼 제어
 
-                this.SendNameEvent += new SendName(homeFrm.GetName);
+                //this.SendNameEvent += new SendName(homeFrm.GetName);
                 SendNameEvent("_님 환영합니다.");
                 btnLogin.Text = "로그인";
                 MessageBox.Show("로그아웃 되었습니다.");
@@ -497,7 +497,7 @@ namespace AdminForm
 
             LoginService service = new LoginService();
             LoginVO userVO = new LoginVO();
-            userVO.User_ID = Global.User_ID;
+            //userVO.User_ID = Global.User_ID;
             userVO.Screen_Code = "메인";
             List<LoginVO> list = service.LoginAuthority(userVO);
 
@@ -546,6 +546,13 @@ namespace AdminForm
         {
             if (this.Insert_Click != null)
                 Insert_Click(this, null);
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+            // Use this since we are a console app
+            //System.Environment.Exit(1);
         }
     }
 }

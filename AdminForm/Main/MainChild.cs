@@ -11,20 +11,18 @@ using System.Windows.Forms;
 
 namespace AdminForm
 {
-    
+
 
     public partial class MainChild : Form
     {
         MainForm frm;
         UserCalendar workCalendar;
 
-        
         public MainChild()
         {
             InitializeComponent();
         }
-        
-        
+
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -52,7 +50,7 @@ namespace AdminForm
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 if (openFileDialog1.FileName != "")
                 {
@@ -62,10 +60,10 @@ namespace AdminForm
                 }
             }
         }
-
-        public void GetLoginName()
+        public void GetName(string Name)
         {
-
+            lblID.Text = Name;
         }
+
     }
 }

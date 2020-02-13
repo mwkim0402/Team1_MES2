@@ -149,6 +149,41 @@ namespace MES_DB
             }
         }
 
+        public void UpdateRegQulityForm(int num, string workOrder)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "update Inspect_Measure_History set Inspect_Val = @Inspect_Val where WorkOrderNo = @WorkOrderNo";
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Inspect_Val", num);
+                cmd.Parameters.AddWithValue("@WorkOrderNo", workOrder);
+
+                cmd.Connection.Open();
+
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+        }
+
+        public void DeleteRegUqlityForm(int num)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "delete from Inspect_Measure_History where Inspect_Measure_seq = @InspInspect_Measure_seq ";
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@InspInspect_Measure_seq", num);
+
+                cmd.Connection.Open();
+
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+        }
+
         public List<RegProcessVO> GetAllRegProcess()
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -162,6 +197,37 @@ namespace MES_DB
                 List<RegProcessVO> list = Helper.DataReaderMapToList<RegProcessVO>(reader);
                 cmd.Connection.Close();
                 return list;
+            }
+        }
+
+
+        public void UpdateRegProcess(decimal value, int pk)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "update Condition_Measure_History set Condition_Val = @Condition_Val where Condition_measure_seq = @Condition_measure_seq";
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Condition_Val", value);
+                cmd.Parameters.AddWithValue("@Condition_measure_seq", pk);
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+        }
+        public void DeleteRegProcess(int pk)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "delete from Condition_Measure_History where Condition_measure_seq = @Condition_measure_seq";
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Condition_measure_seq", pk);
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
             }
         }
 
@@ -209,12 +275,12 @@ namespace MES_DB
                 cmd.Parameters.AddWithValue("@Out_Qty_Main", edit.Out_Qty_Main);
                 cmd.Parameters.AddWithValue("@Prd_Qty", edit.Prd_Qty);
                 cmd.Parameters.AddWithValue("@Plan_Date", edit.Plan_Date);
-                
-                
+
+
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
-                
+
             }
         }
     }

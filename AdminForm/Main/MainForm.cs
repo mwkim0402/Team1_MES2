@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace AdminForm
 {
-    public delegate string SendName(string name);
+    public delegate void SendName(string name);
     public partial class MainForm : Form
     {
         public event EventHandler Search_Click;
@@ -23,8 +23,9 @@ namespace AdminForm
         int CheckBtnIndex = 100;
         bool open = false;
         List<MenuTreeVo> menuList;
+        MainChild homeFrm;
 
-        public event SendName sendName;
+        public SendName SendNameEvent;
 
         public ToolStrip ToolStrip { get { return toolStrip1; } set { toolStrip1 = value; } }
         public MainForm()
@@ -378,10 +379,10 @@ namespace AdminForm
             }
             foreach (Form frm in this.MdiChildren)
             {
-                if (frm != this.ActiveMdiChild && frm.Name!="MainChild")
+                if (frm != this.ActiveMdiChild && frm.Name != "MainChild")
                 {
                     frm.Close();
-                }                
+                }
             }
         }
 
@@ -405,7 +406,7 @@ namespace AdminForm
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            MainChild homeFrm = new MainChild(); 
+            MainChild homeFrm = new MainChild();
             homeFrm.MdiParent = this;
             homeFrm.Dock = DockStyle.Fill;
             homeFrm.Show();
@@ -464,22 +465,31 @@ namespace AdminForm
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //LoginForm 열어서 로그인 하고 아이디 값 , 이름 값 받아서 Global 클래스에 값 넣기
-            LoginForm frm = new LoginForm();
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (btnLogin.Text == "로그인")
             {
-                MessageBox.Show("로그인 되었습니다.");
+                LoginForm frm = new LoginForm();
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("로그인 되었습니다.");
+                    this.SendNameEvent += new SendName(homeFrm.GetName);
+                    SendNameEvent(Global.User_Name + "님 환영합니다.");
+                    //lblName.Text = Global.User_Name + "님 환영합니다.";
+                    btnLogin.Text = "로그아웃";
+                    Userauthority();
+                }
+            }
+            else if(btnLogin.Text == "로그아웃")
+            {
+                // 버튼 제어
 
-                LoginID(Global.User_Name);
-                
-                //lblName.Text = Global.User_Name + "님 환영합니다.";
-                Userauthority();
+                this.SendNameEvent += new SendName(homeFrm.GetName);
+                SendNameEvent("_님 환영합니다.");
+                btnLogin.Text = "로그인";
+                MessageBox.Show("로그아웃 되었습니다.");
             }
         }
 
-        private void LoginID(string ID)
-        {
-            
-        }
+
 
         private void Userauthority()
         {
@@ -491,7 +501,7 @@ namespace AdminForm
             userVO.Screen_Code = "메인";
             List<LoginVO> list = service.LoginAuthority(userVO);
 
-            
+
 
             // 추가,조회,삭제,수정 부분중에 메인 폼에는 조회와 삭제만 있어서 조회,삭제 버튼만 제어
             if (list.Count > 0)
@@ -513,7 +523,8 @@ namespace AdminForm
         }
         private void LoadHome()
         {
-            MainChild homeFrm = new MainChild();
+            //    MainChild homeFrm = new MainChild();
+            homeFrm = new MainChild();
             homeFrm.MdiParent = this;
             homeFrm.Dock = DockStyle.Fill;
             homeFrm.Show();

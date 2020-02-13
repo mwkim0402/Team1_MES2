@@ -35,10 +35,10 @@ namespace MES_DB
             PerformDAC dac = new PerformDAC();
             return dac.GetAllRegFaultyImage();
         }
-        public void InsFaltyImage(string fileName, string filePath, string WorkOderNo,int faultyNum)
+        public void InsFaltyImage(string fileName, string filePath, string WorkOderNo, int faultyNum)
         {
             PerformDAC dac = new PerformDAC();
-            dac.InsFaltyImage(fileName, filePath, WorkOderNo,faultyNum);
+            dac.InsFaltyImage(fileName, filePath, WorkOderNo, faultyNum);
         }
 
         public List<QualityVO> GetAllQuality()
@@ -46,11 +46,31 @@ namespace MES_DB
             PerformDAC dac = new PerformDAC();
             return dac.GetAllQuality();
         }
+        public void UpdateRegQulityForm(int num, string workOrder)
+        {
+            PerformDAC dac = new PerformDAC();
+            dac.UpdateRegQulityForm(num, workOrder);
+        }
+        public void DeleteRegUqlityForm(int num)
+        {
+            PerformDAC dac = new PerformDAC();
+            dac.DeleteRegUqlityForm(num);
+        }
 
         public List<RegProcessVO> GetAllRegProcess()
         {
             PerformDAC dac = new PerformDAC();
             return dac.GetAllRegProcess();
+        }
+        public void UpdateRegProcess(decimal value, int pk)
+        {
+            PerformDAC dac = new PerformDAC();
+            dac.UpdateRegProcess(value, pk);
+        }
+        public void DeleteRegProcess(int pk)
+        {
+            PerformDAC dac = new PerformDAC();
+            dac.DeleteRegProcess(pk);
         }
 
         public void EditPerformSearch(PerformSearchVO edit)

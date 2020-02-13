@@ -10,15 +10,15 @@ namespace MES_DB
 {
     public class PerformService
     {
-        public List<WorkdiligenceStatusanalysisVO> GetAllWorkStatus(DateTime Start, DateTime End)
+        public List<WorkdiligenceStatusanalysisVO> GetAllWorkStatus()
         {
             PerformDAC dac = new PerformDAC();
-            return dac.AllWorkStatuseList(Start, End);
+            return dac.AllWorkStatuseList();
         }
-        public List<PerformSearchVO> GetAllPerformSearch(DateTime Start, DateTime End)
+        public List<PerformSearchVO> GetAllPerformSearch()
         {
             PerformDAC dac = new PerformDAC();
-            return dac.GetAllPerformSearch(Start, End);
+            return dac.GetAllPerformSearch();
         }
         public List<GVMonitoringVO> GetAllMonitoring()
         {
@@ -30,10 +30,10 @@ namespace MES_DB
             PerformDAC dac = new PerformDAC();
             return dac.GetAllMaterial();
         }
-        public List<RegFaultyVO> GetAllRegFaultyImage(DateTime start, DateTime end)
+        public List<RegFaultyVO> GetAllRegFaultyImage()
         {
             PerformDAC dac = new PerformDAC();
-            return dac.GetAllRegFaultyImage(start, end);
+            return dac.GetAllRegFaultyImage();
         }
         public void InsFaltyImage(string fileName, string filePath, string WorkOderNo,int faultyNum)
         {
@@ -41,16 +41,16 @@ namespace MES_DB
             dac.InsFaltyImage(fileName, filePath, WorkOderNo,faultyNum);
         }
 
-        public List<QualityVO> GetAllQuality(DateTime start,DateTime end)
+        public List<QualityVO> GetAllQuality()
         {
             PerformDAC dac = new PerformDAC();
-            return dac.GetAllQuality(start,end);
+            return dac.GetAllQuality();
         }
 
-        public List<RegProcessVO> GetAllRegProcess(DateTime start,DateTime end)
+        public List<RegProcessVO> GetAllRegProcess()
         {
             PerformDAC dac = new PerformDAC();
-            return dac.GetAllRegProcess(start,end);
+            return dac.GetAllRegProcess();
         }
 
         public void EditPerformSearch(PerformSearchVO edit)
@@ -58,10 +58,10 @@ namespace MES_DB
             PerformDAC dac = new PerformDAC();
             dac.EditPerformSearch(edit);
         }
-        public List<ProductListVO> GetProductListform(DateTime Start, DateTime End)
+        public List<ProductListVO> GetProductListform()
         {
             PerformDAC dac = new PerformDAC();
-            return dac.GetProductListform(Start,End);
+            return dac.GetProductListform();
         }
     }
 }

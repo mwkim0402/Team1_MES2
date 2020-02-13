@@ -13,7 +13,6 @@ namespace MES_DB
         public string Wc_Group { get; set; }
         public string Process_Code { get; set; }   
         public string Wo_Status { get; set; }
-
         public string Prd_Req_Type { get; set; }
         public string Pallet_YN { get; set; }
         public string Prd_Unit { get; set; }

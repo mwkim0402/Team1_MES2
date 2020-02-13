@@ -33,18 +33,18 @@ namespace AdminForm
         private void GetData(object sender, EventArgs e)
         {
             MES_DB.PerformService service = new MES_DB.PerformService();
-            allList = service.GetAllQuality(StartDate,EndDate);
+            allList = service.GetAllQuality();
             dgvJob.DataSource = allList;
         }
         private void ShowDgv()
         {
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "작업지시번호", "Workorderno", true, 120);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "생산일자", "Plan_Date", true, 100,DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "작업지시번호", "Workorderno", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "생산일자", "Plan_Date", true, 120,DataGridViewContentAlignment.MiddleCenter);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "공정", "Process_name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "작업장", "Wc_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "품목코드", "Item_Code", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "품목코드", "Item_Code", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "품목명", "Item_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "측정항목", "Inspect_name", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "측정항목", "Inspect_name", false, 120);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "기준값", "SL", false, 100,DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Process_code", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Wc_Code", false, 100);
@@ -55,11 +55,11 @@ namespace AdminForm
 
             
 
-            CommonClass.AddNewColumnToDataGridView(dgvDetail, "측정항목", "Inspect_name", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvDetail, "측정항목", "Inspect_name", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvDetail, "기준값", "SL", true, 100);
 
-            CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "측정일시", "Inspect_Datetime", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "품목코드", "Item_Code", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "측정일시", "Inspect_Datetime", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "품목코드", "Item_Code", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "품목명", "Item_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "편차", "deviation", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "측정값", "Inspect_Val", true, 100);
@@ -119,22 +119,22 @@ namespace AdminForm
             if ((fcWorker.SendCode != null && fcWorker.SendName != "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
             {
                 List<QualityVO> list = (from item in allList
-                                           where item.Process_code == fcFactory.SendCode && item.Wc_Name == fcWorker.SendName
-                                           select item).ToList();
+                                           where item.Process_code == fcFactory.SendCode && item.Wc_Name == fcWorker.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                        select item).ToList();
                 dgvJob.DataSource = list;
             }
             else if ((fcWorker.SendCode != null && fcWorker.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode == ""))
             {
                 List<QualityVO> list = (from item in allList
-                                           where item.Wc_Name == fcWorker.SendName
-                                           select item).ToList();
+                                           where item.Wc_Name == fcWorker.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                        select item).ToList();
                 dgvJob.DataSource = list;
             }
             else if ((fcWorker.SendCode == null || fcWorker.SendCode == "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
             {
                 List<QualityVO> list = (from item in allList
-                                           where item.Process_code == fcFactory.SendCode
-                                           select item).ToList();
+                                           where item.Process_code == fcFactory.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                        select item).ToList();
                 dgvJob.DataSource = list;
             }
         }

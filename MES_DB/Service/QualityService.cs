@@ -8,15 +8,15 @@ namespace MES_DB
 {
     public class QualityService
     {
-        public List<ProcessInquiryVO> GetAllProcessInquiry(DateTime Start,DateTime End)
+        public List<ProcessInquiryVO> GetAllProcessInquiry()
         {
             PerformDAC dac = new PerformDAC();
-            return dac.GetAllProcessInquiry(Start,End);
+            return dac.GetAllProcessInquiry();
         }
-        public List<QualityInquiryVO> GetAllQualityInquiry(DateTime Start, DateTime End)
+        public List<QualityInquiryVO> GetAllQualityInquiry()
         {
             QualityDAC dac = new QualityDAC();
-            return dac.GetQulityInquiryForm(Start, End);
+            return dac.GetQulityInquiryForm();
         }
        
     }

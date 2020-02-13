@@ -1,0 +1,13 @@
+﻿@model WebApplication0106.Models.JobOrderListView
+
+@{
+    ViewBag.Title = "작업지시 목록";
+}
+
+@foreach (var p in Model.JobOrders)
+{
+    @Html.Partial("JobOrderSummary", p)
+}
+<div class="btn-group pull-right">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+</div>

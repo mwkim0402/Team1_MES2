@@ -32,7 +32,7 @@ namespace AdminForm
         private void GetData(object sender, EventArgs e)
         {
             QualityService service = new QualityService();
-            allList = service.GetAllQualityInquiry(StartDate, EndDate);
+            allList = service.GetAllQualityInquiry();
             dgvSearchResult.DataSource = allList;
         }
         private void ShowDgv()
@@ -75,21 +75,21 @@ namespace AdminForm
             if((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode != null && fcFactory.SendCode !=""))
             {
                 List<QualityInquiryVO> list = (from item in allList
-                                               where item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode
+                                               where item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
                                                select item).ToList();
                 dgvSearchResult.DataSource = list;
             }
             else if((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode ==""))
             {
                 List<QualityInquiryVO> list = (from item in allList
-                                               where item.Wc_Code == fcWork.SendCode
+                                               where item.Wc_Code == fcWork.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
                                                select item).ToList();
                 dgvSearchResult.DataSource = list;
             }
             else if ((fcWork.SendCode == null || fcWork.SendCode =="") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
             {
                 List<QualityInquiryVO> list = (from item in allList
-                                               where item.Process_code == fcFactory.SendCode
+                                               where item.Process_code == fcFactory.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
                                                select item).ToList();
                 dgvSearchResult.DataSource = list;
             }

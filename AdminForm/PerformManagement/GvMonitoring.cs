@@ -56,11 +56,11 @@ namespace AdminForm
         {
             CommonClass.AddNewColumnToDataGridView(dgvDry, "대차명", "GV_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvDry, "상태", "GV_Status", true, 70);
-            CommonClass.AddNewColumnToDataGridView(dgvDry, "그룹명", "GV_Group", true, 70);
+            CommonClass.AddNewColumnToDataGridView(dgvDry, "그룹명", "GV_Group", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvDry, "작업지시번호", "Workorderno", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvDry, "품목코드", "Item_Code", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvDry, "품목명", "Item_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvDry, "수량", "GV_Qty", true, 80);
+            CommonClass.AddNewColumnToDataGridView(dgvDry, "수량", "GV_Qty", true, 80,DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvDry, "로딩시간", "Loading_time", true, 120);
            
             CommonClass.AddNewColumnToDataGridView(dgvPlasticity, "대차명", "GV_Name", true, 100);
@@ -69,7 +69,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvPlasticity, "작업지시번호", "Workorderno", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvPlasticity, "품목코드", "Item_Code", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvPlasticity, "품목명", "Item_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvPlasticity, "수량", "GV_Qty", true, 70);
+            CommonClass.AddNewColumnToDataGridView(dgvPlasticity, "수량", "GV_Qty", true, 70,DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvPlasticity, "로딩시간", "Loading_time", true, 120);
 
             CommonClass.AddNewColumnToDataGridView(dgvGvWait, "대차명", "GV_Name", true, 70);
@@ -78,7 +78,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvGvWait, "작업지시번호", "Workorderno", false, 150);
             CommonClass.AddNewColumnToDataGridView(dgvGvWait, "품목코드", "Item_Code", false, 120);
             CommonClass.AddNewColumnToDataGridView(dgvGvWait, "품목명", "Item_Name", false, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvGvWait, "수량", "GV_Qty", false, 70);
+            CommonClass.AddNewColumnToDataGridView(dgvGvWait, "수량", "GV_Qty", false, 70,DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvGvWait, "로딩시간", "Loading_time", false, 120);
         }
 

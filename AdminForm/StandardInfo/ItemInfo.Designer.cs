@@ -839,6 +839,7 @@
             this.cmbInType.Name = "cmbInType";
             this.cmbInType.Size = new System.Drawing.Size(117, 27);
             this.cmbInType.TabIndex = 143;
+            this.cmbInType.SelectedIndexChanged += new System.EventHandler(this.cmbInType_SelectedIndexChanged);
             // 
             // txtInUnit
             // 

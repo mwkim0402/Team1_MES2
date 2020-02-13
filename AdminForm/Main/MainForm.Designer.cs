@@ -62,9 +62,9 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnHome = new System.Windows.Forms.ToolStripButton();
             this.btnS = new System.Windows.Forms.ToolStripButton();
-            this.btnSave = new System.Windows.Forms.ToolStripButton();
-            this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
+            this.btnExcel = new System.Windows.Forms.ToolStripButton();
+            this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.lblLogo = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
@@ -390,9 +390,9 @@
             this.toolStripLabel1,
             this.btnHome,
             this.btnS,
-            this.btnSave,
-            this.btnEdit,
             this.btnDelete,
+            this.btnExcel,
+            this.btnSave,
             this.toolStripSeparator1});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.toolStrip1.Location = new System.Drawing.Point(237, 0);
@@ -440,34 +440,6 @@
             this.btnS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnS.Click += new System.EventHandler(this.btnS_Click);
             // 
-            // btnSave
-            // 
-            this.btnSave.AutoSize = false;
-            this.btnSave.Font = new System.Drawing.Font("나눔고딕", 9F);
-            this.btnSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSave.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(60, 60);
-            this.btnSave.Text = "저장";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.AutoSize = false;
-            this.btnEdit.Font = new System.Drawing.Font("나눔고딕", 9F);
-            this.btnEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(60, 60);
-            this.btnEdit.Text = "새로고침";
-            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnEdit.ToolTipText = "수정";
-            // 
             // btnDelete
             // 
             this.btnDelete.AutoSize = false;
@@ -482,6 +454,34 @@
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDelete.ToolTipText = "삭제";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.AutoSize = false;
+            this.btnExcel.Font = new System.Drawing.Font("나눔고딕", 9F);
+            this.btnExcel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(60, 60);
+            this.btnExcel.Text = "엑셀 저장";
+            this.btnExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnExcel.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.AutoSize = false;
+            this.btnSave.Font = new System.Drawing.Font("나눔고딕", 9F);
+            this.btnSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSave.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(60, 60);
+            this.btnSave.Text = "파일 저장";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSave.ToolTipText = "수정";
             // 
             // toolStripSeparator1
             // 
@@ -560,9 +560,9 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         public System.Windows.Forms.ToolStripButton btnS;
-        public System.Windows.Forms.ToolStripButton btnSave;
+        public System.Windows.Forms.ToolStripButton btnExcel;
         public System.Windows.Forms.ToolStripButton btnHome;
-        public System.Windows.Forms.ToolStripButton btnEdit;
+        public System.Windows.Forms.ToolStripButton btnSave;
         public System.Windows.Forms.ToolStripButton btnDelete;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Label lblName;

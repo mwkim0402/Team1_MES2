@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace AdminForm
 {
+    public delegate string SendName(string name);
     public partial class MainForm : Form
     {
         public event EventHandler Search_Click;
@@ -22,6 +23,8 @@ namespace AdminForm
         int CheckBtnIndex = 100;
         bool open = false;
         List<MenuTreeVo> menuList;
+
+        public event SendName sendName;
 
         public ToolStrip ToolStrip { get { return toolStrip1; } set { toolStrip1 = value; } }
         public MainForm()
@@ -162,8 +165,8 @@ namespace AdminForm
             lblLogo.Image = new Bitmap(Application.StartupPath + @"\image\teamlogotest.png");
             btnS.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Search.ico");
             btnHome.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Report2_32x32.png");
-            btnSave.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Action_Save_New_32x32.png");
-            btnEdit.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Edit_32x32.png");
+            btnExcel.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Action_Export_ToXls_32x32.png");
+            btnSave.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\Save as.ico");
             btnDelete.Image = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\image\DeleteList_32x32.png");
             pictureBox1.Image = new Bitmap(Application.StartupPath + @"\image\mark.jpg");
             ImageList imgList = new ImageList();
@@ -223,9 +226,6 @@ namespace AdminForm
                 TabPage TabP = (TabPage)tc.TabPages[tc.SelectedIndex];
                 tc.TabPages.Remove(TabP);
             }
-
-            //Form tempChild = this.ActiveMdiChild;
-            //tempChild.Close();
         }
 
         #region 폼동적생성
@@ -378,10 +378,10 @@ namespace AdminForm
             }
             foreach (Form frm in this.MdiChildren)
             {
-                if (frm != this.ActiveMdiChild || frm.Name!="MainChild")
+                if (frm != this.ActiveMdiChild && frm.Name!="MainChild")
                 {
                     frm.Close();
-                }
+                }                
             }
         }
 
@@ -468,10 +468,19 @@ namespace AdminForm
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("로그인 되었습니다.");
-                lblName.Text = Global.User_Name + "님 안녕하세요.";
+
+                LoginID(Global.User_Name);
+                
+                //lblName.Text = Global.User_Name + "님 환영합니다.";
                 Userauthority();
             }
         }
+
+        private void LoginID(string ID)
+        {
+            
+        }
+
         private void Userauthority()
         {
             // 메인 화면에서 유저아이디 체크 후 권한 확인하고 버튼 수정

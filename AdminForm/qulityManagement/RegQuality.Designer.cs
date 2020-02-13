@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegQuality));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.fcWorker = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.fcFactory = new AdminForm.FIndCategory();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
@@ -42,16 +45,18 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgvDetail = new System.Windows.Forms.DataGridView();
-            this.dgvDetaillist = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabControl4 = new System.Windows.Forms.TabControl();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dgvJob = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.dgvJob = new System.Windows.Forms.DataGridView();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dgvDetail = new System.Windows.Forms.DataGridView();
+            this.dgvDetaillist = new System.Windows.Forms.DataGridView();
+            this.fcWorker = new AdminForm.FIndCategory();
+            this.fcFactory = new AdminForm.FIndCategory();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -59,14 +64,12 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tabControl2.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetaillist)).BeginInit();
             this.panel3.SuspendLayout();
             this.tabControl4.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvJob)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJob)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetaillist)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -87,16 +90,6 @@
             this.panel2.Size = new System.Drawing.Size(1128, 63);
             this.panel2.TabIndex = 12;
             // 
-            // fcWorker
-            // 
-            this.fcWorker.Category = AdminForm.CategoryMode.WorkCenter;
-            this.fcWorker.Location = new System.Drawing.Point(764, 19);
-            this.fcWorker.Name = "fcWorker";
-            this.fcWorker.SendCode = null;
-            this.fcWorker.SendName = null;
-            this.fcWorker.Size = new System.Drawing.Size(190, 27);
-            this.fcWorker.TabIndex = 5;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -116,16 +109,6 @@
             this.label3.Size = new System.Drawing.Size(43, 19);
             this.label3.TabIndex = 1;
             this.label3.Text = "공정 ";
-            // 
-            // fcFactory
-            // 
-            this.fcFactory.Category = AdminForm.CategoryMode.Process;
-            this.fcFactory.Location = new System.Drawing.Point(489, 19);
-            this.fcFactory.Name = "fcFactory";
-            this.fcFactory.SendCode = null;
-            this.fcFactory.SendName = null;
-            this.fcFactory.Size = new System.Drawing.Size(190, 27);
-            this.fcFactory.TabIndex = 1;
             // 
             // label2
             // 
@@ -170,6 +153,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.dgvJob);
             this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Controls.Add(this.tabControl4);
             this.panel1.Location = new System.Drawing.Point(12, 89);
@@ -187,6 +171,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.dgvDetail);
             this.splitContainer1.Panel1.Controls.Add(this.tabControl2);
             // 
             // splitContainer1.Panel2
@@ -200,48 +185,23 @@
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage2);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
-            this.tabControl2.Location = new System.Drawing.Point(0, 0);
+            this.tabControl2.Location = new System.Drawing.Point(0, 1);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(258, 499);
+            this.tabControl2.Size = new System.Drawing.Size(255, 33);
             this.tabControl2.TabIndex = 1;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dgvDetail);
             this.tabPage2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(250, 463);
+            this.tabPage2.Size = new System.Drawing.Size(247, 0);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "측정이력";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dgvDetail
-            // 
-            this.dgvDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetail.Location = new System.Drawing.Point(3, 3);
-            this.dgvDetail.Name = "dgvDetail";
-            this.dgvDetail.RowTemplate.Height = 23;
-            this.dgvDetail.Size = new System.Drawing.Size(244, 457);
-            this.dgvDetail.TabIndex = 0;
-            this.dgvDetail.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellDoubleClick);
-            // 
-            // dgvDetaillist
-            // 
-            this.dgvDetaillist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetaillist.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDetaillist.Location = new System.Drawing.Point(0, 34);
-            this.dgvDetaillist.Name = "dgvDetaillist";
-            this.dgvDetaillist.RowTemplate.Height = 23;
-            this.dgvDetaillist.Size = new System.Drawing.Size(513, 465);
-            this.dgvDetaillist.TabIndex = 4;
             // 
             // panel3
             // 
@@ -279,35 +239,11 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.tabControl4.Controls.Add(this.tabPage4);
             this.tabControl4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold);
-            this.tabControl4.Location = new System.Drawing.Point(0, 0);
+            this.tabControl4.Location = new System.Drawing.Point(0, 3);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(358, 502);
+            this.tabControl4.Size = new System.Drawing.Size(358, 31);
             this.tabControl4.TabIndex = 0;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.dgvJob);
-            this.tabPage4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage4.Location = new System.Drawing.Point(4, 32);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(350, 466);
-            this.tabPage4.TabIndex = 0;
-            this.tabPage4.Text = "작업지시";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // dgvJob
-            // 
-            this.dgvJob.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dgvJob.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJob.Location = new System.Drawing.Point(3, 3);
-            this.dgvJob.Name = "dgvJob";
-            this.dgvJob.RowTemplate.Height = 23;
-            this.dgvJob.Size = new System.Drawing.Size(344, 460);
-            this.dgvJob.TabIndex = 0;
-            this.dgvJob.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJob_CellDoubleClick);
             // 
             // toolStrip1
             // 
@@ -335,6 +271,116 @@
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // dgvJob
+            // 
+            this.dgvJob.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvJob.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvJob.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvJob.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvJob.Location = new System.Drawing.Point(3, 37);
+            this.dgvJob.Name = "dgvJob";
+            this.dgvJob.RowTemplate.Height = 23;
+            this.dgvJob.Size = new System.Drawing.Size(351, 465);
+            this.dgvJob.TabIndex = 0;
+            this.dgvJob.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJob_CellDoubleClick);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage4.Location = new System.Drawing.Point(4, 32);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(350, 0);
+            this.tabPage4.TabIndex = 0;
+            this.tabPage4.Text = "작업지시";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dgvDetail
+            // 
+            this.dgvDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDetail.Location = new System.Drawing.Point(3, 33);
+            this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.RowTemplate.Height = 23;
+            this.dgvDetail.Size = new System.Drawing.Size(253, 466);
+            this.dgvDetail.TabIndex = 2;
+            // 
+            // dgvDetaillist
+            // 
+            this.dgvDetaillist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetaillist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvDetaillist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetaillist.Location = new System.Drawing.Point(-1, 33);
+            this.dgvDetaillist.Name = "dgvDetaillist";
+            this.dgvDetaillist.RowTemplate.Height = 23;
+            this.dgvDetaillist.Size = new System.Drawing.Size(513, 465);
+            this.dgvDetaillist.TabIndex = 5;
+            // 
+            // fcWorker
+            // 
+            this.fcWorker.Category = AdminForm.CategoryMode.WorkCenter;
+            this.fcWorker.Location = new System.Drawing.Point(764, 19);
+            this.fcWorker.Name = "fcWorker";
+            this.fcWorker.SendCode = null;
+            this.fcWorker.SendName = null;
+            this.fcWorker.Size = new System.Drawing.Size(190, 27);
+            this.fcWorker.TabIndex = 5;
+            // 
+            // fcFactory
+            // 
+            this.fcFactory.Category = AdminForm.CategoryMode.Process;
+            this.fcFactory.Location = new System.Drawing.Point(489, 19);
+            this.fcFactory.Name = "fcFactory";
+            this.fcFactory.SendCode = null;
+            this.fcFactory.SendName = null;
+            this.fcFactory.Size = new System.Drawing.Size(190, 27);
+            this.fcFactory.TabIndex = 1;
+            // 
             // RegQuality
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -361,15 +407,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetaillist)).EndInit();
             this.panel3.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvJob)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJob)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetaillist)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -388,15 +432,15 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dgvDetail;
-        private System.Windows.Forms.DataGridView dgvDetaillist;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TabControl tabControl4;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.DataGridView dgvJob;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.DataGridView dgvJob;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.DataGridView dgvDetail;
+        private System.Windows.Forms.DataGridView dgvDetaillist;
     }
 }

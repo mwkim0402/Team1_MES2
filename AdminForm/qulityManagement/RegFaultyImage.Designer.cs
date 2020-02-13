@@ -342,6 +342,7 @@
             // btnImage
             // 
             this.btnImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImage.Enabled = false;
             this.btnImage.Location = new System.Drawing.Point(842, 327);
             this.btnImage.Name = "btnImage";
             this.btnImage.Size = new System.Drawing.Size(140, 23);
@@ -367,6 +368,7 @@
             // btnFaltyIns
             // 
             this.btnFaltyIns.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFaltyIns.Enabled = false;
             this.btnFaltyIns.Location = new System.Drawing.Point(1007, 327);
             this.btnFaltyIns.Name = "btnFaltyIns";
             this.btnFaltyIns.Size = new System.Drawing.Size(114, 23);

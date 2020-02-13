@@ -61,6 +61,7 @@ namespace AdminForm
             ComboClass.ComboBind(ItemCombo, cbItemCd, false);
             cbProcessCd.SelectedIndex = 1;
             cbItemCd.SelectedIndex = 1;
+            cbSampleSize.SelectedIndex = 0;
         }
         private void ShowDgv()
         {
@@ -74,11 +75,12 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "검사항목 코드", "Inspect_Code", true, 180);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "검사항목 명", "Inspect_Name", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "SPEC", "Spec_Desc", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "검사항목", "Inspect_Group", true, 120, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "검사단위", "Inspect_Unit", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격상한값", "USL", true, 150,DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격하한값", "SL", true, 150, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "규격기준값", "LSL", true, 150, DataGridViewContentAlignment.MiddleRight);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "샘플크기", "Sample_Size", true, 120, DataGridViewContentAlignment.MiddleRight);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "단위", "Inspect_Unit", true, 100);
+           
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 120,DataGridViewContentAlignment.MiddleCenter);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 200);
         }
@@ -101,7 +103,7 @@ namespace AdminForm
             txtSL.Text = copyVo.SL.ToString();
             txtLSL.Text = copyVo.LSL.ToString();
             txtDataDESC.Text = copyVo.Spec_Desc;
-            txtSample.Text = copyVo.Sample_Size.ToString();
+            cbSampleSize.Text = copyVo.Inspect_Group.ToString();
             txtUnit.Text = copyVo.Inspect_Unit;
         }
 
@@ -117,7 +119,7 @@ namespace AdminForm
                 USL = Convert.ToDecimal(txtUSL.Text),
                 SL = Convert.ToDecimal(txtSL.Text),
                 LSL = Convert.ToDecimal(txtLSL.Text),
-                Sample_Size = Convert.ToInt32(txtSample.Text),
+                Inspect_Group = cbSampleSize.Text,
                 Inspect_Unit = txtUnit.Text,
                 Use_YN = rbY.Checked ? "Y" : "N",
                 Remark = txtNote.Text
@@ -142,6 +144,37 @@ namespace AdminForm
         {
             //frm.lblAlert.Text = "";
             timer1.Stop();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbSampleSize.Text == "길이" || cbSampleSize.Text == "두께")
+            {
+                txtUnit.Text = "mm";
+            }
+            else if(cbSampleSize.Text == "무게")
+            {
+                txtUnit.Text = "kg/m";
+            }
+            else
+            {
+                txtUnit.Text = "kgf/㎟";
+            }
+        }
+
+        private void fcFac_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbItemCd_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbItemCd.SelectedValue != null)
+            {
+                int count = inspectMaster.FindAll(x => x.Process_Code == cbProcessCd.Text.ToString() && x.Item_Code == cbItemCd.Text.ToString()).Count + 1;
+                string id = $"{cbProcessCd.Text.ToString().Substring(0, 2)}{cbItemCd.Text.ToString()}_InSpect{count}";
+                txtInsepctCode.Text = id;
+            }         
         }
     }
 }

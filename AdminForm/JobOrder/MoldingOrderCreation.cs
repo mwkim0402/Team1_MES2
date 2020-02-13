@@ -87,10 +87,10 @@ namespace AdminForm
             chkboxCol.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvProductRequset.Columns.Insert(0, chkboxCol);
             AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰번호", "Wo_Req_No", true, 180);
-            AddNewColumnToDataGridView(dgvProductRequset, "품목명", "item_Name", true, 100);
+            AddNewColumnToDataGridView(dgvProductRequset, "품목명", "item_Name", true, 100);          
+            AddNewColumnToDataGridView(dgvProductRequset, "제선잔여수량", "IronP", true, 170, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvProductRequset, "제강잔여수량", "SteelP", true, 170, DataGridViewContentAlignment.MiddleRight);
             AddNewColumnToDataGridView(dgvProductRequset, "압연잔여수량", "RollingP", true, 170, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvProductRequset, "제강잔여수량", "SteelP", true, 170,DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvProductRequset, "제선잔여수량", "IronP", true, 170, DataGridViewContentAlignment.MiddleRight);          
             AddNewColumnToDataGridView(dgvProductRequset, "포장잔여수량", "PackageP", true, 170, DataGridViewContentAlignment.MiddleRight);
             AddNewColumnToDataGridView(dgvProductRequset, "마감날짜", "Prd_Plan_Date", true, 120);
             AddNewColumnToDataGridView(dgvProductRequset, "고객사", "Cust_Name", true, 100);
@@ -182,14 +182,14 @@ namespace AdminForm
 
         private void MoldingOrderCreation_Activated(object sender, EventArgs e)
         {
-            frm.Search_Click += new System.EventHandler(this.ExportToExcel);
+            frm.Insert_Click += new System.EventHandler(this.ExportToExcel);
             frm.Search_Click += new System.EventHandler(this.Search);
             ToolStripManager.Merge(this.toolStrip1,frm.ToolStrip);
         }
 
         private void MoldingOrderCreation_Deactivate(object sender, EventArgs e)
         {
-            frm.Search_Click -= new System.EventHandler(this.ExportToExcel);
+            frm.Insert_Click -= new System.EventHandler(this.ExportToExcel);
             frm.Search_Click -= new System.EventHandler(this.Search);
             ToolStripManager.RevertMerge(frm.ToolStrip);
         }

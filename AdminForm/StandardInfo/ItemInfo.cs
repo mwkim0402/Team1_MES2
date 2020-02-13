@@ -54,14 +54,10 @@ namespace AdminForm
             });
             cmbItem.Add(new ComboItem
             {
-                comboText = "자재",
-                comboValue = "자재"
+                comboText = "원재료",
+                comboValue = "원재료"
             });
-            cmbItem.Add(new ComboItem
-            {
-                comboText = "반제품",
-                comboValue = "반제품"
-            });
+
             ComboClass.ComboBind(cmbItem, cmbInType, false) ;
             ComboClass.ComboBind(cmbItem, cbUpType, false);
             ComboClass.ComboBind(cmbItem, cmbProdCat, true);
@@ -243,6 +239,19 @@ namespace AdminForm
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void cmbInType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmbInType.Text == "완제품")
+            {
+                nuInsRolling.Enabled = nuInsPackage.Enabled = nuInsSteel.Enabled = nuInsIron.Enabled = true;
+            }
+            else
+            {
+                nuInsRolling.Value = nuInsPackage.Value = nuInsSteel.Value = nuInsIron.Value = 0;
+                nuInsRolling.Enabled = nuInsPackage.Enabled = nuInsSteel.Enabled = nuInsIron.Enabled = false;
+            }
         }
     }
 }

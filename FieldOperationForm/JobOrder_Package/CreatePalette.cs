@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FieldOperationForm.JobOrder_Package;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -15,9 +16,10 @@ namespace FieldOperationForm
     public partial class CreatePalette : Form
     {
         Main_P main;
-        List<Palette_Vo> PList = null;
+    //    List<Palette_Vo> PList = null;
         string a;
-        SqlConnection strConn;
+    //    SqlConnection strConn;
+        List<Workorderno_Vo> MList = null;
 
         public CreatePalette(Main_P main1)
         {
@@ -25,7 +27,7 @@ namespace FieldOperationForm
             main = main1;
             Setdgv();
             SetPaletteList();
-
+            initComboBox();
 
 
 
@@ -135,6 +137,66 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
                 txt_Size.Text = r.ToString();
             }
 
+        }
+        private void initComboBox()
+        {
+            Workorderno_Service service = new Workorderno_Service();
+            MList = service.GetWorkorderno(main.lbl_Job.Text);
+            if (MList.Count > 0)
+            {
+                List<string> NonList = (from item in MList
+                                        select item.Workorderno).ToList();
+                CommonUtil.ComboBinding(cb_Item, NonList);
+            }
+
+        }
+
+        private void cb_Item_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            noTextSet();
+        }
+
+        private void noTextSet()
+        {
+            string strConn = ConfigurationManager.ConnectionStrings["Project"].ConnectionString;
+            DataSet ds = new DataSet();
+            using (SqlConnection conn = new SqlConnection(strConn))
+            {
+                conn.Open();
+                string strSql = String.Format(@"select I.item_Name ,c.Wc_Name,w.Plan_Date,w.Plan_Qty,w.Plan_Unit from WorkOrder w, Item_Master I, WorkCenter_Master c
+                    where I.Item_Code = w.Item_Code and c.Wc_Code = w.Wc_Code and Workorderno = '{0}'", cb_Item.Text);
+
+                SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
+                da.Fill(ds, "WorkOrder");
+                conn.Close();
+
+
+            }
+            string c;
+            string d;
+            string f;
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                //c = dr["Grade_Code"].ToString();
+                //e = dr["Grade_Detail_Code"].ToString();
+                //r = dr["Size_Code"].ToString();
+
+                txt_Item.Text = dr["item_Name"].ToString();
+                txt_WorkPlace.Text = dr["Wc_Name"].ToString();
+                txt_WorkDate.Text = Convert.ToDateTime(dr["Plan_Date"]).ToString().Substring(0,10);
+                txt_ResultNum.Text= dr["Plan_Qty"].ToString();
+                txt_unit.Text= dr["Plan_Unit"].ToString();
+            }
+
+        }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+            XtraReport1 rpt = new XtraReport1();
+            BarCode frm = new BarCode();
+            frm.documentViewer1.DocumentSource = rpt;
+            frm.ShowDialog();
         }
     }
 }

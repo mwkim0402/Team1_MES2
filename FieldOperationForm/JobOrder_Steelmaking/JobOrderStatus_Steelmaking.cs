@@ -175,13 +175,12 @@ namespace FieldOperationForm
         }
         private void Sizeup(object sender, EventArgs e)
         {
-          //if(  this.WindowState == FormWindowState.Normal)
-          //  btn_FieldClose.Location = new Point(100, 100);
+            //if (this.WindowState == FormWindowState.Normal)
+            //    btn_FieldClose.Location = new Point(100, 100);
         }
         private void SizeDown(object sender, EventArgs e)
         {
             //btn_FieldClose.Location = new Point(425, 432);
         }
-
     }
 }

@@ -34,7 +34,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -44,6 +46,7 @@
     <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -137,6 +140,7 @@
     <Compile Include="FieldDac\User_Dac.cs" />
     <Compile Include="FieldDac\WorkAllocation_Dac.cs" />
     <Compile Include="FieldDac\WorkCenter_Dac.cs" />
+    <Compile Include="FieldDac\Workorderno_Dac.cs" />
     <Compile Include="FieldDac\WorkOrder_Dac.cs" />
     <Compile Include="FieldService\Condition_Service.cs" />
     <Compile Include="FieldService\GVDry_Service.cs" />
@@ -149,6 +153,7 @@
     <Compile Include="FieldService\Process_Service.cs" />
     <Compile Include="FieldService\WorkAllocation_Service.cs" />
     <Compile Include="FieldService\WorkCenter_Service.cs" />
+    <Compile Include="FieldService\Workorderno_Service.cs" />
     <Compile Include="FieldService\WorkOrder_Service.cs" />
     <Compile Include="FieldVo\Condition_Vo.cs" />
     <Compile Include="FieldVo\GVDry_Vo.cs" />
@@ -165,7 +170,20 @@
     <Compile Include="FieldVo\WorkAllocation_Vo.cs" />
     <Compile Include="FieldVo\WorkAssignment_Vo.cs" />
     <Compile Include="FieldVo\WorkCenter_Vo.cs" />
+    <Compile Include="FieldVo\Workorderno_Vo.cs" />
     <Compile Include="FieldVo\WorkOrder_Vo.cs" />
+    <Compile Include="JobOrder_Package\BarCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Package\BarCode.Designer.cs">
+      <DependentUpon>BarCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Package\XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Package\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
     <Compile Include="JobOrder_Rolled\JobOrderStatus_Load .cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,12 +253,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FieldService\User_Service.cs" />
-    <Compile Include="XtraReport1.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="XtraReport1.Designer.cs">
-      <DependentUpon>XtraReport1.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="CommonForm\End.resx">
       <DependentUpon>End.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +276,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CommonForm\workerAllocation.resx">
       <DependentUpon>workerAllocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Package\BarCode.resx">
+      <DependentUpon>BarCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Package\XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JobOrder_Rolled\JobOrderStatus_Load .resx">
       <DependentUpon>JobOrderStatus_Load .cs</DependentUpon>
@@ -309,9 +327,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="XtraReport1.resx">
-      <DependentUpon>XtraReport1.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

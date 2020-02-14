@@ -17,6 +17,10 @@ namespace AdminForm
         List<RegProcessVO> allList;
         DateTime StartDate;
         DateTime EndDate;
+        string Workorderno;
+        decimal value = 0;
+        int primary = 0;
+        string check;
         public RegProcess()
         {
             InitializeComponent();
@@ -38,25 +42,30 @@ namespace AdminForm
         }
         private void ShowDgv()
         {
-
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "작업지시번호", "Workorderno", true, 150);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "생산일자", "Plan_Date", true, 120,DataGridViewContentAlignment.MiddleRight);
+            dgvJob.CellDoubleClick += dgvJob_CellDoubleClick;
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "작업지시번호", "Workorderno", true, 160);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "생산일자", "Plan_Date", true, 120, DataGridViewContentAlignment.MiddleCenter);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "공정", "Process_name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "작업장", "Wc_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "품목코드", "Item_Code", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "품목명", "Item_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Process_code", false, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Inspect_code", false, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Inspect_name", false, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Inspect_Val", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Condition_Name", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "SL", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Condition_Val", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Wc_Code", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Condition_measure_seq", false, 100);
 
 
-            CommonClass.AddNewColumnToDataGridView(dgvList, "측정항목", "Inspect_name", true, 120);
+            dgvList.CellDoubleClick += dgvList_CellDoubleClick;
+            CommonClass.AddNewColumnToDataGridView(dgvList, "측정항목", "Condition_Name", true, 130);
             CommonClass.AddNewColumnToDataGridView(dgvList, "기준값", "SL", true, 100);
 
-            CommonClass.AddNewColumnToDataGridView(dgvListDetail, "측정값", "Inspect_Val", true, 100);
-            
+            dgvListDetail.CellDoubleClick += DgvListDetail_CellDoubleClick;
+            CommonClass.AddNewColumnToDataGridView(dgvListDetail, "측정값", "Condition_Val", true, 100);
+
         }
+
+
 
         private void RegProcess_Activated(object sender, EventArgs e)
         {
@@ -82,21 +91,21 @@ namespace AdminForm
             if ((fcWork.SendCode != null && fcWork.SendName != "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
             {
                 List<RegProcessVO> list = (from item in allList
-                                               where item.Process_code == fcFactory.SendCode && item.Wc_Name == fcWork.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
-                                               select item).ToList();
+                                           where item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                           select item).ToList();
                 dgvJob.DataSource = list;
             }
             else if ((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode == ""))
             {
                 List<RegProcessVO> list = (from item in allList
-                                               where item.Wc_Name == fcWork.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                           where item.Wc_Code == fcWork.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
                                            select item).ToList();
                 dgvJob.DataSource = list;
             }
             else if ((fcWork.SendCode == null || fcWork.SendCode == "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
             {
                 List<RegProcessVO> list = (from item in allList
-                                               where item.Process_code == fcFactory.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                           where item.Process_code == fcFactory.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
                                            select item).ToList();
                 dgvJob.DataSource = list;
             }
@@ -114,10 +123,13 @@ namespace AdminForm
 
         private void dgvJob_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            primary = Convert.ToInt32(dgvJob.Rows[e.RowIndex].Cells[11].Value);
+            Workorderno = dgvJob.Rows[e.RowIndex].Cells[0].Value.ToString();
             List<RegProcessListVO> list = (from item in allList
+                                           where item.Workorderno == dgvJob.Rows[e.RowIndex].Cells[0].Value.ToString()
                                            select new RegProcessListVO
                                            {
-                                               Inspect_name = item.Inspect_name,
+                                               Condition_Name = item.Condition_Name,
                                                SL = item.SL
                                            }).ToList();
             dgvList.DataSource = list;
@@ -126,11 +138,58 @@ namespace AdminForm
         private void dgvList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             List<RegProcessListMeaVO> list = (from item in allList
-                                           select new RegProcessListMeaVO
-                                           {
-                                               Inspect_Val = item.Inspect_Val
-                                           }).ToList();
+                                              where item.Workorderno == Workorderno && item.Condition_Name == dgvList.Rows[e.RowIndex].Cells[0].Value.ToString()
+                                              select new RegProcessListMeaVO
+                                              {
+                                                  Condition_Val = item.Condition_Val
+                                              }).ToList();
             dgvListDetail.DataSource = list;
+
+            btnAdd.Enabled = true;
+            btnRemove.Enabled = true;
+        }
+
+        private void DgvListDetail_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            check = dgvListDetail.Rows[e.RowIndex].Cells[0].Value.ToString();
+            value = Convert.ToInt64(nuNum.Value);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (check != null && check != "")
+            {
+                MES_DB.PerformService service = new MES_DB.PerformService();
+                service.UpdateRegProcess(value, primary);
+
+                MessageBox.Show("수정되었습니다.");
+                dgvJob.DataSource = null;
+                dgvList.DataSource = null;
+                dgvListDetail.DataSource = null;
+                ShowDgv();
+            }
+            else
+            {
+                MessageBox.Show("수정할 셀을 선택해주세요.");
+            }
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (check != null && check != "")
+            {
+                MES_DB.PerformService service = new MES_DB.PerformService();
+                service.DeleteRegProcess(primary);
+                MessageBox.Show("삭제되었습니다.");
+                dgvJob.DataSource = null;
+                dgvList.DataSource = null;
+                dgvListDetail.DataSource = null;
+                ShowDgv();
+            }
+            else
+            {
+                MessageBox.Show("삭제할 셀을 선택해주세요.");
+            }
         }
     }
 }

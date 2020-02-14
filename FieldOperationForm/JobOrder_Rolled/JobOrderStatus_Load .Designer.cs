@@ -39,7 +39,9 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeight = 50;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
@@ -58,7 +60,7 @@
             // 
             // btn_StartEnd
             // 
-            this.btn_StartEnd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_StartEnd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_StartEnd.BackColor = System.Drawing.Color.Ivory;
             this.btn_StartEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_StartEnd.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -73,7 +75,7 @@
             // 
             // btn_FieldClose
             // 
-            this.btn_FieldClose.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_FieldClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_FieldClose.BackColor = System.Drawing.Color.Ivory;
             this.btn_FieldClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_FieldClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -87,7 +89,7 @@
             // 
             // btn_Worker
             // 
-            this.btn_Worker.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Worker.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_Worker.BackColor = System.Drawing.Color.Ivory;
             this.btn_Worker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Worker.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -102,7 +104,7 @@
             // 
             // btn_Process
             // 
-            this.btn_Process.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Process.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_Process.BackColor = System.Drawing.Color.Ivory;
             this.btn_Process.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Process.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));

@@ -11,11 +11,10 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace AdminForm
-{   
-    public delegate string SendName(string name);
+{
+    public delegate void SendName(string name);
     public partial class MainForm : Form
     {
-        private delegate void SafeCallDelegate(MainForm frm);
         public event EventHandler Search_Click;
         public event EventHandler Insert_Click;
         public event EventHandler Delete_Click;
@@ -24,8 +23,9 @@ namespace AdminForm
         int CheckBtnIndex = 100;
         bool open = false;
         List<MenuTreeVo> menuList;
-        //MainChild homeFrm = new MainChild();
-        public event SendName sendName;
+        MainChild homeFrm;
+
+        public SendName SendNameEvent;
 
         public ToolStrip ToolStrip { get { return toolStrip1; } set { toolStrip1 = value; } }
         public MainForm()
@@ -47,20 +47,15 @@ namespace AdminForm
             SetButtonImage();
             MenuService service = new MenuService();
             menuList = await service.GetListAsync("GetAllMenu", new List<MenuTreeVo>());
+
+
             trvMenu.Visible = false;
             trvBookMark.Visible = false;
             trvBookMark.Location = new Point(0, 10);
             btnMenu.BackColor = SystemColors.ActiveCaptionText;
+
             LoadHome();
         }
-        private void LoadHome()
-        {
-            MainChild homeFrm = new MainChild();
-            homeFrm.MdiParent = this;
-            homeFrm.Dock = DockStyle.Fill;
-            homeFrm.Show();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             trvMenu.Visible = true;
@@ -470,22 +465,31 @@ namespace AdminForm
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //LoginForm 열어서 로그인 하고 아이디 값 , 이름 값 받아서 Global 클래스에 값 넣기
-            LoginForm frm = new LoginForm();
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (btnLogin.Text == "로그인")
             {
-                MessageBox.Show("로그인 되었습니다.");
+                LoginForm frm = new LoginForm();
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("로그인 되었습니다.");
+                   // this.SendNameEvent += new SendName(homeFrm.GetName);
+                   // SendNameEvent(Global.User_Name + "님 환영합니다.");
+                    //lblName.Text = Global.User_Name + "님 환영합니다.";
+                    btnLogin.Text = "로그아웃";
+                    Userauthority();
+                }
+            }
+            else if(btnLogin.Text == "로그아웃")
+            {
+                // 버튼 제어
 
-                //LoginID(Global.User_Name);
-
-                //lblName.Text = Global.User_Name + "님 환영합니다.";
-                Userauthority();
+                //this.SendNameEvent += new SendName(homeFrm.GetName);
+                SendNameEvent("_님 환영합니다.");
+                btnLogin.Text = "로그인";
+                MessageBox.Show("로그아웃 되었습니다.");
             }
         }
 
-        private void LoginID(string ID)
-        {
 
-        }
 
         private void Userauthority()
         {
@@ -493,7 +497,7 @@ namespace AdminForm
 
             LoginService service = new LoginService();
             LoginVO userVO = new LoginVO();
-            userVO.User_ID = Convert.ToInt32(Global.LoginID);
+            //userVO.User_ID = Global.User_ID;
             userVO.Screen_Code = "메인";
             List<LoginVO> list = service.LoginAuthority(userVO);
 
@@ -517,7 +521,14 @@ namespace AdminForm
                 }
             }
         }
-       
+        private void LoadHome()
+        {
+            //    MainChild homeFrm = new MainChild();
+            homeFrm = new MainChild();
+            homeFrm.MdiParent = this;
+            homeFrm.Dock = DockStyle.Fill;
+            homeFrm.Show();
+        }
         private void btnCreate_Click_1(object sender, EventArgs e)
         {
             foreach (var item in this.MdiChildren)

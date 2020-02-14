@@ -21,11 +21,18 @@ namespace WebAdminLTE1.Controllers
                 JobOrders = jobOrder.GetWorkOrderFive() // 진행중인 작업지시 조회
             };
 
+            ViewBag.FinishmonthWOJS = jobOrder.GetWorkOrderFinishCount_month("제선");
+            ViewBag.FinishmonthWOJK = jobOrder.GetWorkOrderFinishCount_month("제강");
+            ViewBag.FinishmonthWOAY = jobOrder.GetWorkOrderFinishCount_month("압연");
+            ViewBag.FinishmonthWOJJ = jobOrder.GetWorkOrderFinishCount_month("적재");
+            ViewBag.FinishmonthWOPJ = jobOrder.GetWorkOrderFinishCount_month("포장");
+            //작업완료 뷰백
             ViewBag.FinishWOJS = jobOrder.GetWorkOrderFinishCount("제선");
             ViewBag.FinishWOJK = jobOrder.GetWorkOrderFinishCount("제강");
             ViewBag.FinishWOAY = jobOrder.GetWorkOrderFinishCount("압연");
             ViewBag.FinishWOJJ = jobOrder.GetWorkOrderFinishCount("적재");
             ViewBag.FinishWOPJ = jobOrder.GetWorkOrderFinishCount("포장");
+            //누적작업완료 뷰백
 
             ViewBag.TopFive = jobordermodel; //작업지시 뷰백
 
@@ -61,7 +68,8 @@ namespace WebAdminLTE1.Controllers
                 WoReqs = woreq.GetWoReqTen()
             };
             ViewBag.WoReqList = woreqmodel; // 생산의뢰 뷰백
-
+            ViewBag.WoReqCount = woreq.GetReqTotalCount(); //누적 생산의뢰 뷰백
+            ViewBag.WoReqCountToday = woreq.GetReqTotalCount_Today(); //금일 생산의뢰 뷰백
 
 
             MemberDAC memcnt = new MemberDAC();

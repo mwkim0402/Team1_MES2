@@ -28,7 +28,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">금일 생산현황</span>
-                    <span class="info-box-number">760</span>
+                    <span class="info-box-number">@ViewBag.WoReqCountToday</span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -44,7 +44,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">누적 생산현황</span>
-                    <span class="info-box-number">760</span>
+                    <span class="info-box-number">@ViewBag.WoReqCount</span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -159,47 +159,6 @@
                     <!-- /.row -->
                 </div>
                 <!-- ./box-body -->
-                <div class="box-footer">
-                    <div class="row">
-                        <div class="col-sm-3 col-xs-6">
-                            <div class="description-block border-right">
-                                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
-                                <h5 class="description-header">￦35,210.43</h5>
-                                <span class="description-text">매출액</span>
-                            </div>
-                            <!-- /.description-block -->
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-3 col-xs-6">
-                            <div class="description-block border-right">
-                                <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
-                                <h5 class="description-header">￦10,390.90</h5>
-                                <span class="description-text">원가비용</span>
-                            </div>
-                            <!-- /.description-block -->
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-3 col-xs-6">
-                            <div class="description-block border-right">
-                                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
-                                <h5 class="description-header">￦24,813.53</h5>
-                                <span class="description-text">순이익</span>
-                            </div>
-                            <!-- /.description-block -->
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-3 col-xs-6">
-                            <div class="description-block">
-                                <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>
-                                <h5 class="description-header">￦1200</h5>
-                                <span class="description-text">목표액</span>
-                            </div>
-                            <!-- /.description-block -->
-                        </div>
-                    </div>
-                    <!-- /.row -->
-                </div>
-                <!-- /.box-footer -->
             </div>
             <!-- /.box -->
         </div>
@@ -316,10 +275,10 @@
                     <span class="info-box-number">작업완료 : @ViewBag.FinishWOJK</span>
 
                     <div class="progress">
-                        <div class="progress-bar" style="width: 50%"></div>
+                        <div class="progress-bar" style="width: 100%"></div>
                     </div>
                     <span class="progress-description">
-                        전월 대비 50% 증가
+                        누적 작업완료 : @ViewBag.FinishmonthWOJK
                     </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -333,10 +292,10 @@
                     <span class="info-box-number">작업완료 : @ViewBag.FinishWOJS</span>
 
                     <div class="progress">
-                        <div class="progress-bar" style="width: 20%"></div>
+                        <div class="progress-bar" style="width: 100%"></div>
                     </div>
                     <span class="progress-description">
-                        전월 대비 50% 증가
+                        누적 작업완료 : @ViewBag.FinishmonthWOJS
                     </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -350,10 +309,10 @@
                     <span class="info-box-number">작업완료 : @ViewBag.FinishWOAY</span>
 
                     <div class="progress">
-                        <div class="progress-bar" style="width: 70%"></div>
+                        <div class="progress-bar" style="width: 100%"></div>
                     </div>
                     <span class="progress-description">
-                        전월 대비 50% 증가
+                        누적 작업완료 : @ViewBag.FinishmonthWOAY
                     </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -367,10 +326,10 @@
                     <span class="info-box-number">작업완료 : @ViewBag.FinishWOJJ</span>
 
                     <div class="progress">
-                        <div class="progress-bar" style="width: 40%"></div>
+                        <div class="progress-bar" style="width: 100%"></div>
                     </div>
                     <span class="progress-description">
-                        전월 대비 50% 증가
+                        누적 작업완료 : @ViewBag.FinishmonthWOJJ
                     </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -384,10 +343,10 @@
                     <span class="info-box-number">작업완료 : @ViewBag.FinishWOPJ</span>
 
                     <div class="progress">
-                        <div class="progress-bar" style="width: 40%"></div>
+                        <div class="progress-bar" style="width: 100%"></div>
                     </div>
                     <span class="progress-description">
-                        전월 대비 50% 증가
+                        누적 작업완료 : @ViewBag.FinishmonthWOPJ
                     </span>
                 </div>
                 <!-- /.info-box-content -->

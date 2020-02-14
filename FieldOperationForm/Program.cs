@@ -16,7 +16,7 @@ namespace FieldOperationForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main_P());
+            Application.Run(new ReadBarcode());
         }
     }
 }

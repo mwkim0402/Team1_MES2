@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_RatingDetail = new System.Windows.Forms.TextBox();
             this.txt_Rating = new System.Windows.Forms.TextBox();
@@ -46,7 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_Reissue = new System.Windows.Forms.Button();
-            this.btn_Delete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -78,6 +78,7 @@
             this.txt_RatingDetail.Location = new System.Drawing.Point(220, 159);
             this.txt_RatingDetail.Multiline = true;
             this.txt_RatingDetail.Name = "txt_RatingDetail";
+            this.txt_RatingDetail.ReadOnly = true;
             this.txt_RatingDetail.Size = new System.Drawing.Size(368, 41);
             this.txt_RatingDetail.TabIndex = 24;
             // 
@@ -88,6 +89,7 @@
             this.txt_Rating.Location = new System.Drawing.Point(220, 93);
             this.txt_Rating.Multiline = true;
             this.txt_Rating.Name = "txt_Rating";
+            this.txt_Rating.ReadOnly = true;
             this.txt_Rating.Size = new System.Drawing.Size(368, 41);
             this.txt_Rating.TabIndex = 23;
             // 
@@ -98,6 +100,7 @@
             this.txt_PaletteNum.Location = new System.Drawing.Point(220, 27);
             this.txt_PaletteNum.Multiline = true;
             this.txt_PaletteNum.Name = "txt_PaletteNum";
+            this.txt_PaletteNum.ReadOnly = true;
             this.txt_PaletteNum.Size = new System.Drawing.Size(368, 41);
             this.txt_PaletteNum.TabIndex = 22;
             // 
@@ -108,6 +111,7 @@
             this.txt_PaletteQuantity.Location = new System.Drawing.Point(220, 291);
             this.txt_PaletteQuantity.Multiline = true;
             this.txt_PaletteQuantity.Name = "txt_PaletteQuantity";
+            this.txt_PaletteQuantity.ReadOnly = true;
             this.txt_PaletteQuantity.Size = new System.Drawing.Size(368, 41);
             this.txt_PaletteQuantity.TabIndex = 20;
             // 
@@ -130,6 +134,7 @@
             this.txt_Size.Location = new System.Drawing.Point(220, 225);
             this.txt_Size.Multiline = true;
             this.txt_Size.Name = "txt_Size";
+            this.txt_Size.ReadOnly = true;
             this.txt_Size.Size = new System.Drawing.Size(368, 41);
             this.txt_Size.TabIndex = 18;
             // 
@@ -179,7 +184,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(134, 28);
             this.label11.TabIndex = 12;
-            this.label11.Text = "팔레트 번호";
+            this.label11.Text = "바코드 번호";
             // 
             // groupBox2
             // 
@@ -204,6 +209,7 @@
             this.dtp_EDate.Name = "dtp_EDate";
             this.dtp_EDate.Size = new System.Drawing.Size(252, 35);
             this.dtp_EDate.TabIndex = 19;
+            this.dtp_EDate.ValueChanged += new System.EventHandler(this.dtp_EDate_ValueChanged);
             // 
             // label1
             // 
@@ -227,6 +233,8 @@
             this.dtp_SDate.Name = "dtp_SDate";
             this.dtp_SDate.Size = new System.Drawing.Size(252, 35);
             this.dtp_SDate.TabIndex = 3;
+            this.dtp_SDate.Value = new System.DateTime(2020, 2, 11, 0, 0, 0, 0);
+            this.dtp_SDate.ValueChanged += new System.EventHandler(this.dtp_SDate_ValueChanged);
             // 
             // label2
             // 
@@ -248,9 +256,13 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 95);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(871, 521);
             this.dataGridView1.TabIndex = 19;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // btn_Reissue
             // 
@@ -261,24 +273,11 @@
             this.btn_Reissue.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btn_Reissue.Location = new System.Drawing.Point(903, 448);
             this.btn_Reissue.Name = "btn_Reissue";
-            this.btn_Reissue.Size = new System.Drawing.Size(362, 168);
+            this.btn_Reissue.Size = new System.Drawing.Size(628, 168);
             this.btn_Reissue.TabIndex = 20;
             this.btn_Reissue.Text = "재발행";
             this.btn_Reissue.UseVisualStyleBackColor = false;
-            // 
-            // btn_Delete
-            // 
-            this.btn_Delete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Delete.BackColor = System.Drawing.Color.Ivory;
-            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Delete.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_Delete.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Delete.Location = new System.Drawing.Point(1284, 448);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(246, 168);
-            this.btn_Delete.TabIndex = 22;
-            this.btn_Delete.Text = "삭제";
-            this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Reissue.Click += new System.EventHandler(this.btn_Reissue_Click);
             // 
             // PaletteBarCode
             // 
@@ -286,7 +285,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1538, 628);
-            this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_Reissue);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
@@ -294,6 +292,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PaletteBarCode";
             this.Text = "PaletteBarCode";
+            this.Load += new System.EventHandler(this.PaletteBarCode_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -323,6 +322,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_Reissue;
-        private System.Windows.Forms.Button btn_Delete;
     }
 }

@@ -20,6 +20,7 @@ namespace FieldOperationForm
         string a;
     //    SqlConnection strConn;
         List<Workorderno_Vo> MList = null;
+      
 
         public CreatePalette(Main_P main1)
         {
@@ -172,9 +173,7 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
 
 
             }
-            string c;
-            string d;
-            string f;
+       
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
@@ -193,10 +192,57 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
 
         private void btn_Print_Click(object sender, EventArgs e)
         {
-            XtraReport1 rpt = new XtraReport1();
-            BarCode frm = new BarCode();
-            frm.documentViewer1.DocumentSource = rpt;
-            frm.ShowDialog();
+            CreatePal();
+            SetPaletteList();
+
+            string c;
+            string f;
+            string t;
+            c = txt_PaletteQuantity.Text;
+            f = txt_Item.Text;
+            t = txt_unit.Text;
+
+            string strConn = ConfigurationManager.ConnectionStrings["Project"].ConnectionString;
+            DataSet ds = new DataSet();
+            using (SqlConnection conn = new SqlConnection(strConn))
+            {
+                conn.Open();
+                string strSql = String.Format(@"select Barcode_No from Goods_In_History
+                where Workorderno='{0}'", cb_Item.Text);
+
+                SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
+                da.Fill(ds, "Barcode_No");
+                conn.Close();
+            }
+               // Barcode_Service service = new Barcode_Service();
+            
+            XtraReport1 rpt = new XtraReport1( c, f, t);
+            //   rpt.DataSource = service.GetBarcode(cb_Item.Text);
+            rpt.DataSource = ds.Tables["Barcode_No"];
+            BarCode frm = new BarCode(rpt);
+            //frm.documentViewer1.DocumentSource = rpt;
+            //frm.ShowDialog();
+        }
+
+        private void CreatePal()
+        {
+            CreatePalette_Vo vo = new CreatePalette_Vo();
+            vo.Workorderno = cb_Item.Text;
+            vo.Pallet_No = txt_PaletteNum.Text;
+            vo.Prd_Qty =Convert.ToInt32( txt_PaletteQuantity.Text);
+            vo.Size_Code = txt_Size.Text;
+            vo.Grade_Code = txt_Rating.Text;
+            vo.Grade_Detail_Code = txt_RatingDetail.Text;
+
+            CreatePalette_Service service = new CreatePalette_Service();
+            service.CreatePalette(vo);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
+
+
 }

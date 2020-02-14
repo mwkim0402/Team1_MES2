@@ -128,7 +128,9 @@
     <Compile Include="CommonForm\workerAllocation.Designer.cs">
       <DependentUpon>workerAllocation.cs</DependentUpon>
     </Compile>
+    <Compile Include="FieldDac\Barcode_Dac.cs" />
     <Compile Include="FieldDac\Condition_Dac.cs" />
+    <Compile Include="FieldDac\CreatePalette_Dac.cs" />
     <Compile Include="FieldDac\GVDry_Dac.cs" />
     <Compile Include="FieldDac\Inspect_Dac.cs" />
     <Compile Include="FieldDac\Item_Dac.cs" />
@@ -137,12 +139,15 @@
     <Compile Include="FieldDac\Notice_Dac.cs" />
     <Compile Include="FieldDac\Palette_Dac.cs" />
     <Compile Include="FieldDac\Process_Dac.cs" />
+    <Compile Include="FieldDac\Search_Dac.cs" />
     <Compile Include="FieldDac\User_Dac.cs" />
     <Compile Include="FieldDac\WorkAllocation_Dac.cs" />
     <Compile Include="FieldDac\WorkCenter_Dac.cs" />
     <Compile Include="FieldDac\Workorderno_Dac.cs" />
     <Compile Include="FieldDac\WorkOrder_Dac.cs" />
+    <Compile Include="FieldService\Barcode_Service.cs" />
     <Compile Include="FieldService\Condition_Service.cs" />
+    <Compile Include="FieldService\CreatePalette_Service.cs" />
     <Compile Include="FieldService\GVDry_Service.cs" />
     <Compile Include="FieldService\Inspect_Service.cs" />
     <Compile Include="FieldService\Item_Service.cs" />
@@ -151,11 +156,14 @@
     <Compile Include="FieldService\Notice_Service.cs" />
     <Compile Include="FieldService\Palette_Service.cs" />
     <Compile Include="FieldService\Process_Service.cs" />
+    <Compile Include="FieldService\Search_Service.cs" />
     <Compile Include="FieldService\WorkAllocation_Service.cs" />
     <Compile Include="FieldService\WorkCenter_Service.cs" />
     <Compile Include="FieldService\Workorderno_Service.cs" />
     <Compile Include="FieldService\WorkOrder_Service.cs" />
+    <Compile Include="FieldVo\Barcode_Vo.cs" />
     <Compile Include="FieldVo\Condition_Vo.cs" />
+    <Compile Include="FieldVo\CreatePalette_Vo.cs" />
     <Compile Include="FieldVo\GVDry_Vo.cs" />
     <Compile Include="FieldVo\Inspect_Vo.cs" />
     <Compile Include="FieldVo\Item_Vo.cs" />
@@ -165,6 +173,7 @@
     <Compile Include="FieldVo\PaletteDetail_Vo.cs" />
     <Compile Include="FieldVo\Palette_Vo.cs" />
     <Compile Include="FieldVo\Process_Vo.cs" />
+    <Compile Include="FieldVo\Search_Vo.cs" />
     <Compile Include="FieldVo\updateNonOperation_Vo.cs" />
     <Compile Include="FieldVo\User_Vo.cs" />
     <Compile Include="FieldVo\WorkAllocation_Vo.cs" />
@@ -177,6 +186,12 @@
     </Compile>
     <Compile Include="JobOrder_Package\BarCode.Designer.cs">
       <DependentUpon>BarCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Package\ReadBarcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Package\ReadBarcode.Designer.cs">
+      <DependentUpon>ReadBarcode.cs</DependentUpon>
     </Compile>
     <Compile Include="JobOrder_Package\XtraReport1.cs">
       <SubType>Component</SubType>
@@ -279,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="JobOrder_Package\BarCode.resx">
       <DependentUpon>BarCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Package\ReadBarcode.resx">
+      <DependentUpon>ReadBarcode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JobOrder_Package\XtraReport1.resx">
       <DependentUpon>XtraReport1.cs</DependentUpon>

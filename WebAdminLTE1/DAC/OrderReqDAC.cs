@@ -53,6 +53,38 @@ namespace WebApplication0106.DAC
             }
             return (list == null) ? null : list[0];
         }
+        public int GetReqTotalCount()
+        {
+            int iTotCount = 0;
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                string sql = @"select count(*) from Work_History where Work_EndTime is not null";
+
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    iTotCount = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            return iTotCount;
+        }
+
+        public int GetReqTotalCount_Today()
+        {
+            int iTotCount = 0;
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                string sql = @"select * from Work_History where Work_EndTime is not null and Work_EndTime = convert(nvarchar(10), getdate(),112)";
+
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    iTotCount = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            return iTotCount;
+        }
+
 
         public void Dispose()
         {

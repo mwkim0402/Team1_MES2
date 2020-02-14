@@ -43,6 +43,8 @@ namespace WebAdminLTE1.Controllers
             ViewBag.WoReqList = woreqmodel; // 생산의뢰 뷰백
 
 
+            //직책별 카운트 뷰백
+
 
 
             return View();

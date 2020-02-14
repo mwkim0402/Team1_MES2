@@ -7388,6 +7388,7 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="DAC\EmailOrderProcessor.cs" />
     <Compile Include="DAC\Helper.cs" />
+    <Compile Include="DAC\MemberDAC.cs" />
     <Compile Include="DAC\OrderReqDAC.cs" />
     <Compile Include="DAC\JobOrderDAC.cs" />
     <Compile Include="DAC\ProductDAC.cs" />
@@ -7397,6 +7398,7 @@
     <Compile Include="HtmlHelpers\PagingHelpers.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartIndexViewModel.cs" />
+    <Compile Include="Models\MemberPermi.cs" />
     <Compile Include="Models\WoReqListView.cs" />
     <Compile Include="Models\WoReq.cs" />
     <Compile Include="Models\PagingInfo.cs" />

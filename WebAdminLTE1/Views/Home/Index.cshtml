@@ -459,13 +459,13 @@
                           
                         @foreach (var item in ViewBag.TopFive.JobOrders)
                         {
-                            <li class="item">
-                                <div class="product-info">
-                                    <a class="product-title pull-left">
+                            <li class="item"style="padding-top:10px">
+                                <div >
+                                    <span class="label label-info pull-left"> @item.Item_Name </span>
+                                    <a class="product-title" style="padding-left:10px">
                                         @item.Workorderno
-                                        
                                     </a>
-                                    <span class="product-description">
+                                    
                                         @if (item.Wo_Status == "작업종료")
                                         {
                                             <span class="label label-success pull-right">@item.Wo_Status</span>
@@ -474,8 +474,7 @@
                                         {
                                             <span class="label label-warning pull-right">@item.Wo_Status</span>
                                         }
-                                        <span class="label label-info pull-right"> @item.Item_Name </span>
-                                    </span>
+
                                 </div>
                             </li>
                             <!-- /.item -->

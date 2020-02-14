@@ -23,8 +23,8 @@ namespace WebAdminLTE1.DAC
         {
             List<WorkVO> list = new List<WorkVO>();
             string sql = @"select a.USER_ID, USER_NAME,a.Work_Date, work_time
-                        from(select USER_ID, sum(isnull(Work_Time, 0)) work_time, (Month(Work_Date)) as Work_Date from Work_History group by User_ID, MONTH(Work_Date)) a, User_Master u
-                        where a.User_ID = u.User_ID";
+                            from (select USER_ID, sum(isnull(Work_Time, 0)) work_time,Work_Date as Work_Date from Work_History group by User_ID,Work_Date) a, User_Master u
+                            where a.User_ID = u.User_ID";
 
             using (SqlConnection conn = new SqlConnection(strconn))
             {

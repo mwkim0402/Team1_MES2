@@ -28,7 +28,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">금일 생산현황</span>
-                    <span class="info-box-number">760</span>
+                    <span class="info-box-number">@ViewBag.WoReqCountToday</span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -44,7 +44,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">누적 생산현황</span>
-                    <span class="info-box-number">760</span>
+                    <span class="info-box-number">@ViewBag.WoReqCount</span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -101,7 +101,7 @@
                                 <!-- Sales Chart Canvas -->
                                 <canvas id="salesChart" style="height: 180px;"></canvas>
                             </div>
-                            <!-- /.chart-responsive --> 
+                            <!-- /.chart-responsive -->
                         </div>
                         <!-- /.col -->
                         <div class="col-md-4">
@@ -159,47 +159,6 @@
                     <!-- /.row -->
                 </div>
                 <!-- ./box-body -->
-                <div class="box-footer">
-                    <div class="row">
-                        <div class="col-sm-3 col-xs-6">
-                            <div class="description-block border-right">
-                                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
-                                <h5 class="description-header">￦35,210.43</h5>
-                                <span class="description-text">매출액</span>
-                            </div>
-                            <!-- /.description-block -->
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-3 col-xs-6">
-                            <div class="description-block border-right">
-                                <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
-                                <h5 class="description-header">￦10,390.90</h5>
-                                <span class="description-text">원가비용</span>
-                            </div>
-                            <!-- /.description-block -->
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-3 col-xs-6">
-                            <div class="description-block border-right">
-                                <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
-                                <h5 class="description-header">￦24,813.53</h5>
-                                <span class="description-text">순이익</span>
-                            </div>
-                            <!-- /.description-block -->
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-3 col-xs-6">
-                            <div class="description-block">
-                                <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>
-                                <h5 class="description-header">￦1200</h5>
-                                <span class="description-text">목표액</span>
-                            </div>
-                            <!-- /.description-block -->
-                        </div>
-                    </div>
-                    <!-- /.row -->
-                </div>
-                <!-- /.box-footer -->
             </div>
             <!-- /.box -->
         </div>
@@ -222,13 +181,13 @@
                         <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                     </div>
                 </div>
+
                 <!-- /.box-header -->
                 <div class="box-body no-padding">
                     <div class="row">
                         <div class="col-md-9 col-sm-8">
                             <div class="pad">
-                                <!-- Map will be created here -->
-                                <div id="world-map-markers" style="height: 325px;"></div>
+                                <canvas id="pieChart" style="height:350px; width:449px"></canvas>
                             </div>
                         </div>
                         <!-- /.col -->
@@ -236,23 +195,16 @@
                             <div class="pad box-pane-right bg-green" style="min-height: 280px">
                                 <div class="description-block margin-bottom">
                                     <span class="description-text">@DateTime.Today.Year 년 기준</span>
-                                    <div class="sparkbar pad" data-color="#fff">관리자</div>
-                                    <h4 class="description-header">30 명</h4>
-                                    <span class="description-text">______</span>
                                 </div>
-                                <!-- /.description-block -->
-                                <div class="description-block margin-bottom">
-                                    <div class="sparkbar pad" data-color="#fff">임원직</div>
-                                    <h4 class="description-header">100 명</h4>
-                                    <span class="description-text">______</span>
-                                </div>
-                                <!-- /.description-block -->
-                                <div class="description-block">
-                                    <div class="sparkbar pad" data-color="#fff">사원직</div>
-                                    <h5 class="description-header">170 명</h5>
-                                    <span class="description-text">______</span>
-                                </div>
-                                <!-- /.description-block -->
+                                @foreach (var item in ViewBag.memcnt.Members)
+                                {
+                                    <div class="description-block margin-bottom">
+                                        <div class="sparkbar pad" data-color="#fff">@item.UserGroup_Name</div>
+                                        <h4 class="description-header">@item.UserCnt 명</h4>
+                                        <span class="description-text">______</span>
+                                    </div>
+                                    <!-- /.description-block -->
+                                }
                             </div>
                         </div>
                         <!-- /.col -->
@@ -261,7 +213,7 @@
                 </div>
                 <!-- /.box-body -->
             </div>
-            
+
             <!-- TABLE: LATEST ORDERS -->
             <div class="box box-info">
                 <div class="box-header with-border">
@@ -275,7 +227,7 @@
                     </div>
                 </div>
                 <!-- /.box-header -->
-                <div class="box-body" style="height : 647px">
+                <div class="box-body" style="height : 533px">
                     <div class="table-responsive">
                         <table class="table no-margin">
                             <thead>
@@ -320,13 +272,13 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">제강</span>
-                    <span class="info-box-number">5,200</span>
+                    <span class="info-box-number">작업완료 : @ViewBag.FinishWOJK</span>
 
                     <div class="progress">
-                        <div class="progress-bar" style="width: 50%"></div>
+                        <div class="progress-bar" style="width: 100%"></div>
                     </div>
                     <span class="progress-description">
-                        50% 증가
+                        누적 작업완료 : @ViewBag.FinishmonthWOJK
                     </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -337,13 +289,13 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">제선</span>
-                    <span class="info-box-number">92,050</span>
+                    <span class="info-box-number">작업완료 : @ViewBag.FinishWOJS</span>
 
                     <div class="progress">
-                        <div class="progress-bar" style="width: 20%"></div>
+                        <div class="progress-bar" style="width: 100%"></div>
                     </div>
                     <span class="progress-description">
-                        20% 증가
+                        누적 작업완료 : @ViewBag.FinishmonthWOJS
                     </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -354,13 +306,13 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">압연</span>
-                    <span class="info-box-number">114,381</span>
+                    <span class="info-box-number">작업완료 : @ViewBag.FinishWOAY</span>
 
                     <div class="progress">
-                        <div class="progress-bar" style="width: 70%"></div>
+                        <div class="progress-bar" style="width: 100%"></div>
                     </div>
                     <span class="progress-description">
-                        70% 증가
+                        누적 작업완료 : @ViewBag.FinishmonthWOAY
                     </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -371,13 +323,13 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">적재</span>
-                    <span class="info-box-number">163,921</span>
+                    <span class="info-box-number">작업완료 : @ViewBag.FinishWOJJ</span>
 
                     <div class="progress">
-                        <div class="progress-bar" style="width: 40%"></div>
+                        <div class="progress-bar" style="width: 100%"></div>
                     </div>
                     <span class="progress-description">
-                        40% 증가
+                        누적 작업완료 : @ViewBag.FinishmonthWOJJ
                     </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -388,13 +340,13 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">포장</span>
-                    <span class="info-box-number">163,921</span>
+                    <span class="info-box-number">작업완료 : @ViewBag.FinishWOPJ</span>
 
                     <div class="progress">
-                        <div class="progress-bar" style="width: 40%"></div>
+                        <div class="progress-bar" style="width: 100%"></div>
                     </div>
                     <span class="progress-description">
-                        40% 증가
+                        누적 작업완료 : @ViewBag.FinishmonthWOPJ
                     </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -412,31 +364,67 @@
                         <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                     </div>
                 </div>
+
+
+                @{
+                    //작업장 전체수 데이터
+                    int totalWCJS = ViewBag.TotalWCJS;
+                    int totalWCJK = ViewBag.TotalWCJK;
+                    int totalWCAY = ViewBag.TotalWCAY;
+                    int totalWCJJ = ViewBag.TotalWCJJ;
+                    int totalWCPJ = ViewBag.TotalWCPJ;
+
+                    //작업장 비가동수 데이터
+                    double stoppingWCJS = ViewBag.StoppingWCJS;
+                    double stoppingWCJK = ViewBag.StoppingWCJK;
+                    double stoppingWCAY = ViewBag.StoppingWCAY;
+                    double stoppingWCJJ = ViewBag.StoppingWCJJ;
+                    double stoppingWCPJ = ViewBag.StoppingWCPJ;
+                    double dataWCJS = (totalWCJS-stoppingWCJS) / totalWCJS *100;
+                    double dataWCJK = (totalWCJK-stoppingWCJK) / totalWCJK *100;
+                    double dataWCAY = (totalWCAY-stoppingWCAY) / totalWCAY *100;
+                    double dataWCJJ = (totalWCJJ-stoppingWCJJ) / totalWCJJ *100;
+                    double dataWCPJ = (totalWCPJ-stoppingWCPJ) / totalWCPJ *100;
+                    string WCJS = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-red progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:"+dataWCJS+"% '> </div></div>";
+                    string WCJK = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-success progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:"+dataWCJK+"% '> </div></div>";
+                    string WCAY = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-warning progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:"+dataWCAY+"% '> </div></div>";
+                    string WCJJ = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-aqua progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:"+dataWCJJ+"% '> </div></div>";
+                    string WCPJ = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-light-blue progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:"+dataWCPJ+"% '> </div></div>";
+                }
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="chart-responsive">
-                                <canvas id="pieChart" height="150"></canvas>
-                            </div>
-                            <!-- ./chart-responsive -->
+                    <div class="row" style="margin-left:0px; margin-right:0px">
+                        <div class="col-md-4" style="width:175px">
+                            @(new HtmlString(WCJS))
+                            @(new HtmlString(WCJK))
+                            @(new HtmlString(WCAY))
+                            @(new HtmlString(WCJJ))
+                            @(new HtmlString(WCPJ))
+                            
                         </div>
-                        <!-- /.col -->
-                        <div class="col-md-4">
+                        <div class="col-md-4 pull-right">
                             <ul class="chart-legend clearfix">
                                 <li><i class="fa fa-circle-o text-red"></i> 제강</li>
+                            </ul>
+                            <ul class="chart-legend clearfix">
                                 <li><i class="fa fa-circle-o text-green"></i> 제선</li>
+                            </ul>
+                            <ul class="chart-legend clearfix">
                                 <li><i class="fa fa-circle-o text-yellow"></i> 압연</li>
+                            </ul>
+                            <ul class="chart-legend clearfix">
                                 <li><i class="fa fa-circle-o text-aqua"></i> 적재</li>
+                            </ul>
+                            <ul class="chart-legend clearfix">
                                 <li><i class="fa fa-circle-o text-light-blue"></i> 포장</li>
                             </ul>
                         </div>
-                        <!-- /.col -->
+                        <!-- /.row -->
                     </div>
-                    <!-- /.row -->
-                </div>
 
-                <!-- /.footer -->
+
+                    <!-- /.footer -->
+                </div>
             </div>
             <!-- /.box -->
             <!-- PRODUCT LIST -->
@@ -454,28 +442,27 @@
                 <!-- /.box-header -->
 
 
-                <div class="box-body">
+                <div class="box-body" style="padding-top:0px;padding-bottom:0px">
                     <ul class="products-list product-list-in-box">
-                          
+
                         @foreach (var item in ViewBag.TopFive.JobOrders)
                         {
-                            <li class="item">
-                                <div class="product-info">
-                                    <a class="product-title pull-left">
+                            <li class="item" style="padding-top:10px; padding-bottom:5px;text-align:center">
+                                <div>
+                                    <span class="label label-info pull-left "> @item.Item_Name </span>
+                                    <a class="product-title" style="padding-left:5px; font-size:13px;">
                                         @item.Workorderno
-                                        
                                     </a>
-                                    <span class="product-description">
-                                        @if (item.Wo_Status == "작업종료")
-                                        {
-                                            <span class="label label-success pull-right">@item.Wo_Status</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="label label-warning pull-right">@item.Wo_Status</span>
-                                        }
-                                        <span class="label label-info pull-right"> @item.Item_Name </span>
-                                    </span>
+
+                                    @if (item.Wo_Status == "작업종료")
+                                    {
+                                        <span class="label label-success pull-right">@item.Wo_Status</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="label label-warning pull-right">@item.Wo_Status</span>
+                                    }
+
                                 </div>
                             </li>
                             <!-- /.item -->
@@ -497,3 +484,80 @@
 </section>
 <!-- /.content -->
 
+
+@{
+    //직책별 파이데이터
+    string gn1 = ViewBag.gn1;
+    int gn1cnt = ViewBag.gn1cnt;
+
+    string gn2 = ViewBag.gn2;
+    int gn2cnt = ViewBag.gn2cnt;
+
+    string gn3 = ViewBag.gn3;
+    int gn3cnt = ViewBag.gn3cnt;
+
+}
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+
+            //-------------
+            //- PIE CHART -
+            //-------------
+            // Get context with jQuery - using jQuery's .get() method.
+            var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+            var pieChart = new Chart(pieChartCanvas)
+            var PieData = [
+                {
+                    value: @gn1cnt,
+                    color: '#f56954',
+                    highlight: '#f56954',
+                    label: "@gn1"
+                },
+                {
+                    value: @gn2cnt,
+                    color: '#00a65a',
+                    highlight: '#00a65a',
+                    label: "@gn2"
+                },
+                {
+                    value: @gn3cnt,
+                    color: '#f39c12',
+                    highlight: '#f39c12',
+                    label: "@gn3"
+                }
+            ]
+            var pieOptions = {
+                //Boolean - Whether we should show a stroke on each segment
+                segmentShowStroke: true,
+                //String - The colour of each segment stroke
+                segmentStrokeColor: '#fff',
+                //Number - The width of each segment stroke
+                segmentStrokeWidth: 2,
+                //Number - The percentage of the chart that we cut out of the middle
+                percentageInnerCutout: 50, // This is 0 for Pie charts
+                //Number - Amount of animation steps
+                animationSteps: 100,
+                //String - Animation easing effect
+                animationEasing: 'easeOutBounce',
+                //Boolean - Whether we animate the rotation of the Doughnut
+                animateRotate: true,
+                //Boolean - Whether we animate scaling the Doughnut from the centre
+                animateScale: false,
+                //Boolean - whether to make the chart responsive to window resizing
+                responsive: true,
+                // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+                maintainAspectRatio: true,
+                //String - A legend template
+                legendTemplate: '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
+            }
+            //Create pie or douhnut chart
+            // You can switch between pie and douhnut using the method below.
+            pieChart.Doughnut(PieData, pieOptions)
+
+        })
+    </script>
+}

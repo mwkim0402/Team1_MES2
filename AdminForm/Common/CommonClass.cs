@@ -68,14 +68,14 @@ namespace AdminForm
             }
         }
 
-        public static void Userauthority(Button Insert, Button Edit)
+        public static void Userauthority(Button Insert, Button Edit, string ScreenName)
         {
             // 폼마다 유저 권한 확인 후 버튼 사용여부 설정
             
             LoginService service = new LoginService();
             LoginVO userVO = new LoginVO();
-            userVO.User_ID = Convert.ToInt32(Global.LoginID);
-            userVO.Screen_Code = "메인";
+            //userVO.User_ID = Global.User_ID;
+            userVO.Screen_Code = ScreenName;
             List<LoginVO> list = service.LoginAuthority(userVO);
             
 

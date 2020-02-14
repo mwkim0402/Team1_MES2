@@ -22,7 +22,7 @@ namespace WebApplication0106.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
-                    TotalItems = product.GetProductTotalCount(group)
+                    TotalItems = product.GetWorkCenterTotalCount(group)
                 },
                 CurrentCategory = group
             };

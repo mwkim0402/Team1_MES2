@@ -3,5 +3,148 @@
     ViewBag.Title = "Member";
 }
 
-<h2>Member</h2>
+<head>
 
+    <h3> 근태 현황판 </h3>
+</head>
+
+
+
+<body onload="build();">
+
+    <meta charset="EUC-KR">
+    <title>testCalendar</title>
+    <style>
+        table {
+            text-align: center;
+            width: 100%;
+            background-color: dimgray;
+            /*height: 70%;*/
+            /*float: left;*/
+        }
+
+        button {
+            border: 1px solid darkgray;
+            background-color: rgba(0,0,0,0);
+            color: #FFFFFF;
+        }
+    </style>
+
+
+    <script language="javascript">
+
+        var today = new Date(); // 오늘 날짜
+        var date = new Date();
+
+        function beforem() //이전 달을 today에 값을 저장
+        {
+            today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+            build(); //만들기
+        }
+
+        function nextm()  //다음 달을 today에 저장
+        {
+            today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+            build();
+        }
+
+        function build() {
+            var nMonth = new Date(today.getFullYear(), today.getMonth(), 1); //현재달의 첫째 날
+            var lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0); //현재 달의 마지막 날
+            var tbcal = document.getElementById("calendar"); // 테이블 달력을 만들 테이블
+            var yearmonth = document.getElementById("yearmonth"); //  년도와 월 출력할곳
+            yearmonth.innerHTML = "<font color=#FFFFFF>" + today.getFullYear() + "년 " + (today.getMonth() + 1) + "월"; //년도와 월 출력
+
+            if (today.getMonth() + 1 == 12) //  눌렀을 때 월이 넘어가는 곳
+            {
+                before.innerHTML = (today.getMonth()) + "월";
+                next.innerHTML = "1월";
+            }
+            else if (today.getMonth() + 1 == 1) //  1월 일 때
+            {
+                before.innerHTML = "12월";
+                next.innerHTML = (today.getMonth() + 2) + "월";
+            }
+            else //   12월 일 때
+            {
+                before.innerHTML = (today.getMonth()) + "월";
+                next.innerHTML = (today.getMonth() + 2) + "월";
+            }
+
+
+            // 남은 테이블 줄 삭제
+            while (tbcal.rows.length > 2) {
+                tbcal.deleteRow(tbcal.rows.length - 1);
+            }
+            var row = null;
+            row = tbcal.insertRow();
+            var cnt = 0;
+
+            // 1일 시작칸 찾기
+            for (i = 0; i < nMonth.getDay(); i++) {
+                cell = row.insertCell();
+                cnt = cnt + 1;
+            }
+
+            // 달력 출력
+            for (i = 1; i <= lastDate.getDate(); i++) // 1일부터 마지막 일까지
+            {
+                cell = row.insertCell();
+                cell.innerHTML = "<font color=#FFFFF>" + i;
+                cnt = cnt + 1;
+                if (cnt % 7 == 1) {//일요일 계산
+                    cell.innerHTML = "<font color=#FF0000>" + i//일요일에 색
+                }
+                if (cnt % 7 == 0) { // 1주일이 7일 이므로 토요일 계산
+                    cell.innerHTML = "<font color=#0099FF>" + i//토요일에 색
+                    row = calendar.insertRow();// 줄 추가
+                }
+                if (today.getFullYear() == date.getFullYear() && today.getMonth() == date.getMonth() && i == date.getDate()) {
+                    cell.bgColor = "BBBBBB"; //오늘날짜배경색
+
+                }
+            }
+
+        }
+
+    </script>
+
+    <table align="center" id="calendar" width="91%">
+
+        <tr>
+            <td width="13%"><font size=2%; color="#FFFFFF"><button onclick="beforem()" class="btn btn-block" id="before"></button></font></td>
+            <td colspan="5" align="center" id="yearmonth"></td>
+            <td width="13%"><font size=2%; color="#FFFFFF"><button onclick="nextm()" class="btn btn-block" id="next"></button></font></td>
+        </tr>
+        <tr>
+            <td align="center" width="13%" height="40"> <font color="#FF0000">일</font></td>
+            <td align="center" width="13%" height="40"> <font color="#FFFFFF">월</font></td>
+            <td align="center" width="13%" height="40"> <font color="#FFFFFF">화</font></td>
+            <td align="center" width="13%" height="40"> <font color="#FFFFFF">수</font></td>
+            <td align="center" width="13%" height="40"> <font color="#FFFFFF">목</font></td>
+            <td align="center" width="13%" height="40"> <font color="#FFFFFF">금</font></td>
+            <td align="center" width="13%" height="40"><font color="#0099FF">토</font></td>
+        </tr>
+    </table>
+
+    <section class="content">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">Line Chart</h3>
+
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="chart">
+                    <canvas id="lineChart" style="height:250px"></canvas>
+                </div>
+            </div>
+            <!-- /.box-body -->
+        </div>
+    </section>
+</body>

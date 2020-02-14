@@ -140,5 +140,10 @@ namespace AdminForm
             }
 
         }
+
+        private void btnDivide_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

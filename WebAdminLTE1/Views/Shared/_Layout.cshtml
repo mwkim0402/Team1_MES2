@@ -42,7 +42,7 @@
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        
+
                         <!-- Tasks Menu -->
                         <li class="dropdown tasks-menu">
                             <!-- Menu Toggle Button -->
@@ -133,7 +133,7 @@
                                 </li>
                             </ul>
                         </li>
-                        
+
                         <!-- Control Sidebar Toggle Button -->
                         <li>
                             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
@@ -148,7 +148,7 @@
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
 
-                
+
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">통계 서비스</li>
                     <!-- Optionally, you can add icons to the links -->
@@ -176,13 +176,9 @@
         <div class="content-wrapper" style="background-color:darkgrey">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-                <h1>
-                    MES 현황상태
-                    <small style="color:white">통계 및 그래프</small>
-                </h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> BEAM MES</a></li>
-                    <li class="active"  style="color:white">메인화면</li>
+                    <li class="active" style="color:white">메인화면</li>
                 </ol>
             </section>
 
@@ -214,7 +210,7 @@
             <div class="tab-content">
                 <!-- Home tab content -->
                 <div class="tab-pane active" id="control-sidebar-home-tab">
-                   
+
                     <!-- /.control-sidebar-menu -->
 
                     <h3 class="control-sidebar-heading">현재 진행상황</h3>
@@ -311,15 +307,28 @@
     </div>
     <!-- ./wrapper -->
     <!-- REQUIRED JS SCRIPTS -->
+    @*jQuery 3
+        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+         Bootstrap 3.3.7
+        <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+         AdminLTE App
+        <script src="/dist/js/adminlte.min.js"></script>*@
+
     <!-- jQuery 3 -->
     <script src="~/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap 3.3.7 -->
     <script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- ChartJS -->
+    <script src="~/bower_components/Chart.js/Chart.js"></script>
+    <!-- FastClick -->
+    <script src="~/bower_components/fastclick/lib/fastclick.js"></script>
     <!-- AdminLTE App -->
     <script src="~/dist/js/adminlte.min.js"></script>
-
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/dist/js/demo.js"></script>
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the
          user experience. -->
+    @RenderSection("Scripts", required: false)    <!--렌더링하기 필요할때 사용-->
 </body>
 </html>

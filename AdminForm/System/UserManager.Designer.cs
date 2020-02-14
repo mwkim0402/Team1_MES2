@@ -104,6 +104,7 @@
             this.panel1.Controls.Add(this.txtEditName);
             this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.txtEditID);
+            this.panel1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.panel1.Size = new System.Drawing.Size(1124, 103);
             // 
             // tabPage2
@@ -127,7 +128,7 @@
             this.pnlParent1.Controls.Add(this.txtUserNameInput);
             this.pnlParent1.Controls.Add(this.btnSave);
             this.pnlParent1.Controls.Add(this.txtUserIDInput);
-            this.pnlParent1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlParent1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.pnlParent1.Location = new System.Drawing.Point(3, 4);
             this.pnlParent1.Size = new System.Drawing.Size(1118, 95);
             // 

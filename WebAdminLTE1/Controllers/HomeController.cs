@@ -49,6 +49,8 @@ namespace WebAdminLTE1.Controllers
         }
         public ActionResult Member()
         {
+
+
             return View();
         }
     }

@@ -7391,6 +7391,7 @@
     <Compile Include="DAC\OrderReqDAC.cs" />
     <Compile Include="DAC\JobOrderDAC.cs" />
     <Compile Include="DAC\ProductDAC.cs" />
+    <Compile Include="DAC\WorkDAC.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -7405,6 +7406,7 @@
     <Compile Include="Models\JobOrderListView.cs" />
     <Compile Include="Models\ProductListView.cs" />
     <Compile Include="Models\ShipInfo.cs" />
+    <Compile Include="Models\WorkVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

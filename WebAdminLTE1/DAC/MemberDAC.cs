@@ -18,11 +18,14 @@ namespace WebApplication0106.DAC
 
 
         }
-        public List<WoReq> GetWoReqTen()
+        public List<MemberPermi> GetWorkerCount()
         {
-            List<WoReq> list = new List<WoReq>();
-            string sql = "select top 10 Wo_Req_No,Item_Name,Req_Qty,Prd_Plan_Date,Req_Status from Wo_Req wr, Item_Master i "+
-                " where wr.Item_Code = i.Item_Code"; 
+            List<MemberPermi> list = new List<MemberPermi>();
+            string sql = @"select  ug.UserGroup_Name,count(*) UserCnt
+                            from User_Master u,UserGroup_Mapping map, UserGroup_Master ug
+                            where u.User_ID = map.User_ID
+                            and map.UserGroup_Code = ug.UserGroup_Code
+                            group by ug.UserGroup_Name"; 
             using (SqlConnection conn = new SqlConnection(strconn))
             {
                 conn.Open();
@@ -30,28 +33,11 @@ namespace WebApplication0106.DAC
                 {
                     cmd.CommandType = CommandType.Text;
 
-                    list = Helper.DataReaderMapToList<WoReq>(cmd.ExecuteReader());
+                    list = Helper.DataReaderMapToList<MemberPermi>(cmd.ExecuteReader());
                 }
             }
-            
-                return list;
-        }
 
-        public JobOrder GetWorkOrderInfo(string workorderno)
-        {
-            List<JobOrder> list = null;
-            string sql = "select w.Workorderno, i.Item_Name, wc.Wc_Name, Plan_Qty, Plan_Date,Wo_Status from WorkOrder w, Item_Master i, WorkCenter_Master wc" +
-                "Where workorderno = @workorderno and w.Item_Code = i.Item_Code and w.Wc_Code = wc.Wc_Code"; 
-            using (SqlConnection conn = new SqlConnection(strconn))
-            {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("@workorderno", workorderno);
-                    list = Helper.DataReaderMapToList<JobOrder>(cmd.ExecuteReader());
-                }
-            }
-            return (list == null) ? null : list[0];
+            return list;
         }
 
         public void Dispose()

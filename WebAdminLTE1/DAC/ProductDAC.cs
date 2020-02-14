@@ -47,7 +47,7 @@ namespace WebApplication0106.DAC
             
                 return list;
         }
-        public int GetProductTotalCount(string category)
+        public int GetWorkCenterTotalCount(string category)
         {
             int iTotCount = 0;
             using (SqlConnection conn = new SqlConnection(strconn))
@@ -68,12 +68,12 @@ namespace WebApplication0106.DAC
             return iTotCount;
         }
 
-        public int GetWorkCenterCount(string category)
+        public int GetWorkCenterCountStop(string category)
         {
             int iTotCount = 0;
             using (SqlConnection conn = new SqlConnection(strconn))
             {
-                string sql = "select count(*) 작업장수 from WorkCenter_Master where Wc_group = @WC_Group group by Wc_Group";
+                string sql = "select count(*) from WorkCenter_Master where (WC_Group = @WC_Group or isnull(@WC_Group,'')='') and Wo_Status = 'STOP'";
 
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -88,7 +88,6 @@ namespace WebApplication0106.DAC
             }
             return iTotCount;
         }
-
 
         public List<string> GetProductCategory()
         {

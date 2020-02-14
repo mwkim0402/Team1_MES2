@@ -5,9 +5,8 @@ using System.Web;
 
 namespace WebApplication0106.Models
 {
-    public class MemberPermi
+    public class MemcntListView
     {
-        public string UserGroup_Name { get; set; }
-        public int UserCnt { get; set; }
+        public List<MemberPermi> Members { get; set; }
     }
 }

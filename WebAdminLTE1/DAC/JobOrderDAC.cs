@@ -71,7 +71,25 @@ namespace WebApplication0106.DAC
             }
             return iTotCount;
         }
+        public int GetWorkOrderFinishCount(string category)
+        {
+            int iTotCount = 0;
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                string sql = @"select count(*) from WorkOrder w, WorkCenter_Master wc
+                                where w.Wc_Code = wc.Wc_Code
+                                and w.Wo_Status = '작업종료'
+                                and Wc_Group = @Wc_Group";
 
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Wc_Group", category);
+                    iTotCount = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            return iTotCount;
+        }
         public JobOrder GetWorkOrderInfo(string workorderno)
         {
             List<JobOrder> list = null;

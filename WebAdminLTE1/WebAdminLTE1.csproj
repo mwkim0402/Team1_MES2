@@ -7399,6 +7399,7 @@
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartIndexViewModel.cs" />
     <Compile Include="Models\MemberPermi.cs" />
+    <Compile Include="Models\MemcntListView.cs" />
     <Compile Include="Models\WoReqListView.cs" />
     <Compile Include="Models\WoReq.cs" />
     <Compile Include="Models\PagingInfo.cs" />

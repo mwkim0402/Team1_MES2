@@ -97,45 +97,44 @@ namespace WebAdminLTE1.Controllers
         public ActionResult Member()
         {
             WorkDAC dac = new WorkDAC();
-            List<WorkVO> AllList = dac.GetAllWork();
+            List<WorkVO> AllList = new List<WorkVO>();
+            AllList = dac.GetAllWork();
 
             StringBuilder sb = new StringBuilder();
+            List<string> Name = new List<string>();
+            Name = (from it in AllList
+                    select it.USER_NAME).ToList();
 
-            List<string> Name = (from it in AllList
-                                 select it.USER_NAME).ToList();
+            List<int> time = new List<int>();
+            time = (from a in AllList
+                    select  Convert.ToInt32(a.work_time)).ToList();
 
-            List<string> UserName = new List<string>();
             string data1 = string.Empty;
-            string data2 = string.Empty;
-            for (int i = 1; i < 32; i++)
+            
+           for(int t =0; t<time.Count; t++)
             {
-                sb.Append(i + "일,");
+                data1 += "[" + Name[t]+"," +time[t] + "]" +",";
+                //data2 = "[" + string.Join(",", time[1]) + "]";
+                //data3 = "[" + string.Join(",", time[2]) + "]";
+                //data4 = "[" + string.Join(",", time[3]) + "]";
+                //data5 = "[" + string.Join(",", time[4]) + "]";
             }
-
-            for (int t = 0; t < Name.Count; t++)
-            {
-                UserName.Add(Name[0]);
-                var previous = Name[0];
-                if (previous == Name[t])
-                {
-                    continue;
-                }
-                else
-                {
-                    UserName.Add("," + Name[t]);
-                }
-            }
-
 
             string labels = sb.ToString().TrimEnd(',');
+
+            
+            data1 = data1.TrimEnd(',');
             //data1 = "[" + string.Join(",", qtys.ToArray()) + "]";
 
+            ViewBag.Labels = labels;
+            ViewBag.data1 = data1;
+           
 
-            //ViewBag.Labels = labels;
-            //ViewBag.Label1 = Name[0];
-            //ViewBag.data1 = data1;
-            //ViewBag.Label2 = Name[1];
-            //ViewBag.data2 = data2;
+
+
+
+
+
             return View();
         }
     }

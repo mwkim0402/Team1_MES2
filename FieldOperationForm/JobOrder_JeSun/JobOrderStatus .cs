@@ -150,22 +150,15 @@ namespace FieldOperationForm
 
         private void btn_StartEnd_Click(object sender, EventArgs e)
         {
-            // dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
             if (start == "작업대기")
             {
-                //WorkOrder_Service service = new WorkOrder_Service();
-                //service.StartWork(no);
-                SetLoad();
-                SetTimer();
+                Start_Factory();
             }
             else if (start == "작업시작")
             {
                 WorkOrder_Service service = new WorkOrder_Service();
-
                 service.EndWork(no);
                 SetLoad();
-                timer1.Stop();
-                timer1.Dispose();
             }
         }
 
@@ -188,6 +181,23 @@ namespace FieldOperationForm
             timer1.Enabled = true;
             timer1.Elapsed += timer1_Elapse;
             timer1.AutoReset = true;
+        }
+        private void Start_Factory()
+        {
+            string workWorderNo = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            int UPHperSecond = (int)itemList.Find(x => x.Item_Name == (dataGridView1.SelectedRows[0].Cells[4].Value.ToString())).IronUPH / 60 / 20;
+            Random rnd = new Random((int)DateTime.UtcNow.Ticks);
+            int faultyQty = rnd.Next(0, 2);
+            TcpClient tc = new TcpClient("127.0.0.1", 7010);
+            NetworkStream stream = tc.GetStream();
+            string msg = $"{workWorderNo}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Wc_Code}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Plan_Qty}";
+            byte[] buff = Encoding.UTF8.GetBytes(msg);
+            stream.Write(buff, 0, buff.Length);
+            byte[] outBuff = new byte[1024];
+            int nbytes = stream.Read(outBuff, 0, outBuff.Length);
+            string outMsg = Encoding.UTF8.GetString(outBuff, 0, nbytes);
+            stream.Close();
+            tc.Close();
         }
         private void timer1_Elapse(object sender, ElapsedEventArgs e)
         {

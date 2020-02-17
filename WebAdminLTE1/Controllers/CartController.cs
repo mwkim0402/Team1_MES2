@@ -10,58 +10,33 @@ namespace WebApplication0106.Controllers
 {
     public class CartController : Controller
     {
+        private WorkOrderContext db = new WorkOrderContext();
+
         // GET: Cart
-        public ActionResult Index(string returnURl)
+        public ActionResult Index()
         {
-            return View(new CartIndexViewModel
+            return View(db.List.ToList());
+        }
+
+
+        public JobOrder GetJobOrder()
+        {
+            JobOrder order = (JobOrder)Session["JobOrder"];
+            if (order == null)
             {
-                Cart = GetCart(),
-                ReturnUrl = returnURl
-            });
-        }
-
-        public ActionResult AddToCart(string productID, string returnUrl)
-        {
-            //productID를 조회
-            ProductDAC product = new ProductDAC();
-            Product item = product.GetProductInfo(productID);
-
-            GetCart().AddItem(item, 1);
-
-            return RedirectToAction("Index", new { returnUrl });
-        }
-
-        public ActionResult RemoveFromCart(string productId, string returnUrl)
-        {
-            ProductDAC product = new ProductDAC();
-            Product item = product.GetProductInfo(productId);
-
-            GetCart().RemoveItem(item);
-            return RedirectToAction("Index", new { returnUrl });
-        }
-
-        public Cart GetCart()
-        {
-            Cart cart = (Cart)Session["Cart"];
-            if (cart == null)
-            {
-                cart = new Cart();
-                Session["Cart"] = cart;
+                order = new JobOrder();
+                Session["JobOrder"] = order;
             }
-            return cart;
+            return order;
         }
 
-        //장바구니 요약정보 (상단메뉴 우측)
-        public ActionResult Summary()
+        protected override void Dispose(bool disposing)
         {
-            return PartialView(GetCart());
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
-
-        public ActionResult Checkout()
-        {
-            return View();
-
-        }
-
     } 
 }

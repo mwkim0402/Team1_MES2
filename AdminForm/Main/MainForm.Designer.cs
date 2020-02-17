@@ -53,9 +53,6 @@
             this.lblLocation = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblAlert = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -74,7 +71,6 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -326,40 +322,9 @@
             this.lblName.Size = new System.Drawing.Size(0, 12);
             this.lblName.TabIndex = 14;
             // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.Controls.Add(this.button9);
-            this.panel4.Controls.Add(this.btnLogin);
-            this.panel4.Location = new System.Drawing.Point(987, 24);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(326, 39);
-            this.panel4.TabIndex = 105;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(189, 7);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(110, 23);
-            this.button9.TabIndex = 13;
-            this.button9.Text = "환경설정";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Location = new System.Drawing.Point(25, 7);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(110, 23);
-            this.btnLogin.TabIndex = 12;
-            this.btnLogin.Text = "로그인";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.lblAlert);
-            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.toolStrip1);
             this.panel3.Controls.Add(this.lblLogo);
@@ -523,7 +488,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -549,13 +513,10 @@
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TreeView trvBookMark;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 전체종료ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 이창을제외한창모두닫기ToolStripMenuItem;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblLogo;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ToolStrip toolStrip1;

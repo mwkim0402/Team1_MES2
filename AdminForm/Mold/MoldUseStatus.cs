@@ -20,6 +20,7 @@ namespace AdminForm
         {
             MoldingService service = new MoldingService();
             list = service.MoldUseHistory();
+            dgvSearchResult.DataSource = list;
         }
         private void MoldUseStatus_Load(object sender, EventArgs e)
         {

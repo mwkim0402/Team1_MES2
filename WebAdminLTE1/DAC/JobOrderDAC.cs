@@ -37,7 +37,25 @@ namespace WebApplication0106.DAC
             
                 return list;
         }
+        public List<PrdUnit> GetUnitCount()
+        {
+            List<PrdUnit> list = new List<PrdUnit>();
+            string sql = @"select Wc_Group,count(Plan_Qty) 생산목표량 ,count(Prd_Qty) 현재생산량 from WorkOrder w, WorkCenter_Master wc
+                            where w.Wc_Code = wc.Wc_Code
+                            group by Wc_Group";
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.CommandType = CommandType.Text;
 
+                    list = Helper.DataReaderMapToList<PrdUnit>(cmd.ExecuteReader());
+                }
+            }
+
+            return list;
+        }
         internal List<JobOrder> GetWorkOrderFive()
         {
             List<JobOrder> list = new List<JobOrder>();
@@ -56,16 +74,38 @@ namespace WebApplication0106.DAC
             return list;
         }
 
-        public int GetWorkOrderTotalCount(string category)
+        public int GetWorkOrderTotalCount()
         {
             int iTotCount = 0;
             using (SqlConnection conn = new SqlConnection(strconn))
             {
-                string sql = "select count(*) totCount from WorkOrder";
+                string sql = "select count(*) totCount from WorkOrder w, WorkCenter_Master wc where w.Wc_Code = wc.Wc_Code";
 
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
+
+                    iTotCount = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            return iTotCount;
+        }
+
+        public int GetWorkOrderTotalCount_month(string category)
+        {
+            int iTotCount = 0;
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                string sql = @"select count(*) totCount from WorkOrder w, WorkCenter_Master wc where (WC_Group = @WC_Group or isnull(@WC_Group,'')='')
+                                and w.Wc_Code = wc.Wc_Code
+                                and Prd_Endtime between  DATEADD(MM, DATEDIFF(MM, 0, GETDATE()), 0)
+                                and DATEADD(MS, -3, DATEADD(MM, DATEDIFF(MM, 0, GETDATE()) + 1, 0))";
+
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Wc_Group", category);
+
                     iTotCount = Convert.ToInt32(cmd.ExecuteScalar());
                 }
             }
@@ -90,7 +130,27 @@ namespace WebApplication0106.DAC
             }
             return iTotCount;
         }
+        public int GetWorkOrderFinishCount_today(string category)
+        {
+            int iTotCount = 0;
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                string sql = @"select count(*) from WorkOrder w, WorkCenter_Master wc
+                                where w.Wc_Code = wc.Wc_Code
+                                and w.Wo_Status = '작업종료'
+                                and Wc_Group = @Wc_Group
+                                and Prd_Endtime = @Today";
 
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Wc_Group", category);
+                    cmd.Parameters.AddWithValue("@Today", DateTime.Today.ToShortDateString());
+                    iTotCount = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            return iTotCount;
+        }
         public int GetWorkOrderFinishCount_month(string category)
         {
             int iTotCount = 0;
@@ -99,7 +159,7 @@ namespace WebApplication0106.DAC
                 string sql = @"select count(*) from WorkOrder w, WorkCenter_Master wc
                                 where w.Wc_Code= wc.Wc_Code
                                 and w.Wo_Status ='작업종료'
-                                and Wc_Group = '제선'
+                                and Wc_Group = @Wc_Group
                                 and Prd_Endtime between  DATEADD(MM, DATEDIFF(MM, 0, GETDATE()), 0)
                                     and DATEADD(MS, -3, DATEADD(MM, DATEDIFF(MM, 0, GETDATE()) + 1, 0))";
 

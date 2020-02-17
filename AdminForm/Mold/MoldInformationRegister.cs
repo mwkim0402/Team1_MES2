@@ -29,6 +29,7 @@ namespace AdminForm
         {
             MoldingService service = new MoldingService();
             List = service.GetMoldingInfo();
+            dgvSearchResult.DataSource = List;
         }
         private void MoldInformationRegister_Load(object sender, EventArgs e)
         {

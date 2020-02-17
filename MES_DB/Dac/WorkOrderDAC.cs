@@ -15,7 +15,7 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = @"select Workorderno, wc.Wc_Code, wo.Item_Code, Plan_Qty, Plan_Date, Plan_Starttime, Plan_Endtime
+                cmd.CommandText = @"select Workorderno, wc.Wc_Code, wo.Item_Code Item_Code, Plan_Qty, Plan_Date, Plan_Starttime, Plan_Endtime
                                                 from WorkOrder wo inner join WorkCenter_Master wc on wo.Wc_Code = wc.Wc_Code
                                                 inner join Process_Master p on wc.Process_Code = p.Process_Code
                                                 where Process_Name = @Process_Name";
@@ -92,6 +92,23 @@ namespace MES_DB
                 cmd.Connection.Close();
             }
             return checkNum==1?true:false;
+        }
+        public bool WorkOrderUpdate(string workOrderNo, string workStatus)
+        {
+            int isChecked = 0;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = @"update WorkOrder
+                                                set Wo_Status = @Wo_Status
+                                                where Workorderno = @WorkOrderNo";
+                cmd.Parameters.AddWithValue("@WorkOrderNo", workOrderNo);
+                cmd.Parameters.AddWithValue("@Wo_Status", workStatus);
+                cmd.Connection.Open();
+                isChecked = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+            return isChecked == 1 ? true : false;
         }
         public List<WorkOrder> GetAllWorkOrderDetail(string work_reqNo)
         {

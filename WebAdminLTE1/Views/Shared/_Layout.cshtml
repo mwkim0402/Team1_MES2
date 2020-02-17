@@ -163,7 +163,7 @@
 
                     </li>
                     <li><a href="/JobOrder/List"><i class="fa fa-link"></i> <span>작업지시 전체조회</span></a></li>
-                    <li><a href="/JobOrder/List"><i class="fa fa-link"></i> <span>시간대별 실적조회</span></a></li>
+                    <li><a href="/JobOrder/TimeLine"><i class="fa fa-link"></i> <span>시간대별 실적조회</span></a></li>
                     <li><a href="/Product/List"><i class="fa fa-link"></i> <span>불량 현황</span></a></li>
                     <li><a href="/Home/Member"><i class="fa fa-link"></i> <span>근태 현황</span></a></li>
                 </ul>
@@ -338,6 +338,7 @@
     <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
     <script src="/bower_components/Flot/jquery.flot.categories.js"></script>
 
-    @RenderSection("Scripts", required: false)    <!--렌더링하기 필요할때 사용-->
+    @RenderSection("ScriptsPIE", required: false)    <!--렌더링하기 필요할때 사용-->
+    @RenderSection("ScriptsAREA", required: false)    <!--렌더링하기 필요할때 사용-->
 </body>
 </html>

@@ -464,29 +464,29 @@ namespace AdminForm
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //LoginForm 열어서 로그인 하고 아이디 값 , 이름 값 받아서 Global 클래스에 값 넣기
-            if (btnLogin.Text == "로그인")
-            {
-                LoginForm frm = new LoginForm();
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    MessageBox.Show("로그인 되었습니다.");
-                   // this.SendNameEvent += new SendName(homeFrm.GetName);
-                   // SendNameEvent(Global.User_Name + "님 환영합니다.");
-                    //lblName.Text = Global.User_Name + "님 환영합니다.";
-                    btnLogin.Text = "로그아웃";
-                    Userauthority();
-                }
-            }
-            else if(btnLogin.Text == "로그아웃")
-            {
-                // 버튼 제어
+            ////LoginForm 열어서 로그인 하고 아이디 값 , 이름 값 받아서 Global 클래스에 값 넣기
+            //if (btnLogin.Text == "로그인")
+            //{
+            //    LoginForm frm = new LoginForm();
+            //    if (frm.ShowDialog() == DialogResult.OK)
+            //    {
+            //        MessageBox.Show("로그인 되었습니다.");
+            //       // this.SendNameEvent += new SendName(homeFrm.GetName);
+            //       // SendNameEvent(Global.User_Name + "님 환영합니다.");
+            //        //lblName.Text = Global.User_Name + "님 환영합니다.";
+            //        btnLogin.Text = "로그아웃";
+            //        Userauthority();
+            //    }
+            //}
+            //else if(btnLogin.Text == "로그아웃")
+            //{
+            //    // 버튼 제어
 
-                //this.SendNameEvent += new SendName(homeFrm.GetName);
-                SendNameEvent("_님 환영합니다.");
-                btnLogin.Text = "로그인";
-                MessageBox.Show("로그아웃 되었습니다.");
-            }
+            //    //this.SendNameEvent += new SendName(homeFrm.GetName);
+            //    SendNameEvent("_님 환영합니다.");
+            //    btnLogin.Text = "로그인";
+            //    MessageBox.Show("로그아웃 되었습니다.");
+            //}
         }
 
 

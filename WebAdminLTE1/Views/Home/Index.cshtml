@@ -15,7 +15,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">불량률</span>
-                    <span class="info-box-number">90<small>%</small></span>
+                    <span class="info-box-number">90<small>%</small></span> 금일 생산현황
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -28,7 +28,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">금일 생산현황</span>
-                    <span class="info-box-number">@ViewBag.WoReqCountToday</span>
+                    <span class="info-box-number">@ViewBag.WoReqCountToday</span> @DateTime.Now.ToShortDateString() 오늘
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -44,7 +44,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">누적 생산현황</span>
-                    <span class="info-box-number">@ViewBag.WoReqCount</span>
+                    <span class="info-box-number">@ViewBag.WoReqCount</span> @DateTime.Now.ToShortDateString() 기준
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -57,7 +57,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">평균근무 시간</span>
-                    <span class="info-box-number">8.3</span>
+                    <span class="info-box-number">@ViewBag.WorkTimeAVG</span> 시간
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -77,15 +77,6 @@
                         <button type="button" class="btn btn-box-tool" data-widget="collapse">
                             <i class="fa fa-minus"></i>
                         </button>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-wrench"></i>
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">기간 설정</a></li>
-                                <!--<li class="divider"></li>-->
-                            </ul>
-                        </div>
                         <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                     </div>
                 </div>
@@ -99,10 +90,31 @@
 
                             <div class="chart">
                                 <!-- Sales Chart Canvas -->
-                                <canvas id="salesChart" style="height: 180px;"></canvas>
+                                <canvas id="areaChart" style="height:250px"></canvas> <!-- height 바꾸면 크기 조정, id 값= 유일하게-->
                             </div>
                             <!-- /.chart-responsive -->
                         </div>
+
+
+                        @{
+                            double FJK = @ViewBag.FinishmonthWOJK;
+                            double FJS = @ViewBag.FinishmonthWOJS;
+                            double FAY = @ViewBag.FinishmonthWOAY;
+                            double FJJ = @ViewBag.FinishmonthWOJJ;
+                            double FPJ = @ViewBag.FinishmonthWOPJ;
+
+                            double TJK = @ViewBag.TotalmonthWOJK;
+                            double TJS = @ViewBag.TotalmonthWOJS;
+                            double TAY = @ViewBag.TotalmonthWOAY;
+                            double TJJ = @ViewBag.TotalmonthWOJJ;
+                            double TPJ = @ViewBag.TotalmonthWOPJ;
+
+                            double RJK = FJK / TJK * 100;
+                            double RJS = FJS / TJS * 100;
+                            double RAY = FAY / TAY * 100;
+                            double RJJ = FJJ / TJJ * 100;
+                            double RPJ = FPJ / TPJ * 100;
+                        }
                         <!-- /.col -->
                         <div class="col-md-4">
                             <p class="text-center">
@@ -110,46 +122,46 @@
                             </p>
 
                             <div class="progress-group">
-                                <span class="progress-text">제선</span>
-                                <span class="progress-number"><b>160</b>/200</span>
+                                <span class="progress-text">제강</span>
+                                <span class="progress-number"><b>@FJK</b>/ @TJK</span>
 
                                 <div class="progress sm">
-                                    <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                                    <div class="progress-bar progress-bar-red" style="width: @RJK%"></div>
                                 </div>
                             </div>
                             <!-- /.progress-group -->
                             <div class="progress-group">
-                                <span class="progress-text">제강</span>
-                                <span class="progress-number"><b>310</b>/400</span>
+                                <span class="progress-text">제선</span>
+                                <span class="progress-number"><b>@FJS</b>/ @TJS</span>
 
                                 <div class="progress sm">
-                                    <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                                    <div class="progress-bar progress-bar-green" style="width: @RJS%"></div>
                                 </div>
                             </div>
                             <!-- /.progress-group -->
                             <div class="progress-group">
                                 <span class="progress-text">압연</span>
-                                <span class="progress-number"><b>480</b>/800</span>
+                                <span class="progress-number"><b>@FAY</b>/ @TAY</span>
 
                                 <div class="progress sm">
-                                    <div class="progress-bar progress-bar-green" style="width: 80%"></div>
+                                    <div class="progress-bar progress-bar-yellow" style="width: @RAY%"></div>
                                 </div>
                             </div>
                             <!-- /.progress-group -->
                             <div class="progress-group">
-                                <span class="progress-text">포장</span>
-                                <span class="progress-number"><b>200</b>/500</span>
+                                <span class="progress-text">적재</span>
+                                <span class="progress-number"><b>@FJJ</b>/ @TJJ</span>
 
                                 <div class="progress sm">
-                                    <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
+                                    <div class="progress-bar progress-bar-aqua" style="width: @RJJ"></div>
                                 </div>
                             </div>
                             <div class="progress-group">
-                                <span class="progress-text">적재</span>
-                                <span class="progress-number"><b>250</b>/500</span>
+                                <span class="progress-text">포장</span>
+                                <span class="progress-number"><b>@FPJ</b>/ @TPJ</span>
 
                                 <div class="progress sm">
-                                    <div class="progress-bar progress-bar-light-blue" style="width: 80%"></div>
+                                    <div class="progress-bar progress-bar-light-blue" style="width: @RPJ%"></div>
                                 </div>
                             </div>
                             <!-- /.progress-group -->
@@ -272,13 +284,13 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">제강</span>
-                    <span class="info-box-number">작업완료 : @ViewBag.FinishWOJK</span>
+                    <span class="info-box-number">작업완료 : @ViewBag.FinishtodayWOJK</span>
 
                     <div class="progress">
                         <div class="progress-bar" style="width: 100%"></div>
                     </div>
                     <span class="progress-description">
-                        누적 작업완료 : @ViewBag.FinishmonthWOJK
+                        누적 작업완료 : @ViewBag.FinishWOJK
                     </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -289,13 +301,13 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">제선</span>
-                    <span class="info-box-number">작업완료 : @ViewBag.FinishWOJS</span>
+                    <span class="info-box-number">작업완료 : @ViewBag.FinishmonthWOJS</span>
 
                     <div class="progress">
                         <div class="progress-bar" style="width: 100%"></div>
                     </div>
                     <span class="progress-description">
-                        누적 작업완료 : @ViewBag.FinishmonthWOJS
+                        누적 작업완료 : @ViewBag.FinishWOJS
                     </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -306,13 +318,13 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">압연</span>
-                    <span class="info-box-number">작업완료 : @ViewBag.FinishWOAY</span>
+                    <span class="info-box-number">작업완료 : @ViewBag.FinishtodayWOAY</span>
 
                     <div class="progress">
                         <div class="progress-bar" style="width: 100%"></div>
                     </div>
                     <span class="progress-description">
-                        누적 작업완료 : @ViewBag.FinishmonthWOAY
+                        누적 작업완료 : @ViewBag.FinishWOAY
                     </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -323,13 +335,13 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">적재</span>
-                    <span class="info-box-number">작업완료 : @ViewBag.FinishWOJJ</span>
+                    <span class="info-box-number">작업완료 : @ViewBag.FinishtodayWOJJ</span>
 
                     <div class="progress">
                         <div class="progress-bar" style="width: 100%"></div>
                     </div>
                     <span class="progress-description">
-                        누적 작업완료 : @ViewBag.FinishmonthWOJJ
+                        누적 작업완료 : @ViewBag.FinishWOJJ
                     </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -340,13 +352,13 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">포장</span>
-                    <span class="info-box-number">작업완료 : @ViewBag.FinishWOPJ</span>
+                    <span class="info-box-number">작업완료 : @ViewBag.FinishtodayWOPJ</span>
 
                     <div class="progress">
                         <div class="progress-bar" style="width: 100%"></div>
                     </div>
                     <span class="progress-description">
-                        누적 작업완료 : @ViewBag.FinishmonthWOPJ
+                        누적 작업완료 : @ViewBag.FinishWOPJ
                     </span>
                 </div>
                 <!-- /.info-box-content -->
@@ -380,16 +392,16 @@
                     double stoppingWCAY = ViewBag.StoppingWCAY;
                     double stoppingWCJJ = ViewBag.StoppingWCJJ;
                     double stoppingWCPJ = ViewBag.StoppingWCPJ;
-                    double dataWCJS = (totalWCJS-stoppingWCJS) / totalWCJS *100;
-                    double dataWCJK = (totalWCJK-stoppingWCJK) / totalWCJK *100;
-                    double dataWCAY = (totalWCAY-stoppingWCAY) / totalWCAY *100;
-                    double dataWCJJ = (totalWCJJ-stoppingWCJJ) / totalWCJJ *100;
-                    double dataWCPJ = (totalWCPJ-stoppingWCPJ) / totalWCPJ *100;
-                    string WCJS = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-red progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:"+dataWCJS+"% '> </div></div>";
-                    string WCJK = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-success progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:"+dataWCJK+"% '> </div></div>";
-                    string WCAY = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-warning progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:"+dataWCAY+"% '> </div></div>";
-                    string WCJJ = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-aqua progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:"+dataWCJJ+"% '> </div></div>";
-                    string WCPJ = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-light-blue progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:"+dataWCPJ+"% '> </div></div>";
+                    double dataWCJS = (totalWCJS - stoppingWCJS) / totalWCJS * 100;
+                    double dataWCJK = (totalWCJK - stoppingWCJK) / totalWCJK * 100;
+                    double dataWCAY = (totalWCAY - stoppingWCAY) / totalWCAY * 100;
+                    double dataWCJJ = (totalWCJJ - stoppingWCJJ) / totalWCJJ * 100;
+                    double dataWCPJ = (totalWCPJ - stoppingWCPJ) / totalWCPJ * 100;
+                    string WCJS = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-red progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:" + dataWCJS + "% '> </div></div>";
+                    string WCJK = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-success progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:" + dataWCJK + "% '> </div></div>";
+                    string WCAY = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-warning progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:" + dataWCAY + "% '> </div></div>";
+                    string WCJJ = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-aqua progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:" + dataWCJJ + "% '> </div></div>";
+                    string WCPJ = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-light-blue progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:" + dataWCPJ + "% '> </div></div>";
                 }
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -400,7 +412,7 @@
                             @(new HtmlString(WCAY))
                             @(new HtmlString(WCJJ))
                             @(new HtmlString(WCPJ))
-                            
+
                         </div>
                         <div class="col-md-4 pull-right">
                             <ul class="chart-legend clearfix">
@@ -499,7 +511,7 @@
 }
 
 
-@section Scripts {
+@section ScriptsPIE {
     <script>
         $(document).ready(function () {
 
@@ -558,6 +570,92 @@
             // You can switch between pie and douhnut using the method below.
             pieChart.Doughnut(PieData, pieOptions)
 
+        })
+    </script>
+}
+
+@section ScriptsAREA {
+    <script>
+        $(document).ready(function () {
+
+            //--------------
+            //- AREA CHART -
+            //--------------
+
+            // Get context with jQuery - using jQuery's .get() method.
+            var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
+            // This will get the first returned node in the jQuery collection.
+            var areaChart = new Chart(areaChartCanvas)
+
+            var temp = ['제강', '제선', '압연', '적재', '포장'];
+            var areaChartData = {
+                labels: temp,
+                datasets: [
+                    {
+                        label: '전체 작업지시 수',
+                        fillColor: 'rgba(210, 214, 222, 1)',
+                        strokeColor: 'rgba(210, 214, 222, 1)',
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: [@TJK, @TJS, @TAY, @TJJ, @TPJ]
+                    },
+                    {
+                        label: '완료한 작업지시 수',
+                        fillColor: 'rgba(245, 105, 84, 1)',
+                        strokeColor: 'rgba(245, 105, 84, 1)',
+                        pointColor: 'rgba(245, 105, 84, 1)',
+                        pointStrokeColor: '#f56954',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: [@FJK, @FJS, @FAY, @FJJ, @FPJ]
+                    }
+                ]
+
+            }
+            
+
+            var areaChartOptions = {
+                //Boolean - If we should show the scale at all
+                showScale: true,
+                //Boolean - Whether grid lines are shown across the chart
+                scaleShowGridLines: false,
+                //String - Colour of the grid lines
+                scaleGridLineColor: 'rgba(0,0,0,.05)',
+                //Number - Width of the grid lines
+                scaleGridLineWidth: 1,
+                //Boolean - Whether to show horizontal lines (except X axis)
+                scaleShowHorizontalLines: true,
+                //Boolean - Whether to show vertical lines (except Y axis)
+                scaleShowVerticalLines: true,
+                //Boolean - Whether the line is curved between points
+                bezierCurve: true,
+                //Number - Tension of the bezier curve between points
+                bezierCurveTension: 0.3,
+                //Boolean - Whether to show a dot for each point
+                pointDot: false,
+                //Number - Radius of each point dot in pixels
+                pointDotRadius: 4,
+                //Number - Pixel width of point dot stroke
+                pointDotStrokeWidth: 1,
+                //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+                pointHitDetectionRadius: 20,
+                //Boolean - Whether to show a stroke for datasets
+                datasetStroke: true,
+                //Number - Pixel width of dataset stroke
+                datasetStrokeWidth: 2,
+                //Boolean - Whether to fill the dataset with a color
+                datasetFill: true,
+                //String - A legend template
+                legendTemplate: '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].lineColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
+                //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+                maintainAspectRatio: true,
+                //Boolean - whether to make the chart responsive to window resizing
+                responsive: true
+            }
+
+            areaChart.Line(areaChartData, areaChartOptions)
         })
     </script>
 }

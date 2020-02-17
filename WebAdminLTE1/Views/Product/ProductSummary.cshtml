@@ -6,10 +6,9 @@
             <span class="pull-right label" style="background-color:rebeccapurple">@Model.Wc_Group.ToString()</span>
 
         </h3>
-        @using (Html.BeginForm("상세보기", "Cart"))
+        @using (Html.BeginForm("Index", "Cart"))
 
         {
-
             <div class="progress-group">
                 <span class="progress-text" style="color:white">현재 생산량</span>
                 <span class="progress-number" style="color:white;font-size:13px"><b>160</b>/200</span>
@@ -27,6 +26,8 @@
             </div>
 
         }
+
+
         &nbsp;
         <h4>
         </h4>

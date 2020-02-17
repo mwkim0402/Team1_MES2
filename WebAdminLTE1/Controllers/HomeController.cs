@@ -21,20 +21,41 @@ namespace WebAdminLTE1.Controllers
                 JobOrders = jobOrder.GetWorkOrderFive() // 진행중인 작업지시 조회
             };
 
+
+            PrdUnitListView prdUnitmodel = new PrdUnitListView // 작업지시 view만들고
+            {
+                PrdUnits = jobOrder.GetUnitCount() // 진행중인 작업지시 조회
+            };
+
+            ViewBag.TotalmonthWOJS = jobOrder.GetWorkOrderTotalCount_month("제선");
+            ViewBag.TotalmonthWOJK = jobOrder.GetWorkOrderTotalCount_month("제강");
+            ViewBag.TotalmonthWOAY = jobOrder.GetWorkOrderTotalCount_month("압연");
+            ViewBag.TotalmonthWOJJ = jobOrder.GetWorkOrderTotalCount_month("적재");
+            ViewBag.TotalmonthWOPJ = jobOrder.GetWorkOrderTotalCount_month("포장");
+            //이번달 전체작업지시 뷰백
+
             ViewBag.FinishmonthWOJS = jobOrder.GetWorkOrderFinishCount_month("제선");
             ViewBag.FinishmonthWOJK = jobOrder.GetWorkOrderFinishCount_month("제강");
             ViewBag.FinishmonthWOAY = jobOrder.GetWorkOrderFinishCount_month("압연");
             ViewBag.FinishmonthWOJJ = jobOrder.GetWorkOrderFinishCount_month("적재");
             ViewBag.FinishmonthWOPJ = jobOrder.GetWorkOrderFinishCount_month("포장");
-            //작업완료 뷰백
+            //이번달 작업완료 뷰백
+
+            ViewBag.FinishtodayWOJS = jobOrder.GetWorkOrderFinishCount_today("제선");
+            ViewBag.FinishtodayWOJK = jobOrder.GetWorkOrderFinishCount_today("제강");
+            ViewBag.FinishtodayWOAY = jobOrder.GetWorkOrderFinishCount_today("압연");
+            ViewBag.FinishtodayWOJJ = jobOrder.GetWorkOrderFinishCount_today("적재");
+            ViewBag.FinishtodayWOPJ = jobOrder.GetWorkOrderFinishCount_today("포장");
+            //금일작업완료 뷰백
             ViewBag.FinishWOJS = jobOrder.GetWorkOrderFinishCount("제선");
             ViewBag.FinishWOJK = jobOrder.GetWorkOrderFinishCount("제강");
             ViewBag.FinishWOAY = jobOrder.GetWorkOrderFinishCount("압연");
             ViewBag.FinishWOJJ = jobOrder.GetWorkOrderFinishCount("적재");
             ViewBag.FinishWOPJ = jobOrder.GetWorkOrderFinishCount("포장");
             //누적작업완료 뷰백
-
-            ViewBag.TopFive = jobordermodel; //작업지시 뷰백
+            
+            ViewBag.TopFive = jobordermodel; 
+            //작업지시 뷰백
 
             ProductDAC workcenter = new ProductDAC();
             ProductListView workcentermodel = new ProductListView
@@ -87,7 +108,7 @@ namespace WebAdminLTE1.Controllers
             ViewBag.gn3 = memcntmodel.Members[2].UserGroup_Name;
             ViewBag.gn3cnt = memcntmodel.Members[2].UserCnt;
             //직책별 차트데이터 뷰백
-
+            ViewBag.WorkTimeAVG = memcnt.GetWorkTimeAVG();
 
             return View();
         }

@@ -39,7 +39,21 @@ namespace WebApplication0106.DAC
 
             return list;
         }
+        public int GetWorkTimeAVG()
+        {
+            int iTotCount = 0;
+            string sql = @"select AVG(Work_Time) from Work_History";
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    iTotCount = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
 
+            return iTotCount;
+        }
         public void Dispose()
         {
 

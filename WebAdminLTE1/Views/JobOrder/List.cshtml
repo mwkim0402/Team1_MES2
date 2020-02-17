@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "작업지시 목록";
 }
-
+    <h2>작업지시 목록</h2>
 @foreach (var p in Model.JobOrders)
 {
     @Html.Partial("JobOrderSummary", p)

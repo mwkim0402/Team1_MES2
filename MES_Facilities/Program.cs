@@ -27,7 +27,8 @@ namespace MES_Facilities
         static bool isFirst = true;
         static void Main(string[] args)
         {
-            
+            WorkOrderService service = new WorkOrderService();
+            WorkCenterService wcService = new WorkCenterService();
             Console.WriteLine($"--- {workCenterNo} 작동---");
             SetLoad();
             while (true)
@@ -42,7 +43,11 @@ namespace MES_Facilities
                     {
                         if (isFirst)
                         {
+                            Console.WriteLine();
+                            Console.WriteLine();
                             Console.WriteLine("------ 작업 시작 ------");
+                            service.UpdateWorkStatus(workOrderNo, "작업중");
+                            wcService.WcStatusUpdate(ConfigurationManager.AppSettings["Wc_Code"], "RUN");
                             SetTimer();
                             isFirst = false;
                         }
@@ -54,7 +59,9 @@ namespace MES_Facilities
                         isFull = false;
                         isWorking = false;
                         isFirst = true;
-                        Console.WriteLine("------ 작업 마감 ------");
+                        service.UpdateWorkStatus(workOrderNo, "작업종료");
+                        wcService.WcStatusUpdate(ConfigurationManager.AppSettings["Wc_Code"], "STOP");
+                        Console.WriteLine("------ 작업 종료 ------");
                     }
                 }
             }

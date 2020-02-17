@@ -20,4 +20,9 @@ namespace MES_DB
         public string Use_YN { get; set; }
         public string Remark { get; set; }
     }
+    public class WorkCenterPort
+    {
+        public string Wc_Code { get; set; }
+        public int Port_Num { get; set; }
+    }
 }

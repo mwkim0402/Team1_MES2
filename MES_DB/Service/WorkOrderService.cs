@@ -46,5 +46,11 @@ namespace MES_DB
             WorkOrderDAC dac = new WorkOrderDAC();
             return dac.GetWorkOrderCheckVo(processName);
         }
+
+        public bool UpdateWorkStatus(string workOrderNo, string workStatus)
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            return dac.WorkOrderUpdate(workOrderNo, workStatus);
+        }
     }
 }

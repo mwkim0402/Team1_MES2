@@ -93,6 +93,23 @@ namespace MES_DB
             }
             return checkNum==1?true:false;
         }
+        public bool WorkOrderUpdate(string workOrderNo, string workStatus)
+        {
+            int isChecked = 0;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = @"update WorkOrder
+                                                set Wo_Status = @Wo_Status
+                                                where Workorderno = @WorkOrderNo";
+                cmd.Parameters.AddWithValue("@WorkOrderNo", workOrderNo);
+                cmd.Parameters.AddWithValue("@Wo_Status", workStatus);
+                cmd.Connection.Open();
+                isChecked = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+            return isChecked == 1 ? true : false;
+        }
         public List<WorkOrder> GetAllWorkOrderDetail(string work_reqNo)
         {
             List<WorkOrder> list;

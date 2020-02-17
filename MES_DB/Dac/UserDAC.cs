@@ -140,6 +140,21 @@ namespace MES_DB
                 cmd.Connection.Close();
             }
         }
+        public List<UserPlanVo> GetUserPlan(int userID)
+        {
+            List<UserPlanVo> list;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "select User_ID, Seq, CONVERT(CHAR(10),Plan_Date,23) Plan_Date, Title, Notice from User_PlanNotice where User_ID = @User_ID";
+               
+                cmd.Parameters.AddWithValue("@User_ID", userID);
+                cmd.Connection.Open();
+                list = Helper.DataReaderMapToList<UserPlanVo>(cmd.ExecuteReader());
+                cmd.Connection.Close();
+            }
+            return list;
+        }
 
     }
 }

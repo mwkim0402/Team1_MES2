@@ -15,7 +15,7 @@ namespace AdminForm
     public partial class UserCalendar : UserControl
     {
         public event EventHandler Search_Click;
-
+        public event EventHandler Change_Month;
         DateTime startDate;
         string StartBtnText;
         string InsertBtnText;
@@ -125,6 +125,9 @@ namespace AdminForm
             SetStartDay(day);
             DayChange(StartBtnText);
             BordedDateChange(BordedDate);
+
+            if (this.Change_Month != null)
+                Change_Month(this, null);
         }
 
         private void btnMonthDown_Click(object sender, EventArgs e)
@@ -150,6 +153,9 @@ namespace AdminForm
             SetStartDay(day);
             DayChange(StartBtnText);
             BordedDateChange(BordedDate);
+
+            if (this.Change_Month != null)
+                Change_Month(this, null);
         }
 
         private void btn1_Click(object sender, EventArgs e)

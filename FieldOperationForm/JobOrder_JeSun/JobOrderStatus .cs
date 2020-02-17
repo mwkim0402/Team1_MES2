@@ -64,12 +64,12 @@ namespace FieldOperationForm
             AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "Workorderno", true, 200);
             AddNewColumnToDataGridView(dataGridView1, "할당작업장", "Wc_Name", true, 175);
             AddNewColumnToDataGridView(dataGridView1, "품목명", "Item_Name", true, 230);
-            AddNewColumnToDataGridView(dataGridView1, "단위", "Plan_Unit", true, 100);
-            AddNewColumnToDataGridView(dataGridView1, "실적수량", "Plan_Qty", true, 130);
+                    
+            AddNewColumnToDataGridView(dataGridView1, "생산수량", "Plan_Qty", true, 130);
+            AddNewColumnToDataGridView(dataGridView1, "생산일자", "Plan_Date", true, 200);
             AddNewColumnToDataGridView(dataGridView1, "생산시작시간", "Plan_Starttime", true, 280);
             AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Plan_Endtime", true, 280);
-            AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Plan_Qty", false, 175);
-            AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Plan_Date", false, 175);
+
 
             this.dataGridView1.Font = new Font("나눔고딕", 17, FontStyle.Bold);
             this.dataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 17, FontStyle.Regular);
@@ -152,7 +152,7 @@ namespace FieldOperationForm
             if (start == "작업대기")
             {
                 WorkCenterService service = new WorkCenterService();
-                if(service.wcStatusChecked(dataGridView1.SelectedRows[0].Cells[2].Value.ToString()) == "RUN")
+                if(service.wcStatusChecked(dataGridView1.SelectedRows[0].Cells[1].Value.ToString()) == "RUN")
                 {
                     MessageBox.Show("작업장에 실행중인 작업이 존재하여 실행할 수 없습니다.");
                     return;
@@ -168,16 +168,16 @@ namespace FieldOperationForm
         {
             try
             {
-                start = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                start = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
              //   no = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                no = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                no = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             }
             catch { }
         }
 
         private void Start_Factory()
         {
-            string workWorderNo = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            string workWorderNo = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
             try
             {
                 int UPHperSecond = (int)itemList.Find(x => x.Item_Name == (dataGridView1.SelectedRows[0].Cells[4].Value.ToString())).IronUPH / 60 / 20;

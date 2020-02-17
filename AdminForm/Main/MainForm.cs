@@ -201,17 +201,61 @@ namespace AdminForm
 
                 Brush TitleBrush = new SolidBrush(Color.Black);
                 Font f = this.Font;
-
+                if (this.tabControl2.TabPages[e.Index] != tabControl2.SelectedTab)
+                {
+                    e.Graphics.FillRectangle(Brushes.Silver, e.Bounds); //텝페이지 색
+                }
                 string title = this.tabControl2.TabPages[e.Index].Text;
                 this.tabControl2.SizeMode = TabSizeMode.Fixed;
                 e.Graphics.DrawString(title, f, TitleBrush, new PointF(r.X, r.Y));
                 e.Graphics.DrawImage(img, new Point(r.X + (this.tabControl2.GetTabRect(e.Index).Width - _imageLocation.X + 8), _imageLocation.Y - 3));
             }
             catch (Exception err) { System.Windows.Forms.MessageBox.Show(err.Message); }
+            //try
+            //{
+            //    var tabRect = this.tabControl2.GetTabRect(e.Index);
+            //    tabRect.Inflate(-2, -2);
+            //    var imageRect = new Rectangle(tabRect.Right - CloseImage.Width,
+            //                             tabRect.Top + (tabRect.Height - CloseImage.Height) / 2,
+            //                             CloseImage.Width,
+            //                             CloseImage.Height);
+
+            //    var sf = new StringFormat(StringFormat.GenericDefault);
+            //    if (this.tabControl2.RightToLeft == System.Windows.Forms.RightToLeft.Yes &&
+            //        this.tabControl2.RightToLeftLayout == true)
+            //    {
+            //        tabRect = GetRTLCoordinates(this.tabControl2.ClientRectangle, tabRect);
+            //        imageRect = GetRTLCoordinates(this.tabControl2.ClientRectangle, imageRect);
+            //        ///  sf.FormatFlags |= StringFormatFlags.DirectionRightToLeft;
+            //        sf.FormatFlags |= StringFormatFlags.DirectionVertical;
+            //    }
+
+            //    if (this.tabControl2.TabPages[e.Index] == tabControl2.SelectedTab)
+            //    {
+
+            //        e.Graphics.FillRectangle(Brushes.LightSkyBlue, e.Bounds); //텝페이지 색
+            //        //LightSkyBlue
+            //    }
+            //    else
+            //    {
+            //        // e.Graphics.FillRectangle(Brushes.PaleTurquoise, e.Bounds); //텝페이지 색
+            //    }
+
+
+            //    e.Graphics.DrawString(this.tabControl2.TabPages[e.Index].Text,
+            //                          this.Font, Brushes.Black, tabRect, sf);//텝페이지 폰트랑 글자 색
+
+            //    e.Graphics.DrawImage(CloseImage, imageRect.Location.X - 4, imageRect.Location.Y - 4); //텝페이지 취소이미지 생성
+
+            //}
+            //catch (Exception) { }
         }
+           
+        
 
         private void tabControl4_MouseClick(object sender, MouseEventArgs e)
         {
+            int lastIndex = 0;
             TabControl tc = (TabControl)sender;
             Point p = e.Location;
             int _tabWidth = 0;
@@ -225,8 +269,11 @@ namespace AdminForm
                 Form tempChild = this.ActiveMdiChild;
                 tempChild.Close();
                 TabPage TabP = (TabPage)tc.TabPages[tc.SelectedIndex];
+                lastIndex = tc.SelectedIndex - 1;
                 tc.TabPages.Remove(TabP);
+                tc.SelectedIndex = lastIndex;
             }
+            
         }
 
         #region 폼동적생성
@@ -341,6 +388,7 @@ namespace AdminForm
 
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             TabControl tc = (TabControl)sender;
             if (tc.SelectedTab == null)
             {

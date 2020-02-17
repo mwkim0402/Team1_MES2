@@ -104,10 +104,15 @@ namespace FieldOperationForm
 
         private void btn_NonOperation_Click(object sender, EventArgs e)
         {
-            UpdateNonOperation frm = new UpdateNonOperation(a,b,c);
-            frm.Show();
-
-         
+            if (a ==null)
+            {
+                MessageBox.Show("비가동 사유를 선택하세요");
+            }
+         else
+            {
+                UpdateNonOperation frm = new UpdateNonOperation(a, b, c);
+                frm.Show();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

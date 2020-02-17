@@ -18,6 +18,16 @@ namespace MES_DB
             QualityDAC dac = new QualityDAC();
             return dac.GetQulityInquiryForm();
         }
-       
+        public List<ItemCodeListVO> comboItemList()
+        {
+            QualityDAC dac = new QualityDAC();
+            return dac.comboItemList();
+        }
+
+        public void InsQuality(InsQualityVO insert)
+        {
+            QualityDAC dac = new QualityDAC();
+            dac.InsQuality(insert);
+        }
     }
 }

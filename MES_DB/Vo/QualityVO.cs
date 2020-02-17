@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace MES_DB
 {
+    public class InsQualityVO
+    {
+        public string Item_Code { get; set; }
+        public string Process_Code { get; set; }
+        public string Inspect_Code { get; set; }
+        public decimal Inspect_Val { get; set; }
+        public string WorkOrderNo { get; set; }
+    }
     public class QualityVO
     {
        public string Workorderno { get; set; }
@@ -22,6 +30,7 @@ namespace MES_DB
        public string Wc_Name { get; set; }
         public decimal deviation { get; set; }
         public long Inspect_Measure_seq { set; get; }
+        public decimal Inspect_Val { get; set; }
     }
 
     public class QualityDetailVO
@@ -105,4 +114,12 @@ namespace MES_DB
         public string Wc_Code { get; set; }
         public string Wc_Name { get; set; }
     }
+
+    public class ItemCodeListVO
+    {
+        public string Item_Code { get; set; }
+        public string type { get; set; }
+    }
+        
+
 }

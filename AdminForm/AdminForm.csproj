@@ -324,6 +324,12 @@
     <Compile Include="qulityManagement\QualityInquiry.Designer.cs">
       <DependentUpon>QualityInquiry.cs</DependentUpon>
     </Compile>
+    <Compile Include="qulityManagement\QualityRegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qulityManagement\QualityRegisterForm.Designer.cs">
+      <DependentUpon>QualityRegisterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="qulityManagement\RegProcess.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -637,6 +643,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="qulityManagement\QualityInquiry.resx">
       <DependentUpon>QualityInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="qulityManagement\QualityRegisterForm.resx">
+      <DependentUpon>QualityRegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="qulityManagement\RegProcess.resx">
       <DependentUpon>RegProcess.cs</DependentUpon>

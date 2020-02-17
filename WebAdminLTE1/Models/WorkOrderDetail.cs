@@ -5,9 +5,9 @@ using System.Web;
 
 namespace WebApplication0106.Models
 {
-    public class CartIndexViewModel
+    public class WorkOrderDetail
     {
-        public Cart Cart { get; set; }
+        public JobOrder Joborder { get; set; }
         public string ReturnUrl { get; set; }
 
     }

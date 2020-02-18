@@ -134,7 +134,7 @@ namespace WebAdminLTE1.Controllers
             
            for(int t =0; t<time.Count; t++)
             {
-                data1 += "[" + Name[t]+"," +time[t] + "]" +",";
+                data1 += "[^" + Name[t]+"^, " +time[t] + "]" +"|";
                 //data2 = "[" + string.Join(",", time[1]) + "]";
                 //data3 = "[" + string.Join(",", time[2]) + "]";
                 //data4 = "[" + string.Join(",", time[3]) + "]";
@@ -144,11 +144,11 @@ namespace WebAdminLTE1.Controllers
             string labels = sb.ToString().TrimEnd(',');
 
             
-            data1 = data1.TrimEnd(',');
+            data1 = data1.TrimEnd('|');
             //data1 = "[" + string.Join(",", qtys.ToArray()) + "]";
 
             ViewBag.Labels = labels;
-            ViewBag.data1 = data1;
+            ViewBag.data1 = "[" + data1 + "]";
            
 
 

@@ -223,6 +223,10 @@
 
     @section Scripts {
         <script>
+            function replaceAll(str, searchStr, replaceStr) {
+              return str.split(searchStr).join(replaceStr);
+            }
+
             $(document).ready(function () {
                 /* ChartJS
                  * -------
@@ -300,9 +304,12 @@
 * BAR CHART
 * ---------
 */
+            var temp = "@data1";
+            var arrTemp = replaceAll(temp, "^", "'").split('|');
+            alert(arrTemp);
 
             var bar_data = {
-                data: "@data1",
+                data : arrTemp ,
                 color: '#3c8dbc'
             }
             $.plot('#bar-chart', [bar_data], {
@@ -325,5 +332,6 @@
             })
                         /* END BAR CHART */
 
+           
         </script>
     }

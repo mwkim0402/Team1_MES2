@@ -117,7 +117,7 @@
             this.label3.BackColor = System.Drawing.Color.Ivory;
             this.label3.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(214, 310);
+            this.label3.Location = new System.Drawing.Point(214, 384);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 21);
             this.label3.TabIndex = 5;
@@ -129,7 +129,7 @@
             this.label4.BackColor = System.Drawing.Color.Ivory;
             this.label4.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.Location = new System.Drawing.Point(214, 384);
+            this.label4.Location = new System.Drawing.Point(214, 310);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 21);
             this.label4.TabIndex = 6;
@@ -242,11 +242,11 @@
             this.label11.BackColor = System.Drawing.Color.Ivory;
             this.label11.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label11.Location = new System.Drawing.Point(131, 310);
+            this.label11.Location = new System.Drawing.Point(36, 384);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(46, 21);
+            this.label11.Size = new System.Drawing.Size(141, 21);
             this.label11.TabIndex = 16;
-            this.label11.Text = "날짜";
+            this.label11.Text = "바코드 생성날짜";
             // 
             // label12
             // 
@@ -254,7 +254,7 @@
             this.label12.BackColor = System.Drawing.Color.Ivory;
             this.label12.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label12.Location = new System.Drawing.Point(131, 384);
+            this.label12.Location = new System.Drawing.Point(131, 310);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(46, 21);
             this.label12.TabIndex = 17;
@@ -352,6 +352,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReadBarcode";
             this.Text = "ReadBarcode";
+            this.Deactivate += new System.EventHandler(this.ReadBarcode_Deactivate);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReadBarcode_FormClosing);
             this.Load += new System.EventHandler(this.ReadBarcode_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

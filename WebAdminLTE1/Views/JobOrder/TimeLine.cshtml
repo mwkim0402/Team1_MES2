@@ -8,98 +8,126 @@
 
 
 
-<section class="content">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="box">
-                <div class="box-header with-border">
-                    <h3 class="box-title">타임라인</h3>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">타임라인</h3>
 
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                    </div>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <p class="text-center">
-                                <strong>조회기간: @DateTime.Today.Year 년 @DateTime.Today.Month 월 1 일 - @DateTime.Today.Year 년 @DateTime.Today.Month 월 30 일</strong>
-                            </p>
-
-                            <div class="chart">
-                                <!-- Sales Chart Canvas -->
-                                <canvas id="areaChart" style="height:250px"></canvas> <!-- height 바꾸면 크기 조정, id 값= 유일하게-->
-                            </div>
-                            <!-- /.chart-responsive -->
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                         </div>
-
-                        <!-- /.col -->
-                        <div class="col-md-4">
-                            <p class="text-center">
-                                <strong>완료 현황 (%)</strong>
-                            </p>
-
-                            <div class="progress-group">
-                                <span class="progress-text">제강</span>
-                                <span class="progress-number"><b>100</b>/ 200</span>
-
-                                <div class="progress sm">
-                                    <div class="progress-bar progress-bar-red" style="width: 50%"></div>
-                                </div>
-                            </div>
-                            <!-- /.progress-group -->
-                            <div class="progress-group">
-                                <span class="progress-text">제선</span>
-                                <span class="progress-number"><b>100</b>/ 200</span>
-
-                                <div class="progress sm">
-                                    <div class="progress-bar progress-bar-green" style="width: 60%"></div>
-                                </div>
-                            </div>
-                            <!-- /.progress-group -->
-                            <div class="progress-group">
-                                <span class="progress-text">압연</span>
-                                <span class="progress-number"><b>100</b>/ 200</span>
-
-                                <div class="progress sm">
-                                    <div class="progress-bar progress-bar-yellow" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            <!-- /.progress-group -->
-                            <div class="progress-group">
-                                <span class="progress-text">적재</span>
-                                <span class="progress-number"><b>100</b>/ 200</span>
-
-                                <div class="progress sm">
-                                    <div class="progress-bar progress-bar-aqua" style="width: 30%"></div>
-                                </div>
-                            </div>
-                            <div class="progress-group">
-                                <span class="progress-text">포장</span>
-                                <span class="progress-number"><b>100</b>/ 200</span>
-
-                                <div class="progress sm">
-                                    <div class="progress-bar progress-bar-light-blue" style="width: 40%"></div>
-                                </div>
-                            </div>
-                            <!-- /.progress-group -->
-                        </div>
-                        <!-- /.col -->
                     </div>
-                    <!-- /.row -->
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="text-right" style="padding-right:10px; margin-bottom:0px">
+                                    <strong>조회기간: @DateTime.Now.ToShortDateString()</strong>
+                                </p>
+
+                                <div class="chart" style="padding: 20px 1px 10px 10px;">
+                                    <!-- Sales Chart Canvas -->
+                                    <canvas id="areaChart" style="height:300px; width:1000px; "></canvas> <!-- height 바꾸면 크기 조정, id 값= 유일하게-->
+                                </div>
+                                <!-- /.chart-responsive -->
+                            </div>
+
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- ./box-body -->
                 </div>
-                <!-- ./box-body -->
+                <!-- /.box -->
             </div>
-            <!-- /.box -->
+            <!-- /.col -->
         </div>
-        <!-- /.col -->
-    </div>
-    <!-- /.row -->
-</section>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">타임라인</h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="row">
+                            
+
+                            <!-- /.col -->
+                            <div class="col-md-4">
+                                <p class="text-center">
+                                    <strong>완료 현황 (%)</strong>
+                                </p>
+
+                                <div class="progress-group">
+                                    <span class="progress-text">제강</span>
+                                    <span class="progress-number"><b>100</b>/ 200</span>
+
+                                    <div class="progress sm">
+                                        <div class="progress-bar progress-bar-red" style="width: 50%"></div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <span class="progress-text">제선</span>
+                                    <span class="progress-number"><b>100</b>/ 200</span>
+
+                                    <div class="progress sm">
+                                        <div class="progress-bar progress-bar-green" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <span class="progress-text">압연</span>
+                                    <span class="progress-number"><b>100</b>/ 200</span>
+
+                                    <div class="progress sm">
+                                        <div class="progress-bar progress-bar-yellow" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <span class="progress-text">적재</span>
+                                    <span class="progress-number"><b>100</b>/ 200</span>
+
+                                    <div class="progress sm">
+                                        <div class="progress-bar progress-bar-aqua" style="width: 30%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-group">
+                                    <span class="progress-text">포장</span>
+                                    <span class="progress-number"><b>100</b>/ 200</span>
+
+                                    <div class="progress sm">
+                                        <div class="progress-bar progress-bar-light-blue" style="width: 40%"></div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- ./box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
     @section ScriptsAREA_TimeLine {
         <script>
             $(document).ready(function () {

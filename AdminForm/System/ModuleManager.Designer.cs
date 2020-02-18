@@ -49,12 +49,13 @@
             this.gbUsable = new System.Windows.Forms.GroupBox();
             this.rbUse_Use = new System.Windows.Forms.RadioButton();
             this.rbNoUse_Use = new System.Windows.Forms.RadioButton();
-            this.gbIP = new System.Windows.Forms.GroupBox();
-            this.rbUse_IP = new System.Windows.Forms.RadioButton();
             this.rbNoUse_IP = new System.Windows.Forms.RadioButton();
+            this.rbUse_IP = new System.Windows.Forms.RadioButton();
+            this.gbIP = new System.Windows.Forms.GroupBox();
             this.tcParent1.SuspendLayout();
-            this.pnlParent1.SuspendLayout();
             this.tcParent2.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.pnlParent1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbUsable.SuspendLayout();
             this.gbIP.SuspendLayout();
@@ -67,6 +68,15 @@
             // 
             // panel1
             // 
+            this.panel1.Size = new System.Drawing.Size(1124, 103);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            // 
+            // pnlParent1
+            // 
             this.pnlParent1.Controls.Add(this.gbIP);
             this.pnlParent1.Controls.Add(this.gbUsable);
             this.pnlParent1.Controls.Add(this.StandFac);
@@ -78,17 +88,14 @@
             this.pnlParent1.Controls.Add(this.btnSave);
             this.pnlParent1.Controls.Add(this.txtUserIDInput);
             this.pnlParent1.Controls.Add(this.txtUserGroup);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlParent1.Location = new System.Drawing.Point(3, 4);
+            this.pnlParent1.Size = new System.Drawing.Size(1118, 95);
             // 
             // StandFac
             // 
-            this.StandFac.Location = new System.Drawing.Point(418, 48);
+            this.StandFac.Location = new System.Drawing.Point(414, 52);
             this.StandFac.Name = "StandFac";
-            this.StandFac.Size = new System.Drawing.Size(152, 21);
+            this.StandFac.Size = new System.Drawing.Size(152, 26);
             this.StandFac.TabIndex = 86;
             // 
             // label6
@@ -96,7 +103,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label6.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(319, 51);
+            this.label6.Location = new System.Drawing.Point(315, 55);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 16);
             this.label6.TabIndex = 85;
@@ -106,7 +113,7 @@
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(1036, 18);
+            this.btnSave.Location = new System.Drawing.Point(1029, 21);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(82, 48);
             this.btnSave.TabIndex = 81;
@@ -115,23 +122,23 @@
             // 
             // txtUserGroup
             // 
-            this.txtUserGroup.Location = new System.Drawing.Point(418, 16);
+            this.txtUserGroup.Location = new System.Drawing.Point(414, 20);
             this.txtUserGroup.Name = "txtUserGroup";
-            this.txtUserGroup.Size = new System.Drawing.Size(152, 21);
+            this.txtUserGroup.Size = new System.Drawing.Size(152, 26);
             this.txtUserGroup.TabIndex = 76;
             // 
             // txtUserIDInput
             // 
-            this.txtUserIDInput.Location = new System.Drawing.Point(119, 47);
+            this.txtUserIDInput.Location = new System.Drawing.Point(118, 50);
             this.txtUserIDInput.Name = "txtUserIDInput";
-            this.txtUserIDInput.Size = new System.Drawing.Size(152, 21);
+            this.txtUserIDInput.Size = new System.Drawing.Size(152, 26);
             this.txtUserIDInput.TabIndex = 75;
             // 
             // txtUserNameInput
             // 
-            this.txtUserNameInput.Location = new System.Drawing.Point(119, 16);
+            this.txtUserNameInput.Location = new System.Drawing.Point(118, 19);
             this.txtUserNameInput.Name = "txtUserNameInput";
-            this.txtUserNameInput.Size = new System.Drawing.Size(152, 21);
+            this.txtUserNameInput.Size = new System.Drawing.Size(152, 26);
             this.txtUserNameInput.TabIndex = 74;
             // 
             // label19
@@ -139,7 +146,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label19.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label19.Location = new System.Drawing.Point(20, 49);
+            this.label19.Location = new System.Drawing.Point(19, 52);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(74, 16);
             this.label19.TabIndex = 72;
@@ -150,7 +157,7 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label21.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label21.Location = new System.Drawing.Point(319, 19);
+            this.label21.Location = new System.Drawing.Point(315, 23);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(93, 16);
             this.label21.TabIndex = 71;
@@ -161,7 +168,7 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label23.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label23.Location = new System.Drawing.Point(20, 18);
+            this.label23.Location = new System.Drawing.Point(19, 21);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(93, 16);
             this.label23.TabIndex = 70;
@@ -223,6 +230,8 @@
             this.fcPermiGroup.Location = new System.Drawing.Point(102, 22);
             this.fcPermiGroup.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fcPermiGroup.Name = "fcPermiGroup";
+            this.fcPermiGroup.SendCode = null;
+            this.fcPermiGroup.SendName = null;
             this.fcPermiGroup.Size = new System.Drawing.Size(190, 27);
             this.fcPermiGroup.TabIndex = 7;
             // 
@@ -261,7 +270,7 @@
             this.gbUsable.Controls.Add(this.rbUse_Use);
             this.gbUsable.Controls.Add(this.rbNoUse_Use);
             this.gbUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.gbUsable.Location = new System.Drawing.Point(587, 11);
+            this.gbUsable.Location = new System.Drawing.Point(587, 18);
             this.gbUsable.Name = "gbUsable";
             this.gbUsable.Size = new System.Drawing.Size(200, 64);
             this.gbUsable.TabIndex = 86;
@@ -292,17 +301,17 @@
             this.rbNoUse_Use.Text = "무";
             this.rbNoUse_Use.UseVisualStyleBackColor = false;
             // 
-            // gbIP
+            // rbNoUse_IP
             // 
-            this.gbIP.Controls.Add(this.rbUse_IP);
-            this.gbIP.Controls.Add(this.rbNoUse_IP);
-            this.gbIP.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.gbIP.Location = new System.Drawing.Point(810, 11);
-            this.gbIP.Name = "gbIP";
-            this.gbIP.Size = new System.Drawing.Size(200, 64);
-            this.gbIP.TabIndex = 87;
-            this.gbIP.TabStop = false;
-            this.gbIP.Text = "IP보안 적용유무";
+            this.rbNoUse_IP.AutoSize = true;
+            this.rbNoUse_IP.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse_IP.Location = new System.Drawing.Point(111, 28);
+            this.rbNoUse_IP.Name = "rbNoUse_IP";
+            this.rbNoUse_IP.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse_IP.TabIndex = 79;
+            this.rbNoUse_IP.TabStop = true;
+            this.rbNoUse_IP.Text = "무";
+            this.rbNoUse_IP.UseVisualStyleBackColor = false;
             // 
             // rbUse_IP
             // 
@@ -316,17 +325,17 @@
             this.rbUse_IP.Text = "유";
             this.rbUse_IP.UseVisualStyleBackColor = false;
             // 
-            // rbNoUse_IP
+            // gbIP
             // 
-            this.rbNoUse_IP.AutoSize = true;
-            this.rbNoUse_IP.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.rbNoUse_IP.Location = new System.Drawing.Point(111, 28);
-            this.rbNoUse_IP.Name = "rbNoUse_IP";
-            this.rbNoUse_IP.Size = new System.Drawing.Size(42, 20);
-            this.rbNoUse_IP.TabIndex = 79;
-            this.rbNoUse_IP.TabStop = true;
-            this.rbNoUse_IP.Text = "무";
-            this.rbNoUse_IP.UseVisualStyleBackColor = false;
+            this.gbIP.Controls.Add(this.rbUse_IP);
+            this.gbIP.Controls.Add(this.rbNoUse_IP);
+            this.gbIP.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.gbIP.Location = new System.Drawing.Point(813, 18);
+            this.gbIP.Name = "gbIP";
+            this.gbIP.Size = new System.Drawing.Size(200, 64);
+            this.gbIP.TabIndex = 87;
+            this.gbIP.TabStop = false;
+            this.gbIP.Text = "IP보안 적용유무";
             // 
             // ModuleManager
             // 
@@ -345,12 +354,12 @@
             this.Load += new System.EventHandler(this.ModuleManager_Load);
             this.Controls.SetChildIndex(this.tcParent1, 0);
             this.Controls.SetChildIndex(this.tcParent2, 0);
-            //this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.tcParent1.ResumeLayout(false);
+            this.tcParent2.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.pnlParent1.ResumeLayout(false);
             this.pnlParent1.PerformLayout();
-            this.tcParent2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.gbUsable.ResumeLayout(false);
@@ -380,11 +389,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox gbIP;
-        private System.Windows.Forms.RadioButton rbUse_IP;
-        private System.Windows.Forms.RadioButton rbNoUse_IP;
         private System.Windows.Forms.GroupBox gbUsable;
         private System.Windows.Forms.RadioButton rbUse_Use;
         private System.Windows.Forms.RadioButton rbNoUse_Use;
+        private System.Windows.Forms.GroupBox gbIP;
+        private System.Windows.Forms.RadioButton rbUse_IP;
+        private System.Windows.Forms.RadioButton rbNoUse_IP;
     }
 }

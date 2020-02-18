@@ -31,10 +31,6 @@ namespace WebApplication0106.Controllers
 
             
             //페이지 뷰백
-
-
-
-
             return View(model);
         }
 

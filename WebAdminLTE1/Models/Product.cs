@@ -12,5 +12,7 @@ namespace WebApplication0106.Models
         public string Wc_Group { get; set; }
         public string Process_Code { get; set; }
         public string Wo_Status { get; set; }
+        public int Plan_Qty { get; set; }
+        public int Prd_Qty { get; set; }
     }
 }

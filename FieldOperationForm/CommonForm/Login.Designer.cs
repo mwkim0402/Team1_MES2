@@ -83,6 +83,7 @@
             this.txt_UserPwd.PasswordChar = '*';
             this.txt_UserPwd.Size = new System.Drawing.Size(650, 76);
             this.txt_UserPwd.TabIndex = 6;
+            this.txt_UserPwd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_UserPwd_KeyPress);
             // 
             // txt_UserID
             // 

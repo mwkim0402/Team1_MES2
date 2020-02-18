@@ -9,20 +9,22 @@ using System.Threading.Tasks;
 
 namespace FieldOperationForm
 {
-  public  class Workorderno_Dac: ConnectionAccess
+   public class GoodHistory_Dac: ConnectionAccess
     {
-        public List<Workorderno_Vo>GetWorkorderno (string Wc_Name)
+      
+
+        public List<GoodHistory_Vo>UpdateGoodsHistory (GoodHistory_Vo item)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "GetWorkorderno";
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "UpdateGoodsHistory";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Wc_Name", Wc_Name);
-
+                cmd.Parameters.AddWithValue("@Barcode_No", item.Barcode_No);
+                cmd.Parameters.AddWithValue("@Workorderno", item.Workorderno);
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<Workorderno_Vo> list = Helper.DataReaderMapToList<Workorderno_Vo>(reader);
+                List<GoodHistory_Vo> list = Helper.DataReaderMapToList<GoodHistory_Vo>(reader);
                 cmd.Connection.Close();
 
                 return list;
@@ -32,18 +34,18 @@ namespace FieldOperationForm
 
         }
 
-        public List<Workorderno_Vo> EndWorkorderno(string Wc_Name)
+
+        public List<GoodHistory_Vo>GetGoodHistory ()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "EndWorkorderno";
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "GetGoodHistory";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Wc_Name", Wc_Name);
-
+               
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<Workorderno_Vo> list = Helper.DataReaderMapToList<Workorderno_Vo>(reader);
+                List<GoodHistory_Vo> list = Helper.DataReaderMapToList<GoodHistory_Vo>(reader);
                 cmd.Connection.Close();
 
                 return list;

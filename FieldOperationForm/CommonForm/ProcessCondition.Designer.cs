@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_unit = new System.Windows.Forms.TextBox();
             this.txt_ResultNum = new System.Windows.Forms.TextBox();
@@ -41,7 +41,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_WorkDate = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_WorkNum = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -50,6 +49,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btn_Write = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
+            this.cb_WorkNum = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -59,6 +59,7 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Controls.Add(this.cb_WorkNum);
             this.groupBox2.Controls.Add(this.txt_unit);
             this.groupBox2.Controls.Add(this.txt_ResultNum);
             this.groupBox2.Controls.Add(this.label5);
@@ -69,7 +70,6 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txt_WorkDate);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txt_WorkNum);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(12, 7);
             this.groupBox2.Name = "groupBox2";
@@ -187,16 +187,6 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "작업 지시일";
             // 
-            // txt_WorkNum
-            // 
-            this.txt_WorkNum.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_WorkNum.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_WorkNum.Location = new System.Drawing.Point(206, 18);
-            this.txt_WorkNum.Multiline = true;
-            this.txt_WorkNum.Name = "txt_WorkNum";
-            this.txt_WorkNum.Size = new System.Drawing.Size(327, 41);
-            this.txt_WorkNum.TabIndex = 1;
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -217,8 +207,8 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 150);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(805, 466);
@@ -233,8 +223,8 @@
             this.dataGridView2.Location = new System.Drawing.Point(837, 150);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(694, 312);
@@ -304,6 +294,17 @@
             this.btn_Delete.UseVisualStyleBackColor = false;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
+            // cb_WorkNum
+            // 
+            this.cb_WorkNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cb_WorkNum.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cb_WorkNum.FormattingEnabled = true;
+            this.cb_WorkNum.Location = new System.Drawing.Point(206, 20);
+            this.cb_WorkNum.Name = "cb_WorkNum";
+            this.cb_WorkNum.Size = new System.Drawing.Size(327, 32);
+            this.cb_WorkNum.TabIndex = 21;
+            this.cb_WorkNum.SelectedIndexChanged += new System.EventHandler(this.cb_WorkNum_SelectedIndexChanged);
+            // 
             // ProcessCondition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -343,7 +344,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_WorkDate;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_WorkNum;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -352,5 +352,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_Write;
         private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.ComboBox cb_WorkNum;
     }
 }

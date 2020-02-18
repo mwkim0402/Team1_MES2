@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,7 +20,7 @@ namespace FieldOperationForm
         string c;
         string d;
         decimal g;
-
+        List<Workorderno_Vo> MList = null;
         string f;
         public ProcessCondition(Main_P main1)
         {
@@ -26,6 +28,7 @@ namespace FieldOperationForm
             main = main1;
             Setdgv();
             GetCon();
+            initComboBox();
         }
 
         #region 그리드뷰 설정
@@ -93,7 +96,10 @@ namespace FieldOperationForm
         private void GetCon()
         {
             Condition_Service service = new Condition_Service();
-            dataGridView1.DataSource = service.GetCondition(main.lbl_Job.Text);
+            Condition_Vo vo = new Condition_Vo();
+            vo.Item_Name = txt_Item.Text;
+            vo.Wc_Name = txt_WorkPlace.Text;
+            dataGridView1.DataSource = service.GetCondition(vo);
         }
 
         private void ProcessCondition_Shown(object sender, EventArgs e)
@@ -108,9 +114,9 @@ namespace FieldOperationForm
             {
 
 
-                a = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 b = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                 c = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                a = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
 
                 d = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 txt_MeasuredValue.Text = ((Convert.ToDecimal(a) + Convert.ToDecimal(b) + Convert.ToDecimal(c)) / 3).ToString();
@@ -165,6 +171,56 @@ namespace FieldOperationForm
             service.deleteVal(vo);
 
             SetVal();
+        }
+        private void initComboBox()
+        {
+            Workorderno_Service service = new Workorderno_Service();
+            MList = service.EndWorkorderno(main.lbl_Job.Text);
+            if (MList.Count > 0)
+            {
+                List<string> NonList = (from item in MList
+                                        select item.Workorderno).ToList();
+                CommonUtil.ComboBinding(cb_WorkNum, NonList);
+            }
+
+        }
+        private void noTextSet()
+        {
+            string strConn = ConfigurationManager.ConnectionStrings["Project"].ConnectionString;
+            DataSet ds = new DataSet();
+            using (SqlConnection conn = new SqlConnection(strConn))
+            {
+                conn.Open();
+                string strSql = String.Format(@"select I.item_Name ,c.Wc_Name,w.Plan_Date,w.Plan_Qty,w.Plan_Unit from WorkOrder w, Item_Master I, WorkCenter_Master c
+                    where I.Item_Code = w.Item_Code and c.Wc_Code = w.Wc_Code and Workorderno = '{0}'", cb_WorkNum.Text);
+
+                SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
+                da.Fill(ds, "WorkOrder");
+                conn.Close();
+
+
+            }
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                //c = dr["Grade_Code"].ToString();
+                //e = dr["Grade_Detail_Code"].ToString();
+                //r = dr["Size_Code"].ToString();
+
+                txt_Item.Text = dr["item_Name"].ToString();
+                txt_WorkPlace.Text = dr["Wc_Name"].ToString();
+                txt_WorkDate.Text = Convert.ToDateTime(dr["Plan_Date"]).ToString().Substring(0, 10);
+                txt_ResultNum.Text = dr["Plan_Qty"].ToString();
+                txt_unit.Text = dr["Plan_Unit"].ToString();
+            }
+
+
+        }
+
+        private void cb_WorkNum_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            noTextSet();
+            GetCon();
+            txt_MeasuredValue.Text = "";
         }
     }
 }

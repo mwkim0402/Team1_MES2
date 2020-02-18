@@ -11,15 +11,15 @@ namespace FieldOperationForm
 {
    public class Condition_Dac : ConnectionAccess
     {
-        public List<Condition_Vo>GetCondition(string Wc_Name)
+        public List<Condition_Vo>GetCondition(Condition_Vo item)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(this.ConnectionString);
                 cmd.CommandText = "GetCondition";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Wc_Name", Wc_Name);
-
+                cmd.Parameters.AddWithValue("@Wc_Name", item.Wc_Name);
+                cmd.Parameters.AddWithValue("@Item_Name", item.Item_Name);
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<Condition_Vo> list = Helper.DataReaderMapToList<Condition_Vo>(reader);

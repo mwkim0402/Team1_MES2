@@ -115,8 +115,19 @@ namespace AdminForm
             }
             foreach (Button item in panel1.Controls)
             {
+                if(Convert.ToInt32(item.Name.Substring(3))%7 == 1)
+                {
+                    item.ForeColor = Color.Red;
+                }
+                else if (Convert.ToInt32(item.Name.Substring(3)) % 7 == 0)
+                {
+                    item.ForeColor = Color.Blue;
+                }
+                else
+                {                     
+                    item.ForeColor = Color.Black;
+                }
                 item.BackColor = Color.White;
-                item.ForeColor = Color.Black;
                 item.Text = "";
             }
             startDate = Convert.ToDateTime($"{lblYear.Text.Split('년')[0]}-{lblMonth.Text}-01");
@@ -143,8 +154,19 @@ namespace AdminForm
             }
             foreach (Button item in panel1.Controls)
             {
+                if (Convert.ToInt32(item.Name.Substring(3)) % 7 == 1)
+                {
+                    item.ForeColor = Color.Red;
+                }
+                else if (Convert.ToInt32(item.Name.Substring(3)) % 7 == 0)
+                {
+                    item.ForeColor = Color.Blue;
+                }
+                else
+                {
+                    item.ForeColor = Color.Black;
+                }
                 item.BackColor = Color.White;
-                item.ForeColor = Color.Black;
                 item.Text = "";
             }
             startDate = Convert.ToDateTime($"{lblYear.Text.Split('년')[0]}-{lblMonth.Text}-01");

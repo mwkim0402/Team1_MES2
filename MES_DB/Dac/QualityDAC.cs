@@ -31,5 +31,51 @@ namespace MES_DB
 
             }
         }
+
+        public List<ItemCodeListVO> comboItemList()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = @"select Item_Code , 'item' as type from Item_Master
+                                    union
+                                    select Process_code , 'Process' as type from Process_Master
+                                    union
+                                    select Inspect_Code , 'Inspect' as type from Inspect_Spec_Master
+                                    union
+                                    select Workorderno, 'Work' as type from WorkOrder ";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ItemCodeListVO> list = Helper.DataReaderMapToList<ItemCodeListVO>(reader);
+
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
+        public void InsQuality(InsQualityVO Vo)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = @" insert into Inspect_Measure_History(Item_Code,Process_Code,Inspect_Code,Inspect_Date,Inspect_Datetime,Inspect_Val,WorkOrderNo,Ins_Date)
+                                    values (@Item_Code,@Process_Code,@Inspect_Code,GETDATE(),GETDATE(),@Inspect_Val,@WorkOrderNo,GETDATE()) ";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Item_Code", Vo.Item_Code);
+                cmd.Parameters.AddWithValue("@Process_Code", Vo.Process_Code);
+                cmd.Parameters.AddWithValue("@Inspect_Code", Vo.Inspect_Code);
+                cmd.Parameters.AddWithValue("@Inspect_Val", Vo.Inspect_Val);
+                cmd.Parameters.AddWithValue("@WorkOrderNo", Vo.WorkOrderNo);
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+        }
+
     }
 }

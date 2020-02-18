@@ -1,9 +1,11 @@
-﻿using System;
+﻿using MES_DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,7 +17,9 @@ namespace FieldOperationForm
         Main_P main;
         string no;
         string start;
-
+        List<WorkOrderCheckVo> processWorkList;
+        List<ItemVo> itemList;
+        List<WorkCenterPort> wcPortList;
         public JobOrderStatus_Steelmaking(Main_P main1)
         {
             InitializeComponent();
@@ -63,12 +67,12 @@ namespace FieldOperationForm
             AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "Workorderno", true, 200);
             AddNewColumnToDataGridView(dataGridView1, "할당작업장", "Wc_Name", true, 175);
             AddNewColumnToDataGridView(dataGridView1, "품목명", "Item_Name", true, 230);
-            AddNewColumnToDataGridView(dataGridView1, "단위", "Plan_Unit", true, 100);
-            AddNewColumnToDataGridView(dataGridView1, "실적수량", "Plan_Qty", true, 130);
+
+            AddNewColumnToDataGridView(dataGridView1, "생산수량", "Plan_Qty", true, 130);
+            AddNewColumnToDataGridView(dataGridView1, "생산일자", "Plan_Date", true, 200);
             AddNewColumnToDataGridView(dataGridView1, "생산시작시간", "Plan_Starttime", true, 280);
             AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Plan_Endtime", true, 280);
-            AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Plan_Qty", false, 175);
-            AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Plan_Date", false, 175);
+
 
             this.dataGridView1.Font = new Font("나눔고딕", 17, FontStyle.Bold);
             this.dataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 17, FontStyle.Regular);
@@ -86,10 +90,13 @@ namespace FieldOperationForm
         private void SetLoad()
         {
             WorkOrder_Service service = new WorkOrder_Service();
-
-            dataGridView1.DataSource = service.IronWork();
-
-
+            dataGridView1.DataSource = service.GetWorkOrder(main.lbl_Job.Text);
+            ItemService service3 = new ItemService();
+            itemList = service3.GetAllItemInfo();
+            WorkCenterService wcService = new WorkCenterService();
+            wcPortList = wcService.WorkCenterPortNum();
+            WorkOrderService service2 = new WorkOrderService();
+            processWorkList = service2.GetPrcocess_Workorder(main.lbl_Job.Text);
         }
 
         private void btn_Process_Click(object sender, EventArgs e)
@@ -132,20 +139,16 @@ namespace FieldOperationForm
         {
             if (start == "작업대기")
             {
-                WorkOrder_Service service = new WorkOrder_Service();
-
-                service.StartWork(no);
-
-                SetLoad();
-            }
-
-            else if (start == "작업시작")
-            {
-                WorkOrder_Service service = new WorkOrder_Service();
-
-                service.EndWork(no);
-
-                SetLoad();
+                WorkCenterService service = new WorkCenterService();
+                if (service.wcStatusChecked(dataGridView1.SelectedRows[0].Cells[1].Value.ToString()) == "RUN")
+                {
+                    MessageBox.Show("작업장에 실행중인 작업이 존재하여 실행할 수 없습니다.");
+                    return;
+                }
+                else
+                {
+                    Start_Factory();
+                }
             }
         }
 
@@ -153,13 +156,36 @@ namespace FieldOperationForm
         {
             try
             {
-                start = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                start = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 //   no = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                no = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-
-
+                no = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             }
             catch { }
+        }
+
+        private void Start_Factory()
+        {
+            string workWorderNo = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            try
+            {
+                int UPHperSecond = (int)itemList.Find(x => x.Item_Name == (dataGridView1.SelectedRows[0].Cells[3].Value.ToString())).IronUPH / 60 / 20;
+                Random rnd = new Random((int)DateTime.UtcNow.Ticks);
+                int faultyQty = rnd.Next(0, 2);
+                TcpClient tc = new TcpClient("127.0.0.1", wcPortList.Find(x => x.Wc_Code == processWorkList.Find(y => y.Workorderno == workWorderNo).Wc_Code).Port_Num);
+                NetworkStream stream = tc.GetStream();
+                string msg = $"{workWorderNo}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Wc_Code}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Plan_Qty}";
+                byte[] buff = Encoding.UTF8.GetBytes(msg);
+                stream.Write(buff, 0, buff.Length);
+                byte[] outBuff = new byte[2048];
+                int nbytes = stream.Read(outBuff, 0, outBuff.Length);
+                string outMsg = Encoding.UTF8.GetString(outBuff, 0, nbytes);
+                stream.Close();
+                tc.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show($"{processWorkList.Find(y => y.Workorderno == workWorderNo).Wc_Code} 작업장이 비가동 중 입니다.");
+            }
         }
 
         private void btn_FieldClose_Click(object sender, EventArgs e)

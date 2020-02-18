@@ -20,6 +20,7 @@ namespace FieldOperationForm
         string start;
         List<WorkOrderCheckVo> processWorkList;
         List<ItemVo> itemList;
+        List<WorkCenterPort> wcPortList;
         bool isFirstData = true;
         public JobOrderStatus(Main_P main1)
         {
@@ -59,19 +60,16 @@ namespace FieldOperationForm
         }
         private void Setdgv()
         {
-
-
-
             AddNewColumnToDataGridView(dataGridView1, "상태", "Wo_Status", true, 120);
             AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "Workorderno", true, 200);
             AddNewColumnToDataGridView(dataGridView1, "할당작업장", "Wc_Name", true, 175);
             AddNewColumnToDataGridView(dataGridView1, "품목명", "Item_Name", true, 230);
-            AddNewColumnToDataGridView(dataGridView1, "단위", "Plan_Unit", true, 100);
-            AddNewColumnToDataGridView(dataGridView1, "실적수량", "Plan_Qty", true, 130);
+                    
+            AddNewColumnToDataGridView(dataGridView1, "생산수량", "Plan_Qty", true, 130);
+            AddNewColumnToDataGridView(dataGridView1, "생산일자", "Plan_Date", true, 200);
             AddNewColumnToDataGridView(dataGridView1, "생산시작시간", "Plan_Starttime", true, 280);
             AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Plan_Endtime", true, 280);
-            AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Plan_Qty", false, 175);
-            AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Plan_Date", false, 175);
+
 
             this.dataGridView1.Font = new Font("나눔고딕", 17, FontStyle.Bold);
             this.dataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 17, FontStyle.Regular);
@@ -94,7 +92,8 @@ namespace FieldOperationForm
             processWorkList = service2.GetPrcocess_Workorder(main.lbl_Job.Text);
             ItemService service3 = new ItemService();
             itemList = service3.GetAllItemInfo();
-            
+            WorkCenterService wcService = new WorkCenterService();
+            wcPortList = wcService.WorkCenterPortNum();
         }
         private void JobOrderStatus_Load(object sender, EventArgs e)
         {
@@ -152,93 +151,53 @@ namespace FieldOperationForm
         {
             if (start == "작업대기")
             {
-                Start_Factory();
-            }
-            else if (start == "작업시작")
-            {
-                WorkOrder_Service service = new WorkOrder_Service();
-                service.EndWork(no);
-                SetLoad();
-            }
+                WorkCenterService service = new WorkCenterService();
+                if(service.wcStatusChecked(dataGridView1.SelectedRows[0].Cells[1].Value.ToString()) == "RUN")
+                {
+                    MessageBox.Show("작업장에 실행중인 작업이 존재하여 실행할 수 없습니다.");
+                    return;
+                }
+                else
+                {
+                    Start_Factory();
+                }
+            }           
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                start = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                start = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
              //   no = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                no = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-
-
+                no = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             }
             catch { }
         }
 
-        private void SetTimer()
-        {
-            timer1 = new System.Timers.Timer(3000);
-            timer1.Enabled = true;
-            timer1.Elapsed += timer1_Elapse;
-            timer1.AutoReset = true;
-        }
         private void Start_Factory()
         {
-            string workWorderNo = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
-            int UPHperSecond = (int)itemList.Find(x => x.Item_Name == (dataGridView1.SelectedRows[0].Cells[4].Value.ToString())).IronUPH / 60 / 20;
-            Random rnd = new Random((int)DateTime.UtcNow.Ticks);
-            int faultyQty = rnd.Next(0, 2);
-            TcpClient tc = new TcpClient("127.0.0.1", 7010);
-            NetworkStream stream = tc.GetStream();
-            string msg = $"{workWorderNo}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Wc_Code}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Plan_Qty}";
-            byte[] buff = Encoding.UTF8.GetBytes(msg);
-            stream.Write(buff, 0, buff.Length);
-            byte[] outBuff = new byte[1024];
-            int nbytes = stream.Read(outBuff, 0, outBuff.Length);
-            string outMsg = Encoding.UTF8.GetString(outBuff, 0, nbytes);
-            stream.Close();
-            tc.Close();
-        }
-        private void timer1_Elapse(object sender, ElapsedEventArgs e)
-        {
-            //if (isFirstData)
-            //{
-            //    string workWorderNo = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
-            //    int UPHperSecond = (int)itemList.Find(x => x.Item_Name == (dataGridView1.SelectedRows[0].Cells[4].Value.ToString())).IronUPH / 60 / 20;
-            //    Random rnd = new Random((int)DateTime.UtcNow.Ticks);
-            //    int faultyQty = rnd.Next(0, 2);
-            //    TcpClient tc = new TcpClient("127.0.0.1", 7000);
-            //    NetworkStream stream = tc.GetStream();
-            //    string msg = $"{processWorkList.Find(x => x.Workorderno == workWorderNo).Wc_Code} 가동시작!! \n{workWorderNo}/{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Wc_Code}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Plan_Qty}/{UPHperSecond - faultyQty}/{faultyQty}";
-            //    byte[] buff = Encoding.UTF8.GetBytes(msg);
-            //    stream.Write(buff, 0, buff.Length);
-            //    byte[] outBuff = new byte[1024];
-            //    int nbytes = stream.Read(outBuff, 0, outBuff.Length);
-            //    string outMsg = Encoding.UTF8.GetString(outBuff, 0, nbytes);
-            //    stream.Close();
-            //    tc.Close();
-
-            //    isFirstData = false;
-            //}
-            //else
-            //{
-                
-                string workWorderNo = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
-                int UPHperSecond = (int)itemList.Find(x => x.Item_Name == (dataGridView1.SelectedRows[0].Cells[4].Value.ToString())).IronUPH / 60 / 20;
+            string workWorderNo = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            try
+            {
+                int UPHperSecond = (int)itemList.Find(x => x.Item_Name == (dataGridView1.SelectedRows[0].Cells[3].Value.ToString())).IronUPH / 60 / 20;
                 Random rnd = new Random((int)DateTime.UtcNow.Ticks);
                 int faultyQty = rnd.Next(0, 2);
-                TcpClient tc = new TcpClient("127.0.0.1", 7000);
+                TcpClient tc = new TcpClient("127.0.0.1", wcPortList.Find(x => x.Wc_Code == processWorkList.Find(y => y.Workorderno == workWorderNo).Wc_Code).Port_Num);
                 NetworkStream stream = tc.GetStream();
-                string msg = $"{workWorderNo}/{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Wc_Code}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Plan_Qty}/{UPHperSecond - faultyQty}/{faultyQty}";
+                string msg = $"{workWorderNo}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Wc_Code}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Plan_Qty}";
                 byte[] buff = Encoding.UTF8.GetBytes(msg);
                 stream.Write(buff, 0, buff.Length);
-                byte[] outBuff = new byte[1024];
+                byte[] outBuff = new byte[2048];
                 int nbytes = stream.Read(outBuff, 0, outBuff.Length);
                 string outMsg = Encoding.UTF8.GetString(outBuff, 0, nbytes);
                 stream.Close();
                 tc.Close();
-            
-            
+            }
+            catch (Exception)
+            {
+                MessageBox.Show($"{processWorkList.Find(y => y.Workorderno == workWorderNo).Wc_Code} 작업장이 비가동 중 입니다."); 
+            }
         }
     }
 }

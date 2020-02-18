@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{845F5B3F-2317-4332-A594-1EB7001BBD01}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FieldOperationForm</RootNamespace>
+    <AssemblyName>FieldOperationForm</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\CommonUtil.cs" />
+    <Compile Include="Class\Global.cs" />
+    <Compile Include="Class\Helper.cs" />
+    <Compile Include="Class\Text.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CommonForm\End.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\End.Designer.cs">
+      <DependentUpon>End.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\LogOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\LogOut.Designer.cs">
+      <DependentUpon>LogOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\NonOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\NonOperation.Designer.cs">
+      <DependentUpon>NonOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\Notice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\Notice.Designer.cs">
+      <DependentUpon>Notice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\ProcessCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\ProcessCondition.Designer.cs">
+      <DependentUpon>ProcessCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\QualityMeasurement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\QualityMeasurement.Designer.cs">
+      <DependentUpon>QualityMeasurement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\UpdateNonOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\UpdateNonOperation.Designer.cs">
+      <DependentUpon>UpdateNonOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\workerAllocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\workerAllocation.Designer.cs">
+      <DependentUpon>workerAllocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FieldDac\Barcode_Dac.cs" />
+    <Compile Include="FieldDac\Condition_Dac.cs" />
+    <Compile Include="FieldDac\CreatePalette_Dac.cs" />
+    <Compile Include="FieldDac\GVDry_Dac.cs" />
+    <Compile Include="FieldDac\Inspect_Dac.cs" />
+    <Compile Include="FieldDac\Item_Dac.cs" />
+    <Compile Include="FieldDac\Mold_Dac.cs" />
+    <Compile Include="FieldDac\NonOperation_Dac.cs" />
+    <Compile Include="FieldDac\Notice_Dac.cs" />
+    <Compile Include="FieldDac\Palette_Dac.cs" />
+    <Compile Include="FieldDac\Process_Dac.cs" />
+    <Compile Include="FieldDac\Search_Dac.cs" />
+    <Compile Include="FieldDac\User_Dac.cs" />
+    <Compile Include="FieldDac\WorkAllocation_Dac.cs" />
+    <Compile Include="FieldDac\WorkCenter_Dac.cs" />
+    <Compile Include="FieldDac\Workorderno_Dac.cs" />
+    <Compile Include="FieldDac\WorkOrder_Dac.cs" />
+    <Compile Include="FieldService\Barcode_Service.cs" />
+    <Compile Include="FieldService\Condition_Service.cs" />
+    <Compile Include="FieldService\CreatePalette_Service.cs" />
+    <Compile Include="FieldService\GVDry_Service.cs" />
+    <Compile Include="FieldService\Inspect_Service.cs" />
+    <Compile Include="FieldService\Item_Service.cs" />
+    <Compile Include="FieldService\Mold_Service.cs" />
+    <Compile Include="FieldService\NonOperation_Service.cs" />
+    <Compile Include="FieldService\Notice_Service.cs" />
+    <Compile Include="FieldService\Palette_Service.cs" />
+    <Compile Include="FieldService\Process_Service.cs" />
+    <Compile Include="FieldService\Search_Service.cs" />
+    <Compile Include="FieldService\WorkAllocation_Service.cs" />
+    <Compile Include="FieldService\WorkCenter_Service.cs" />
+    <Compile Include="FieldService\Workorderno_Service.cs" />
+    <Compile Include="FieldService\WorkOrder_Service.cs" />
+    <Compile Include="FieldVo\Barcode_Vo.cs" />
+    <Compile Include="FieldVo\Condition_Vo.cs" />
+    <Compile Include="FieldVo\CreatePalette_Vo.cs" />
+    <Compile Include="FieldVo\GVDry_Vo.cs" />
+    <Compile Include="FieldVo\Inspect_Vo.cs" />
+    <Compile Include="FieldVo\Item_Vo.cs" />
+    <Compile Include="FieldVo\Mold_Vo.cs" />
+    <Compile Include="FieldVo\NonOperation_Vo.cs" />
+    <Compile Include="FieldVo\Notice_Vo.cs" />
+    <Compile Include="FieldVo\PaletteDetail_Vo.cs" />
+    <Compile Include="FieldVo\Palette_Vo.cs" />
+    <Compile Include="FieldVo\Process_Vo.cs" />
+    <Compile Include="FieldVo\Search_Vo.cs" />
+    <Compile Include="FieldVo\updateNonOperation_Vo.cs" />
+    <Compile Include="FieldVo\User_Vo.cs" />
+    <Compile Include="FieldVo\WorkAllocation_Vo.cs" />
+    <Compile Include="FieldVo\WorkAssignment_Vo.cs" />
+    <Compile Include="FieldVo\WorkCenter_Vo.cs" />
+    <Compile Include="FieldVo\Workorderno_Vo.cs" />
+    <Compile Include="FieldVo\WorkOrder_Vo.cs" />
+    <Compile Include="JobOrder_Package\BarCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Package\BarCode.Designer.cs">
+      <DependentUpon>BarCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Package\ReadBarcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Package\ReadBarcode.Designer.cs">
+      <DependentUpon>ReadBarcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Package\XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Package\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Rolled\JobOrderStatus_Load .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Rolled\JobOrderStatus_Load .Designer.cs">
+      <DependentUpon>JobOrderStatus_Load .cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_JeSun\JobOrderStatus .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_JeSun\JobOrderStatus .Designer.cs">
+      <DependentUpon>JobOrderStatus .cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_JeSun\Mold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_JeSun\Mold.Designer.cs">
+      <DependentUpon>Mold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Package\CreatePalette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Package\CreatePalette.Designer.cs">
+      <DependentUpon>CreatePalette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Package\JobOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Package\JobOrder.Designer.cs">
+      <DependentUpon>JobOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Package\JobOrderStatus_Package .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Package\JobOrderStatus_Package .Designer.cs">
+      <DependentUpon>JobOrderStatus_Package .cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForm\Main_P.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommonForm\Main_P.Designer.cs">
+      <DependentUpon>Main_P.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Package\PaletteBarCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Package\PaletteBarCode.Designer.cs">
+      <DependentUpon>PaletteBarCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Package\warehousing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Package\warehousing.Designer.cs">
+      <DependentUpon>warehousing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobOrder_Steelmaking\JobOrderStatus_Steelmaking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobOrder_Steelmaking\JobOrderStatus_Steelmaking.Designer.cs">
+      <DependentUpon>JobOrderStatus_Steelmaking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FieldService\User_Service.cs" />
+    <EmbeddedResource Include="CommonForm\End.resx">
+      <DependentUpon>End.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm\LogOut.resx">
+      <DependentUpon>LogOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm\NonOperation.resx">
+      <DependentUpon>NonOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm\Notice.resx">
+      <DependentUpon>Notice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm\ProcessCondition.resx">
+      <DependentUpon>ProcessCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm\QualityMeasurement.resx">
+      <DependentUpon>QualityMeasurement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm\UpdateNonOperation.resx">
+      <DependentUpon>UpdateNonOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm\workerAllocation.resx">
+      <DependentUpon>workerAllocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Package\BarCode.resx">
+      <DependentUpon>BarCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Package\ReadBarcode.resx">
+      <DependentUpon>ReadBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Package\XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Rolled\JobOrderStatus_Load .resx">
+      <DependentUpon>JobOrderStatus_Load .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_JeSun\JobOrderStatus .resx">
+      <DependentUpon>JobOrderStatus .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_JeSun\Mold.resx">
+      <DependentUpon>Mold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Package\CreatePalette.resx">
+      <DependentUpon>CreatePalette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Package\JobOrder.resx">
+      <DependentUpon>JobOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Package\JobOrderStatus_Package .resx">
+      <DependentUpon>JobOrderStatus_Package .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForm\Main_P.resx">
+      <DependentUpon>Main_P.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Package\PaletteBarCode.resx">
+      <DependentUpon>PaletteBarCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Package\warehousing.resx">
+      <DependentUpon>warehousing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobOrder_Steelmaking\JobOrderStatus_Steelmaking.resx">
+      <DependentUpon>JobOrderStatus_Steelmaking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\홈.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\종료1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\로그아웃.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Class\DataBase_XML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\캡처11.PNG" />
+    <None Include="Resources\캡처1.PNG" />
+    <None Include="Resources\f.PNG" />
+    <None Include="Resources\-.png" />
+    <Content Include="Resources\종료.PNG" />
+    <None Include="Resources\최대화.PNG" />
+    <None Include="Resources\최소화.PNG" />
+    <Content Include="Resources\캡처.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MES_API\MES_API.csproj">
+      <Project>{d6db38a5-69c8-4604-9d39-4f6168113965}</Project>
+      <Name>MES_API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MES_DB\MES_DB.csproj">
+      <Project>{c5a0dac0-fd93-4179-9471-da3fa7b21737}</Project>
+      <Name>MES_DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MES_DTO\MES_DTO.csproj">
+      <Project>{92324320-e0a8-43d3-803e-73e445f281c3}</Project>
+      <Name>MES_DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

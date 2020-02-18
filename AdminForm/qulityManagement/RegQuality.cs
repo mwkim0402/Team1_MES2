@@ -20,6 +20,7 @@ namespace AdminForm
         string workOrderNo;
         int primary = 0;
         string check;
+        InsQualityVO InsVO = new InsQualityVO();
         public RegQuality()
         {
             InitializeComponent();
@@ -57,6 +58,8 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Plan_Date", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "deviation", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Inspect_Measure_seq", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Inspect_Val", false, 100);
+            
 
 
 
@@ -88,6 +91,10 @@ namespace AdminForm
 
         private void dgvJob_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            InsVO.WorkOrderNo = dgvJob.Rows[e.RowIndex].Cells[0].Value.ToString();
+            InsVO.Item_Code = dgvJob.Rows[e.RowIndex].Cells[5].Value.ToString();
+            InsVO.Process_Code = dgvJob.Rows[e.RowIndex].Cells[1].Value.ToString();
+            InsVO.Inspect_Code = dgvJob.Rows[e.RowIndex].Cells[3].Value.ToString();
             string Name = dgvJob.Rows[e.RowIndex].Cells[3].Value.ToString();
             workOrderNo = dgvJob.Rows[e.RowIndex].Cells[0].Value.ToString();
             primary = Convert.ToInt32(dgvJob.Rows[e.RowIndex].Cells[13].Value);
@@ -111,11 +118,13 @@ namespace AdminForm
                                                    Inspect_Datetime = item.Inspect_Datetime,
                                                    Item_Code = item.Item_Code,
                                                    Item_Name = item.Item_Name,
-                                                   deviation = item.deviation
+                                                   deviation = item.deviation,
+                                                   Inspect_Val = item.Inspect_Val
                                                }).ToList();
             dgvDetaillist.DataSource = list;
             btnAdd.Enabled = true;
             btnRemove.Enabled = true;
+            txtNum.Enabled = true;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -165,23 +174,28 @@ namespace AdminForm
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            // 등록으로 바꿔야 함
             if (check != "" && check != null)
             {
-                
-                MES_DB.PerformService service = new MES_DB.PerformService();
-                service.UpdateRegQulityForm(Convert.ToInt32(nuUpsNum.Value), workOrderNo);
-                MessageBox.Show("수정되었습니다.");
-                dgvJob.DataSource = null;
-                dgvDetail.DataSource = null;
-                dgvDetaillist.DataSource = null;
-                ShowDgv();
+
+                QulityRegisterForm frm = new QulityRegisterForm(InsVO);
+                frm.ShowDialog();
+
+                //    MES_DB.PerformService service = new MES_DB.PerformService();
+                //    service.UpdateRegQulityForm(Convert.ToInt32(txtNum.Text), workOrderNo);
+                //    MessageBox.Show("수정되었습니다.");
+                //    dgvJob.DataSource = null;
+                //    dgvDetail.DataSource = null;
+                //    dgvDetaillist.DataSource = null;
+                //    ShowDgv();
 
             }
             else
             {
-                
+
                 MessageBox.Show("변경 해야 할 셀을 선택해주세요.");
             }
+
         }
         private void DgvDetaillist_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -206,6 +220,16 @@ namespace AdminForm
             {
                 MessageBox.Show("취소되었습니다.");
             }
+        }
+
+        private void txtNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("숫자를 입력해주세요.");
+                e.Handled = true;
+            }
+
         }
     }
 }

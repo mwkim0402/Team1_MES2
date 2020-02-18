@@ -12,13 +12,13 @@ namespace FieldOperationForm
         public string Workorderno { get; set; }
         public string Wc_Name { get; set; }
         public string Item_Name { get; set; }
-        public string Plan_Unit { get; set; }
+       // public string Plan_Unit { get; set; }
         public int Plan_Qty { get; set; }
 
+        public DateTime Plan_Date { get; set; }
 
-
-        public DateTime Plan_Starttime { get; set; }
-        public DateTime Plan_Endtime { get; set; }
+        public string Plan_Starttime { get; set; }
+        public string Plan_Endtime { get; set; }
 
 
 

@@ -16,4 +16,12 @@ namespace MES_DB
         public string User_Email { get; set; }
         public string UserGroup_Name { get; set; }
     }
+    public class UserPlanVo
+    {
+        public int User_ID { get; set; }
+        public int Seq { get; set; }
+        public string Plan_Date { get; set; }
+        public string Notice { get; set; }
+        public string Title { get; set; }
+    }
 }

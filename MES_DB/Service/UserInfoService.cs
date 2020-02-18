@@ -13,5 +13,10 @@ namespace MES_DB
             UserInfoDac dac = new UserInfoDac();
             return dac.GetUserInfo(userID);
         }
+        public List<UserPlanVo> GetUserPlan(int userID)
+        {
+            UserDAC dac = new UserDAC();
+            return dac.GetUserPlan(userID);
+        }
     }
 }

@@ -99,11 +99,23 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = @"update WorkOrder
-                                                set Wo_Status = @Wo_Status
+                if(workStatus == "작업중")
+                {
+                    cmd.CommandText = @"update WorkOrder
+                                                set Wo_Status = @Wo_Status,
+                                                Prd_Starttime = @Date
                                                 where Workorderno = @WorkOrderNo";
+                }
+                else
+                {
+                    cmd.CommandText = @"update WorkOrder
+                                                set Wo_Status = @Wo_Status,
+                                                Prd_Endtime = @Date
+                                                where Workorderno = @WorkOrderNo";
+                }            
                 cmd.Parameters.AddWithValue("@WorkOrderNo", workOrderNo);
                 cmd.Parameters.AddWithValue("@Wo_Status", workStatus);
+                cmd.Parameters.AddWithValue("@Date", DateTime.Now);
                 cmd.Connection.Open();
                 isChecked = cmd.ExecuteNonQuery();
                 cmd.Connection.Close();

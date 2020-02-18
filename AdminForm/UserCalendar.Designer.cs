@@ -225,6 +225,7 @@
             this.btn42.FlatAppearance.BorderSize = 0;
             this.btn42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn42.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn42.ForeColor = System.Drawing.Color.Blue;
             this.btn42.Location = new System.Drawing.Point(253, 212);
             this.btn42.Name = "btn42";
             this.btn42.Size = new System.Drawing.Size(40, 40);
@@ -304,11 +305,12 @@
             // 
             // btn36
             // 
-            this.btn36.BackColor = System.Drawing.Color.White;
+            this.btn36.BackColor = System.Drawing.SystemColors.Window;
             this.btn36.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn36.FlatAppearance.BorderSize = 0;
             this.btn36.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn36.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn36.ForeColor = System.Drawing.Color.Red;
             this.btn36.Location = new System.Drawing.Point(1, 212);
             this.btn36.Name = "btn36";
             this.btn36.Size = new System.Drawing.Size(40, 40);
@@ -323,6 +325,7 @@
             this.btn35.FlatAppearance.BorderSize = 0;
             this.btn35.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn35.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn35.ForeColor = System.Drawing.Color.Blue;
             this.btn35.Location = new System.Drawing.Point(253, 170);
             this.btn35.Name = "btn35";
             this.btn35.Size = new System.Drawing.Size(40, 40);
@@ -402,11 +405,12 @@
             // 
             // btn29
             // 
-            this.btn29.BackColor = System.Drawing.Color.White;
+            this.btn29.BackColor = System.Drawing.SystemColors.Window;
             this.btn29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn29.FlatAppearance.BorderSize = 0;
             this.btn29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn29.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn29.ForeColor = System.Drawing.Color.Red;
             this.btn29.Location = new System.Drawing.Point(1, 170);
             this.btn29.Name = "btn29";
             this.btn29.Size = new System.Drawing.Size(40, 40);
@@ -421,6 +425,7 @@
             this.btn28.FlatAppearance.BorderSize = 0;
             this.btn28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn28.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn28.ForeColor = System.Drawing.Color.Blue;
             this.btn28.Location = new System.Drawing.Point(253, 128);
             this.btn28.Name = "btn28";
             this.btn28.Size = new System.Drawing.Size(40, 40);
@@ -500,11 +505,12 @@
             // 
             // btn22
             // 
-            this.btn22.BackColor = System.Drawing.Color.White;
+            this.btn22.BackColor = System.Drawing.SystemColors.Window;
             this.btn22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn22.FlatAppearance.BorderSize = 0;
             this.btn22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn22.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn22.ForeColor = System.Drawing.Color.Red;
             this.btn22.Location = new System.Drawing.Point(1, 128);
             this.btn22.Name = "btn22";
             this.btn22.Size = new System.Drawing.Size(40, 40);
@@ -519,6 +525,7 @@
             this.btn21.FlatAppearance.BorderSize = 0;
             this.btn21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn21.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn21.ForeColor = System.Drawing.Color.Blue;
             this.btn21.Location = new System.Drawing.Point(253, 86);
             this.btn21.Name = "btn21";
             this.btn21.Size = new System.Drawing.Size(40, 40);
@@ -598,11 +605,12 @@
             // 
             // btn15
             // 
-            this.btn15.BackColor = System.Drawing.Color.White;
+            this.btn15.BackColor = System.Drawing.SystemColors.Window;
             this.btn15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn15.FlatAppearance.BorderSize = 0;
             this.btn15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn15.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn15.ForeColor = System.Drawing.Color.Red;
             this.btn15.Location = new System.Drawing.Point(1, 86);
             this.btn15.Name = "btn15";
             this.btn15.Size = new System.Drawing.Size(40, 40);
@@ -617,6 +625,7 @@
             this.btn14.FlatAppearance.BorderSize = 0;
             this.btn14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn14.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn14.ForeColor = System.Drawing.Color.Blue;
             this.btn14.Location = new System.Drawing.Point(253, 44);
             this.btn14.Name = "btn14";
             this.btn14.Size = new System.Drawing.Size(40, 40);
@@ -696,11 +705,12 @@
             // 
             // btn8
             // 
-            this.btn8.BackColor = System.Drawing.Color.White;
+            this.btn8.BackColor = System.Drawing.SystemColors.Window;
             this.btn8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn8.FlatAppearance.BorderSize = 0;
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn8.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn8.ForeColor = System.Drawing.Color.Red;
             this.btn8.Location = new System.Drawing.Point(1, 44);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(40, 40);
@@ -715,6 +725,7 @@
             this.btn7.FlatAppearance.BorderSize = 0;
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn7.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn7.ForeColor = System.Drawing.Color.Blue;
             this.btn7.Location = new System.Drawing.Point(253, 2);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(40, 40);
@@ -795,11 +806,12 @@
             // 
             // btn1
             // 
-            this.btn1.BackColor = System.Drawing.Color.White;
+            this.btn1.BackColor = System.Drawing.SystemColors.Window;
             this.btn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn1.FlatAppearance.BorderSize = 0;
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn1.ForeColor = System.Drawing.Color.Red;
             this.btn1.Location = new System.Drawing.Point(1, 2);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(40, 40);

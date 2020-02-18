@@ -4,5 +4,212 @@
     ViewBag.Title = "TimeLine";
 }
 
-<h2>시간대별 실적조회</h2>
+    <h2 style="color:black">@ViewBag.Title</h2>
 
+
+
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">타임라인</h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="text-right" style="padding-right:10px; margin-bottom:0px">
+                                    <strong>조회기간: @DateTime.Now.ToShortDateString()</strong>
+                                </p>
+
+                                <div class="chart" style="padding: 20px 1px 10px 10px;">
+                                    <!-- Sales Chart Canvas -->
+                                    <canvas id="areaChart" style="height:300px; width:1000px; "></canvas> <!-- height 바꾸면 크기 조정, id 값= 유일하게-->
+                                </div>
+                                <!-- /.chart-responsive -->
+                            </div>
+
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- ./box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">타임라인</h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="row">
+                            
+
+                            <!-- /.col -->
+                            <div class="col-md-4">
+                                <p class="text-center">
+                                    <strong>완료 현황 (%)</strong>
+                                </p>
+
+                                <div class="progress-group">
+                                    <span class="progress-text">제강</span>
+                                    <span class="progress-number"><b>100</b>/ 200</span>
+
+                                    <div class="progress sm">
+                                        <div class="progress-bar progress-bar-red" style="width: 50%"></div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <span class="progress-text">제선</span>
+                                    <span class="progress-number"><b>100</b>/ 200</span>
+
+                                    <div class="progress sm">
+                                        <div class="progress-bar progress-bar-green" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <span class="progress-text">압연</span>
+                                    <span class="progress-number"><b>100</b>/ 200</span>
+
+                                    <div class="progress sm">
+                                        <div class="progress-bar progress-bar-yellow" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                                <div class="progress-group">
+                                    <span class="progress-text">적재</span>
+                                    <span class="progress-number"><b>100</b>/ 200</span>
+
+                                    <div class="progress sm">
+                                        <div class="progress-bar progress-bar-aqua" style="width: 30%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-group">
+                                    <span class="progress-text">포장</span>
+                                    <span class="progress-number"><b>100</b>/ 200</span>
+
+                                    <div class="progress sm">
+                                        <div class="progress-bar progress-bar-light-blue" style="width: 40%"></div>
+                                    </div>
+                                </div>
+                                <!-- /.progress-group -->
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- ./box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    @section ScriptsAREA_TimeLine {
+        <script>
+            $(document).ready(function () {
+
+                //--------------
+                //- AREA CHART -
+                //--------------
+
+                // Get context with jQuery - using jQuery's .get() method.
+                var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
+                // This will get the first returned node in the jQuery collection.
+                var areaChart = new Chart(areaChartCanvas)
+                
+                var temp = ['00시', '01시', '02시', '03시', '04시', '05시', '06시', '07시', '08시', '09시', '10시', '11시', '12시', '13시', '14시', '15시', '16시', '17시', '18시', '19시', '20시', '21시', '22시', '23시'];
+                var areaChartData = {
+                    labels: temp,
+                    datasets: [
+                        {
+                            label: '전체 작업지시 수',
+                            fillColor: 'rgba(210, 214, 222, 1)',
+                            strokeColor: 'rgba(210, 214, 222, 1)',
+                            pointColor: 'rgba(210, 214, 222, 1)',
+                            pointStrokeColor: '#c1c7d1',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(220,220,220,1)',
+                            data: [60, 80, 20, 10, 90]
+                        },
+                        {
+                            label: '완료한 작업지시 수',
+                            fillColor: 'rgba(245, 105, 84, 1)',
+                            strokeColor: 'rgba(245, 105, 84, 1)',
+                            pointColor: 'rgba(245, 105, 84, 1)',
+                            pointStrokeColor: '#f56954',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(220,220,220,1)',
+                            data: [20, 30, 50, 80, 45]
+                        }
+                    ]
+
+                }
+
+
+                var areaChartOptions = {
+                    //Boolean - If we should show the scale at all
+                    showScale: true,
+                    //Boolean - Whether grid lines are shown across the chart
+                    scaleShowGridLines: false,
+                    //String - Colour of the grid lines
+                    scaleGridLineColor: 'rgba(0,0,0,.05)',
+                    //Number - Width of the grid lines
+                    scaleGridLineWidth: 1,
+                    //Boolean - Whether to show horizontal lines (except X axis)
+                    scaleShowHorizontalLines: true,
+                    //Boolean - Whether to show vertical lines (except Y axis)
+                    scaleShowVerticalLines: true,
+                    //Boolean - Whether the line is curved between points
+                    bezierCurve: true,
+                    //Number - Tension of the bezier curve between points
+                    bezierCurveTension: 0.3,
+                    //Boolean - Whether to show a dot for each point
+                    pointDot: false,
+                    //Number - Radius of each point dot in pixels
+                    pointDotRadius: 4,
+                    //Number - Pixel width of point dot stroke
+                    pointDotStrokeWidth: 1,
+                    //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+                    pointHitDetectionRadius: 20,
+                    //Boolean - Whether to show a stroke for datasets
+                    datasetStroke: true,
+                    //Number - Pixel width of dataset stroke
+                    datasetStrokeWidth: 2,
+                    //Boolean - Whether to fill the dataset with a color
+                    datasetFill: true,
+                    //String - A legend template
+                    legendTemplate: '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].lineColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
+                    //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+                    maintainAspectRatio: true,
+                    //Boolean - whether to make the chart responsive to window resizing
+                    responsive: true
+                }
+
+                areaChart.Line(areaChartData, areaChartOptions)
+            })
+        </script>
+    }

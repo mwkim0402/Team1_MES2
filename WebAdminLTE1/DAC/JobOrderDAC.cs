@@ -73,6 +73,23 @@ namespace WebApplication0106.DAC
 
             return list;
         }
+        public double GetBadrate()
+        {
+            double iTotCount = 0;
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                string sql = @"select  (Sum(Bad_Qty)/1.0/sum(isnull(In_Qty_Main,1)) * 100) c from WorkOrder
+                                where (convert(varchar(8), Prd_Starttime, 112) = convert(varchar(8), getdate(), 112))";
+
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+
+                    iTotCount = Convert.ToDouble(cmd.ExecuteScalar());
+                }
+            }
+            return iTotCount;
+        }
 
         public int GetWorkOrderTotalCount()
         {
@@ -96,9 +113,9 @@ namespace WebApplication0106.DAC
             int iTotCount = 0;
             using (SqlConnection conn = new SqlConnection(strconn))
             {
-                string sql = @"select count(*) totCount from WorkOrder w, WorkCenter_Master wc where (WC_Group = @WC_Group or isnull(@WC_Group,'')='')
+                string sql = @"select sum(Plan_Qty) from WorkOrder w, WorkCenter_Master wc where (WC_Group = @Wc_Group or isnull(@Wc_Group,'')='')
                                 and w.Wc_Code = wc.Wc_Code
-                                and Prd_Endtime between  DATEADD(MM, DATEDIFF(MM, 0, GETDATE()), 0)
+								and Plan_Endtime between  DATEADD(MM, DATEDIFF(MM, 0, GETDATE()), 0)
                                 and DATEADD(MS, -3, DATEADD(MM, DATEDIFF(MM, 0, GETDATE()) + 1, 0))";
 
                 conn.Open();
@@ -106,7 +123,8 @@ namespace WebApplication0106.DAC
                 {
                     cmd.Parameters.AddWithValue("@Wc_Group", category);
 
-                    iTotCount = Convert.ToInt32(cmd.ExecuteScalar());
+                    int.TryParse(cmd.ExecuteScalar().ToString(), out iTotCount);
+                    
                 }
             }
             return iTotCount;
@@ -139,7 +157,7 @@ namespace WebApplication0106.DAC
                                 where w.Wc_Code = wc.Wc_Code
                                 and w.Wo_Status = '작업종료'
                                 and Wc_Group = @Wc_Group
-                                and Prd_Endtime = @Today";
+                                and (convert(varchar(10), Prd_Endtime, 23))= @Today";
 
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -156,37 +174,36 @@ namespace WebApplication0106.DAC
             int iTotCount = 0;
             using (SqlConnection conn = new SqlConnection(strconn))
             {
-                string sql = @"select count(*) from WorkOrder w, WorkCenter_Master wc
-                                where w.Wc_Code= wc.Wc_Code
-                                and w.Wo_Status ='작업종료'
-                                and Wc_Group = @Wc_Group
-                                and Prd_Endtime between  DATEADD(MM, DATEDIFF(MM, 0, GETDATE()), 0)
-                                    and DATEADD(MS, -3, DATEADD(MM, DATEDIFF(MM, 0, GETDATE()) + 1, 0))";
+                string sql = @"select sum(Prd_Qty) from WorkOrder w, WorkCenter_Master wc where (WC_Group = @Wc_Group or isnull(@Wc_Group,'')='')
+                                and w.Wc_Code = wc.Wc_Code
+								and Prd_Endtime between  DATEADD(MM, DATEDIFF(MM, 0, GETDATE()), 0)
+                                and DATEADD(MS, -3, DATEADD(MM, DATEDIFF(MM, 0, GETDATE()) + 1, 0))";
 
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@Wc_Group", category);
-                    iTotCount = Convert.ToInt32(cmd.ExecuteScalar());
+                    int.TryParse(cmd.ExecuteScalar().ToString(), out iTotCount);
                 }
             }
             return iTotCount;
         }
-        public JobOrder GetWorkOrderInfo(string workorderno)
+        public List<JobOrder> GetProductDetailList(string wcCode)
         {
             List<JobOrder> list = null;
-            string sql = "select w.Workorderno, i.Item_Name, wc.Wc_Name, Plan_Qty, Plan_Date,Wo_Status from WorkOrder w, Item_Master i, WorkCenter_Master wc" +
-                "Where workorderno = @workorderno and w.Item_Code = i.Item_Code and w.Wc_Code = wc.Wc_Code"; 
+            string sql = @"select w.Workorderno, i.Item_Name, wc.Wc_Name, Plan_Qty, Plan_Date, w.Wo_Status from WorkOrder w, Item_Master i, WorkCenter_Master wc 
+                            Where w.Item_Code = i.Item_Code and w.Wc_Code = wc.Wc_Code
+                            and w.Wc_Code = @Wc_Code"; 
             using (SqlConnection conn = new SqlConnection(strconn))
             {
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@workorderno", workorderno);
+                    cmd.Parameters.AddWithValue("@Wc_Code", wcCode);
                     list = Helper.DataReaderMapToList<JobOrder>(cmd.ExecuteReader());
                 }
             }
-            return (list == null) ? null : list[0];
+            return list;
         }
 
         public void Dispose()

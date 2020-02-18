@@ -26,7 +26,11 @@ namespace WebApplication0106.Controllers
                 },
                 CurrentCategory = group
             };
+
             ViewBag.WorkOrderList = model;
+
+            
+            //페이지 뷰백
             return View(model);
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication0106.DAC;
@@ -10,12 +11,14 @@ namespace WebApplication0106.Controllers
 {
     public class CartController : Controller
     {
-        private WorkOrderContext db = new WorkOrderContext();
-
+        List<JobOrder> JOList = new List<JobOrder>();
         // GET: Cart
-        public ActionResult Index()
+        public ActionResult Index(string wc_Code)
         {
-            return View(db.List.ToList());
+            JobOrderDAC dac = new JobOrderDAC();
+
+            JOList = dac.GetProductDetailList(wc_Code);
+            return View(JOList.ToList());
         }
 
 
@@ -28,15 +31,6 @@ namespace WebApplication0106.Controllers
                 Session["JobOrder"] = order;
             }
             return order;
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     } 
 }

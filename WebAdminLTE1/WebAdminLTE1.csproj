@@ -7450,10 +7450,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Member.cshtml" />
-    <Content Include="Views\Cart\Checkout.cshtml" />
-    <Content Include="Views\Cart\Completed.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
-    <Content Include="Views\Cart\Summary.cshtml" />
     <Content Include="Views\Nav\Menu.cshtml" />
     <Content Include="Views\Product\List.cshtml" />
     <Content Include="Views\Product\ProductSummary.cshtml" />
@@ -7472,7 +7469,6 @@
     <Compile Include="DAC\JobOrderDAC.cs" />
     <Compile Include="DAC\ProductDAC.cs" />
     <Compile Include="DAC\WorkDAC.cs" />
-    <Compile Include="DAL\WorkOrderContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

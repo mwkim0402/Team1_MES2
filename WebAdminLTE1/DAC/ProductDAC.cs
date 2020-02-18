@@ -110,22 +110,6 @@ namespace WebApplication0106.DAC
         }
 
 
-        public Product GetProductInfo(string wcCode)
-        {
-            List<Product> list = null;
-            string sql = "select Wc_Code, Wc_Name, Wc_Group, Process_Code, Wo_Status from WorkCenter_Master" +
-                "Where Wc_Code = @Wc_Code"; 
-            using (SqlConnection conn = new SqlConnection(strconn))
-            {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("@Wc_Code", wcCode);
-                    list = Helper.DataReaderMapToList<Product>(cmd.ExecuteReader());
-                }
-            }
-            return (list == null) ? null : list[0];
-        }
 
 
         public void Dispose()

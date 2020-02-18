@@ -172,21 +172,22 @@ namespace WebApplication0106.DAC
             }
             return iTotCount;
         }
-        public JobOrder GetWorkOrderInfo(string workorderno)
+        public List<JobOrder> GetProductDetailList(string wcCode)
         {
             List<JobOrder> list = null;
-            string sql = "select w.Workorderno, i.Item_Name, wc.Wc_Name, Plan_Qty, Plan_Date,Wo_Status from WorkOrder w, Item_Master i, WorkCenter_Master wc" +
-                "Where workorderno = @workorderno and w.Item_Code = i.Item_Code and w.Wc_Code = wc.Wc_Code"; 
+            string sql = @"select w.Workorderno, i.Item_Name, wc.Wc_Name, Plan_Qty, Plan_Date, w.Wo_Status from WorkOrder w, Item_Master i, WorkCenter_Master wc 
+                            Where w.Item_Code = i.Item_Code and w.Wc_Code = wc.Wc_Code
+                            and w.Wc_Code = @Wc_Code"; 
             using (SqlConnection conn = new SqlConnection(strconn))
             {
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@workorderno", workorderno);
+                    cmd.Parameters.AddWithValue("@Wc_Code", wcCode);
                     list = Helper.DataReaderMapToList<JobOrder>(cmd.ExecuteReader());
                 }
             }
-            return (list == null) ? null : list[0];
+            return list;
         }
 
         public void Dispose()

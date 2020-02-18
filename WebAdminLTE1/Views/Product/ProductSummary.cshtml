@@ -6,7 +6,7 @@
             <span class="pull-right label" style="background-color:rebeccapurple">@Model.Wc_Group.ToString()</span>
 
         </h3>
-        @using (Html.BeginForm("Index", "Cart"))
+        @using (Html.BeginForm("Index", "Cart", new { wc_Code = Model.Wc_Code }))
 
         {
             <div class="progress-group">

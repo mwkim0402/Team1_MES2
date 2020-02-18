@@ -1,12 +1,13 @@
 ﻿@model WebApplication0106.Models.Product
 
+
     <div class="well" style="background-color:dimgray">
         <h3>
             <strong style="color:white">@Model.Wc_Name</strong>
             <span class="pull-right label" style="background-color:rebeccapurple">@Model.Wc_Group.ToString()</span>
 
         </h3>
-        @using (Html.BeginForm("Index", "Cart"))
+        @using (Html.BeginForm("Index", "Cart", new { wc_Code = Model.Wc_Code }))
 
         {
             <div class="progress-group">
@@ -22,7 +23,7 @@
                 @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
                 <input type="submit" style="background-color:rebeccapurple; border:0px" value="상세보기" class="btn btn-success pull-right" />
 
-                <span class="pull-left label" style="background-color:rebeccapurple">상태 : @Model.Wo_Status</span>
+                <span class="pull-left label" style="background-color:rebeccapurple; font-size:14px;">상태 : @Model.Wo_Status</span>
             </div>
 
         }

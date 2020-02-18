@@ -109,25 +109,45 @@ namespace WebApplication0106.DAC
             return list;
         }
 
-
-        public Product GetProductInfo(string wcCode)
+        public int GetPrdUnitCount(string wc_Code)
         {
-            List<Product> list = null;
-            string sql = "select Wc_Code, Wc_Name, Wc_Group, Process_Code, Wo_Status from WorkCenter_Master" +
-                "Where Wc_Code = @Wc_Code"; 
+            int iTotCount = 0;
             using (SqlConnection conn = new SqlConnection(strconn))
             {
+                string sql = @"select sum(w.Prd_Qty) from WorkOrder w, Item_Master i, WorkCenter_Master wc 
+                                Where w.Item_Code = i.Item_Code and w.Wc_Code = wc.Wc_Code
+                                and w.Wc_Code = @Wc_Code";
+
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Wc_Code", wcCode);
-                    list = Helper.DataReaderMapToList<Product>(cmd.ExecuteReader());
+                    cmd.Parameters.AddWithValue("@Wc_Code", wc_Code);
+
+                    iTotCount = Convert.ToInt32(cmd.ExecuteScalar());
                 }
             }
-            return (list == null) ? null : list[0];
+            return iTotCount;
         }
 
+        public int GetPlanUnitCount(string wc_Code)
+        {
+            int iTotCount = 0;
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                string sql = @"select sum(w.Plan_Qty) from WorkOrder w, Item_Master i, WorkCenter_Master wc 
+                                Where w.Item_Code = i.Item_Code and w.Wc_Code = wc.Wc_Code
+                                and w.Wc_Code = @Wc_Code";
 
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Wc_Code", wc_Code);
+
+                    iTotCount = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            return iTotCount;
+        }
         public void Dispose()
         {
 

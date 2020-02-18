@@ -110,7 +110,7 @@
             // 
             // button7
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.button7.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Location = new System.Drawing.Point(0, 198);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(222, 33);
@@ -121,7 +121,7 @@
             // 
             // button6
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.button6.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Location = new System.Drawing.Point(0, 165);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(222, 33);
@@ -132,7 +132,7 @@
             // 
             // button5
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.button5.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(0, 132);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(222, 33);
@@ -153,7 +153,7 @@
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.button4.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(0, 99);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(222, 33);
@@ -164,7 +164,7 @@
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.button3.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(0, 66);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(222, 33);
@@ -175,7 +175,7 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.button2.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(0, 33);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(222, 33);
@@ -186,7 +186,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.button1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(222, 33);
@@ -198,6 +198,7 @@
             // tabControl2
             // 
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Font = new System.Drawing.Font("나눔고딕", 9F);
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
@@ -379,7 +380,7 @@
             // btnHome
             // 
             this.btnHome.AutoSize = false;
-            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnHome.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnHome.ImageTransparentColor = System.Drawing.Color.LightYellow;
             this.btnHome.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
@@ -394,7 +395,7 @@
             // btnS
             // 
             this.btnS.AutoSize = false;
-            this.btnS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnS.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnS.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnS.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnS.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
@@ -408,7 +409,7 @@
             // btnDelete
             // 
             this.btnDelete.AutoSize = false;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnDelete.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDelete.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
@@ -423,7 +424,7 @@
             // btnExcel
             // 
             this.btnExcel.AutoSize = false;
-            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnExcel.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnExcel.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
@@ -437,7 +438,7 @@
             // btnSave
             // 
             this.btnSave.AutoSize = false;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnSave.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSave.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);

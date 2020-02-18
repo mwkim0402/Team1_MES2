@@ -74,7 +74,7 @@ namespace WebApplication0106.DAC
             int iTotCount = 0;
             using (SqlConnection conn = new SqlConnection(strconn))
             {
-                string sql = @"select * from Work_History where Work_EndTime is not null and Work_EndTime = convert(nvarchar(10), getdate(),112)";
+                string sql = @"select * from Work_History where Work_EndTime is not null and Work_EndTime = convert(nvarchar(10), getdate(),23)";
 
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, conn))

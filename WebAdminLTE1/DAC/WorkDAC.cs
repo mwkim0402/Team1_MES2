@@ -46,7 +46,7 @@ namespace WebAdminLTE1.DAC
         public List<ProceessCodeWorkVO> GetProcessList()
         {
             List<ProceessCodeWorkVO> list = new List<ProceessCodeWorkVO>();
-            string sql = @"select Top 5 Process_Code,sum(work_time) as work_time from Work_History
+            string sql = @"select Top 4 Process_Code,avg(work_time) as work_time from Work_History
                             group by Process_Code
                             order by work_time desc ";
 

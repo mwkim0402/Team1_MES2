@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cb_Wc_Name = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_WorkerNum = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -49,11 +50,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.cb_Wc_Name = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -82,7 +88,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cb_Wc_Name);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -91,9 +96,19 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
+            // cb_Wc_Name
+            // 
+            this.cb_Wc_Name.Font = new System.Drawing.Font("나눔고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cb_Wc_Name.FormattingEnabled = true;
+            this.cb_Wc_Name.Location = new System.Drawing.Point(118, 21);
+            this.cb_Wc_Name.Name = "cb_Wc_Name";
+            this.cb_Wc_Name.Size = new System.Drawing.Size(406, 36);
+            this.cb_Wc_Name.TabIndex = 20;
+            this.cb_Wc_Name.SelectedIndexChanged += new System.EventHandler(this.cb_Wc_Name_SelectedIndexChanged);
+            // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.txt_WorkerNum);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(591, 12);
@@ -114,15 +129,17 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 142);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 54);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(627, 474);
@@ -137,7 +154,7 @@
             this.btn_WorkerOn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_WorkerOn.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_WorkerOn.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_WorkerOn.Location = new System.Drawing.Point(663, 142);
+            this.btn_WorkerOn.Location = new System.Drawing.Point(9, 54);
             this.btn_WorkerOn.Name = "btn_WorkerOn";
             this.btn_WorkerOn.Size = new System.Drawing.Size(219, 134);
             this.btn_WorkerOn.TabIndex = 8;
@@ -152,7 +169,7 @@
             this.btn_WorkerOff.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_WorkerOff.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_WorkerOff.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_WorkerOff.Location = new System.Drawing.Point(663, 312);
+            this.btn_WorkerOff.Location = new System.Drawing.Point(9, 225);
             this.btn_WorkerOff.Name = "btn_WorkerOff";
             this.btn_WorkerOff.Size = new System.Drawing.Size(219, 134);
             this.btn_WorkerOff.TabIndex = 9;
@@ -167,7 +184,7 @@
             this.btn_WorkerFullOff.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_WorkerFullOff.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_WorkerFullOff.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_WorkerFullOff.Location = new System.Drawing.Point(663, 482);
+            this.btn_WorkerFullOff.Location = new System.Drawing.Point(9, 394);
             this.btn_WorkerFullOff.Name = "btn_WorkerFullOff";
             this.btn_WorkerFullOff.Size = new System.Drawing.Size(219, 134);
             this.btn_WorkerFullOff.TabIndex = 12;
@@ -177,32 +194,34 @@
             // 
             // dataGridView2
             // 
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView2.Location = new System.Drawing.Point(903, 142);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 54);
             this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView2.RowHeadersVisible = false;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(627, 474);
@@ -215,7 +234,7 @@
             this.label3.BackColor = System.Drawing.Color.Ivory;
             this.label3.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label3.Location = new System.Drawing.Point(751, 216);
+            this.label3.Location = new System.Drawing.Point(97, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 39);
             this.label3.TabIndex = 14;
@@ -228,7 +247,7 @@
             this.label4.BackColor = System.Drawing.Color.Ivory;
             this.label4.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label4.Location = new System.Drawing.Point(751, 385);
+            this.label4.Location = new System.Drawing.Point(97, 298);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 39);
             this.label4.TabIndex = 15;
@@ -241,7 +260,7 @@
             this.label5.BackColor = System.Drawing.Color.Ivory;
             this.label5.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label5.Location = new System.Drawing.Point(751, 568);
+            this.label5.Location = new System.Drawing.Point(97, 480);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 39);
             this.label5.TabIndex = 16;
@@ -253,7 +272,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.Ivory;
-            this.label6.Location = new System.Drawing.Point(15, 96);
+            this.label6.Location = new System.Drawing.Point(9, 8);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(627, 40);
             this.label6.TabIndex = 17;
@@ -265,7 +284,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.Ivory;
-            this.label7.Location = new System.Drawing.Point(903, 96);
+            this.label7.Location = new System.Drawing.Point(3, 8);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(627, 40);
             this.label7.TabIndex = 18;
@@ -281,15 +300,41 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "label8";
             // 
-            // cb_Wc_Name
+            // panel1
             // 
-            this.cb_Wc_Name.Font = new System.Drawing.Font("나눔고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cb_Wc_Name.FormattingEnabled = true;
-            this.cb_Wc_Name.Location = new System.Drawing.Point(118, 21);
-            this.cb_Wc_Name.Name = "cb_Wc_Name";
-            this.cb_Wc_Name.Size = new System.Drawing.Size(406, 36);
-            this.cb_Wc_Name.TabIndex = 20;
-            this.cb_Wc_Name.SelectedIndexChanged += new System.EventHandler(this.cb_Wc_Name_SelectedIndexChanged);
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(3, 88);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(646, 536);
+            this.panel1.TabIndex = 20;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.dataGridView2);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Location = new System.Drawing.Point(899, 88);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(634, 536);
+            this.panel2.TabIndex = 21;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.btn_WorkerOn);
+            this.panel3.Controls.Add(this.btn_WorkerOff);
+            this.panel3.Controls.Add(this.btn_WorkerFullOff);
+            this.panel3.Location = new System.Drawing.Point(655, 88);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(238, 536);
+            this.panel3.TabIndex = 18;
             // 
             // workerAllocation
             // 
@@ -298,18 +343,11 @@
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1538, 628);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btn_WorkerFullOff);
-            this.Controls.Add(this.btn_WorkerOff);
-            this.Controls.Add(this.btn_WorkerOn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "workerAllocation";
             this.Text = "workerAllocation";
@@ -321,6 +359,9 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,5 +386,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cb_Wc_Name;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }

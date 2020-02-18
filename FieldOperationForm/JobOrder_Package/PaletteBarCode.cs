@@ -40,7 +40,7 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
             col.ReadOnly = true;
             col.DefaultCellStyle.Alignment = textAlign;
             dgv.Columns.Add(col);
-
+            col.DefaultCellStyle.Padding = new Padding(3);
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.Honeydew;
             //    dgv.RowsDefaultCellStyle.BackColor = Color.Ivory;
 
@@ -52,19 +52,20 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
-            dgv.DefaultCellStyle.SelectionBackColor = Color.DarkSlateGray;
+            dgv.DefaultCellStyle.SelectionBackColor = Color.CadetBlue;
+            dgv.RowTemplate.Height = 60;
         }
 
         private void Setdgv()
         {
 
-            AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "Workorderno", true, 300);
-            AddNewColumnToDataGridView(dataGridView1, "팔레트번호", "Pallet_No", true, 177);
-            AddNewColumnToDataGridView(dataGridView1, "바코드번호", "Barcode_No", true, 300);
+            AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "Workorderno", true, 360);
+            AddNewColumnToDataGridView(dataGridView1, "팔레트번호", "Pallet_No", true, 182);
+            AddNewColumnToDataGridView(dataGridView1, "바코드번호", "Barcode_No", false, 300);
             AddNewColumnToDataGridView(dataGridView1, "제품", "Item_Name", true, 200);
-            AddNewColumnToDataGridView(dataGridView1, "날짜", "In_Date", true, 130);
-            AddNewColumnToDataGridView(dataGridView1, "수량", "Prd_Qty", true, 130);
-            AddNewColumnToDataGridView(dataGridView1, "단위", "Plan_Unit", true, 130);
+            AddNewColumnToDataGridView(dataGridView1, "날짜", "Print_Date", true, 300);
+            AddNewColumnToDataGridView(dataGridView1, "수량", "Prd_Qty", true, 150);
+            AddNewColumnToDataGridView(dataGridView1, "단위", "Plan_Unit", true, 150);
             AddNewColumnToDataGridView(dataGridView1, "날짜", "StartDate", false, 130);
             AddNewColumnToDataGridView(dataGridView1, "날짜", "EndDate", false, 130);
             
@@ -73,8 +74,8 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
 
 
 
-            this.dataGridView1.Font = new Font("나눔고딕", 15, FontStyle.Bold);
-            this.dataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 15, FontStyle.Bold);
+            this.dataGridView1.Font = new Font("나눔고딕", 17, FontStyle.Bold);
+            this.dataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 17, FontStyle.Bold);
 
 
 

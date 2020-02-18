@@ -163,7 +163,7 @@
                 <!-- DONUT CHART -->
                 <div class="box box-danger">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Donut Chart</h3>
+                        <h3 class="box-title">공정별 평균근무시간</h3>
 
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -186,7 +186,7 @@
                     <div class="box-header with-border">
                         <i class="fa fa-bar-chart-o"></i>
 
-                        <h3 class="box-title">Bar Chart</h3>
+                        <h3 class="box-title">이번달 많이 일한 근무자</h3>
 
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -203,7 +203,31 @@
                 <!-- /.box -->
             </div>
             <!-- /.col (RIGHT) -->
-            <!-- /.row -->
+        </div>
+        <!-- /.row -->
+        <!-- BAR CHART -->
+        <div class="box box-success">
+            <div class="box-header with-border">
+                <h3 class="box-title">Bar Chart</h3>
+
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="chart">
+                    <canvas id="barChart" style="height:230px"></canvas>
+                </div>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+
+
+
     </section>
     @{
         string labels = ViewBag.Labels;
@@ -211,13 +235,10 @@
         // string label1 = ViewBag.Label1;
         string data1 = ViewBag.data1;
 
-        //string label2 = ViewBag.Label2;
         string data2 = ViewBag.data2;
+        string piePCode = ViewBag.PCode;
 
-        //string label3 = ViewBag.Label3;
-        string data3 = ViewBag.data3;
-        string data4 = ViewBag.data4;
-        string data5 = ViewBag.data5;
+
 
     }
 
@@ -237,38 +258,40 @@
                 //- PIE CHART -
                 //-------------
                 // Get context with jQuery - using jQuery's .get() method.
+
+                var pieN = "@piePCode";
+                var pieD = "@data2";
+
+                var piearr = pieN.split(',');
+                var piedataarr = pieD.split(',');
+                //alert(piearr)
+                //alert(piedataarr)
                 var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
                 var pieChart = new Chart(pieChartCanvas)
                 var PieData = [
                     {
-                        value: 700,
+                        value: piedataarr[0],
                         color: '#f56954',
                         highlight: '#f56954',
-                        label: 'Chrome'
+                        label: piearr[0]
                     },
                     {
-                        value: 500,
+                        value: piedataarr[1],
                         color: '#00a65a',
                         highlight: '#00a65a',
-                        label: 'IE'
+                        label: piearr[1]
                     },
                     {
-                        value: 400,
+                        value: piedataarr[2],
                         color: '#f39c12',
                         highlight: '#f39c12',
-                        label: 'FireFox'
+                        label: piearr[2]
                     },
                     {
-                        value: 600,
+                        value: piedataarr[3],
                         color: '#00c0ef',
                         highlight: '#00c0ef',
-                        label: 'Safari'
-                    },
-                    {
-                        value: 300,
-                        color: '#3c8dbc',
-                        highlight: '#3c8dbc',
-                        label: 'Opera'
+                        label: piearr[3]
                     }
 
                 ]
@@ -305,11 +328,23 @@
 * ---------
 */
             var temp = "@data1";
-            var arrTemp = replaceAll(temp, "^", "'").split('|');
-            alert(arrTemp);
+            //var arrTemp = replaceAll(temp, "^", "'").split('|');
+            var arrTemp = temp.split(',');
+            var myArray = new Array(new Array(2), new Array(2), new Array(2), new Array(2), new Array(2));
+
+            myArray[0][0] = arrTemp[0];
+            myArray[0][1] = arrTemp[1];
+            myArray[1][0] = arrTemp[2];
+            myArray[1][1] = arrTemp[3];
+            myArray[2][0] = arrTemp[4];
+            myArray[2][1] = arrTemp[5];
+            myArray[3][0] = arrTemp[6];
+            myArray[3][1] = arrTemp[7];
+            myArray[4][0] = arrTemp[8];
+            myArray[4][1] = arrTemp[9];
 
             var bar_data = {
-                data : arrTemp ,
+                data: myArray,
                 color: '#3c8dbc'
             }
             $.plot('#bar-chart', [bar_data], {
@@ -330,8 +365,74 @@
                     tickLength: 0
                 }
             })
-                        /* END BAR CHART */
+            /* END BAR CHART */
+            //-------------
+    //- BAR CHART -
+    //-------------
+      var areaChartData = {
+      labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      datasets: [
+        {
+          label               : 'Electronics',
+          fillColor           : 'rgba(210, 214, 222, 1)',
+          strokeColor         : 'rgba(210, 214, 222, 1)',
+          pointColor          : 'rgba(210, 214, 222, 1)',
+          pointStrokeColor    : '#c1c7d1',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(220,220,220,1)',
+          data                : [65, 59, 80, 81, 56, 55, 40]
+        },
+        {
+          label               : 'Digital Goods',
+          fillColor           : 'rgba(60,141,188,0.9)',
+          strokeColor         : 'rgba(60,141,188,0.8)',
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [28, 48, 40, 19, 86, 27, 90]
+        }
+      ]
+    }
 
-           
+    var barChartCanvas                   = $('#barChart').get(0).getContext('2d')
+    var barChart                         = new Chart(barChartCanvas)
+    var barChartData                     = areaChartData
+    barChartData.datasets[1].fillColor   = '#00a65a'
+    barChartData.datasets[1].strokeColor = '#00a65a'
+    barChartData.datasets[1].pointColor  = '#00a65a'
+    var barChartOptions                  = {
+      //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+      scaleBeginAtZero        : true,
+      //Boolean - Whether grid lines are shown across the chart
+      scaleShowGridLines      : true,
+      //String - Colour of the grid lines
+      scaleGridLineColor      : 'rgba(0,0,0,.05)',
+      //Number - Width of the grid lines
+      scaleGridLineWidth      : 1,
+      //Boolean - Whether to show horizontal lines (except X axis)
+      scaleShowHorizontalLines: true,
+      //Boolean - Whether to show vertical lines (except Y axis)
+      scaleShowVerticalLines  : true,
+      //Boolean - If there is a stroke on each bar
+      barShowStroke           : true,
+      //Number - Pixel width of the bar stroke
+      barStrokeWidth          : 2,
+      //Number - Spacing between each of the X value sets
+      barValueSpacing         : 5,
+      //Number - Spacing between data sets within X values
+      barDatasetSpacing       : 1,
+      //String - A legend template
+      legendTemplate          : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].fillColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
+      //Boolean - whether to make the chart responsive
+      responsive              : true,
+      maintainAspectRatio     : true
+    }
+
+    barChartOptions.datasetFill = false
+    barChart.Bar(barChartData, barChartOptions)
+
+
         </script>
     }
+</body>

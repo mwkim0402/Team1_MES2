@@ -18,5 +18,16 @@ namespace WebApplication0106.Controllers
             List<string> categories = product.GetProductCategory();
             return PartialView(categories);
         }
+
+        public ActionResult CountWoReq()
+        {
+
+            OrderReqDAC woreq = new OrderReqDAC();
+            ViewBag.CountWoReq = woreq.GetReqTotalCount();
+
+            return PartialView();
+
+
+        }
     }
 }

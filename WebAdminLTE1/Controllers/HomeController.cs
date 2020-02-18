@@ -25,10 +25,11 @@ namespace WebAdminLTE1.Controllers
             };
 
 
-            PrdUnitListView prdUnitmodel = new PrdUnitListView // 작업지시 view만들고
+            PrdUnitListView prdUnitmodel = new PrdUnitListView // 
             {
-                PrdUnits = jobOrder.GetUnitCount() // 진행중인 작업지시 조회
+                PrdUnits = jobOrder.GetUnitCount() // 
             };
+            ViewBag.Badrate = string.Format("{0:0.0}", jobOrder.GetBadrate()); // 불량률 뷰백
 
             ViewBag.TotalmonthWOJS = jobOrder.GetWorkOrderTotalCount_month("제선");
             ViewBag.TotalmonthWOJK = jobOrder.GetWorkOrderTotalCount_month("제강");
@@ -115,8 +116,11 @@ namespace WebAdminLTE1.Controllers
 
             return View();
         }
+
+
         public ActionResult Member()
         {
+            //Bar chart 일을 많이한 사원 데이터 뽑기
             WorkDAC dac = new WorkDAC();
             List<WorkVO> AllList = new List<WorkVO>();
             AllList = dac.GetAllWork();
@@ -129,30 +133,50 @@ namespace WebAdminLTE1.Controllers
             List<int> time = new List<int>();
             time = (from a in AllList
                     select  Convert.ToInt32(a.work_time)).ToList();
-
             string data1 = string.Empty;
-            
-           for(int t =0; t<time.Count; t++)
+
+            for (int t =0; t<time.Count; t++)
             {
-                data1 += "[^" + Name[t]+"^, " +time[t] + "]" +"|";
-                //data2 = "[" + string.Join(",", time[1]) + "]";
-                //data3 = "[" + string.Join(",", time[2]) + "]";
-                //data4 = "[" + string.Join(",", time[3]) + "]";
-                //data5 = "[" + string.Join(",", time[4]) + "]";
+                data1 +=  Name[t]+"," +time[t] +","; 
+            }
+            data1 = data1.TrimEnd(',');           
+            ViewBag.data1 = data1;
+
+
+            // Pie chart
+            List<ProceessCodeWorkVO> pieList = new List<ProceessCodeWorkVO>();
+            pieList = dac.GetProcessList();
+
+            List<string> process = new List<string>();
+            process = (from b in pieList
+                       select b.Process_Code).ToList();
+
+
+            List<int> ProcessTime = new List<int>();
+            ProcessTime = (from p_time in pieList
+                    select Convert.ToInt32(p_time.work_time)).ToList();
+
+
+            string data2 = string.Empty;
+            string PCode = string.Empty;
+
+            for(int i=0; i<ProcessTime.Count; i++)
+            {
+                data2 += ProcessTime[i].ToString() +",";
+            }
+            for(int q=0; q<process.Count; q++)
+            {
+                PCode += process[q] + ",";
             }
 
-            string labels = sb.ToString().TrimEnd(',');
-
-            
-            data1 = data1.TrimEnd('|');
-            //data1 = "[" + string.Join(",", qtys.ToArray()) + "]";
-
-            ViewBag.Labels = labels;
-            ViewBag.data1 = "[" + data1 + "]";
-           
+            data2 = data2.TrimEnd(',');
+            PCode = PCode.TrimEnd(',');
+            ViewBag.data2 = data2;
+            ViewBag.PCode = PCode;
 
 
 
+            //Bar chart 매달마다 일 많이 한 인원
 
 
 

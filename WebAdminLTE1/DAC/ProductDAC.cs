@@ -109,9 +109,45 @@ namespace WebApplication0106.DAC
             return list;
         }
 
+        public int GetPrdUnitCount(string wc_Code)
+        {
+            int iTotCount = 0;
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                string sql = @"select sum(w.Prd_Qty) from WorkOrder w, Item_Master i, WorkCenter_Master wc 
+                                Where w.Item_Code = i.Item_Code and w.Wc_Code = wc.Wc_Code
+                                and w.Wc_Code = @Wc_Code";
 
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Wc_Code", wc_Code);
 
+                    iTotCount = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            return iTotCount;
+        }
 
+        public int GetPlanUnitCount(string wc_Code)
+        {
+            int iTotCount = 0;
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                string sql = @"select sum(w.Plan_Qty) from WorkOrder w, Item_Master i, WorkCenter_Master wc 
+                                Where w.Item_Code = i.Item_Code and w.Wc_Code = wc.Wc_Code
+                                and w.Wc_Code = @Wc_Code";
+
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Wc_Code", wc_Code);
+
+                    iTotCount = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            return iTotCount;
+        }
         public void Dispose()
         {
 

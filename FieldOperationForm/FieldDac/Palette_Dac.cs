@@ -11,7 +11,7 @@ namespace FieldOperationForm
 {
     public class Palette_Dac : ConnectionAccess
     {
-        public List<Palette_Vo> PaletteList()
+        public List<PaletteDetail_Vo> PaletteList()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -22,7 +22,7 @@ namespace FieldOperationForm
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<Palette_Vo> list = Helper.DataReaderMapToList<Palette_Vo>(reader);
+                List<PaletteDetail_Vo> list = Helper.DataReaderMapToList<PaletteDetail_Vo>(reader);
                 cmd.Connection.Close();
 
                 return list;
@@ -31,7 +31,7 @@ namespace FieldOperationForm
             }
         }
 
-        public List<PaletteDetail_Vo>GetPaletteDetail (string Pallet_No )
+        public List<PaletteDetail_Vo> GetPaletteDetail(string Pallet_No)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -47,11 +47,29 @@ namespace FieldOperationForm
 
                 return list;
 
-
             }
 
+        }
+        public List<PaletteDetail_Vo>GetPaletteGrade (string Grade_Code)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "GetPaletteGrade";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Grade_Code", Grade_Code);
 
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<PaletteDetail_Vo> list = Helper.DataReaderMapToList<PaletteDetail_Vo>(reader);
+                cmd.Connection.Close();
 
-                }
+                return list;
+
             }
+        }
+
+
+
+    }
 }

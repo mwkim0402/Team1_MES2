@@ -1,7 +1,19 @@
 ﻿@model WebApplication0106.Models.Product
 
-    <div class="well" style="background-color:dimgray">
-        <h3>
+@{ 
+    double percentage;
+    if (Model.Plan_Qty == 0)
+    {
+        percentage = 0;
+    }
+    else
+    {
+     percentage = Model.Prd_Qty *1.0 / Model.Plan_Qty * 100;
+
+    }
+}
+    <div class="well" style="background-color:dimgray; height:150px;">
+        <h3 style="margin-top:0px;">
             <strong style="color:white">@Model.Wc_Name</strong>
             <span class="pull-right label" style="background-color:rebeccapurple">@Model.Wc_Group.ToString()</span>
 
@@ -11,10 +23,10 @@
         {
             <div class="progress-group">
                 <span class="progress-text" style="color:white">현재 생산량</span>
-                <span class="progress-number" style="color:white;font-size:13px"><b>160</b>/200</span>
+                <span class="progress-number" style="color:white;font-size:13px"><b>@Model.Prd_Qty</b>/ @Model.Plan_Qty</span>
 
                 <div class="progress sm">
-                    <div class="progress-bar progress-bar-primary" style="width: 80%; background-color:rebeccapurple"></div>
+                    <div class="progress-bar progress-bar-primary" style="width: @percentage% ; background-color:rebeccapurple"></div>
                 </div>
             </div>
             <div>
@@ -22,13 +34,10 @@
                 @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
                 <input type="submit" style="background-color:rebeccapurple; border:0px" value="상세보기" class="btn btn-success pull-right" />
 
-                <span class="pull-left label" style="background-color:rebeccapurple">상태 : @Model.Wo_Status</span>
+                <span class="pull-left label" style="background-color:rebeccapurple; font-size:14px;">상태 : @Model.Wo_Status</span>
             </div>
 
         }
 
 
-        &nbsp;
-        <h4>
-        </h4>
     </div>

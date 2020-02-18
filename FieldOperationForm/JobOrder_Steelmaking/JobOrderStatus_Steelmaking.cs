@@ -168,7 +168,7 @@ namespace FieldOperationForm
             string workWorderNo = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
             try
             {
-                int UPHperSecond = (int)itemList.Find(x => x.Item_Name == (dataGridView1.SelectedRows[0].Cells[4].Value.ToString())).IronUPH / 60 / 20;
+                int UPHperSecond = (int)itemList.Find(x => x.Item_Name == (dataGridView1.SelectedRows[0].Cells[3].Value.ToString())).IronUPH / 60 / 20;
                 Random rnd = new Random((int)DateTime.UtcNow.Ticks);
                 int faultyQty = rnd.Next(0, 2);
                 TcpClient tc = new TcpClient("127.0.0.1", wcPortList.Find(x => x.Wc_Code == processWorkList.Find(y => y.Workorderno == workWorderNo).Wc_Code).Port_Num);
@@ -176,7 +176,7 @@ namespace FieldOperationForm
                 string msg = $"{workWorderNo}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Wc_Code}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Plan_Qty}";
                 byte[] buff = Encoding.UTF8.GetBytes(msg);
                 stream.Write(buff, 0, buff.Length);
-                byte[] outBuff = new byte[1024];
+                byte[] outBuff = new byte[2048];
                 int nbytes = stream.Read(outBuff, 0, outBuff.Length);
                 string outMsg = Encoding.UTF8.GetString(outBuff, 0, nbytes);
                 stream.Close();

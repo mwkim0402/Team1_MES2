@@ -42,7 +42,7 @@
             this.cmbSelect.Items.AddRange(new object[] {
             "--선택--",
             "투입수량",
-            "산출수량",
+            "불량",
             "생산수량"});
             this.cmbSelect.Location = new System.Drawing.Point(45, 48);
             this.cmbSelect.Name = "cmbSelect";

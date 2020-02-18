@@ -48,10 +48,9 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = @"select w.Wo_Status,w.Workorderno,w.Plan_Date,i.Item_Code,i.Item_Name,w.Wc_Code,w.In_Qty_Main,w.Out_Qty_Main,w.Prd_Qty,w.Wc_Code,p.Process_code
-                     from WorkOrder w inner join Item_Master i on i.Item_Code = w.Item_Code inner join WorkCenter_Master wc on w.Wc_Code = wc.Wc_Code
-                    inner join Process_Master p on wc.Process_Code = p.Process_code ";
-                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "GetAllPerformSearch ";
+                cmd.CommandType = CommandType.StoredProcedure;
+
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -112,7 +111,7 @@ namespace MES_DB
             }
         }
 
-        public void InsFaltyImage(string fileName, string filePath, string WorkOderNo, int faultyNum)
+        public void InsFaltyImage(string fileName, byte[] img, string WorkOderNo, int faultyNum)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -122,7 +121,7 @@ namespace MES_DB
 
                 cmd.Parameters.AddWithValue("@WorkOderNo", WorkOderNo);
                 cmd.Parameters.AddWithValue("@fileName", fileName);
-                cmd.Parameters.AddWithValue("@filePath", filePath);
+                cmd.Parameters.AddWithValue("@Def_Image", img);
                 cmd.Parameters.AddWithValue("@Def_Qty", faultyNum);
 
                 cmd.Connection.Open();
@@ -272,7 +271,7 @@ namespace MES_DB
                 cmd.Parameters.AddWithValue("@Item_Code", edit.Item_Code);
                 cmd.Parameters.AddWithValue("@Wc_Code", edit.Wc_Code);
                 cmd.Parameters.AddWithValue("@In_Qty_Main", edit.In_Qty_Main);
-                cmd.Parameters.AddWithValue("@Out_Qty_Main", edit.Out_Qty_Main);
+                cmd.Parameters.AddWithValue("@Bad_Qty", edit.Bad_Qty);
                 cmd.Parameters.AddWithValue("@Prd_Qty", edit.Prd_Qty);
                 cmd.Parameters.AddWithValue("@Plan_Date", edit.Plan_Date);
 

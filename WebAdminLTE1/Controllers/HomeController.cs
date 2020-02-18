@@ -25,10 +25,11 @@ namespace WebAdminLTE1.Controllers
             };
 
 
-            PrdUnitListView prdUnitmodel = new PrdUnitListView // 작업지시 view만들고
+            PrdUnitListView prdUnitmodel = new PrdUnitListView // 
             {
-                PrdUnits = jobOrder.GetUnitCount() // 진행중인 작업지시 조회
+                PrdUnits = jobOrder.GetUnitCount() // 
             };
+            ViewBag.Badrate = string.Format("{0:0.0}", jobOrder.GetBadrate()); // 불량률 뷰백
 
             ViewBag.TotalmonthWOJS = jobOrder.GetWorkOrderTotalCount_month("제선");
             ViewBag.TotalmonthWOJK = jobOrder.GetWorkOrderTotalCount_month("제강");

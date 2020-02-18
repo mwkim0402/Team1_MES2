@@ -1,10 +1,10 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "메인화면";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>메인화면</h2>
+    <h2 style="color:black">@ViewBag.Title</h2>
 
 <section class="content">
     <!-- Info boxes -->
@@ -15,7 +15,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">불량률</span>
-                    <span class="info-box-number">90<small>%</small></span> 금일 생산현황
+                    <span class="info-box-number">@ViewBag.Badrate<small>%</small></span> 금일 생산현황
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -27,8 +27,8 @@
                 <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">금일 생산현황</span>
-                    <span class="info-box-number">@ViewBag.WoReqCountToday</span> @DateTime.Now.ToShortDateString() 오늘
+                    <span class="info-box-text">금일 작업현황</span>
+                    <span class="info-box-number">@ViewBag.WoReqCountToday</span> @DateTime.Now.ToShortDateString() 기준
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -43,7 +43,7 @@
                 <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">누적 생산현황</span>
+                    <span class="info-box-text">누적 작업현황</span>
                     <span class="info-box-number">@ViewBag.WoReqCount</span> @DateTime.Now.ToShortDateString() 기준
                 </div>
                 <!-- /.info-box-content -->
@@ -254,7 +254,7 @@
                                 @foreach (var item in ViewBag.WoReqList.WoReqs)
                                 {
                                     <tr>
-                                        <td><a href="pages/examples/invoice.html">@item.Wo_Req_No</a></td>
+                                        <td>@item.Wo_Req_No</td>
                                         <td>@item.Item_Name</td>
                                         <td><span class="label label-success">@item.Req_Status</span></td>
                                         <td>
@@ -484,7 +484,7 @@
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer text-center">
-                    <a href="JobOrder/List" class="uppercase">View All Products</a>
+                    <a href="/JobOrder/List" class="uppercase">View All Products</a>
                 </div>
                 <!-- /.box-footer -->
             </div>

@@ -45,7 +45,7 @@ namespace FieldOperationForm
             col.ReadOnly = true;
             col.DefaultCellStyle.Alignment = textAlign;
             dgv.Columns.Add(col);
-
+            col.DefaultCellStyle.Padding = new Padding(3);
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.Honeydew;
             //    dgv.RowsDefaultCellStyle.BackColor = Color.Ivory;
 
@@ -58,6 +58,7 @@ namespace FieldOperationForm
 
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
             dgv.DefaultCellStyle.SelectionBackColor = Color.CadetBlue;
+            dgv.RowTemplate.Height = 60;
         }
 
         private void Setdgv()

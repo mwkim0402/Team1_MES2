@@ -13,5 +13,11 @@ namespace FieldOperationForm
             Workorderno_Dac dac = new Workorderno_Dac();
             return dac.GetWorkorderno(Wc_Name);
         }
+
+        public List<Workorderno_Vo> EndWorkorderno(string Wc_Name)
+        {
+            Workorderno_Dac dac = new Workorderno_Dac();
+            return dac.EndWorkorderno(Wc_Name);
+        }
     }
 }

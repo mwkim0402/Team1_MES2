@@ -46,7 +46,7 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
             col.ReadOnly = true;
             col.DefaultCellStyle.Alignment = textAlign;
             dgv.Columns.Add(col);
-
+            col.DefaultCellStyle.Padding = new Padding(3);
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.Honeydew;
             //    dgv.RowsDefaultCellStyle.BackColor = Color.Ivory;
 
@@ -59,28 +59,30 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
 
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
             dgv.DefaultCellStyle.SelectionBackColor = Color.CadetBlue;
+
+            dgv.RowTemplate.Height = 60;
         }
 
         private void Setdgv()
         {
 
          
-            AddNewColumnToDataGridView(dataGridView1, "팔레트번호", "Pallet_No", true, 255);
-            AddNewColumnToDataGridView(dataGridView1, "제품", "Item_Name", true, 172);
-            AddNewColumnToDataGridView(dataGridView1, "등급", "Grade_Code", true, 160);
-            AddNewColumnToDataGridView(dataGridView1, "수량", "Prd_Qty", true, 160);
+            AddNewColumnToDataGridView(dataGridView1, "팔레트번호", "Pallet_No", true, 350);
+            AddNewColumnToDataGridView(dataGridView1, "등급", "Grade_Code", true, 300);
+            AddNewColumnToDataGridView(dataGridView1, "등급상세", "Grade_Detail_Code", true, 350);
+            AddNewColumnToDataGridView(dataGridView1, "사이즈", "Size_Code", true, 347);
 
 
 
 
-            this.dataGridView1.Font = new Font("나눔고딕", 15, FontStyle.Bold);
-            this.dataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 15, FontStyle.Bold);
+            this.dataGridView1.Font = new Font("나눔고딕", 17, FontStyle.Bold);
+            this.dataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 17, FontStyle.Bold);
 
 
 
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dgv_NonOperation.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dgv_NonOperation.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
 
@@ -90,7 +92,7 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
 
         private void CreatePalette_Load(object sender, EventArgs e)
         {
-
+            comboBox1.SelectedIndex = 5;
          
         }
 
@@ -98,15 +100,22 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
         private void SetPaletteList()
         {
             Palette_Service service = new Palette_Service();
-            List<Palette_Vo> PList = service.PaletteList();
+            List<PaletteDetail_Vo> PList = service.PaletteList();
             dataGridView1.DataSource = PList;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            a = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txt_PaletteNum.Text = a;
-            TextSet();
+            try
+            {
+                a = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txt_PaletteNum.Text = a;
+                TextSet();
+            }
+            catch
+            {
+
+            }
         }
 
         private void TextSet()
@@ -241,6 +250,20 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "전체")
+            {
+                SetPaletteList();
+            }
+
+            else
+            {
+                Palette_Service service = new Palette_Service();
+                dataGridView1.DataSource = service.GetPaletteGrade(comboBox1.Text);
+            }
         }
     }
 

@@ -40,7 +40,7 @@ namespace FieldOperationForm
             col.ReadOnly = true;
             col.DefaultCellStyle.Alignment = textAlign;
             dgv.Columns.Add(col);
-
+            col.DefaultCellStyle.Padding = new Padding(3);
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.Honeydew;
             //    dgv.RowsDefaultCellStyle.BackColor = Color.Ivory;
 
@@ -52,20 +52,21 @@ namespace FieldOperationForm
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
-            dgv.DefaultCellStyle.SelectionBackColor = Color.DarkSlateGray;
+            dgv.DefaultCellStyle.SelectionBackColor = Color.CadetBlue;
+            dgv.RowTemplate.Height = 60;
         }
 
         private void Setdgv()
         {
 
-            AddNewColumnToDataGridView(dgv_NonOperation, "작업장", "Wc_Name", true, 120);
-            AddNewColumnToDataGridView(dgv_NonOperation, "주원인", "Nop_Ma_Name", true, 146);
-            AddNewColumnToDataGridView(dgv_NonOperation, "상세원인", "Nop_Mi_Name", true, 250);
-            AddNewColumnToDataGridView(dgv_NonOperation, "발생시각", "Nop_Happentime", true, 220);
-            AddNewColumnToDataGridView(dgv_NonOperation, "해제시각", "Nop_Canceltime", true, 220);
-            AddNewColumnToDataGridView(dgv_NonOperation, "비가동시간(분)", "Nop_time", true, 160);
-            this.dgv_NonOperation.Font = new Font("나눔고딕", 14, FontStyle.Bold);
-            this.dgv_NonOperation.DefaultCellStyle.Font = new Font("나눔고딕", 15, FontStyle.Bold);
+            AddNewColumnToDataGridView(dgv_NonOperation, "작업장", "Wc_Name", true, 264);
+            AddNewColumnToDataGridView(dgv_NonOperation, "주원인", "Nop_Ma_Name", true, 260);
+            AddNewColumnToDataGridView(dgv_NonOperation, "상세원인", "Nop_Mi_Name", true, 320);
+            AddNewColumnToDataGridView(dgv_NonOperation, "발생시각", "Nop_Happentime", true, 330);
+            AddNewColumnToDataGridView(dgv_NonOperation, "해제시각", "Nop_Canceltime", true, 330);
+            AddNewColumnToDataGridView(dgv_NonOperation, "비가동시간(분)", "Nop_time", true, 210);
+            this.dgv_NonOperation.Font = new Font("나눔고딕", 17, FontStyle.Bold);
+            this.dgv_NonOperation.DefaultCellStyle.Font = new Font("나눔고딕", 17, FontStyle.Bold);
 
 
 

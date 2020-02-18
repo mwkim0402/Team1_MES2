@@ -101,11 +101,7 @@ namespace FieldOperationForm
                 textBox1.Text = str;
             }
         }
-        private void Form4_Activated(object sender, EventArgs e)
-        {
-            SerialPortonnecting();
-        }
-
+    
         private void SerialPortonnecting()
         {
             if (!Port.IsOpen)
@@ -136,7 +132,7 @@ namespace FieldOperationForm
 
         private void Form4_Deactivate(object sender, EventArgs e)
         {
-            //Port.Close();
+            Port.Close();
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
@@ -145,11 +141,13 @@ namespace FieldOperationForm
             {
                 //if (textBox1.Text.IndexOf('/') > 0)
                 //{
-                    string barID = textBox1.Text.Split('/')[0];
-                    textBox1.Text = barID;//00094
-                    button1.PerformClick();
+                string barID = textBox1.Text.Split('/')[0];
+                textBox1.Text = barID;//00094
+                button1.PerformClick();
+
                 //}
             }
+
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -168,27 +166,32 @@ namespace FieldOperationForm
                 using (SqlConnection conn = new SqlConnection(strConn))
                 {
                     conn.Open();
-                    string sql = String.Format(@"select Workorderno,Pallet_No,In_Date,Grade_Code,Grade_Detail_Code,Size_Code,Prd_Qty from 
- Goods_In_History where Barcode_No= '{0}' " ,textBox1.Text);
+                    string sql = String.Format(@"select Workorderno,Pallet_No,Print_Date,Grade_Code,Grade_Detail_Code,Size_Code,Prd_Qty from 
+ Goods_In_History where Barcode_No= '{0}' ", textBox1.Text);
 
 
                     SqlDataAdapter da = new SqlDataAdapter(sql, conn);
                     da.Fill(ds, "Goods_In_History");
                     conn.Close();
-               
+
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
 
                         label1.Text = dr["Workorderno"].ToString();
                         label2.Text = dr["Pallet_No"].ToString();
-                        label3.Text = dr["In_Date"].ToString();
+                        label3.Text = dr["Print_Date"].ToString();
                         label4.Text = dr["Grade_Code"].ToString();
                         label5.Text = dr["Grade_Detail_Code"].ToString();
                         label6.Text = dr["Size_Code"].ToString();
                         label7.Text = dr["Prd_Qty"].ToString();
+
+                        // textBox1.Text = "";
+                        _Strings.Clear();
                     }
 
+
                 }
+
             }
         }
 
@@ -220,6 +223,16 @@ namespace FieldOperationForm
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ReadBarcode_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Port.Close();
+        }
+
+        private void ReadBarcode_Deactivate(object sender, EventArgs e)
+        {
+
         }
 
         private void label1_Click(object sender, EventArgs e)

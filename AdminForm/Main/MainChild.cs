@@ -19,6 +19,7 @@ namespace AdminForm
         MainForm frm;
         UserCalendar workCalendar;
         UserInfoVo userInfo;
+        List<UserPlanVo> userPlanList;
         public MainChild()
         {
             InitializeComponent();
@@ -37,22 +38,33 @@ namespace AdminForm
 
         private void MainChild_Load(object sender, EventArgs e)
         {
-            DateTime[] planDate = { Convert.ToDateTime("2020-02-10"), Convert.ToDateTime("2020-02-13") };
+            GridViewSettings();
+            GetUserInfo();
+            UserInfoService service = new UserInfoService();
+            userPlanList = service.GetUserPlan(Global.LoginID);
+            DateTime[] planDate = (from item in userPlanList
+                                  select Convert.ToDateTime(item.Plan_Date)).ToArray();
             workCalendar = new UserCalendar(planDate);
             workCalendar.Location = new Point(4, 16);
+            workCalendar.Change_Month += MonthChange;
+           //workCalendar.Search_Click += btnSearch;
             groupBox1.Controls.Add(workCalendar);
-
             frm = (MainForm)this.MdiParent;
 
-            lblID.Text = $"{Global.LoginID.ToString()}님 ";
-            GetUserInfo();
+            lblID.Text = $"{Global.LoginID.ToString()}님 ";           
         }
-
+        
         private void MainChild_Activated(object sender, EventArgs e)
         {
            // frm.lblLocation.Text = "위치정보 : Home";
         }
-
+        private void btnSearch(object sender, EventArgs e)
+        {
+            List<UserPlanVo> bindList = (from item in userPlanList
+                                         where Convert.ToDateTime(item.Plan_Date).Date == Convert.ToDateTime($"{workCalendar.lblYear.Text.Split('년')[0]}-{workCalendar.lblMonth.Text}-{workCalendar.lblDate.Text}")
+                                              select item).ToList();
+            dgvPlanInfo.DataSource = bindList;
+        }
         private void button4_Click(object sender, EventArgs e)
         {
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -75,6 +87,23 @@ namespace AdminForm
             lblGrade.Text = userInfo.UserGroup_Name;
             lblPhone.Text = userInfo.User_Phone;
             lblEmail.Text = userInfo.User_Email;
+        }
+        private void GridViewSettings()
+        {
+            CommonClass.AddNewColumnToDataGridView(dgvPlanInfo, "아이디", "User_ID", false, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvPlanInfo, "번호", "Seq", false, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvPlanInfo, "계획 날짜", "Plan_Date", true, 300);
+            CommonClass.AddNewColumnToDataGridView(dgvPlanInfo, "제목", "Title", true, 300);
+            CommonClass.AddNewColumnToDataGridView(dgvPlanInfo, "내용", "Notice", true, 300);
+        }
+        private void MonthChange(object sender, EventArgs e)
+        {
+            string joinDate = $"{ workCalendar.lblMonth.Text.Split('년')[0]}-{workCalendar.lblMonth.Text}";
+            List<UserPlanVo> bindList = (from item in userPlanList
+                                         where Convert.ToDateTime(item.Plan_Date).Year == Convert.ToDateTime($"{workCalendar.lblYear.Text.Split('년')[0]}-{workCalendar.lblMonth.Text}-1").Year
+                                         && Convert.ToDateTime(item.Plan_Date).Month == Convert.ToDateTime($"{workCalendar.lblYear.Text.Split('년')[0]}-{workCalendar.lblMonth.Text}-1").Month
+                                         select item).ToList();
+            dgvPlanInfo.DataSource = bindList;
         }
     }
 }

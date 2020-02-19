@@ -28,36 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.picFaulty = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picFaulty)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // picFaulty
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(355, 331);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picFaulty.Location = new System.Drawing.Point(12, 12);
+            this.picFaulty.Name = "picFaulty";
+            this.picFaulty.Size = new System.Drawing.Size(355, 331);
+            this.picFaulty.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFaulty.TabIndex = 0;
+            this.picFaulty.TabStop = false;
             // 
             // ViewFaultyImage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(379, 355);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picFaulty);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ViewFaultyImage";
             this.Text = "ViewFaultyImage";
             this.Load += new System.EventHandler(this.ViewFaultyImage_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFaulty)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picFaulty;
     }
 }

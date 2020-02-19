@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MES_DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,18 +13,20 @@ namespace AdminForm
 {
     public partial class ViewFaultyImage : Form
     {
-        string url = string.Empty;
-        string filename = string.Empty;
-        public ViewFaultyImage(string name,string path)
+        int Seq = 0;
+        public ViewFaultyImage(int seq)
         {
             InitializeComponent();
-            url = path;
-            filename = name;
+            Seq = seq;
         }
         
         private void ViewFaultyImage_Load(object sender, EventArgs e)
         {
-            pictureBox1.Image = Image.FromFile(url+"/"+filename);
+            MES_DB.PerformService service = new MES_DB.PerformService();
+            List<RegFaultyVO> list  = service.GetImage(Seq);
+            TypeConverter tc = TypeDescriptor.GetConverter(typeof(Bitmap));
+            picFaulty.Image = (Bitmap)tc.ConvertFrom(list[0].Def_Image);
+            //pictureBox1.Image = Image.FromFile(url+"/"+filename);
         }
     }
 }

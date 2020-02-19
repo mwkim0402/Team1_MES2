@@ -34,16 +34,14 @@ namespace MES_DB
         public int Faulty { get; set; }
     }
 
-    public class GVMonitoringVO
+    public class WorkCenterVO
     {
-        public string GV_Name { get; set; }
-        public string GV_Group { get; set; }
-        public string GV_Status { get; set; }
-        public string Workorderno { get; set; }
-        public string Item_Code { get; set; }
-        public string Item_Name { get; set; }
-        public int GV_Qty { get; set; }
-        public DateTime Loading_time { get; set; }
+        public string Wc_Code { get; set; }
+        public string Wc_Name { get; set; }
+        public string Wc_Group { get; set; }
+        public string Wo_Status { get; set; }
+        public DateTime Prd_Starttime { get; set; }
+        public DateTime Prd_Endtime { get; set; }
     }
 
     public class MaterialManage
@@ -72,6 +70,7 @@ namespace MES_DB
         public string Process_name { get; set;}
         public int workImageCount { get; set; }
         public byte[] Def_Image { get; set; }
+        public int Def_Seq { get; set; }
     }
 
     public class RegFaultyVODetail

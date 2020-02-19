@@ -34,9 +34,9 @@ namespace AdminForm
                 service.EditPerformSearch(Edit);
                 Check = true;
             }
-            else if(cmbSelect.SelectedItem.ToString() == "산출수량")
+            else if(cmbSelect.SelectedItem.ToString() == "불량")
             {
-                Edit.Out_Qty_Main = Convert.ToInt32(nuCount.Value);
+                Edit.Bad_Qty = Convert.ToInt32(nuCount.Value);
                 service.EditPerformSearch(Edit);
                 Check = true;
             }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_Process = new System.Windows.Forms.Button();
             this.btn_Worker = new System.Windows.Forms.Button();
             this.btn_FieldClose = new System.Windows.Forms.Button();
@@ -42,7 +42,7 @@
             this.btn_Process.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_Process.BackColor = System.Drawing.Color.Ivory;
             this.btn_Process.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Process.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_Process.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Process.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btn_Process.Location = new System.Drawing.Point(1211, 432);
             this.btn_Process.Name = "btn_Process";
@@ -57,7 +57,7 @@
             this.btn_Worker.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_Worker.BackColor = System.Drawing.Color.Ivory;
             this.btn_Worker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Worker.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_Worker.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Worker.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btn_Worker.Location = new System.Drawing.Point(818, 432);
             this.btn_Worker.Name = "btn_Worker";
@@ -72,7 +72,7 @@
             this.btn_FieldClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_FieldClose.BackColor = System.Drawing.Color.Ivory;
             this.btn_FieldClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_FieldClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_FieldClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_FieldClose.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btn_FieldClose.Location = new System.Drawing.Point(425, 432);
             this.btn_FieldClose.Name = "btn_FieldClose";
@@ -87,7 +87,7 @@
             this.btn_StartEnd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_StartEnd.BackColor = System.Drawing.Color.Ivory;
             this.btn_StartEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_StartEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_StartEnd.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_StartEnd.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btn_StartEnd.Location = new System.Drawing.Point(32, 432);
             this.btn_StartEnd.Name = "btn_StartEnd";
@@ -110,8 +110,8 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 100;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1475, 392);

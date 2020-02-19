@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_RatingDetail = new System.Windows.Forms.TextBox();
             this.txt_Rating = new System.Windows.Forms.TextBox();
@@ -54,7 +54,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txt_RatingDetail);
             this.groupBox1.Controls.Add(this.txt_Rating);
             this.groupBox1.Controls.Add(this.txt_PaletteNum);
@@ -188,7 +189,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.dtp_EDate);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.dtp_SDate);
@@ -201,19 +203,19 @@
             // 
             // dtp_EDate
             // 
-            this.dtp_EDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtp_EDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtp_EDate.CalendarFont = new System.Drawing.Font("나눔고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtp_EDate.Font = new System.Drawing.Font("나눔고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtp_EDate.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtp_EDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_EDate.Location = new System.Drawing.Point(467, 21);
+            this.dtp_EDate.Location = new System.Drawing.Point(467, 18);
             this.dtp_EDate.Name = "dtp_EDate";
-            this.dtp_EDate.Size = new System.Drawing.Size(252, 35);
+            this.dtp_EDate.Size = new System.Drawing.Size(252, 39);
             this.dtp_EDate.TabIndex = 19;
             this.dtp_EDate.ValueChanged += new System.EventHandler(this.dtp_EDate_ValueChanged);
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.Ivory;
@@ -225,24 +227,24 @@
             // 
             // dtp_SDate
             // 
-            this.dtp_SDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtp_SDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtp_SDate.CalendarFont = new System.Drawing.Font("나눔고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtp_SDate.Font = new System.Drawing.Font("나눔고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtp_SDate.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtp_SDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_SDate.Location = new System.Drawing.Point(148, 21);
+            this.dtp_SDate.Location = new System.Drawing.Point(148, 18);
             this.dtp_SDate.Name = "dtp_SDate";
-            this.dtp_SDate.Size = new System.Drawing.Size(252, 35);
+            this.dtp_SDate.Size = new System.Drawing.Size(252, 39);
             this.dtp_SDate.TabIndex = 3;
             this.dtp_SDate.Value = new System.DateTime(2020, 2, 11, 0, 0, 0, 0);
             this.dtp_SDate.ValueChanged += new System.EventHandler(this.dtp_SDate_ValueChanged);
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.Color.Ivory;
-            this.label2.Location = new System.Drawing.Point(16, 24);
+            this.label2.Location = new System.Drawing.Point(16, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 28);
             this.label2.TabIndex = 2;
@@ -250,14 +252,16 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 95);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(871, 521);
@@ -266,7 +270,7 @@
             // 
             // btn_Reissue
             // 
-            this.btn_Reissue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Reissue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Reissue.BackColor = System.Drawing.Color.Ivory;
             this.btn_Reissue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Reissue.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));

@@ -117,5 +117,10 @@ namespace FieldOperationForm
             main.label3.Text = "";
         }
 
+        private void txt_UserPwd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                btn_Login.PerformClick();
+        }
     }
 }

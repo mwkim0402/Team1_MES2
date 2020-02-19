@@ -27,10 +27,11 @@ namespace MES_DB
         public string Item_Name { get; set; }
         public string Wc_Code { get; set; }
         public int In_Qty_Main { get; set; }
-        public int Out_Qty_Main { get; set; }
+        public int Bad_Qty { get; set; }
         public int Prd_Qty { get; set; }
         public DateTime Plan_Date { get; set; }
         public string Process_code { get; set; }
+        public int Faulty { get; set; }
     }
 
     public class GVMonitoringVO
@@ -70,7 +71,7 @@ namespace MES_DB
         public string Def_Image_Name { get; set; }
         public string Process_name { get; set;}
         public int workImageCount { get; set; }
-        public string Def_Image_Path { get; set; }
+        public byte[] Def_Image { get; set; }
     }
 
     public class RegFaultyVODetail
@@ -83,6 +84,6 @@ namespace MES_DB
         public DateTime Def_Date { get; set; }
         public int Def_Qty { get; set; }
         public string Def_Image_Name { get; set; }
-        public string Def_Image_Path { get; set; }
+        public byte[] Def_Image { get; set; }
     }
 }

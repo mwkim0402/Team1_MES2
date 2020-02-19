@@ -37,11 +37,11 @@ namespace AdminForm
         }
 
         private void MainChild_Load(object sender, EventArgs e)
-        {
-            GridViewSettings();
+        {            
             GetUserInfo();
             UserInfoService service = new UserInfoService();
             userPlanList = service.GetUserPlan(Global.LoginID);
+            GridViewSettings();
             DateTime[] planDate = (from item in userPlanList
                                   select Convert.ToDateTime(item.Plan_Date)).ToArray();
             workCalendar = new UserCalendar(planDate);
@@ -92,9 +92,20 @@ namespace AdminForm
         {
             CommonClass.AddNewColumnToDataGridView(dgvPlanInfo, "아이디", "User_ID", false, 200);
             CommonClass.AddNewColumnToDataGridView(dgvPlanInfo, "번호", "Seq", false, 200);
-            CommonClass.AddNewColumnToDataGridView(dgvPlanInfo, "계획 날짜", "Plan_Date", true, 300);
+            CommonClass.AddNewColumnToDataGridView(dgvPlanInfo, "계획 날짜", "Plan_Date", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvPlanInfo, "제목", "Title", true, 300);
-            CommonClass.AddNewColumnToDataGridView(dgvPlanInfo, "내용", "Notice", true, 300);
+            CommonClass.AddNewColumnToDataGridView(dgvPlanInfo, "내용", "Notice", true, 450);
+            List<UserPlanVo> bindList = (from item in userPlanList
+                                         where (Convert.ToDateTime(item.Plan_Date).Month == DateTime.Now.Month) && (Convert.ToDateTime(item.Plan_Date).Year == DateTime.Now.Year)
+                                         select item).ToList();
+            dgvPlanInfo.DataSource = bindList;
+
+            CommonClass.AddNewColumnToDataGridView(dgvNotice, "번호", "Seq", false, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvNotice, "공지 날짜", "Notice_Date", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvNotice, "제목", "Title", true, 300);
+            CommonClass.AddNewColumnToDataGridView(dgvNotice, "공지 내용", "Description", true, 800);
+            NoticeService noticeService = new NoticeService();
+            dgvNotice.DataSource = noticeService.GetAllNotice();
         }
         private void MonthChange(object sender, EventArgs e)
         {

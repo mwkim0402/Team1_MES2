@@ -146,7 +146,8 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "select User_ID, Seq, CONVERT(CHAR(10),Plan_Date,23) Plan_Date, Title, Notice from User_PlanNotice where User_ID = @User_ID";
+                cmd.CommandText = @"select User_ID, Seq, CONVERT(CHAR(10),Plan_Date,23) Plan_Date, Title, Notice from User_PlanNotice where User_ID = @User_ID
+                                                order by 3";
                
                 cmd.Parameters.AddWithValue("@User_ID", userID);
                 cmd.Connection.Open();

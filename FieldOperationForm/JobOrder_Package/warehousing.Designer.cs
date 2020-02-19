@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Search = new System.Windows.Forms.Button();
             this.txt_Item = new System.Windows.Forms.TextBox();
             this.txt_WorkPlace = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,8 +54,8 @@
             // 
             // label7
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.Ivory;
             this.label7.Location = new System.Drawing.Point(18, 11);
             this.label7.Name = "label7";
@@ -65,20 +66,26 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(18, 54);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(837, 562);
             this.dataGridView1.TabIndex = 20;
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btn_Search);
             this.groupBox1.Controls.Add(this.txt_Item);
             this.groupBox1.Controls.Add(this.txt_WorkPlace);
             this.groupBox1.Controls.Add(this.label4);
@@ -99,19 +106,20 @@
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             // 
-            // button1
+            // btn_Search
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.Ivory;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.Location = new System.Drawing.Point(570, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 54);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "찾기";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_Search.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Search.BackColor = System.Drawing.Color.Ivory;
+            this.btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Search.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_Search.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Search.Location = new System.Drawing.Point(570, 20);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(63, 54);
+            this.btn_Search.TabIndex = 23;
+            this.btn_Search.Text = "찾기";
+            this.btn_Search.UseVisualStyleBackColor = false;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // txt_Item
             // 
@@ -220,6 +228,7 @@
             this.txt_PaletteNum.Name = "txt_PaletteNum";
             this.txt_PaletteNum.Size = new System.Drawing.Size(361, 41);
             this.txt_PaletteNum.TabIndex = 22;
+            this.txt_PaletteNum.TextChanged += new System.EventHandler(this.txt_PaletteNum_TextChanged);
             // 
             // txt_PaletteQuantity
             // 
@@ -269,7 +278,7 @@
             // 
             // btn_warehousing
             // 
-            this.btn_warehousing.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_warehousing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_warehousing.BackColor = System.Drawing.Color.Ivory;
             this.btn_warehousing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_warehousing.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -280,6 +289,7 @@
             this.btn_warehousing.TabIndex = 22;
             this.btn_warehousing.Text = "입고";
             this.btn_warehousing.UseVisualStyleBackColor = false;
+            this.btn_warehousing.Click += new System.EventHandler(this.btn_warehousing_Click);
             // 
             // warehousing
             // 
@@ -294,6 +304,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "warehousing";
             this.Text = "ReceivingRegistration";
+            this.Deactivate += new System.EventHandler(this.warehousing_Deactivate);
+            this.Load += new System.EventHandler(this.warehousing_Load);
             this.Shown += new System.EventHandler(this.warehousing_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -322,6 +334,6 @@
         private System.Windows.Forms.TextBox txt_WorkPlace;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_warehousing;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Search;
     }
 }

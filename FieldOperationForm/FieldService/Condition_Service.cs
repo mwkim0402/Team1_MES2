@@ -9,10 +9,10 @@ namespace FieldOperationForm
    public class Condition_Service
     {
 
-        public List<Condition_Vo> GetCondition(string Wc_Name)
+        public List<Condition_Vo> GetCondition(Condition_Vo item)
         {
             Condition_Dac dac = new Condition_Dac();
-            return dac.GetCondition(Wc_Name);
+            return dac.GetCondition(item);
         }
         
     }

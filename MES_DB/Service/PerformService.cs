@@ -35,10 +35,10 @@ namespace MES_DB
             PerformDAC dac = new PerformDAC();
             return dac.GetAllRegFaultyImage();
         }
-        public void InsFaltyImage(string fileName, string filePath, string WorkOderNo, int faultyNum)
+        public void InsFaltyImage(string fileName, byte[] img, string WorkOderNo, int faultyNum)
         {
             PerformDAC dac = new PerformDAC();
-            dac.InsFaltyImage(fileName, filePath, WorkOderNo, faultyNum);
+            dac.InsFaltyImage(fileName, img, WorkOderNo, faultyNum);
         }
 
         public List<QualityVO> GetAllQuality()

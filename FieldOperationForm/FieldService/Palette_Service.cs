@@ -9,7 +9,7 @@ namespace FieldOperationForm
    public class Palette_Service
     {
 
-        public List<Palette_Vo> PaletteList( )
+        public List<PaletteDetail_Vo> PaletteList( )
         {
             Palette_Dac dac = new Palette_Dac();
             return dac.PaletteList();
@@ -19,6 +19,11 @@ namespace FieldOperationForm
         {
             Palette_Dac dac = new Palette_Dac();
             return dac.GetPaletteDetail(Pallet_No);
+        }
+        public List<PaletteDetail_Vo> GetPaletteGrade(string Grade_Code)
+        {
+            Palette_Dac dac = new Palette_Dac();
+            return dac.GetPaletteGrade(Grade_Code);
         }
     }
 }

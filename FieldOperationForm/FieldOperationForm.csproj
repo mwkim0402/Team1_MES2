@@ -47,6 +47,7 @@
     <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -110,12 +111,6 @@
     <Compile Include="CommonForm\ProcessCondition.Designer.cs">
       <DependentUpon>ProcessCondition.cs</DependentUpon>
     </Compile>
-    <Compile Include="CommonForm\QualityMeasurement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CommonForm\QualityMeasurement.Designer.cs">
-      <DependentUpon>QualityMeasurement.cs</DependentUpon>
-    </Compile>
     <Compile Include="CommonForm\UpdateNonOperation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +126,7 @@
     <Compile Include="FieldDac\Barcode_Dac.cs" />
     <Compile Include="FieldDac\Condition_Dac.cs" />
     <Compile Include="FieldDac\CreatePalette_Dac.cs" />
+    <Compile Include="FieldDac\GoodHistory_Dac.cs" />
     <Compile Include="FieldDac\GVDry_Dac.cs" />
     <Compile Include="FieldDac\Inspect_Dac.cs" />
     <Compile Include="FieldDac\Item_Dac.cs" />
@@ -148,6 +144,7 @@
     <Compile Include="FieldService\Barcode_Service.cs" />
     <Compile Include="FieldService\Condition_Service.cs" />
     <Compile Include="FieldService\CreatePalette_Service.cs" />
+    <Compile Include="FieldService\GoodHistory_Service.cs" />
     <Compile Include="FieldService\GVDry_Service.cs" />
     <Compile Include="FieldService\Inspect_Service.cs" />
     <Compile Include="FieldService\Item_Service.cs" />
@@ -164,6 +161,7 @@
     <Compile Include="FieldVo\Barcode_Vo.cs" />
     <Compile Include="FieldVo\Condition_Vo.cs" />
     <Compile Include="FieldVo\CreatePalette_Vo.cs" />
+    <Compile Include="FieldVo\GoodHistory_Vo.cs" />
     <Compile Include="FieldVo\GVDry_Vo.cs" />
     <Compile Include="FieldVo\Inspect_Vo.cs" />
     <Compile Include="FieldVo\Item_Vo.cs" />
@@ -223,12 +221,6 @@
     <Compile Include="JobOrder_Package\CreatePalette.Designer.cs">
       <DependentUpon>CreatePalette.cs</DependentUpon>
     </Compile>
-    <Compile Include="JobOrder_Package\JobOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="JobOrder_Package\JobOrder.Designer.cs">
-      <DependentUpon>JobOrder.cs</DependentUpon>
-    </Compile>
     <Compile Include="JobOrder_Package\JobOrderStatus_Package .cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,9 +275,6 @@
     <EmbeddedResource Include="CommonForm\ProcessCondition.resx">
       <DependentUpon>ProcessCondition.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CommonForm\QualityMeasurement.resx">
-      <DependentUpon>QualityMeasurement.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CommonForm\UpdateNonOperation.resx">
       <DependentUpon>UpdateNonOperation.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,9 +301,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="JobOrder_Package\CreatePalette.resx">
       <DependentUpon>CreatePalette.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="JobOrder_Package\JobOrder.resx">
-      <DependentUpon>JobOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JobOrder_Package\JobOrderStatus_Package .resx">
       <DependentUpon>JobOrderStatus_Package .cs</DependentUpon>

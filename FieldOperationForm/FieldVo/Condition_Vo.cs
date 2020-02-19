@@ -8,7 +8,7 @@ namespace FieldOperationForm
 {
    public class Condition_Vo
     {
-
+        public string Wc_Name { get; set; }
         public string Item_Name { get; set; }
         public decimal USL { get; set; }
         public decimal SL { get; set; }

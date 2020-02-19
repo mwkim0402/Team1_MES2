@@ -78,7 +78,7 @@ namespace WebApplication0106.DAC
             double iTotCount = 0;
             using (SqlConnection conn = new SqlConnection(strconn))
             {
-                string sql = @"select  (Sum(Bad_Qty)/1.0/sum(isnull(In_Qty_Main,1)) * 100) c from WorkOrder
+                string sql = @"select  (ISNULL( Sum(Bad_Qty),0) /1.0 / isnull(sum(In_Qty_Main),1) * 100) c from WorkOrder
                                 where (convert(varchar(8), Prd_Starttime, 112) = convert(varchar(8), getdate(), 112))";
 
                 conn.Open();

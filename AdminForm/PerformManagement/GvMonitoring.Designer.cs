@@ -33,18 +33,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dgvRun = new System.Windows.Forms.DataGridView();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgvDry = new System.Windows.Forms.DataGridView();
-            this.dgvPlasticity = new System.Windows.Forms.DataGridView();
+            this.dgvNoRun = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRun)).BeginInit();
             this.tabControl4.SuspendLayout();
             this.tabControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDry)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlasticity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNoRun)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,14 +70,37 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel2.Controls.Add(this.dgvDry);
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.dgvRun);
             this.panel2.Controls.Add(this.tabControl4);
             this.panel2.Location = new System.Drawing.Point(16, 72);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1128, 262);
+            this.panel2.Size = new System.Drawing.Size(1128, 325);
             this.panel2.TabIndex = 0;
+            // 
+            // dgvRun
+            // 
+            this.dgvRun.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvRun.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvRun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRun.Location = new System.Drawing.Point(0, 28);
+            this.dgvRun.Name = "dgvRun";
+            this.dgvRun.RowTemplate.Height = 23;
+            this.dgvRun.Size = new System.Drawing.Size(1128, 297);
+            this.dgvRun.TabIndex = 1;
             // 
             // tabControl4
             // 
@@ -89,7 +112,7 @@
             this.tabControl4.Location = new System.Drawing.Point(0, 0);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(1135, 29);
+            this.tabControl4.Size = new System.Drawing.Size(1135, 92);
             this.tabControl4.TabIndex = 0;
             // 
             // tabPage4
@@ -98,9 +121,9 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 28);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1127, 0);
+            this.tabPage4.Size = new System.Drawing.Size(1127, 60);
             this.tabPage4.TabIndex = 0;
-            this.tabPage4.Text = "건조대차";
+            this.tabPage4.Text = "가동중인 작업장";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabControl2
@@ -110,10 +133,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl2.Controls.Add(this.tabPage2);
             this.tabControl2.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tabControl2.Location = new System.Drawing.Point(16, 333);
+            this.tabControl2.Location = new System.Drawing.Point(14, 403);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1135, 29);
+            this.tabControl2.Size = new System.Drawing.Size(1130, 29);
             this.tabControl2.TabIndex = 11;
             // 
             // tabPage2
@@ -122,37 +145,17 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1127, 0);
+            this.tabPage2.Size = new System.Drawing.Size(1122, 0);
             this.tabPage2.TabIndex = 0;
-            this.tabPage2.Text = "소성대차";
+            this.tabPage2.Text = "비가동 작업장";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dgvDry
+            // dgvNoRun
             // 
-            this.dgvDry.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvNoRun.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDry.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDry.Location = new System.Drawing.Point(0, 28);
-            this.dgvDry.Name = "dgvDry";
-            this.dgvDry.RowTemplate.Height = 23;
-            this.dgvDry.Size = new System.Drawing.Size(1128, 231);
-            this.dgvDry.TabIndex = 1;
-            // 
-            // dgvPlasticity
-            // 
-            this.dgvPlasticity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvNoRun.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -161,20 +164,20 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPlasticity.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPlasticity.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPlasticity.Location = new System.Drawing.Point(16, 361);
-            this.dgvPlasticity.Name = "dgvPlasticity";
-            this.dgvPlasticity.RowTemplate.Height = 23;
-            this.dgvPlasticity.Size = new System.Drawing.Size(1128, 221);
-            this.dgvPlasticity.TabIndex = 12;
+            this.dgvNoRun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvNoRun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNoRun.Location = new System.Drawing.Point(16, 434);
+            this.dgvNoRun.Name = "dgvNoRun";
+            this.dgvNoRun.RowTemplate.Height = 23;
+            this.dgvNoRun.Size = new System.Drawing.Size(1128, 154);
+            this.dgvNoRun.TabIndex = 12;
             // 
             // GVMonitoring
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 604);
-            this.Controls.Add(this.dgvPlasticity);
+            this.Controls.Add(this.dgvNoRun);
             this.Controls.Add(this.tabControl2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -191,10 +194,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRun)).EndInit();
             this.tabControl4.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDry)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlasticity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNoRun)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -208,7 +211,7 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dgvDry;
-        private System.Windows.Forms.DataGridView dgvPlasticity;
+        private System.Windows.Forms.DataGridView dgvRun;
+        private System.Windows.Forms.DataGridView dgvNoRun;
     }
 }

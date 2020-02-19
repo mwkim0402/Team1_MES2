@@ -38,6 +38,7 @@ namespace AdminForm
 
             // Add the Handler to draw the Image on Tab Pages
             tabControl2.DrawItem += tabControl4_DrawItem;
+            
         }
 
 
@@ -55,6 +56,7 @@ namespace AdminForm
             btnMenu.BackColor = SystemColors.ActiveCaptionText;
 
             LoadHome();
+            Userauthority();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -543,19 +545,18 @@ namespace AdminForm
         {
             // 메인 화면에서 유저아이디 체크 후 권한 확인하고 버튼 수정
 
-            LoginService service = new LoginService();
-            LoginVO userVO = new LoginVO();
-            //userVO.User_ID = Global.User_ID;
-            userVO.Screen_Code = "메인";
-            List<LoginVO> list = service.LoginAuthority(userVO);
+            //LoginService service = new LoginService();
+            //LoginVO userVO = new LoginVO();
+            //userVO.Screen_Code = "메인";
+            //List<LoginVO> list = service.LoginAuthority(userVO);
 
 
 
+            string[] Authority = Global.Authority.Split(',');
             // 추가,조회,삭제,수정 부분중에 메인 폼에는 조회와 삭제만 있어서 조회,삭제 버튼만 제어
-            if (list.Count > 0)
+            if (Authority != null)
             {
-                // list[0].Pre_Type = "추가,조회,수정,삭제"  --> 이런식으로 값을 가져온다
-                string[] Authority = list[0].Pre_Type.Split(',');
+                // list[0].Pre_Type = "추가,조회,수정,삭제"  --> 이런식으로 값을 가져온다6
                 for (int i = 0; i < Authority.Length; i++)
                 {
                     if (Authority[i] == "조회")

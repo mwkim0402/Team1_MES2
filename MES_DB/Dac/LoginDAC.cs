@@ -15,7 +15,14 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "select * from User_Master where User_ID = @User_ID and User_PW = @User_PW";
+                cmd.CommandText = @"select um.UserGroup_Code,u.User_ID,u.User_Name,s.Screen_Code,s.Pre_Type
+                                    from User_Master u inner
+                                    join UserGroup_Mapping m on m.User_ID = u.User_ID
+                                    inner
+                                    join UserGroup_Master um on m.UserGroup_Code = um.UserGroup_Code
+                                    inner
+                                    join ScreenItem_Authority s on s.UserGroup_Code = um.UserGroup_Code
+                                    where u.User_ID = @User_ID and u.User_PW = @User_PW ";
                 cmd.CommandType = CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@User_ID", login.User_ID);

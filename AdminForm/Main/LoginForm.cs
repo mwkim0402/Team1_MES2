@@ -34,6 +34,7 @@ namespace AdminForm
             {
                 //btnLogin.DialogResult = DialogResult.OK;
                 Global.LoginID = list[0].User_ID;
+                Global.Authority = list[0].Pre_Type;
                 MainForm frm = new MainForm();
                 frm.Show();
                 this.Hide();

@@ -17,4 +17,9 @@ namespace WebAdminLTE1.Models
         public string Process_Code { get; set; }
         public decimal work_time { get; set; }
     }
+
+    public class MonthVO
+    {
+        public string Date { get; set; }
+    }
 }

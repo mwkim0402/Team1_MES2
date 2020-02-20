@@ -27,18 +27,18 @@ namespace AdminForm
             frm = (MainForm)this.MdiParent;
 
             //AddNewColumnToDataGridView(dgvSearchResult, "생산일자", "???", true, 120);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형코드", "Mold_Code", true, 110);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형명", "Mold_Name", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "작업지시번호", "Workorderno", true, 170);
-            AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 110);
-            AddNewColumnToDataGridView(dgvSearchResult, "품목명", "Item_Name", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "작업장코드", "Wc_Code", true, 130);
-            AddNewColumnToDataGridView(dgvSearchResult, "작업장명", "Wc_Name", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형타수", "Mold_Shot_Cnt", true, 110, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형생산량", "Mold_Prd_Qty", true, 130, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형사용시작시간", "Use_Starttime", true, 170);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형사용종료시간", "Use_Endtime", true, 170);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형사용시간", "UsingTime", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형코드", "Mold_Code", true, 110);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형명", "Mold_Name", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업지시번호", "Workorderno", true, 170);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 110);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목명", "Item_Name", true, 110);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업장코드", "Wc_Code", true, 130);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "작업장명", "Wc_Name", true, 110);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형타수", "Mold_Shot_Cnt", true, 110, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형생산량", "Mold_Prd_Qty", true, 130, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형사용시작시간", "Use_Starttime", true, 170, DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형사용종료시간", "Use_Endtime", true, 170, DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형사용시간", "UsingTime", true, 150);
             LoadList();
             dgvSearchResult.DataSource = list;
 
@@ -50,29 +50,7 @@ namespace AdminForm
             dgvSearchResult.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dtpStart.Value = dtpEnd.Value.AddDays(-7);
         }
-        private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
-    int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleCenter)
-        {
-            DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
-            col.HeaderText = headerText;
-            col.DataPropertyName = dataPropertyName;
-            col.Width = colWidth;
-            col.Visible = visibility;
-            col.ValueType = typeof(string);
-            col.ReadOnly = true;
-            col.DefaultCellStyle.Alignment = textAlign;
-            dgv.Columns.Add(col);
-
-            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
-            dgv.EnableHeadersVisualStyles = false;
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue;
-
-            dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-
-            dgv.DefaultCellStyle.SelectionForeColor = Color.White;
-            dgv.DefaultCellStyle.SelectionBackColor = Color.MidnightBlue;
-        }
+       
 
         //검색
         private void Search(object sender, EventArgs e)

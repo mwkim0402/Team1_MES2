@@ -57,8 +57,8 @@ namespace WebAdminLTE1.Controllers
             ViewBag.FinishWOJJ = jobOrder.GetWorkOrderFinishCount("적재");
             ViewBag.FinishWOPJ = jobOrder.GetWorkOrderFinishCount("포장");
             //누적작업완료 뷰백
-            
-            ViewBag.TopFive = jobordermodel; 
+
+            ViewBag.TopFive = jobordermodel;
             //작업지시 뷰백
 
             ProductDAC workcenter = new ProductDAC();
@@ -103,7 +103,7 @@ namespace WebAdminLTE1.Controllers
                 Members = memcnt.GetWorkerCount()
             };
 
-            ViewBag.memcnt = memcntmodel; 
+            ViewBag.memcnt = memcntmodel;
             //직책별 카운트 뷰백
             ViewBag.gn1 = memcntmodel.Members[0].UserGroup_Name;
             ViewBag.gn1cnt = memcntmodel.Members[0].UserCnt;
@@ -132,14 +132,14 @@ namespace WebAdminLTE1.Controllers
 
             List<int> time = new List<int>();
             time = (from a in AllList
-                    select  Convert.ToInt32(a.work_time)).ToList();
+                    select Convert.ToInt32(a.work_time)).ToList();
             string data1 = string.Empty;
 
-            for (int t =0; t<time.Count; t++)
+            for (int t = 0; t < time.Count; t++)
             {
-                data1 +=  Name[t]+"," +time[t] +","; 
+                data1 += Name[t] + "," + time[t] + ",";
             }
-            data1 = data1.TrimEnd(',');           
+            data1 = data1.TrimEnd(',');
             ViewBag.data1 = data1;
 
 
@@ -154,17 +154,17 @@ namespace WebAdminLTE1.Controllers
 
             List<int> ProcessTime = new List<int>();
             ProcessTime = (from p_time in pieList
-                    select Convert.ToInt32(p_time.work_time)).ToList();
+                           select Convert.ToInt32(p_time.work_time)).ToList();
 
 
             string data2 = string.Empty;
             string PCode = string.Empty;
 
-            for(int i=0; i<ProcessTime.Count; i++)
+            for (int i = 0; i < ProcessTime.Count; i++)
             {
-                data2 += ProcessTime[i].ToString() +",";
+                data2 += ProcessTime[i].ToString() + ",";
             }
-            for(int q=0; q<process.Count; q++)
+            for (int q = 0; q < process.Count; q++)
             {
                 PCode += process[q] + ",";
             }
@@ -177,6 +177,15 @@ namespace WebAdminLTE1.Controllers
 
 
             //Bar chart 매달마다 일 많이 한 인원
+
+
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Member(MonthVO month)
+        {
 
 
 

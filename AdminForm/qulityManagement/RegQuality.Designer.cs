@@ -36,8 +36,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegQuality));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.fcWorker = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.fcFactory = new AdminForm.FIndCategory();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
@@ -50,15 +52,13 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvDetaillist = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtNum = new System.Windows.Forms.TextBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.txtNum = new System.Windows.Forms.TextBox();
-            this.fcWorker = new AdminForm.FIndCategory();
-            this.fcFactory = new AdminForm.FIndCategory();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJob)).BeginInit();
@@ -78,7 +78,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.Controls.Add(this.fcWorker);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
@@ -91,6 +91,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1128, 63);
             this.panel2.TabIndex = 12;
+            // 
+            // fcWorker
+            // 
+            this.fcWorker.Category = AdminForm.CategoryMode.WorkCenter;
+            this.fcWorker.Location = new System.Drawing.Point(764, 19);
+            this.fcWorker.Name = "fcWorker";
+            this.fcWorker.SendCode = null;
+            this.fcWorker.SendName = null;
+            this.fcWorker.Size = new System.Drawing.Size(190, 27);
+            this.fcWorker.TabIndex = 5;
             // 
             // label4
             // 
@@ -111,6 +121,16 @@
             this.label3.Size = new System.Drawing.Size(43, 19);
             this.label3.TabIndex = 1;
             this.label3.Text = "공정 ";
+            // 
+            // fcFactory
+            // 
+            this.fcFactory.Category = AdminForm.CategoryMode.Process;
+            this.fcFactory.Location = new System.Drawing.Point(489, 19);
+            this.fcFactory.Name = "fcFactory";
+            this.fcFactory.SendCode = null;
+            this.fcFactory.SendName = null;
+            this.fcFactory.Size = new System.Drawing.Size(190, 27);
+            this.fcFactory.TabIndex = 1;
             // 
             // label2
             // 
@@ -303,26 +323,45 @@
             this.panel3.Size = new System.Drawing.Size(513, 34);
             this.panel3.TabIndex = 3;
             // 
+            // txtNum
+            // 
+            this.txtNum.Enabled = false;
+            this.txtNum.Location = new System.Drawing.Point(26, 6);
+            this.txtNum.Name = "txtNum";
+            this.txtNum.Size = new System.Drawing.Size(95, 21);
+            this.txtNum.TabIndex = 4;
+            this.txtNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
+            // 
             // btnRemove
             // 
+            this.btnRemove.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnRemove.Enabled = false;
+            this.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Font = new System.Drawing.Font("나눔고딕", 9F);
+            this.btnRemove.ForeColor = System.Drawing.Color.White;
             this.btnRemove.Location = new System.Drawing.Point(274, 4);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(113, 23);
             this.btnRemove.TabIndex = 2;
             this.btnRemove.Text = "측정 제거";
-            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnAdd.Enabled = false;
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("나눔고딕", 9F);
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Location = new System.Drawing.Point(146, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(113, 23);
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "측정값 등록";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tabControl4
@@ -373,35 +412,6 @@
             this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // txtNum
-            // 
-            this.txtNum.Enabled = false;
-            this.txtNum.Location = new System.Drawing.Point(26, 6);
-            this.txtNum.Name = "txtNum";
-            this.txtNum.Size = new System.Drawing.Size(95, 21);
-            this.txtNum.TabIndex = 4;
-            this.txtNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
-            // 
-            // fcWorker
-            // 
-            this.fcWorker.Category = AdminForm.CategoryMode.WorkCenter;
-            this.fcWorker.Location = new System.Drawing.Point(764, 19);
-            this.fcWorker.Name = "fcWorker";
-            this.fcWorker.SendCode = null;
-            this.fcWorker.SendName = null;
-            this.fcWorker.Size = new System.Drawing.Size(190, 27);
-            this.fcWorker.TabIndex = 5;
-            // 
-            // fcFactory
-            // 
-            this.fcFactory.Category = AdminForm.CategoryMode.Process;
-            this.fcFactory.Location = new System.Drawing.Point(489, 19);
-            this.fcFactory.Name = "fcFactory";
-            this.fcFactory.SendCode = null;
-            this.fcFactory.SendName = null;
-            this.fcFactory.Size = new System.Drawing.Size(190, 27);
-            this.fcFactory.TabIndex = 1;
             // 
             // RegQuality
             // 

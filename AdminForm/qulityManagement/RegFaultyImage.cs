@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -18,8 +19,9 @@ namespace AdminForm
         DateTime EndDate;
         string WorkOrder = string.Empty;
         string fileName = string.Empty;
-        string InsDBfilePath = string.Empty;
-
+        byte[] bImage;
+        PictureBox pic;
+        int seq = 0;
         public RegFaultyImage()
         {
             InitializeComponent();
@@ -60,7 +62,9 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "x", "Def_Qty", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "x", "Def_Image_Name", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "x", "Process_name", false, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "x", "Def_Image_Path", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "x", "Def_Image", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "x", "Def_Seq", false, 100);
+            
 
             GetData();
         }
@@ -75,29 +79,29 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "불량상세분류", "Def_Mi_Code", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "발생일시", "Def_Date", true, 120, DataGridViewContentAlignment.MiddleCenter);
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "불량수량", "Def_Qty", true, 120, DataGridViewContentAlignment.MiddleRight);
-            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "불량사진", "Def_Image_Name", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "사진이름", "Def_Image_Name", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "불량사진", "Def_Image", false, 120);
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "x", "Def_Image_Path", false, 100);
         }
 
         private void DgvProductRequset_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            WorkOrder = dgvJobOrder.Rows[e.RowIndex].Cells[0].Value.ToString();
+            WorkOrder = dgvJobOrder.Rows[e.RowIndex].Cells[1].Value.ToString();
 
 
             
-            if(dgvJobOrder.Rows[e.RowIndex].Cells[7].Value != null)
+            if(dgvJobOrder.Rows[e.RowIndex].Cells[8].Value != null)
             {
                 //이미지 보여주기 해야함
-                string Name = dgvJobOrder.Rows[e.RowIndex].Cells[7].Value.ToString();
-                string path = dgvJobOrder.Rows[e.RowIndex].Cells[8].Value.ToString();
-                ViewFaultyImage frm = new ViewFaultyImage(Name,path);
+
+                ViewFaultyImage frm = new ViewFaultyImage(seq);
                 frm.ShowDialog();
             }
         }
 
         private void ViewDgvDetail(object sender, DataGridViewCellEventArgs e)
         {
-
+            seq = Convert.ToInt32(dgvProductRequset.Rows[e.RowIndex].Cells[15].Value);
             string itemCode = dgvProductRequset.Rows[e.RowIndex].Cells[7].Value.ToString();
 
             List<RegFaultyVODetail> list = (from item in allList
@@ -111,8 +115,7 @@ namespace AdminForm
                                                 Def_Mi_Code = item.Def_Mi_Code,
                                                 Def_Qty = item.Def_Qty,
                                                 Def_Date = item.Def_Date,
-                                                Def_Image_Name = item.Def_Image_Name,
-                                                Def_Image_Path = item.Def_Image_Path
+                                                Def_Image_Name = item.Def_Image_Name
                                             }).ToList();
             dgvJobOrder.DataSource = list;
             btnImage.Enabled = true;
@@ -185,6 +188,20 @@ namespace AdminForm
                 openFileDialog1.Filter = "Images Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg;*.jpeg;*.gif;*.bmp;*.png";
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
+                    pic = new PictureBox();
+                    pic.Image = new Bitmap(openFileDialog1.FileName);
+                    pic.Tag = openFileDialog1.FileName;
+
+                    FileStream fs = new FileStream(pic.Tag.ToString(), FileMode.Open, FileAccess.Read);
+                    bImage = new byte[fs.Length];
+                    fs.Read(bImage, 0, (int)fs.Length);
+
+
+                    //cmd.Parameters.AddWithValue("@ImageNo", 1);
+                    //cmd.Parameters.AddWithValue("@Image", bImage);
+                    fs.Close();
+
+
                     fileName = openFileDialog1.FileName;
                     string[] fileNameArr = fileName.Split('\\');
                     for (int i = 0; i < fileNameArr.Length; i++)
@@ -192,18 +209,18 @@ namespace AdminForm
                         fileName = fileNameArr[i];
                     }
 
-                    saveFileDialog1.FileName = fileName;
-                    saveFileDialog1.InitialDirectory = Application.StartupPath.Replace('\\', '/') + filePath;
+                    //saveFileDialog1.FileName = fileName;
+                    //saveFileDialog1.InitialDirectory = Application.StartupPath.Replace('\\', '/') + filePath;
 
                     // DB에 저장 될 저장 경로
-                    InsDBfilePath = saveFileDialog1.InitialDirectory;
+                    //InsDBfilePath = saveFileDialog1.InitialDirectory;
 
 
-                    saveFileDialog1.InitialDirectory = Application.StartupPath.Replace('\\', '/') + filePath + fileName;
-                    string saveFilePath = saveFileDialog1.InitialDirectory;
-                    PictureBox pic = new PictureBox();
-                    pic.Image = Bitmap.FromFile(openFileDialog1.FileName);
-                    pic.Image.Save(saveFilePath);
+                    //saveFileDialog1.InitialDirectory = Application.StartupPath.Replace('\\', '/') + filePath + fileName;
+                    //string saveFilePath = saveFileDialog1.InitialDirectory;
+                    //PictureBox pic = new PictureBox();
+                    //pic.Image = Bitmap.FromFile(openFileDialog1.FileName);
+                    //pic.Image.Save(saveFilePath);
 
                     MessageBox.Show("이미지 등록을 위한 불량등록버튼을 눌러주세요.");
                 }
@@ -216,9 +233,11 @@ namespace AdminForm
         {
             if (nuFaultyCount.Value != 0)
             {
-                //DB 수정부분
+                //DB 입력부분
                 MES_DB.PerformService service = new MES_DB.PerformService();
-                service.InsFaltyImage(fileName, InsDBfilePath, WorkOrder,Convert.ToInt32(nuFaultyCount.Value));
+                ImageConverter converter = new ImageConverter();
+                byte[] imagebyte = (byte[])converter.ConvertTo(pic.Image, typeof(byte[]));
+                service.InsFaltyImage(fileName, imagebyte, WorkOrder,Convert.ToInt32(nuFaultyCount.Value));
 
 
                 dgvJobOrder.DataSource = null;

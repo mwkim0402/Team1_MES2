@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtOrderCreationNum = new System.Windows.Forms.TextBox();
             this.btnOrderCreationDeadline = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,8 +63,9 @@
             this.txtCustName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtProjectName = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnSung = new System.Windows.Forms.ToolStripButton();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tcParent1.SuspendLayout();
             this.tcParent2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -71,6 +74,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuPlanAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuPlanAmount_CH)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcParent2
@@ -79,6 +83,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.Controls.Add(this.cmbItemCode_CH);
             this.panel1.Controls.Add(this.btnModify);
             this.panel1.Controls.Add(this.cmbWorkPlace_CH);
@@ -102,6 +107,7 @@
             // 
             // pnlParent1
             // 
+            this.pnlParent1.BackColor = System.Drawing.Color.LightGray;
             this.pnlParent1.Controls.Add(this.label6);
             this.pnlParent1.Controls.Add(this.txtProjectName);
             this.pnlParent1.Controls.Add(this.label5);
@@ -122,7 +128,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.txtOrderCreationNum);
@@ -134,6 +140,24 @@
             this.panel2.Size = new System.Drawing.Size(1128, 67);
             this.panel2.TabIndex = 4;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.textBox1.Location = new System.Drawing.Point(83, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 26);
+            this.textBox1.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.label1.Location = new System.Drawing.Point(23, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 19);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "제품명";
+            // 
             // txtOrderCreationNum
             // 
             this.txtOrderCreationNum.Font = new System.Drawing.Font("나눔고딕", 12F);
@@ -144,13 +168,17 @@
             // 
             // btnOrderCreationDeadline
             // 
+            this.btnOrderCreationDeadline.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnOrderCreationDeadline.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnOrderCreationDeadline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrderCreationDeadline.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.btnOrderCreationDeadline.ForeColor = System.Drawing.Color.White;
             this.btnOrderCreationDeadline.Location = new System.Drawing.Point(479, 11);
             this.btnOrderCreationDeadline.Name = "btnOrderCreationDeadline";
             this.btnOrderCreationDeadline.Size = new System.Drawing.Size(86, 40);
             this.btnOrderCreationDeadline.TabIndex = 17;
             this.btnOrderCreationDeadline.Text = "조회";
-            this.btnOrderCreationDeadline.UseVisualStyleBackColor = true;
+            this.btnOrderCreationDeadline.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -175,11 +203,12 @@
             // 
             // dtpPlanDate
             // 
+            this.dtpPlanDate.Enabled = false;
             this.dtpPlanDate.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.dtpPlanDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPlanDate.Location = new System.Drawing.Point(678, 60);
+            this.dtpPlanDate.Location = new System.Drawing.Point(708, 60);
             this.dtpPlanDate.Name = "dtpPlanDate";
-            this.dtpPlanDate.Size = new System.Drawing.Size(152, 26);
+            this.dtpPlanDate.Size = new System.Drawing.Size(228, 26);
             this.dtpPlanDate.TabIndex = 43;
             // 
             // label21
@@ -209,7 +238,7 @@
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label18.Location = new System.Drawing.Point(591, 63);
+            this.label18.Location = new System.Drawing.Point(621, 63);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(69, 19);
             this.label18.TabIndex = 49;
@@ -227,6 +256,7 @@
             // 
             // nuPlanAmount
             // 
+            this.nuPlanAmount.Enabled = false;
             this.nuPlanAmount.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.nuPlanAmount.Location = new System.Drawing.Point(403, 58);
             this.nuPlanAmount.Maximum = new decimal(new int[] {
@@ -235,7 +265,7 @@
             0,
             0});
             this.nuPlanAmount.Name = "nuPlanAmount";
-            this.nuPlanAmount.Size = new System.Drawing.Size(152, 26);
+            this.nuPlanAmount.Size = new System.Drawing.Size(182, 26);
             this.nuPlanAmount.TabIndex = 10;
             this.nuPlanAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -243,26 +273,34 @@
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(1003, 18);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(105, 67);
             this.btnSave.TabIndex = 60;
             this.btnSave.Text = "저장";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // btnModify
             // 
             this.btnModify.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnModify.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnModify.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModify.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.btnModify.ForeColor = System.Drawing.Color.White;
             this.btnModify.Location = new System.Drawing.Point(1003, 18);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(105, 67);
             this.btnModify.TabIndex = 75;
             this.btnModify.Text = "수정";
-            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.UseVisualStyleBackColor = false;
             this.btnModify.Click += new System.EventHandler(this.BtnModify_Click);
             // 
             // cmbWorkPlace_CH
@@ -277,7 +315,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label7.BackColor = System.Drawing.Color.LightGray;
             this.label7.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label7.Location = new System.Drawing.Point(751, 23);
             this.label7.Name = "label7";
@@ -288,7 +326,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label8.BackColor = System.Drawing.Color.LightGray;
             this.label8.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label8.Location = new System.Drawing.Point(522, 60);
             this.label8.Name = "label8";
@@ -320,7 +358,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label9.BackColor = System.Drawing.Color.LightGray;
             this.label9.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label9.Location = new System.Drawing.Point(23, 22);
             this.label9.Name = "label9";
@@ -340,7 +378,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label10.BackColor = System.Drawing.Color.LightGray;
             this.label10.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label10.Location = new System.Drawing.Point(506, 23);
             this.label10.Name = "label10";
@@ -351,7 +389,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label11.BackColor = System.Drawing.Color.LightGray;
             this.label11.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label11.Location = new System.Drawing.Point(23, 60);
             this.label11.Name = "label11";
@@ -362,7 +400,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label12.BackColor = System.Drawing.Color.LightGray;
             this.label12.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label12.Location = new System.Drawing.Point(306, 22);
             this.label12.Name = "label12";
@@ -373,7 +411,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label13.BackColor = System.Drawing.Color.LightGray;
             this.label13.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label13.Location = new System.Drawing.Point(306, 60);
             this.label13.Name = "label13";
@@ -407,8 +445,13 @@
             this.cmbItemCode_CH.Size = new System.Drawing.Size(138, 27);
             this.cmbItemCode_CH.TabIndex = 76;
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
+            // 
             // cmbItemName
             // 
+            this.cmbItemName.Enabled = false;
             this.cmbItemName.FormattingEnabled = true;
             this.cmbItemName.Location = new System.Drawing.Point(128, 60);
             this.cmbItemName.Name = "cmbItemName";
@@ -431,7 +474,8 @@
             this.txtCustName.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.txtCustName.Location = new System.Drawing.Point(403, 19);
             this.txtCustName.Name = "txtCustName";
-            this.txtCustName.Size = new System.Drawing.Size(152, 26);
+            this.txtCustName.ReadOnly = true;
+            this.txtCustName.Size = new System.Drawing.Size(182, 26);
             this.txtCustName.TabIndex = 64;
             // 
             // label6
@@ -439,7 +483,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label6.Location = new System.Drawing.Point(591, 23);
+            this.label6.Location = new System.Drawing.Point(621, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 19);
             this.label6.TabIndex = 65;
@@ -448,34 +492,46 @@
             // txtProjectName
             // 
             this.txtProjectName.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtProjectName.Location = new System.Drawing.Point(678, 18);
+            this.txtProjectName.Location = new System.Drawing.Point(708, 18);
             this.txtProjectName.Name = "txtProjectName";
-            this.txtProjectName.Size = new System.Drawing.Size(152, 26);
+            this.txtProjectName.ReadOnly = true;
+            this.txtProjectName.Size = new System.Drawing.Size(228, 26);
             this.txtProjectName.TabIndex = 66;
             // 
-            // textBox1
+            // toolStrip1
             // 
-            this.textBox1.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.textBox1.Location = new System.Drawing.Point(83, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 26);
-            this.textBox1.TabIndex = 20;
+            this.toolStrip1.AutoSize = false;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnSung});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1156, 86);
+            this.toolStrip1.TabIndex = 12;
+            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.Visible = false;
             // 
-            // label1
+            // btnSung
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label1.Location = new System.Drawing.Point(23, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 19);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "제품명";
+            this.btnSung.AutoSize = false;
+            this.btnSung.Image = global::AdminForm.Properties.Resources.Action_Save_New_32x32;
+            this.btnSung.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnSung.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSung.Name = "btnSung";
+            this.btnSung.Size = new System.Drawing.Size(80, 60);
+            this.btnSung.Text = "생산의뢰 등록";
+            this.btnSung.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSung.Click += new System.EventHandler(this.btnSung_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // JobOrderCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 604);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -490,6 +546,7 @@
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.tcParent1, 0);
             this.Controls.SetChildIndex(this.tcParent2, 0);
+            this.Controls.SetChildIndex(this.toolStrip1, 0);
             this.tcParent1.ResumeLayout(false);
             this.tcParent2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -501,6 +558,8 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuPlanAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuPlanAmount_CH)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -541,5 +600,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btnSung;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

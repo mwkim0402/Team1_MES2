@@ -221,12 +221,17 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(329, 279);
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("나눔고딕", 9F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(328, 274);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 23);
+            this.button1.Size = new System.Drawing.Size(102, 34);
             this.button1.TabIndex = 21;
             this.button1.Text = "개인정보 수정";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label9
             // 
@@ -323,7 +328,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dgvPlanInfo);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.groupBox1.Location = new System.Drawing.Point(513, 3);
             this.groupBox1.Name = "groupBox1";
@@ -338,11 +342,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPlanInfo.BackgroundColor = System.Drawing.Color.White;
             this.dgvPlanInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPlanInfo.Location = new System.Drawing.Point(320, 20);
+            this.dgvPlanInfo.GridColor = System.Drawing.Color.White;
+            this.dgvPlanInfo.Location = new System.Drawing.Point(320, 24);
             this.dgvPlanInfo.Name = "dgvPlanInfo";
             this.dgvPlanInfo.RowTemplate.Height = 23;
             this.dgvPlanInfo.Size = new System.Drawing.Size(348, 404);
-            this.dgvPlanInfo.TabIndex = 6;
+            this.dgvPlanInfo.TabIndex = 4;
             // 
             // label5
             // 
@@ -397,7 +402,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.DataGridView dgvPlanInfo;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvNotice;
         private System.Windows.Forms.Label label13;
@@ -419,5 +423,6 @@
         private System.Windows.Forms.Label lblDept;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblUserID;
+        private System.Windows.Forms.DataGridView dgvPlanInfo;
     }
 }

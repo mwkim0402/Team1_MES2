@@ -53,6 +53,7 @@
     <Compile Include="Dac\JobOrderDac.cs" />
     <Compile Include="Dac\MenuTreeDac.cs" />
     <Compile Include="Dac\NonOperationDAC.cs" />
+    <Compile Include="Dac\NoticeDAC.cs" />
     <Compile Include="Dac\PerformDAC.cs" />
     <Compile Include="Dac\ProcessDAC.cs" />
     <Compile Include="Dac\QualityDAC.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Service\LoginService.cs" />
     <Compile Include="Service\MoldingInfoDetailVo.cs" />
     <Compile Include="Service\NonOperationMaService.cs" />
+    <Compile Include="Service\NoticeService.cs" />
     <Compile Include="Service\QualityService.cs" />
     <Compile Include="Service\UserInfoService.cs" />
     <Compile Include="Service\UserService.cs" />

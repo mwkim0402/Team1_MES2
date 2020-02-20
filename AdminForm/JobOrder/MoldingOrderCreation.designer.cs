@@ -52,7 +52,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.txtOrderCreationNum);
             this.panel1.Controls.Add(this.btnOrderCreationDeadline);
             this.panel1.Controls.Add(this.label3);
@@ -76,13 +76,17 @@
             // 
             // btnOrderCreationDeadline
             // 
+            this.btnOrderCreationDeadline.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnOrderCreationDeadline.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnOrderCreationDeadline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrderCreationDeadline.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.btnOrderCreationDeadline.ForeColor = System.Drawing.Color.White;
             this.btnOrderCreationDeadline.Location = new System.Drawing.Point(754, 15);
             this.btnOrderCreationDeadline.Name = "btnOrderCreationDeadline";
             this.btnOrderCreationDeadline.Size = new System.Drawing.Size(86, 40);
             this.btnOrderCreationDeadline.TabIndex = 10;
             this.btnOrderCreationDeadline.Text = "조회";
-            this.btnOrderCreationDeadline.UseVisualStyleBackColor = true;
+            this.btnOrderCreationDeadline.UseVisualStyleBackColor = false;
             this.btnOrderCreationDeadline.Click += new System.EventHandler(this.BtnOrderCreationDeadline_Click);
             // 
             // label3

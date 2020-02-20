@@ -20,10 +20,10 @@ namespace MES_DB
             PerformDAC dac = new PerformDAC();
             return dac.GetAllPerformSearch();
         }
-        public List<GVMonitoringVO> GetAllMonitoring()
+        public List<WorkCenterVO> GetAllWorkCenter()
         {
             PerformDAC dac = new PerformDAC();
-            return dac.GetAllMonitoring();
+            return dac.GetAllWorkCenter();
         }
         public List<MaterialManage> GetAllMaterial()
         {
@@ -35,10 +35,16 @@ namespace MES_DB
             PerformDAC dac = new PerformDAC();
             return dac.GetAllRegFaultyImage();
         }
-        public void InsFaltyImage(string fileName, string filePath, string WorkOderNo, int faultyNum)
+
+        public List<RegFaultyVO> GetImage(int seq)
         {
             PerformDAC dac = new PerformDAC();
-            dac.InsFaltyImage(fileName, filePath, WorkOderNo, faultyNum);
+            return dac.GetImage(seq);
+        }
+        public void InsFaltyImage(string fileName, byte[] img, string WorkOderNo, int faultyNum)
+        {
+            PerformDAC dac = new PerformDAC();
+            dac.InsFaltyImage(fileName, img, WorkOderNo, faultyNum);
         }
 
         public List<QualityVO> GetAllQuality()

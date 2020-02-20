@@ -2,134 +2,295 @@
 
 @{
     ViewBag.Title = "TimeLine";
+
+    double RJK = (ViewBag.TodayFinishCountJK * 1.0 / ViewBag.TodayTotalCountJK) * 100;
+    double RJS = (ViewBag.TodayFinishCountJS * 1.0 / ViewBag.TodayTotalCountJS) * 100;
+    double RAY = (ViewBag.TodayFinishCountAY * 1.0 / ViewBag.TodayTotalCountAY) * 100;
+    double RJJ = (ViewBag.TodayFinishCountJJ * 1.0 / ViewBag.TodayTotalCountJJ) * 100;
+    double RPJ = (ViewBag.TodayFinishCountPJ * 1.0 / ViewBag.TodayTotalCountPJ) * 100;
 }
-
-    <h2 style="color:black">@ViewBag.Title</h2>
-
+<h2 style="color:black">@ViewBag.Title</h2>
 
 
-    <section class="content">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="box">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">타임라인</h3>
 
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                                <i class="fa fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                        </div>
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">실적 타임라인</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                     </div>
-                    <!-- /.box-header -->
-                    <div class="box-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p class="text-right" style="padding-right:10px; margin-bottom:0px">
-                                    <strong>조회기간: @DateTime.Now.ToShortDateString()</strong>
-                                </p>
-
-                                <div class="chart" style="padding: 20px 1px 10px 10px;">
-                                    <!-- Sales Chart Canvas -->
-                                    <canvas id="areaChart" style="height:300px; width:1000px; "></canvas> <!-- height 바꾸면 크기 조정, id 값= 유일하게-->
-                                </div>
-                                <!-- /.chart-responsive -->
-                            </div>
-
-                        </div>
-                        <!-- /.row -->
-                    </div>
-                    <!-- ./box-body -->
                 </div>
-                <!-- /.box -->
-            </div>
-            <!-- /.col -->
-        </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-right" style="padding-right:10px; margin-bottom:0px">
+                                <strong>조회기간: @DateTime.Now.ToShortDateString()</strong>
+                            </p>
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="box">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">타임라인</h3>
-
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                                <i class="fa fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                        </div>
-                    </div>
-                    <!-- /.box-header -->
-                    <div class="box-body">
-                        <div class="row">
-                            
-
-                            <!-- /.col -->
-                            <div class="col-md-4">
-                                <p class="text-center">
-                                    <strong>완료 현황 (%)</strong>
-                                </p>
-
-                                <div class="progress-group">
-                                    <span class="progress-text">제강</span>
-                                    <span class="progress-number"><b>100</b>/ 200</span>
-
-                                    <div class="progress sm">
-                                        <div class="progress-bar progress-bar-red" style="width: 50%"></div>
-                                    </div>
-                                </div>
-                                <!-- /.progress-group -->
-                                <div class="progress-group">
-                                    <span class="progress-text">제선</span>
-                                    <span class="progress-number"><b>100</b>/ 200</span>
-
-                                    <div class="progress sm">
-                                        <div class="progress-bar progress-bar-green" style="width: 60%"></div>
-                                    </div>
-                                </div>
-                                <!-- /.progress-group -->
-                                <div class="progress-group">
-                                    <span class="progress-text">압연</span>
-                                    <span class="progress-number"><b>100</b>/ 200</span>
-
-                                    <div class="progress sm">
-                                        <div class="progress-bar progress-bar-yellow" style="width: 75%"></div>
-                                    </div>
-                                </div>
-                                <!-- /.progress-group -->
-                                <div class="progress-group">
-                                    <span class="progress-text">적재</span>
-                                    <span class="progress-number"><b>100</b>/ 200</span>
-
-                                    <div class="progress sm">
-                                        <div class="progress-bar progress-bar-aqua" style="width: 30%"></div>
-                                    </div>
-                                </div>
-                                <div class="progress-group">
-                                    <span class="progress-text">포장</span>
-                                    <span class="progress-number"><b>100</b>/ 200</span>
-
-                                    <div class="progress sm">
-                                        <div class="progress-bar progress-bar-light-blue" style="width: 40%"></div>
-                                    </div>
-                                </div>
-                                <!-- /.progress-group -->
+                            <div class="chart" style="padding: 20px 1px 10px 10px;">
+                                <!-- Sales Chart Canvas -->
+                                <canvas id="areaChart" style="height:300px; width:1000px; "></canvas> <!-- height 바꾸면 크기 조정, id 값= 유일하게-->
                             </div>
-                            <!-- /.col -->
+                            <!-- /.chart-responsive -->
                         </div>
-                        <!-- /.row -->
+
                     </div>
-                    <!-- ./box-body -->
+                    <!-- /.row -->
                 </div>
-                <!-- /.box -->
+                <!-- ./box-body -->
             </div>
-            <!-- /.col -->
+            <!-- /.box -->
         </div>
-        <!-- /.row -->
-    </section>
-    @section ScriptsAREA_TimeLine {
-        <script>
+        <!-- /.col -->
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">작업장별 완료 현황</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="row">
+
+
+
+                        <!-- /.col -->
+                        <div class="col-md-12">
+                            <p class="text-center">
+                                <strong>완료 현황 (%)</strong>
+                            </p>
+
+                            <div class="progress-group">
+                                <span class="progress-text">제강</span>
+                                <span class="progress-number"><b>@ViewBag.TodayFinishCountJK</b>/ @ViewBag.TodayTotalCountJK</span>
+
+                                <div class="progress active">
+                                    <div class="progress-bar progress-bar-red progress-bar-striped" style="width: @RJK%"></div>
+                                </div>
+                            </div>
+                            <!-- /.progress-group -->
+                            <div class="progress-group">
+                                <span class="progress-text">제선</span>
+                                <span class="progress-number"><b>@ViewBag.TodayFinishCountJS</b>/ @ViewBag.TodayTotalCountJS</span>
+
+                                <div class="progress active">
+                                    <div class="progress-bar progress-bar-green progress-bar-striped" style="width: @RJS%"></div>
+                                </div>
+                            </div>
+                            <!-- /.progress-group -->
+                            <div class="progress-group">
+                                <span class="progress-text">압연</span>
+                                <span class="progress-number"><b>@ViewBag.TodayFinishCountAY</b>/ @ViewBag.TodayTotalCountAY</span>
+
+                                <div class="progress active">
+                                    <div class="progress-bar progress-bar-yellow progress-bar-striped" style="width: @RAY%"></div>
+                                </div>
+                            </div>
+                            <!-- /.progress-group -->
+                            <div class="progress-group">
+                                <span class="progress-text">적재</span>
+                                <span class="progress-number"><b>@ViewBag.TodayFinishCountJJ</b>/ @ViewBag.TodayTotalCountJJ</span>
+
+                                <div class="progress active">
+                                    <div class="progress-bar progress-bar-aqua progress-bar-striped" style="width: @RJJ%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-group">
+                                <span class="progress-text">포장</span>
+                                <span class="progress-number"><b>@ViewBag.TodayFinishCountPJ</b>/ @ViewBag.TodayTotalCountPJ</span>
+
+                                <div class="progress active">
+                                    <div class="progress-bar progress-bar-light-blue progress-bar-striped" style="width: @RPJ%"></div>
+                                </div>
+                            </div>
+                            <!-- /.progress-group -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- ./box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+@{
+    string h00;
+    string h01;
+    string h02;
+    string h03;
+    string h04;
+    string h05;
+    string h06;
+    string h07;
+    string h08;
+    string h09;
+    string h10;
+    string h11;
+    string h12;
+    string h13;
+    string h14;
+    string h15;
+    string h16;
+    string h17;
+    string h18;
+    string h19;
+    string h20;
+    string h21;
+    string h22;
+    string h23;
+    ;
+    string b00;
+    string b01;
+    string b02;
+    string b03;
+    string b04;
+    string b05;
+    string b06;
+    string b07;
+    string b08;
+    string b09;
+    string b10;
+    string b11;
+    string b12;
+    string b13;
+    string b14;
+    string b15;
+    string b16;
+    string b17;
+    string b18;
+    string b19;
+    string b20;
+    string b21;
+    string b22;
+    string b23;
+    if (ViewBag.TimeLine == null || ViewBag.TimeLine_Bad == null)
+    {
+        h00 = "0";
+        h01 = "0";
+        h02 = "0";
+        h03 = "0";
+        h04 = "0";
+        h05 = "0";
+        h06 = "0";
+        h07 = "0";
+        h08 = "0";
+        h09 = "0";
+        h10 = "0";
+        h11 = "0";
+        h12 = "0";
+        h13 = "0";
+        h14 = "0";
+        h15 = "0";
+        h16 = "0";
+        h17 = "0";
+        h18 = "0";
+        h19 = "0";
+        h20 = "0";
+        h21 = "0";
+        h22 = "0";
+        h23 = "0";
+        b00 = "0";
+        b01 = "0";
+        b02 = "0";
+        b03 = "0";
+        b04 = "0";
+        b05 = "0";
+        b06 = "0";
+        b07 = "0";
+        b08 = "0";
+        b09 = "0";
+        b10 = "0";
+        b11 = "0";
+        b12 = "0";
+        b13 = "0";
+        b14 = "0";
+        b15 = "0";
+        b16 = "0";
+        b17 = "0";
+        b18 = "0";
+        b19 = "0";
+        b20 = "0";
+        b21 = "0";
+        b22 = "0";
+        b23 = "0";
+    }
+    else
+    {
+        h00 = ViewBag.TimeLine.h00;
+        h01 = ViewBag.TimeLine.h01;
+        h02 = ViewBag.TimeLine.h02;
+        h03 = ViewBag.TimeLine.h03;
+        h04 = ViewBag.TimeLine.h04;
+        h05 = ViewBag.TimeLine.h05;
+        h06 = ViewBag.TimeLine.h06;
+        h07 = ViewBag.TimeLine.h07;
+        h08 = ViewBag.TimeLine.h08;
+        h09 = ViewBag.TimeLine.h09;
+        h10 = ViewBag.TimeLine.h10;
+        h11 = ViewBag.TimeLine.h11;
+        h12 = ViewBag.TimeLine.h12;
+        h13 = ViewBag.TimeLine.h13;
+        h14 = ViewBag.TimeLine.h14;
+        h15 = ViewBag.TimeLine.h15;
+        h16 = ViewBag.TimeLine.h16;
+        h17 = ViewBag.TimeLine.h17;
+        h18 = ViewBag.TimeLine.h18;
+        h19 = ViewBag.TimeLine.h19;
+        h20 = ViewBag.TimeLine.h20;
+        h21 = ViewBag.TimeLine.h21;
+        h22 = ViewBag.TimeLine.h22;
+        h23 = ViewBag.TimeLine.h23;
+
+        b00 = ViewBag.TimeLine_Bad.h00;
+        b01 = ViewBag.TimeLine_Bad.h01;
+        b02 = ViewBag.TimeLine_Bad.h02;
+        b03 = ViewBag.TimeLine_Bad.h03;
+        b04 = ViewBag.TimeLine_Bad.h04;
+        b05 = ViewBag.TimeLine_Bad.h05;
+        b06 = ViewBag.TimeLine_Bad.h06;
+        b07 = ViewBag.TimeLine_Bad.h07;
+        b08 = ViewBag.TimeLine_Bad.h08;
+        b09 = ViewBag.TimeLine_Bad.h09;
+        b10 = ViewBag.TimeLine_Bad.h10;
+        b11 = ViewBag.TimeLine_Bad.h11;
+        b12 = ViewBag.TimeLine_Bad.h12;
+        b13 = ViewBag.TimeLine_Bad.h13;
+        b14 = ViewBag.TimeLine_Bad.h14;
+        b15 = ViewBag.TimeLine_Bad.h15;
+        b16 = ViewBag.TimeLine_Bad.h16;
+        b17 = ViewBag.TimeLine_Bad.h17;
+        b18 = ViewBag.TimeLine_Bad.h18;
+        b19 = ViewBag.TimeLine_Bad.h19;
+        b20 = ViewBag.TimeLine_Bad.h20;
+        b21 = ViewBag.TimeLine_Bad.h21;
+        b22 = ViewBag.TimeLine_Bad.h22;
+        b23 = ViewBag.TimeLine_Bad.h23;
+    }
+
+}
+@section ScriptsAREA_TimeLine {
+    <script>
             $(document).ready(function () {
 
                 //--------------
@@ -140,30 +301,30 @@
                 var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
                 // This will get the first returned node in the jQuery collection.
                 var areaChart = new Chart(areaChartCanvas)
-                
+
                 var temp = ['00시', '01시', '02시', '03시', '04시', '05시', '06시', '07시', '08시', '09시', '10시', '11시', '12시', '13시', '14시', '15시', '16시', '17시', '18시', '19시', '20시', '21시', '22시', '23시'];
                 var areaChartData = {
                     labels: temp,
                     datasets: [
                         {
-                            label: '전체 작업지시 수',
+                            label: '완성 개수',
                             fillColor: 'rgba(210, 214, 222, 1)',
                             strokeColor: 'rgba(210, 214, 222, 1)',
                             pointColor: 'rgba(210, 214, 222, 1)',
                             pointStrokeColor: '#c1c7d1',
                             pointHighlightFill: '#fff',
                             pointHighlightStroke: 'rgba(220,220,220,1)',
-                            data: [60, 80, 20, 10, 90]
+                            data: [@h00,@h01, @h02,@h03,@h04,@h05,@h06,@h07,@h08,@h09,@h10,@h11,@h12,@h13,@h14,@h15,@h16,@h17,@h18,@h19,@h20,@h21,@h22,@h23]
                         },
                         {
-                            label: '완료한 작업지시 수',
+                            label: '불량 개수',
                             fillColor: 'rgba(245, 105, 84, 1)',
                             strokeColor: 'rgba(245, 105, 84, 1)',
                             pointColor: 'rgba(245, 105, 84, 1)',
                             pointStrokeColor: '#f56954',
                             pointHighlightFill: '#fff',
                             pointHighlightStroke: 'rgba(220,220,220,1)',
-                            data: [20, 30, 50, 80, 45]
+                            data: [@b00,@b01, @b02,@b03,@b04,@b05,@b06,@b07,@b08,@b09,@b10,@b11,@b12,@b13,@b14,@b15,@b16,@b17,@b18,@b19,@b20,@b21,@b22,@b23]
                         }
                     ]
 
@@ -211,5 +372,5 @@
 
                 areaChart.Line(areaChartData, areaChartOptions)
             })
-        </script>
-    }
+    </script>
+}

@@ -33,6 +33,10 @@
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            // 
             // PackingWorkReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);

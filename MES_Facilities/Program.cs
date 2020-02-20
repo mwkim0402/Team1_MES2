@@ -133,11 +133,20 @@ namespace MES_Facilities
             string workWorderNo = workOrderNo;
             int UPHperSecond = (int)itemList.Find(x => x.Item_Code == processWorkList.Find(y=>y.Workorderno == workWorderNo).Item_Code).IronUPH / 60 / 20;
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
-            int faultyQty = rnd.Next(0, 2);
-            
+            int faultyQty = rnd.Next(0, 3);
+            int randomProd = rnd.Next(0, 10);
+            int randSum = rnd.Next(0, 2);
             TcpClient tc = new TcpClient("127.0.0.2", 7000);
             NetworkStream stream = tc.GetStream();
             
+            if (randSum == 0)
+            {
+                UPHperSecond += randomProd;
+            }
+            else
+            {
+                UPHperSecond -= randomProd;
+            }            
             string msg;
             if (Balance-(UPHperSecond - faultyQty) > 0)
             {
@@ -148,7 +157,7 @@ namespace MES_Facilities
             else
             {
                 msg = $"{workWorderNo}/{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}/{workCenterNo}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Plan_Qty}/{Balance}/0";
-                Console.WriteLine($"잔여수량 : {Balance}, 생산수량 : {Balance}, 불량수량 : {faultyQty}");
+                Console.WriteLine($"잔여수량 : 0, 생산수량 : {Balance}, 불량수량 : {faultyQty}");
                 Balance = 0;
                 isFull = true;
             }

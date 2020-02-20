@@ -46,7 +46,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             // 
@@ -54,7 +53,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cmbLv);
             this.panel1.Controls.Add(this.btnDown);
@@ -90,13 +89,17 @@
             // 
             // btnDown
             // 
+            this.btnDown.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnDown.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDown.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDown.ForeColor = System.Drawing.Color.White;
             this.btnDown.Location = new System.Drawing.Point(695, 24);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(107, 30);
             this.btnDown.TabIndex = 27;
             this.btnDown.Text = "조회";
-            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.UseVisualStyleBackColor = false;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // txtGroupCode

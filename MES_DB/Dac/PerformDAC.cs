@@ -48,10 +48,9 @@ namespace MES_DB
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = @"select w.Wo_Status,w.Workorderno,w.Plan_Date,i.Item_Code,i.Item_Name,w.Wc_Code,w.In_Qty_Main,w.Out_Qty_Main,w.Prd_Qty,w.Wc_Code,p.Process_code
-                     from WorkOrder w inner join Item_Master i on i.Item_Code = w.Item_Code inner join WorkCenter_Master wc on w.Wc_Code = wc.Wc_Code
-                    inner join Process_Master p on wc.Process_Code = p.Process_code ";
-                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "GetAllPerformSearch ";
+                cmd.CommandType = CommandType.StoredProcedure;
+
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -61,18 +60,19 @@ namespace MES_DB
             }
         }
 
-        public List<GVMonitoringVO> GetAllMonitoring()
+        public List<WorkCenterVO> GetAllWorkCenter()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "select m.GV_Name,m.GV_Group,m.GV_Status, w.Workorderno , it.Item_Code, it.Item_Name , s.GV_Qty , s.Loading_time " +
-                    "from WorkOrder w inner join Item_Master it on w.Item_Code = it.Item_Code inner join GV_Current_Status s on s.Workorderno = w.Workorderno inner join GV_Master m on m.GV_Code = s.GV_Code";
+                cmd.CommandText = @"select m.Wc_Code,m.Wc_Name,m.Wc_Group,m.Wo_Status,Max(w.Prd_Starttime)as Prd_Starttime,Max(w.Prd_Endtime) as Prd_Endtime
+                                    from WorkCenter_Master m inner join WorkOrder w on m.Wc_Code = w.Wc_Code group by m.Wc_Code ,m.Wc_Name,m.Wc_Group,m.Wo_Status ";
                 cmd.CommandType = CommandType.Text;
+
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<GVMonitoringVO> list = Helper.DataReaderMapToList<GVMonitoringVO>(reader);
+                List<WorkCenterVO> list = Helper.DataReaderMapToList<WorkCenterVO>(reader);
                 cmd.Connection.Close();
                 return list;
             }
@@ -112,7 +112,25 @@ namespace MES_DB
             }
         }
 
-        public void InsFaltyImage(string fileName, string filePath, string WorkOderNo, int faultyNum)
+        public List<RegFaultyVO> GetImage(int seq)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "select Def_Image from Def_History where Def_Seq = @Def_Seq";
+                cmd.CommandType = CommandType.Text;
+
+
+                cmd.Connection.Open();
+                cmd.Parameters.AddWithValue("@Def_Seq", seq);
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<RegFaultyVO> list = Helper.DataReaderMapToList<RegFaultyVO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
+        public void InsFaltyImage(string fileName, byte[] img, string WorkOderNo, int faultyNum)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -122,7 +140,7 @@ namespace MES_DB
 
                 cmd.Parameters.AddWithValue("@WorkOderNo", WorkOderNo);
                 cmd.Parameters.AddWithValue("@fileName", fileName);
-                cmd.Parameters.AddWithValue("@filePath", filePath);
+                cmd.Parameters.AddWithValue("@Def_Image", img);
                 cmd.Parameters.AddWithValue("@Def_Qty", faultyNum);
 
                 cmd.Connection.Open();
@@ -272,7 +290,7 @@ namespace MES_DB
                 cmd.Parameters.AddWithValue("@Item_Code", edit.Item_Code);
                 cmd.Parameters.AddWithValue("@Wc_Code", edit.Wc_Code);
                 cmd.Parameters.AddWithValue("@In_Qty_Main", edit.In_Qty_Main);
-                cmd.Parameters.AddWithValue("@Out_Qty_Main", edit.Out_Qty_Main);
+                cmd.Parameters.AddWithValue("@Bad_Qty", edit.Bad_Qty);
                 cmd.Parameters.AddWithValue("@Prd_Qty", edit.Prd_Qty);
                 cmd.Parameters.AddWithValue("@Plan_Date", edit.Plan_Date);
 

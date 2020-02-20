@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,8 +24,8 @@ namespace AdminForm
             InitializeComponent();
         }
 
-        private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
-         int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
+        public static void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
+      int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
         {
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.HeaderText = headerText;
@@ -36,15 +37,19 @@ namespace AdminForm
             col.DefaultCellStyle.Alignment = textAlign;
             dgv.Columns.Add(col);
 
-            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;
             dgv.EnableHeadersVisualStyles = false;
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue;
 
             dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
+            dgv.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightGray;
+            // dgv.DefaultCellStyle.SelectionBackColor = Color.Yellow;
+            // dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
-            dgv.DefaultCellStyle.SelectionBackColor = Color.MidnightBlue;
+            dgv.DefaultCellStyle.SelectionBackColor = Color.DimGray;
+
         }
 
         private void JobOrderCreation_Load(object sender, EventArgs e)
@@ -142,7 +147,7 @@ namespace AdminForm
         {
             frm.Search_Click += new System.EventHandler(Search_Click);
             frm.Insert_Click += new System.EventHandler(ExportToExcel);
-
+            ToolStripManager.Merge(this.toolStrip1, frm.ToolStrip);
         }
 
         private void ExportToExcel(object sender, EventArgs e)
@@ -201,6 +206,7 @@ namespace AdminForm
         {
             frm.Search_Click -= new System.EventHandler(Search_Click);
             frm.Insert_Click -= new System.EventHandler(ExportToExcel);
+            ToolStripManager.RevertMerge(frm.ToolStrip);
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -246,8 +252,47 @@ namespace AdminForm
         {
 
         }
+
+        private void btnSung_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open($"{openFileDialog1.FileName}");
+                Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet = xlWorkbook.Sheets[1];
+                Microsoft.Office.Interop.Excel.Range xlRange = xlWorkSheet.UsedRange;
+
+                txtCustName.Text = Convert.ToString(xlWorkSheet.Cells[12, 10].Value2);
+                txtProjectName.Text = Convert.ToString(xlWorkSheet.Cells[14, 7].Value2);
+                cmbItemName.Text = Convert.ToString(xlWorkSheet.Cells[16, 9].Value2);
+                nuPlanAmount.Value = Convert.ToInt32(xlWorkSheet.Cells[17, 9].Value2);
+                dtpPlanDate.Value = Convert.ToDateTime(xlWorkSheet.Cells[22, 9].Value2.ToString());
+
+
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+
+                //rule of thumb for releasing com objects:
+                //  never use two dots, all COM objects must be referenced and released individually
+                //  ex: [somthing].[something].[something] is bad
+
+                //release com objects to fully kill excel process from running in the background
+                Marshal.ReleaseComObject(xlRange);
+                Marshal.ReleaseComObject(xlWorkSheet);
+                //close and release
+                xlWorkbook.Close();
+                Marshal.ReleaseComObject(xlWorkbook);
+                //quit and release
+                xlApp.Quit();
+                Marshal.ReleaseComObject(xlApp);
+
+            }
+            
+        }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
     }
-
-
-
 }

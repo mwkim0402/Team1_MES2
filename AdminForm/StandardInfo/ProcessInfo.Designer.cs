@@ -82,7 +82,6 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 28);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             // 
@@ -92,6 +91,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.Controls.Add(this.cbUpdateGroup);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel6);
@@ -104,13 +104,9 @@
             this.panel1.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.panel1.Size = new System.Drawing.Size(1124, 103);
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
-            this.tabPage2.Size = new System.Drawing.Size(1124, 103);
-            // 
             // pnlParent1
             // 
+            this.pnlParent1.BackColor = System.Drawing.Color.LightGray;
             this.pnlParent1.Controls.Add(this.cbInsertGroup);
             this.pnlParent1.Controls.Add(this.label2);
             this.pnlParent1.Controls.Add(this.label4);
@@ -121,13 +117,12 @@
             this.pnlParent1.Controls.Add(this.panel3);
             this.pnlParent1.Controls.Add(this.gbInsUsable);
             this.pnlParent1.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.pnlParent1.Size = new System.Drawing.Size(1124, 103);
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.txtFacCode);
             this.panel2.Controls.Add(this.txtFacName);
@@ -140,13 +135,17 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Location = new System.Drawing.Point(488, 17);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(86, 38);
             this.btnSearch.TabIndex = 19;
             this.btnSearch.Text = "검색";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtFacCode
@@ -246,13 +245,17 @@
             // btnInsSave
             // 
             this.btnInsSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInsSave.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnInsSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnInsSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsSave.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.btnInsSave.ForeColor = System.Drawing.Color.White;
             this.btnInsSave.Location = new System.Drawing.Point(17, 28);
             this.btnInsSave.Name = "btnInsSave";
             this.btnInsSave.Size = new System.Drawing.Size(120, 48);
             this.btnInsSave.TabIndex = 99;
             this.btnInsSave.Text = "저장";
-            this.btnInsSave.UseVisualStyleBackColor = true;
+            this.btnInsSave.UseVisualStyleBackColor = false;
             this.btnInsSave.Click += new System.EventHandler(this.btnInsSave_Click);
             // 
             // panel3
@@ -331,13 +334,17 @@
             // btnUpButton
             // 
             this.btnUpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpButton.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnUpButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpButton.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.btnUpButton.ForeColor = System.Drawing.Color.White;
             this.btnUpButton.Location = new System.Drawing.Point(20, 29);
             this.btnUpButton.Name = "btnUpButton";
             this.btnUpButton.Size = new System.Drawing.Size(120, 48);
             this.btnUpButton.TabIndex = 99;
             this.btnUpButton.Text = "저장";
-            this.btnUpButton.UseVisualStyleBackColor = true;
+            this.btnUpButton.UseVisualStyleBackColor = false;
             this.btnUpButton.Click += new System.EventHandler(this.btnUpButton_Click);
             // 
             // label7

@@ -100,6 +100,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BOM\BOM_Insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BOM\BOM_Insert.Designer.cs">
+      <DependentUpon>BOM_Insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BOM\BOM_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BOM\BOM_Main.Designer.cs">
+      <DependentUpon>BOM_Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="CategorySearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -468,12 +480,6 @@
     <Compile Include="System\MenuManagement.Designer.cs">
       <DependentUpon>MenuManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="System\NoticeRegister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="System\NoticeRegister.Designer.cs">
-      <DependentUpon>NoticeRegister.cs</DependentUpon>
-    </Compile>
     <Compile Include="System\MonitorManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -491,6 +497,18 @@
     </Compile>
     <Compile Include="System\LoginLogInfo.Designer.cs">
       <DependentUpon>LoginLogInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\NoticeRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\NoticeRegister.Designer.cs">
+      <DependentUpon>NoticeRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\NoticeSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\NoticeSettings.Designer.cs">
+      <DependentUpon>NoticeSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="System\SystemCodeCategoryDetail.cs">
       <SubType>Form</SubType>
@@ -528,6 +546,12 @@
     <Compile Include="UserCalendar.Designer.cs">
       <DependentUpon>UserCalendar.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BOM\BOM_Insert.resx">
+      <DependentUpon>BOM_Insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BOM\BOM_Main.resx">
+      <DependentUpon>BOM_Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CategorySearch.resx">
       <DependentUpon>CategorySearch.cs</DependentUpon>
     </EmbeddedResource>
@@ -716,9 +740,6 @@
     <EmbeddedResource Include="System\MenuManagement.resx">
       <DependentUpon>MenuManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="System\NoticeRegister.resx">
-      <DependentUpon>NoticeRegister.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="System\MonitorManager.resx">
       <DependentUpon>MonitorManager.cs</DependentUpon>
     </EmbeddedResource>
@@ -727,6 +748,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="System\LoginLogInfo.resx">
       <DependentUpon>LoginLogInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\NoticeRegister.resx">
+      <DependentUpon>NoticeRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\NoticeSettings.resx">
+      <DependentUpon>NoticeSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="System\SystemCodeCategoryDetail.resx">
       <DependentUpon>SystemCodeCategoryDetail.cs</DependentUpon>

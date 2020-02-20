@@ -22,12 +22,20 @@ namespace WebApplication0106.HtmlHelpers
                 tag.InnerHtml = i.ToString();
                 if(i==pagingInfo.CurrentPage)
                 {
+                    tag.MergeAttribute("style", "background-color : rebeccapurple;border-color : rebeccapurple");
                     tag.AddCssClass("selected");
                     tag.AddCssClass("btn-primary");
+                }
+                else
+                {
+                    tag.MergeAttribute("style", "background-color : dimgrey; color: white;");
+
                 }
                 tag.AddCssClass("btn btn=default");
                 
                 result.Append(tag.ToString());
+
+
             }
             return MvcHtmlString.Create(result.ToString());
         }

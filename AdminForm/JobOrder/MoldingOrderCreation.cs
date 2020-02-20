@@ -53,8 +53,8 @@ namespace AdminForm
         }
 
 
-        private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
-         int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
+        public static void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
+      int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
         {
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.HeaderText = headerText;
@@ -66,15 +66,19 @@ namespace AdminForm
             col.DefaultCellStyle.Alignment = textAlign;
             dgv.Columns.Add(col);
 
-            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;
             dgv.EnableHeadersVisualStyles = false;
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue;
 
             dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
+            dgv.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightGray;
+            // dgv.DefaultCellStyle.SelectionBackColor = Color.Yellow;
+            // dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
-            dgv.DefaultCellStyle.SelectionBackColor = Color.MidnightBlue;
+            dgv.DefaultCellStyle.SelectionBackColor = Color.DimGray;
+
         }
 
         private void MoldingOrderCreation_Load(object sender, EventArgs e)
@@ -267,9 +271,14 @@ namespace AdminForm
                 {
                     if(processName == "압연")
                     {
-                        if(Convert.ToInt32(item.Cells[3].Value) == 0)
+                        if (Convert.ToInt32(item.Cells[5].Value) > 0)
                         {
-                            MessageBox.Show("잔여수량이 존재하지않아 작업계획을 할 수 없습니다.");
+                            MessageBox.Show("제강의 잔여량이 존재합니다. 먼저 제강 작업 계획을 모두 생성하세요");
+                            return;
+                        }
+                        if (Convert.ToInt32(item.Cells[3].Value) == 0)
+                        {
+                            MessageBox.Show("잔여수량이 존재하지 않아 작업계획을 할 수 없습니다.");
                             return;
                         }
                     }
@@ -277,23 +286,34 @@ namespace AdminForm
                     {
                         if (Convert.ToInt32(item.Cells[4].Value) == 0)
                         {
-                            MessageBox.Show("잔여수량이 존재하지않아 작업계획을 할 수 없습니다.");
+                            MessageBox.Show("잔여수량이 존재하지 않아 작업계획을 할 수 없습니다.");
                             return;
                         }
                     }
                     else if (processName == "제강")
                     {
+                        if (Convert.ToInt32(item.Cells[4].Value) > 0)
+                        {
+                            MessageBox.Show("제선의 잔여량이 존재합니다. 먼저 제선 작업 계획을 모두 생성하세요");
+                            return;
+                        }
                         if (Convert.ToInt32(item.Cells[5].Value) == 0)
                         {
-                            MessageBox.Show("잔여수량이 존재하지않아 작업계획을 할 수 없습니다.");
+                            
+                            MessageBox.Show("잔여수량이 존재하지 않아 작업계획을 할 수 없습니다.");
                             return;
                         }
                     }
                     else if (processName == "포장")
                     {
+                        if (Convert.ToInt32(item.Cells[3].Value) > 0)
+                        {
+                            MessageBox.Show("압연의 잔여량이 존재합니다. 먼저 압연 작업 계획을 모두 생성하세요");
+                            return;
+                        }
                         if (Convert.ToInt32(item.Cells[6].Value) == 0)
                         {
-                            MessageBox.Show("잔여수량이 존재하지않아 작업계획을 할 수 없습니다.");
+                            MessageBox.Show("잔여수량이 존재하지 않아 작업계획을 할 수 없습니다.");
                             return;
                         }
                     }

@@ -56,6 +56,61 @@ namespace WebApplication0106.DAC
 
             return list;
         }
+
+
+        public TimeLineVO GetTimeLine_Out()
+        {
+            List<TimeLineVO> list = new List<TimeLineVO>();
+            string sql = @"TimeLineTable";
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@DateToday", DateTime.Today.ToString().Substring(0,10));
+
+                    list = Helper.DataReaderMapToList<TimeLineVO>(cmd.ExecuteReader());
+                }
+            }
+
+            if (list.Count < 1)
+            {
+                return null;
+            }
+            else
+            {
+                return list[0];
+            }
+        }
+        public TimeLineVO GetTimeLine_Bad()
+        {
+            List<TimeLineVO> list = new List<TimeLineVO>();
+            string sql = @"TimeLineTable_Bad";
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@DateToday", DateTime.Today.ToString().Substring(0, 10));
+
+                    list = Helper.DataReaderMapToList<TimeLineVO>(cmd.ExecuteReader());
+                }
+            }
+
+            if (list.Count < 1)
+            {
+                return null;
+            }
+            else
+            {
+                return list[0];
+            }
+        }
+
+
+
         internal List<JobOrder> GetWorkOrderFive()
         {
             List<JobOrder> list = new List<JobOrder>();
@@ -78,7 +133,7 @@ namespace WebApplication0106.DAC
             double iTotCount = 0;
             using (SqlConnection conn = new SqlConnection(strconn))
             {
-                string sql = @"select  (Sum(Bad_Qty)/1.0/sum(isnull(In_Qty_Main,1)) * 100) c from WorkOrder
+                string sql = @"select  (ISNULL( Sum(Bad_Qty),0) /1.0 / isnull(sum(In_Qty_Main),1) * 100) c from WorkOrder
                                 where (convert(varchar(8), Prd_Starttime, 112) = convert(varchar(8), getdate(), 112))";
 
                 conn.Open();
@@ -91,7 +146,7 @@ namespace WebApplication0106.DAC
             return iTotCount;
         }
 
-        public int GetWorkOrderTotalCount()
+        public int GetWorkOrderTotalCount() //전체조회
         {
             int iTotCount = 0;
             using (SqlConnection conn = new SqlConnection(strconn))
@@ -108,14 +163,14 @@ namespace WebApplication0106.DAC
             return iTotCount;
         }
 
-        public int GetWorkOrderTotalCount_month(string category)
+        public int GetWorkOrderTotalCount_month(string category) //월별조회
         {
             int iTotCount = 0;
             using (SqlConnection conn = new SqlConnection(strconn))
             {
                 string sql = @"select sum(Plan_Qty) from WorkOrder w, WorkCenter_Master wc where (WC_Group = @Wc_Group or isnull(@Wc_Group,'')='')
                                 and w.Wc_Code = wc.Wc_Code
-								and Plan_Endtime between  DATEADD(MM, DATEDIFF(MM, 0, GETDATE()), 0)
+								and Plan_Date between  DATEADD(MM, DATEDIFF(MM, 0, GETDATE()), 0)
                                 and DATEADD(MS, -3, DATEADD(MM, DATEDIFF(MM, 0, GETDATE()) + 1, 0))";
 
                 conn.Open();
@@ -129,7 +184,54 @@ namespace WebApplication0106.DAC
             }
             return iTotCount;
         }
-        public int GetWorkOrderFinishCount(string category)
+        public int GetWorkCenterTotalCount_today(string category) // 작업장별 목표생산현황 오늘
+        {
+            int iTotCount = 0;
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                string sql = @"select sum(Plan_Qty) from WorkOrder w, WorkCenter_Master wc where (WC_Group = @Wc_Group or isnull(@Wc_Group,'')='')
+                                and w.Wc_Code = wc.Wc_Code
+								and Plan_Date =@Today";
+
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Wc_Group", category);
+                    cmd.Parameters.AddWithValue("@Today", DateTime.Today.ToShortDateString());
+
+                    int.TryParse(cmd.ExecuteScalar().ToString(), out iTotCount);
+
+                }
+            }
+            return iTotCount;
+        }
+
+
+        public int GetWorkCenterFinishCount_today(string category) // 작업장별 생산현황 오늘
+        {
+            int iTotCount = 0;
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                string sql = @"select sum(Prd_Qty) from WorkOrder w, WorkCenter_Master wc where (WC_Group = @Wc_Group or isnull(@Wc_Group,'')='')
+                                and w.Wc_Code = wc.Wc_Code
+								and Plan_Date =@Today";
+
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Wc_Group", category);
+                    cmd.Parameters.AddWithValue("@Today", DateTime.Today.ToShortDateString());
+
+                    int.TryParse(cmd.ExecuteScalar().ToString(), out iTotCount);
+
+                }
+            }
+            return iTotCount;
+        }
+
+
+
+        public int GetWorkOrderFinishCount(string category) // 누적 작업지시 카운트
         {
             int iTotCount = 0;
             using (SqlConnection conn = new SqlConnection(strconn))
@@ -148,7 +250,7 @@ namespace WebApplication0106.DAC
             }
             return iTotCount;
         }
-        public int GetWorkOrderFinishCount_today(string category)
+        public int GetWorkOrderFinishCount_today(string category) //오늘 끝낸 작업지시 수
         {
             int iTotCount = 0;
             using (SqlConnection conn = new SqlConnection(strconn))
@@ -169,14 +271,14 @@ namespace WebApplication0106.DAC
             }
             return iTotCount;
         }
-        public int GetWorkOrderFinishCount_month(string category)
+        public int GetWorkOrderFinishCount_month(string category) //월별조회
         {
             int iTotCount = 0;
             using (SqlConnection conn = new SqlConnection(strconn))
             {
                 string sql = @"select sum(Prd_Qty) from WorkOrder w, WorkCenter_Master wc where (WC_Group = @Wc_Group or isnull(@Wc_Group,'')='')
                                 and w.Wc_Code = wc.Wc_Code
-								and Prd_Endtime between  DATEADD(MM, DATEDIFF(MM, 0, GETDATE()), 0)
+								and Plan_Date between  DATEADD(MM, DATEDIFF(MM, 0, GETDATE()), 0)
                                 and DATEADD(MS, -3, DATEADD(MM, DATEDIFF(MM, 0, GETDATE()) + 1, 0))";
 
                 conn.Open();

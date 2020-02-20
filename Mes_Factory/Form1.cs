@@ -18,6 +18,9 @@ namespace Mes_Factory
     public partial class Form1 : Form
     {
         delegate void List_Invoke(ListBox invokeList, string txtValue);
+        delegate void Text_Invoke(TextBox textList, string txtValue);
+        delegate void Label_Invoke(Label textList, string txtValue);
+        delegate void Bar_Invoke(ProgressBar textList, int Value);
         WorkOrderService service = new WorkOrderService();
         WorkCenterService wcService = new WorkCenterService();
         List<WorkOrderCheckVo> processWorkList;
@@ -26,21 +29,36 @@ namespace Mes_Factory
         string workCenterNo = ConfigurationManager.AppSettings["Wc_Code"];
         string processName = ConfigurationManager.AppSettings["Process_Name"];
         int Balance = 0;
+        int PrdQty = 0;
         System.Timers.Timer timer1;
         System.Timers.Timer mainTimer;
         bool isWorking = false;
         bool isFull = false;
         bool isFirst = true;
+
         public Form1()
         {
             InitializeComponent();
         }
-
+        private void initControl()
+        {
+            lblBadQty.Text = "0";
+            lblInQty.Text = "0";
+            lblBadQty.Text = "0";
+            listBox1.Items.Clear();
+            textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = "";
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
+            lblBadQty.Text = "0";
+            lblInQty.Text = "0";
+            lblBadQty.Text = "0";
+            label9.Text = DateTime.Now.ToString("tt hh:mm:ss");
             //Console.WriteLine($"--- {workCenterNo} 작동---");
             SetLoad();
-            //AsyncEchoServer();
+            label5.Text = workCenterNo;
+            label10.Text = processName+ " -";
+           //AsyncEchoServer();
             mainTimer = new System.Timers.Timer(1000);
             mainTimer.Enabled = true;
             mainTimer.Elapsed += mainTimer_Elapse;
@@ -93,12 +111,22 @@ namespace Mes_Factory
                 Balance -= (UPHperSecond - faultyQty);
                 // Console.WriteLine($"잔여수량 : {Balance}, 생산수량 : {UPHperSecond - faultyQty}, 불량수량 : {faultyQty}");
                 setText_ListBox(listBox1, $"잔여수량 : {Balance}, 생산수량 : {UPHperSecond - faultyQty}, 불량수량 : {faultyQty}");
+                setText_Label(lblInQty, (int.Parse(lblInQty.Text) + UPHperSecond + faultyQty).ToString());
+                setText_Label(lblPrdQty, (int.Parse(lblPrdQty.Text) + UPHperSecond).ToString());
+                setText_Label(lblBadQty, (int.Parse(lblBadQty.Text) + faultyQty).ToString());
+                setText_Label(label4, String.Format("{0:0.##}", (double.Parse(lblPrdQty.Text) / PrdQty)*100));
+               // setText_ProgressBar(progressBar1,(int.Parse(lblPrdQty.Text) / PrdQty)*100);
             }
             else
             {
                 msg = $"{workWorderNo}/{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}/{workCenterNo}/{processWorkList.Find(x => x.Workorderno == workWorderNo).Plan_Qty}/{Balance}/0";
                 //Console.WriteLine($"잔여수량 : 0, 생산수량 : {Balance}, 불량수량 : {faultyQty}");
                 setText_ListBox(listBox1, $"잔여수량 : 0, 생산수량 : {Balance}, 불량수량 : {faultyQty}");
+                setText_Label(lblInQty, (int.Parse(lblInQty.Text) + Balance + faultyQty).ToString());
+                setText_Label(lblPrdQty, (int.Parse(lblPrdQty.Text) + Balance).ToString());
+                setText_Label(lblBadQty, (int.Parse(lblBadQty.Text) + faultyQty).ToString());
+                setText_Label(label4, String.Format("{0:0.##}", (double.Parse(lblPrdQty.Text) / PrdQty)*100));
+               // setText_ProgressBar(progressBar1, (int.Parse(lblPrdQty.Text) / PrdQty)*100);
                 Balance = 0;
                 isFull = true;
             }
@@ -125,8 +153,45 @@ namespace Mes_Factory
                 list.TopIndex = list.Items.Count - 1;
             }
         }
+        public void setText_ProgressBar(ProgressBar list, int txtValue)
+        {
+            if (list.InvokeRequired)
+            {
+                Bar_Invoke listInvoke = new Bar_Invoke(setText_ProgressBar);
+                list.Invoke(listInvoke, list, txtValue);
+            }
+            else
+            {
+                list.Value = txtValue;
+            }
+        }
+        public void setText_Label(Label list, string txtValue)
+        {
+            if (list.InvokeRequired)
+            {
+                Label_Invoke listInvoke = new Label_Invoke(setText_Label);
+                list.Invoke(listInvoke, list, txtValue);
+            }
+            else
+            {
+                list.Text = txtValue;
+            }
+        }
 
-        async Task AsyncEchoServer()
+        public void setText_TextBox(TextBox list, string txtValue)
+            {
+                if (list.InvokeRequired)
+                {
+                    Text_Invoke listInvoke = new Text_Invoke(setText_TextBox);
+                    list.Invoke(listInvoke, list, txtValue);
+                }
+                else
+                {
+                    list.Text = txtValue;
+                }
+            }
+
+            async Task AsyncEchoServer()
         {
             TcpListener listener = new TcpListener(IPAddress.Any, Convert.ToInt32(ConfigurationManager.AppSettings["Port_Num"]));
             listener.Start();
@@ -161,8 +226,12 @@ namespace Mes_Factory
                     if (arrData.Length == 3)
                     {
                         // 0번째 작업지시 번호, 1번째 작업장코드, 2번째 계획량
-                        workOrderNo = arrData[0].ToString();
+                        workOrderNo = arrData[0].ToString();                        
                         Balance = Convert.ToInt32(arrData[2]);
+                        PrdQty = Balance;
+                        setText_TextBox(textBox3, arrData[2]);
+                        setText_TextBox(textBox2, itemList.Find(x => x.Item_Code == processWorkList.Find(y => y.Workorderno == workOrderNo).Item_Code).Item_Name);
+                        setText_TextBox(textBox4, DateTime.Now.ToString("tt hh:mm:ss"));
                         isWorking = true;
                         //Console.WriteLine($"{workOrderNo}/{planQty}");
                     }
@@ -183,6 +252,16 @@ namespace Mes_Factory
         {
             if (!isWorking)
             {
+                //initControl();
+                setText_Label(label4, "0");
+                setText_ProgressBar(progressBar1, 0);
+                setText_Label(lblBadQty, "0");
+                setText_Label(lblPrdQty, "0");
+                setText_Label(lblInQty, "0");
+                setText_TextBox(textBox1, "");
+                setText_TextBox(textBox2, "");
+                setText_TextBox(textBox3, "");
+                setText_TextBox(textBox4, "");
                 AsyncEchoServer();
             }
             else
@@ -194,6 +273,7 @@ namespace Mes_Factory
                         setText_ListBox(listBox1, " ");
                         setText_ListBox(listBox1, "------ 작업 시작 ------");
                         service.UpdateWorkStatus(workOrderNo, "작업중");
+                        setText_TextBox(textBox1, workOrderNo);
                         wcService.WcStatusUpdate(ConfigurationManager.AppSettings["Wc_Code"], "RUN");
                         SetTimer();
                         isFirst = false;
@@ -215,7 +295,31 @@ namespace Mes_Factory
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            label9.Text = DateTime.Now.ToString("hh-MM-ss")
+            label9.Text = DateTime.Now.ToString("tt hh:mm:ss");
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (listBox1.Items.Count > 0)
+            {
+                listBox1.Items.Clear();
+            }
+        }
+
+        private void label4_TextChanged(object sender, EventArgs e)
+        {
+            timer3.Start();
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            progressBar1.Value = (int)(double.Parse(label4.Text));
+            timer3.Stop();
         }
     }
 }

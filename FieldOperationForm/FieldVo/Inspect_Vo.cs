@@ -9,8 +9,10 @@ namespace FieldOperationForm
   public  class Inspect_Vo
     {
         public string Item_Name { get; set; }
-        public decimal Inspect_Val { get; set; }
-          public DateTime Inspect_Datetime { get; set; }
+        public decimal Condition_Val { get; set; }
+          public string Wc_Name { get; set; }
+          public string Condition_Group { get; set; }
+
 
     }
 }

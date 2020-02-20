@@ -15,11 +15,10 @@ namespace FieldOperationForm
     public partial class ProcessCondition : Form
     {
         Main_P main;
-        string a;
-        string b;
-        string c;
-        string d;
-        decimal g;
+    
+        decimal u;
+        string t;
+        string g;
         List<Workorderno_Vo> MList = null;
         string f;
         public ProcessCondition(Main_P main1)
@@ -62,10 +61,12 @@ namespace FieldOperationForm
         private void Setdgv()
         {
 
-            AddNewColumnToDataGridView(dataGridView1, "측정항목", "Item_Name", true, 207);
+            AddNewColumnToDataGridView(dataGridView1, "측정항목", "Condition_Group", true, 207);
             AddNewColumnToDataGridView(dataGridView1, "USL", "USL", true, 160);
             AddNewColumnToDataGridView(dataGridView1, "SL", "SL", true, 160);
             AddNewColumnToDataGridView(dataGridView1, "LSL", "LSL", true, 160);
+            AddNewColumnToDataGridView(dataGridView1, "LSL", "Wc_Name", false, 160);
+            AddNewColumnToDataGridView(dataGridView1, "LSL", "Item_Name", false, 160);
 
             this.dataGridView1.Font = new Font("나눔고딕", 14, FontStyle.Bold);
             this.dataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 15, FontStyle.Bold);
@@ -77,10 +78,13 @@ namespace FieldOperationForm
             //dgv_NonOperation.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
-            AddNewColumnToDataGridView(dataGridView2, "측정그룹", "Title", true, 200);
-            AddNewColumnToDataGridView(dataGridView2, "측정값", "Inspect_Val", true, 212);
-            AddNewColumnToDataGridView(dataGridView2, "측정일시", "Inspect_Datetime", true, 180);
+            AddNewColumnToDataGridView(dataGridView2, "측정그룹", "Condition_Group", true, 200);
+            AddNewColumnToDataGridView(dataGridView2, "측정값", "Condition_Val", true, 212);
+            AddNewColumnToDataGridView(dataGridView2, "측정일시", "Condition_Datetime", true, 180);
             AddNewColumnToDataGridView(dataGridView2, "측정일시", "Item_Name", false, 180);
+            AddNewColumnToDataGridView(dataGridView2, "측정일시", "Wc_Name", false, 180);
+            AddNewColumnToDataGridView(dataGridView2, "측정일시", "Workorderno", false, 180);
+            AddNewColumnToDataGridView(dataGridView2, "측정일시", "Condition_Group1", false, 180);
 
             this.dataGridView2.Font = new Font("나눔고딕", 14, FontStyle.Bold);
             this.dataGridView2.DefaultCellStyle.Font = new Font("나눔고딕", 15, FontStyle.Bold);
@@ -114,14 +118,14 @@ namespace FieldOperationForm
             {
 
 
-                b = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                c = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                a = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                //b = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                //c = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                //a = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
 
-                d = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txt_MeasuredValue.Text = ((Convert.ToDecimal(a) + Convert.ToDecimal(b) + Convert.ToDecimal(c)) / 3).ToString();
-                f = txt_MeasuredValue.Text;
-                SetVal();
+                //d = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                //txt_MeasuredValue.Text = ((Convert.ToDecimal(a) + Convert.ToDecimal(b) + Convert.ToDecimal(c)) / 3).ToString();
+                //f = txt_MeasuredValue.Text;
+                //SetVal();
 
 
 
@@ -130,11 +134,12 @@ namespace FieldOperationForm
         }
         private void SetVal()
         {
-            Inspect_Service service = new Inspect_Service();
-            Inspect_Vo vo = new Inspect_Vo();
-            vo.Item_Name = d;
-            vo.Inspect_Val = Convert.ToDecimal(f);
-            dataGridView2.DataSource = service.GetVal(vo);
+            InsertCon_Service service = new InsertCon_Service();
+            InsertCon_Vo vo = new InsertCon_Vo();
+            vo.Item_Name = txt_Item.Text;
+            vo.Wc_Name = txt_WorkPlace.Text;
+            vo.Condition_Group = t.ToString();
+            dataGridView2.DataSource = service.GetConditionVal(vo);
 
         }
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -142,31 +147,55 @@ namespace FieldOperationForm
             try
             {
 
-                g = Convert.ToDecimal(dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString());
+                g= dataGridView2.Rows[e.RowIndex].Cells[5].Value.ToString();
+                u = Convert.ToDecimal(dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString());
             }
             catch { }
         }
 
         private void btn_Write_Click(object sender, EventArgs e)
         {
-            Inspect_Service service = new Inspect_Service();
-            Inspect_Vo vo = new Inspect_Vo();
-            vo.Item_Name = d;
-            vo.Inspect_Val = Convert.ToDecimal(txt_MeasuredValue.Text);
+            if (t == null)
+            {
+                MessageBox.Show("측정항목을 선택해주세요.");
+            }
+            else
+            {
 
+      
+            InsertCon_Vo vo = new InsertCon_Vo();
+            vo.Condition_Val = Convert.ToDecimal(txt_MeasuredValue.Text);
+            vo.Item_Name = txt_Item.Text;
+            vo.Wc_Name = txt_WorkPlace.Text;
+            vo.Workorderno = cb_WorkNum.Text;
+            vo.Condition_Group = t.ToString();
+            InsertCon_Service service = new InsertCon_Service();
             service.InsertInspect(vo);
-
-            MessageBox.Show("입력 완료");
-
+            MessageBox.Show("입력완료");
             SetVal();
+            }
+
+
+            //Inspect_Service service = new Inspect_Service();
+            //Inspect_Vo vo = new Inspect_Vo();
+            //vo.Item_Name = d;
+            //vo.Inspect_Val = Convert.ToDecimal(txt_MeasuredValue.Text);
+
+            //service.InsertInspect(vo);
+
+            //MessageBox.Show("입력 완료");
+
+
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
             Inspect_Service service = new Inspect_Service();
             Inspect_Vo vo = new Inspect_Vo();
-            vo.Item_Name = d;
-            vo.Inspect_Val = g;
+            vo.Item_Name = txt_Item.Text;
+            vo.Condition_Val = u;
+            vo.Wc_Name = txt_WorkPlace.Text;
+            vo.Condition_Group = g;
 
             service.deleteVal(vo);
 
@@ -221,6 +250,16 @@ namespace FieldOperationForm
             noTextSet();
             GetCon();
             txt_MeasuredValue.Text = "";
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                t = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                SetVal();
+            }
+            catch { }
         }
     }
 }

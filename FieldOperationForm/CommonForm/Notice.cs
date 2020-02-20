@@ -15,11 +15,13 @@ namespace FieldOperationForm
         bool TagMove;
         int MValX, MValY;
         List<Notice_Vo> NList = null;
-        public Notice()
+        Main_P main;
+        public Notice(Main_P main1)
         {
           
             LoadNList();
             InitializeComponent();
+            main = main1;
         }
 
         // DataGridView 컬럼 설정
@@ -137,7 +139,9 @@ namespace FieldOperationForm
 
         private void button1_Click(object sender, EventArgs e)
         {
+          
             this.Close();
+            main.lbl_Notice.Enabled = true;
         }
 
         private void panel1_MouseUp(object sender, MouseEventArgs e)

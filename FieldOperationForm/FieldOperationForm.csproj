@@ -128,6 +128,7 @@
     <Compile Include="FieldDac\CreatePalette_Dac.cs" />
     <Compile Include="FieldDac\GoodHistory_Dac.cs" />
     <Compile Include="FieldDac\GVDry_Dac.cs" />
+    <Compile Include="FieldDac\InsertCon_Dac.cs" />
     <Compile Include="FieldDac\Inspect_Dac.cs" />
     <Compile Include="FieldDac\Item_Dac.cs" />
     <Compile Include="FieldDac\Mold_Dac.cs" />
@@ -146,6 +147,7 @@
     <Compile Include="FieldService\CreatePalette_Service.cs" />
     <Compile Include="FieldService\GoodHistory_Service.cs" />
     <Compile Include="FieldService\GVDry_Service.cs" />
+    <Compile Include="FieldService\InsertCon_Service.cs" />
     <Compile Include="FieldService\Inspect_Service.cs" />
     <Compile Include="FieldService\Item_Service.cs" />
     <Compile Include="FieldService\Mold_Service.cs" />
@@ -163,6 +165,7 @@
     <Compile Include="FieldVo\CreatePalette_Vo.cs" />
     <Compile Include="FieldVo\GoodHistory_Vo.cs" />
     <Compile Include="FieldVo\GVDry_Vo.cs" />
+    <Compile Include="FieldVo\InsertCon_Vo.cs" />
     <Compile Include="FieldVo\Inspect_Vo.cs" />
     <Compile Include="FieldVo\Item_Vo.cs" />
     <Compile Include="FieldVo\Mold_Vo.cs" />

@@ -86,8 +86,10 @@ namespace FieldOperationForm
 
         private void lbl_Notice_Click(object sender, EventArgs e)
         {
-            Notice frm = new Notice();
+
+            Notice frm = new Notice(this);
             frm.Show();
+            lbl_Notice.Enabled = false;
         }
 
         private void btn_Home_Click(object sender, EventArgs e)

@@ -24,8 +24,8 @@ namespace AdminForm
             InitializeComponent();
         }
 
-        private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
-         int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
+        public static void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
+      int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
         {
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.HeaderText = headerText;
@@ -37,15 +37,19 @@ namespace AdminForm
             col.DefaultCellStyle.Alignment = textAlign;
             dgv.Columns.Add(col);
 
-            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;
             dgv.EnableHeadersVisualStyles = false;
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue;
 
             dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
+            dgv.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.LightGray;
+            // dgv.DefaultCellStyle.SelectionBackColor = Color.Yellow;
+            // dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
-            dgv.DefaultCellStyle.SelectionBackColor = Color.MidnightBlue;
+            dgv.DefaultCellStyle.SelectionBackColor = Color.DimGray;
+
         }
 
         private void JobOrderCreation_Load(object sender, EventArgs e)

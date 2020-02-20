@@ -95,6 +95,14 @@ namespace FieldOperationForm
 
             dataGridView1.DataSource = service.GetWorkOrder(main.lbl_Job.Text);
 
+            WorkOrderService service2 = new WorkOrderService();
+            processWorkList = service2.GetPrcocess_Workorder(main.lbl_Job.Text);
+            ItemService service3 = new ItemService();
+            itemList = service3.GetAllItemInfo();
+            WorkCenterService wcService = new WorkCenterService();
+            wcPortList = wcService.WorkCenterPortNum();
+
+
 
         }
 
@@ -105,9 +113,9 @@ namespace FieldOperationForm
             SetLoad();
         }
 
- 
 
-     
+
+
 
         private void btn_Worker_Click(object sender, EventArgs e)
         {
@@ -152,7 +160,7 @@ namespace FieldOperationForm
             main.lblChange.Text = "포장 입고 등록";
         }
 
-     
+
 
         private void JobOrderStatus_Package_Shown(object sender, EventArgs e)
         {
@@ -174,7 +182,7 @@ namespace FieldOperationForm
 
         private void btn_StartEnd_Click(object sender, EventArgs e)
         {
-            if(start == "작업대기")
+            if (start == "작업대기")
             {
                 WorkCenterService service = new WorkCenterService();
                 if (service.wcStatusChecked(dataGridView1.SelectedRows[0].Cells[1].Value.ToString()) == "RUN")

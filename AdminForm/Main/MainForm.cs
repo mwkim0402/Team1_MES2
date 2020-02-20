@@ -15,6 +15,7 @@ namespace AdminForm
     public delegate void SendName(string name);
     public partial class MainForm : Form
     {
+        public event EventHandler Create_Click;
         public event EventHandler Search_Click;
         public event EventHandler Insert_Click;
         public event EventHandler Delete_Click;
@@ -38,7 +39,7 @@ namespace AdminForm
 
             // Add the Handler to draw the Image on Tab Pages
             tabControl2.DrawItem += tabControl4_DrawItem;
-            
+
         }
 
 
@@ -252,8 +253,8 @@ namespace AdminForm
             //}
             //catch (Exception) { }
         }
-           
-        
+
+
 
         private void tabControl4_MouseClick(object sender, MouseEventArgs e)
         {
@@ -275,7 +276,7 @@ namespace AdminForm
                 tc.TabPages.Remove(TabP);
                 tc.SelectedIndex = lastIndex;
             }
-            
+
         }
 
         #region 폼동적생성
@@ -602,6 +603,13 @@ namespace AdminForm
             System.Windows.Forms.Application.Exit();
             // Use this since we are a console app
             //System.Environment.Exit(1);
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+
+            if (this.Create_Click != null)
+                Create_Click(this, null);
         }
     }
 }

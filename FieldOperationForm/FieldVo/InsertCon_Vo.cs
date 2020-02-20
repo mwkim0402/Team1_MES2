@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace FieldOperationForm
 {
-   public class Condition_Vo
+   public class InsertCon_Vo
     {
-        public string Wc_Name { get; set; }
         public string Item_Name { get; set; }
+        public string Wc_Name { get; set; }
+        public decimal Condition_Val { get; set; }
+        public string Workorderno { get; set; }
         public string Condition_Group { get; set; }
-        public decimal USL { get; set; }
-        public decimal SL { get; set; }
-        public decimal LSL { get; set; }
+     
+        public DateTime Condition_Datetime { get; set; }
     }
 }

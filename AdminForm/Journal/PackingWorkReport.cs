@@ -1,4 +1,5 @@
 ﻿using AdminForm.Journal;
+using DevExpress.XtraReports.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,8 @@ namespace AdminForm
     {
         private delegate void SafeCallDelegate(PackingReport rep);
         MainForm frm;
+        PackingReport rpt = new PackingReport();
+
         public PackingWorkReport()
         {
             InitializeComponent();
@@ -53,7 +56,6 @@ namespace AdminForm
                 da.Fill(ds, "Item");
                 conn.Close();
             }
-            PackingReport rpt = new PackingReport();
             rpt.Parameters["SelectedDate"].Value = dtpProduction.Value;
             rpt.Parameters["SelectedDate"].Visible = false;
             rpt.DataSource = ds;
@@ -84,12 +86,14 @@ namespace AdminForm
         private void PackingWorkReport_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += this.Search_Click;
+            frm.btnExcel.Enabled = false;// 엑셀저장 비활성화
             frm.Insert_Click += this.Print_Click;
         }
 
         private void PackingWorkReport_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= this.Search_Click;
+            frm.btnExcel.Enabled = true;// 엑셀저장 활성화
             frm.Insert_Click -= this.Print_Click;
         }
         private void Print_Click(object sender, EventArgs e)
@@ -103,10 +107,10 @@ namespace AdminForm
 
         private void printAction()
         {
-            Print frm = new Print();
-            frm.documentViewer1.DocumentSource = this.documentViewer1.DocumentSource;
-            frm.documentViewer1.PrintingSystem.ExecCommand(DevExpress.XtraPrinting.PrintingSystemCommand.SubmitParameters, new object[] { true });
-            frm.Show();
+            XtraReport rpt1 = new XtraReport();
+            rpt1.DataSource = rpt;
+            Print frm = new Print(rpt1);
+            frm.ShowDialog();
         }
     }
 }

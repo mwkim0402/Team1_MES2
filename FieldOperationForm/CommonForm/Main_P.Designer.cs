@@ -308,7 +308,7 @@
         public System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Button btn_FormClose;
         public System.Windows.Forms.Button btn_NonOperation;
-        private System.Windows.Forms.Label lbl_Notice;
+        public System.Windows.Forms.Label lbl_Notice;
         public System.Windows.Forms.Label lbl_name;
         public System.Windows.Forms.Label lbl_Job;
         public System.Windows.Forms.Label label3;

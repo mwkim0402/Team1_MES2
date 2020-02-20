@@ -82,6 +82,7 @@
             // 
             // fcWorkPlace
             // 
+            this.fcWorkPlace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fcWorkPlace.Category = AdminForm.CategoryMode.WorkCenter;
             this.fcWorkPlace.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.fcWorkPlace.Location = new System.Drawing.Point(761, 20);
@@ -94,6 +95,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(703, 26);
@@ -104,9 +106,10 @@
             // 
             // fcItem
             // 
+            this.fcItem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.fcItem.Category = AdminForm.CategoryMode.Item;
             this.fcItem.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.fcItem.Location = new System.Drawing.Point(428, 19);
+            this.fcItem.Location = new System.Drawing.Point(433, 19);
             this.fcItem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fcItem.Name = "fcItem";
             this.fcItem.SendCode = null;
@@ -116,9 +119,10 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(384, 26);
+            this.label3.Location = new System.Drawing.Point(389, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 19);
             this.label3.TabIndex = 8;
@@ -128,7 +132,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(218, 28);
+            this.label2.Location = new System.Drawing.Point(228, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(19, 19);
             this.label2.TabIndex = 3;
@@ -138,7 +142,7 @@
             // 
             this.dtpEnd.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEnd.Location = new System.Drawing.Point(242, 24);
+            this.dtpEnd.Location = new System.Drawing.Point(252, 24);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(129, 26);
             this.dtpEnd.TabIndex = 2;
@@ -147,7 +151,7 @@
             // 
             this.dtpStart.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStart.Location = new System.Drawing.Point(83, 23);
+            this.dtpStart.Location = new System.Drawing.Point(93, 23);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(129, 26);
             this.dtpStart.TabIndex = 1;
@@ -157,7 +161,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(11, 26);
+            this.label1.Location = new System.Drawing.Point(21, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 19);
             this.label1.TabIndex = 0;

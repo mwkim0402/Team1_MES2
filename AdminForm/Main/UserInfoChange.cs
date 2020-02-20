@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AdminForm.Main
+namespace AdminForm
 {
     public partial class UserInfoChange : Form
     {

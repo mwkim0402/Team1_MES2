@@ -36,22 +36,22 @@ namespace AdminForm
 
             //dgv 추가
             frm = (MainForm)this.MdiParent;
-            AddNewColumnToDataGridView(dgvSearchResult, "금형코드", "Mold_Code", true, 110);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형명", "Mold_Name", true, 200);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형그룹", "Mold_Group", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형상태", "Mold_Status", true, 110);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형누적타수", "Cum_Shot_Cnt", true, 150, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형누적생산량", "Cum_Prd_Qty", true, 150, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvSearchResult, "금형누적사용시간", "Cum_Time", true, 160);
-            AddNewColumnToDataGridView(dgvSearchResult, "보장타수", "Guar_Shot_Cnt", true, 110, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvSearchResult, "구입금액", "Purchase_Amt", true, 110, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvSearchResult, "입고일자", "In_Date", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "최종장착일시", "Last_Setup_Time", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 80);
-            AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 110);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형코드", "Mold_Code", true, 110);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형명", "Mold_Name", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형그룹", "Mold_Group", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형상태", "Mold_Status", true, 110);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형누적타수", "Cum_Shot_Cnt", true, 150, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형누적생산량", "Cum_Prd_Qty", true, 150, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형누적사용시간", "Cum_Time", true, 160);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "보장타수", "Guar_Shot_Cnt", true, 110, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "구입금액", "Purchase_Amt", true, 110, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "입고일자", "In_Date", true, 150, DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "최종장착일시", "Last_Setup_Time", true, 150, DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 80);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 100, DataGridViewContentAlignment.MiddleCenter);
             LoadList();
             dgvSearchResult.DataSource = List;
-
+            
             dgvSearchResult.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvSearchResult.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -102,30 +102,6 @@ namespace AdminForm
             }
         }
 
-        private void AddNewColumnToDataGridView(DataGridView dgv, string headerText, string dataPropertyName, bool visibility,
-       int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleCenter)
-        {
-            DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
-            col.HeaderText = headerText;
-            col.DataPropertyName = dataPropertyName;
-            col.Width = colWidth;
-            col.Visible = visibility;
-            col.ValueType = typeof(string);
-            col.ReadOnly = true;
-            col.DefaultCellStyle.Alignment = textAlign;
-            dgv.Columns.Add(col);
-
-            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
-            dgv.EnableHeadersVisualStyles = false;
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue;
-
-            dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-
-            dgv.DefaultCellStyle.SelectionForeColor = Color.White;
-            dgv.DefaultCellStyle.SelectionBackColor = Color.MidnightBlue;
-        }
-        //저장
         private void BtnSave_Click(object sender, EventArgs e)
         {
             MoldingService ser = new MoldingService();
@@ -183,12 +159,14 @@ namespace AdminForm
         private void MoldInformationRegister_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += new EventHandler(this.Search_Click);
+            frm.btnSave.Enabled = false;// 파일저장 비활성화
             frm.Insert_Click += new EventHandler(this.ExportToExcel);
         }
 
         private void MoldInformationRegister_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= new EventHandler(this.Search_Click);
+            frm.btnSave.Enabled = true;// 파일저장 활성화
             frm.Insert_Click -= new EventHandler(this.ExportToExcel);
         }
         private void ExportToExcel(object sender, EventArgs e)
@@ -204,25 +182,40 @@ namespace AdminForm
             saveFileDialog1.Title = "Save";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                xlApp = new Microsoft.Office.Interop.Excel.Application();
-                xlWorkBook = xlApp.Workbooks.Add();
-                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-
-                for (i = 0; i <= dgvSearchResult.RowCount - 2; i++)
+                try
                 {
-                    for (j = 0; j <= dgvSearchResult.ColumnCount - 1; j++)
+                    xlApp = new Microsoft.Office.Interop.Excel.Application();
+                    xlWorkBook = xlApp.Workbooks.Add();
+                    xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                    for (i = 0; i < dgvSearchResult.Columns.Count; i++)
                     {
-                        xlWorkSheet.Cells[i + 1, j + 1] = dgvSearchResult[j, i].Value.ToString();
+                        xlWorkSheet.Cells[1, i + 1] = dgvSearchResult.Columns[i].HeaderText;
                     }
+
+                    for (i = 0; i < dgvSearchResult.RowCount; i++)
+                    {
+                        for (j = 0; j < dgvSearchResult.ColumnCount; j++)
+                        {
+                            xlWorkSheet.Cells[i + 2, j + 1] = dgvSearchResult[j, i].Value.ToString();
+                        }
+                    }
+
+                    xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                    xlWorkBook.Close(true);
+                    xlApp.Quit();
+
+                    releaseObject(xlWorkSheet);
+                    releaseObject(xlWorkBook);
+                    releaseObject(xlApp);
+
+                    MessageBox.Show("저장 완료되었습니다.");
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message);
                 }
 
-                xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
-                xlWorkBook.Close(true);
-                xlApp.Quit();
-
-                releaseObject(xlWorkSheet);
-                releaseObject(xlWorkBook);
-                releaseObject(xlApp);
             }
         }
         private void releaseObject(object obj)

@@ -61,29 +61,34 @@ namespace FieldOperationForm
         private void Setdgv()
         {
 
-
-
             AddNewColumnToDataGridView(dataGridView1, "상태", "Wo_Status", true, 150);
             AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "Workorderno", true, 370);
-            AddNewColumnToDataGridView(dataGridView1, "할당작업장", "Wc_Name", true, 200);
+            AddNewColumnToDataGridView(dataGridView1, "할당작업장", "Wc_Name", true, 230);
             AddNewColumnToDataGridView(dataGridView1, "품목명", "Item_Name", true, 230);
 
-            AddNewColumnToDataGridView(dataGridView1, "생산수량", "Plan_Qty", true, 150);
-            AddNewColumnToDataGridView(dataGridView1, "생산일자", "Plan_Date", true, 200);
-            AddNewColumnToDataGridView(dataGridView1, "생산시작시간", "Plan_Starttime", true, 280);
-            AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Plan_Endtime", true, 279);
-
-
+            AddNewColumnToDataGridView(dataGridView1, "생산수량", "Prd_Qty", true, 140);
+            AddNewColumnToDataGridView(dataGridView1, "생산일자", "Plan_Date", true, 180);
+            AddNewColumnToDataGridView(dataGridView1, "계획시작시간", "Plan_Starttime", true, 187);
+            AddNewColumnToDataGridView(dataGridView1, "생산시작시간", "Prd_Starttime", true, 186);
+            AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Prd_Endtime", true, 186);
             this.dataGridView1.Font = new Font("나눔고딕", 17, FontStyle.Bold);
             this.dataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 17, FontStyle.Regular);
-
 
 
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
-            //dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+
 
         }
 
@@ -190,7 +195,12 @@ namespace FieldOperationForm
 
         private void btn_FieldClose_Click(object sender, EventArgs e)
         {
-      
+            if (start == "작업종료")
+            {
+                WorkOrder_Service service = new WorkOrder_Service();
+                service.deadlineWork(no);
+                SetLoad();
+            }
         }
 
         private void JobOrderStatus_Steelmaking_Load(object sender, EventArgs e)

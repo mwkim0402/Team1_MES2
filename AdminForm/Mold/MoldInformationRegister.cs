@@ -45,10 +45,10 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형누적사용시간", "Cum_Time", true, 160);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "보장타수", "Guar_Shot_Cnt", true, 110, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "구입금액", "Purchase_Amt", true, 110, DataGridViewContentAlignment.MiddleRight);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "입고일자", "In_Date", true, 110, DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "입고일자", "In_Date", true, 150, DataGridViewContentAlignment.MiddleCenter);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "최종장착일시", "Last_Setup_Time", true, 150, DataGridViewContentAlignment.MiddleCenter);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 80);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 110);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 100, DataGridViewContentAlignment.MiddleCenter);
             LoadList();
             dgvSearchResult.DataSource = List;
             
@@ -159,12 +159,14 @@ namespace AdminForm
         private void MoldInformationRegister_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += new EventHandler(this.Search_Click);
+            frm.btnSave.Enabled = false;// 파일저장 비활성화
             frm.Insert_Click += new EventHandler(this.ExportToExcel);
         }
 
         private void MoldInformationRegister_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= new EventHandler(this.Search_Click);
+            frm.btnSave.Enabled = true;// 파일저장 활성화
             frm.Insert_Click -= new EventHandler(this.ExportToExcel);
         }
         private void ExportToExcel(object sender, EventArgs e)
@@ -180,25 +182,40 @@ namespace AdminForm
             saveFileDialog1.Title = "Save";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                xlApp = new Microsoft.Office.Interop.Excel.Application();
-                xlWorkBook = xlApp.Workbooks.Add();
-                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-
-                for (i = 0; i <= dgvSearchResult.RowCount - 2; i++)
+                try
                 {
-                    for (j = 0; j <= dgvSearchResult.ColumnCount - 1; j++)
+                    xlApp = new Microsoft.Office.Interop.Excel.Application();
+                    xlWorkBook = xlApp.Workbooks.Add();
+                    xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                    for (i = 0; i < dgvSearchResult.Columns.Count; i++)
                     {
-                        xlWorkSheet.Cells[i + 1, j + 1] = dgvSearchResult[j, i].Value.ToString();
+                        xlWorkSheet.Cells[1, i + 1] = dgvSearchResult.Columns[i].HeaderText;
                     }
+
+                    for (i = 0; i < dgvSearchResult.RowCount; i++)
+                    {
+                        for (j = 0; j < dgvSearchResult.ColumnCount; j++)
+                        {
+                            xlWorkSheet.Cells[i + 2, j + 1] = dgvSearchResult[j, i].Value.ToString();
+                        }
+                    }
+
+                    xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                    xlWorkBook.Close(true);
+                    xlApp.Quit();
+
+                    releaseObject(xlWorkSheet);
+                    releaseObject(xlWorkBook);
+                    releaseObject(xlApp);
+
+                    MessageBox.Show("저장 완료되었습니다.");
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message);
                 }
 
-                xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
-                xlWorkBook.Close(true);
-                xlApp.Quit();
-
-                releaseObject(xlWorkSheet);
-                releaseObject(xlWorkBook);
-                releaseObject(xlApp);
             }
         }
         private void releaseObject(object obj)

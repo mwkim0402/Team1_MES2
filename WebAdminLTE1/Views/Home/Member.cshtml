@@ -1,4 +1,4 @@
-﻿@model WebAdminLTE1.Models.MonthVO
+﻿
 
 @{
     ViewBag.Title = "Member";
@@ -6,212 +6,211 @@
 }
 
 <h1> 근태 현황판 </h1>
-    
-    <style>
-        table {
-            text-align: center;
-            width: 100%;
-            background-color: dimgray;
-            height: 70%;
-            /*float: left;*/
-        }
 
-        button {
-            border: 1px solid darkgray;
-            background-color: rgba(0,0,0,0);
-            color: #FFFFFF;
-        }
+<style>
+    table {
+        text-align: center;
+        width: 100%;
+        background-color: dimgray;
+        height: 70%;
+        /*float: left;*/
+    }
 
-    </style>
+    button {
+        border: 1px solid darkgray;
+        background-color: rgba(0,0,0,0);
+        color: #FFFFFF;
+    }
+</style>
 
+<script language="javascript">
 
-    <script language="javascript">
+    var today = new Date(); // 오늘 날짜
+    var date = new Date();
 
-        var today = new Date(); // 오늘 날짜
-        var date = new Date();
-
-        function beforem() //이전 달을 today에 값을 저장
-        {
-            today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
-            build(); //만들기
-        }
-
-        function nextm()  //다음 달을 today에 저장
-        {
-            today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
-            
-            build();
-        }
-
-        function build() {
-            var nMonth = new Date(today.getFullYear(), today.getMonth(), 1); //현재달의 첫째 날
-            var lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0); //현재 달의 마지막 날
-            var tbcal = document.getElementById("calendar"); // 테이블 달력을 만들 테이블
-            var yearmonth = document.getElementById("yearmonth"); //  년도와 월 출력할곳
-            yearmonth.innerHTML = "<font color=#FFFFFF>" + today.getFullYear() + "년 " + (today.getMonth() + 1) + "월"; //년도와 월 출력
-
-            if (today.getMonth() + 1 == 12) //  눌렀을 때 월이 넘어가는 곳
-            {
-                before.innerHTML = (today.getMonth()) + "월";
-                next.innerHTML = "1월";
-            }
-            else if (today.getMonth() + 1 == 1) //  1월 일 때
-            {
-                before.innerHTML = "12월";
-                next.innerHTML = (today.getMonth() + 2) + "월";
-            }
-            else //   12월 일 때
-            {
-                before.innerHTML = (today.getMonth()) + "월";
-                next.innerHTML = (today.getMonth() + 2) + "월";
-            }
-
-
-            // 남은 테이블 줄 삭제
-            while (tbcal.rows.length > 2) {
-                tbcal.deleteRow(tbcal.rows.length - 1);
-            }
-            var row = null;
-            row = tbcal.insertRow();
-            var cnt = 0;
-
-            // 1일 시작칸 찾기
-            for (i = 0; i < nMonth.getDay(); i++) {
-                cell = row.insertCell();
-                cnt = cnt + 1;
-            }
-
-            // 달력 출력
-            for (i = 1; i <= lastDate.getDate(); i++) // 1일부터 마지막 일까지
-            {
-                cell = row.insertCell();
-                cell.innerHTML = "<font color=#FFFFF>" + i;
-                cnt = cnt + 1;
-                if (cnt % 7 == 1) {//일요일 계산
-                    cell.innerHTML = "<font color=#FF0000>" + i//일요일에 색
-                }
-                if (cnt % 7 == 0) { // 1주일이 7일 이므로 토요일 계산
-                    cell.innerHTML = "<font color=#0099FF>" + i//토요일에 색
-                    row = calendar.insertRow();// 줄 추가
-                }
-                if (today.getFullYear() == date.getFullYear() && today.getMonth() == date.getMonth() && i == date.getDate()) {
-                    cell.bgColor = "BBBBBB"; //오늘날짜배경색
-
-                }
-            }
-        }
-
-    </script>
-    @using (Html.BeginForm())
+    function beforem() //이전 달을 today에 값을 저장
     {
-        @Html.AntiForgeryToken()
-        <table align="center" id="calendar" width="91%">
-
-            <tr>
-                @*<font size=2%; color="#FFFFFF">*@
-                    <td width="13%"><input type="submit" button onclick="beforem()" class="btn btn-block" id="before" style="background-color:dimgray" />@*<button onclick="beforem()" class="btn btn-block" id="before"></button>*@
-                @*</font>*@</td>
-                <td colspan="5" align="center" id="yearmonth"></td>
-                <td width="13%"><font size=2%; color="#FFFFFF"><button onclick="nextm()" class="btn btn-block" id="next"></button></font></td>
-            </tr>
-            <tr>
-                <td align="center" width="13%" height="40"> <font color="#FF0000">일</font></td>
-                <td align="center" width="13%" height="40"> <font color="#FFFFFF">월</font></td>
-                <td align="center" width="13%" height="40"> <font color="#FFFFFF">화</font></td>
-                <td align="center" width="13%" height="40"> <font color="#FFFFFF">수</font></td>
-                <td align="center" width="13%" height="40"> <font color="#FFFFFF">목</font></td>
-                <td align="center" width="13%" height="40"> <font color="#FFFFFF">금</font></td>
-                <td align="center" width="13%" height="40"><font color="#0099FF">토</font></td>
-            </tr>
-        </table>
-        
-        <input type="submit" value="Next" button onclick="nextm()" class="btn btn-block" id="next" />
+        today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+        build(); //만들기
     }
 
-    <section class="content">
-        <div class="row">
-            <div class="col-md-6">
-                <!-- DONUT CHART -->
-                <div class="box box-danger">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">공정별 평균근무시간</h3>
-
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                                <i class="fa fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                        </div>
-                    </div>
-                    <div class="box-body">
-                        <canvas id="pieChart" style="height:250px"></canvas>
-                    </div>
-                    <!-- /.box-body -->
-                </div>
-                <!-- /.box -->
-
-            </div>
-            <div class="col-md-6">
-                <!-- Bar chart -->
-                <div class="box box-primary">
-                    <div class="box-header with-border">
-                        <i class="fa fa-bar-chart-o"></i>
-
-                        <h3 class="box-title">이번달 많이 일한 근무자</h3>
-
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                                <i class="fa fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                        </div>
-                    </div>
-                    <div class="box-body">
-                        <div id="bar-chart" style="height: 237px;"></div>
-                    </div>
-                    <!-- /.box-body-->
-                </div>
-                <!-- /.box -->
-            </div>
-            <!-- /.col (RIGHT) -->
-        </div>
-        <!-- /.row -->
-        <!-- BAR CHART -->
-        @*<div class="col"*@
-        <div class="box box-success">
-            <div class="box-header with-border">
-                <h3 class="box-title">Bar Chart</h3>
-
-                <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                        <i class="fa fa-minus"></i>
-                    </button>
-                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                </div>
-            </div>
-            <div class="box-body">
-                <div class="chart">
-                    <canvas id="barChart" style="height:230px"></canvas>
-                </div>
-            </div>
-            <!-- /.box-body -->
-        </div>
-        <!-- /.box -->
-
-
-
-    </section>
-    @{
-        string labels = ViewBag.Labels;
-
-        string data1 = ViewBag.data1;
-
-        string data2 = ViewBag.data2;
-        string piePCode = ViewBag.PCode;
+    function nextm()  //다음 달을 today에 저장
+    {
+        today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+        build();
     }
 
-    @section Scripts {
-        <script>
+    function build() {
+        var nMonth = new Date(today.getFullYear(), today.getMonth(), 1); //현재달의 첫째 날
+        var lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0); //현재 달의 마지막 날
+        var tbcal = document.getElementById("calendar"); // 테이블 달력을 만들 테이블
+        var yearmonth = document.getElementById("yearmonth"); //  년도와 월 출력할곳
+        yearmonth.innerHTML = "<font color=#FFFFFF>" + today.getFullYear() + "년 " + (today.getMonth() + 1) + "월"; //년도와 월 출력
+
+        if (today.getMonth() + 1 == 12) //  눌렀을 때 월이 넘어가는 곳
+        {
+            before.innerHTML = (today.getMonth()) + "월";
+            next.innerHTML = "1월";
+        }
+        else if (today.getMonth() + 1 == 1) //  1월 일 때
+        {
+            before.innerHTML = "12월";
+            next.innerHTML = (today.getMonth() + 2) + "월";
+        }
+        else //   12월 일 때
+        {
+            before.innerHTML = (today.getMonth()) + "월";
+            next.innerHTML = (today.getMonth() + 2) + "월";
+        }
+
+
+        // 남은 테이블 줄 삭제
+        while (tbcal.rows.length > 2) {
+            tbcal.deleteRow(tbcal.rows.length - 1);
+        }
+        var row = null;
+        row = tbcal.insertRow();
+        var cnt = 0;
+
+        // 1일 시작칸 찾기
+        for (i = 0; i < nMonth.getDay(); i++) {
+            cell = row.insertCell();
+            cnt = cnt + 1;
+        }
+
+        // 달력 출력
+        for (i = 1; i <= lastDate.getDate(); i++) // 1일부터 마지막 일까지
+        {
+            cell = row.insertCell();
+            cell.innerHTML = "<font color=#FFFFF>" + i;
+            cnt = cnt + 1;
+            if (cnt % 7 == 1) {//일요일 계산
+                cell.innerHTML = "<font color=#FF0000>" + i//일요일에 색
+            }
+            if (cnt % 7 == 0) { // 1주일이 7일 이므로 토요일 계산
+                cell.innerHTML = "<font color=#0099FF>" + i//토요일에 색
+                row = calendar.insertRow();// 줄 추가
+            }
+            if (today.getFullYear() == date.getFullYear() && today.getMonth() == date.getMonth() && i == date.getDate()) {
+                cell.bgColor = "BBBBBB"; //오늘날짜배경색
+
+            }
+        }
+    }
+
+</script>
+<table align="center" id="calendar" width="91%">
+
+    <tr>
+
+        <td width="13%">
+            <font size=2%; color="#FFFFFF">
+                <button onclick="beforem()" class="btn btn-block" id="before"></button>
+            </font>
+        </td>
+        <td colspan="5" align="center" id="yearmonth"></td>
+        <td width="13%"><font size=2%; color="#FFFFFF"><button onclick="nextm()" class="btn btn-block" id="next"></button></font></td>
+    </tr>
+    <tr>
+        <td align="center" width="13%" height="40"> <font color="#FF0000">일</font></td>
+        <td align="center" width="13%" height="40"> <font color="#FFFFFF">월</font></td>
+        <td align="center" width="13%" height="40"> <font color="#FFFFFF">화</font></td>
+        <td align="center" width="13%" height="40"> <font color="#FFFFFF">수</font></td>
+        <td align="center" width="13%" height="40"> <font color="#FFFFFF">목</font></td>
+        <td align="center" width="13%" height="40"> <font color="#FFFFFF">금</font></td>
+        <td align="center" width="13%" height="40"><font color="#0099FF">토</font></td>
+    </tr>
+</table>
+
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- DONUT CHART -->
+            <div class="box box-danger">
+                <div class="box-header with-border">
+                    <h3 class="box-title">공정별 평균근무시간</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <canvas id="pieChart" style="height:250px"></canvas>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+
+        </div>
+        <div class="col-md-6">
+            <!-- Bar chart -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-bar-chart-o"></i>
+
+                    <h3 class="box-title">이번달 많이 일한 근무자</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div id="bar-chart" style="height: 237px;"></div>
+                </div>
+                <!-- /.box-body-->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col (RIGHT) -->
+    </div>
+    <!-- /.row -->
+    <!-- BAR CHART -->
+    <div class="box box-success">
+        <div class="box-header with-border">
+            <h3 class="box-title">Bar Chart</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                    <i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            </div>
+        </div>
+        <div class="box-body">
+            <div class="chart">
+                <canvas id="barChart" style="height:230px"></canvas>
+            </div>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+
+</section>
+@{
+
+    string data1 = ViewBag.data1;
+
+    string data2 = ViewBag.data2;
+    string piePCode = ViewBag.PCode;
+
+    string labels = ViewBag.Labels;
+    string barName1 = ViewBag.Name1;
+    string barName2 = ViewBag.Name2;
+    string barName3 = ViewBag.Name3;
+    string bardata1 = ViewBag.bardata1;
+    string bardata2 = ViewBag.bardata2;
+    string bardata3 = ViewBag.bardata3;
+}
+
+@section Scripts {
+    <script>
             function replaceAll(str, searchStr, replaceStr) {
               return str.split(searchStr).join(replaceStr);
             }
@@ -337,31 +336,45 @@
             //-------------
     //- BAR CHART -
     //-------------
+             var temp = "@labels";
+             var arrTemp = temp.split(',');
       var areaChartData = {
-      labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels  : arrTemp,
       datasets: [
         {
-          label               : 'Electronics',
+          label               : '@barName1',
           fillColor           : 'rgba(210, 214, 222, 1)',
           strokeColor         : 'rgba(210, 214, 222, 1)',
           pointColor          : 'rgba(210, 214, 222, 1)',
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [65, 59, 80, 81, 56, 55, 40]
+          data                : @bardata1
         },
         {
-          label               : 'Digital Goods',
+          label               : '@barName2',
           fillColor           : 'rgba(60,141,188,0.9)',
           strokeColor         : 'rgba(60,141,188,0.8)',
           pointColor          : '#3b8bba',
           pointStrokeColor    : 'rgba(60,141,188,1)',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : [28, 48, 40, 19, 86, 27, 90]
+          data                :  @bardata2
+          },
+        {
+          label               : '@barName3',
+          fillColor           : 'rgba(60,141,188,0.9)',
+          strokeColor         : 'rgba(60,141,188,0.8)',
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : @bardata3
         }
       ]
-    }
+            }
+
+
 
     var barChartCanvas                   = $('#barChart').get(0).getContext('2d')
     var barChart                         = new Chart(barChartCanvas)
@@ -403,6 +416,5 @@
 
             build();
 
-        </script>
-    }
-</body>
+    </script>
+}

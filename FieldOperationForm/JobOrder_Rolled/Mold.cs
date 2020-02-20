@@ -107,18 +107,26 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView2.CurrentCell = null;
-            a = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            button1.Enabled = false;
-            btn_Reissue.Enabled = true;
+            try
+            {
+                dataGridView2.CurrentCell = null;
+                a = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                button1.Enabled = false;
+                btn_Reissue.Enabled = true;
+            }
+            catch { }
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView1.CurrentCell = null;
-            b= dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
-            button1.Enabled = true;
-            btn_Reissue.Enabled = false;
+            try
+            {
+                dataGridView1.CurrentCell = null;
+                b = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
+                button1.Enabled = true;
+                btn_Reissue.Enabled = false;
+            }
+            catch { }
         }
 
         private void button1_Click(object sender, EventArgs e)

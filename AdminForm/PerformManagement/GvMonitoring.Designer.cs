@@ -36,14 +36,14 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgvPlasticity = new System.Windows.Forms.DataGridView();
+            this.dgvNoRun = new System.Windows.Forms.DataGridView();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgvGvWait = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dgvDry = new System.Windows.Forms.DataGridView();
+            this.dgvRun = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -51,14 +51,14 @@
             this.splitContainer1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlasticity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNoRun)).BeginInit();
             this.tabControl3.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGvWait)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRun)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -116,7 +116,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dgvPlasticity);
+            this.tabPage2.Controls.Add(this.dgvNoRun);
             this.tabPage2.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
@@ -126,9 +126,9 @@
             this.tabPage2.Text = "소성대차";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dgvPlasticity
+            // dgvNoRun
             // 
-            this.dgvPlasticity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvNoRun.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -139,13 +139,13 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPlasticity.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPlasticity.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPlasticity.Location = new System.Drawing.Point(3, 3);
-            this.dgvPlasticity.Name = "dgvPlasticity";
-            this.dgvPlasticity.RowTemplate.Height = 23;
-            this.dgvPlasticity.Size = new System.Drawing.Size(506, 482);
-            this.dgvPlasticity.TabIndex = 1;
+            this.dgvNoRun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvNoRun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNoRun.Location = new System.Drawing.Point(3, 3);
+            this.dgvNoRun.Name = "dgvNoRun";
+            this.dgvNoRun.RowTemplate.Height = 23;
+            this.dgvNoRun.Size = new System.Drawing.Size(506, 482);
+            this.dgvNoRun.TabIndex = 1;
             // 
             // tabControl3
             // 
@@ -219,7 +219,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.dgvDry);
+            this.tabPage4.Controls.Add(this.dgvRun);
             this.tabPage4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage4.Location = new System.Drawing.Point(4, 28);
             this.tabPage4.Name = "tabPage4";
@@ -229,9 +229,9 @@
             this.tabPage4.Text = "건조대차";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // dgvDry
+            // dgvRun
             // 
-            this.dgvDry.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvRun.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -242,13 +242,13 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDry.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDry.Location = new System.Drawing.Point(3, 3);
-            this.dgvDry.Name = "dgvDry";
-            this.dgvDry.RowTemplate.Height = 23;
-            this.dgvDry.Size = new System.Drawing.Size(422, 482);
-            this.dgvDry.TabIndex = 0;
+            this.dgvRun.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvRun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRun.Location = new System.Drawing.Point(3, 3);
+            this.dgvRun.Name = "dgvRun";
+            this.dgvRun.RowTemplate.Height = 23;
+            this.dgvRun.Size = new System.Drawing.Size(422, 482);
+            this.dgvRun.TabIndex = 0;
             // 
             // GVMonitoring
             // 
@@ -276,14 +276,14 @@
             this.splitContainer1.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlasticity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNoRun)).EndInit();
             this.tabControl3.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGvWait)).EndInit();
             this.panel2.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRun)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -295,13 +295,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dgvPlasticity;
+        private System.Windows.Forms.DataGridView dgvNoRun;
         private System.Windows.Forms.TabControl tabControl3;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView dgvGvWait;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabControl tabControl4;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.DataGridView dgvDry;
+        private System.Windows.Forms.DataGridView dgvRun;
     }
 }

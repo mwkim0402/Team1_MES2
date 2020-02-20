@@ -1,4 +1,5 @@
 ﻿using AdminForm.Journal;
+using DevExpress.XtraReports.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,8 @@ namespace AdminForm
     {
         private delegate void SafeCallDelegate(MoldingReport rep);
         MainForm frm;
+        MoldingReport rpt = new MoldingReport();
+
         public MoldingWorkReport()
         {
             InitializeComponent();
@@ -33,7 +36,7 @@ namespace AdminForm
 
         private void Search_Click(object sender, EventArgs e)
         {
-            frm = (MainForm)this.MdiParent;
+            
             using (FrmWaitForm frm = new FrmWaitForm(setAction))
             {
                 frm.ShowDialog(this);
@@ -64,7 +67,6 @@ namespace AdminForm
                 da.Fill(dsQuery, "Query_1");
                 conn.Close();
             }
-            MoldingReport rpt = new MoldingReport();
             rpt.Parameters["SelectedDate"].Value = dtpProduction.Value;
             rpt.Parameters["SelectedDate"].Visible = false;
             rpt.DataSource = dsQuery;
@@ -95,12 +97,14 @@ namespace AdminForm
         private void MoldingWorkReport_Activated(object sender, EventArgs e)
         {
             frm.Search_Click += this.Search_Click;
+            frm.btnExcel.Enabled = false;// 엑셀저장 비활성화
             frm.Insert_Click += this.Print_Click;
         }
 
         private void MoldingWorkReport_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= this.Search_Click;
+            frm.btnExcel.Enabled = true;// 엑셀저장 활성화
             frm.Insert_Click -= this.Print_Click;
 
         }
@@ -116,10 +120,10 @@ namespace AdminForm
 
         private void printAction()
         {
-            Print frm = new Print();
-            frm.documentViewer1.DocumentSource = this.documentViewer1.DocumentSource;
-            frm.documentViewer1.PrintingSystem.ExecCommand(DevExpress.XtraPrinting.PrintingSystemCommand.SubmitParameters, new object[] { true });
-            frm.Show();
+            XtraReport rpt1 = new XtraReport();
+            rpt1.DataSource = rpt;
+            Print frm = new Print(rpt1);
+            frm.ShowDialog();
         }
     }
 }

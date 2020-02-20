@@ -18,8 +18,10 @@ namespace WebAdminLTE1.Models
         public decimal work_time { get; set; }
     }
 
-    public class MonthVO
+    public class yearChartVO
     {
-        public string Date { get; set; }
+        public decimal work_time { get; set; }
+        public string User_Name { get; set; }
+        public int Month { get; set; }
     }
 }

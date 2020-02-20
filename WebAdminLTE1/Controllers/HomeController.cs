@@ -125,7 +125,6 @@ namespace WebAdminLTE1.Controllers
             List<WorkVO> AllList = new List<WorkVO>();
             AllList = dac.GetAllWork();
 
-            StringBuilder sb = new StringBuilder();
             List<string> Name = new List<string>();
             Name = (from it in AllList
                     select it.USER_NAME).ToList();
@@ -156,7 +155,6 @@ namespace WebAdminLTE1.Controllers
             ProcessTime = (from p_time in pieList
                            select Convert.ToInt32(p_time.work_time)).ToList();
 
-
             string data2 = string.Empty;
             string PCode = string.Empty;
 
@@ -176,20 +174,71 @@ namespace WebAdminLTE1.Controllers
 
 
 
+
+
             //Bar chart 매달마다 일 많이 한 인원
+            List<yearChartVO> yearList = new List<yearChartVO>();
+            yearList = dac.GetYearChart();
+            StringBuilder sb = new StringBuilder();
+            List<string> NameList = (from name in yearList
+                                     select name.User_Name).ToList();
+            //List<decimal> dataList1 = (from data in yearList
+            //                   select data.work_time).ToList();
 
+            //List<decimal> dataList2 = (from data in yearList
+            //                           select data.work_time).ToList();
+
+            //List<decimal> dataList3 = (from data in yearList
+            //                           select data.work_time).ToList();
+
+            string bardata1 = string.Empty;
+            string bardata2 = string.Empty;
+            string bardata3 = string.Empty;
+            //foreach (var bardata in dataList1)
+            //{
+            //    bardata1 = "[" + string.Join(",", dataList1.ToArray()) + "]";
+            //    bardata2 = "[" + string.Join(",", dataList2.ToArray()) + "]";
+            //    bardata3 = "[" + string.Join(",", dataList3.ToArray()) + "]";
+            //}
+
+
+            for (int u = 1; u < 13; u++)
+            {
+                sb.Append(u + "월,");
+            }
+
+            for(int p=0; p<yearList.Count; p++)
+            {
+                if (p % 3 == 1)
+                {
+                    bardata2 += yearList[p].work_time.ToString() + ",";
+                }
+                else if (p % 3 == 2)
+                {
+                    bardata3 += yearList[p].work_time.ToString() + ",";
+                }
+                else if (p % 3 == 0)
+                {
+                    bardata1 += yearList[p].work_time.ToString() + ",";
+                }
+            }
+
+
+            string barName1 = NameList[0];
+            string barName2 = NameList[1];
+            string barName3 = NameList[2];
+
+            ViewBag.Labels = sb.ToString().TrimEnd(',');
+            ViewBag.Name1 = barName1;
+            ViewBag.Name2 = barName2;
+            ViewBag.Name3 = barName3;
+            ViewBag.bardata1 = "["+bardata1.TrimEnd(',')+"]";
+            ViewBag.bardata2 = "[" + bardata2.TrimEnd(',') + "]";
+            ViewBag.bardata3 = "[" + bardata3.TrimEnd(',') + "]";
 
 
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Member(MonthVO month)
-        {
-
-
-
-            return View();
-        }
     }
 }

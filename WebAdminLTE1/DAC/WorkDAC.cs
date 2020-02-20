@@ -63,5 +63,31 @@ namespace WebAdminLTE1.DAC
 
             return list;
         }
+
+        public List<yearChartVO> GetYearChart()
+        {
+            List<yearChartVO> list = new List<yearChartVO>();
+            string sql = @"select User_Name,work_time, Month
+                            from (
+                            Select User_ID,sum(work_time) as work_time, DATEPART(mm, Work_Date) as Month ,Row_Number() Over(PARTITION BY DATEPART(mm, Work_Date)  order by work_time desc) as Test From Work_History
+                            group by DATEPART(mm, Work_Date), Work_Date,User_ID,work_time
+                            ) A
+                            inner join User_Master u on A.User_ID = u.User_ID
+                            where Test < 4 ";
+
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.CommandType = CommandType.Text;
+
+                    list = Helper.DataReaderMapToList<yearChartVO>(cmd.ExecuteReader());
+                }
+                conn.Close();
+            }
+
+            return list;
+        }
     }
 }

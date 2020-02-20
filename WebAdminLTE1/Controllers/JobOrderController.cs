@@ -26,6 +26,8 @@ namespace WebAdminLTE1.Controllers
                     TotalItems = jobOrder.GetWorkOrderTotalCount() //전체조회
                 }
             };
+
+
             ViewBag.TopFive = model;
             return View(model);
         }
@@ -37,7 +39,22 @@ namespace WebAdminLTE1.Controllers
             ViewBag.TimeLine = jobOrder.GetTimeLine_Out();
             ViewBag.TimeLine_Bad = jobOrder.GetTimeLine_Bad();
             //시간대별 쿼리문
-           
+
+
+
+            ViewBag.TodayTotalCountJK = jobOrder.GetWorkCenterTotalCount_today("제강");
+            ViewBag.TodayTotalCountJS = jobOrder.GetWorkCenterTotalCount_today("제선");
+            ViewBag.TodayTotalCountAY = jobOrder.GetWorkCenterTotalCount_today("압연");
+            ViewBag.TodayTotalCountJJ = jobOrder.GetWorkCenterTotalCount_today("적재");
+            ViewBag.TodayTotalCountPJ = jobOrder.GetWorkCenterTotalCount_today("포장");
+
+            ViewBag.TodayFinishCountJK = jobOrder.GetWorkCenterFinishCount_today("제강");
+            ViewBag.TodayFinishCountJS = jobOrder.GetWorkCenterFinishCount_today("제선");
+            ViewBag.TodayFinishCountAY = jobOrder.GetWorkCenterFinishCount_today("압연");
+            ViewBag.TodayFinishCountJJ = jobOrder.GetWorkCenterFinishCount_today("적재");
+            ViewBag.TodayFinishCountPJ = jobOrder.GetWorkCenterFinishCount_today("포장");
+
+
             return View();
         }
 

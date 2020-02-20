@@ -56,6 +56,47 @@ namespace WebApplication0106.DAC
 
             return list;
         }
+
+
+        public TimeLineVO GetTimeLine_Out()
+        {
+            List<TimeLineVO> list = new List<TimeLineVO>();
+            string sql = @"TimeLineTable";
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@DateToday", DateTime.Today.ToString().Substring(0,10));
+
+                    list = Helper.DataReaderMapToList<TimeLineVO>(cmd.ExecuteReader());
+                }
+            }
+
+            return list[0];
+        }
+        public TimeLineVO GetTimeLine_Bad()
+        {
+            List<TimeLineVO> list = new List<TimeLineVO>();
+            string sql = @"TimeLineTable_Bad";
+            using (SqlConnection conn = new SqlConnection(strconn))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@DateToday", DateTime.Today.ToString().Substring(0, 10));
+
+                    list = Helper.DataReaderMapToList<TimeLineVO>(cmd.ExecuteReader());
+                }
+            }
+
+            return list[0];
+        }
+
+
+
         internal List<JobOrder> GetWorkOrderFive()
         {
             List<JobOrder> list = new List<JobOrder>();

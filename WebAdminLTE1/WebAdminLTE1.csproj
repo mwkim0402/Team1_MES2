@@ -7473,6 +7473,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmlHelpers\PagingHelpers.cs" />
+    <Compile Include="Models\TimeLineVO.cs" />
     <Compile Include="Models\WorkOrderDetail.cs" />
     <Compile Include="Models\MemberPermi.cs" />
     <Compile Include="Models\MemcntListView.cs" />

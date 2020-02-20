@@ -9,5 +9,6 @@ namespace AdminForm
     public class Global
     {
         public static int LoginID;
+        public static string Authority;
     }
 }

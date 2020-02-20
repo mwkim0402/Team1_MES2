@@ -60,18 +60,19 @@ namespace MES_DB
             }
         }
 
-        public List<GVMonitoringVO> GetAllMonitoring()
+        public List<WorkCenterVO> GetAllWorkCenter()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "select m.GV_Name,m.GV_Group,m.GV_Status, w.Workorderno , it.Item_Code, it.Item_Name , s.GV_Qty , s.Loading_time " +
-                    "from WorkOrder w inner join Item_Master it on w.Item_Code = it.Item_Code inner join GV_Current_Status s on s.Workorderno = w.Workorderno inner join GV_Master m on m.GV_Code = s.GV_Code";
+                cmd.CommandText = @"select m.Wc_Code,m.Wc_Name,m.Wc_Group,m.Wo_Status,Max(w.Prd_Starttime)as Prd_Starttime,Max(w.Prd_Endtime) as Prd_Endtime
+                                    from WorkCenter_Master m inner join WorkOrder w on m.Wc_Code = w.Wc_Code group by m.Wc_Code ,m.Wc_Name,m.Wc_Group,m.Wo_Status ";
                 cmd.CommandType = CommandType.Text;
+
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<GVMonitoringVO> list = Helper.DataReaderMapToList<GVMonitoringVO>(reader);
+                List<WorkCenterVO> list = Helper.DataReaderMapToList<WorkCenterVO>(reader);
                 cmd.Connection.Close();
                 return list;
             }
@@ -104,6 +105,24 @@ namespace MES_DB
 
 
                 cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<RegFaultyVO> list = Helper.DataReaderMapToList<RegFaultyVO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
+        public List<RegFaultyVO> GetImage(int seq)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "select Def_Image from Def_History where Def_Seq = @Def_Seq";
+                cmd.CommandType = CommandType.Text;
+
+
+                cmd.Connection.Open();
+                cmd.Parameters.AddWithValue("@Def_Seq", seq);
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<RegFaultyVO> list = Helper.DataReaderMapToList<RegFaultyVO>(reader);
                 cmd.Connection.Close();

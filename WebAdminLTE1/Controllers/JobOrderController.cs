@@ -34,6 +34,8 @@ namespace WebAdminLTE1.Controllers
             //작업지시별 불량률 확인 하고 리스트로 뿌려준다.
             JobOrderDAC jobOrder = new JobOrderDAC();
 
+            ViewBag.TimeLine = jobOrder.GetTimeLine_Out();
+            ViewBag.TimeLine_Bad = jobOrder.GetTimeLine_Bad();
             //시간대별 쿼리문
            
             return View();

@@ -90,27 +90,27 @@ namespace AdminForm
             chkboxCol.Width = 30;
             chkboxCol.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvProductRequset.Columns.Insert(0, chkboxCol);
-            AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰번호", "Wo_Req_No", true, 180);
-            AddNewColumnToDataGridView(dgvProductRequset, "품목명", "item_Name", true, 100);          
-            AddNewColumnToDataGridView(dgvProductRequset, "제선잔여수량", "IronP", true, 170, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvProductRequset, "제강잔여수량", "SteelP", true, 170, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvProductRequset, "압연잔여수량", "RollingP", true, 170, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvProductRequset, "포장잔여수량", "PackageP", true, 170, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvProductRequset, "마감날짜", "Prd_Plan_Date", true, 120);
-            AddNewColumnToDataGridView(dgvProductRequset, "고객사", "Cust_Name", true, 100);
+            AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰번호", "Wo_Req_No", true, 200);
+            AddNewColumnToDataGridView(dgvProductRequset, "품목명", "item_Name", true, 150, DataGridViewContentAlignment.MiddleCenter);          
+            AddNewColumnToDataGridView(dgvProductRequset, "제선잔여수량", "IronP", true, 180, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvProductRequset, "제강잔여수량", "SteelP", true, 180, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvProductRequset, "압연잔여수량", "RollingP", true, 180, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvProductRequset, "포장잔여수량", "PackageP", true, 180, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvProductRequset, "마감날짜", "Prd_Plan_Date", true, 150, DataGridViewContentAlignment.MiddleCenter);
+            AddNewColumnToDataGridView(dgvProductRequset, "고객사", "Cust_Name", true, 120);
             AddNewColumnToDataGridView(dgvProductRequset, "영업담당", "Sale_Emp", true, 120);
             AddNewColumnToDataGridView(dgvProductRequset, "생산의뢰 상태", "Req_Status", true, 160);
       
             // 작업지시 dgv 컬럼 추가
-            AddNewColumnToDataGridView(dgvJobOrder, "작업지시번호", "Workorderno", true, 200);
-            AddNewColumnToDataGridView(dgvJobOrder, "공정명", "Process_name", true, 150);
-            AddNewColumnToDataGridView(dgvJobOrder, "작업장명", "Wc_Name", true, 120);
-            AddNewColumnToDataGridView(dgvJobOrder, "품목명", "Item_Name", true, 170);
-            AddNewColumnToDataGridView(dgvJobOrder, "계획날짜", "Plan_Date", true, 140);
-            AddNewColumnToDataGridView(dgvJobOrder, "시작시간", "Plan_Starttime", true,140);
-            AddNewColumnToDataGridView(dgvJobOrder, "마감시간", "Plan_Endtime", true,140);
-            AddNewColumnToDataGridView(dgvJobOrder, "계획수량", "Plan_Qty", true,140, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvJobOrder, "작업상태", "Wo_Status", true,140);
+            AddNewColumnToDataGridView(dgvJobOrder, "작업지시번호", "Workorderno", true, 230);
+            AddNewColumnToDataGridView(dgvJobOrder, "공정명", "Process_name", true, 200);
+            AddNewColumnToDataGridView(dgvJobOrder, "작업장명", "Wc_Name", true, 170);
+            AddNewColumnToDataGridView(dgvJobOrder, "품목명", "Item_Name", true, 200);
+            AddNewColumnToDataGridView(dgvJobOrder, "계획날짜", "Plan_Date", true, 170);
+            AddNewColumnToDataGridView(dgvJobOrder, "시작시간", "Plan_Starttime", true,170);
+            AddNewColumnToDataGridView(dgvJobOrder, "마감시간", "Plan_Endtime", true,170);
+            AddNewColumnToDataGridView(dgvJobOrder, "계획수량", "Plan_Qty", true,170, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvJobOrder, "작업상태", "Wo_Status", true,170);
 
 
             dgvJobOrder.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -188,6 +188,7 @@ namespace AdminForm
         {
             frm.Insert_Click += new System.EventHandler(this.ExportToExcel);
             frm.Search_Click += new System.EventHandler(this.Search);
+            frm.btnSave.Enabled = false;
             ToolStripManager.Merge(this.toolStrip1,frm.ToolStrip);
         }
 
@@ -195,6 +196,7 @@ namespace AdminForm
         {
             frm.Insert_Click -= new System.EventHandler(this.ExportToExcel);
             frm.Search_Click -= new System.EventHandler(this.Search);
+            frm.btnSave.Enabled = true;
             ToolStripManager.RevertMerge(frm.ToolStrip);
         }
         private void ExportToExcel(object sender, EventArgs e)
@@ -210,25 +212,40 @@ namespace AdminForm
             saveFileDialog1.Title = "Save";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                xlApp = new Microsoft.Office.Interop.Excel.Application();
-                xlWorkBook = xlApp.Workbooks.Add();
-                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-
-                for (i = 0; i <= dgvJobOrder.RowCount - 2; i++)
+                try
                 {
-                    for (j = 0; j <= dgvJobOrder.ColumnCount - 1; j++)
+                    xlApp = new Microsoft.Office.Interop.Excel.Application();
+                    xlWorkBook = xlApp.Workbooks.Add();
+                    xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                    for (i = 0; i < dgvProductRequset.Columns.Count; i++)
                     {
-                        xlWorkSheet.Cells[i + 1, j + 1] = dgvJobOrder[j, i].Value.ToString();
+                        xlWorkSheet.Cells[1, i + 1] = dgvProductRequset.Columns[i].HeaderText;
                     }
+
+                    for (i = 0; i < dgvProductRequset.RowCount; i++)
+                    {
+                        for (j = 0; j < dgvProductRequset.ColumnCount; j++)
+                        {
+                            xlWorkSheet.Cells[i + 2, j + 1] = dgvProductRequset[j, i].Value.ToString();
+                        }
+                    }
+
+                    xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                    xlWorkBook.Close(true);
+                    xlApp.Quit();
+
+                    releaseObject(xlWorkSheet);
+                    releaseObject(xlWorkBook);
+                    releaseObject(xlApp);
+
+                    MessageBox.Show("저장 완료되었습니다.");
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message);
                 }
 
-                xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
-                xlWorkBook.Close(true);
-                xlApp.Quit();
-
-                releaseObject(xlWorkSheet);
-                releaseObject(xlWorkBook);
-                releaseObject(xlApp);
             }
         }
         private void releaseObject(object obj)

@@ -70,14 +70,15 @@ namespace AdminForm
         private void MoldUseStatus_Deactivate(object sender, EventArgs e)
         {
             frm.Search_Click -= new EventHandler(Search);
-            frm.btnSave.Enabled = false;// 파일저장 비활성화
             frm.Insert_Click -= new EventHandler(this.ExportToExcel);
+            frm.btnSave.Enabled = true;// 파일저장 활성화
+
         }
 
         private void MoldUseStatus_Activated(object sender, EventArgs e)
         {
+            frm.btnSave.Enabled = false;// 파일저장 비활성화
             frm.Search_Click += new EventHandler(Search);
-            frm.btnSave.Enabled = true;// 파일저장 활성화
             frm.Insert_Click += new EventHandler(this.ExportToExcel);
 
         }

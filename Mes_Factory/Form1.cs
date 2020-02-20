@@ -215,7 +215,7 @@ namespace Mes_Factory
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            label9.Text = DateTime.Now.ToString("hh-MM-ss")
+            label9.Text = DateTime.Now.ToString("hh-MM-ss");
         }
     }
 }

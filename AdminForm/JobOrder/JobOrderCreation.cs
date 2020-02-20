@@ -75,17 +75,18 @@ namespace AdminForm
         {
             frm = (MainForm)this.MdiParent;
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
-            checkBoxColumn.HeaderText = "체크";
+            checkBoxColumn.HeaderText = "";
+            checkBoxColumn.Width = 30;
             checkBoxColumn.Name = "check";
             dgvSearchResult.Columns.Add(checkBoxColumn);
-            AddNewColumnToDataGridView(dgvSearchResult, "생산의뢰번호", "Wo_Req_No", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "우선순위", "Req_Seq", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "고객사", "Cust_Name", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "프로젝트명", "Project_Name", true, 120);
-            AddNewColumnToDataGridView(dgvSearchResult, "의뢰제품명", "Item_Code", true, 120);
-            AddNewColumnToDataGridView(dgvSearchResult, "의뢰수량", "Req_Qty", true, 150, DataGridViewContentAlignment.MiddleRight);
-            AddNewColumnToDataGridView(dgvSearchResult, "의뢰등록날짜", "Ins_Date", true, 150);
-            AddNewColumnToDataGridView(dgvSearchResult, "마감날짜", "Prd_Plan_Date", true, 150);
+            AddNewColumnToDataGridView(dgvSearchResult, "생산의뢰번호", "Wo_Req_No", true, 200);
+            AddNewColumnToDataGridView(dgvSearchResult, "우선순위", "Req_Seq", true, 200);
+            AddNewColumnToDataGridView(dgvSearchResult, "고객사", "Cust_Name", true, 200);
+            AddNewColumnToDataGridView(dgvSearchResult, "프로젝트명", "Project_Name", true, 220, DataGridViewContentAlignment.MiddleCenter);
+            AddNewColumnToDataGridView(dgvSearchResult, "의뢰제품명", "Item_Code", true, 200, DataGridViewContentAlignment.MiddleCenter);
+            AddNewColumnToDataGridView(dgvSearchResult, "의뢰수량", "Req_Qty", true, 200, DataGridViewContentAlignment.MiddleRight);
+            AddNewColumnToDataGridView(dgvSearchResult, "의뢰등록날짜", "Ins_Date", true, 200, DataGridViewContentAlignment.MiddleCenter);
+            AddNewColumnToDataGridView(dgvSearchResult, "마감날짜", "Prd_Plan_Date", true, 200, DataGridViewContentAlignment.MiddleCenter);
         }
 
         //수정으로 탭페이지 전환
@@ -147,6 +148,7 @@ namespace AdminForm
         {
             frm.Search_Click += new System.EventHandler(Search_Click);
             frm.Insert_Click += new System.EventHandler(ExportToExcel);
+            frm.btnSave.Enabled = false;
             ToolStripManager.Merge(this.toolStrip1, frm.ToolStrip);
         }
 
@@ -163,25 +165,40 @@ namespace AdminForm
             saveFileDialog1.Title = "Save";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                xlApp = new Microsoft.Office.Interop.Excel.Application();
-                xlWorkBook = xlApp.Workbooks.Add();
-                xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-
-                for (i = 0; i <= dgvSearchResult.RowCount - 2; i++)
+                try
                 {
-                    for (j = 0; j <= dgvSearchResult.ColumnCount - 1; j++)
+                    xlApp = new Microsoft.Office.Interop.Excel.Application();
+                    xlWorkBook = xlApp.Workbooks.Add();
+                    xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                    for (i = 0; i < dgvSearchResult.Columns.Count; i++)
                     {
-                        xlWorkSheet.Cells[i + 1, j + 1] = dgvSearchResult[j, i].Value.ToString();
+                        xlWorkSheet.Cells[1, i + 1] = dgvSearchResult.Columns[i].HeaderText;
                     }
+
+                    for (i = 0; i < dgvSearchResult.RowCount; i++)
+                    {
+                        for (j = 0; j < dgvSearchResult.ColumnCount; j++)
+                        {
+                            xlWorkSheet.Cells[i + 2, j + 1] = dgvSearchResult[j, i].Value.ToString();
+                        }
+                    }
+
+                    xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                    xlWorkBook.Close(true);
+                    xlApp.Quit();
+
+                    releaseObject(xlWorkSheet);
+                    releaseObject(xlWorkBook);
+                    releaseObject(xlApp);
+
+                    MessageBox.Show("저장 완료되었습니다.");
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message);
                 }
 
-                xlWorkBook.SaveAs(saveFileDialog1.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
-                xlWorkBook.Close(true);
-                xlApp.Quit();
-
-                releaseObject(xlWorkSheet);
-                releaseObject(xlWorkBook);
-                releaseObject(xlApp);
             }
         }
         private void releaseObject(object obj)
@@ -206,6 +223,7 @@ namespace AdminForm
         {
             frm.Search_Click -= new System.EventHandler(Search_Click);
             frm.Insert_Click -= new System.EventHandler(ExportToExcel);
+            frm.btnSave.Enabled = true;
             ToolStripManager.RevertMerge(frm.ToolStrip);
         }
 

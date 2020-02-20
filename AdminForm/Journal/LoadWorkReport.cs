@@ -36,17 +36,19 @@ namespace AdminForm
 
         private void LoadWorkReport_Activated(object sender, EventArgs e)
         {
-            frm.Search_Click += this.Search_Click;
             frm.btnExcel.Enabled = false;// 엑셀저장 비활성화
-            frm.Insert_Click += this.Print_Click;
+
+            frm.Search_Click += this.Search_Click;
+            frm.Create_Click += this.Print_Click;
         }
 
         
         private void LoadWorkReport_Deactivate(object sender, EventArgs e)
         {
-            frm.Search_Click -= this.Search_Click;
             frm.btnExcel.Enabled = true;// 엑셀저장 활성화
-            frm.Insert_Click -= this.Print_Click;
+
+            frm.Search_Click -= this.Search_Click;
+            frm.Create_Click -= this.Print_Click;
         }
         public void Search_Click(object sender, EventArgs e)
         {
@@ -66,7 +68,9 @@ namespace AdminForm
                 using (SqlConnection conn = new SqlConnection(strConn))
                 {
                     conn.Open();
-                    string strSql = $"select * from GV_History where Loading_Date = '{findDate}'";
+                    string strSql = $@"select workorderno, Pallet_No,Grade_Code,Grade_Detail_Code ,Size_Code ,Prd_Qty
+                                        from Goods_In_History
+                                        where In_Date =  '{findDate}'";
                
                     SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
                     da.Fill(ds, "GV");
@@ -77,9 +81,6 @@ namespace AdminForm
                 rpt.Parameters["SelectedDate"].Visible = false;
                 rpt.DataSource = ds;
                 rpt.CreateDocument();
-                //Form2 frm = new Form2();
-                //frm.documentViewer1.DocumentSource = rpt;
-                //frm.ShowDialog();
                 WorkOrderDetailView(rpt);
             
         }
@@ -94,10 +95,7 @@ namespace AdminForm
 
         private void printAction()
         {
-            XtraReport rpt1 = new XtraReport();
-            rpt1.DataSource = rpt;
-            Print frm = new Print(rpt1);
-            frm.ShowDialog();
+            rpt.ShowPreviewDialog();
         }
         private void WorkOrderDetailView(LoadingReport rep)
         {

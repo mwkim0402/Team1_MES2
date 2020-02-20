@@ -38,7 +38,7 @@ namespace AdminForm
             frm = (MainForm)this.MdiParent;
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형코드", "Mold_Code", true, 110);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형명", "Mold_Name", true, 120);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형그룹", "Mold_Group", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형그룹", "Mold_Group", true, 140);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형상태", "Mold_Status", true, 110);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형누적타수", "Cum_Shot_Cnt", true, 150, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형누적생산량", "Cum_Prd_Qty", true, 150, DataGridViewContentAlignment.MiddleRight);
@@ -48,7 +48,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "입고일자", "In_Date", true, 150, DataGridViewContentAlignment.MiddleCenter);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "최종장착일시", "Last_Setup_Time", true, 150, DataGridViewContentAlignment.MiddleCenter);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "비고", "Remark", true, 80);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 100, DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용유무", "Use_YN", true, 110, DataGridViewContentAlignment.MiddleCenter);
             LoadList();
             dgvSearchResult.DataSource = List;
             

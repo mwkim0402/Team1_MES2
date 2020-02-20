@@ -46,18 +46,6 @@
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression6 = new DevExpress.DataAccess.Sql.ColumnExpression();
             DevExpress.DataAccess.Sql.Column column7 = new DevExpress.DataAccess.Sql.Column();
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression7 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column8 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression8 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.SelectQuery selectQuery2 = new DevExpress.DataAccess.Sql.SelectQuery();
-            DevExpress.DataAccess.Sql.Column column9 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression9 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table2 = new DevExpress.DataAccess.Sql.Table();
-            DevExpress.DataAccess.Sql.Column column10 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression10 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column11 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression11 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column12 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression12 = new DevExpress.DataAccess.Sql.ColumnExpression();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.detailTable = new DevExpress.XtraReports.UI.XRTable();
             this.detailTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -111,7 +99,6 @@
             this.lineTotalCaption = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.baseControlStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.simpleTextStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.captionsStyle = new DevExpress.XtraReports.UI.XRControlStyle();
@@ -119,6 +106,7 @@
             this.SelectedDate = new DevExpress.XtraReports.Parameters.Parameter();
             this.DetailReport = new DevExpress.XtraReports.UI.DetailReportBand();
             this.Detail1 = new DevExpress.XtraReports.UI.DetailBand();
+            this.sqlDataSource2 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.detailTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceInfoTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
@@ -139,6 +127,7 @@
             // detailTable
             // 
             this.detailTable.Dpi = 254F;
+            this.detailTable.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.detailTable.LocationFloat = new DevExpress.Utils.PointFloat(25.40236F, 3.386502F);
             this.detailTable.Name = "detailTable";
             this.detailTable.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 13, 0, 254F);
@@ -165,7 +154,7 @@
             // 
             this.productName.Dpi = 254F;
             this.productName.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Hist_Seq]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Goods_In_History].[Workorderno]")});
             this.productName.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.productName.Name = "productName";
             this.productName.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 25, 13, 0, 254F);
@@ -174,13 +163,13 @@
             this.productName.StylePriority.UsePadding = false;
             this.productName.StylePriority.UseTextAlignment = false;
             this.productName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.productName.Weight = 0.34888232252688273D;
+            this.productName.Weight = 0.8446126984733584D;
             // 
             // xrTableCell7
             // 
             this.xrTableCell7.Dpi = 254F;
             this.xrTableCell7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Workorderno]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Goods_In_History].[Pallet_No]")});
             this.xrTableCell7.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.xrTableCell7.Multiline = true;
             this.xrTableCell7.Name = "xrTableCell7";
@@ -191,13 +180,13 @@
             this.xrTableCell7.StylePriority.UseTextAlignment = false;
             this.xrTableCell7.Text = "xrTableCell7";
             this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell7.Weight = 0.80648433828510113D;
+            this.xrTableCell7.Weight = 0.4798867949489044D;
             // 
             // xrTableCell11
             // 
             this.xrTableCell11.Dpi = 254F;
             this.xrTableCell11.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[In_Time]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Goods_In_History].[Grade_Code]")});
             this.xrTableCell11.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.xrTableCell11.Multiline = true;
             this.xrTableCell11.Name = "xrTableCell11";
@@ -209,13 +198,13 @@
             this.xrTableCell11.Text = "xrTableCell11";
             this.xrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell11.TextFormatString = "{0:HH:mm:ss}";
-            this.xrTableCell11.Weight = 0.5852639440688806D;
+            this.xrTableCell11.Weight = 0.43060433189763925D;
             // 
             // quantity
             // 
             this.quantity.Dpi = 254F;
             this.quantity.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Loading_Date]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Goods_In_History].[Grade_Detail_Code]")});
             this.quantity.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.quantity.Name = "quantity";
             this.quantity.RowSpan = 2;
@@ -224,13 +213,13 @@
             this.quantity.StylePriority.UseTextAlignment = false;
             this.quantity.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.quantity.TextFormatString = "{0:yyyy-MM-dd}";
-            this.quantity.Weight = 0.68529344220645416D;
+            this.quantity.Weight = 0.38564757698494712D;
             // 
             // unitPrice
             // 
             this.unitPrice.Dpi = 254F;
             this.unitPrice.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Loading_Qty]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Goods_In_History].[Size_Code]")});
             this.unitPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.unitPrice.Name = "unitPrice";
             this.unitPrice.RowSpan = 2;
@@ -238,13 +227,13 @@
             this.unitPrice.StylePriority.UsePadding = false;
             this.unitPrice.StylePriority.UseTextAlignment = false;
             this.unitPrice.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.unitPrice.Weight = 0.39409559196958466D;
+            this.unitPrice.Weight = 0.69175015049285427D;
             // 
             // lineTotal
             // 
             this.lineTotal.Dpi = 254F;
             this.lineTotal.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Loading_Wc]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Goods_In_History].[Prd_Qty]")});
             this.lineTotal.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.lineTotal.Name = "lineTotal";
             this.lineTotal.RowSpan = 2;
@@ -253,8 +242,7 @@
             this.lineTotal.StylePriority.UsePadding = false;
             this.lineTotal.StylePriority.UseTextAlignment = false;
             this.lineTotal.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.lineTotal.TextFormatString = "{0:₩0.00}";
-            this.lineTotal.Weight = 0.55847802894367038D;
+            this.lineTotal.Weight = 0.54599611520287006D;
             // 
             // TopMargin
             // 
@@ -526,10 +514,10 @@
             this.vendorName2.CanShrink = true;
             this.vendorName2.Dpi = 254F;
             this.vendorName2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.vendorName2.LocationFloat = new DevExpress.Utils.PointFloat(25.39985F, 659.5534F);
+            this.vendorName2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 659.5534F);
             this.vendorName2.Name = "vendorName2";
             this.vendorName2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.vendorName2.SizeF = new System.Drawing.SizeF(355.6264F, 63.49988F);
+            this.vendorName2.SizeF = new System.Drawing.SizeF(381.0264F, 63.49982F);
             this.vendorName2.StylePriority.UseFont = false;
             this.vendorName2.StylePriority.UseTextAlignment = false;
             this.vendorName2.Text = "VendorName";
@@ -539,9 +527,9 @@
             // 
             this.xrLine3.Dpi = 254F;
             this.xrLine3.ForeColor = System.Drawing.Color.Silver;
-            this.xrLine3.LocationFloat = new DevExpress.Utils.PointFloat(25.36974F, 554.5665F);
+            this.xrLine3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 554.5666F);
             this.xrLine3.Name = "xrLine3";
-            this.xrLine3.SizeF = new System.Drawing.SizeF(1874.604F, 25.40002F);
+            this.xrLine3.SizeF = new System.Drawing.SizeF(1900F, 25.40002F);
             this.xrLine3.StylePriority.UseForeColor = false;
             // 
             // thankYouLabel
@@ -549,10 +537,10 @@
             this.thankYouLabel.CanShrink = true;
             this.thankYouLabel.Dpi = 254F;
             this.thankYouLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.thankYouLabel.LocationFloat = new DevExpress.Utils.PointFloat(25.39654F, 579.9666F);
+            this.thankYouLabel.LocationFloat = new DevExpress.Utils.PointFloat(0F, 579.9666F);
             this.thankYouLabel.Name = "thankYouLabel";
             this.thankYouLabel.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.thankYouLabel.SizeF = new System.Drawing.SizeF(1874.603F, 45.19086F);
+            this.thankYouLabel.SizeF = new System.Drawing.SizeF(1900F, 45.1908F);
             this.thankYouLabel.StyleName = "simpleTextStyle";
             this.thankYouLabel.StylePriority.UseFont = false;
             this.thankYouLabel.Text = "Thank you for your confidence in our work.";
@@ -582,7 +570,7 @@
             // xrTable1
             // 
             this.xrTable1.Dpi = 254F;
-            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(62.78315F, 25.4F);
+            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(25.48F, 25.4F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1,
@@ -786,9 +774,9 @@
             // 
             this.xrLine1.Dpi = 254F;
             this.xrLine1.ForeColor = System.Drawing.Color.Silver;
-            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(25.40002F, 300.9901F);
+            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 300.9901F);
             this.xrLine1.Name = "xrLine1";
-            this.xrLine1.SizeF = new System.Drawing.SizeF(1874.6F, 25.40009F);
+            this.xrLine1.SizeF = new System.Drawing.SizeF(1900F, 25.40012F);
             this.xrLine1.StylePriority.UseForeColor = false;
             // 
             // GroupHeader1
@@ -798,7 +786,7 @@
             this.GroupHeader1.Dpi = 254F;
             this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
             new DevExpress.XtraReports.UI.GroupField("Hist_Seq", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
-            this.GroupHeader1.HeightF = 152.4F;
+            this.GroupHeader1.HeightF = 107.8406F;
             this.GroupHeader1.Name = "GroupHeader1";
             this.GroupHeader1.RepeatEveryPage = true;
             this.GroupHeader1.StyleName = "baseControlStyle";
@@ -811,7 +799,7 @@
             this.headerTable.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 38, 0, 254F);
             this.headerTable.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.headerTableRow});
-            this.headerTable.SizeF = new System.Drawing.SizeF(1849.6F, 101.6F);
+            this.headerTable.SizeF = new System.Drawing.SizeF(1849.6F, 103.5875F);
             this.headerTable.StyleName = "captionsStyle";
             this.headerTable.StylePriority.UsePadding = false;
             // 
@@ -825,10 +813,12 @@
             this.xrTableCell1,
             this.xrTableCell2});
             this.headerTableRow.Dpi = 254F;
+            this.headerTableRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.headerTableRow.Name = "headerTableRow";
+            this.headerTableRow.StylePriority.UseFont = false;
             this.headerTableRow.StylePriority.UseTextAlignment = false;
-            this.headerTableRow.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            this.headerTableRow.Weight = 11.5D;
+            this.headerTableRow.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.headerTableRow.Weight = 11.724964302918506D;
             // 
             // productNameCaption
             // 
@@ -841,9 +831,9 @@
             this.productNameCaption.StylePriority.UseBorders = false;
             this.productNameCaption.StylePriority.UsePadding = false;
             this.productNameCaption.StylePriority.UseTextAlignment = false;
-            this.productNameCaption.Text = "번호";
+            this.productNameCaption.Text = "작업지시번호";
             this.productNameCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            this.productNameCaption.Weight = 0.35184097065462966D;
+            this.productNameCaption.Weight = 0.85178044779338113D;
             // 
             // quantityCaption
             // 
@@ -855,9 +845,9 @@
             this.quantityCaption.StylePriority.UseBorders = false;
             this.quantityCaption.StylePriority.UsePadding = false;
             this.quantityCaption.StylePriority.UseTextAlignment = false;
-            this.quantityCaption.Text = "대차명";
+            this.quantityCaption.Text = "팔레트 번호";
             this.quantityCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            this.quantityCaption.Weight = 0.81331241617933714D;
+            this.quantityCaption.Weight = 0.48395708321521846D;
             // 
             // unitPriceCaption
             // 
@@ -868,9 +858,9 @@
             this.unitPriceCaption.Name = "unitPriceCaption";
             this.unitPriceCaption.StylePriority.UseBorders = false;
             this.unitPriceCaption.StylePriority.UseTextAlignment = false;
-            this.unitPriceCaption.Text = "작업 시간";
+            this.unitPriceCaption.Text = "등급";
             this.unitPriceCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            this.unitPriceCaption.Weight = 0.59021909471850242D;
+            this.unitPriceCaption.Weight = 0.43425622054060331D;
             // 
             // lineTotalCaption
             // 
@@ -881,9 +871,9 @@
             this.lineTotalCaption.Name = "lineTotalCaption";
             this.lineTotalCaption.StylePriority.UseBorders = false;
             this.lineTotalCaption.StylePriority.UseTextAlignment = false;
-            this.lineTotalCaption.Text = "적재일";
+            this.lineTotalCaption.Text = "등급 상세";
             this.lineTotalCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            this.lineTotalCaption.Weight = 0.691095846794143D;
+            this.lineTotalCaption.Weight = 0.38891838942087648D;
             // 
             // xrTableCell1
             // 
@@ -895,9 +885,9 @@
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseBorders = false;
             this.xrTableCell1.StylePriority.UseTextAlignment = false;
-            this.xrTableCell1.Text = "적재 수량";
+            this.xrTableCell1.Text = "사이즈";
             this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            this.xrTableCell1.Weight = 0.41006089553532193D;
+            this.xrTableCell1.Weight = 0.69761708291185476D;
             // 
             // xrTableCell2
             // 
@@ -909,78 +899,16 @@
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.StylePriority.UseBorders = false;
             this.xrTableCell2.StylePriority.UseTextAlignment = false;
-            this.xrTableCell2.Text = "적재 장소";
-            this.xrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.xrTableCell2.Text = "수량";
+            this.xrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell2.Weight = 0.55057837116473252D;
-            // 
-            // sqlDataSource1
-            // 
-            this.sqlDataSource1.ConnectionName = "localhost_TEAM1_Connection";
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            columnExpression1.ColumnName = "Hist_Seq";
-            table1.Name = "GV_History";
-            columnExpression1.Table = table1;
-            column1.Expression = columnExpression1;
-            columnExpression2.ColumnName = "GV_Code";
-            columnExpression2.Table = table1;
-            column2.Expression = columnExpression2;
-            columnExpression3.ColumnName = "Workorderno";
-            columnExpression3.Table = table1;
-            column3.Expression = columnExpression3;
-            columnExpression4.ColumnName = "Loading_Date";
-            columnExpression4.Table = table1;
-            column4.Expression = columnExpression4;
-            columnExpression5.ColumnName = "Loading_Qty";
-            columnExpression5.Table = table1;
-            column5.Expression = columnExpression5;
-            columnExpression6.ColumnName = "Loading_Wc";
-            columnExpression6.Table = table1;
-            column6.Expression = columnExpression6;
-            columnExpression7.ColumnName = "In_Time";
-            columnExpression7.Table = table1;
-            column7.Expression = columnExpression7;
-            columnExpression8.ColumnName = "Out_Time";
-            columnExpression8.Table = table1;
-            column8.Expression = columnExpression8;
-            selectQuery1.Columns.Add(column1);
-            selectQuery1.Columns.Add(column2);
-            selectQuery1.Columns.Add(column3);
-            selectQuery1.Columns.Add(column4);
-            selectQuery1.Columns.Add(column5);
-            selectQuery1.Columns.Add(column6);
-            selectQuery1.Columns.Add(column7);
-            selectQuery1.Columns.Add(column8);
-            selectQuery1.Name = "GV_History";
-            selectQuery1.Tables.Add(table1);
-            columnExpression9.ColumnName = "GV_Code";
-            table2.Name = "GV_Master";
-            columnExpression9.Table = table2;
-            column9.Expression = columnExpression9;
-            columnExpression10.ColumnName = "GV_Name";
-            columnExpression10.Table = table2;
-            column10.Expression = columnExpression10;
-            columnExpression11.ColumnName = "GV_Group";
-            columnExpression11.Table = table2;
-            column11.Expression = columnExpression11;
-            columnExpression12.ColumnName = "GV_Status";
-            columnExpression12.Table = table2;
-            column12.Expression = columnExpression12;
-            selectQuery2.Columns.Add(column9);
-            selectQuery2.Columns.Add(column10);
-            selectQuery2.Columns.Add(column11);
-            selectQuery2.Columns.Add(column12);
-            selectQuery2.Name = "GV_Master";
-            selectQuery2.Tables.Add(table2);
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            selectQuery1,
-            selectQuery2});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // baseControlStyle
             // 
             this.baseControlStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.baseControlStyle.Name = "baseControlStyle";
             this.baseControlStyle.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.baseControlStyle.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // simpleTextStyle
             // 
@@ -995,6 +923,7 @@
             this.captionsStyle.ForeColor = System.Drawing.Color.Black;
             this.captionsStyle.Name = "captionsStyle";
             this.captionsStyle.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.captionsStyle.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // LineTotalCalcField
             // 
@@ -1015,6 +944,7 @@
             // 
             this.DetailReport.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail1});
+            this.DetailReport.DataSource = this.sqlDataSource2;
             this.DetailReport.Dpi = 254F;
             this.DetailReport.Level = 0;
             this.DetailReport.Name = "DetailReport";
@@ -1028,6 +958,45 @@
             this.Detail1.HierarchyPrintOptions.Indent = 50.8F;
             this.Detail1.Name = "Detail1";
             // 
+            // sqlDataSource2
+            // 
+            this.sqlDataSource2.ConnectionName = "localhost_TEAM1_Connection";
+            this.sqlDataSource2.Name = "sqlDataSource2";
+            columnExpression1.ColumnName = "Workorderno";
+            table1.Name = "Goods_In_History";
+            columnExpression1.Table = table1;
+            column1.Expression = columnExpression1;
+            columnExpression2.ColumnName = "Pallet_No";
+            columnExpression2.Table = table1;
+            column2.Expression = columnExpression2;
+            columnExpression3.ColumnName = "Grade_Detail_Code";
+            columnExpression3.Table = table1;
+            column3.Expression = columnExpression3;
+            columnExpression4.ColumnName = "Prd_Qty";
+            columnExpression4.Table = table1;
+            column4.Expression = columnExpression4;
+            columnExpression5.ColumnName = "Grade_Code";
+            columnExpression5.Table = table1;
+            column5.Expression = columnExpression5;
+            columnExpression6.ColumnName = "Size_Code";
+            columnExpression6.Table = table1;
+            column6.Expression = columnExpression6;
+            columnExpression7.ColumnName = "Grade_Detail_Name";
+            columnExpression7.Table = table1;
+            column7.Expression = columnExpression7;
+            selectQuery1.Columns.Add(column1);
+            selectQuery1.Columns.Add(column2);
+            selectQuery1.Columns.Add(column3);
+            selectQuery1.Columns.Add(column4);
+            selectQuery1.Columns.Add(column5);
+            selectQuery1.Columns.Add(column6);
+            selectQuery1.Columns.Add(column7);
+            selectQuery1.Name = "Goods_In_History";
+            selectQuery1.Tables.Add(table1);
+            this.sqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            selectQuery1});
+            this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
+            // 
             // LoadingReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1040,9 +1009,9 @@
             this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
             this.LineTotalCalcField});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
-            this.sqlDataSource1});
-            this.DataMember = "GV_History";
-            this.DataSource = this.sqlDataSource1;
+            this.sqlDataSource2});
+            this.DataMember = "Goods_In_History";
+            this.DataSource = this.sqlDataSource2;
             this.Dpi = 254F;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
             this.Margins = new System.Drawing.Printing.Margins(100, 100, 348, 723);
@@ -1091,7 +1060,6 @@
         private DevExpress.XtraReports.UI.XRTableCell quantityCaption;
         private DevExpress.XtraReports.UI.XRTableCell unitPriceCaption;
         private DevExpress.XtraReports.UI.XRTableCell lineTotalCaption;
-        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraReports.UI.XRControlStyle baseControlStyle;
         private DevExpress.XtraReports.UI.XRControlStyle simpleTextStyle;
         private DevExpress.XtraReports.UI.XRControlStyle captionsStyle;
@@ -1130,5 +1098,6 @@
         public DevExpress.XtraReports.Parameters.Parameter SelectedDate;
         private DevExpress.XtraReports.UI.DetailReportBand DetailReport;
         private DevExpress.XtraReports.UI.DetailBand Detail1;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource2;
     }
 }

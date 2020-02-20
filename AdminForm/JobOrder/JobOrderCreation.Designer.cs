@@ -143,16 +143,16 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.textBox1.Location = new System.Drawing.Point(83, 19);
+            this.textBox1.Location = new System.Drawing.Point(110, 21);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 26);
+            this.textBox1.Size = new System.Drawing.Size(148, 26);
             this.textBox1.TabIndex = 20;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label1.Location = new System.Drawing.Point(23, 21);
+            this.label1.Location = new System.Drawing.Point(42, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 19);
             this.label1.TabIndex = 19;
@@ -161,21 +161,22 @@
             // txtOrderCreationNum
             // 
             this.txtOrderCreationNum.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtOrderCreationNum.Location = new System.Drawing.Point(324, 19);
+            this.txtOrderCreationNum.Location = new System.Drawing.Point(407, 21);
             this.txtOrderCreationNum.Name = "txtOrderCreationNum";
-            this.txtOrderCreationNum.Size = new System.Drawing.Size(125, 26);
+            this.txtOrderCreationNum.Size = new System.Drawing.Size(148, 26);
             this.txtOrderCreationNum.TabIndex = 18;
             // 
             // btnOrderCreationDeadline
             // 
+            this.btnOrderCreationDeadline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOrderCreationDeadline.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnOrderCreationDeadline.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnOrderCreationDeadline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrderCreationDeadline.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.btnOrderCreationDeadline.ForeColor = System.Drawing.Color.White;
-            this.btnOrderCreationDeadline.Location = new System.Drawing.Point(479, 11);
+            this.btnOrderCreationDeadline.Location = new System.Drawing.Point(1024, 6);
             this.btnOrderCreationDeadline.Name = "btnOrderCreationDeadline";
-            this.btnOrderCreationDeadline.Size = new System.Drawing.Size(86, 40);
+            this.btnOrderCreationDeadline.Size = new System.Drawing.Size(84, 54);
             this.btnOrderCreationDeadline.TabIndex = 17;
             this.btnOrderCreationDeadline.Text = "조회";
             this.btnOrderCreationDeadline.UseVisualStyleBackColor = false;
@@ -184,7 +185,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label3.Location = new System.Drawing.Point(264, 21);
+            this.label3.Location = new System.Drawing.Point(339, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 19);
             this.label3.TabIndex = 16;
@@ -206,7 +207,7 @@
             this.dtpPlanDate.Enabled = false;
             this.dtpPlanDate.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.dtpPlanDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPlanDate.Location = new System.Drawing.Point(708, 60);
+            this.dtpPlanDate.Location = new System.Drawing.Point(708, 58);
             this.dtpPlanDate.Name = "dtpPlanDate";
             this.dtpPlanDate.Size = new System.Drawing.Size(228, 26);
             this.dtpPlanDate.TabIndex = 43;
@@ -216,7 +217,7 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label21.Location = new System.Drawing.Point(23, 60);
+            this.label21.Location = new System.Drawing.Point(68, 59);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(54, 19);
             this.label21.TabIndex = 47;
@@ -227,7 +228,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label19.Location = new System.Drawing.Point(298, 60);
+            this.label19.Location = new System.Drawing.Point(306, 60);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(69, 19);
             this.label19.TabIndex = 48;
@@ -238,7 +239,7 @@
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label18.Location = new System.Drawing.Point(621, 63);
+            this.label18.Location = new System.Drawing.Point(624, 60);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(69, 19);
             this.label18.TabIndex = 49;
@@ -258,7 +259,7 @@
             // 
             this.nuPlanAmount.Enabled = false;
             this.nuPlanAmount.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.nuPlanAmount.Location = new System.Drawing.Point(403, 58);
+            this.nuPlanAmount.Location = new System.Drawing.Point(389, 58);
             this.nuPlanAmount.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -317,7 +318,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.LightGray;
             this.label7.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label7.Location = new System.Drawing.Point(751, 23);
+            this.label7.Location = new System.Drawing.Point(751, 22);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 19);
             this.label7.TabIndex = 73;
@@ -337,7 +338,7 @@
             // txtItemName_CH
             // 
             this.txtItemName_CH.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtItemName_CH.Location = new System.Drawing.Point(591, 57);
+            this.txtItemName_CH.Location = new System.Drawing.Point(591, 58);
             this.txtItemName_CH.Name = "txtItemName_CH";
             this.txtItemName_CH.Size = new System.Drawing.Size(138, 26);
             this.txtItemName_CH.TabIndex = 72;
@@ -370,7 +371,7 @@
             // 
             this.dtpPlanDate_CH.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.dtpPlanDate_CH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPlanDate_CH.Location = new System.Drawing.Point(389, 57);
+            this.dtpPlanDate_CH.Location = new System.Drawing.Point(389, 58);
             this.dtpPlanDate_CH.Name = "dtpPlanDate_CH";
             this.dtpPlanDate_CH.Size = new System.Drawing.Size(98, 26);
             this.dtpPlanDate_CH.TabIndex = 62;
@@ -380,7 +381,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.LightGray;
             this.label10.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label10.Location = new System.Drawing.Point(506, 23);
+            this.label10.Location = new System.Drawing.Point(506, 22);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 19);
             this.label10.TabIndex = 64;
@@ -422,7 +423,7 @@
             // txtPlanAmount_CH
             // 
             this.txtPlanAmount_CH.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtPlanAmount_CH.Location = new System.Drawing.Point(128, 56);
+            this.txtPlanAmount_CH.Location = new System.Drawing.Point(128, 57);
             this.txtPlanAmount_CH.Name = "txtPlanAmount_CH";
             this.txtPlanAmount_CH.Size = new System.Drawing.Size(152, 26);
             this.txtPlanAmount_CH.TabIndex = 69;
@@ -453,7 +454,7 @@
             // 
             this.cmbItemName.Enabled = false;
             this.cmbItemName.FormattingEnabled = true;
-            this.cmbItemName.Location = new System.Drawing.Point(128, 60);
+            this.cmbItemName.Location = new System.Drawing.Point(128, 56);
             this.cmbItemName.Name = "cmbItemName";
             this.cmbItemName.Size = new System.Drawing.Size(152, 27);
             this.cmbItemName.TabIndex = 62;
@@ -463,7 +464,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label5.Location = new System.Drawing.Point(298, 23);
+            this.label5.Location = new System.Drawing.Point(306, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 19);
             this.label5.TabIndex = 63;
@@ -472,7 +473,7 @@
             // txtCustName
             // 
             this.txtCustName.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtCustName.Location = new System.Drawing.Point(403, 19);
+            this.txtCustName.Location = new System.Drawing.Point(389, 19);
             this.txtCustName.Name = "txtCustName";
             this.txtCustName.ReadOnly = true;
             this.txtCustName.Size = new System.Drawing.Size(182, 26);
@@ -483,7 +484,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label6.Location = new System.Drawing.Point(621, 23);
+            this.label6.Location = new System.Drawing.Point(609, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 19);
             this.label6.TabIndex = 65;
@@ -492,7 +493,7 @@
             // txtProjectName
             // 
             this.txtProjectName.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtProjectName.Location = new System.Drawing.Point(708, 18);
+            this.txtProjectName.Location = new System.Drawing.Point(708, 19);
             this.txtProjectName.Name = "txtProjectName";
             this.txtProjectName.ReadOnly = true;
             this.txtProjectName.Size = new System.Drawing.Size(228, 26);

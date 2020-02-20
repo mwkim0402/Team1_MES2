@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.cmbUsable = new System.Windows.Forms.ComboBox();
             this.fcPackLevel = new AdminForm.FIndCategory();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -62,18 +62,17 @@
             // 
             // tabControl4
             // 
-            this.tabControl4.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
             this.tabControl4.Size = new System.Drawing.Size(312, 28);
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 28);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Size = new System.Drawing.Size(304, 0);
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.gbUsable);
@@ -88,24 +87,17 @@
             // 
             // tabControl2
             // 
-            this.tabControl2.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
             this.tabControl2.Location = new System.Drawing.Point(6, 324);
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            // 
-            // tabControl3
-            // 
-            this.tabControl3.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
             // 
             // splitContainer1
             // 
@@ -114,7 +106,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.cmbUsable);
             this.panel2.Controls.Add(this.fcPackLevel);
@@ -124,6 +116,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1128, 67);
             this.panel2.TabIndex = 12;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(540, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 37);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "조회";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // cmbUsable
             // 
@@ -267,13 +273,17 @@
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(2, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(62, 115);
             this.btnSave.TabIndex = 148;
             this.btnSave.Text = "저장";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
@@ -289,22 +299,13 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.LightGray;
             this.panel4.Controls.Add(this.txtNote);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Location = new System.Drawing.Point(504, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(263, 118);
             this.panel4.TabIndex = 150;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.button1.Location = new System.Drawing.Point(540, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 37);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "조회";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // PackGradeDetail
             // 

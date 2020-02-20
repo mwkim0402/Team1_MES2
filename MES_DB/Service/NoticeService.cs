@@ -13,5 +13,10 @@ namespace MES_DB
             NoticeDAC dac = new NoticeDAC();
             return dac.GetAllNotice();
         } 
+        public bool InsertNotice(NoticeVo vo)
+        {
+            NoticeDAC dac = new NoticeDAC();
+            return dac.InsertNotice(vo);
+        }
     }
 }

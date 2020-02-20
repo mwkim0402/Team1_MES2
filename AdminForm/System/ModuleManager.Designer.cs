@@ -77,6 +77,7 @@
             // 
             // pnlParent1
             // 
+            this.pnlParent1.BackColor = System.Drawing.Color.LightGray;
             this.pnlParent1.Controls.Add(this.gbIP);
             this.pnlParent1.Controls.Add(this.gbUsable);
             this.pnlParent1.Controls.Add(this.StandFac);
@@ -101,24 +102,28 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label6.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.BackColor = System.Drawing.Color.LightGray;
+            this.label6.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label6.Location = new System.Drawing.Point(315, 55);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 16);
+            this.label6.Size = new System.Drawing.Size(73, 19);
             this.label6.TabIndex = 85;
             this.label6.Text = "기본 공정";
             // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSave.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(1029, 21);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(82, 48);
             this.btnSave.TabIndex = 81;
             this.btnSave.Text = "저장";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // txtUserGroup
             // 
@@ -144,33 +149,33 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label19.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label19.BackColor = System.Drawing.Color.LightGray;
+            this.label19.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label19.Location = new System.Drawing.Point(19, 52);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(74, 16);
+            this.label19.Size = new System.Drawing.Size(74, 19);
             this.label19.TabIndex = 72;
             this.label19.Text = "사용자 ID";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label21.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label21.BackColor = System.Drawing.Color.LightGray;
+            this.label21.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label21.Location = new System.Drawing.Point(315, 23);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(93, 16);
+            this.label21.Size = new System.Drawing.Size(88, 19);
             this.label21.TabIndex = 71;
             this.label21.Text = "사용자 그룹";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label23.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label23.BackColor = System.Drawing.Color.LightGray;
+            this.label23.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label23.Location = new System.Drawing.Point(19, 21);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(93, 16);
+            this.label23.Size = new System.Drawing.Size(88, 19);
             this.label23.TabIndex = 70;
             this.label23.Text = "사용자 이름";
             // 
@@ -178,7 +183,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.Controls.Add(this.txtUserName);
             this.panel2.Controls.Add(this.txtUserID);
             this.panel2.Controls.Add(this.cmbUsable);
@@ -217,10 +222,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label5.Location = new System.Drawing.Point(893, 27);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 16);
+            this.label5.Size = new System.Drawing.Size(69, 19);
             this.label5.TabIndex = 8;
             this.label5.Text = "사용여부";
             // 
@@ -238,30 +243,30 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label4.Location = new System.Drawing.Point(603, 27);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 16);
+            this.label4.Size = new System.Drawing.Size(88, 19);
             this.label4.TabIndex = 6;
             this.label4.Text = "사용자 이름";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label3.Location = new System.Drawing.Point(357, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 16);
+            this.label3.Size = new System.Drawing.Size(70, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "사용자ID";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label7.Location = new System.Drawing.Point(20, 27);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 16);
+            this.label7.Size = new System.Drawing.Size(73, 19);
             this.label7.TabIndex = 0;
             this.label7.Text = "권한 그룹";
             // 
@@ -269,7 +274,7 @@
             // 
             this.gbUsable.Controls.Add(this.rbUse_Use);
             this.gbUsable.Controls.Add(this.rbNoUse_Use);
-            this.gbUsable.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.gbUsable.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.gbUsable.Location = new System.Drawing.Point(587, 18);
             this.gbUsable.Name = "gbUsable";
             this.gbUsable.Size = new System.Drawing.Size(200, 64);
@@ -280,10 +285,10 @@
             // rbUse_Use
             // 
             this.rbUse_Use.AutoSize = true;
-            this.rbUse_Use.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_Use.BackColor = System.Drawing.Color.LightGray;
             this.rbUse_Use.Location = new System.Drawing.Point(43, 28);
             this.rbUse_Use.Name = "rbUse_Use";
-            this.rbUse_Use.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_Use.Size = new System.Drawing.Size(42, 23);
             this.rbUse_Use.TabIndex = 77;
             this.rbUse_Use.TabStop = true;
             this.rbUse_Use.Text = "유";
@@ -292,10 +297,10 @@
             // rbNoUse_Use
             // 
             this.rbNoUse_Use.AutoSize = true;
-            this.rbNoUse_Use.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse_Use.BackColor = System.Drawing.Color.LightGray;
             this.rbNoUse_Use.Location = new System.Drawing.Point(111, 28);
             this.rbNoUse_Use.Name = "rbNoUse_Use";
-            this.rbNoUse_Use.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse_Use.Size = new System.Drawing.Size(42, 23);
             this.rbNoUse_Use.TabIndex = 79;
             this.rbNoUse_Use.TabStop = true;
             this.rbNoUse_Use.Text = "무";
@@ -304,10 +309,10 @@
             // rbNoUse_IP
             // 
             this.rbNoUse_IP.AutoSize = true;
-            this.rbNoUse_IP.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse_IP.BackColor = System.Drawing.Color.LightGray;
             this.rbNoUse_IP.Location = new System.Drawing.Point(111, 28);
             this.rbNoUse_IP.Name = "rbNoUse_IP";
-            this.rbNoUse_IP.Size = new System.Drawing.Size(42, 20);
+            this.rbNoUse_IP.Size = new System.Drawing.Size(42, 23);
             this.rbNoUse_IP.TabIndex = 79;
             this.rbNoUse_IP.TabStop = true;
             this.rbNoUse_IP.Text = "무";
@@ -316,10 +321,10 @@
             // rbUse_IP
             // 
             this.rbUse_IP.AutoSize = true;
-            this.rbUse_IP.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse_IP.BackColor = System.Drawing.Color.LightGray;
             this.rbUse_IP.Location = new System.Drawing.Point(43, 28);
             this.rbUse_IP.Name = "rbUse_IP";
-            this.rbUse_IP.Size = new System.Drawing.Size(42, 20);
+            this.rbUse_IP.Size = new System.Drawing.Size(42, 23);
             this.rbUse_IP.TabIndex = 77;
             this.rbUse_IP.TabStop = true;
             this.rbUse_IP.Text = "유";
@@ -329,7 +334,7 @@
             // 
             this.gbIP.Controls.Add(this.rbUse_IP);
             this.gbIP.Controls.Add(this.rbNoUse_IP);
-            this.gbIP.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.gbIP.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.gbIP.Location = new System.Drawing.Point(813, 18);
             this.gbIP.Name = "gbIP";
             this.gbIP.Size = new System.Drawing.Size(200, 64);

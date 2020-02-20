@@ -23,6 +23,23 @@ namespace MES_DB
             }
             return list;
         }
+        public bool InsertNotice(NoticeVo vo)
+        {
+            int isChecked = 0;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "insert into Sys_Notice (Notice_Date, Title, Description) values(@Notice_Date, @Title, @Description)";
+                cmd.Parameters.AddWithValue("@Notice_Date", vo.Notice_Date);
+                cmd.Parameters.AddWithValue("@Title", vo.Title);
+                cmd.Parameters.AddWithValue("@Description", vo.Description);
+                cmd.Connection.Open();
+
+                isChecked = cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+            return isChecked == 1 ? true : false;
+        }
     }
 }
 

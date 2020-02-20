@@ -93,6 +93,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.Controls.Add(this.cmbMoldGroupM);
             this.panel1.Controls.Add(this.gbUsableM);
             this.panel1.Controls.Add(this.btnModify);
@@ -116,6 +117,7 @@
             // 
             // pnlParent1
             // 
+            this.pnlParent1.BackColor = System.Drawing.Color.LightGray;
             this.pnlParent1.Controls.Add(this.cmbMoldGroupI);
             this.pnlParent1.Controls.Add(this.gbUsable);
             this.pnlParent1.Controls.Add(this.btnSave);
@@ -141,7 +143,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.cmbMoldGroupSearch);
             this.panel2.Controls.Add(this.txtMoldNameSearch);
@@ -157,13 +159,17 @@
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Location = new System.Drawing.Point(1030, 11);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(82, 48);
             this.btnSearch.TabIndex = 99;
             this.btnSearch.Text = "검색";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // cmbMoldGroupSearch
@@ -228,20 +234,24 @@
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(1025, 24);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(82, 48);
             this.btnSave.TabIndex = 48;
             this.btnSave.Text = "저장";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // label13
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label13.BackColor = System.Drawing.Color.LightGray;
             this.label13.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label13.Location = new System.Drawing.Point(803, 28);
             this.label13.Name = "label13";
@@ -295,7 +305,7 @@
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label16.BackColor = System.Drawing.Color.LightGray;
             this.label16.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label16.Location = new System.Drawing.Point(651, 56);
             this.label16.Name = "label16";
@@ -307,7 +317,7 @@
             // 
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label17.BackColor = System.Drawing.Color.LightGray;
             this.label17.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label17.Location = new System.Drawing.Point(388, 56);
             this.label17.Name = "label17";
@@ -318,7 +328,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label18.BackColor = System.Drawing.Color.LightGray;
             this.label18.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label18.Location = new System.Drawing.Point(417, 25);
             this.label18.Name = "label18";
@@ -329,7 +339,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label19.BackColor = System.Drawing.Color.LightGray;
             this.label19.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label19.Location = new System.Drawing.Point(18, 56);
             this.label19.Name = "label19";
@@ -341,7 +351,7 @@
             // 
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label20.BackColor = System.Drawing.Color.LightGray;
             this.label20.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label20.Location = new System.Drawing.Point(619, 25);
             this.label20.Name = "label20";
@@ -352,7 +362,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label21.BackColor = System.Drawing.Color.LightGray;
             this.label21.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label21.Location = new System.Drawing.Point(218, 25);
             this.label21.Name = "label21";
@@ -364,7 +374,7 @@
             // 
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label22.BackColor = System.Drawing.Color.LightGray;
             this.label22.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label22.Location = new System.Drawing.Point(203, 57);
             this.label22.Name = "label22";
@@ -375,7 +385,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label23.BackColor = System.Drawing.Color.LightGray;
             this.label23.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label23.Location = new System.Drawing.Point(18, 25);
             this.label23.Name = "label23";
@@ -418,7 +428,7 @@
             // rbUse
             // 
             this.rbUse.AutoSize = true;
-            this.rbUse.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUse.BackColor = System.Drawing.Color.LightGray;
             this.rbUse.Location = new System.Drawing.Point(22, 28);
             this.rbUse.Name = "rbUse";
             this.rbUse.Size = new System.Drawing.Size(42, 23);
@@ -430,7 +440,7 @@
             // rbNoUse
             // 
             this.rbNoUse.AutoSize = true;
-            this.rbNoUse.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUse.BackColor = System.Drawing.Color.LightGray;
             this.rbNoUse.Location = new System.Drawing.Point(90, 28);
             this.rbNoUse.Name = "rbNoUse";
             this.rbNoUse.Size = new System.Drawing.Size(42, 23);
@@ -455,7 +465,7 @@
             // rbUseM
             // 
             this.rbUseM.AutoSize = true;
-            this.rbUseM.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbUseM.BackColor = System.Drawing.Color.LightGray;
             this.rbUseM.Location = new System.Drawing.Point(22, 28);
             this.rbUseM.Name = "rbUseM";
             this.rbUseM.Size = new System.Drawing.Size(42, 23);
@@ -467,7 +477,7 @@
             // rbNoUseM
             // 
             this.rbNoUseM.AutoSize = true;
-            this.rbNoUseM.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.rbNoUseM.BackColor = System.Drawing.Color.LightGray;
             this.rbNoUseM.Location = new System.Drawing.Point(90, 28);
             this.rbNoUseM.Name = "rbNoUseM";
             this.rbNoUseM.Size = new System.Drawing.Size(42, 23);
@@ -479,19 +489,23 @@
             // btnModify
             // 
             this.btnModify.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnModify.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnModify.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModify.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnModify.ForeColor = System.Drawing.Color.White;
             this.btnModify.Location = new System.Drawing.Point(1025, 24);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(82, 48);
             this.btnModify.TabIndex = 115;
             this.btnModify.Text = "수정";
-            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.UseVisualStyleBackColor = false;
             this.btnModify.Click += new System.EventHandler(this.BtnModify_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label1.BackColor = System.Drawing.Color.LightGray;
             this.label1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(18, 25);
             this.label1.Name = "label1";
@@ -522,7 +536,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label3.BackColor = System.Drawing.Color.LightGray;
             this.label3.Font = new System.Drawing.Font("나눔고딕", 9.75F);
             this.label3.Location = new System.Drawing.Point(803, 28);
             this.label3.Name = "label3";
@@ -534,7 +548,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label4.BackColor = System.Drawing.Color.LightGray;
             this.label4.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.Location = new System.Drawing.Point(203, 57);
             this.label4.Name = "label4";
@@ -554,7 +568,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label5.BackColor = System.Drawing.Color.LightGray;
             this.label5.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.Location = new System.Drawing.Point(218, 25);
             this.label5.Name = "label5";
@@ -575,7 +589,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label6.BackColor = System.Drawing.Color.LightGray;
             this.label6.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.Location = new System.Drawing.Point(619, 25);
             this.label6.Name = "label6";
@@ -586,7 +600,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label7.BackColor = System.Drawing.Color.LightGray;
             this.label7.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.Location = new System.Drawing.Point(18, 56);
             this.label7.Name = "label7";
@@ -605,7 +619,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label8.BackColor = System.Drawing.Color.LightGray;
             this.label8.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.Location = new System.Drawing.Point(417, 25);
             this.label8.Name = "label8";
@@ -625,7 +639,7 @@
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label9.BackColor = System.Drawing.Color.LightGray;
             this.label9.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.Location = new System.Drawing.Point(388, 56);
             this.label9.Name = "label9";
@@ -645,7 +659,7 @@
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label10.BackColor = System.Drawing.Color.LightGray;
             this.label10.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.Location = new System.Drawing.Point(651, 56);
             this.label10.Name = "label10";

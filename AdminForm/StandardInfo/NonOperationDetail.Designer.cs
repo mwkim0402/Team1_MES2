@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.fcNonOpCat = new AdminForm.FIndCategory();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,8 +44,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbNonOpMa = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabControl4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -59,18 +59,17 @@
             // 
             // tabControl4
             // 
-            this.tabControl4.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
             this.tabControl4.Size = new System.Drawing.Size(297, 28);
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 28);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Size = new System.Drawing.Size(289, 0);
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.Controls.Add(this.fcNonOpCat);
             this.panel1.Controls.Add(this.cmbNonOpMa);
             this.panel1.Controls.Add(this.label2);
@@ -86,24 +85,17 @@
             // 
             // tabControl2
             // 
-            this.tabControl2.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
             this.tabControl2.Location = new System.Drawing.Point(2, 299);
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            // 
-            // tabControl3
-            // 
-            this.tabControl3.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
             // 
             // splitContainer1
             // 
@@ -112,7 +104,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label1);
@@ -121,11 +113,33 @@
             this.panel2.Size = new System.Drawing.Size(1132, 67);
             this.panel2.TabIndex = 14;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(379, 23);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(88, 26);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "조회";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.textBox1.Location = new System.Drawing.Point(147, 23);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(213, 26);
+            this.textBox1.TabIndex = 9;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label1.Location = new System.Drawing.Point(22, 28);
+            this.label1.Location = new System.Drawing.Point(22, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 19);
             this.label1.TabIndex = 8;
@@ -214,13 +228,17 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(1, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 132);
             this.button1.TabIndex = 0;
             this.button1.Text = "저장";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel4
@@ -253,24 +271,6 @@
             this.cmbNonOpMa.Size = new System.Drawing.Size(227, 27);
             this.cmbNonOpMa.TabIndex = 141;
             this.cmbNonOpMa.SelectedIndexChanged += new System.EventHandler(this.cmbNonOpMa_SelectedIndexChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.textBox1.Location = new System.Drawing.Point(147, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 26);
-            this.textBox1.TabIndex = 9;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.button2.Location = new System.Drawing.Point(379, 26);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 26);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "조회";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // NonOperationDetail
             // 

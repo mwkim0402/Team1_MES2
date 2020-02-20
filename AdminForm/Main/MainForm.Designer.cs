@@ -64,7 +64,6 @@
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.lblLogo = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.pnlMainButton.SuspendLayout();
@@ -78,7 +77,6 @@
             // 
             // pnlMenu
             // 
-            this.pnlMenu.Controls.Add(this.button9);
             this.pnlMenu.Controls.Add(this.trvBookMark);
             this.pnlMenu.Controls.Add(this.button7);
             this.pnlMenu.Controls.Add(this.button6);
@@ -113,7 +111,7 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(0, 231);
+            this.button7.Location = new System.Drawing.Point(0, 198);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(222, 33);
             this.button7.TabIndex = 98;
@@ -124,7 +122,7 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(0, 198);
+            this.button6.Location = new System.Drawing.Point(0, 165);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(222, 33);
             this.button6.TabIndex = 97;
@@ -135,7 +133,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(0, 165);
+            this.button5.Location = new System.Drawing.Point(0, 132);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(222, 33);
             this.button5.TabIndex = 96;
@@ -156,7 +154,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(0, 132);
+            this.button4.Location = new System.Drawing.Point(0, 99);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(222, 33);
             this.button4.TabIndex = 95;
@@ -167,7 +165,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(0, 99);
+            this.button3.Location = new System.Drawing.Point(0, 66);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(222, 33);
             this.button3.TabIndex = 94;
@@ -466,17 +464,6 @@
             this.lblLogo.Size = new System.Drawing.Size(237, 131);
             this.lblLogo.TabIndex = 108;
             // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(0, 66);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(222, 33);
-            this.button9.TabIndex = 93;
-            this.button9.Text = "BOM 관리";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button1_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -546,6 +533,5 @@
         public System.Windows.Forms.Label lblLocation;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label lblAlert;
-        private System.Windows.Forms.Button button9;
     }
 }

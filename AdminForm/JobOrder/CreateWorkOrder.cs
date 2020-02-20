@@ -140,5 +140,13 @@ namespace AdminForm
                 nuPlanQty.Value = (int)(difTime.TotalHours * (double)uph);
             }
         }
+
+        private void nuPlanQty_ValueChanged(object sender, EventArgs e)
+        {
+            if (nuPlanQty.Value > nuDefaultQty.Value)
+            {
+                nuPlanQty.Value = nuDefaultQty.Value;
+            }
+        }
     }
 }

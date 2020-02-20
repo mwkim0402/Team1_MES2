@@ -54,12 +54,17 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(273, 21);
+            this.btnSearch.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(273, 18);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(59, 23);
+            this.btnSearch.Size = new System.Drawing.Size(59, 27);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "검색";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // dgvList
@@ -77,13 +82,18 @@
             // 
             // btnSubmit
             // 
+            this.btnSubmit.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnSubmit.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSubmit.Location = new System.Drawing.Point(254, 396);
+            this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.btnSubmit.ForeColor = System.Drawing.Color.White;
+            this.btnSubmit.Location = new System.Drawing.Point(256, 396);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(76, 23);
+            this.btnSubmit.Size = new System.Drawing.Size(76, 27);
             this.btnSubmit.TabIndex = 4;
             this.btnSubmit.Text = "확인";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // CategorySearch

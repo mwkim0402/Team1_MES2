@@ -47,6 +47,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,15 +55,14 @@
             this.dgvPlanInfo = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotice)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -221,12 +221,17 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(329, 279);
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("나눔고딕", 9F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(328, 274);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 23);
+            this.button1.Size = new System.Drawing.Size(102, 34);
             this.button1.TabIndex = 21;
             this.button1.Text = "개인정보 수정";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label9
             // 
@@ -278,6 +283,15 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "직급 :";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(280, 46);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(198, 202);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -328,12 +342,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPlanInfo.BackgroundColor = System.Drawing.Color.White;
             this.dgvPlanInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPlanInfo.Location = new System.Drawing.Point(320, 20);
+            this.dgvPlanInfo.GridColor = System.Drawing.Color.White;
+            this.dgvPlanInfo.Location = new System.Drawing.Point(320, 24);
             this.dgvPlanInfo.Name = "dgvPlanInfo";
-            this.dgvPlanInfo.RowHeadersVisible = false;
             this.dgvPlanInfo.RowTemplate.Height = 23;
             this.dgvPlanInfo.Size = new System.Drawing.Size(348, 404);
-            this.dgvPlanInfo.TabIndex = 6;
+            this.dgvPlanInfo.TabIndex = 4;
             // 
             // label5
             // 
@@ -349,15 +363,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(280, 46);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(198, 202);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
             // 
             // MainChild
             // 
@@ -382,10 +387,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotice)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -397,7 +402,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.DataGridView dgvPlanInfo;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvNotice;
         private System.Windows.Forms.Label label13;
@@ -419,5 +423,6 @@
         private System.Windows.Forms.Label lblDept;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblUserID;
+        private System.Windows.Forms.DataGridView dgvPlanInfo;
     }
 }

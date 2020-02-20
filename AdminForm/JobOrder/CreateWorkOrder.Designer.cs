@@ -47,9 +47,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpPlanEnd = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
             this.dtpEndTime = new System.Windows.Forms.DateTimePicker();
-            this.button3 = new System.Windows.Forms.Button();
             this.dtpStartTime = new System.Windows.Forms.DateTimePicker();
             this.nuPlanQty = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
@@ -58,6 +56,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblProcessName = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -282,17 +282,6 @@
             this.dtpPlanEnd.Size = new System.Drawing.Size(122, 26);
             this.dtpPlanEnd.TabIndex = 27;
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(574, 368);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 28);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "등록";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // dtpEndTime
             // 
             this.dtpEndTime.CustomFormat = "hh:mm tt";
@@ -305,16 +294,6 @@
             this.dtpEndTime.TabIndex = 26;
             this.dtpEndTime.Value = new System.DateTime(2020, 1, 30, 0, 0, 0, 0);
             this.dtpEndTime.ValueChanged += new System.EventHandler(this.dtpEndTime_ValueChanged);
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(669, 368);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(81, 28);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "취소";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // dtpStartTime
             // 
@@ -341,6 +320,7 @@
             this.nuPlanQty.Size = new System.Drawing.Size(90, 26);
             this.nuPlanQty.TabIndex = 24;
             this.nuPlanQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nuPlanQty.ValueChanged += new System.EventHandler(this.nuPlanQty_ValueChanged);
             // 
             // label16
             // 
@@ -373,12 +353,16 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(376, 27);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(133, 27);
             this.button2.TabIndex = 6;
             this.button2.Text = "일정 조회";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button4_Click);
             // 
             // label9
@@ -398,6 +382,35 @@
             this.label8.Size = new System.Drawing.Size(73, 19);
             this.label8.TabIndex = 0;
             this.label8.Text = "작업장 명";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(574, 368);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(81, 28);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "등록";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(669, 368);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(81, 28);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "취소";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 

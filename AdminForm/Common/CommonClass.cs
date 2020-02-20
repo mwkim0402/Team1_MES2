@@ -25,15 +25,15 @@ namespace AdminForm
             col.DefaultCellStyle.Alignment = textAlign;
             dgv.Columns.Add(col);
 
-            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
             dgv.EnableHeadersVisualStyles = false;
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue;
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;
 
             dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
-            dgv.DefaultCellStyle.SelectionBackColor = Color.MidnightBlue;
+            dgv.DefaultCellStyle.SelectionBackColor = Color.DimGray;
         }
 
         public static void InitControl(Panel panel)

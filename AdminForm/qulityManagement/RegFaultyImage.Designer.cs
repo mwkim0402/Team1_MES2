@@ -219,7 +219,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.Controls.Add(this.fcWork);
             this.panel1.Controls.Add(this.fcFactory);
             this.panel1.Controls.Add(this.label4);
@@ -342,13 +342,18 @@
             // btnImage
             // 
             this.btnImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImage.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnImage.Enabled = false;
+            this.btnImage.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImage.Font = new System.Drawing.Font("나눔고딕", 9F);
+            this.btnImage.ForeColor = System.Drawing.Color.White;
             this.btnImage.Location = new System.Drawing.Point(842, 327);
             this.btnImage.Name = "btnImage";
             this.btnImage.Size = new System.Drawing.Size(140, 23);
             this.btnImage.TabIndex = 12;
             this.btnImage.Text = "불량사진 등록";
-            this.btnImage.UseVisualStyleBackColor = true;
+            this.btnImage.UseVisualStyleBackColor = false;
             this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
             // 
             // openFileDialog1
@@ -368,13 +373,18 @@
             // btnFaltyIns
             // 
             this.btnFaltyIns.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFaltyIns.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnFaltyIns.Enabled = false;
+            this.btnFaltyIns.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnFaltyIns.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFaltyIns.Font = new System.Drawing.Font("나눔고딕", 9F);
+            this.btnFaltyIns.ForeColor = System.Drawing.Color.White;
             this.btnFaltyIns.Location = new System.Drawing.Point(1007, 327);
             this.btnFaltyIns.Name = "btnFaltyIns";
             this.btnFaltyIns.Size = new System.Drawing.Size(114, 23);
             this.btnFaltyIns.TabIndex = 15;
             this.btnFaltyIns.Text = "불량 등록하기";
-            this.btnFaltyIns.UseVisualStyleBackColor = true;
+            this.btnFaltyIns.UseVisualStyleBackColor = false;
             this.btnFaltyIns.Click += new System.EventHandler(this.btnFaltyIns_Click);
             // 
             // nuFaultyCount

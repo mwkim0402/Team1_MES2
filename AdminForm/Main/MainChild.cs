@@ -102,8 +102,8 @@ namespace AdminForm
 
             CommonClass.AddNewColumnToDataGridView(dgvNotice, "번호", "Seq", false, 200);
             CommonClass.AddNewColumnToDataGridView(dgvNotice, "공지 날짜", "Notice_Date", true, 150);
-            CommonClass.AddNewColumnToDataGridView(dgvNotice, "제목", "Title", true, 300);
-            CommonClass.AddNewColumnToDataGridView(dgvNotice, "공지 내용", "Description", true, 800);
+            CommonClass.AddNewColumnToDataGridView(dgvNotice, "제목", "Title", true, 500);
+            CommonClass.AddNewColumnToDataGridView(dgvNotice, "공지 내용", "Description", true, 1500);
             NoticeService noticeService = new NoticeService();
             dgvNotice.DataSource = noticeService.GetAllNotice();
         }

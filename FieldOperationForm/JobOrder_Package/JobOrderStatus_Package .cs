@@ -174,22 +174,18 @@ namespace FieldOperationForm
 
         private void btn_StartEnd_Click(object sender, EventArgs e)
         {
-            if (start == "대기")
+            if(start == "작업대기")
             {
-                WorkOrder_Service service = new WorkOrder_Service();
-
-                service.StartWork(no);
-
-                SetLoad();
-            }
-
-            else if (start == "작업시작")
-            {
-                WorkOrder_Service service = new WorkOrder_Service();
-
-                service.EndWork(no);
-
-                SetLoad();
+                WorkCenterService service = new WorkCenterService();
+                if (service.wcStatusChecked(dataGridView1.SelectedRows[0].Cells[1].Value.ToString()) == "RUN")
+                {
+                    MessageBox.Show("작업장에 실행중인 작업이 존재하여 실행할 수 없습니다.");
+                    return;
+                }
+                else
+                {
+                    Start_Factory();
+                }
             }
         }
         private void Start_Factory()

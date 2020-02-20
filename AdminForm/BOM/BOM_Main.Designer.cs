@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.dgvBOMMain = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearchProduct = new System.Windows.Forms.TextBox();
             this.cmbSort = new System.Windows.Forms.ComboBox();
+            this.dgvBOMMain = new System.Windows.Forms.DataGridView();
             this.pnlMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBOMMain)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBOMMain)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -49,26 +49,6 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(948, 499);
             this.pnlMain.TabIndex = 4;
-            // 
-            // dgvBOMMain
-            // 
-            this.dgvBOMMain.AllowUserToAddRows = false;
-            this.dgvBOMMain.AllowUserToDeleteRows = false;
-            this.dgvBOMMain.AllowUserToResizeColumns = false;
-            this.dgvBOMMain.AllowUserToResizeRows = false;
-            this.dgvBOMMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvBOMMain.BackgroundColor = System.Drawing.Color.White;
-            this.dgvBOMMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBOMMain.Location = new System.Drawing.Point(18, 92);
-            this.dgvBOMMain.Name = "dgvBOMMain";
-            this.dgvBOMMain.RowHeadersVisible = false;
-            this.dgvBOMMain.RowHeadersWidth = 51;
-            this.dgvBOMMain.RowTemplate.Height = 23;
-            this.dgvBOMMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvBOMMain.Size = new System.Drawing.Size(918, 392);
-            this.dgvBOMMain.TabIndex = 0;
             // 
             // panel1
             // 
@@ -113,6 +93,26 @@
             this.cmbSort.TabIndex = 4;
             this.cmbSort.Text = "선 택";
             // 
+            // dgvBOMMain
+            // 
+            this.dgvBOMMain.AllowUserToAddRows = false;
+            this.dgvBOMMain.AllowUserToDeleteRows = false;
+            this.dgvBOMMain.AllowUserToResizeColumns = false;
+            this.dgvBOMMain.AllowUserToResizeRows = false;
+            this.dgvBOMMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvBOMMain.BackgroundColor = System.Drawing.Color.White;
+            this.dgvBOMMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBOMMain.Location = new System.Drawing.Point(18, 92);
+            this.dgvBOMMain.Name = "dgvBOMMain";
+            this.dgvBOMMain.RowHeadersVisible = false;
+            this.dgvBOMMain.RowHeadersWidth = 51;
+            this.dgvBOMMain.RowTemplate.Height = 23;
+            this.dgvBOMMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvBOMMain.Size = new System.Drawing.Size(918, 392);
+            this.dgvBOMMain.TabIndex = 0;
+            // 
             // BOM_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -127,9 +127,9 @@
             this.ShowInTaskbar = false;
             this.Text = "BOM_Main";
             this.pnlMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBOMMain)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBOMMain)).EndInit();
             this.ResumeLayout(false);
 
         }

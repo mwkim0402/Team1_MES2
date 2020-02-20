@@ -480,12 +480,6 @@
     <Compile Include="System\MenuManagement.Designer.cs">
       <DependentUpon>MenuManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="System\NoticeRegister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="System\NoticeRegister.Designer.cs">
-      <DependentUpon>NoticeRegister.cs</DependentUpon>
-    </Compile>
     <Compile Include="System\MonitorManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -503,6 +497,18 @@
     </Compile>
     <Compile Include="System\LoginLogInfo.Designer.cs">
       <DependentUpon>LoginLogInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\NoticeRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\NoticeRegister.Designer.cs">
+      <DependentUpon>NoticeRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\NoticeSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\NoticeSettings.Designer.cs">
+      <DependentUpon>NoticeSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="System\SystemCodeCategoryDetail.cs">
       <SubType>Form</SubType>
@@ -734,9 +740,6 @@
     <EmbeddedResource Include="System\MenuManagement.resx">
       <DependentUpon>MenuManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="System\NoticeRegister.resx">
-      <DependentUpon>NoticeRegister.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="System\MonitorManager.resx">
       <DependentUpon>MonitorManager.cs</DependentUpon>
     </EmbeddedResource>
@@ -745,6 +748,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="System\LoginLogInfo.resx">
       <DependentUpon>LoginLogInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\NoticeRegister.resx">
+      <DependentUpon>NoticeRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\NoticeSettings.resx">
+      <DependentUpon>NoticeSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="System\SystemCodeCategoryDetail.resx">
       <DependentUpon>SystemCodeCategoryDetail.cs</DependentUpon>

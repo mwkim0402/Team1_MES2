@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.txtFaultCatCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -60,7 +61,6 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvSearchResult = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -82,7 +82,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.txtFaultCatCode);
             this.panel2.Controls.Add(this.label1);
@@ -91,10 +91,24 @@
             this.panel2.Size = new System.Drawing.Size(1140, 67);
             this.panel2.TabIndex = 16;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(359, 23);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(79, 26);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "조회";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // txtFaultCatCode
             // 
             this.txtFaultCatCode.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtFaultCatCode.Location = new System.Drawing.Point(182, 27);
+            this.txtFaultCatCode.Location = new System.Drawing.Point(172, 24);
             this.txtFaultCatCode.Name = "txtFaultCatCode";
             this.txtFaultCatCode.Size = new System.Drawing.Size(159, 26);
             this.txtFaultCatCode.TabIndex = 9;
@@ -197,7 +211,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
@@ -224,13 +238,17 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(7, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(35, 156);
             this.button1.TabIndex = 0;
             this.button1.Text = "저장";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
@@ -427,16 +445,6 @@
             this.dgvSearchResult.RowTemplate.Height = 23;
             this.dgvSearchResult.Size = new System.Drawing.Size(747, 286);
             this.dgvSearchResult.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.button2.Location = new System.Drawing.Point(367, 27);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 26);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "조회";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // FaultyDetail
             // 

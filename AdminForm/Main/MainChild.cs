@@ -116,5 +116,11 @@ namespace AdminForm
                                          select item).ToList();
             dgvPlanInfo.DataSource = bindList;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UserInfoChange userChange = new UserInfoChange();
+            userChange.ShowDialog();
+        }
     }
 }

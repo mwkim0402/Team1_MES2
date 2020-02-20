@@ -95,10 +95,11 @@ namespace FieldOperationForm
             AddNewColumnToDataGridView(dataGridView1, "품목명", "Item_Name", true, 200);
 
             AddNewColumnToDataGridView(dataGridView1, "생산수량", "Prd_Qty", true, 120);
-            AddNewColumnToDataGridView(dataGridView1, "생산일자", "Plan_Date", true, 150);
+            AddNewColumnToDataGridView(dataGridView1, "생산일자", "Plan_date", true, 150);
             AddNewColumnToDataGridView(dataGridView1, "계획시작시간", "Plan_Starttime", true, 180);
             AddNewColumnToDataGridView(dataGridView1, "생산시작시간", "Prd_Starttime", true, 180);
             AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Prd_Endtime", true, 180);
+            AddNewColumnToDataGridView(dataGridView1, "생산종료시간", "Plan_Unit", false, 180);
             this.dataGridView1.Font = new Font("나눔고딕", 17, FontStyle.Bold);
             this.dataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 17, FontStyle.Regular);
 
@@ -111,11 +112,12 @@ namespace FieldOperationForm
             dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView1.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             string strConn = ConfigurationManager.ConnectionStrings["Project"].ConnectionString;

@@ -16,7 +16,7 @@ namespace FieldOperationForm
         public string Plan_Unit { get; set; }
         public int Prd_Qty { get; set; }
 
-        public DateTime Plan_Date { get; set; }
+        public DateTime Plan_date { get; set; }
 
         public string Plan_Starttime { get; set; }
         public string Prd_Starttime { get; set; }

@@ -239,6 +239,10 @@ namespace FieldOperationForm
                 service.deadlineWork(no);
                 SetLoad();
             }
+            else
+            {
+                MessageBox.Show("종료된 작업지시를 선택해주세요.");
+            }
         }
 
         private void btn_ReadBarcode_Click(object sender, EventArgs e)

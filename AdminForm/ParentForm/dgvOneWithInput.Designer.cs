@@ -89,7 +89,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSearchResult.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvSearchResult.Location = new System.Drawing.Point(12, 117);
+            this.dgvSearchResult.Location = new System.Drawing.Point(12, 113);
             this.dgvSearchResult.Name = "dgvSearchResult";
             this.dgvSearchResult.RowHeadersVisible = false;
             this.dgvSearchResult.RowTemplate.Height = 23;
@@ -132,9 +132,9 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1124, 99);
+            this.tabPage1.Size = new System.Drawing.Size(1124, 103);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "수정정보";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -145,7 +145,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1124, 99);
+            this.panel1.Size = new System.Drawing.Size(1124, 103);
             this.panel1.TabIndex = 9;
             // 
             // dgvOneWithInput

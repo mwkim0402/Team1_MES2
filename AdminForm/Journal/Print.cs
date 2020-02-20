@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraReports.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,14 @@ namespace AdminForm
 {
     public partial class Print : Form
     {
-        public Print()
+        public Print(XtraReport rpt)
         {
             InitializeComponent();
+
+            using (ReportPrintTool printTool = new ReportPrintTool(rpt))
+            {
+                printTool.ShowPreviewDialog();
+            }
         }
     }
 }

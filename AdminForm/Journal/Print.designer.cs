@@ -28,24 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.SuspendLayout();
-            // 
-            // documentViewer1
-            // 
-            this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.documentViewer1.IsMetric = true;
-            this.documentViewer1.Location = new System.Drawing.Point(0, 0);
-            this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(871, 496);
-            this.documentViewer1.TabIndex = 0;
             // 
             // Print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 496);
-            this.Controls.Add(this.documentViewer1);
             this.Name = "Print";
             this.Text = "Form2";
             this.ResumeLayout(false);
@@ -53,7 +42,5 @@
         }
 
         #endregion
-
-        public DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
     }
 }

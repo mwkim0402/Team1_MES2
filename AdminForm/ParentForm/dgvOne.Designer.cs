@@ -72,7 +72,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSearchResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSearchResult.Location = new System.Drawing.Point(12, 114);
+            this.dgvSearchResult.Location = new System.Drawing.Point(12, 113);
             this.dgvSearchResult.MultiSelect = false;
             this.dgvSearchResult.Name = "dgvSearchResult";
             this.dgvSearchResult.RowHeadersVisible = false;

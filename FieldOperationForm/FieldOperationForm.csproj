@@ -67,10 +67,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>DE12AF62FD0C1F144701B69D751EBEE4DFB2ADBF</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>C3D123D7EBC33552B28E2DA1F28D8BBC0D01A3F2</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>FieldOperationForm_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>FieldOperationForm_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -382,6 +382,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="FieldOperationForm_1_TemporaryKey.pfx" />
     <None Include="FieldOperationForm_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />

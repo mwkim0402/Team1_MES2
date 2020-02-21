@@ -26,5 +26,23 @@ namespace MES_DB
             }
             return userVo;
         }
+
+        public void InsImage(UserInfoVo user)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = @"update User_Master set User_Image = @User_Image , User_Phone = @User_Phone , User_Email=@User_Email where User_ID = @User_ID";
+
+                cmd.Parameters.AddWithValue("@User_ID", user.User_ID);
+                cmd.Parameters.AddWithValue("@User_Image", user.User_Image);
+                cmd.Parameters.AddWithValue("@User_Phone", user.User_Phone);
+                cmd.Parameters.AddWithValue("@User_Email", user.User_Email);
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+                
+            }
+        }
     }
 }

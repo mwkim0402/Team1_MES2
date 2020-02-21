@@ -55,25 +55,14 @@ namespace AdminForm
                         Work_Date = item.Work_Date
                     }).ToList();
             dgvProductRequset.DataSource = list;
-            //}
-            //else
-            //{
-            //    list2 = (from item in list
-            //             where item.User_ID == fcWorker.SendCode
-            //             select new WorkdiligenceStatusanalysisVOgridview1
-            //             {
-            //                 User_ID = item.User_ID,
-            //                 Work_Date = item.Work_Date
-            //             }).ToList();
-            //    dgvProductRequset.DataSource = list2;
-            //}
+          
         }
         private void ShowDgv()
         {
             dgvProductRequset.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             dgvProductRequset.CellDoubleClick += DgvProductRequset_CellDoubleClick;
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "작업자", "User_ID", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "근무일", "Work_Date", true, 150,DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "근무일", "Work_Date", true, 150, DataGridViewContentAlignment.MiddleCenter);
 
             dgvJobOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업지시번호", "Workorderno", true, 200);
@@ -81,10 +70,10 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업장명", "Wc_Name", true, 130);
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "품목코드", "Item_Code", true, 130);
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "품목명", "Item_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업시작일시", "Prd_Starttime", true, 200,DataGridViewContentAlignment.MiddleCenter);
-            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업종료일시", "Prd_Endtime", true, 200,DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업시작일시", "Prd_Starttime", true, 200, DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업종료일시", "Prd_Endtime", true, 200, DataGridViewContentAlignment.MiddleCenter);
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업시간", "Work_Time", true, 120);
-            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "생산수량", "Prd_Qty", true, 120,DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "생산수량", "Prd_Qty", true, 120, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "할당작업자", "User_ID", true, 150);
         }
 
@@ -112,14 +101,17 @@ namespace AdminForm
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            List<WorkdiligenceStatusanalysisVOgridview1> list = (from item in AllList
-                                                                 where item.User_ID == fcWorker.SendCode
-                                                                 select new WorkdiligenceStatusanalysisVOgridview1
-                                                                 {
-                                                                     User_ID = item.User_ID,
-                                                                     Work_Date = item.Work_Date
-                                                                 }).ToList();
-            dgvProductRequset.DataSource = list;
+            if (AllList != null)
+            {
+                List<WorkdiligenceStatusanalysisVOgridview1> list = (from item in AllList
+                                                                     where item.User_ID == fcWorker.SendCode
+                                                                     select new WorkdiligenceStatusanalysisVOgridview1
+                                                                     {
+                                                                         User_ID = item.User_ID,
+                                                                         Work_Date = item.Work_Date
+                                                                     }).ToList();
+                dgvProductRequset.DataSource = list;
+            }
         }
     }
 }

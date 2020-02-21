@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace AdminForm
 {
-    
+
 
     public partial class MainChild : Form
     {
@@ -24,8 +24,8 @@ namespace AdminForm
         {
             InitializeComponent();
         }
-        
-        
+
+
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -37,37 +37,38 @@ namespace AdminForm
         }
 
         private void MainChild_Load(object sender, EventArgs e)
-        {            
+        {
             GetUserInfo();
             UserInfoService service = new UserInfoService();
             userPlanList = service.GetUserPlan(Global.LoginID);
             GridViewSettings();
             DateTime[] planDate = (from item in userPlanList
-                                  select Convert.ToDateTime(item.Plan_Date)).ToArray();
+                                   select Convert.ToDateTime(item.Plan_Date)).ToArray();
             workCalendar = new UserCalendar(planDate);
             workCalendar.Location = new Point(4, 16);
             workCalendar.Change_Month += MonthChange;
-           //workCalendar.Search_Click += btnSearch;
+            //workCalendar.Search_Click += btnSearch;
             groupBox1.Controls.Add(workCalendar);
             frm = (MainForm)this.MdiParent;
 
-            lblID.Text = $"{Global.LoginID.ToString()}님 ";           
+            lblID.Text = $"{Global.LoginID.ToString()}님 ";
+            MakeImage();
         }
-        
+
         private void MainChild_Activated(object sender, EventArgs e)
         {
-           // frm.lblLocation.Text = "위치정보 : Home";
+            // frm.lblLocation.Text = "위치정보 : Home";
         }
         private void btnSearch(object sender, EventArgs e)
         {
             List<UserPlanVo> bindList = (from item in userPlanList
                                          where Convert.ToDateTime(item.Plan_Date).Date == Convert.ToDateTime($"{workCalendar.lblYear.Text.Split('년')[0]}-{workCalendar.lblMonth.Text}-{workCalendar.lblDate.Text}")
-                                              select item).ToList();
+                                         select item).ToList();
             dgvPlanInfo.DataSource = bindList;
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 if (openFileDialog1.FileName != "")
                 {
@@ -119,8 +120,25 @@ namespace AdminForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UserInfoChange userChange = new UserInfoChange();
-            userChange.ShowDialog();
+            UserInfoChange userChange = new UserInfoChange(userInfo);
+            if (userChange.ShowDialog() == DialogResult.OK)
+            {
+
+                MakeImage();
+
+            }
+        }
+
+        private void MakeImage()
+        {
+            if (userInfo.User_Image != null)
+            {
+                byte[] peopleImage = userInfo.User_Image;
+
+                TypeConverter tc = TypeDescriptor.GetConverter(typeof(Bitmap));
+                pictureBox1.Image = (Bitmap)tc.ConvertFrom(peopleImage);
+            }
         }
     }
 }
+

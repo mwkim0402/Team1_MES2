@@ -41,18 +41,6 @@ namespace AdminForm
             allList = service.GetAllPerformSearch();
             dgvSearchResult.DataSource = allList;
 
-            //if (StartDate == null && EndDate == null && fcFactory.SendName == null && fcWork.SendName == null)
-            //{
-               
-            //}
-            //else
-            //{
-            //    List<PerformSearchVO> SelectList = (from item in list
-            //                                        where item.Plan_Date >= Convert.ToDateTime(StartDate.Substring(0, 10)) && item.Plan_Date <= Convert.ToDateTime(EndDate.Substring(0, 10))
-            //                                        && item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode
-            //                                        select item).ToList();
-            //    dgvSearchResult.DataSource = SelectList;
-            //}
         }
 
         private void ShowDgv()
@@ -66,8 +54,8 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "투입수량", "In_Qty_Main", true, 120, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "불량수량", "Bad_Qty", true, 120, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산수량", "Prd_Qty", true, 120, DataGridViewContentAlignment.MiddleRight);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "불량률(%)", "Faulty", true, 120, DataGridViewContentAlignment.MiddleRight);
-            
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "불량률(%)", "Faulty", true, 140, DataGridViewContentAlignment.MiddleRight);
+
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산수량", "Plan_Date", false, 120);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "생산수량", "Process_code", false, 120);
         }
@@ -114,33 +102,38 @@ namespace AdminForm
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            frm.lblAlert.Text = "";
-            if (fcFactory.SendCode != null && fcWork.SendCode != null)
+            if (allList != null)
             {
-                List<PerformSearchVO> list = (from item in allList
-                                              where item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode
-                                              select item).ToList();
-                dgvSearchResult.DataSource = list;
-            }
-            else if (fcFactory.SendCode != null && fcWork.SendCode == null)
-            {
-                List<PerformSearchVO> list = (from item in allList
-                                              where item.Process_code == fcFactory.SendCode
-                                              select item).ToList();
-                dgvSearchResult.DataSource = list;
-            }
-            else if(fcWork.SendCode != null && fcFactory.SendCode == null)
-            {
-                List<PerformSearchVO> list = (from item in allList
-                                              where item.Wc_Code == fcWork.SendCode
-                                              select item).ToList();
-                dgvSearchResult.DataSource = list;
+                if (fcFactory.SendCode != null && fcWork.SendCode != null)
+                {
+                    List<PerformSearchVO> list = (from item in allList
+                                                  where item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode
+                                                  select item).ToList();
+                    dgvSearchResult.DataSource = list;
+                }
+                else if (fcFactory.SendCode != null && fcWork.SendCode == null)
+                {
+                    List<PerformSearchVO> list = (from item in allList
+                                                  where item.Process_code == fcFactory.SendCode
+                                                  select item).ToList();
+                    dgvSearchResult.DataSource = list;
+                }
+                else if (fcWork.SendCode != null && fcFactory.SendCode == null)
+                {
+                    List<PerformSearchVO> list = (from item in allList
+                                                  where item.Wc_Code == fcWork.SendCode
+                                                  select item).ToList();
+                    dgvSearchResult.DataSource = list;
+                }
+                else
+                {
+                    frm.lblAlert.Text = "조건을 선택해주세요.";
+                }
             }
             else
             {
-                frm.lblAlert.Text = "조건을 선택해주세요.";
+                MessageBox.Show("전체 검색을 먼저 선택해주세요.");
             }
-
         }
 
         private void btnDivide_Click(object sender, EventArgs e)

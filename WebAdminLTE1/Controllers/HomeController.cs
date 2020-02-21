@@ -21,7 +21,8 @@ namespace WebAdminLTE1.Controllers
             JobOrderDAC jobOrder = new JobOrderDAC();
             JobOrderListView jobordermodel = new JobOrderListView // 작업지시 view만들고
             {
-                JobOrders = jobOrder.GetWorkOrderFive() // 진행중인 작업지시 조회
+                JobOrders = jobOrder.GetWorkOrderFive(), // 진행중인 작업지시 조회
+                
             };
 
 
@@ -68,7 +69,7 @@ namespace WebAdminLTE1.Controllers
                 PagingInfo = new PagingInfo
                 {
                     CurrentPage = 1,
-                    ItemsPerPage = 10,
+                    ItemsPerPage = 5,
                     TotalItems = workcenter.GetWorkCenterTotalCount(null)
                 },
                 CurrentCategory = null

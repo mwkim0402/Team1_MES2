@@ -58,7 +58,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>377D28B96B5BFC30818F6DD59A1684A8F6874542</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>A256241311B76BBA6F874EC2410409F42828D069</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>Mes_Factory_2_TemporaryKey.pfx</ManifestKeyFile>

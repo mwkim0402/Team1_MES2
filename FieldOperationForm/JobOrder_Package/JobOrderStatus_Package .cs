@@ -17,11 +17,7 @@ namespace FieldOperationForm
         Main_P main;
         string no;
         string start;
-        string wc;
-        string itemname;
-        string sd;
-        string qty;
-        string unit;
+        int a;
         List<WorkOrderCheckVo> processWorkList;
         List<ItemVo> itemList;
         List<WorkCenterPort> wcPortList;
@@ -234,15 +230,25 @@ namespace FieldOperationForm
 
         private void btn_FieldClose_Click(object sender, EventArgs e)
         {
-            if (start == "작업종료")
+          
+            PackageEnd_Service service1 = new PackageEnd_Service();
+            a = service1.EndPackage(no);
+            if (a > 0)
             {
-                WorkOrder_Service service = new WorkOrder_Service();
-                service.deadlineWork(no);
-                SetLoad();
+                MessageBox.Show("입고등록 후 마감해주세요", "알림");
             }
             else
             {
-                MessageBox.Show("종료된 작업지시를 선택해주세요.");
+                if (start == "작업종료")
+                {
+                    WorkOrder_Service service = new WorkOrder_Service();
+                    service.deadlineWork(no);
+                    SetLoad();
+                }
+                else
+                {
+                    MessageBox.Show("종료된 작업지시를 선택해주세요.");
+                }
             }
         }
 

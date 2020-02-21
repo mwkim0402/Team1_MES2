@@ -67,7 +67,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B557FEFEC2DF191191323AAF155A6341A754B12F</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>A427460E0A91EB546BC7BADB5CB559328EE3A1FA</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>FieldOperationForm_3_TemporaryKey.pfx</ManifestKeyFile>
@@ -176,6 +176,7 @@
     <Compile Include="FieldDac\Mold_Dac.cs" />
     <Compile Include="FieldDac\NonOperation_Dac.cs" />
     <Compile Include="FieldDac\Notice_Dac.cs" />
+    <Compile Include="FieldDac\PackageEnd_Dac.cs" />
     <Compile Include="FieldDac\Palette_Dac.cs" />
     <Compile Include="FieldDac\Process_Dac.cs" />
     <Compile Include="FieldDac\Roll_Dac.cs" />
@@ -197,6 +198,7 @@
     <Compile Include="FieldService\Mold_Service.cs" />
     <Compile Include="FieldService\NonOperation_Service.cs" />
     <Compile Include="FieldService\Notice_Service.cs" />
+    <Compile Include="FieldService\PackageEnd_Service.cs" />
     <Compile Include="FieldService\Palette_Service.cs" />
     <Compile Include="FieldService\Process_Service.cs" />
     <Compile Include="FieldService\Roll_Service.cs" />
@@ -206,6 +208,7 @@
     <Compile Include="FieldService\Workorderno_Service.cs" />
     <Compile Include="FieldService\WorkOrder_Service.cs" />
     <Compile Include="FieldVo\Barcode_Vo.cs" />
+    <Compile Include="FieldVo\PackageEnd_Vo.cs" />
     <Compile Include="FieldVo\PalletVO.cs" />
     <Compile Include="FieldVo\Condition_Vo.cs" />
     <Compile Include="FieldVo\CreatePalette_Vo.cs" />
@@ -443,22 +446,22 @@
   <ItemGroup>
     <PublishFile Include="Class\DataBase_XML.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="DataBase_XML.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

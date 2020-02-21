@@ -149,7 +149,9 @@ namespace WebApplication0106.DAC
             int iTotCount = 0;
             using (SqlConnection conn = new SqlConnection(strconn))
             {
-                string sql = "select count(*) totCount from WorkOrder w, WorkCenter_Master wc where w.Wc_Code = wc.Wc_Code";
+                string sql = @"select count(*) from WorkOrder w, WorkCenter_Master wc, Item_Master i
+                                where w.Item_Code = i.Item_Code
+                                and w.Wc_Code = wc.Wc_Code";
 
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, conn))

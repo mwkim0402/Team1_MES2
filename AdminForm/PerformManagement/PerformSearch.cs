@@ -32,6 +32,7 @@ namespace AdminForm
             frm = (MainForm)this.MdiParent;
             StartDate = dtpStart.Value;
             EndDate = dtpEnd.Value;
+            
         }
 
 

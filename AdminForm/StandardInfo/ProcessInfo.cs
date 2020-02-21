@@ -28,6 +28,7 @@ namespace AdminForm
             LoadData();
             BindCombo();
             dgvSearchResult.ColumnHeadersHeight = 30;
+            CommonClass.Userauthority(btnInsSave,btnUpButton);
         }
         private void LoadData()
         {

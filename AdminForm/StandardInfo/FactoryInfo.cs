@@ -27,6 +27,7 @@ namespace AdminForm
             ShowDgv();
             LoadList();
             ComboBind();
+            CommonClass.Userauthority(btnSave);
         }
         private void SearchClick(object sender, EventArgs e)
         {

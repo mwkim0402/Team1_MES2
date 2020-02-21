@@ -66,10 +66,6 @@
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             // 
-            // panel1
-            // 
-            this.panel1.Size = new System.Drawing.Size(1124, 103);
-            // 
             // tabPage2
             // 
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -114,6 +110,7 @@
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSave.Enabled = false;
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));

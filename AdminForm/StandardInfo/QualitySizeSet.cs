@@ -29,6 +29,7 @@ namespace AdminForm
             LoadList();
             ComboBind();
             dgvSelect.CellDoubleClick += ItemDataSearch;
+            CommonClass.Userauthority(btnSave);
         }
         private void SearchClick(object sender, EventArgs e)
         {

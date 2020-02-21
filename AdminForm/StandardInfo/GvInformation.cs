@@ -24,7 +24,8 @@ namespace AdminForm
         {
             frm = (MainForm)this.MdiParent;
             ShowDgv();
-           
+            CommonClass.Userauthority(btnSave,button1);
+
         }
 
         private void ShowDgv()

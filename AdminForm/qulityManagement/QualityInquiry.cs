@@ -27,7 +27,7 @@ namespace AdminForm
             StartDate = dtpStart.Value;
             EndDate = dtpEnd.Value;
             ShowDgv();
-            
+
         }
         private void GetData(object sender, EventArgs e)
         {
@@ -45,15 +45,15 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목코드", "Item_Code", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "품목명", "Item_Name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정항목", "Inspect_name", true, 120);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "USL", "USL", true, 100,DataGridViewContentAlignment.MiddleRight);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "SL", "SL", true, 100,DataGridViewContentAlignment.MiddleRight);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "LSL", "LSL", true, 100,DataGridViewContentAlignment.MiddleRight);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정일시", "Inspect_datetime", true, 150,DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "USL", "USL", true, 100, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "SL", "SL", true, 100, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "LSL", "LSL", true, 100, DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정일시", "Inspect_datetime", true, 150, DataGridViewContentAlignment.MiddleCenter);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "상세품목코드", "Inspect_code", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "상세품목명", "Inspect_name", true, 130);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정회차", "Inspect_date", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정순번", "Inspect_measure_seq", true, 120);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정값", "Inspect_val", true, 100,DataGridViewContentAlignment.MiddleRight);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "측정값", "Inspect_val", true, 100, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "Wc_Code", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "Process_Code", false, 100);
         }
@@ -72,26 +72,29 @@ namespace AdminForm
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            if((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode != null && fcFactory.SendCode !=""))
+            if (allList != null)
             {
-                List<QualityInquiryVO> list = (from item in allList
-                                               where item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
-                                               select item).ToList();
-                dgvSearchResult.DataSource = list;
-            }
-            else if((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode ==""))
-            {
-                List<QualityInquiryVO> list = (from item in allList
-                                               where item.Wc_Code == fcWork.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
-                                               select item).ToList();
-                dgvSearchResult.DataSource = list;
-            }
-            else if ((fcWork.SendCode == null || fcWork.SendCode =="") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
-            {
-                List<QualityInquiryVO> list = (from item in allList
-                                               where item.Process_code == fcFactory.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
-                                               select item).ToList();
-                dgvSearchResult.DataSource = list;
+                if ((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
+                {
+                    List<QualityInquiryVO> list = (from item in allList
+                                                   where item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                                   select item).ToList();
+                    dgvSearchResult.DataSource = list;
+                }
+                else if ((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode == ""))
+                {
+                    List<QualityInquiryVO> list = (from item in allList
+                                                   where item.Wc_Code == fcWork.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                                   select item).ToList();
+                    dgvSearchResult.DataSource = list;
+                }
+                else if ((fcWork.SendCode == null || fcWork.SendCode == "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
+                {
+                    List<QualityInquiryVO> list = (from item in allList
+                                                   where item.Process_code == fcFactory.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                                   select item).ToList();
+                    dgvSearchResult.DataSource = list;
+                }
             }
         }
 

@@ -138,27 +138,29 @@ namespace AdminForm
             //{
             //    MessageBox.Show("모든 항목을 선택해주세요.");
             //}
-
-            if ((fcWorker.SendCode != null && fcWorker.SendName != "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
+            if (allList != null)
             {
-                List<QualityVO> list = (from item in allList
-                                        where item.Process_code == fcFactory.SendCode && item.Wc_Name == fcWorker.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
-                                        select item).ToList();
-                dgvJob.DataSource = list;
-            }
-            else if ((fcWorker.SendCode != null && fcWorker.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode == ""))
-            {
-                List<QualityVO> list = (from item in allList
-                                        where item.Wc_Name == fcWorker.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
-                                        select item).ToList();
-                dgvJob.DataSource = list;
-            }
-            else if ((fcWorker.SendCode == null || fcWorker.SendCode == "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
-            {
-                List<QualityVO> list = (from item in allList
-                                        where item.Process_code == fcFactory.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
-                                        select item).ToList();
-                dgvJob.DataSource = list;
+                if ((fcWorker.SendCode != null && fcWorker.SendName != "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
+                {
+                    List<QualityVO> list = (from item in allList
+                                            where item.Process_code == fcFactory.SendCode && item.Wc_Name == fcWorker.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                            select item).ToList();
+                    dgvJob.DataSource = list;
+                }
+                else if ((fcWorker.SendCode != null && fcWorker.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode == ""))
+                {
+                    List<QualityVO> list = (from item in allList
+                                            where item.Wc_Name == fcWorker.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                            select item).ToList();
+                    dgvJob.DataSource = list;
+                }
+                else if ((fcWorker.SendCode == null || fcWorker.SendCode == "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
+                {
+                    List<QualityVO> list = (from item in allList
+                                            where item.Process_code == fcFactory.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                            select item).ToList();
+                    dgvJob.DataSource = list;
+                }
             }
         }
 

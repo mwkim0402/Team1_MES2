@@ -64,7 +64,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "x", "Process_name", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "x", "Def_Image", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvProductRequset, "x", "Def_Seq", false, 100);
-            
+
 
             GetData();
         }
@@ -89,8 +89,8 @@ namespace AdminForm
             WorkOrder = dgvJobOrder.Rows[e.RowIndex].Cells[1].Value.ToString();
 
 
-            
-            if(dgvJobOrder.Rows[e.RowIndex].Cells[8].Value != null)
+
+            if (dgvJobOrder.Rows[e.RowIndex].Cells[8].Value != null)
             {
                 //이미지 보여주기 해야함
 
@@ -156,26 +156,29 @@ namespace AdminForm
             //{
             //    MessageBox.Show("모든 항목을 선택해주세요.");
             //}
-            if ((fcWork.SendCode != null && fcWork.SendName != "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
+            if (allList != null)
             {
-                List<RegFaultyVO> list = (from item in allList
-                                          where item.Process_name == fcFactory.SendName && item.Wc_Name == fcWork.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
-                                          select item).ToList();
-                dgvProductRequset.DataSource = list;
-            }
-            else if ((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode == ""))
-            {
-                List<RegFaultyVO> list = (from item in allList
-                                          where item.Wc_Name == fcWork.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
-                                          select item).ToList();
-                dgvProductRequset.DataSource = list;
-            }
-            else if ((fcWork.SendCode == null || fcWork.SendCode == "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
-            {
-                List<RegFaultyVO> list = (from item in allList
-                                          where item.Process_name == fcFactory.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
-                                          select item).ToList();
-                dgvProductRequset.DataSource = list;
+                if ((fcWork.SendCode != null && fcWork.SendName != "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
+                {
+                    List<RegFaultyVO> list = (from item in allList
+                                              where item.Process_name == fcFactory.SendName && item.Wc_Name == fcWork.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                              select item).ToList();
+                    dgvProductRequset.DataSource = list;
+                }
+                else if ((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode == ""))
+                {
+                    List<RegFaultyVO> list = (from item in allList
+                                              where item.Wc_Name == fcWork.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                              select item).ToList();
+                    dgvProductRequset.DataSource = list;
+                }
+                else if ((fcWork.SendCode == null || fcWork.SendCode == "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
+                {
+                    List<RegFaultyVO> list = (from item in allList
+                                              where item.Process_name == fcFactory.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                              select item).ToList();
+                    dgvProductRequset.DataSource = list;
+                }
             }
         }
 
@@ -226,7 +229,7 @@ namespace AdminForm
                 }
             }
             else
-               MessageBox.Show("불량사진 넣을 항목을 선택해주세요.");
+                MessageBox.Show("불량사진 넣을 항목을 선택해주세요.");
         }
 
         private void btnFaltyIns_Click(object sender, EventArgs e)
@@ -237,18 +240,18 @@ namespace AdminForm
                 MES_DB.PerformService service = new MES_DB.PerformService();
                 ImageConverter converter = new ImageConverter();
                 byte[] imagebyte = (byte[])converter.ConvertTo(pic.Image, typeof(byte[]));
-                service.InsFaltyImage(fileName, imagebyte, WorkOrder,Convert.ToInt32(nuFaultyCount.Value));
+                service.InsFaltyImage(fileName, imagebyte, WorkOrder, Convert.ToInt32(nuFaultyCount.Value));
 
 
                 dgvJobOrder.DataSource = null;
                 GetData();
                 frm.btnS.PerformClick();
-                
+
             }
             else
             {
                 MessageBox.Show("수량을 선택해주세요.");
-                
+
             }
         }
     }

@@ -206,6 +206,7 @@
     <Compile Include="FieldService\Workorderno_Service.cs" />
     <Compile Include="FieldService\WorkOrder_Service.cs" />
     <Compile Include="FieldVo\Barcode_Vo.cs" />
+    <Compile Include="FieldVo\PalletVO.cs" />
     <Compile Include="FieldVo\Condition_Vo.cs" />
     <Compile Include="FieldVo\CreatePalette_Vo.cs" />
     <Compile Include="FieldVo\GoodHistory_Vo.cs" />

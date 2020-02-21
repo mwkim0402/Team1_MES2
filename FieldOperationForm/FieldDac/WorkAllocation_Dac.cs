@@ -114,6 +114,66 @@ namespace FieldOperationForm
 
             }
         }
+        public List<WorkAssignment_Vo>deleteWorkerHistory(string User_Name)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "deleteWorkerHistory";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@User_Name", User_Name);
+
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkAssignment_Vo> list = Helper.DataReaderMapToList<WorkAssignment_Vo>(reader);
+                cmd.Connection.Close();
+
+                return list;
+
+
+            }
+        }
+        public List<WorkAssignment_Vo>InsertWorkerHistory (WorkAssignment_Vo item)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "InsertWorkerHistory";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Wc_Name", item.Wc_Name);
+                cmd.Parameters.AddWithValue("@User_Name", item.User_Name);
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkAssignment_Vo> list = Helper.DataReaderMapToList<WorkAssignment_Vo>(reader);
+                cmd.Connection.Close();
+
+                return list;
+
+
+            }
+        }
+        public List<WorkAssignment_Vo>deleteAllWorkerHistory(string Wc_Name)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = "deleteAllWorkerHistory";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Wc_Name", Wc_Name);
+
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkAssignment_Vo> list = Helper.DataReaderMapToList<WorkAssignment_Vo>(reader);
+                cmd.Connection.Close();
+
+                return list;
+
+
+            }
+        }
 
     }
 }

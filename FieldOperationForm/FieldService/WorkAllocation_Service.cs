@@ -39,5 +39,20 @@ namespace FieldOperationForm
             WorkAllocation_Dac dac = new WorkAllocation_Dac();
             return dac.deleteAllWorker(Wc_Name);
         }
+        public List<WorkAssignment_Vo> InsertWorkerHistory(WorkAssignment_Vo item)
+        {
+            WorkAllocation_Dac dac = new WorkAllocation_Dac();
+            return dac.InsertWorkerHistory(item);
+        }
+        public List<WorkAssignment_Vo> deleteWorkerHistory(string User_Name)
+        {
+            WorkAllocation_Dac dac = new WorkAllocation_Dac();
+            return dac.deleteWorkerHistory(User_Name);
+        }
+        public List<WorkAssignment_Vo> deleteAllWorkerHistory(string Wc_Name)
+        {
+            WorkAllocation_Dac dac = new WorkAllocation_Dac();
+            return dac.deleteAllWorkerHistory(Wc_Name);
+        }
     }
 }

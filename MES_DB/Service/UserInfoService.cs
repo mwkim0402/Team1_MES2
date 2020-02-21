@@ -23,5 +23,10 @@ namespace MES_DB
             UserInfoDac dac = new UserInfoDac();
             dac.InsImage(user);
         }
+        public List<ItemCodeListVO> GetList()
+        {
+            UserDAC dac = new UserDAC();
+            return dac.GetList();
+        }
     }
 }

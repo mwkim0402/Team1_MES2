@@ -104,6 +104,19 @@ namespace AdminForm
             allList = service.GetAllUserManager();
 
             dgvSearchResult.DataSource = allList;
+
+
+            UserInfoService ser = new UserInfoService();
+            List<ItemCodeListVO> processList = ser.GetList();
+            List<ComboItem> proList = new List<ComboItem>();
+
+            foreach(var item in processList)
+            {
+                InsertCombo(proList, item);
+            }
+
+            ComboClass.ComboBind(proList, cmbProcess, true);
+            ComboClass.ComboBind(proList, cmbEditProcess, true);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -281,6 +294,14 @@ namespace AdminForm
                 txtEditGroupName.Text = "임원";
             }
             
+        }
+
+        private static void InsertCombo(List<ComboItem> itemlist, ItemCodeListVO item)
+        {
+            ComboItem combo = new ComboItem();
+            combo.comboText = item.Item_Code;
+            combo.comboValue = item.Item_Code;
+            itemlist.Add(combo);
         }
     }
 }

@@ -34,4 +34,9 @@ namespace MES_DB
         
         
     }
+
+    public class ItemCodeListVO
+    {
+        public string ProcessName { get; set; }
+    }
 }

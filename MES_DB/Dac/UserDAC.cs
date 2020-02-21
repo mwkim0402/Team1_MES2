@@ -98,6 +98,23 @@ namespace MES_DB
             }
         }
 
+        public List<ItemCodeListVO> GetList()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "select Process_name from Process_Master ";
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ItemCodeListVO> list = Helper.DataReaderMapToList<ItemCodeListVO>(reader);
+                cmd.Connection.Close();
+                return list;
+            }
+        }
+
+
         public void InsUserManager(UserManagerVO user)
         {
             using (SqlCommand cmd = new SqlCommand())

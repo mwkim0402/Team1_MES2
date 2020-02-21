@@ -82,7 +82,7 @@ namespace AdminForm
         }
         private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsDigit(e.KeyChar))
+            if(!char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Back))
             {
                 MessageBox.Show("숫자를 입력해주세요.");
                 e.Handled = true;
@@ -106,6 +106,7 @@ namespace AdminForm
             }
             else
             {
+                btnOK.DialogResult = DialogResult.No;
                 MessageBox.Show("모든 항목에 값을 선택,입력해주세요.");
             }
         }

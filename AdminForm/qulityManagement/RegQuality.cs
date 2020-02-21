@@ -69,7 +69,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvDetail, "측정항목", "Inspect_name", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvDetail, "기준값", "SL", true, 100);
 
-            dgvDetaillist.CellDoubleClick += DgvDetaillist_CellDoubleClick;
+
             CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "측정일시", "Inspect_Datetime", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "품목코드", "Item_Code", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvDetaillist, "품목명", "Item_Name", true, 100);
@@ -124,7 +124,6 @@ namespace AdminForm
             dgvDetaillist.DataSource = list;
             btnAdd.Enabled = true;
             btnRemove.Enabled = true;
-            txtNum.Enabled = true;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -205,11 +204,16 @@ namespace AdminForm
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // 등록으로 바꿔야 함
-            if (check != "" && check != null)
-            {
-
+           
                 QulityRegisterForm frm = new QulityRegisterForm(InsVO);
-                frm.ShowDialog();
+                if(frm.ShowDialog() == DialogResult.OK)
+                {
+                    dgvJob.DataSource = null;
+                    dgvDetail.DataSource = null;
+                    dgvDetaillist.DataSource = null;
+                    ShowDgv();
+                    MakeDgv();
+                }
 
                 //    MES_DB.PerformService service = new MES_DB.PerformService();
                 //    service.UpdateRegQulityForm(Convert.ToInt32(txtNum.Text), workOrderNo);
@@ -219,18 +223,9 @@ namespace AdminForm
                 //    dgvDetaillist.DataSource = null;
                 //    ShowDgv();
 
-            }
-            else
-            {
-
-                MessageBox.Show("변경 해야 할 셀을 선택해주세요.");
-            }
 
         }
-        private void DgvDetaillist_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            check = dgvDetaillist.Rows[e.RowIndex].Cells[0].Value.ToString();
-        }
+       
 
         private void btnRemove_Click(object sender, EventArgs e)
         {

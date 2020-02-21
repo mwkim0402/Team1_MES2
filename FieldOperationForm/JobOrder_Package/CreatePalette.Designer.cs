@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cb_Item = new System.Windows.Forms.ComboBox();
             this.txt_unit = new System.Windows.Forms.TextBox();
@@ -57,6 +57,8 @@
             this.btn_Print = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.txt_EItemNum = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -237,8 +239,8 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(875, 428);
@@ -250,6 +252,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.txt_EItemNum);
+            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.txt_RatingDetail);
             this.groupBox1.Controls.Add(this.txt_Rating);
             this.groupBox1.Controls.Add(this.txt_PaletteNum);
@@ -270,7 +274,7 @@
             // 
             this.txt_RatingDetail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_RatingDetail.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_RatingDetail.Location = new System.Drawing.Point(220, 159);
+            this.txt_RatingDetail.Location = new System.Drawing.Point(220, 134);
             this.txt_RatingDetail.Multiline = true;
             this.txt_RatingDetail.Name = "txt_RatingDetail";
             this.txt_RatingDetail.ReadOnly = true;
@@ -281,7 +285,7 @@
             // 
             this.txt_Rating.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_Rating.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_Rating.Location = new System.Drawing.Point(220, 93);
+            this.txt_Rating.Location = new System.Drawing.Point(220, 77);
             this.txt_Rating.Multiline = true;
             this.txt_Rating.Name = "txt_Rating";
             this.txt_Rating.ReadOnly = true;
@@ -292,7 +296,7 @@
             // 
             this.txt_PaletteNum.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_PaletteNum.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_PaletteNum.Location = new System.Drawing.Point(220, 27);
+            this.txt_PaletteNum.Location = new System.Drawing.Point(220, 20);
             this.txt_PaletteNum.Multiline = true;
             this.txt_PaletteNum.Name = "txt_PaletteNum";
             this.txt_PaletteNum.ReadOnly = true;
@@ -303,11 +307,12 @@
             // 
             this.txt_PaletteQuantity.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_PaletteQuantity.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_PaletteQuantity.Location = new System.Drawing.Point(220, 291);
+            this.txt_PaletteQuantity.Location = new System.Drawing.Point(220, 248);
             this.txt_PaletteQuantity.Multiline = true;
             this.txt_PaletteQuantity.Name = "txt_PaletteQuantity";
             this.txt_PaletteQuantity.Size = new System.Drawing.Size(368, 41);
             this.txt_PaletteQuantity.TabIndex = 20;
+            this.txt_PaletteQuantity.TextChanged += new System.EventHandler(this.txt_PaletteQuantity_TextChanged);
             // 
             // label7
             // 
@@ -315,17 +320,17 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.Ivory;
-            this.label7.Location = new System.Drawing.Point(41, 297);
+            this.label7.Location = new System.Drawing.Point(41, 254);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 28);
+            this.label7.Size = new System.Drawing.Size(134, 28);
             this.label7.TabIndex = 21;
-            this.label7.Text = "수량";
+            this.label7.Text = "팔레트 수량";
             // 
             // txt_Size
             // 
             this.txt_Size.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_Size.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_Size.Location = new System.Drawing.Point(220, 225);
+            this.txt_Size.Location = new System.Drawing.Point(220, 191);
             this.txt_Size.Multiline = true;
             this.txt_Size.Name = "txt_Size";
             this.txt_Size.ReadOnly = true;
@@ -338,7 +343,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.ForeColor = System.Drawing.Color.Ivory;
-            this.label8.Location = new System.Drawing.Point(41, 231);
+            this.label8.Location = new System.Drawing.Point(41, 197);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 28);
             this.label8.TabIndex = 19;
@@ -350,7 +355,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.ForeColor = System.Drawing.Color.Ivory;
-            this.label9.Location = new System.Drawing.Point(41, 165);
+            this.label9.Location = new System.Drawing.Point(41, 140);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(111, 28);
             this.label9.TabIndex = 16;
@@ -362,7 +367,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.ForeColor = System.Drawing.Color.Ivory;
-            this.label10.Location = new System.Drawing.Point(41, 99);
+            this.label10.Location = new System.Drawing.Point(41, 83);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 28);
             this.label10.TabIndex = 14;
@@ -374,7 +379,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label11.ForeColor = System.Drawing.Color.Ivory;
-            this.label11.Location = new System.Drawing.Point(41, 33);
+            this.label11.Location = new System.Drawing.Point(41, 26);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(134, 28);
             this.label11.TabIndex = 12;
@@ -424,6 +429,29 @@
             this.label12.Size = new System.Drawing.Size(58, 28);
             this.label12.TabIndex = 21;
             this.label12.Text = "등급";
+            // 
+            // txt_EItemNum
+            // 
+            this.txt_EItemNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_EItemNum.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txt_EItemNum.Location = new System.Drawing.Point(220, 305);
+            this.txt_EItemNum.Multiline = true;
+            this.txt_EItemNum.Name = "txt_EItemNum";
+            this.txt_EItemNum.ReadOnly = true;
+            this.txt_EItemNum.Size = new System.Drawing.Size(368, 41);
+            this.txt_EItemNum.TabIndex = 25;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label13.ForeColor = System.Drawing.Color.Ivory;
+            this.label13.Location = new System.Drawing.Point(41, 311);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(104, 28);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "제품수량";
             // 
             // CreatePalette
             // 
@@ -481,5 +509,7 @@
         private System.Windows.Forms.ComboBox cb_Item;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txt_EItemNum;
+        private System.Windows.Forms.Label label13;
     }
 }

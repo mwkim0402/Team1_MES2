@@ -57,7 +57,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Inspect_code", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Plan_Date", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "deviation", false, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Inspect_Measure_seq", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Inspect_Measure_seq", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Inspect_Val", false, 100);
 
             MakeDgv();

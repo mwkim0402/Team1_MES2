@@ -64,6 +64,8 @@
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.lblLogo = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.pnlMainButton.SuspendLayout();
@@ -73,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -325,6 +328,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.lblAlert);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.toolStrip1);
@@ -465,6 +469,32 @@
             this.lblLogo.Size = new System.Drawing.Size(237, 131);
             this.lblLogo.TabIndex = 108;
             // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Location = new System.Drawing.Point(47, 0);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(153, 30);
+            this.button8.TabIndex = 109;
+            this.button8.Text = "로그아웃";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.button8);
+            this.panel4.Location = new System.Drawing.Point(1122, 50);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 30);
+            this.panel4.TabIndex = 110;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -481,6 +511,7 @@
             this.Name = "MainForm";
             this.Text = "MES_Solution";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pnlMenu.ResumeLayout(false);
@@ -495,6 +526,7 @@
             this.panel3.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -534,5 +566,7 @@
         public System.Windows.Forms.Label lblLocation;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label lblAlert;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button button8;
     }
 }

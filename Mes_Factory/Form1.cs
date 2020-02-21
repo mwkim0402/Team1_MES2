@@ -25,6 +25,7 @@ namespace Mes_Factory
         WorkCenterService wcService = new WorkCenterService();
         List<WorkOrderCheckVo> processWorkList;
         List<ItemVo> itemList;
+        List<WorkOrder> wcList = new List<WorkOrder>();
         string workOrderNo = string.Empty;
         string workCenterNo = ConfigurationManager.AppSettings["Wc_Code"];
         string processName = ConfigurationManager.AppSettings["Process_Name"];
@@ -56,7 +57,7 @@ namespace Mes_Factory
             label9.Text = DateTime.Now.ToString("tt hh:mm:ss");
             //Console.WriteLine($"--- {workCenterNo} 작동---");
             SetLoad();
-            label5.Text = workCenterNo;
+           // label5.Text = workCenterNo;
             label10.Text = processName+ " -";
            //AsyncEchoServer();
             mainTimer = new System.Timers.Timer(1000);
@@ -71,6 +72,8 @@ namespace Mes_Factory
             processWorkList = service2.GetPrcocess_Workorder(processName);
             ItemService service3 = new ItemService();
             itemList = service3.GetAllItemInfo();
+            WorkCenterService workService = new WorkCenterService();
+            label5.Text = workService.GetAllWorkCenter().Find(x => x.Wc_Code == workCenterNo).Wc_Name;
         }
 
 
@@ -88,7 +91,7 @@ namespace Mes_Factory
             int UPHperSecond = (int)itemList.Find(x => x.Item_Code == processWorkList.Find(y => y.Workorderno == workWorderNo).Item_Code).IronUPH / 60 / 20;
             Random rnd = new Random((int)DateTime.UtcNow.Ticks);
             int faultyQty = rnd.Next(0, 3);
-            int randomProd = rnd.Next(0, 10);
+            int randomProd = rnd.Next(0, 5);
             int randSum = rnd.Next(0, 2);
             TcpClient tc = new TcpClient("127.0.0.2", 7000);
             NetworkStream stream = tc.GetStream();
@@ -111,8 +114,8 @@ namespace Mes_Factory
                 Balance -= (UPHperSecond - faultyQty);
                 // Console.WriteLine($"잔여수량 : {Balance}, 생산수량 : {UPHperSecond - faultyQty}, 불량수량 : {faultyQty}");
                 setText_ListBox(listBox1, $"잔여수량 : {Balance}, 생산수량 : {UPHperSecond - faultyQty}, 불량수량 : {faultyQty}");
-                setText_Label(lblInQty, (int.Parse(lblInQty.Text) + UPHperSecond + faultyQty).ToString());
-                setText_Label(lblPrdQty, (int.Parse(lblPrdQty.Text) + UPHperSecond).ToString());
+                setText_Label(lblInQty, (int.Parse(lblInQty.Text) + UPHperSecond).ToString());
+                setText_Label(lblPrdQty, (int.Parse(lblPrdQty.Text) + UPHperSecond - faultyQty).ToString());
                 setText_Label(lblBadQty, (int.Parse(lblBadQty.Text) + faultyQty).ToString());
                 setText_Label(label4, String.Format("{0:0.##}", (double.Parse(lblPrdQty.Text) / PrdQty)*100));
                // setText_ProgressBar(progressBar1,(int.Parse(lblPrdQty.Text) / PrdQty)*100);
@@ -270,8 +273,7 @@ namespace Mes_Factory
                 {
                     if (isFirst)
                     {
-                        setText_ListBox(listBox1, " ");
-                        setText_ListBox(listBox1, "------ 작업 시작 ------");
+                        setText_ListBox(listBox1, "--------------작업시작---------------");
                         service.UpdateWorkStatus(workOrderNo, "작업중");
                         setText_TextBox(textBox1, workOrderNo);
                         wcService.WcStatusUpdate(ConfigurationManager.AppSettings["Wc_Code"], "RUN");
@@ -288,7 +290,10 @@ namespace Mes_Factory
                     isFirst = true;
                     service.UpdateWorkStatus(workOrderNo, "작업종료");
                     wcService.WcStatusUpdate(ConfigurationManager.AppSettings["Wc_Code"], "STOP");
-                    setText_ListBox(listBox1, "------ 작업 종료 ------");
+                    setText_ListBox(listBox1, "--------------생산완료---------------");
+                    setText_ListBox(listBox1, $"총 투입 개수 : {lblInQty.Text}/ 양품 개수 : {lblPrdQty.Text}/ 불량 개수 : {lblBadQty.Text}");
+                    setText_ListBox(listBox1, "--------------작업종료---------------");
+                    setText_ListBox(listBox1, " ");
                 }
             }
         }
@@ -318,8 +323,25 @@ namespace Mes_Factory
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            progressBar1.Value = (int)(double.Parse(label4.Text));
+            if ((int)(double.Parse(label4.Text)) == 100)
+            {
+                progressBar1.Value = 99;
+            }
+            else
+            {
+                progressBar1.Value = (int)(double.Parse(label4.Text));
+            }
             timer3.Stop();
+        }
+
+        private void lblInQty_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPrdQty_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

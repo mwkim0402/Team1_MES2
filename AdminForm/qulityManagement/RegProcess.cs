@@ -54,7 +54,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "SL", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Condition_Val", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Wc_Code", false, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Condition_measure_seq", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Condition_measure_seq", false, 100);
 
             MakeDgv();
 

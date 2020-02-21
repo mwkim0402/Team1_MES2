@@ -204,10 +204,10 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
             CreatePal();
             SetPaletteList();
 
-            string c;
+          string c;
             string f;
             string t;
-            c = txt_PaletteQuantity.Text;
+            c = txt_ResultNum.Text;
             f = txt_Item.Text;
             t = txt_unit.Text;
 
@@ -225,7 +225,7 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
             }
                // Barcode_Service service = new Barcode_Service();
             
-            XtraReport1 rpt = new XtraReport1( c, f, t);
+            XtraReport1 rpt = new XtraReport1(c,  f, t);
             //   rpt.DataSource = service.GetBarcode(cb_Item.Text);
             rpt.DataSource = ds.Tables["Barcode_No"];
             BarCode frm = new BarCode(rpt);
@@ -238,11 +238,11 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
             CreatePalette_Vo vo = new CreatePalette_Vo();
             vo.Workorderno = cb_Item.Text;
             vo.Pallet_No = txt_PaletteNum.Text;
-            vo.Prd_Qty =Convert.ToInt32( txt_PaletteQuantity.Text);
+         //   vo.Pallet_Qty =Convert.ToInt32( txt_PaletteQuantity.Text);
             vo.Size_Code = txt_Size.Text;
             vo.Grade_Code = txt_Rating.Text;
             vo.Grade_Detail_Code = txt_RatingDetail.Text;
-
+            vo.Prd_Qty = Convert.ToInt32(txt_ResultNum.Text);
             CreatePalette_Service service = new CreatePalette_Service();
             service.CreatePalette(vo);
         }

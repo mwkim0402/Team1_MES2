@@ -35,11 +35,12 @@ namespace AdminForm
         }
         private void Search_Click(object sender, EventArgs e)
         {
-            frm = (MainForm)this.MdiParent;
-            using (FrmWaitForm frm = new FrmWaitForm(setAction))
-            {
-                frm.ShowDialog(this);
-            }
+            setAction();
+            //frm = (MainForm)this.MdiParent;
+            //using (FrmWaitForm frm = new FrmWaitForm(setAction))
+            //{
+            //    frm.ShowDialog(this);
+            //}
         }
         private void setAction()
         {

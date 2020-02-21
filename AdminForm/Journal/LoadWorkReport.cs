@@ -52,10 +52,11 @@ namespace AdminForm
         }
         public void Search_Click(object sender, EventArgs e)
         {
-            using (FrmWaitForm frm = new FrmWaitForm(setAction))
-            {
-                frm.ShowDialog(this);
-            }
+            setAction();
+            //using (FrmWaitForm frm = new FrmWaitForm(setAction))
+            //{
+            //    frm.ShowDialog(this);
+            //}
         }
 
         private void setAction()

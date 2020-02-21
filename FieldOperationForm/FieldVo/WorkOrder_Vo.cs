@@ -13,7 +13,7 @@ namespace FieldOperationForm
         public string Wc_Name { get; set; }
         public string Item_Name { get; set; }
        // public string Plan_Unit { get; set; }
-        public int Prd_Qty { get; set; }
+        public int Plan_Qty { get; set; }
 
         public DateTime Plan_Date { get; set; }
 

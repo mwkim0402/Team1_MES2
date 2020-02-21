@@ -67,7 +67,7 @@ namespace FieldOperationForm
             AddNewColumnToDataGridView(dataGridView1, "할당작업장", "Wc_Name", true, 230);
             AddNewColumnToDataGridView(dataGridView1, "품목명", "Item_Name", true, 230);
 
-            AddNewColumnToDataGridView(dataGridView1, "생산수량", "Prd_Qty", true, 140);
+            AddNewColumnToDataGridView(dataGridView1, "계획수량", "Plan_Qty", true, 140);
             AddNewColumnToDataGridView(dataGridView1, "생산일자", "Plan_Date", true, 180);
             AddNewColumnToDataGridView(dataGridView1, "계획시작시간", "Plan_Starttime", true, 187);
             AddNewColumnToDataGridView(dataGridView1, "생산시작시간", "Prd_Starttime", true, 186);
@@ -156,6 +156,7 @@ namespace FieldOperationForm
                 else
                 {
                     Start_Factory();
+                    SetLoad();
                 }
             }
         }

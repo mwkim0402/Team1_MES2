@@ -203,13 +203,13 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
         {
             CreatePal();
             SetPaletteList();
-
+         
           string c;
             string f;
             string t;
             c = txt_ResultNum.Text;
-            f = txt_Item.Text;
-            t = txt_unit.Text;
+            t = txt_Item.Text;
+            f = cb_Item.Text;
 
             string strConn = ConfigurationManager.ConnectionStrings["Project"].ConnectionString;
             DataSet ds = new DataSet();

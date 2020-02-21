@@ -59,13 +59,14 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
         private void Setdgv()
         {
 
-            AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "Workorderno", true, 360);
-            AddNewColumnToDataGridView(dataGridView1, "팔레트번호", "Pallet_No", true, 182);
+            AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "Workorderno", true, 450);
+            AddNewColumnToDataGridView(dataGridView1, "팔레트번호", "Pallet_No", true, 200);
             AddNewColumnToDataGridView(dataGridView1, "바코드번호", "Barcode_No", false, 300);
             AddNewColumnToDataGridView(dataGridView1, "제품", "Item_Name", true, 200);
-            AddNewColumnToDataGridView(dataGridView1, "날짜", "Print_Date", true, 300);
+            AddNewColumnToDataGridView(dataGridView1, "날짜", "aa", true, 325);
+     //        AddNewColumnToDataGridView(dataGridView1, "날짜", "Print_Date", false, 300);
             AddNewColumnToDataGridView(dataGridView1, "수량", "Prd_Qty", true, 150);
-            AddNewColumnToDataGridView(dataGridView1, "단위", "Plan_Unit", true, 150);
+            AddNewColumnToDataGridView(dataGridView1, "단위", "Plan_Unit", false, 150);
             AddNewColumnToDataGridView(dataGridView1, "날짜", "StartDate", false, 130);
             AddNewColumnToDataGridView(dataGridView1, "날짜", "EndDate", false, 130);
             
@@ -80,8 +81,12 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
 
 
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dgv_NonOperation.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dgv_NonOperation.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
 
 
@@ -151,14 +156,14 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
             {
                 a = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                 txt_PaletteNum.Text = a;
-                f = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                t = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+                t = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                f = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
 
                 TextSet();
             }
-            catch(Exception err)
+            catch
             {
-                MessageBox.Show(err.Message);
+            
             }
         }
 

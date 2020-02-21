@@ -61,7 +61,7 @@ namespace MES_DB
         public decimal Condition_Val { get; set; }
         public string Wc_Code { get; set; }
         public string Wc_Name { get; set; }
-        public int Condition_measure_seq { get; set; }
+        public long Condition_measure_seq { get; set; }
 
 
     }

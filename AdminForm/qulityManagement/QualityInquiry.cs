@@ -95,6 +95,17 @@ namespace AdminForm
                                                    select item).ToList();
                     dgvSearchResult.DataSource = list;
                 }
+                else if ((fcFactory.SendCode == null || fcFactory.SendCode == "") && (fcWork.SendCode == null || fcWork.SendCode == ""))
+                {
+                    List<QualityInquiryVO> list = (from item in allList
+                                                   where item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                                   select item).ToList();
+                    dgvSearchResult.DataSource = list;
+                }
+            }
+            else
+            {
+                MessageBox.Show("전체조회를 눌러주세요.");
             }
         }
 

@@ -39,10 +39,11 @@ namespace AdminForm
 
         private void Search_Click(object sender, EventArgs e)
         {
-            using (FrmWaitForm frm = new FrmWaitForm(setAction))
-            {
-                frm.ShowDialog(this);
-            }
+            setAction();
+            //using (FrmWaitForm frm = new FrmWaitForm(setAction))
+            //{
+            //    frm.ShowDialog(this);
+            //}
         }
 
         private void setAction()
@@ -87,9 +88,9 @@ namespace AdminForm
         }
         private void Print_Click(object sender, EventArgs e)
         {
-            using (FrmWaitForm frm = new FrmWaitForm(printAction))
+            using (FrmWaitForm frm1 = new FrmWaitForm(printAction))
             {
-                frm.ShowDialog(this);
+                frm1.ShowDialog(this);
             }
 
         }

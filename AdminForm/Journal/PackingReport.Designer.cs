@@ -158,7 +158,7 @@
             this.productName.StylePriority.UseFont = false;
             this.productName.StylePriority.UsePadding = false;
             this.productName.Text = "ProductName";
-            this.productName.Weight = 0.30826003444165562D;
+            this.productName.Weight = 0.7384616518098166D;
             // 
             // xrTableCell19
             // 
@@ -173,7 +173,7 @@
             this.xrTableCell19.StylePriority.UseFont = false;
             this.xrTableCell19.StylePriority.UsePadding = false;
             this.xrTableCell19.Text = "xrTableCell19";
-            this.xrTableCell19.Weight = 0.744299529859206D;
+            this.xrTableCell19.Weight = 0.60089889228342241D;
             // 
             // quantity
             // 
@@ -186,7 +186,7 @@
             this.quantity.StylePriority.UseTextAlignment = false;
             this.quantity.Text = "1";
             this.quantity.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.quantity.Weight = 1.1475203806017904D;
+            this.quantity.Weight = 1.0178335950907314D;
             // 
             // unitPrice
             // 
@@ -199,7 +199,7 @@
             this.unitPrice.StylePriority.UseTextAlignment = false;
             this.unitPrice.Text = "0.00";
             this.unitPrice.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.unitPrice.Weight = 0.6900633901078741D;
+            this.unitPrice.Weight = 0.53294919582655564D;
             // 
             // lineTotal
             // 
@@ -904,7 +904,7 @@
             this.productNameCaption.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 25, 38, 0, 254F);
             this.productNameCaption.StylePriority.UsePadding = false;
             this.productNameCaption.Text = "작업지시번호";
-            this.productNameCaption.Weight = 0.24595404142697142D;
+            this.productNameCaption.Weight = 0.58919773801725D;
             // 
             // quantityCaption
             // 
@@ -914,7 +914,7 @@
             this.quantityCaption.StylePriority.UseTextAlignment = false;
             this.quantityCaption.Text = "제품명";
             this.quantityCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.quantityCaption.Weight = 0.59385108953612775D;
+            this.quantityCaption.Weight = 0.47943651615079097D;
             // 
             // unitPriceCaption
             // 
@@ -923,7 +923,7 @@
             this.unitPriceCaption.StylePriority.UseTextAlignment = false;
             this.unitPriceCaption.Text = "작업장명";
             this.unitPriceCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.unitPriceCaption.Weight = 0.91556735058937011D;
+            this.unitPriceCaption.Weight = 0.81209444072064829D;
             // 
             // lineTotalCaption
             // 
@@ -932,7 +932,7 @@
             this.lineTotalCaption.StylePriority.UseTextAlignment = false;
             this.lineTotalCaption.Text = "계획 수량";
             this.lineTotalCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.lineTotalCaption.Weight = 0.55057837116473252D;
+            this.lineTotalCaption.Weight = 0.42522215782851247D;
             // 
             // xrTableCell18
             // 

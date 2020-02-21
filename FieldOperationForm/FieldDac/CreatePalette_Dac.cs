@@ -21,6 +21,7 @@ namespace FieldOperationForm
                 cmd.Parameters.AddWithValue("@Workorderno ", item.Workorderno);
                 cmd.Parameters.AddWithValue("@Pallet_No", item.Pallet_No);
                 cmd.Parameters.AddWithValue("@Prd_Qty", item.Prd_Qty);
+             //   cmd.Parameters.AddWithValue("@Pallet_Qty", item.Pallet_Qty);
                 cmd.Parameters.AddWithValue("@Grade_Code", item.Grade_Code);
                 cmd.Parameters.AddWithValue("@Size_Code", item.Size_Code);
                 cmd.Parameters.AddWithValue("@Grade_Detail_Code", item.Grade_Detail_Code);

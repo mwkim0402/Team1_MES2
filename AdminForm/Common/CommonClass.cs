@@ -25,7 +25,7 @@ namespace AdminForm
             col.DefaultCellStyle.Alignment = textAlign;
             dgv.Columns.Add(col);
 
-            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;            
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
             dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;
             dgv.EnableHeadersVisualStyles = false;
 
@@ -72,17 +72,9 @@ namespace AdminForm
             }
         }
 
-        public static void Userauthority(Button Insert, Button Edit, string ScreenName)
+        public static void Userauthority(Button Insert, Button Edit)
         {
             // 폼마다 유저 권한 확인 후 버튼 사용여부 설정
-
-            //LoginService service = new LoginService();
-            //LoginVO userVO = new LoginVO();
-            ////userVO.User_ID = Global.User_ID;
-            //userVO.Screen_Code = ScreenName;
-            //List<LoginVO> list = service.LoginAuthority(userVO);
-
-
             string[] Authority = Global.Authority.Split(',');
             // 로그인 했을때만 가능
             if (Authority != null)
@@ -102,5 +94,25 @@ namespace AdminForm
                 }
             }
         }
+        public static void Userauthority(Button Insert)
+        {
+            // 폼마다 유저 권한 확인 후 버튼 사용여부 설정
+            string[] Authority = Global.Authority.Split(',');
+            // 로그인 했을때만 가능
+            if (Authority != null)
+            {
+                Insert.Enabled = false;
+                for (int i = 0; i < Authority.Length; i++)
+                {
+                    if (Authority[i] == "추가")
+                    {
+                        Insert.Enabled = true;
+                    }
+                }
+            }
+        }
     }
 }
+
+
+

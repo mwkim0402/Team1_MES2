@@ -43,6 +43,7 @@ namespace FieldOperationForm
             col.ReadOnly = true;
             col.DefaultCellStyle.Alignment = textAlign;
             dgv.Columns.Add(col);
+            col.DefaultCellStyle.Padding = new Padding(3);
 
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.Honeydew;
             //    dgv.RowsDefaultCellStyle.BackColor = Color.Ivory;
@@ -55,43 +56,51 @@ namespace FieldOperationForm
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
-            dgv.DefaultCellStyle.SelectionBackColor = Color.DarkSlateGray;
+            dgv.DefaultCellStyle.SelectionBackColor = Color.CadetBlue;
+
+            dgv.RowTemplate.Height = 60;
         }
 
         private void Setdgv()
         {
 
-            AddNewColumnToDataGridView(dataGridView1, "측정항목", "Condition_Group", true, 207);
-            AddNewColumnToDataGridView(dataGridView1, "USL", "USL", true, 160);
-            AddNewColumnToDataGridView(dataGridView1, "SL", "SL", true, 160);
-            AddNewColumnToDataGridView(dataGridView1, "LSL", "LSL", true, 160);
+            AddNewColumnToDataGridView(dataGridView1, "측정항목", "Condition_Group", true, 240);
+            AddNewColumnToDataGridView(dataGridView1, "USL", "USL", true, 170);
+            AddNewColumnToDataGridView(dataGridView1, "SL", "SL", true, 170);
+            AddNewColumnToDataGridView(dataGridView1, "LSL", "LSL", true, 170);
             AddNewColumnToDataGridView(dataGridView1, "LSL", "Wc_Name", false, 160);
             AddNewColumnToDataGridView(dataGridView1, "LSL", "Item_Name", false, 160);
 
-            this.dataGridView1.Font = new Font("나눔고딕", 14, FontStyle.Bold);
-            this.dataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 15, FontStyle.Bold);
+            this.dataGridView1.Font = new Font("나눔고딕", 17, FontStyle.Bold);
+            this.dataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 17, FontStyle.Regular);
 
 
 
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dgv_NonOperation.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dgv_NonOperation.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
 
-            AddNewColumnToDataGridView(dataGridView2, "측정그룹", "Condition_Group", true, 200);
-            AddNewColumnToDataGridView(dataGridView2, "측정값", "Condition_Val", true, 212);
-            AddNewColumnToDataGridView(dataGridView2, "측정일시", "Condition_Datetime", true, 180);
+            AddNewColumnToDataGridView(dataGridView2, "측정그룹", "Condition_Group", true, 340);
+            AddNewColumnToDataGridView(dataGridView2, "측정일시", "Condition_Datetime", true, 530);
+            AddNewColumnToDataGridView(dataGridView2, "측정값", "Condition_Val", true, 254);
             AddNewColumnToDataGridView(dataGridView2, "측정일시", "Item_Name", false, 180);
             AddNewColumnToDataGridView(dataGridView2, "측정일시", "Wc_Name", false, 180);
             AddNewColumnToDataGridView(dataGridView2, "측정일시", "Workorderno", false, 180);
             AddNewColumnToDataGridView(dataGridView2, "측정일시", "Condition_Group1", false, 180);
 
-            this.dataGridView2.Font = new Font("나눔고딕", 14, FontStyle.Bold);
-            this.dataGridView2.DefaultCellStyle.Font = new Font("나눔고딕", 15, FontStyle.Bold);
+            this.dataGridView2.Font = new Font("나눔고딕", 17, FontStyle.Bold);
+            this.dataGridView2.DefaultCellStyle.Font = new Font("나눔고딕", 17, FontStyle.Regular);
 
 
 
             dataGridView2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView2.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView2.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView2.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+   
 
         }
         #endregion

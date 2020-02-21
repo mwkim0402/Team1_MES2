@@ -35,6 +35,7 @@ namespace FieldOperationForm
             col.Visible = visibility;
             col.ValueType = typeof(string);
             col.ReadOnly = true;
+            col.DefaultCellStyle.Padding = new Padding(3);
             col.DefaultCellStyle.Alignment = textAlign;
             dgv.Columns.Add(col);
 
@@ -49,7 +50,9 @@ namespace FieldOperationForm
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
-            dgv.DefaultCellStyle.SelectionBackColor = Color.DarkSlateGray;
+            dgv.DefaultCellStyle.SelectionBackColor = Color.CadetBlue;
+            dgv.RowTemplate.Height = 60;
+
 
         }
         private void Setdgv()
@@ -61,6 +64,9 @@ namespace FieldOperationForm
            AddNewColumnToDataGridView(dgv_Notice, "등록일", "Description", false, 150);
 
 
+
+            this.dgv_Notice.Font = new Font("나눔고딕", 14, FontStyle.Bold);
+            this.dgv_Notice.DefaultCellStyle.Font = new Font("나눔고딕", 15, FontStyle.Bold);
             dgv_Notice.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 

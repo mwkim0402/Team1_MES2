@@ -27,6 +27,7 @@ namespace AdminForm
             nonOpMaList = service.GettNonOperationMa();
             ShowDgv();
             dgvSearchResult.DataSource = nonOpMaList;
+            CommonClass.Userauthority(btnSave,button1);
         }
 
         private void ShowDgv()

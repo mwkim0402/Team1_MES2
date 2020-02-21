@@ -55,17 +55,19 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Wc_Code", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Condition_measure_seq", false, 100);
 
+            MakeDgv();
 
+        }
+
+        private void MakeDgv()
+        {
             dgvList.CellDoubleClick += dgvList_CellDoubleClick;
             CommonClass.AddNewColumnToDataGridView(dgvList, "측정항목", "Condition_Name", true, 130);
             CommonClass.AddNewColumnToDataGridView(dgvList, "기준값", "SL", true, 100);
 
             dgvListDetail.CellDoubleClick += DgvListDetail_CellDoubleClick;
             CommonClass.AddNewColumnToDataGridView(dgvListDetail, "측정값", "Condition_Val", true, 100);
-
         }
-
-
 
         private void RegProcess_Activated(object sender, EventArgs e)
         {
@@ -88,26 +90,39 @@ namespace AdminForm
             //                               select item).ToList();
             //    dgvJob.DataSource = list;
             //}
-            if ((fcWork.SendCode != null && fcWork.SendName != "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
+            if (allList != null)
             {
-                List<RegProcessVO> list = (from item in allList
-                                           where item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
-                                           select item).ToList();
-                dgvJob.DataSource = list;
+                if ((fcWork.SendCode != null && fcWork.SendName != "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
+                {
+                    List<RegProcessVO> list = (from item in allList
+                                               where item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                               select item).ToList();
+                    dgvJob.DataSource = list;
+                    dgvList.DataSource = null;
+                    dgvListDetail.DataSource = null;
+                   
+                }
+                else if ((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode == ""))
+                {
+                    List<RegProcessVO> list = (from item in allList
+                                               where item.Wc_Code == fcWork.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                               select item).ToList();
+                    dgvJob.DataSource = list;
+                   
+                }
+                else if ((fcWork.SendCode == null || fcWork.SendCode == "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
+                {
+                    List<RegProcessVO> list = (from item in allList
+                                               where item.Process_code == fcFactory.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                               select item).ToList();
+                    dgvJob.DataSource = list;
+                    
+                }
             }
-            else if ((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode == ""))
+
+            if (dgvList.Columns.Count < 1 && dgvListDetail.Columns.Count < 1)
             {
-                List<RegProcessVO> list = (from item in allList
-                                           where item.Wc_Code == fcWork.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
-                                           select item).ToList();
-                dgvJob.DataSource = list;
-            }
-            else if ((fcWork.SendCode == null || fcWork.SendCode == "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
-            {
-                List<RegProcessVO> list = (from item in allList
-                                           where item.Process_code == fcFactory.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
-                                           select item).ToList();
-                dgvJob.DataSource = list;
+                MakeDgv();
             }
         }
 

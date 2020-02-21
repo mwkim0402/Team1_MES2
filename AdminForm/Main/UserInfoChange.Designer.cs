@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -38,19 +38,29 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picPerson = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtGroup = new System.Windows.Forms.TextBox();
+            this.txtLevel = new System.Windows.Forms.TextBox();
+            this.txtphone = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPerson)).BeginInit();
             this.SuspendLayout();
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.textBox1);
+            this.panel6.Controls.Add(this.txtEmail);
+            this.panel6.Controls.Add(this.txtphone);
+            this.panel6.Controls.Add(this.txtLevel);
+            this.panel6.Controls.Add(this.txtGroup);
+            this.panel6.Controls.Add(this.txtName);
+            this.panel6.Controls.Add(this.txtID);
             this.panel6.Controls.Add(this.button3);
             this.panel6.Controls.Add(this.button2);
             this.panel6.Controls.Add(this.button1);
@@ -59,7 +69,7 @@
             this.panel6.Controls.Add(this.label8);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.label6);
-            this.panel6.Controls.Add(this.pictureBox1);
+            this.panel6.Controls.Add(this.picPerson);
             this.panel6.Controls.Add(this.label3);
             this.panel6.Controls.Add(this.label1);
             this.panel6.Font = new System.Drawing.Font("나눔고딕", 9F);
@@ -68,12 +78,13 @@
             this.panel6.Size = new System.Drawing.Size(492, 359);
             this.panel6.TabIndex = 13;
             // 
-            // textBox1
+            // txtID
             // 
-            this.textBox1.Location = new System.Drawing.Point(75, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 21);
-            this.textBox1.TabIndex = 13;
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(75, 39);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(156, 21);
+            this.txtID.TabIndex = 13;
             // 
             // button3
             // 
@@ -91,6 +102,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
@@ -100,6 +112,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "정보 수정";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -113,6 +126,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "사진 편집";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label9
             // 
@@ -159,14 +173,15 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "직급 :";
             // 
-            // pictureBox1
+            // picPerson
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(271, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(198, 202);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.picPerson.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picPerson.Location = new System.Drawing.Point(271, 39);
+            this.picPerson.Name = "picPerson";
+            this.picPerson.Size = new System.Drawing.Size(198, 202);
+            this.picPerson.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPerson.TabIndex = 3;
+            this.picPerson.TabStop = false;
             // 
             // label3
             // 
@@ -191,6 +206,44 @@
             // 
             this.openFileDialog1.FileName = "개인정보 수정";
             // 
+            // txtName
+            // 
+            this.txtName.Enabled = false;
+            this.txtName.Location = new System.Drawing.Point(75, 76);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(156, 21);
+            this.txtName.TabIndex = 14;
+            // 
+            // txtGroup
+            // 
+            this.txtGroup.Enabled = false;
+            this.txtGroup.Location = new System.Drawing.Point(75, 113);
+            this.txtGroup.Name = "txtGroup";
+            this.txtGroup.Size = new System.Drawing.Size(156, 21);
+            this.txtGroup.TabIndex = 13;
+            // 
+            // txtLevel
+            // 
+            this.txtLevel.Enabled = false;
+            this.txtLevel.Location = new System.Drawing.Point(75, 150);
+            this.txtLevel.Name = "txtLevel";
+            this.txtLevel.Size = new System.Drawing.Size(156, 21);
+            this.txtLevel.TabIndex = 14;
+            // 
+            // txtphone
+            // 
+            this.txtphone.Location = new System.Drawing.Point(75, 187);
+            this.txtphone.Name = "txtphone";
+            this.txtphone.Size = new System.Drawing.Size(156, 21);
+            this.txtphone.TabIndex = 13;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(75, 224);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(156, 21);
+            this.txtEmail.TabIndex = 14;
+            // 
             // UserInfoChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -199,9 +252,10 @@
             this.Controls.Add(this.panel6);
             this.Name = "UserInfoChange";
             this.Text = "개인정보 수정";
+            this.Load += new System.EventHandler(this.UserInfoChange_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPerson)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -214,13 +268,18 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picPerson;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtphone;
+        private System.Windows.Forms.TextBox txtLevel;
+        private System.Windows.Forms.TextBox txtGroup;
+        private System.Windows.Forms.TextBox txtName;
     }
 }

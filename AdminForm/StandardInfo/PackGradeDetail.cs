@@ -20,6 +20,7 @@ namespace AdminForm
         private void PackGradeDetail_Load(object sender, EventArgs e)
         {
             ShowDgv();
+            CommonClass.Userauthority(btnSave);
         }
 
         private void ShowDgv()

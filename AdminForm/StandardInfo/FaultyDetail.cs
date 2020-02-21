@@ -27,6 +27,7 @@ namespace AdminForm
             ShowDgv();
             GetList();
             ComboBind();
+            CommonClass.Userauthority(button1);
         }
         private void GetList()
         {

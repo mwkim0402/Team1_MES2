@@ -58,6 +58,7 @@ namespace AdminForm
             RefreshList();
             ComboBind();
             CreateWoReqNo();
+            CommonClass.Userauthority(btnSave,btnModify);
         }
         private void ComboBind()
         {

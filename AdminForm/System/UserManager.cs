@@ -30,7 +30,7 @@ namespace AdminForm
             cmbEditUserType.SelectedIndex = 0;
             frm = (MainForm)this.MdiParent;
             ShowDgv();
-            CommonClass.Userauthority(btnSave, btnEdit,"사용자관리");
+            CommonClass.Userauthority(btnSave, btnEdit);
         }
 
         private void ShowDgv()

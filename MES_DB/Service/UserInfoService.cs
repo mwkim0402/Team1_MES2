@@ -18,5 +18,10 @@ namespace MES_DB
             UserDAC dac = new UserDAC();
             return dac.GetUserPlan(userID);
         }
+        public void InsImage(UserInfoVo user)
+        {
+            UserInfoDac dac = new UserInfoDac();
+            dac.InsImage(user);
+        }
     }
 }

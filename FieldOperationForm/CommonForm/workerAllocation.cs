@@ -147,6 +147,8 @@ namespace FieldOperationForm
                 SetWorkerList();
                 SetWorker();
                 a = "";
+
+                service.InsertWorkerHistory(wa);
             }
             catch { }
 
@@ -170,6 +172,7 @@ namespace FieldOperationForm
                 WorkAllocation_Service service = new WorkAllocation_Service();
 
                 service.deleteWorker(b);
+                service.deleteWorkerHistory(b);
 
                 SetWorkerList();
                 SetWorker();
@@ -203,7 +206,7 @@ namespace FieldOperationForm
             {
                 WorkAllocation_Service service = new WorkAllocation_Service();
                 service.deleteAllWorker(cb_Wc_Name.Text);
-         
+                service.deleteAllWorkerHistory(cb_Wc_Name.Text);
 
             }
 

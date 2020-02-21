@@ -20,6 +20,7 @@ namespace AdminForm
         private void ModuleManager_Load(object sender, EventArgs e)
         {
             ShowDgv();
+            CommonClass.Userauthority(btnSave);
         }
 
         private void ShowDgv()

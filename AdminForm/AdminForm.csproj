@@ -61,7 +61,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>01386EE0278003F6F3E50DDA4ED5B17A279ABF15</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>6529F4A6589328FE82CCECA0BE2DBC586FC02855</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>AdminForm_1_TemporaryKey.pfx</ManifestKeyFile>
@@ -895,12 +895,12 @@
   <ItemGroup>
     <PublishFile Include="DataBase_XML.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

@@ -207,9 +207,9 @@
             this.dtpPlanDate.Enabled = false;
             this.dtpPlanDate.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.dtpPlanDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPlanDate.Location = new System.Drawing.Point(708, 58);
+            this.dtpPlanDate.Location = new System.Drawing.Point(627, 57);
             this.dtpPlanDate.Name = "dtpPlanDate";
-            this.dtpPlanDate.Size = new System.Drawing.Size(228, 26);
+            this.dtpPlanDate.Size = new System.Drawing.Size(296, 26);
             this.dtpPlanDate.TabIndex = 43;
             // 
             // label21
@@ -239,7 +239,7 @@
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label18.Location = new System.Drawing.Point(624, 60);
+            this.label18.Location = new System.Drawing.Point(543, 59);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(69, 19);
             this.label18.TabIndex = 49;
@@ -266,7 +266,7 @@
             0,
             0});
             this.nuPlanAmount.Name = "nuPlanAmount";
-            this.nuPlanAmount.Size = new System.Drawing.Size(182, 26);
+            this.nuPlanAmount.Size = new System.Drawing.Size(116, 26);
             this.nuPlanAmount.TabIndex = 10;
             this.nuPlanAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -478,7 +478,7 @@
             this.txtCustName.Location = new System.Drawing.Point(389, 19);
             this.txtCustName.Name = "txtCustName";
             this.txtCustName.ReadOnly = true;
-            this.txtCustName.Size = new System.Drawing.Size(182, 26);
+            this.txtCustName.Size = new System.Drawing.Size(116, 26);
             this.txtCustName.TabIndex = 64;
             // 
             // label6
@@ -486,7 +486,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label6.Location = new System.Drawing.Point(609, 23);
+            this.label6.Location = new System.Drawing.Point(528, 22);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 19);
             this.label6.TabIndex = 65;
@@ -495,10 +495,10 @@
             // txtProjectName
             // 
             this.txtProjectName.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtProjectName.Location = new System.Drawing.Point(708, 19);
+            this.txtProjectName.Location = new System.Drawing.Point(627, 18);
             this.txtProjectName.Name = "txtProjectName";
             this.txtProjectName.ReadOnly = true;
-            this.txtProjectName.Size = new System.Drawing.Size(228, 26);
+            this.txtProjectName.Size = new System.Drawing.Size(296, 26);
             this.txtProjectName.TabIndex = 66;
             // 
             // toolStrip1

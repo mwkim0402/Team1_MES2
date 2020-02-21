@@ -24,6 +24,7 @@ namespace AdminForm
         {
             btnLogin.DialogResult = DialogResult.OK;
             LoginService service = new LoginService();
+            UserLoginService loginService = new UserLoginService();
             LoginVO loginVo = new LoginVO();
             loginVo.User_ID = Convert.ToInt32(txtID.Text);
             loginVo.User_PW = txtPwd.Text;
@@ -35,7 +36,8 @@ namespace AdminForm
                 //btnLogin.DialogResult = DialogResult.OK;
                 Global.LoginID = list[0].User_ID;
                 Global.Authority = list[0].Pre_Type;
-                MainForm frm = new MainForm();
+                MainForm frm = new MainForm(this);
+                loginService.InsertLoginMES(Global.LoginID);
                 frm.Show();
                 this.Hide();
             }

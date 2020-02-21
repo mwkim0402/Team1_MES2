@@ -25,13 +25,16 @@ namespace AdminForm
         bool open = false;
         List<MenuTreeVo> menuList;
         MainChild homeFrm;
-
+        LoginForm loginFrm = new LoginForm();
+        UserLoginService userService = new UserLoginService();
         public SendName SendNameEvent;
-
+        bool isClosing = true;
         public ToolStrip ToolStrip { get { return toolStrip1; } set { toolStrip1 = value; } }
-        public MainForm()
+        public MainForm(LoginForm lgnFrm)
         {
             InitializeComponent();
+
+            loginFrm = lgnFrm;
             this.tabControl2.DrawMode = TabDrawMode.OwnerDrawFixed;
 
 
@@ -600,7 +603,11 @@ namespace AdminForm
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            if (isClosing)
+            {
+                userService.UpdateLogout(Global.LoginID);
+                System.Windows.Forms.Application.Exit();
+            }
             // Use this since we are a console app
             //System.Environment.Exit(1);
         }
@@ -610,6 +617,26 @@ namespace AdminForm
 
             if (this.Create_Click != null)
                 Create_Click(this, null);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("로그아웃을 하시겠습니가?", "로그아웃", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                userService.UpdateLogout(Global.LoginID);
+                isClosing = false;
+                this.Close();
+                loginFrm.Show();
+            }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isClosing)
+            {
+                userService.UpdateLogout(Global.LoginID);
+                System.Windows.Forms.Application.Exit();
+            }
         }
     }
 }

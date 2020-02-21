@@ -244,7 +244,7 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
             vo.Grade_Detail_Code = txt_RatingDetail.Text;
             vo.Prd_Qty = Convert.ToInt32(txt_ResultNum.Text);
             CreatePalette_Service service = new CreatePalette_Service();
-            service.CreatePalette(vo);
+            service.CreatePalette_each(vo,int.Parse( txt_PaletteQuantity.Text), txt_Rating.Text);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -14,5 +14,11 @@ namespace FieldOperationForm
             return dac.CreatePalette(item);
         }
 
+
+        public void CreatePalette_each(CreatePalette_Vo item,int num, string gradecode)
+        {
+            CreatePalette_Dac dac = new CreatePalette_Dac();
+           dac.CreatePalette_each(num, gradecode, item);
+        }
     }
 }

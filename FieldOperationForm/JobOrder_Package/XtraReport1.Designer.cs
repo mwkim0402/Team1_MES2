@@ -159,6 +159,7 @@
             this.Detail1.Dpi = 254F;
             this.Detail1.HeightF = 908.2618F;
             this.Detail1.HierarchyPrintOptions.Indent = 50.8F;
+            this.Detail1.KeepTogether = true;
             this.Detail1.MultiColumn.ColumnCount = 2;
             this.Detail1.MultiColumn.Mode = DevExpress.XtraReports.UI.MultiColumnMode.UseColumnCount;
             this.Detail1.Name = "Detail1";
@@ -169,7 +170,7 @@
             this.xrBarCode1.Dpi = 254F;
             this.xrBarCode1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Query].[Barcode_No]")});
-            this.xrBarCode1.LocationFloat = new DevExpress.Utils.PointFloat(80.9625F, 568.9597F);
+            this.xrBarCode1.LocationFloat = new DevExpress.Utils.PointFloat(80.5625F, 669.9014F);
             this.xrBarCode1.Module = 5.08F;
             this.xrBarCode1.Name = "xrBarCode1";
             this.xrBarCode1.Padding = new DevExpress.XtraPrinting.PaddingInfo(25, 25, 0, 0, 254F);
@@ -184,14 +185,14 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable1.Dpi = 254F;
-            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(25.4F, 25.4001F);
+            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(25.00001F, 126.3419F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1,
             this.xrTableRow2,
             this.xrTableRow3});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(820.5264F, 460.375F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(825.8181F, 460.375F);
             this.xrTable1.StylePriority.UseBorders = false;
             // 
             // xrTableRow1

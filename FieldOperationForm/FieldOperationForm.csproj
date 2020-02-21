@@ -29,7 +29,7 @@
     <SuiteName>Beam_POP</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>POP.htm</WebPage>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -67,7 +67,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>35A6EBAA80D1BC111A11CAD2EF58CF11EB3096B4</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>A054007D470054CCE0F410627020C2C33864D756</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>FieldOperationForm_6_TemporaryKey.pfx</ManifestKeyFile>

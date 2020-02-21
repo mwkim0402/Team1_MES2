@@ -32,11 +32,5 @@ namespace MES_DB
         public string Default_Process_Code { get; set; }
         public string User_Type { get; set; }
         
-        
-    }
-
-    public class ItemCodeListVO
-    {
-        public string ProcessName { get; set; }
     }
 }

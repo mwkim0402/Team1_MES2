@@ -58,10 +58,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>71A2C3388528A55ED7CEAFE19E526366A769191C</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>E304E72ECFE2434934953F10B92035A9112BB74E</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Mes_Factory_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Mes_Factory_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -107,6 +107,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Mes_Factory_1_TemporaryKey.pfx" />
     <None Include="Mes_Factory_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -134,12 +135,12 @@
   <ItemGroup>
     <PublishFile Include="DataBase_XML.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

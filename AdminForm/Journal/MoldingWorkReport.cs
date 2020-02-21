@@ -53,10 +53,9 @@ namespace AdminForm
             using (SqlConnection conn = new SqlConnection(strConn))
             {
                 conn.Open();
-                string strSql = $@"select Use_Seq, MM.Mold_Name, MH.Workorderno,MH.Use_Starttime,MH.Use_Endtime
-                                    from Mold_Use_History MH inner
-                                    join Mold_Master MM on MH.Mold_Code = MM.Mold_Code
-									and  convert(varchar(10),Use_Starttime,23) = '{findDate}'";
+                string strSql = $@"select Use_Seq, MM.Mold_Name, Workorderno, Mold_Shot_Cnt, Mold_Prd_Qty, Use_Starttime, Use_Endtime from Mold_Use_History MH, Mold_Master MM 
+                                    where MH.Mold_Code = MM.Mold_Code
+                                    and  convert(varchar(10),Use_Starttime,23) = '{findDate}'";
 
                 SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
                 da.Fill(dsQuery, "Query");

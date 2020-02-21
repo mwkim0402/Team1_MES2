@@ -21,6 +21,7 @@ namespace FieldOperationForm
         string no;
         string start;
         string work;
+        string A;
         DataGridViewComboBoxColumn comboBoxColumn = new DataGridViewComboBoxColumn();
         List<WorkOrderCheckVo> processWorkList;
         List<ItemVo> itemList;
@@ -88,13 +89,13 @@ namespace FieldOperationForm
             
 
 
-            AddNewColumnToDataGridView(dataGridView1, "장착중인금형", "Mold_Name", true, 150);
+            AddNewColumnToDataGridView(dataGridView1, "장착중인금형", "Mold_Name", true, 200);
             AddNewColumnToDataGridView(dataGridView1, "상태", "Wo_Status", true, 150);
             AddNewColumnToDataGridView(dataGridView1, "작업지시번호", "Workorderno", true, 350);
             AddNewColumnToDataGridView(dataGridView1, "할당작업장", "Wc_Name", true, 230);
             AddNewColumnToDataGridView(dataGridView1, "품목명", "Item_Name", true, 200);
 
-            AddNewColumnToDataGridView(dataGridView1, "생산수량", "Prd_Qty", true, 120);
+            AddNewColumnToDataGridView(dataGridView1, "계획수량", "Plan_Qty", true, 140);
             AddNewColumnToDataGridView(dataGridView1, "생산일자", "Plan_date", true, 150);
             AddNewColumnToDataGridView(dataGridView1, "계획시작시간", "Plan_Starttime", true, 180);
             AddNewColumnToDataGridView(dataGridView1, "생산시작시간", "Prd_Starttime", true, 180);
@@ -158,6 +159,7 @@ namespace FieldOperationForm
 
            // MoldStart_Service service6 = new MoldStart_Service();
            //DataGridViewComboBoxCell = service6.GetMoldName(work);
+        
 
         }
 
@@ -198,14 +200,23 @@ namespace FieldOperationForm
 
         private void btn_StartEnd_Click(object sender, EventArgs e)
         {
-            if (no==null)
+            
+            if (no==null && start=="작업대기")
             {
                 MessageBox.Show("금형을 선택해주세요.");
+               main.btn_Home.PerformClick();
             }
+            else if(start=="작업중" || start=="작업종료" || start=="현장마감")
+            {
+                MessageBox.Show("대기중인 작업지시를 선택해주세요.");
+                main.btn_Home.PerformClick();
+            }
+
             else
             {
                 if (start == "작업대기")
                 {
+
                     WorkCenterService service = new WorkCenterService();
                     if (service.wcStatusChecked(dataGridView1.SelectedRows[0].Cells[3].Value.ToString()) == "RUN")
                     {
@@ -215,8 +226,9 @@ namespace FieldOperationForm
                     else 
                     {
                         Start_Factory();
-                
-                      
+                        SetLoad();
+
+
                     }
                 }
             }
@@ -229,13 +241,18 @@ namespace FieldOperationForm
                 //작업상태
                 start = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                 //   no = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                //선택금형
-                no = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+          
                 //작업지시번호
                 work = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                 MoldStart_Service service6 = new MoldStart_Service();
                 //DataGridViewComboBoxCell = service6.GetMoldName(work);
                 comboBoxColumn.DataSource = service6.GetMoldName(work);
+                //선택금형
+                no = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                //장착된금형
+                A = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                
             }
             catch { }
         }
@@ -260,7 +277,7 @@ namespace FieldOperationForm
                 tc.Close();
 
                 MoldStart_Vo vo = new MoldStart_Vo();
-                vo.Mold_Name = no;
+                vo.Mold_Name = A;
                 vo.Workorderno = work;
                 MoldStart_Service service5 = new MoldStart_Service();
                 service5.MoldStartHistory(vo);
@@ -304,10 +321,11 @@ namespace FieldOperationForm
 
                 MoldStart_Vo vo = new MoldStart_Vo();
                 vo.Workorderno = work;
-                vo.Mold_Name = no;
+                vo.Mold_Name = A;
                 MoldStart_Service service1 = new MoldStart_Service();
                 service1.MoldEndHistory(vo);
                 SetLoad();
+            
             }
             else
             {

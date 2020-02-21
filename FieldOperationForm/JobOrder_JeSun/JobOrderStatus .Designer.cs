@@ -66,7 +66,7 @@
             this.btn_StartEnd.Name = "btn_StartEnd";
             this.btn_StartEnd.Size = new System.Drawing.Size(307, 151);
             this.btn_StartEnd.TabIndex = 1;
-            this.btn_StartEnd.Text = "작업시작/ \r\n종료";
+            this.btn_StartEnd.Text = "작업시작";
             this.btn_StartEnd.UseVisualStyleBackColor = false;
             this.btn_StartEnd.Click += new System.EventHandler(this.btn_StartEnd_Click);
             // 

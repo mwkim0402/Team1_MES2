@@ -56,9 +56,10 @@ namespace AdminForm
             using (SqlConnection conn = new SqlConnection(strConn))
             {
                 conn.Open();
-                string strSql = $@"select Hist_Seq, GV_Code, Item_Name, wo.Workorderno, In_Time , Out_Time
+                string strSql = $@"select Hist_Seq, GV_Name, Item_Name, wo.Workorderno, In_Time , Out_Time
                   from GV_History gv inner join WorkOrder wo on gv.Workorderno = wo.Workorderno
-                  inner join Item_Master i on wo.Item_Code = i.item_Code where gv.Loading_Date =  '{findDate}' ";
+                  inner join Item_Master i on wo.Item_Code = i.item_Code
+				  inner join GV_Master m on m.GV_Code = gv.GV_Code where gv.Loading_Date =  '{findDate}' ";
                 SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
                 da.Fill(ds, "GV_Work_His");
                 conn.Close();

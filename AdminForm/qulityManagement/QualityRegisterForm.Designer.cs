@@ -32,8 +32,8 @@
             this.cmbInspect = new System.Windows.Forms.ComboBox();
             this.cmbProcessCode = new System.Windows.Forms.ComboBox();
             this.cmbItemName = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.cmbWork = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,8 +50,8 @@
             this.panel1.Controls.Add(this.cmbInspect);
             this.panel1.Controls.Add(this.cmbProcessCode);
             this.panel1.Controls.Add(this.cmbItemName);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.cmbWork);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -91,35 +91,36 @@
             this.cmbItemName.Size = new System.Drawing.Size(168, 27);
             this.cmbItemName.TabIndex = 4;
             // 
-            // button2
+            // btnCancel
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(411, 134);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 38);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "취소하기";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(411, 134);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(93, 38);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "취소하기";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btnOK
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(153, 134);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 38);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "등록하기";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnOK.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnOK.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnOK.ForeColor = System.Drawing.Color.White;
+            this.btnOK.Location = new System.Drawing.Point(153, 134);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(91, 38);
+            this.btnOK.TabIndex = 3;
+            this.btnOK.Text = "등록하기";
+            this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.button1_Click);
             // 
             // cmbWork
             // 
@@ -216,8 +217,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtValue;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.ComboBox cmbItemName;
         private System.Windows.Forms.ComboBox cmbProcessCode;
         private System.Windows.Forms.ComboBox cmbInspect;

@@ -10,7 +10,8 @@ namespace FieldOperationForm
     {
 
         public string Workorderno { get; set; }
-        public DateTime Print_Date { get; set; }
+     //   public DateTime Print_Date { get; set; }
+        public DateTime aa { get; set; }
         public string Item_Name { get; set; }
         public string Barcode_No { get; set; }
         public string Pallet_No { get; set; }

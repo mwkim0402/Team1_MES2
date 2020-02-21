@@ -179,6 +179,17 @@ namespace AdminForm
                                               select item).ToList();
                     dgvProductRequset.DataSource = list;
                 }
+                else if ((fcFactory.SendCode == null || fcFactory.SendCode == "") && (fcWork.SendCode == null || fcWork.SendCode == ""))
+                {
+                    List<RegFaultyVO> list = (from item in allList
+                                              where item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                              select item).ToList();
+                    dgvProductRequset.DataSource = list;
+                }
+            }
+            else
+            {
+                MessageBox.Show("전체조회를 눌러주세요.");
             }
         }
 

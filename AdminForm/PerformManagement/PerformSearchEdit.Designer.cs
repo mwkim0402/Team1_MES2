@@ -99,7 +99,7 @@
             this.Controls.Add(this.cmbSelect);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PerformSearchEdit";
-            this.Text = "PerformSearchEdit";
+            this.Text = "실적수정";
             this.Load += new System.EventHandler(this.PerformSearchEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nuCount)).EndInit();
             this.ResumeLayout(false);

@@ -49,7 +49,7 @@
             // txt_Title
             // 
             this.txt_Title.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_Title.Location = new System.Drawing.Point(763, 128);
+            this.txt_Title.Location = new System.Drawing.Point(876, 128);
             this.txt_Title.Name = "txt_Title";
             this.txt_Title.ReadOnly = true;
             this.txt_Title.Size = new System.Drawing.Size(493, 29);
@@ -58,7 +58,7 @@
             // txt_Des
             // 
             this.txt_Des.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_Des.Location = new System.Drawing.Point(763, 222);
+            this.txt_Des.Location = new System.Drawing.Point(876, 222);
             this.txt_Des.Multiline = true;
             this.txt_Des.Name = "txt_Des";
             this.txt_Des.ReadOnly = true;
@@ -70,7 +70,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(871, 180);
+            this.label1.Location = new System.Drawing.Point(984, 180);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 19);
             this.label1.TabIndex = 7;
@@ -79,7 +79,7 @@
             // txt_Name
             // 
             this.txt_Name.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_Name.Location = new System.Drawing.Point(931, 175);
+            this.txt_Name.Location = new System.Drawing.Point(1044, 175);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.ReadOnly = true;
             this.txt_Name.Size = new System.Drawing.Size(118, 29);
@@ -90,7 +90,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(1064, 180);
+            this.label2.Location = new System.Drawing.Point(1177, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 19);
             this.label2.TabIndex = 12;
@@ -99,7 +99,7 @@
             // txt_date
             // 
             this.txt_date.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txt_date.Location = new System.Drawing.Point(1138, 175);
+            this.txt_date.Location = new System.Drawing.Point(1251, 175);
             this.txt_date.Name = "txt_date";
             this.txt_date.ReadOnly = true;
             this.txt_date.Size = new System.Drawing.Size(118, 29);
@@ -120,7 +120,7 @@
             this.dgv_Notice.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_Notice.RowTemplate.Height = 23;
             this.dgv_Notice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Notice.Size = new System.Drawing.Size(673, 528);
+            this.dgv_Notice.Size = new System.Drawing.Size(770, 528);
             this.dgv_Notice.TabIndex = 4;
             this.dgv_Notice.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Notice_CellClick);
             this.dgv_Notice.SelectionChanged += new System.EventHandler(this.dgv_Notice_SelectionChanged);
@@ -146,7 +146,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(23, 73);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(715, 601);
+            this.groupBox1.Size = new System.Drawing.Size(811, 601);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
@@ -157,7 +157,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1295, 52);
+            this.panel1.Size = new System.Drawing.Size(1405, 52);
             this.panel1.TabIndex = 9;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -169,7 +169,7 @@
             this.button1.BackgroundImage = global::FieldOperationForm.Properties.Resources.캡처11;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(1243, 7);
+            this.button1.Location = new System.Drawing.Point(1353, 7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 39);
             this.button1.TabIndex = 0;
@@ -181,7 +181,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Location = new System.Drawing.Point(12, 58);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1271, 630);
+            this.pictureBox1.Size = new System.Drawing.Size(1381, 630);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -190,7 +190,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(1295, 700);
+            this.ClientSize = new System.Drawing.Size(1405, 700);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txt_date);
             this.Controls.Add(this.label2);

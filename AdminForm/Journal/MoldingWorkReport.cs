@@ -50,30 +50,23 @@ namespace AdminForm
 
             string strConn = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
             DataSet dsQuery = new DataSet();
-            DataSet dsQuery_1 = new DataSet();
             using (SqlConnection conn = new SqlConnection(strConn))
             {
                 conn.Open();
-                string strSql = $@"select Use_Seq, MM.Mold_Name, MH.Workorderno, (MH.Use_Starttime - MH.Use_Endtime) As [Using Time]
+                string strSql = $@"select Use_Seq, MM.Mold_Name, MH.Workorderno,MH.Use_Starttime,MH.Use_Endtime
                                     from Mold_Use_History MH inner
-                                    join Mold_Master MM on MH.Mold_Code = MM.Mold_Code";
+                                    join Mold_Master MM on MH.Mold_Code = MM.Mold_Code
+									and  convert(varchar(10),Use_Starttime,23) = {findDate}";
 
                 SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
                 da.Fill(dsQuery, "Query");
 
-                strSql = $@"select * from Mold_Master";
-
-                da = new SqlDataAdapter(strSql, conn);
-                da.Fill(dsQuery, "Query_1");
                 conn.Close();
             }
             rpt.Parameters["SelectedDate"].Value = dtpProduction.Value;
             rpt.Parameters["SelectedDate"].Visible = false;
             rpt.DataSource = dsQuery;
             rpt.CreateDocument();
-            //Form2 frm = new Form2();
-            //frm.documentViewer1.DocumentSource = rpt;
-            //frm.ShowDialog();
             WorkOrderDetailView(rpt);
 
         }
@@ -96,16 +89,19 @@ namespace AdminForm
 
         private void MoldingWorkReport_Activated(object sender, EventArgs e)
         {
-            frm.Search_Click += this.Search_Click;
             frm.btnExcel.Enabled = false;// 엑셀저장 비활성화
-            frm.Insert_Click += this.Print_Click;
+
+            frm.Search_Click += this.Search_Click;
+            
+            frm.Create_Click += this.Print_Click;
         }
 
         private void MoldingWorkReport_Deactivate(object sender, EventArgs e)
         {
-            frm.Search_Click -= this.Search_Click;
             frm.btnExcel.Enabled = true;// 엑셀저장 활성화
-            frm.Insert_Click -= this.Print_Click;
+
+            frm.Search_Click -= this.Search_Click;
+            frm.Create_Click -= this.Print_Click;
 
         }
 
@@ -120,10 +116,7 @@ namespace AdminForm
 
         private void printAction()
         {
-            XtraReport rpt1 = new XtraReport();
-            rpt1.DataSource = rpt;
-            Print frm = new Print(rpt1);
-            frm.ShowDialog();
+            rpt.ShowPreviewDialog();
         }
     }
 }

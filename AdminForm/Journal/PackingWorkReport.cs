@@ -51,18 +51,17 @@ namespace AdminForm
             using (SqlConnection conn = new SqlConnection(strConn))
             {
                 conn.Open();
-                string strSql = $"select * from Item_Master"; //where Ins_Date = '{findDate}'";
+                string strSql = $@"select Workorderno, im.Item_Name, wc.Wc_Name, Plan_Qty, w.Wo_Status from WorkOrder w, WorkCenter_Master wc, Item_Master im
+                                    where w.Wc_Code = wc.Wc_Code and w.Item_Code = im.Item_Code
+                                    and wc.Wc_Group = '포장' and convert(varchar(10), w.Ins_Date,23) = '{findDate}'";
                 SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
-                da.Fill(ds, "Item");
+                da.Fill(ds, "Query");
                 conn.Close();
             }
             rpt.Parameters["SelectedDate"].Value = dtpProduction.Value;
             rpt.Parameters["SelectedDate"].Visible = false;
             rpt.DataSource = ds;
             rpt.CreateDocument();
-            //Form2 frm = new Form2();
-            //frm.documentViewer1.DocumentSource = rpt;
-            //frm.ShowDialog();
             WorkOrderDetailView(rpt);
 
         }
@@ -85,16 +84,18 @@ namespace AdminForm
 
         private void PackingWorkReport_Activated(object sender, EventArgs e)
         {
-            frm.Search_Click += this.Search_Click;
             frm.btnExcel.Enabled = false;// 엑셀저장 비활성화
-            frm.Insert_Click += this.Print_Click;
+
+            frm.Search_Click += this.Search_Click;
+            frm.Create_Click += this.Print_Click;
         }
 
         private void PackingWorkReport_Deactivate(object sender, EventArgs e)
         {
-            frm.Search_Click -= this.Search_Click;
             frm.btnExcel.Enabled = true;// 엑셀저장 활성화
-            frm.Insert_Click -= this.Print_Click;
+
+            frm.Search_Click -= this.Search_Click;
+            frm.Create_Click -= this.Print_Click;
         }
         private void Print_Click(object sender, EventArgs e)
         {
@@ -107,10 +108,8 @@ namespace AdminForm
 
         private void printAction()
         {
-            XtraReport rpt1 = new XtraReport();
-            rpt1.DataSource = rpt;
-            Print frm = new Print(rpt1);
-            frm.ShowDialog();
+
+            rpt.ShowPreviewDialog();
         }
     }
 }

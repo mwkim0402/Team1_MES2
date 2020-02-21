@@ -68,20 +68,22 @@
             // 
             // txtOrderCreationNum
             // 
+            this.txtOrderCreationNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOrderCreationNum.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtOrderCreationNum.Location = new System.Drawing.Point(596, 22);
+            this.txtOrderCreationNum.Location = new System.Drawing.Point(676, 22);
             this.txtOrderCreationNum.Name = "txtOrderCreationNum";
             this.txtOrderCreationNum.Size = new System.Drawing.Size(125, 26);
             this.txtOrderCreationNum.TabIndex = 11;
             // 
             // btnOrderCreationDeadline
             // 
+            this.btnOrderCreationDeadline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOrderCreationDeadline.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnOrderCreationDeadline.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnOrderCreationDeadline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrderCreationDeadline.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.btnOrderCreationDeadline.ForeColor = System.Drawing.Color.White;
-            this.btnOrderCreationDeadline.Location = new System.Drawing.Point(754, 15);
+            this.btnOrderCreationDeadline.Location = new System.Drawing.Point(1024, 15);
             this.btnOrderCreationDeadline.Name = "btnOrderCreationDeadline";
             this.btnOrderCreationDeadline.Size = new System.Drawing.Size(86, 40);
             this.btnOrderCreationDeadline.TabIndex = 10;
@@ -91,9 +93,10 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label3.Location = new System.Drawing.Point(487, 25);
+            this.label3.Location = new System.Drawing.Point(542, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 19);
             this.label3.TabIndex = 4;
@@ -103,7 +106,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label2.Location = new System.Drawing.Point(279, 26);
+            this.label2.Location = new System.Drawing.Point(305, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(19, 19);
             this.label2.TabIndex = 3;
@@ -113,7 +116,7 @@
             // 
             this.dtpEnd.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEnd.Location = new System.Drawing.Point(304, 22);
+            this.dtpEnd.Location = new System.Drawing.Point(330, 22);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(134, 26);
             this.dtpEnd.TabIndex = 2;
@@ -122,7 +125,7 @@
             // 
             this.dtpStart.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStart.Location = new System.Drawing.Point(139, 22);
+            this.dtpStart.Location = new System.Drawing.Point(165, 22);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(134, 26);
             this.dtpStart.TabIndex = 1;
@@ -132,7 +135,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label1.Location = new System.Drawing.Point(16, 25);
+            this.label1.Location = new System.Drawing.Point(42, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 19);
             this.label1.TabIndex = 0;

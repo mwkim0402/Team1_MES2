@@ -34,6 +34,7 @@
             this.btn_FieldClose = new System.Windows.Forms.Button();
             this.btn_Worker = new System.Windows.Forms.Button();
             this.btn_Process = new System.Windows.Forms.Button();
+            this.btn_mold = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,9 +66,9 @@
             this.btn_StartEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_StartEnd.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_StartEnd.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_StartEnd.Location = new System.Drawing.Point(30, 432);
+            this.btn_StartEnd.Location = new System.Drawing.Point(30, 437);
             this.btn_StartEnd.Name = "btn_StartEnd";
-            this.btn_StartEnd.Size = new System.Drawing.Size(296, 156);
+            this.btn_StartEnd.Size = new System.Drawing.Size(269, 151);
             this.btn_StartEnd.TabIndex = 1;
             this.btn_StartEnd.Text = "작업시작/ \r\n종료";
             this.btn_StartEnd.UseVisualStyleBackColor = false;
@@ -80,12 +81,13 @@
             this.btn_FieldClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_FieldClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_FieldClose.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_FieldClose.Location = new System.Drawing.Point(423, 432);
+            this.btn_FieldClose.Location = new System.Drawing.Point(331, 437);
             this.btn_FieldClose.Name = "btn_FieldClose";
-            this.btn_FieldClose.Size = new System.Drawing.Size(296, 156);
+            this.btn_FieldClose.Size = new System.Drawing.Size(269, 151);
             this.btn_FieldClose.TabIndex = 2;
             this.btn_FieldClose.Text = "현장마감";
             this.btn_FieldClose.UseVisualStyleBackColor = false;
+            this.btn_FieldClose.Click += new System.EventHandler(this.btn_FieldClose_Click);
             // 
             // btn_Worker
             // 
@@ -94,9 +96,9 @@
             this.btn_Worker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Worker.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Worker.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Worker.Location = new System.Drawing.Point(816, 432);
+            this.btn_Worker.Location = new System.Drawing.Point(632, 437);
             this.btn_Worker.Name = "btn_Worker";
-            this.btn_Worker.Size = new System.Drawing.Size(296, 156);
+            this.btn_Worker.Size = new System.Drawing.Size(269, 151);
             this.btn_Worker.TabIndex = 4;
             this.btn_Worker.Text = "작업자\r\n할당";
             this.btn_Worker.UseVisualStyleBackColor = false;
@@ -109,13 +111,28 @@
             this.btn_Process.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Process.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Process.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Process.Location = new System.Drawing.Point(1209, 432);
+            this.btn_Process.Location = new System.Drawing.Point(1234, 437);
             this.btn_Process.Name = "btn_Process";
-            this.btn_Process.Size = new System.Drawing.Size(296, 156);
+            this.btn_Process.Size = new System.Drawing.Size(269, 151);
             this.btn_Process.TabIndex = 8;
             this.btn_Process.Text = "공정조건\r\n등록";
             this.btn_Process.UseVisualStyleBackColor = false;
             this.btn_Process.Click += new System.EventHandler(this.btn_Process_Click);
+            // 
+            // btn_mold
+            // 
+            this.btn_mold.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_mold.BackColor = System.Drawing.Color.Ivory;
+            this.btn_mold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_mold.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_mold.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_mold.Location = new System.Drawing.Point(933, 437);
+            this.btn_mold.Name = "btn_mold";
+            this.btn_mold.Size = new System.Drawing.Size(269, 151);
+            this.btn_mold.TabIndex = 9;
+            this.btn_mold.Text = "금형 장착/\r\n탈착";
+            this.btn_mold.UseVisualStyleBackColor = false;
+            this.btn_mold.Click += new System.EventHandler(this.btn_mold_Click);
             // 
             // JobOrderStatus_Load
             // 
@@ -124,6 +141,7 @@
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1538, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_mold);
             this.Controls.Add(this.btn_Process);
             this.Controls.Add(this.btn_Worker);
             this.Controls.Add(this.btn_FieldClose);
@@ -147,5 +165,6 @@
         private System.Windows.Forms.Button btn_FieldClose;
         private System.Windows.Forms.Button btn_Worker;
         private System.Windows.Forms.Button btn_Process;
+        private System.Windows.Forms.Button btn_mold;
     }
 }

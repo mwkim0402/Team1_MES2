@@ -39,7 +39,6 @@ namespace AdminForm
 
         private void Search_Click(object sender, EventArgs e)
         {
-            frm = (MainForm)this.MdiParent;
             using (FrmWaitForm frm = new FrmWaitForm(setAction))
             {
                 frm.ShowDialog(this);
@@ -56,7 +55,7 @@ namespace AdminForm
             using (SqlConnection conn = new SqlConnection(strConn))
             {
                 conn.Open();
-                string strSql = $@"select Hist_Seq, GV_Code, Item_Name, wo.Workorderno, In_Time
+                string strSql = $@"select Hist_Seq, GV_Code, Item_Name, wo.Workorderno, In_Time , Out_Time
                   from GV_History gv inner join WorkOrder wo on gv.Workorderno = wo.Workorderno
                   inner join Item_Master i on wo.Item_Code = i.item_Code where gv.Loading_Date =  '{findDate}' ";
                 SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
@@ -97,15 +96,12 @@ namespace AdminForm
 
         private void printAction()
         {
-            XtraReport rpt1 = new XtraReport();
-            rpt1.DataSource = rpt;
-            Print frm = new Print(rpt1);
-            frm.ShowDialog();
+            rpt.ShowPreviewDialog();
         }
         private void FiringWorkReport_Activated(object sender, EventArgs e)
         {
-            frm.Search_Click += this.Search_Click;
             frm.btnExcel.Enabled = false;// 엑셀저장 비활성화
+            frm.Search_Click += this.Search_Click;
             frm.Insert_Click += this.Print_Click;
         }
 
@@ -113,8 +109,8 @@ namespace AdminForm
 
         private void FiringWorkReport_Deactivate(object sender, EventArgs e)
         {
-            frm.Search_Click -= this.Search_Click;
             frm.btnExcel.Enabled = true;// 엑셀저장 활성화
+            frm.Search_Click -= this.Search_Click;
             frm.Insert_Click -= this.Print_Click;
         }
     }

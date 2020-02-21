@@ -131,11 +131,13 @@
     <Compile Include="FieldDac\InsertCon_Dac.cs" />
     <Compile Include="FieldDac\Inspect_Dac.cs" />
     <Compile Include="FieldDac\Item_Dac.cs" />
+    <Compile Include="FieldDac\MoldStart_Dac.cs" />
     <Compile Include="FieldDac\Mold_Dac.cs" />
     <Compile Include="FieldDac\NonOperation_Dac.cs" />
     <Compile Include="FieldDac\Notice_Dac.cs" />
     <Compile Include="FieldDac\Palette_Dac.cs" />
     <Compile Include="FieldDac\Process_Dac.cs" />
+    <Compile Include="FieldDac\Roll_Dac.cs" />
     <Compile Include="FieldDac\Search_Dac.cs" />
     <Compile Include="FieldDac\User_Dac.cs" />
     <Compile Include="FieldDac\WorkAllocation_Dac.cs" />
@@ -150,11 +152,13 @@
     <Compile Include="FieldService\InsertCon_Service.cs" />
     <Compile Include="FieldService\Inspect_Service.cs" />
     <Compile Include="FieldService\Item_Service.cs" />
+    <Compile Include="FieldService\MoldStart_Service.cs" />
     <Compile Include="FieldService\Mold_Service.cs" />
     <Compile Include="FieldService\NonOperation_Service.cs" />
     <Compile Include="FieldService\Notice_Service.cs" />
     <Compile Include="FieldService\Palette_Service.cs" />
     <Compile Include="FieldService\Process_Service.cs" />
+    <Compile Include="FieldService\Roll_Service.cs" />
     <Compile Include="FieldService\Search_Service.cs" />
     <Compile Include="FieldService\WorkAllocation_Service.cs" />
     <Compile Include="FieldService\WorkCenter_Service.cs" />
@@ -168,12 +172,14 @@
     <Compile Include="FieldVo\InsertCon_Vo.cs" />
     <Compile Include="FieldVo\Inspect_Vo.cs" />
     <Compile Include="FieldVo\Item_Vo.cs" />
+    <Compile Include="FieldVo\MoldStart_Vo.cs" />
     <Compile Include="FieldVo\Mold_Vo.cs" />
     <Compile Include="FieldVo\NonOperation_Vo.cs" />
     <Compile Include="FieldVo\Notice_Vo.cs" />
     <Compile Include="FieldVo\PaletteDetail_Vo.cs" />
     <Compile Include="FieldVo\Palette_Vo.cs" />
     <Compile Include="FieldVo\Process_Vo.cs" />
+    <Compile Include="FieldVo\Roll_Vo.cs" />
     <Compile Include="FieldVo\Search_Vo.cs" />
     <Compile Include="FieldVo\updateNonOperation_Vo.cs" />
     <Compile Include="FieldVo\User_Vo.cs" />
@@ -212,10 +218,10 @@
     <Compile Include="JobOrder_JeSun\JobOrderStatus .Designer.cs">
       <DependentUpon>JobOrderStatus .cs</DependentUpon>
     </Compile>
-    <Compile Include="JobOrder_JeSun\Mold.cs">
+    <Compile Include="JobOrder_Rolled\Mold.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="JobOrder_JeSun\Mold.Designer.cs">
+    <Compile Include="JobOrder_Rolled\Mold.Designer.cs">
       <DependentUpon>Mold.cs</DependentUpon>
     </Compile>
     <Compile Include="JobOrder_Package\CreatePalette.cs">
@@ -299,7 +305,7 @@
     <EmbeddedResource Include="JobOrder_JeSun\JobOrderStatus .resx">
       <DependentUpon>JobOrderStatus .cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JobOrder_JeSun\Mold.resx">
+    <EmbeddedResource Include="JobOrder_Rolled\Mold.resx">
       <DependentUpon>Mold.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JobOrder_Package\CreatePalette.resx">

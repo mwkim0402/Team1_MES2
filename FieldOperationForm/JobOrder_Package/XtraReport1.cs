@@ -18,7 +18,7 @@ namespace FieldOperationForm.JobOrder_Package
 
             xrTableCell2.Text = f1;
             xrTableCell5.Text = t1;
-            xrTableCell8.Text = c1;
+           xrTableCell8.Text = c1;
             //xrBarCode1.Text = barcode1;
         }
      

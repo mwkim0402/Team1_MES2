@@ -124,9 +124,9 @@
             this.label7.ForeColor = System.Drawing.Color.Ivory;
             this.label7.Location = new System.Drawing.Point(41, 297);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 28);
+            this.label7.Size = new System.Drawing.Size(58, 28);
             this.label7.TabIndex = 21;
-            this.label7.Text = "팔레트 수량";
+            this.label7.Text = "수량";
             // 
             // txt_Size
             // 

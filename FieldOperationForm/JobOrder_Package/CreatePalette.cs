@@ -203,13 +203,13 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
         {
             CreatePal();
             SetPaletteList();
-
+         
           string c;
             string f;
             string t;
-            c = txt_ResultNum.Text;
-            f = txt_Item.Text;
-            t = txt_unit.Text;
+            c = txt_EItemNum.Text;
+            t = txt_Item.Text;
+            f = cb_Item.Text;
 
             string strConn = ConfigurationManager.ConnectionStrings["Project"].ConnectionString;
             DataSet ds = new DataSet();
@@ -242,7 +242,7 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
             vo.Size_Code = txt_Size.Text;
             vo.Grade_Code = txt_Rating.Text;
             vo.Grade_Detail_Code = txt_RatingDetail.Text;
-            vo.Prd_Qty = Convert.ToInt32(txt_ResultNum.Text);
+            vo.Prd_Qty = Convert.ToInt32(txt_EItemNum.Text);
             CreatePalette_Service service = new CreatePalette_Service();
             service.CreatePalette_each(vo,int.Parse( txt_PaletteQuantity.Text), txt_Rating.Text);
         }
@@ -264,6 +264,15 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
                 Palette_Service service = new Palette_Service();
                 dataGridView1.DataSource = service.GetPaletteGrade(comboBox1.Text);
             }
+        }
+
+        private void txt_PaletteQuantity_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txt_EItemNum.Text = (Convert.ToInt32(txt_ResultNum.Text) / Convert.ToInt32(txt_PaletteQuantity.Text)).ToString();
+            }
+            catch { }
         }
     }
 

@@ -73,9 +73,8 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업장명", "Wc_Name", true, 130);
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "품목코드", "Item_Code", true, 130);
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "품목명", "Item_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업시작일시", "Prd_Starttime", true, 200, DataGridViewContentAlignment.MiddleCenter);
-            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업종료일시", "Prd_Endtime", true, 200, DataGridViewContentAlignment.MiddleCenter);
-            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업시간", "Work_Time", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업시작일시", "Allocation_datetime", true, 200, DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업종료일시", "Release_datetime", true, 200, DataGridViewContentAlignment.MiddleCenter);
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "생산수량", "Prd_Qty", true, 120, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "할당작업자", "User_ID", true, 150);
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "근무일", "Work_Date", false, 150, DataGridViewContentAlignment.MiddleCenter);
@@ -107,16 +106,44 @@ namespace AdminForm
         {
             if (AllList != null)
             {
-                List<WorkdiligenceStatusanalysisVOgridview1> list = (from item in AllList
-                                                                     where item.User_ID == fcWorker.SendCode
-                                                                     select new WorkdiligenceStatusanalysisVOgridview1
-                                                                     {
-                                                                         User_ID = item.User_ID,
-                                                                         Work_Date = item.Work_Date
-                                                                     }).ToList();
-                dgvProductRequset.DataSource = list;
-                
+                if (fcWorker.SendName != null && fcWorker.SendName != "")
+                {
+                    // AllList 에서 조회해서 데이터 그리드뷰에 넣는 부분
+                    List<WorkdiligenceStatusanalysisVOgridview1> list = (from item in AllList
+                                                                         select new WorkdiligenceStatusanalysisVOgridview1
+                                                                         {
+                                                                             User_ID = item.User_ID,
+                                                                             Work_Date = item.Work_Date
+                                                                             //Wc_Code = item.Wc_Code
+                                                                         }).ToList();
+
+                    List<WorkdiligenceStatusanalysisVOgridview1> Inslist = (from items in list
+                                                                            where items.User_ID == fcWorker.SendCode && items.Work_Date >= StartDate.Date && items.Work_Date <= EndDate.Date
+                                                                            select items).ToList();
+                    dgvProductRequset.DataSource = Inslist;
+                }
+                else if(fcWorker.SendName == null || fcWorker.SendName == "")
+                {
+                    List<WorkdiligenceStatusanalysisVOgridview1> list = (from item in AllList
+                                                                         select new WorkdiligenceStatusanalysisVOgridview1
+                                                                         {
+                                                                             User_ID = item.User_ID,
+                                                                             Work_Date = item.Work_Date
+                                                                         }).ToList();
+
+                    List<WorkdiligenceStatusanalysisVOgridview1> Inslist = (from items in list
+                                                                            where items.Work_Date >= StartDate.Date && items.Work_Date <= EndDate.Date
+                                                                            select items).ToList();
+                    dgvProductRequset.DataSource = Inslist;
+                }
+               
+
             }
+            else
+            {
+                MessageBox.Show("전체조회를 눌러주세요.");
+            }
+
         }
     }
 }

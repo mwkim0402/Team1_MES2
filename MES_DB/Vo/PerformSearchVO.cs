@@ -31,7 +31,7 @@ namespace MES_DB
         public int Prd_Qty { get; set; }
         public DateTime Plan_Date { get; set; }
         public string Process_code { get; set; }
-        public double Faulty { get; set; }
+        public string Faulty { get; set; }
     }
 
     public class WorkCenterVO

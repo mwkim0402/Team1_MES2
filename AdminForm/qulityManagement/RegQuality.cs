@@ -169,10 +169,24 @@ namespace AdminForm
                     dgvDetail.DataSource = null;
                     dgvDetaillist.DataSource = null;
                 }
-                
+
+                else if ((fcFactory.SendCode == null || fcFactory.SendCode == "") && (fcFactory.SendCode == null || fcFactory.SendCode == ""))
+                {
+                    List<QualityVO> list = (from item in allList
+                                            where  item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                            select item).ToList();
+                    dgvJob.DataSource = list;
+                    dgvDetail.DataSource = null;
+                    dgvDetaillist.DataSource = null;
+                }
+            }
+            else
+            {
+                MessageBox.Show("전체조회를 눌러주세요.");
             }
 
-            if(dgvDetail.Columns.Count < 1 && dgvDetail.Columns.Count < 1)
+
+            if (dgvDetail.Columns.Count < 1 && dgvDetail.Columns.Count < 1)
             {
                 MakeDgv();
             }

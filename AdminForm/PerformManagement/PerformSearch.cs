@@ -105,30 +105,33 @@ namespace AdminForm
         {
             if (allList != null)
             {
-                if (fcFactory.SendCode != null && fcWork.SendCode != null)
+                if ((fcFactory.SendCode != null && fcFactory.SendCode != "") && (fcWork.SendCode != null && fcWork.SendCode != ""))
                 {
                     List<PerformSearchVO> list = (from item in allList
-                                                  where item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode
+                                                  where item.Process_code == fcFactory.SendCode && item.Wc_Code == fcWork.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
                                                   select item).ToList();
                     dgvSearchResult.DataSource = list;
                 }
-                else if (fcFactory.SendCode != null && fcWork.SendCode == null)
+                else if ((fcFactory.SendCode != null && fcFactory.SendCode != "") && (fcWork.SendCode == null || fcWork.SendCode == ""))
                 {
                     List<PerformSearchVO> list = (from item in allList
-                                                  where item.Process_code == fcFactory.SendCode
+                                                  where item.Process_code == fcFactory.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
                                                   select item).ToList();
                     dgvSearchResult.DataSource = list;
                 }
-                else if (fcWork.SendCode != null && fcFactory.SendCode == null)
+                else if ((fcWork.SendCode != null && fcFactory.SendCode != "") && (fcFactory.SendCode == null || fcWork.SendCode == ""))
                 {
                     List<PerformSearchVO> list = (from item in allList
-                                                  where item.Wc_Code == fcWork.SendCode
+                                                  where item.Wc_Code == fcWork.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
                                                   select item).ToList();
                     dgvSearchResult.DataSource = list;
                 }
-                else
+                else if ((fcWork.SendCode == null || fcFactory.SendCode == "") && (fcFactory.SendCode == null || fcWork.SendCode == ""))
                 {
-                    frm.lblAlert.Text = "조건을 선택해주세요.";
+                    List<PerformSearchVO> list = (from item in allList
+                                                  where item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                                  select item).ToList();
+                    dgvSearchResult.DataSource = list;
                 }
             }
             else

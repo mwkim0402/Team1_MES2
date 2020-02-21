@@ -49,7 +49,7 @@
             this.Controls.Add(this.picFaulty);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ViewFaultyImage";
-            this.Text = "ViewFaultyImage";
+            this.Text = "사진 보기";
             this.Load += new System.EventHandler(this.ViewFaultyImage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picFaulty)).EndInit();
             this.ResumeLayout(false);

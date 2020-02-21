@@ -78,12 +78,27 @@ namespace AdminForm
         {
             if (allList != null)
             {
-                // AllList 에서 조회해서 데이터 그리드뷰에 넣는 부분
-                List<MES_DB.ProductListVO> list = (from item in allList
-                                                   where item.Item_Name == fcCategory.SendName && item.Prd_Date >= StartDate.Date && item.Prd_Date <= EndDate.Date
-                                                   select item).ToList();
-                if (list.Count > 0)
-                    dgvSearchResult.DataSource = list;
+                if (fcCategory.SendName != null && fcCategory.SendName != "")
+                {
+                    // AllList 에서 조회해서 데이터 그리드뷰에 넣는 부분
+                    List<MES_DB.ProductListVO> list = (from item in allList
+                                                       where item.Item_Name == fcCategory.SendName && item.Prd_Date >= StartDate.Date && item.Prd_Date <= EndDate.Date
+                                                       select item).ToList();
+                    if (list.Count > 0)
+                        dgvSearchResult.DataSource = list;
+                }
+                else if(fcCategory.SendName == null || fcCategory.SendName =="")
+                {
+                    List<MES_DB.ProductListVO> list = (from item in allList
+                                                       where item.Prd_Date >= StartDate.Date && item.Prd_Date <= EndDate.Date
+                                                       select item).ToList();
+                    if (list.Count > 0)
+                        dgvSearchResult.DataSource = list;
+                }
+            }
+            else
+            {
+                MessageBox.Show("전체조회를 눌러주세요.");
             }
 
         }

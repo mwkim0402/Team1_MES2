@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel6 = new System.Windows.Forms.Panel();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtphone = new System.Windows.Forms.TextBox();
+            this.txtLevel = new System.Windows.Forms.TextBox();
+            this.txtGroup = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -42,11 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtGroup = new System.Windows.Forms.TextBox();
-            this.txtLevel = new System.Windows.Forms.TextBox();
-            this.txtphone = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPerson)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +77,44 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(492, 359);
             this.panel6.TabIndex = 13;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(75, 224);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(156, 21);
+            this.txtEmail.TabIndex = 14;
+            // 
+            // txtphone
+            // 
+            this.txtphone.Location = new System.Drawing.Point(75, 187);
+            this.txtphone.Name = "txtphone";
+            this.txtphone.Size = new System.Drawing.Size(156, 21);
+            this.txtphone.TabIndex = 13;
+            // 
+            // txtLevel
+            // 
+            this.txtLevel.Enabled = false;
+            this.txtLevel.Location = new System.Drawing.Point(75, 150);
+            this.txtLevel.Name = "txtLevel";
+            this.txtLevel.Size = new System.Drawing.Size(156, 21);
+            this.txtLevel.TabIndex = 14;
+            // 
+            // txtGroup
+            // 
+            this.txtGroup.Enabled = false;
+            this.txtGroup.Location = new System.Drawing.Point(75, 113);
+            this.txtGroup.Name = "txtGroup";
+            this.txtGroup.Size = new System.Drawing.Size(156, 21);
+            this.txtGroup.TabIndex = 13;
+            // 
+            // txtName
+            // 
+            this.txtName.Enabled = false;
+            this.txtName.Location = new System.Drawing.Point(75, 76);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(156, 21);
+            this.txtName.TabIndex = 14;
             // 
             // txtID
             // 
@@ -206,50 +244,13 @@
             // 
             this.openFileDialog1.FileName = "개인정보 수정";
             // 
-            // txtName
-            // 
-            this.txtName.Enabled = false;
-            this.txtName.Location = new System.Drawing.Point(75, 76);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(156, 21);
-            this.txtName.TabIndex = 14;
-            // 
-            // txtGroup
-            // 
-            this.txtGroup.Enabled = false;
-            this.txtGroup.Location = new System.Drawing.Point(75, 113);
-            this.txtGroup.Name = "txtGroup";
-            this.txtGroup.Size = new System.Drawing.Size(156, 21);
-            this.txtGroup.TabIndex = 13;
-            // 
-            // txtLevel
-            // 
-            this.txtLevel.Enabled = false;
-            this.txtLevel.Location = new System.Drawing.Point(75, 150);
-            this.txtLevel.Name = "txtLevel";
-            this.txtLevel.Size = new System.Drawing.Size(156, 21);
-            this.txtLevel.TabIndex = 14;
-            // 
-            // txtphone
-            // 
-            this.txtphone.Location = new System.Drawing.Point(75, 187);
-            this.txtphone.Name = "txtphone";
-            this.txtphone.Size = new System.Drawing.Size(156, 21);
-            this.txtphone.TabIndex = 13;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(75, 224);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(156, 21);
-            this.txtEmail.TabIndex = 14;
-            // 
             // UserInfoChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 353);
             this.Controls.Add(this.panel6);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "UserInfoChange";
             this.Text = "개인정보 수정";
             this.Load += new System.EventHandler(this.UserInfoChange_Load);

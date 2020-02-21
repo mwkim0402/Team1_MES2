@@ -119,6 +119,12 @@ namespace MES_DB
     {
         public string Item_Code { get; set; }
         public string type { get; set; }
+
+    }
+
+    public class ProCodeVo
+    {
+       public string Process_name { get; set; }
     }
         
 

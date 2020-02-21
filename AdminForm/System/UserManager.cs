@@ -107,7 +107,7 @@ namespace AdminForm
 
 
             UserInfoService ser = new UserInfoService();
-            List<ItemCodeListVO> processList = ser.GetList();
+            List<ProCodeVo> processList = ser.GetList();
             List<ComboItem> proList = new List<ComboItem>();
 
             foreach(var item in processList)
@@ -296,11 +296,11 @@ namespace AdminForm
             
         }
 
-        private static void InsertCombo(List<ComboItem> itemlist, ItemCodeListVO item)
+        private static void InsertCombo(List<ComboItem> itemlist, ProCodeVo item)
         {
             ComboItem combo = new ComboItem();
-            combo.comboText = item.Item_Code;
-            combo.comboValue = item.Item_Code;
+            combo.comboText = item.Process_name;
+            combo.comboValue = item.Process_name;
             itemlist.Add(combo);
         }
     }

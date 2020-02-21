@@ -98,7 +98,7 @@ namespace MES_DB
             }
         }
 
-        public List<ItemCodeListVO> GetList()
+        public List<ProCodeVo> GetList()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -108,7 +108,7 @@ namespace MES_DB
 
                 cmd.Connection.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                List<ItemCodeListVO> list = Helper.DataReaderMapToList<ItemCodeListVO>(reader);
+                List<ProCodeVo> list = Helper.DataReaderMapToList<ProCodeVo>(reader);
                 cmd.Connection.Close();
                 return list;
             }

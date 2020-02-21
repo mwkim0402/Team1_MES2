@@ -68,8 +68,11 @@ namespace AdminForm
                                         comboValue = items.Mold_Group
                                     }).Distinct().ToList();
             ComboClass.ComboBind(item , cmbMoldGroupSearch, true);
-            ComboClass.ComboBind(item, cmbMoldGroupI, false);
-            ComboClass.ComboBind(item, cmbMoldGroupM, false);
+            //ComboClass.ComboBind(item, cmbMoldGroupI, false);
+            //ComboClass.ComboBind(item, cmbMoldGroupM, false);
+
+            cmbMoldGroupI.DataSource = cmbMoldGroupSearch.DataSource;
+            cmbMoldGroupM.DataSource = cmbMoldGroupSearch.DataSource;
             
 
         }

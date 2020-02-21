@@ -97,7 +97,7 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
                 if (_Port == null)
                 {
                     _Port = new SerialPort();
-                    _Port.PortName = "COM3";
+                    _Port.PortName = "COM4";
                     _Port.BaudRate = 9600;
                     _Port.DataBits = 8;
                     _Port.Parity = Parity.None;
@@ -171,7 +171,7 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
             if (!Port.IsOpen)
             {
                 // 현재 시리얼이 연결된 상태가 아니면 연결.
-                Port.PortName = "COM3";
+                Port.PortName = "COM4";
                 Port.BaudRate = 9600;
                 Port.DataBits = 8;
                 Port.Parity = Parity.None;

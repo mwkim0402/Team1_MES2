@@ -29,7 +29,7 @@
     <SuiteName>Beam_MES</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>MES.htm</WebPage>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -61,10 +61,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>ED58636D3CF3A8B56F96958EE1A812B61CC8A815</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>5401D9A5E945232168C60F819B61C6CB5CD87BCE</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>AdminForm_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>AdminForm_6_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -796,6 +796,8 @@
     <None Include="AdminForm_1_TemporaryKey.pfx" />
     <None Include="AdminForm_2_TemporaryKey.pfx" />
     <None Include="AdminForm_3_TemporaryKey.pfx" />
+    <None Include="AdminForm_5_TemporaryKey.pfx" />
+    <None Include="AdminForm_6_TemporaryKey.pfx" />
     <None Include="AdminForm_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
@@ -898,12 +900,12 @@
   <ItemGroup>
     <PublishFile Include="DataBase_XML.xml">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

@@ -26,6 +26,15 @@ namespace FieldOperationForm
                 List<Roll_Vo> list = Helper.DataReaderMapToList<Roll_Vo>(reader);
                 cmd.Connection.Close();
 
+                foreach (var item in list)
+                {
+                    if (item.Wo_Status == "현장마감")
+                    {
+                        item.Mold_Name = null;
+                    }
+                }
+
+
                 return list;
 
 

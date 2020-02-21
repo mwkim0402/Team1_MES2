@@ -166,7 +166,7 @@ namespace FieldOperationForm
         {
             if (t == null)
             {
-                MessageBox.Show("측정항목을 선택해주세요.");
+                MessageBox.Show("측정항목을 선택해주세요.", "알림");
             }
             else
             {
@@ -180,7 +180,8 @@ namespace FieldOperationForm
             vo.Condition_Group = t.ToString();
             InsertCon_Service service = new InsertCon_Service();
             service.InsertInspect(vo);
-            MessageBox.Show("입력완료");
+                txt_MeasuredValue.Text = "";
+            MessageBox.Show("입력완료","알림");
             SetVal();
             }
 
@@ -199,16 +200,22 @@ namespace FieldOperationForm
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            Inspect_Service service = new Inspect_Service();
-            Inspect_Vo vo = new Inspect_Vo();
-            vo.Item_Name = txt_Item.Text;
-            vo.Condition_Val = u;
-            vo.Wc_Name = txt_WorkPlace.Text;
-            vo.Condition_Group = g;
+           
+                if (MessageBox.Show("삭제 하시겠습니까?", "알림", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
 
-            service.deleteVal(vo);
+                    Inspect_Service service = new Inspect_Service();
+                    Inspect_Vo vo = new Inspect_Vo();
+                    vo.Item_Name = txt_Item.Text;
+                    vo.Condition_Val = u;
+                    vo.Wc_Name = txt_WorkPlace.Text;
+                    vo.Condition_Group = g;
 
-            SetVal();
+                    service.deleteVal(vo);
+
+                    SetVal();
+                }
+            
         }
         private void initComboBox()
         {

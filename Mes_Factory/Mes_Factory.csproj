@@ -58,10 +58,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>3EC9B6CD61FE81D6705E085389A8BC85D72F5871</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>AF8AE551DF1DF5F49296D8F0993E4070A8159015</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Mes_Factory_4_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Mes_Factory_5_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -111,6 +111,7 @@
     <None Include="Mes_Factory_2_TemporaryKey.pfx" />
     <None Include="Mes_Factory_3_TemporaryKey.pfx" />
     <None Include="Mes_Factory_4_TemporaryKey.pfx" />
+    <None Include="Mes_Factory_5_TemporaryKey.pfx" />
     <None Include="Mes_Factory_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">

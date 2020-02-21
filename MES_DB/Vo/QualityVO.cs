@@ -62,8 +62,15 @@ namespace MES_DB
         public string Wc_Code { get; set; }
         public string Wc_Name { get; set; }
         public long Condition_measure_seq { get; set; }
+    }
 
-
+    public class SubRegProcessVO
+    {
+        public string Workorderno { get; set; }
+        public DateTime Plan_Date { get; set; }
+        public string Item_Name { get; set; }
+        public string Wc_Name { get; set; }
+        public long Condition_measure_seq { get; set; }
     }
     public class RegProcessListVO
     {

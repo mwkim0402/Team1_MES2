@@ -67,10 +67,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>A054007D470054CCE0F410627020C2C33864D756</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>E4845F404B4A1176E544D4391C9C817A9333795D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>FieldOperationForm_6_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>FieldOperationForm_7_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -385,12 +385,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="FieldOperationForm.csproj.bak" />
     <None Include="FieldOperationForm_1_TemporaryKey.pfx" />
     <None Include="FieldOperationForm_2_TemporaryKey.pfx" />
     <None Include="FieldOperationForm_3_TemporaryKey.pfx" />
     <None Include="FieldOperationForm_4_TemporaryKey.pfx" />
     <None Include="FieldOperationForm_5_TemporaryKey.pfx" />
     <None Include="FieldOperationForm_6_TemporaryKey.pfx" />
+    <None Include="FieldOperationForm_7_TemporaryKey.pfx" />
     <None Include="FieldOperationForm_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />

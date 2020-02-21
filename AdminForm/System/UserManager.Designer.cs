@@ -106,7 +106,6 @@
             this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.txtEditID);
             this.panel1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panel1.Size = new System.Drawing.Size(1124, 103);
             // 
             // tabPage2
             // 
@@ -505,6 +504,7 @@
             // 
             // txtGroupName
             // 
+            this.txtGroupName.Enabled = false;
             this.txtGroupName.Location = new System.Drawing.Point(671, 47);
             this.txtGroupName.Name = "txtGroupName";
             this.txtGroupName.Size = new System.Drawing.Size(152, 26);
@@ -534,6 +534,7 @@
             // 
             // txtEditGroupName
             // 
+            this.txtEditGroupName.Enabled = false;
             this.txtEditGroupName.Location = new System.Drawing.Point(674, 51);
             this.txtEditGroupName.Name = "txtEditGroupName";
             this.txtEditGroupName.Size = new System.Drawing.Size(152, 26);
@@ -563,6 +564,7 @@
             // 
             // cmbGroupCode
             // 
+            this.cmbGroupCode.Enabled = false;
             this.cmbGroupCode.FormattingEnabled = true;
             this.cmbGroupCode.Items.AddRange(new object[] {
             "-- 선택 -- ",
@@ -576,6 +578,7 @@
             // 
             // cmbEditGroupCode
             // 
+            this.cmbEditGroupCode.Enabled = false;
             this.cmbEditGroupCode.FormattingEnabled = true;
             this.cmbEditGroupCode.Items.AddRange(new object[] {
             "-- 선택 -- ",

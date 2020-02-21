@@ -31,6 +31,18 @@ namespace AdminForm
             frm = (MainForm)this.MdiParent;
             ShowDgv();
             CommonClass.Userauthority(btnSave, btnEdit);
+
+            UserInfoService ser = new UserInfoService();
+            List<ProCodeVo> processList = ser.GetList();
+            List<ComboItem> proList = new List<ComboItem>();
+
+            foreach (var item in processList)
+            {
+                InsertCombo(proList, item);
+            }
+
+            ComboClass.ComboBind(proList, cmbProcess, true);
+            ComboClass.ComboBind(proList, cmbEditProcess, true);
         }
 
         private void ShowDgv()
@@ -46,7 +58,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "Default_Process_Code", false, 100);
         }
 
-        
+
         private void DgvSearchResult_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             txtEditName.Text = dgvSearchResult.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -106,17 +118,6 @@ namespace AdminForm
             dgvSearchResult.DataSource = allList;
 
 
-            UserInfoService ser = new UserInfoService();
-            List<ProCodeVo> processList = ser.GetList();
-            List<ComboItem> proList = new List<ComboItem>();
-
-            foreach(var item in processList)
-            {
-                InsertCombo(proList, item);
-            }
-
-            ComboClass.ComboBind(proList, cmbProcess, true);
-            ComboClass.ComboBind(proList, cmbEditProcess, true);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -234,14 +235,50 @@ namespace AdminForm
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             string selectitem = string.Empty;
-            if (cmbUsable.SelectedItem.ToString() != null)
+            if (fcPermiGroup.SendCode != null)
+            {
+                List<UserManagerVO> list = (from item in allList
+                                            where  item.UserGroup_Code == fcPermiGroup.SendCode
+                                            select item).ToList();
+
+                dgvSearchResult.DataSource = list;
+            }
+            else if (txtUserID.Text != "")
+            {
+                List<UserManagerVO> list = (from item in allList
+                                            where item.User_ID == Convert.ToInt32(txtUserID.Text)
+                                            select item).ToList();
+
+                dgvSearchResult.DataSource = list;
+            }
+            else if(txtUserName.Text != "")
+            {
+                List<UserManagerVO> list = (from item in allList
+                                            where item.User_Name == txtUserName.Text
+                                            select item).ToList();
+
+                dgvSearchResult.DataSource = list;
+            }
+            else if(cmbUsable.SelectedItem.ToString() != null)
+            {
                 selectitem = cmbUsable.SelectedItem.ToString();
-
-            List<UserManagerVO> list = (from item in allList
-                                        where item.User_ID == Convert.ToInt32(txtUserID.Text) && item.User_Name == txtUserName.Text && item.Use_YN == selectitem && item.UserGroup_Code == fcPermiGroup.SendCode
-                                        select item).ToList();
-
-            dgvSearchResult.DataSource = list;
+                List<UserManagerVO> list = (from item in allList
+                                            where item.Use_YN == cmbUsable.Text
+                                            select item).ToList();
+                dgvSearchResult.DataSource = list;
+            }
+            else if(fcPermiGroup.SendCode != null && txtUserID.Text != null && txtUserName.Text != null && cmbUsable.SelectedItem.ToString() != null)
+            {
+                selectitem = cmbUsable.SelectedItem.ToString();
+                List<UserManagerVO> list = (from item in allList
+                                            where item.Use_YN == cmbUsable.Text && item.User_Name == txtUserName.Text && item.User_ID == Convert.ToInt32(txtUserID.Text) && item.UserGroup_Code == fcPermiGroup.SendCode
+                                            select item).ToList();
+                dgvSearchResult.DataSource = list;
+            }
+            else
+            {
+                MessageBox.Show("다른 선택조건을 골라주세요.");
+            }
         }
 
         private void cmbGroupCode_SelectedIndexChanged(object sender, EventArgs e)
@@ -268,7 +305,7 @@ namespace AdminForm
         {
             if (cmbUserType.SelectedIndex == 1)
                 cmbGroupCode.SelectedIndex = 2;
-            else if(cmbUserType.SelectedIndex == 2)
+            else if (cmbUserType.SelectedIndex == 2)
                 cmbGroupCode.SelectedIndex = 1;
 
         }
@@ -279,21 +316,21 @@ namespace AdminForm
             {
                 cmbEditGroupCode.SelectedItem = "UserLevel2";
             }
-            else if(cmbEditUserType.SelectedIndex ==2)
+            else if (cmbEditUserType.SelectedIndex == 2)
                 cmbEditGroupCode.SelectedItem = "UserLevel1";
         }
 
         private void cmbEditGroupCode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbEditGroupCode.SelectedIndex == 1)
+            if (cmbEditGroupCode.SelectedIndex == 1)
             {
                 txtEditGroupName.Text = "사원";
             }
-            else if(cmbEditGroupCode.SelectedIndex == 2)
+            else if (cmbEditGroupCode.SelectedIndex == 2)
             {
                 txtEditGroupName.Text = "임원";
             }
-            
+
         }
 
         private static void InsertCombo(List<ComboItem> itemlist, ProCodeVo item)

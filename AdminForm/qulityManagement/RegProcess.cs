@@ -38,7 +38,34 @@ namespace AdminForm
         {
             MES_DB.PerformService service = new MES_DB.PerformService();
             allList = service.GetAllRegProcess();
-            dgvJob.DataSource = allList;
+
+            var list = (from grd in allList
+                        select new SubRegProcessVO
+                        {
+                            Workorderno = grd.Workorderno,
+                            Wc_Name = grd.Wc_Name,
+                            Plan_Date = grd.Plan_Date,
+                            Item_Name = grd.Item_Name,
+                            Condition_measure_seq = grd.Condition_measure_seq
+                        }).Distinct().ToList();
+
+            SubRegProcessVO preVo = new SubRegProcessVO();
+            List<SubRegProcessVO> Alist = new List<SubRegProcessVO>();
+            foreach(var it in list)
+            {
+                if(preVo.Workorderno == it.Workorderno)
+                {
+                    continue;
+                }
+                else
+                {
+                    preVo = it;
+                    Alist.Add(it);
+                }
+            }
+            dgvJob.DataSource = Alist;
+
+
         }
         private void ShowDgv()
         {
@@ -84,13 +111,6 @@ namespace AdminForm
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            //if (fcFactory.SendCode != null && fcWork.SendCode != null)
-            //{
-            //    List<RegProcessVO> list = (from item in allList
-            //                               where item.Process_code == fcFactory.SendCode && item.Wc_Name == fcWork.SendName
-            //                               select item).ToList();
-            //    dgvJob.DataSource = list;
-            //}
             if (allList != null)
             {
                 if ((fcWork.SendCode != null && fcWork.SendName != "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
@@ -101,7 +121,7 @@ namespace AdminForm
                     dgvJob.DataSource = list;
                     dgvList.DataSource = null;
                     dgvListDetail.DataSource = null;
-                   
+
                 }
                 else if ((fcWork.SendCode != null && fcWork.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode == ""))
                 {
@@ -109,7 +129,7 @@ namespace AdminForm
                                                where item.Wc_Code == fcWork.SendName && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
                                                select item).ToList();
                     dgvJob.DataSource = list;
-                   
+
                 }
                 else if ((fcWork.SendCode == null || fcWork.SendCode == "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
                 {
@@ -117,7 +137,7 @@ namespace AdminForm
                                                where item.Process_code == fcFactory.SendCode && item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
                                                select item).ToList();
                     dgvJob.DataSource = list;
-                    
+
                 }
                 else if ((fcFactory.SendCode == null || fcFactory.SendCode == "") && (fcWork.SendCode == null || fcWork.SendCode == ""))
                 {

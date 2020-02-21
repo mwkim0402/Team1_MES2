@@ -61,10 +61,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>991B201E65A570B27B3DF753EBD711105738AC0A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>C02D44B273CD2023A99BD25726C1D7904CDCF5AD</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>AdminForm_7_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>AdminForm_8_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -800,6 +800,7 @@
     <None Include="AdminForm_5_TemporaryKey.pfx" />
     <None Include="AdminForm_6_TemporaryKey.pfx" />
     <None Include="AdminForm_7_TemporaryKey.pfx" />
+    <None Include="AdminForm_8_TemporaryKey.pfx" />
     <None Include="AdminForm_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />

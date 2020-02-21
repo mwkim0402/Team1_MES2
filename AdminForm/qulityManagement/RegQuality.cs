@@ -57,7 +57,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Inspect_code", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Plan_Date", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "deviation", false, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Inspect_Measure_seq", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Inspect_Measure_seq", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "0", "Inspect_Val", false, 100);
 
             MakeDgv();
@@ -99,7 +99,7 @@ namespace AdminForm
             workOrderNo = dgvJob.Rows[e.RowIndex].Cells[0].Value.ToString();
             primary = Convert.ToInt32(dgvJob.Rows[e.RowIndex].Cells[13].Value);
             List<QualityDetailVO> list = (from item in allList
-                                          where item.Workorderno == dgvJob.Rows[e.RowIndex].Cells[0].Value.ToString()
+                                          where item.Workorderno == dgvJob.Rows[e.RowIndex].Cells[0].Value.ToString() && item.Inspect_Measure_seq == primary
                                           select new QualityDetailVO
                                           {
                                               Inspect_name = Name,
@@ -112,7 +112,7 @@ namespace AdminForm
         {
             string Name = dgvDetail.Rows[e.RowIndex].Cells[0].Value.ToString();
             List<QualityDetailDeterVO> list = (from item in allList
-                                               where item.Inspect_code == Name && item.Workorderno == workOrderNo
+                                               where item.Inspect_code == Name && item.Workorderno == workOrderNo && item.Inspect_Measure_seq == primary
                                                select new QualityDetailDeterVO
                                                {
                                                    Inspect_Datetime = item.Inspect_Datetime,
@@ -147,7 +147,7 @@ namespace AdminForm
                     dgvJob.DataSource = list;
                     dgvDetail.DataSource = null;
                     dgvDetaillist.DataSource = null;
-                    
+
                 }
                 else if ((fcWorker.SendCode != null && fcWorker.SendCode != "") && (fcFactory.SendCode == null || fcFactory.SendCode == ""))
                 {
@@ -157,7 +157,7 @@ namespace AdminForm
                     dgvJob.DataSource = list;
                     dgvDetail.DataSource = null;
                     dgvDetaillist.DataSource = null;
-                   
+
                 }
                 else if ((fcWorker.SendCode == null || fcWorker.SendCode == "") && (fcFactory.SendCode != null && fcFactory.SendCode != ""))
                 {
@@ -172,7 +172,7 @@ namespace AdminForm
                 else if ((fcFactory.SendCode == null || fcFactory.SendCode == "") && (fcFactory.SendCode == null || fcFactory.SendCode == ""))
                 {
                     List<QualityVO> list = (from item in allList
-                                            where  item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
+                                            where item.Plan_Date >= StartDate.Date && item.Plan_Date <= EndDate.Date
                                             select item).ToList();
                     dgvJob.DataSource = list;
                     dgvDetail.DataSource = null;
@@ -204,28 +204,20 @@ namespace AdminForm
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // 등록으로 바꿔야 함
-           
-                QulityRegisterForm frm = new QulityRegisterForm(InsVO);
-                if(frm.ShowDialog() == DialogResult.OK)
+
+            QulityRegisterForm frm = new QulityRegisterForm(InsVO);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                dgvJob.DataSource = null;
+                dgvDetail.DataSource = null;
+                dgvDetaillist.DataSource = null;
+                if (dgvJob.Columns.Count < 1 && dgvDetail.Columns.Count < 1 && dgvDetaillist.Columns.Count < 1)
                 {
-                    dgvJob.DataSource = null;
-                    dgvDetail.DataSource = null;
-                    dgvDetaillist.DataSource = null;
                     ShowDgv();
-                    MakeDgv();
                 }
-
-                //    MES_DB.PerformService service = new MES_DB.PerformService();
-                //    service.UpdateRegQulityForm(Convert.ToInt32(txtNum.Text), workOrderNo);
-                //    MessageBox.Show("수정되었습니다.");
-                //    dgvJob.DataSource = null;
-                //    dgvDetail.DataSource = null;
-                //    dgvDetaillist.DataSource = null;
-                //    ShowDgv();
-
-
+            }
         }
-       
+
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
@@ -238,7 +230,11 @@ namespace AdminForm
                 dgvJob.DataSource = null;
                 dgvDetail.DataSource = null;
                 dgvDetaillist.DataSource = null;
-                ShowDgv();
+
+                if (dgvJob.Columns.Count < 1 && dgvDetail.Columns.Count < 1 && dgvDetaillist.Columns.Count < 1)
+                {
+                    ShowDgv();
+                }
 
             }
             else
@@ -249,7 +245,7 @@ namespace AdminForm
 
         private void txtNum_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsDigit(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar))
             {
                 MessageBox.Show("숫자를 입력해주세요.");
                 e.Handled = true;

@@ -44,13 +44,13 @@ namespace AdminForm
 
 
 
-        private async void MainForm_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
+            MenuTreeService service = new MenuTreeService();
+            menuList = service.GetAllMenu();
+
             SetButtonImage();
-            MenuService service = new MenuService();
-            menuList = await service.GetListAsync("GetAllMenu", new List<MenuTreeVo>());
-
-
+            
             trvMenu.Visible = false;
             trvBookMark.Visible = false;
             trvBookMark.Location = new Point(0, 10);

@@ -36,11 +36,11 @@ namespace AdminForm
 
         private void Search_Click(object sender, EventArgs e)
         {
-            
-            using (FrmWaitForm frm = new FrmWaitForm(setAction))
-            {
-                frm.ShowDialog(this);
-            }
+            setAction();
+            //using (FrmWaitForm frm = new FrmWaitForm(setAction))
+            //{
+            //    frm.ShowDialog(this);
+            //}
         }
 
         private void setAction()
@@ -56,7 +56,7 @@ namespace AdminForm
                 string strSql = $@"select Use_Seq, MM.Mold_Name, MH.Workorderno,MH.Use_Starttime,MH.Use_Endtime
                                     from Mold_Use_History MH inner
                                     join Mold_Master MM on MH.Mold_Code = MM.Mold_Code
-									and  convert(varchar(10),Use_Starttime,23) = {findDate}";
+									and  convert(varchar(10),Use_Starttime,23) = '{findDate}'";
 
                 SqlDataAdapter da = new SqlDataAdapter(strSql, conn);
                 da.Fill(dsQuery, "Query");

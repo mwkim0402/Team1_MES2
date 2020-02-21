@@ -12,20 +12,27 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>C:\Temp\MES\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <InstallUrl>https://minwootest.azurewebsites.net/MES/</InstallUrl>
+    <ProductName>Beam_MES</ProductName>
+    <PublisherName>Team1</PublisherName>
+    <SuiteName>Beam_MES</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>MES.htm</WebPage>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -49,6 +56,24 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>11111.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>6396B69255FAADC5F60CB0CD5DF17D26A46974B9</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>AdminForm_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -767,7 +792,9 @@
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
+    <None Include="AdminForm_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -782,6 +809,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="image\조회 32x32.jpg" />
     <None Include="bin\Debug\image\teamlogo.png" />
     <None Include="bin\Debug\image\Reading_16x16.png" />
     <None Include="bin\Debug\image\Action_Save_New_32x32.png" />
@@ -792,18 +820,45 @@
     <None Include="bin\Debug\image\teamlogotest.png" />
     <None Include="bin\Debug\image\logotest.PNG" />
     <Content Include="11111.ico" />
+    <Content Include="DataBase_XML.xml" />
+    <Content Include="image\Action_Export_ToXls.png" />
+    <Content Include="image\Action_Export_ToXls_32x32.png" />
     <Content Include="image\Action_Save_New_32x32.png" />
     <Content Include="image\bookmark.png" />
     <Content Include="image\btn.png" />
     <Content Include="image\buttonImage.png" />
+    <Content Include="image\Copy.ico" />
     <Content Include="image\DeleteList_32x32.png" />
     <Content Include="image\doc_icon.png" />
+    <Content Include="image\Edit.ico" />
     <Content Include="image\Edit_32x32.png" />
+    <Content Include="image\Erase.ico" />
+    <Content Include="image\Error.ico" />
+    <Content Include="image\Exit.ico" />
+    <Content Include="image\Home.ico" />
+    <Content Include="image\icons8-collapse-arrow-32.png" />
+    <Content Include="image\icons8-expand-arrow-32.png" />
+    <Content Include="image\Loading.gif" />
+    <Content Include="image\Login.png" />
+    <Content Include="image\logotest.PNG" />
     <Content Include="image\mark.jpg" />
+    <Content Include="image\Notes_16x16.png" />
+    <Content Include="image\Paste.ico" />
+    <Content Include="image\Print.ico" />
+    <Content Include="image\Reading_16x16.png" />
     <Content Include="image\Remove_16x16.png" />
     <Content Include="image\Report2_32x32.png" />
+    <Content Include="image\Save as.ico" />
+    <Content Include="image\Search text.ico" />
+    <Content Include="image\Search.ico" />
     <Content Include="image\searchBtn.png" />
+    <Content Include="image\Settings.ico" />
+    <Content Include="image\star_16x16.png" />
     <Content Include="image\teamlogo.png" />
+    <Content Include="image\teamlogotest.png" />
+    <Content Include="image\Tools.ico" />
+    <Content Include="image\Warning.ico" />
+    <Content Include="image\Zoom.ico" />
     <Content Include="image\구디로고.png" />
   </ItemGroup>
   <ItemGroup>
@@ -835,6 +890,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="DataBase_XML.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

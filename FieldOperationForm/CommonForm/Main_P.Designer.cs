@@ -292,6 +292,7 @@
             this.IsMdiContainer = true;
             this.Name = "Main_P";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_P_FormClosing);
             this.Load += new System.EventHandler(this.FieldmanagementP_Load);
             this.panel10.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

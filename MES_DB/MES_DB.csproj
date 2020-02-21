@@ -107,6 +107,7 @@
     <Compile Include="Vo\ProcessVo.cs" />
     <Compile Include="Vo\QualityVO.cs" />
     <Compile Include="Vo\UserInfoVo.cs" />
+    <Compile Include="Vo\UserLoginVo.cs" />
     <Compile Include="Vo\UserVO.cs" />
     <Compile Include="Vo\WorkCenterVo.cs" />
     <Compile Include="Vo\WorkdiligenceStatusanalysisVO.cs" />

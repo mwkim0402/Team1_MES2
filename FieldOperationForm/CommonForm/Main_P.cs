@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MES_DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -159,6 +160,12 @@ namespace FieldOperationForm
         {
             this.WindowState = FormWindowState.Normal;
 
+        }
+
+        private void Main_P_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            UserLoginService loginService = new UserLoginService();
+            loginService.UpdateLogout(Global.User_ID);
         }
 
         private void panel10_MouseUp(object sender, MouseEventArgs e)

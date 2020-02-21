@@ -163,6 +163,8 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "LoginLogInfo";
+            this.Activated += new System.EventHandler(this.LoginLogInfo_Activated);
+            this.Deactivate += new System.EventHandler(this.LoginLogInfo_Deactivate);
             this.Load += new System.EventHandler(this.LoginLogInfo_Load);
             this.Controls.SetChildIndex(this.tabControl1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);

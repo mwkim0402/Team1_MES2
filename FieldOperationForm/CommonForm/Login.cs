@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;
+using MES_DB;
 
 namespace FieldOperationForm
 {
@@ -31,7 +32,7 @@ namespace FieldOperationForm
             JobOrderStatus frm1;//제선
             JobOrderStatus_Package frm2; // 포장
             JobOrderStatus_Steelmaking frm3;//제강
-
+            UserLoginService loginService = new UserLoginService();
             if (service.UserLogin(txt_UserID.Text.Trim(), txt_UserPwd.Text.Trim()) == 0)
             {
                 MessageBox.Show("아이디 또는 비밀번호가 일치하지 않습니다", "알림");
@@ -55,6 +56,7 @@ namespace FieldOperationForm
                 main.btn_logout.Enabled = true;
                 main.btn_Home.Enabled = true;
                 Global.User_ID =Convert.ToInt32(txt_UserID.Text);
+                loginService.InsertLoginPOP(Global.User_ID);
             }
 
             else if (service.GetUserType(txt_UserID.Text.Trim(), txt_UserPwd.Text.Trim()) == "제선")
@@ -71,6 +73,7 @@ namespace FieldOperationForm
                 main. btn_logout.Enabled = true;
                 main.btn_Home.Enabled = true;
                 Global.User_ID = Convert.ToInt32(txt_UserID.Text);
+                loginService.InsertLoginPOP(Global.User_ID);
             }
 
             else if (service.GetUserType(txt_UserID.Text.Trim(), txt_UserPwd.Text.Trim()) == "제강")
@@ -87,6 +90,7 @@ namespace FieldOperationForm
                 main.btn_logout.Enabled = true;
                 main.btn_Home.Enabled = true;
                 Global.User_ID = Convert.ToInt32(txt_UserID.Text);
+                loginService.InsertLoginPOP(Global.User_ID);
             }
 
             else
@@ -103,6 +107,7 @@ namespace FieldOperationForm
                 main.btn_logout.Enabled = true;
                 main.btn_Home.Enabled = true;
                 Global.User_ID = Convert.ToInt32(txt_UserID.Text);
+                loginService.InsertLoginPOP(Global.User_ID);
             }
 
 

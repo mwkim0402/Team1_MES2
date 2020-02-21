@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MES_DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace AdminForm
 {
     public partial class LoginLogInfo : dgvOne
     {
+        List<UserLoginVo> loginHis = null;
+        MainForm frm;
         public LoginLogInfo()
         {
             InitializeComponent();
@@ -19,18 +22,35 @@ namespace AdminForm
 
         private void LoginLogInfo_Load(object sender, EventArgs e)
         {
+            frm = (MainForm)this.MdiParent;
             ShowDgv();
+            UserLoginService service = new UserLoginService();
+            loginHis = service.GetAllLoginHis();
+            dgvSearchResult.DataSource = loginHis;
         }
 
         private void ShowDgv()
         {
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자명", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자IP", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "SesstionID", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자PC", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "화면명", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "로그인 일시", "1", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용 일시", "1", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사번", "User_ID", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사원명", "User_Name", true, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "접속 프로그램", "Form_Type", true, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "로그인 시간", "Login_Time", true, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "로그아웃 시간", "Logout_Time", true, 200);
+        }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            UserLoginService service = new UserLoginService();
+            loginHis = service.GetAllLoginHis();
+            dgvSearchResult.DataSource = loginHis;
+        }
+        private void LoginLogInfo_Activated(object sender, EventArgs e)
+        {
+            frm.Search_Click += btnSave_Click;
+        }
+
+        private void LoginLogInfo_Deactivate(object sender, EventArgs e)
+        {
+            frm.Search_Click -= btnSave_Click;
         }
     }
 }

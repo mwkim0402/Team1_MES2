@@ -61,10 +61,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>6529F4A6589328FE82CCECA0BE2DBC586FC02855</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>8669E54FAFEE24A2E8FC2878F4C5540798EC82CE</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>AdminForm_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>AdminForm_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -793,6 +793,7 @@
       <Link>.editorconfig</Link>
     </None>
     <None Include="AdminForm_1_TemporaryKey.pfx" />
+    <None Include="AdminForm_2_TemporaryKey.pfx" />
     <None Include="AdminForm_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
@@ -895,12 +896,12 @@
   <ItemGroup>
     <PublishFile Include="DataBase_XML.xml">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

@@ -23,5 +23,11 @@ namespace MES_DB
             UserLoginDAC dac = new UserLoginDAC();
             return dac.UpdateLogoutHis(id);
         }
+
+        public List<UserLoginVo> GetAllLoginHis()
+        {
+            UserLoginDAC dac = new UserLoginDAC();
+            return dac.GetAllLoginHis();
+        }
     }
 }

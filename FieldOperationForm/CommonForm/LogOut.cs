@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MES_DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,6 +35,8 @@ namespace FieldOperationForm
             main.btn_NonOperation.Enabled = false;
             main.btn_logout.Enabled = false;
             main.btn_Home.Enabled = false;
+            UserLoginService loginService = new UserLoginService();
+            loginService.UpdateLogout(Global.User_ID);
 
         }
 

@@ -67,7 +67,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B9A8327E787D31DD9B954FAACFDAD0700906CB11</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>A054007D470054CCE0F410627020C2C33864D756</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>FieldOperationForm_6_TemporaryKey.pfx</ManifestKeyFile>

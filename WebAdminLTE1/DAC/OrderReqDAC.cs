@@ -58,7 +58,7 @@ namespace WebApplication0106.DAC
             int iTotCount = 0;
             using (SqlConnection conn = new SqlConnection(strconn))
             {
-                string sql = @"select count(*) from Work_History where Work_EndTime is not null";
+                string sql = @"select count(*) from Wo_Req where Req_Status = '의뢰접수'";
 
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -74,7 +74,7 @@ namespace WebApplication0106.DAC
             int iTotCount = 0;
             using (SqlConnection conn = new SqlConnection(strconn))
             {
-                string sql = @"select * from Work_History where Work_EndTime is not null and Work_EndTime = convert(nvarchar(10), getdate(),23)";
+                string sql = @"select count(*) from Wo_Req where Req_Status = '의뢰접수' and convert(nvarchar(10), Ins_Date,23) = convert(nvarchar(10), getdate(),23)";
 
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, conn))

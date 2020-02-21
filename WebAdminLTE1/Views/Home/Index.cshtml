@@ -27,7 +27,7 @@
                 <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">금일 작업현황</span>
+                    <span class="info-box-text">금일 의뢰접수</span>
                     <span class="info-box-number">@ViewBag.WoReqCountToday</span> @DateTime.Now.ToShortDateString() 기준
                 </div>
                 <!-- /.info-box-content -->
@@ -43,7 +43,7 @@
                 <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">누적 작업현황</span>
+                    <span class="info-box-text">누적 생산의뢰</span>
                     <span class="info-box-number">@ViewBag.WoReqCount</span> @DateTime.Now.ToShortDateString() 기준
                 </div>
                 <!-- /.info-box-content -->
@@ -397,8 +397,8 @@
                     double dataWCAY = (totalWCAY - stoppingWCAY) / totalWCAY * 100;
                     double dataWCJJ = (totalWCJJ - stoppingWCJJ) / totalWCJJ * 100;
                     double dataWCPJ = (totalWCPJ - stoppingWCPJ) / totalWCPJ * 100;
-                    string WCJS = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-red progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:" + dataWCJS + "% '> </div></div>";
-                    string WCJK = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-success progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:" + dataWCJK + "% '> </div></div>";
+                    string WCJK = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-red progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:" + dataWCJS + "% '> </div></div>";
+                    string WCJS = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-success progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:" + dataWCJK + "% '> </div></div>";
                     string WCAY = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-warning progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:" + dataWCAY + "% '> </div></div>";
                     string WCJJ = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-aqua progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:" + dataWCJJ + "% '> </div></div>";
                     string WCPJ = "<div class='progress progress-sm vertical active' style='margin-bottom:0px; margin-right:5px;'> <div class='progress-bar progress-bar-light-blue progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='height:" + dataWCPJ + "% '> </div></div>";
@@ -407,8 +407,8 @@
                 <div class="box-body">
                     <div class="row" style="margin-left:0px; margin-right:0px">
                         <div class="col-md-4" style="width:175px">
-                            @(new HtmlString(WCJS))
                             @(new HtmlString(WCJK))
+                            @(new HtmlString(WCJS))
                             @(new HtmlString(WCAY))
                             @(new HtmlString(WCJJ))
                             @(new HtmlString(WCPJ))

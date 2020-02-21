@@ -66,10 +66,13 @@ namespace AdminForm
                                     {
                                         comboText = items.Mold_Group,
                                         comboValue = items.Mold_Group
-                                    }).Distinct().ToList();
+                                    }).Distinct().ToList() ;
             ComboClass.ComboBind(item , cmbMoldGroupSearch, true);
-            ComboClass.ComboBind(item, cmbMoldGroupI, false);
-            ComboClass.ComboBind(item, cmbMoldGroupM, false);
+            //ComboClass.ComboBind(item, cmbMoldGroupI, false);
+            //ComboClass.ComboBind(item, cmbMoldGroupM, false);
+
+            cmbMoldGroupI.DataSource = cmbMoldGroupSearch.DataSource;
+            cmbMoldGroupM.DataSource = cmbMoldGroupSearch.DataSource;
             
 
         }

@@ -59,6 +59,7 @@
     <Compile Include="Dac\QualityDAC.cs" />
     <Compile Include="Dac\UserDAC.cs" />
     <Compile Include="Dac\UserInfoDac.cs" />
+    <Compile Include="Dac\UserLoginDAC.cs" />
     <Compile Include="Dac\WoReqDAC.cs" />
     <Compile Include="Dac\WorkCenterDAC.cs" />
     <Compile Include="Dac\WorkOrderDAC.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Service\NoticeService.cs" />
     <Compile Include="Service\QualityService.cs" />
     <Compile Include="Service\UserInfoService.cs" />
+    <Compile Include="Service\UserLoginService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Service\WoReqService.cs" />
     <Compile Include="Service\WorkOrderService.cs" />

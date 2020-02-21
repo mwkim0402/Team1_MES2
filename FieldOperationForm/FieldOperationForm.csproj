@@ -29,7 +29,7 @@
     <SuiteName>Beam_POP</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>POP.htm</WebPage>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -67,10 +67,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>A427460E0A91EB546BC7BADB5CB559328EE3A1FA</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>24970C0E353AEDA5B1218888EBC2EE2B48D217E4</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>FieldOperationForm_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>FieldOperationForm_5_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -388,6 +388,8 @@
     <None Include="FieldOperationForm_1_TemporaryKey.pfx" />
     <None Include="FieldOperationForm_2_TemporaryKey.pfx" />
     <None Include="FieldOperationForm_3_TemporaryKey.pfx" />
+    <None Include="FieldOperationForm_4_TemporaryKey.pfx" />
+    <None Include="FieldOperationForm_5_TemporaryKey.pfx" />
     <None Include="FieldOperationForm_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
@@ -430,38 +432,24 @@
     <Content Include="Resources\캡처.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MES_API\MES_API.csproj">
-      <Project>{d6db38a5-69c8-4604-9d39-4f6168113965}</Project>
-      <Name>MES_API</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MES_DB\MES_DB.csproj">
-      <Project>{c5a0dac0-fd93-4179-9471-da3fa7b21737}</Project>
-      <Name>MES_DB</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MES_DTO\MES_DTO.csproj">
-      <Project>{92324320-e0a8-43d3-803e-73e445f281c3}</Project>
-      <Name>MES_DTO</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <PublishFile Include="Class\DataBase_XML.xml">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="DataBase_XML.xml">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>
@@ -476,6 +464,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MES_DB\MES_DB.csproj">
+      <Project>{c5a0dac0-fd93-4179-9471-da3fa7b21737}</Project>
+      <Name>MES_DB</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

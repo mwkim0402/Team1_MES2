@@ -29,7 +29,7 @@
     <SuiteName>Beam_Factory</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>Factory.htm</WebPage>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -58,10 +58,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>A256241311B76BBA6F874EC2410409F42828D069</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>DE142CD9C73087E7A9AD5C1AD7C77548B51401B4</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Mes_Factory_2_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Mes_Factory_4_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -109,6 +109,8 @@
     </Compile>
     <None Include="Mes_Factory_1_TemporaryKey.pfx" />
     <None Include="Mes_Factory_2_TemporaryKey.pfx" />
+    <None Include="Mes_Factory_3_TemporaryKey.pfx" />
+    <None Include="Mes_Factory_4_TemporaryKey.pfx" />
     <None Include="Mes_Factory_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -123,12 +125,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MES_DB\MES_DB.csproj">
-      <Project>{c5a0dac0-fd93-4179-9471-da3fa7b21737}</Project>
-      <Name>MES_DB</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase_XML.xml" />
@@ -156,6 +152,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MES_DB\MES_DB.csproj">
+      <Project>{c5a0dac0-fd93-4179-9471-da3fa7b21737}</Project>
+      <Name>MES_DB</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

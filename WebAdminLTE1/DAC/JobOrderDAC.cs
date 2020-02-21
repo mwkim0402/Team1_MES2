@@ -68,7 +68,6 @@ namespace WebApplication0106.DAC
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@DateToday", DateTime.Today.ToString().Substring(0,10));
 
                     list = Helper.DataReaderMapToList<TimeLineVO>(cmd.ExecuteReader());
                 }
@@ -93,7 +92,6 @@ namespace WebApplication0106.DAC
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@DateToday", DateTime.Today.ToString().Substring(0, 10));
 
                     list = Helper.DataReaderMapToList<TimeLineVO>(cmd.ExecuteReader());
                 }
@@ -191,13 +189,12 @@ namespace WebApplication0106.DAC
             {
                 string sql = @"select sum(Plan_Qty) from WorkOrder w, WorkCenter_Master wc where (WC_Group = @Wc_Group or isnull(@Wc_Group,'')='')
                                 and w.Wc_Code = wc.Wc_Code
-								and Plan_Date =@Today";
+								and Plan_Date = CONVERT(varchar(10),getdate(),23)";
 
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@Wc_Group", category);
-                    cmd.Parameters.AddWithValue("@Today", DateTime.Today.ToShortDateString());
 
                     int.TryParse(cmd.ExecuteScalar().ToString(), out iTotCount);
 
@@ -214,13 +211,12 @@ namespace WebApplication0106.DAC
             {
                 string sql = @"select sum(Prd_Qty) from WorkOrder w, WorkCenter_Master wc where (WC_Group = @Wc_Group or isnull(@Wc_Group,'')='')
                                 and w.Wc_Code = wc.Wc_Code
-								and Plan_Date =@Today";
+								and Plan_Date = CONVERT(varchar(10),getdate(),23)";
 
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@Wc_Group", category);
-                    cmd.Parameters.AddWithValue("@Today", DateTime.Today.ToShortDateString());
 
                     int.TryParse(cmd.ExecuteScalar().ToString(), out iTotCount);
 
@@ -238,7 +234,7 @@ namespace WebApplication0106.DAC
             {
                 string sql = @"select count(*) from WorkOrder w, WorkCenter_Master wc
                                 where w.Wc_Code = wc.Wc_Code
-                                and w.Wo_Status = '작업종료'
+                                and w.Wo_Status in ('작업종료','현장마감')
                                 and Wc_Group = @Wc_Group";
 
                 conn.Open();
@@ -257,15 +253,14 @@ namespace WebApplication0106.DAC
             {
                 string sql = @"select count(*) from WorkOrder w, WorkCenter_Master wc
                                 where w.Wc_Code = wc.Wc_Code
-                                and w.Wo_Status = '작업종료'
-                                and Wc_Group = @Wc_Group
-                                and (convert(varchar(10), Prd_Endtime, 23))= @Today";
+                                and w.Wo_Status in ('작업종료','현장마감')
+                                and (convert(varchar(10), Prd_Endtime, 23))= CONVERT(varchar(10),getdate(),23)
+                                and Wc_Group = @Wc_Group";
 
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@Wc_Group", category);
-                    cmd.Parameters.AddWithValue("@Today", DateTime.Today.ToShortDateString());
                     iTotCount = Convert.ToInt32(cmd.ExecuteScalar());
                 }
             }

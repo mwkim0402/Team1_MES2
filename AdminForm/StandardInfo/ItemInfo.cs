@@ -29,6 +29,7 @@ namespace AdminForm
             ItemGroupList = service.GetItemGroupCombo();
             ItemGroupComboBind();
             dgvSearchResult.ColumnHeadersHeight = 500;
+            CommonClass.Userauthority(btnInsert,btnUpdate);
         }
         private void ItemGroupComboBind()
         {

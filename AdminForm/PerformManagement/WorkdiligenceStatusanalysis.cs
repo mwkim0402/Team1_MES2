@@ -19,6 +19,8 @@ namespace AdminForm
         DateTime StartDate;
         DateTime EndDate;
 
+        DateTime workdate;
+
         public WorkdiligenceStatusanalysis()
         {
             InitializeComponent();
@@ -34,9 +36,10 @@ namespace AdminForm
 
         private void DgvProductRequset_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            workdate = Convert.ToDateTime(dgvProductRequset.Rows[e.RowIndex].Cells[1].Value); 
             string user = dgvProductRequset.Rows[e.RowIndex].Cells[0].Value.ToString();
             List<WorkdiligenceStatusanalysisVO> Gdv2list = (from item in AllList
-                                                            where item.User_ID == user
+                                                            where item.User_ID == user && item.Work_Date == workdate.Date
                                                             select item).ToList();
             dgvJobOrder.DataSource = Gdv2list;
         }
@@ -75,6 +78,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "작업시간", "Work_Time", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "생산수량", "Prd_Qty", true, 120, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "할당작업자", "User_ID", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvJobOrder, "근무일", "Work_Date", false, 150, DataGridViewContentAlignment.MiddleCenter);
         }
 
         private void WorkdiligenceStatusanalysis_Activated(object sender, EventArgs e)
@@ -111,6 +115,7 @@ namespace AdminForm
                                                                          Work_Date = item.Work_Date
                                                                      }).ToList();
                 dgvProductRequset.DataSource = list;
+                
             }
         }
     }

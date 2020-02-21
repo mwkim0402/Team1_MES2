@@ -102,7 +102,6 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txtUpCode);
             this.panel1.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.panel1.Size = new System.Drawing.Size(1124, 103);
             // 
             // pnlParent1
             // 
@@ -246,6 +245,7 @@
             // 
             this.btnInsSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInsSave.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnInsSave.Enabled = false;
             this.btnInsSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnInsSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsSave.Font = new System.Drawing.Font("나눔고딕", 12F);
@@ -335,6 +335,7 @@
             // 
             this.btnUpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpButton.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnUpButton.Enabled = false;
             this.btnUpButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpButton.Font = new System.Drawing.Font("나눔고딕", 12F);

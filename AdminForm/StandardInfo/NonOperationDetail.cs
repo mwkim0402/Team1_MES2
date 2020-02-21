@@ -28,6 +28,7 @@ namespace AdminForm
             Search();
             frm = (MainForm)this.MdiParent;
             ComboBind();
+            CommonClass.Userauthority(button1);
         }
         private void Search()
         {

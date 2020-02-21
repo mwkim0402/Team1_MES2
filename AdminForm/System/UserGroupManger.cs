@@ -33,6 +33,7 @@ namespace AdminForm
             allList = service.UserGroupManagerForm();
 
             dgvSearchResult.DataSource = allList;
+            CommonClass.Userauthority(btnSave, btnEdit);
         }
 
         private void ShowDgv()

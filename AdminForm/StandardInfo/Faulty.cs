@@ -26,6 +26,7 @@ namespace AdminForm
             frm = (MainForm)this.MdiParent;
             ShowDgv();
             dgvSearchResult.CellDoubleClick += dataGridView1_CellDoubleClick;
+            CommonClass.Userauthority(btnSave,button2);
         }
 
         private void ShowDgv()

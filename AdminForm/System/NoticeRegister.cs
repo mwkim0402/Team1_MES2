@@ -46,7 +46,8 @@ namespace AdminForm
             main = (MainForm)this.MdiParent;
             NoticeSearch();
 
-
+            btnHome.Image = new Bitmap(Application.StartupPath + @"\image\Copy.ico");
+            toolStripButton1.Image =  new Bitmap(Application.StartupPath + @"\image\DeleteList_32x32.png");
         }
         private void NoticeSearch()
         {

@@ -49,11 +49,11 @@ namespace AdminForm
         {
             dgvSearchResult.CellDoubleClick += DgvSearchResult_CellDoubleClick;
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 이름", "User_Name", true, 150);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 ID", "User_ID", true, 150);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 그룹코드", "UserGroup_Code", true, 150);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 ID", "User_ID", true, 150,DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 그룹코드", "UserGroup_Code", true, 150, DataGridViewContentAlignment.MiddleCenter);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용자 그룹 명", "UserGroup_Name", true, 150);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 120);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "패스워드 초기화 횟수", "Pw_Reset_Count", true, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사용여부", "Use_YN", true, 120, DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "패스워드 초기화 횟수", "Pw_Reset_Count", true, 200, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "기본 공정", "User_Type", true, 120);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "x", "Default_Process_Code", false, 100);
         }

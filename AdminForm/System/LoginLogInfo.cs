@@ -31,11 +31,11 @@ namespace AdminForm
 
         private void ShowDgv()
         {
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사번", "User_ID", true, 150);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사원명", "User_Name", true, 200);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "접속 프로그램", "Form_Type", true, 200);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "로그인 시간", "Login_Time", true, 200);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "로그아웃 시간", "Logout_Time", true, 200);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사번", "User_ID", true, 150, DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "사원명", "User_Name", true, 200, DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "접속 프로그램", "Form_Type", true, 200, DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "로그인 시간", "Login_Time", true, 200, DataGridViewContentAlignment.MiddleCenter);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "로그아웃 시간", "Logout_Time", true, 200, DataGridViewContentAlignment.MiddleCenter);
         }
         private void btnSave_Click(object sender, EventArgs e)
         {

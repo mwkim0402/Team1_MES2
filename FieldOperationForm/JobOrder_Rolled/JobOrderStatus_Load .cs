@@ -332,5 +332,15 @@ namespace FieldOperationForm
                 MessageBox.Show("종료된 작업지시를 선택해주세요.");
             }
         }
+
+        private void s_Click(object sender, EventArgs e)
+        {
+            InspectForm frm = new InspectForm(main);
+            frm.BringToFront();
+            frm.MdiParent = main;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+            main.lblChange.Text = "품질 규격 측정";
+        }
     }
 }

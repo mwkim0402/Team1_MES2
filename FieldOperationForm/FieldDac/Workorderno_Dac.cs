@@ -48,6 +48,24 @@ namespace FieldOperationForm
 
                 return list;
 
+            }
+
+        }
+        public List<Workorderno_Vo> InspectWorkCenter(string Wc_Name)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConnectionString);
+                cmd.CommandText = "InsepectWorkorder";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Wc_Name", Wc_Name);
+
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<Workorderno_Vo> list = Helper.DataReaderMapToList<Workorderno_Vo>(reader);
+                cmd.Connection.Close();
+
+                return list;
 
             }
 

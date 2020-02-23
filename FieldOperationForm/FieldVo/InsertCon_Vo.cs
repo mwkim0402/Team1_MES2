@@ -16,4 +16,10 @@ namespace FieldOperationForm
      
         public DateTime Condition_Datetime { get; set; }
     }
+    public class InspectHisVo
+    {
+        public string Inspect_Group { get; set; }
+        public decimal Inspect_Val { get; set; }
+        public DateTime Inspect_Datetime { get; set; }
+    }
 }

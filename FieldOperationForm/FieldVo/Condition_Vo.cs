@@ -15,4 +15,12 @@ namespace FieldOperationForm
         public decimal SL { get; set; }
         public decimal LSL { get; set; }
     }
+    public class InspectMaster_Vo
+    {
+        public string Inspect_Group { get; set; }
+        public decimal USL { get; set; }
+        public decimal SL { get; set; }
+        public decimal LSL { get; set; }
+    }
 }
+

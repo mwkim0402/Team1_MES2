@@ -43,6 +43,10 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            // 
             // toolStrip1
             // 
             this.toolStrip1.AutoSize = false;
@@ -72,7 +76,7 @@
             // btnHome
             // 
             this.btnHome.AutoSize = false;
-            this.btnHome.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnHome.ImageTransparentColor = System.Drawing.Color.LightYellow;
             this.btnHome.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
@@ -87,7 +91,7 @@
             // toolStripButton1
             // 
             this.toolStripButton1.AutoSize = false;
-            this.toolStripButton1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.LightYellow;
             this.toolStripButton1.Margin = new System.Windows.Forms.Padding(0, 1, 5, 2);
@@ -102,7 +106,7 @@
             // 
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 86);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(984, 85);
             this.panel1.TabIndex = 13;
@@ -124,7 +128,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("나눔고딕", 9F);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(300, 18);
             this.button1.Name = "button1";

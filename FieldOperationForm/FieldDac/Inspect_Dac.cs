@@ -31,9 +31,25 @@ namespace FieldOperationForm
 
                 return list;
 
-
             }
+        }
+        public List<InspectMaster_Vo> GetInspectMasetr(string WorkOrderNo)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(this.ConnectionString);
+                cmd.CommandText = @"select Inspect_Group, convert(numeric(5,2),LSL) LSL,convert(numeric(5,2),SL) SL, convert(numeric(5,2),USL) USL
+                                                from WorkCenter_Master wc inner  join WorkOrder wo on wc.Wc_Code = wo.Wc_Code
+                                                inner join Inspect_Spec_Master i on i.Item_Code = wo.Item_Code and i.Process_Code = wc.Process_Code 
+                                                where wo.workorderno =  @WorkOrderNo";
+                cmd.Parameters.AddWithValue("@WorkOrderNo", WorkOrderNo);
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<InspectMaster_Vo> list = Helper.DataReaderMapToList<InspectMaster_Vo>(reader);
+                cmd.Connection.Close();
 
+                return list;
+            }
         }
     }
 }

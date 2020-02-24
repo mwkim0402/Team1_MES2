@@ -89,7 +89,8 @@ namespace AdminForm
             detailList = service.GetMoldingInfoDetail(selected);
             txtMoldCodeM.Text = detailList[0].Mold_Code;
             txtMoldNameM.Text = detailList[0].Mold_Name;
-            cmbMoldGroupM.SelectedValue = detailList[0].Mold_Group; //
+            cmbMoldGroupM.Text = "";
+            cmbMoldGroupM.SelectedText = detailList[0].Mold_Group; //
             txtWarrentNumM.Text = detailList[0].Guar_Shot_Cnt.ToString();
             txtPriceM.Text = detailList[0].Purchase_Amt.ToString();
             dtpInputdateM.Value = detailList[0].In_Date;

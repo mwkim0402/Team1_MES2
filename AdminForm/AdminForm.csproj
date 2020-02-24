@@ -61,10 +61,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>317AFA4776208518D835A8A149A2A180DDF95BFC</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>ACE9C8DEAEFF707CD8856A05076BC1625D7B48F4</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>AdminForm_13_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>AdminForm_12_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -796,7 +796,6 @@
     <None Include="AdminForm_10_TemporaryKey.pfx" />
     <None Include="AdminForm_11_TemporaryKey.pfx" />
     <None Include="AdminForm_12_TemporaryKey.pfx" />
-    <None Include="AdminForm_13_TemporaryKey.pfx" />
     <None Include="AdminForm_1_TemporaryKey.pfx" />
     <None Include="AdminForm_2_TemporaryKey.pfx" />
     <None Include="AdminForm_3_TemporaryKey.pfx" />

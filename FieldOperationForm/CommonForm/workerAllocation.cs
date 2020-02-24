@@ -160,7 +160,7 @@ namespace FieldOperationForm
             try
             {
                 a = dataGridView2.Rows[e.RowIndex].Cells[4].Value.ToString();
-          //      label8.Text = a;
+                
             }
             catch { }
         }

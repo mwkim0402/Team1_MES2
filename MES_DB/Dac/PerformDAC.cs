@@ -167,16 +167,16 @@ namespace MES_DB
             }
         }
 
-        public void UpdateRegQulityForm(int num, string workOrder)
+        public void UpdateRegQulityForm(int num, int seq)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConnectionString);
-                cmd.CommandText = "update Inspect_Measure_History set Inspect_Val = @Inspect_Val where WorkOrderNo = @WorkOrderNo";
+                cmd.CommandText = "update Inspect_Measure_History set Inspect_Val = @Inspect_Val where Inspect_Measure_seq = @Inspect_Measure_seq";
                 cmd.CommandType = CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Inspect_Val", num);
-                cmd.Parameters.AddWithValue("@WorkOrderNo", workOrder);
+                cmd.Parameters.AddWithValue("@Inspect_Measure_seq", seq);
 
                 cmd.Connection.Open();
 

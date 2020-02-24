@@ -56,6 +56,7 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.nuNum = new System.Windows.Forms.NumericUpDown();
             this.fcWorker = new AdminForm.FIndCategory();
             this.fcFactory = new AdminForm.FIndCategory();
             this.panel2.SuspendLayout();
@@ -71,6 +72,7 @@
             this.panel3.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuNum)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -293,6 +295,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.nuNum);
             this.panel3.Controls.Add(this.btnRemove);
             this.panel3.Controls.Add(this.btnAdd);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -382,6 +385,18 @@
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // nuNum
+            // 
+            this.nuNum.Location = new System.Drawing.Point(20, 6);
+            this.nuNum.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nuNum.Name = "nuNum";
+            this.nuNum.Size = new System.Drawing.Size(103, 21);
+            this.nuNum.TabIndex = 4;
+            // 
             // fcWorker
             // 
             this.fcWorker.Category = AdminForm.CategoryMode.WorkCenter;
@@ -435,6 +450,7 @@
             this.tabControl4.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuNum)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -463,5 +479,6 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dgvDetail;
         private System.Windows.Forms.DataGridView dgvDetaillist;
+        private System.Windows.Forms.NumericUpDown nuNum;
     }
 }

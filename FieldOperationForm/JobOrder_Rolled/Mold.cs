@@ -47,7 +47,7 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
 
             dgv.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-
+            dgv.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.Ivory;
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
             dgv.DefaultCellStyle.SelectionBackColor = Color.CadetBlue;
         }

@@ -21,6 +21,7 @@ namespace AdminForm
         decimal value = 0;
         int primary = 0;
         string check;
+        string proName = string.Empty;
         public RegProcess()
         {
             InitializeComponent();
@@ -39,49 +40,55 @@ namespace AdminForm
             MES_DB.PerformService service = new MES_DB.PerformService();
             allList = service.GetAllRegProcess();
 
-            var list = (from grd in allList
-                        select new SubRegProcessVO
-                        {
-                            Workorderno = grd.Workorderno,
-                            Wc_Name = grd.Wc_Name,
-                            Plan_Date = grd.Plan_Date,
-                            Item_Name = grd.Item_Name,
-                            Condition_measure_seq = grd.Condition_measure_seq
-                        }).Distinct().ToList();
+            List<SubRegProcessVO> AList = (from aa in allList
+                                           select new SubRegProcessVO
+                                           {
+                                               Workorderno = aa.Workorderno,
+                                               Wc_Name = aa.Wc_Name,
+                                               Process_name = aa.Process_name,
+                                               Condition_measure_seq = aa.Condition_measure_seq
+                                           }).ToList();
 
-            SubRegProcessVO preVo = new SubRegProcessVO();
-            List<SubRegProcessVO> Alist = new List<SubRegProcessVO>();
-            foreach(var it in list)
+
+            List<SubRegProcessVO> RList = new List<SubRegProcessVO>();
+            List<SubRegProcessVO> QList = new List<SubRegProcessVO>();
+            SubRegProcessVO subvo = new SubRegProcessVO();
+            foreach (var it in AList)
             {
-                if(preVo.Workorderno == it.Workorderno)
+                if (it.Process_name == subvo.Process_name)
                 {
                     continue;
                 }
                 else
                 {
-                    preVo = it;
-                    Alist.Add(it);
+                    subvo = it;
+                    RList.Add(it);
                 }
             }
-            dgvJob.DataSource = Alist;
+
+
+
+            dgvJob.DataSource = RList;
 
 
         }
         private void ShowDgv()
         {
+            //dgvJob.AutoGenerateColumns = false;
+            //dgvJob.AllowUserToAddRows = false;
             dgvJob.CellDoubleClick += dgvJob_CellDoubleClick;
             CommonClass.AddNewColumnToDataGridView(dgvJob, "작업지시번호", "Workorderno", true, 160);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "생산일자", "Plan_Date", true, 120, DataGridViewContentAlignment.MiddleCenter);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "공정코드", "Process_code", true, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "생산일자", "Plan_Date", false, 120, DataGridViewContentAlignment.MiddleCenter); ;
             CommonClass.AddNewColumnToDataGridView(dgvJob, "공정", "Process_name", true, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "작업장", "Wc_Name", true, 100);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "품목코드", "Item_Code", true, 120);
-            CommonClass.AddNewColumnToDataGridView(dgvJob, "품목명", "Item_Name", true, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "품목코드", "Item_Code", false, 120);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "품목명", "Item_Name", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Condition_Name", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "SL", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Condition_Val", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Wc_Code", false, 100);
             CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Condition_measure_seq", false, 100);
+            CommonClass.AddNewColumnToDataGridView(dgvJob, "x", "Condition_Group", false, 100);
 
             MakeDgv();
 
@@ -90,7 +97,8 @@ namespace AdminForm
         private void MakeDgv()
         {
             dgvList.CellDoubleClick += dgvList_CellDoubleClick;
-            CommonClass.AddNewColumnToDataGridView(dgvList, "측정항목", "Condition_Name", true, 130);
+            CommonClass.AddNewColumnToDataGridView(dgvList, "측정항목", "Condition_Name", false, 130);
+            CommonClass.AddNewColumnToDataGridView(dgvList, "측정항목", "Condition_Group", true, 130);
             CommonClass.AddNewColumnToDataGridView(dgvList, "기준값", "SL", true, 100);
 
             dgvListDetail.CellDoubleClick += DgvListDetail_CellDoubleClick;
@@ -171,14 +179,16 @@ namespace AdminForm
 
         private void dgvJob_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            primary = Convert.ToInt32(dgvJob.Rows[e.RowIndex].Cells[11].Value);
-            Workorderno = dgvJob.Rows[e.RowIndex].Cells[0].Value.ToString();
+            primary = Convert.ToInt32(dgvJob.Rows[e.RowIndex].Cells[10].Value);
+            Workorderno = dgvJob.Rows[e.RowIndex].Cells[7].Value.ToString();
+            proName = dgvJob.Rows[e.RowIndex].Cells[11].Value.ToString();
             List<RegProcessListVO> list = (from item in allList
-                                           where item.Workorderno == dgvJob.Rows[e.RowIndex].Cells[0].Value.ToString() && item.Process_code == dgvJob.Rows[e.RowIndex].Cells[2].Value.ToString()
+                                           where item.Workorderno == dgvJob.Rows[e.RowIndex].Cells[7].Value.ToString() && item.Process_name == dgvJob.Rows[e.RowIndex].Cells[11].Value.ToString()
                                            select new RegProcessListVO
                                            {
                                                Condition_Name = item.Condition_Name,
-                                               SL = item.SL
+                                               SL = item.SL,
+                                               Condition_Group = item.Condition_Group
                                            }).ToList();
             dgvList.DataSource = list;
         }
@@ -186,7 +196,7 @@ namespace AdminForm
         private void dgvList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             List<RegProcessListMeaVO> list = (from item in allList
-                                              where item.Workorderno == Workorderno && item.Condition_Name == dgvList.Rows[e.RowIndex].Cells[0].Value.ToString() && item.Process_code == dgvJob.Rows[e.RowIndex].Cells[2].Value.ToString()
+                                              where item.Workorderno == Workorderno && item.Condition_Name == dgvList.Rows[e.RowIndex].Cells[0].Value.ToString() && item.Process_name == proName
                                               select new RegProcessListMeaVO
                                               {
                                                   Condition_Val = item.Condition_Val

@@ -64,16 +64,16 @@ namespace AdminForm
             List<ComboItem> item = (from items in List
                                     select  new ComboItem
                                     {
-                                        comboText = items.Mold_Group,
-                                        comboValue = items.Mold_Group
-                                    }).Distinct().ToList() ;
+                                        comboText = items.Mold_Group.ToString(),
+                                        comboValue = items.Mold_Group.ToString()
+                                    }).Distinct().ToList();
             ComboClass.ComboBind(item , cmbMoldGroupSearch, true);
             //ComboClass.ComboBind(item, cmbMoldGroupI, false);
             //ComboClass.ComboBind(item, cmbMoldGroupM, false);
+            cmbMoldGroupSearch.DataSource = item.Select(items => items.comboText).Distinct().ToList();
+            cmbMoldGroupM.DataSource = item.Select(items => items.comboText).Distinct().ToList();
+            cmbMoldGroupI.DataSource = item.Select(items => items.comboText).Distinct().ToList();
 
-            cmbMoldGroupI.DataSource = cmbMoldGroupSearch.DataSource;
-            cmbMoldGroupM.DataSource = cmbMoldGroupSearch.DataSource;
-            
 
         }
 

@@ -203,19 +203,26 @@ namespace AdminForm
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            // 등록으로 바꿔야 함
-
-            QulityRegisterForm frm = new QulityRegisterForm(InsVO);
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (nuNum.Value > 0)
             {
-                dgvJob.DataSource = null;
-                dgvDetail.DataSource = null;
-                dgvDetaillist.DataSource = null;
-                if (dgvJob.Columns.Count < 1 && dgvDetail.Columns.Count < 1 && dgvDetaillist.Columns.Count < 1)
-                {
-                    ShowDgv();
-                }
+                MES_DB.PerformService service = new MES_DB.PerformService();
+                service.UpdateRegQulityForm(Convert.ToInt32(nuNum.Value), primary);
             }
+            else
+            {
+                MessageBox.Show("수정할 측정값을 입력해주세요.");
+            }
+            //QulityRegisterForm frm = new QulityRegisterForm(InsVO);
+            //if (frm.ShowDialog() == DialogResult.OK)
+            //{
+            //    dgvJob.DataSource = null;
+            //    dgvDetail.DataSource = null;
+            //    dgvDetaillist.DataSource = null;
+            //    if (dgvJob.Columns.Count < 1 && dgvDetail.Columns.Count < 1 && dgvDetaillist.Columns.Count < 1)
+            //    {
+            //        ShowDgv();
+            //    }
+            //}
         }
 
 

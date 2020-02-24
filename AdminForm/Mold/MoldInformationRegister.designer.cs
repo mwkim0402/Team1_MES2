@@ -113,7 +113,6 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txtMoldCodeM);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Size = new System.Drawing.Size(1124, 103);
             // 
             // pnlParent1
             // 
@@ -171,7 +170,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(82, 48);
             this.btnSearch.TabIndex = 99;
-            this.btnSearch.Text = "검색";
+            this.btnSearch.Text = "조회";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 

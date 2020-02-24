@@ -48,7 +48,7 @@ namespace FieldOperationForm
             col.DefaultCellStyle.Padding = new Padding(3);
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.Honeydew;
             //    dgv.RowsDefaultCellStyle.BackColor = Color.Ivory;
-
+            dgv.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.Ivory;
 
             dgv.EnableHeadersVisualStyles = false;
             dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.Ivory;
@@ -188,7 +188,7 @@ namespace FieldOperationForm
             try
             {
                 b = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                label8.Text = b;
+              //  label8.Text = b;
             }
             catch { }
         }

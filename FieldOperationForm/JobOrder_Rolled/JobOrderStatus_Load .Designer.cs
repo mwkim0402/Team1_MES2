@@ -97,7 +97,7 @@
             this.btn_Worker.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_Worker.BackColor = System.Drawing.Color.Ivory;
             this.btn_Worker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Worker.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_Worker.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Worker.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btn_Worker.Location = new System.Drawing.Point(536, 437);
             this.btn_Worker.Name = "btn_Worker";
@@ -112,7 +112,7 @@
             this.btn_Process.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_Process.BackColor = System.Drawing.Color.Ivory;
             this.btn_Process.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Process.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_Process.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_Process.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btn_Process.Location = new System.Drawing.Point(1295, 437);
             this.btn_Process.Name = "btn_Process";
@@ -127,7 +127,7 @@
             this.btn_mold.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_mold.BackColor = System.Drawing.Color.Ivory;
             this.btn_mold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mold.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_mold.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_mold.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btn_mold.Location = new System.Drawing.Point(789, 437);
             this.btn_mold.Name = "btn_mold";
@@ -142,7 +142,7 @@
             this.s.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.s.BackColor = System.Drawing.Color.Ivory;
             this.s.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.s.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.s.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.s.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.s.Location = new System.Drawing.Point(1042, 437);
             this.s.Name = "s";
@@ -157,7 +157,7 @@
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button2.BackColor = System.Drawing.Color.Ivory;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.button2.Location = new System.Drawing.Point(30, 437);
             this.button2.Name = "button2";
@@ -172,7 +172,7 @@
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button3.BackColor = System.Drawing.Color.Ivory;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button3.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.button3.Location = new System.Drawing.Point(283, 437);
             this.button3.Name = "button3";

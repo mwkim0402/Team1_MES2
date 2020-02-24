@@ -52,10 +52,10 @@ namespace MES_DB
             PerformDAC dac = new PerformDAC();
             return dac.GetAllQuality();
         }
-        public void UpdateRegQulityForm(int num, string workOrder)
+        public void UpdateRegQulityForm(int num, int Seq)
         {
             PerformDAC dac = new PerformDAC();
-            dac.UpdateRegQulityForm(num, workOrder);
+            dac.UpdateRegQulityForm(num, Seq);
         }
         public void DeleteRegUqlityForm(int num)
         {

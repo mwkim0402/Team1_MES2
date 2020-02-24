@@ -188,7 +188,7 @@ namespace FieldOperationForm
             try
             {
                 b = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                label8.Text = b;
+              //  label8.Text = b;
             }
             catch { }
         }

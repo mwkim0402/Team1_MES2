@@ -42,7 +42,7 @@ namespace AdminForm
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형상태", "Mold_Status", true, 110);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형누적타수", "Cum_Shot_Cnt", true, 150, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형누적생산량", "Cum_Prd_Qty", true, 150, DataGridViewContentAlignment.MiddleRight);
-            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형누적사용시간", "Cum_Time", true, 160);
+            CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "금형누적사용시간", "Cum_Time", true, 160, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "보장타수", "Guar_Shot_Cnt", true, 110, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "구입금액", "Purchase_Amt", true, 110, DataGridViewContentAlignment.MiddleRight);
             CommonClass.AddNewColumnToDataGridView(dgvSearchResult, "입고일자", "In_Date", true, 150, DataGridViewContentAlignment.MiddleCenter);
@@ -64,16 +64,16 @@ namespace AdminForm
             List<ComboItem> item = (from items in List
                                     select  new ComboItem
                                     {
-                                        comboText = items.Mold_Group,
-                                        comboValue = items.Mold_Group
-                                    }).Distinct().ToList() ;
+                                        comboText = items.Mold_Group.ToString(),
+                                        comboValue = items.Mold_Group.ToString()
+                                    }).Distinct().ToList();
             ComboClass.ComboBind(item , cmbMoldGroupSearch, true);
             //ComboClass.ComboBind(item, cmbMoldGroupI, false);
             //ComboClass.ComboBind(item, cmbMoldGroupM, false);
+            cmbMoldGroupSearch.DataSource = item.Select(items => items.comboText).Distinct().ToList();
+            cmbMoldGroupM.DataSource = item.Select(items => items.comboText).Distinct().ToList();
+            cmbMoldGroupI.DataSource = item.Select(items => items.comboText).Distinct().ToList();
 
-            cmbMoldGroupI.DataSource = cmbMoldGroupSearch.DataSource;
-            cmbMoldGroupM.DataSource = cmbMoldGroupSearch.DataSource;
-            
 
         }
 

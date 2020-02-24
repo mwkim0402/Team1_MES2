@@ -49,7 +49,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -288,15 +287,6 @@
             this.label7.Text = "할당 대상 작업자";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(702, 96);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 12);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "label8";
-            // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -337,7 +327,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1538, 628);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -358,7 +347,6 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -379,7 +367,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cb_Wc_Name;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;

@@ -44,7 +44,7 @@ namespace FieldOperationForm
             col.DefaultCellStyle.Alignment = textAlign;
             dgv.Columns.Add(col);
             col.DefaultCellStyle.Padding = new Padding(3);
-
+            dgv.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.Ivory;
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.Honeydew;
             //    dgv.RowsDefaultCellStyle.BackColor = Color.Ivory;
 

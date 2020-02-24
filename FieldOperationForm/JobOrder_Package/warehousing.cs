@@ -42,7 +42,7 @@ int colWidth = 100, DataGridViewContentAlignment textAlign = DataGridViewContent
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.Honeydew;
             //    dgv.RowsDefaultCellStyle.BackColor = Color.Ivory;
 
-
+            dgv.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.Ivory;
             dgv.EnableHeadersVisualStyles = false;
             dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.Ivory;
 

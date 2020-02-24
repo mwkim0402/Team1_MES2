@@ -207,6 +207,14 @@ namespace AdminForm
             {
                 MES_DB.PerformService service = new MES_DB.PerformService();
                 service.UpdateRegQulityForm(Convert.ToInt32(nuNum.Value), primary);
+                dgvJob.DataSource = null;
+                dgvDetail.DataSource = null;
+                dgvDetaillist.DataSource = null;
+                if (dgvJob.Columns.Count < 1 && dgvDetail.Columns.Count < 1 && dgvDetaillist.Columns.Count < 1)
+                {
+                    ShowDgv();
+                }
+                MessageBox.Show("수정되었습니다.");
             }
             else
             {

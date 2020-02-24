@@ -245,24 +245,23 @@ namespace AdminForm
 
         private void btnFaltyIns_Click(object sender, EventArgs e)
         {
-            if (nuFaultyCount.Value != 0)
+            //DB 입력부분
+            MES_DB.PerformService service = new MES_DB.PerformService();
+            ImageConverter converter = new ImageConverter();
+            byte[] imagebyte = (byte[])converter.ConvertTo(pic.Image, typeof(byte[]));
+
+            if (MessageBox.Show("수정하시겠습니까?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                //DB 입력부분
-                MES_DB.PerformService service = new MES_DB.PerformService();
-                ImageConverter converter = new ImageConverter();
-                byte[] imagebyte = (byte[])converter.ConvertTo(pic.Image, typeof(byte[]));
                 service.InsFaltyImage(fileName, imagebyte, WorkOrder, Convert.ToInt32(nuFaultyCount.Value));
 
 
                 dgvJobOrder.DataSource = null;
                 GetData();
                 frm.btnS.PerformClick();
-
             }
             else
             {
-                MessageBox.Show("수량을 선택해주세요.");
-
+                MessageBox.Show("취소되었습니다.");
             }
         }
     }

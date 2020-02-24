@@ -203,14 +203,29 @@ namespace AdminForm
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (nuNum.Value > 0)
+            if (MessageBox.Show("수정하시겠습니까?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MES_DB.PerformService service = new MES_DB.PerformService();
-                service.UpdateRegQulityForm(Convert.ToInt32(nuNum.Value), primary);
+                if (nuNum.Value > 0)
+                {
+                    MES_DB.PerformService service = new MES_DB.PerformService();
+                    service.UpdateRegQulityForm(Convert.ToInt32(nuNum.Value), primary);
+                    dgvJob.DataSource = null;
+                    dgvDetail.DataSource = null;
+                    dgvDetaillist.DataSource = null;
+                    if (dgvJob.Columns.Count < 1 && dgvDetail.Columns.Count < 1 && dgvDetaillist.Columns.Count < 1)
+                    {
+                        ShowDgv();
+                    }
+                    MessageBox.Show("수정되었습니다.");
+                }
+                else
+                {
+                    MessageBox.Show("수정할 측정값을 입력해주세요.");
+                }
             }
             else
             {
-                MessageBox.Show("수정할 측정값을 입력해주세요.");
+                MessageBox.Show("취소되었습니다.");
             }
             //QulityRegisterForm frm = new QulityRegisterForm(InsVO);
             //if (frm.ShowDialog() == DialogResult.OK)

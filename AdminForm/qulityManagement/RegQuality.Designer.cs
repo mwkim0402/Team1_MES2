@@ -36,8 +36,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegQuality));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.fcWorker = new AdminForm.FIndCategory();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.fcFactory = new AdminForm.FIndCategory();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
@@ -50,15 +52,13 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvDetaillist = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.nuNum = new System.Windows.Forms.NumericUpDown();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.nuNum = new System.Windows.Forms.NumericUpDown();
-            this.fcWorker = new AdminForm.FIndCategory();
-            this.fcFactory = new AdminForm.FIndCategory();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJob)).BeginInit();
@@ -70,9 +70,9 @@
             this.tabControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetaillist)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuNum)).BeginInit();
             this.tabControl4.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nuNum)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -93,6 +93,16 @@
             this.panel2.Size = new System.Drawing.Size(1128, 63);
             this.panel2.TabIndex = 12;
             // 
+            // fcWorker
+            // 
+            this.fcWorker.Category = AdminForm.CategoryMode.WorkCenter;
+            this.fcWorker.Location = new System.Drawing.Point(764, 19);
+            this.fcWorker.Name = "fcWorker";
+            this.fcWorker.SendCode = null;
+            this.fcWorker.SendName = null;
+            this.fcWorker.Size = new System.Drawing.Size(190, 27);
+            this.fcWorker.TabIndex = 5;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -112,6 +122,16 @@
             this.label3.Size = new System.Drawing.Size(43, 19);
             this.label3.TabIndex = 1;
             this.label3.Text = "공정 ";
+            // 
+            // fcFactory
+            // 
+            this.fcFactory.Category = AdminForm.CategoryMode.Process;
+            this.fcFactory.Location = new System.Drawing.Point(489, 19);
+            this.fcFactory.Name = "fcFactory";
+            this.fcFactory.SendCode = null;
+            this.fcFactory.SendName = null;
+            this.fcFactory.Size = new System.Drawing.Size(190, 27);
+            this.fcFactory.TabIndex = 1;
             // 
             // label2
             // 
@@ -304,6 +324,18 @@
             this.panel3.Size = new System.Drawing.Size(513, 34);
             this.panel3.TabIndex = 3;
             // 
+            // nuNum
+            // 
+            this.nuNum.Location = new System.Drawing.Point(20, 6);
+            this.nuNum.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nuNum.Name = "nuNum";
+            this.nuNum.Size = new System.Drawing.Size(103, 21);
+            this.nuNum.TabIndex = 4;
+            // 
             // btnRemove
             // 
             this.btnRemove.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -332,7 +364,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(113, 23);
             this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "측정값 등록";
+            this.btnAdd.Text = "측정값 수정";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -385,38 +417,6 @@
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // nuNum
-            // 
-            this.nuNum.Location = new System.Drawing.Point(20, 6);
-            this.nuNum.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.nuNum.Name = "nuNum";
-            this.nuNum.Size = new System.Drawing.Size(103, 21);
-            this.nuNum.TabIndex = 4;
-            // 
-            // fcWorker
-            // 
-            this.fcWorker.Category = AdminForm.CategoryMode.WorkCenter;
-            this.fcWorker.Location = new System.Drawing.Point(764, 19);
-            this.fcWorker.Name = "fcWorker";
-            this.fcWorker.SendCode = null;
-            this.fcWorker.SendName = null;
-            this.fcWorker.Size = new System.Drawing.Size(190, 27);
-            this.fcWorker.TabIndex = 5;
-            // 
-            // fcFactory
-            // 
-            this.fcFactory.Category = AdminForm.CategoryMode.Process;
-            this.fcFactory.Location = new System.Drawing.Point(489, 19);
-            this.fcFactory.Name = "fcFactory";
-            this.fcFactory.SendCode = null;
-            this.fcFactory.SendName = null;
-            this.fcFactory.Size = new System.Drawing.Size(190, 27);
-            this.fcFactory.TabIndex = 1;
-            // 
             // RegQuality
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -447,10 +447,10 @@
             this.tabControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetaillist)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nuNum)).EndInit();
             this.tabControl4.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nuNum)).EndInit();
             this.ResumeLayout(false);
 
         }
